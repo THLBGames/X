@@ -1,0 +1,18 @@
+{
+  "id": "battle_cry",
+  "name": "Battle Cry",
+  "description": "Let out a mighty battle cry, increasing attack power for a short time.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 6,
+  "manaCost": 25,
+  "cooldown": 20,
+  "target": "self",
+  "effect": {
+    "buffId": "battle_cry"
+  }
+}
+

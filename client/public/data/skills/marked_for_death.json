@@ -1,0 +1,18 @@
+{
+  "id": "marked_for_death",
+  "name": "Marked for Death",
+  "description": "Mark an enemy, causing all attacks against them to deal bonus damage.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 21,
+  "manaCost": 30,
+  "cooldown": 20,
+  "target": "enemy",
+  "effect": {
+    "debuffId": "marked_for_death"
+  }
+}
+

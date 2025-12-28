@@ -1,0 +1,19 @@
+{
+  "id": "vanish",
+  "name": "Vanish",
+  "description": "Instantly enter stealth and remove all negative effects.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 12,
+  "prerequisites": ["stealth"],
+  "manaCost": 40,
+  "cooldown": 60,
+  "target": "self",
+  "effect": {
+    "buffId": "vanish"
+  }
+}
+

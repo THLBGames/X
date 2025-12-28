@@ -1,0 +1,18 @@
+{
+  "id": "spell_power",
+  "name": "Spell Power",
+  "description": "Passively increase all spell damage.",
+  "type": "passive",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 17,
+  "prerequisites": ["mage_intellect"],
+  "passiveBonus": {
+    "combatStatBonus": {
+      "magicAttack": 5
+    }
+  }
+}
+

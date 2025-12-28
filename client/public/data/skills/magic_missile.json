@@ -1,0 +1,25 @@
+{
+  "id": "magic_missile",
+  "name": "Magic Missile",
+  "description": "Fire multiple homing missiles that never miss their target.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 4,
+  "prerequisites": ["arcane_missile"],
+  "manaCost": 18,
+  "cooldown": 2,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 30,
+      "scaling": {
+        "stat": "intelligence",
+        "multiplier": 1.8
+      }
+    }
+  }
+}
+

@@ -1,0 +1,15 @@
+{
+  "id": "counterattack",
+  "name": "Counterattack",
+  "description": "When you successfully block or dodge, counterattack with increased damage.",
+  "type": "passive",
+  "maxLevel": 5,
+  "unlockLevel": 6,
+  "requirements": {
+    "class": ["warrior", "rogue"]
+  },
+  "passiveBonus": {
+    "special": "counterattack"
+  }
+}
+

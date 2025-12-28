@@ -1,0 +1,19 @@
+{
+  "id": "teleport",
+  "name": "Teleport",
+  "description": "Teleport to a target location, leaving a magical mark.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 15,
+  "prerequisites": ["blink"],
+  "manaCost": 30,
+  "cooldown": 20,
+  "target": "self",
+  "effect": {
+    "buffId": "teleport"
+  }
+}
+

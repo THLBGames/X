@@ -1,0 +1,38 @@
+{
+  "id": "zombie",
+  "name": "Zombie",
+  "description": "A slow but resilient undead creature.",
+  "tier": 1,
+  "level": 3,
+  "stats": {
+    "health": 150,
+    "maxHealth": 150,
+    "mana": 0,
+    "maxMana": 0,
+    "attack": 14,
+    "defense": 10,
+    "magicAttack": 0,
+    "magicDefense": 5,
+    "speed": 5,
+    "criticalChance": 1,
+    "criticalDamage": 1.5
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 12,
+      "max": 20
+    },
+    {
+      "itemId": "rotten_flesh",
+      "chance": 0.5
+    }
+  ],
+  "experienceReward": 25,
+  "goldReward": {
+    "min": 12,
+    "max": 20
+  }
+}
+

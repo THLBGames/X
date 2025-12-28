@@ -1,0 +1,38 @@
+{
+  "id": "skeleton",
+  "name": "Skeleton",
+  "description": "An undead warrior animated by dark magic.",
+  "tier": 1,
+  "level": 2,
+  "stats": {
+    "health": 80,
+    "maxHealth": 80,
+    "mana": 0,
+    "maxMana": 0,
+    "attack": 12,
+    "defense": 5,
+    "magicAttack": 0,
+    "magicDefense": 8,
+    "speed": 10,
+    "criticalChance": 2.5,
+    "criticalDamage": 1.5
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 8,
+      "max": 15
+    },
+    {
+      "itemId": "bone_fragment",
+      "chance": 0.3
+    }
+  ],
+  "experienceReward": 20,
+  "goldReward": {
+    "min": 8,
+    "max": 15
+  }
+}
+

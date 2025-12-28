@@ -1,0 +1,157 @@
+{
+  "id": "woodcutting",
+  "name": "Woodcutting",
+  "description": "Harvest wood and materials from trees",
+  "type": "gathering",
+  "category": "gathering",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.1)",
+  "resourceNodes": [
+    {
+      "level": 1,
+      "nodeId": "oak_tree",
+      "name": "Oak Tree",
+      "successRate": 0.95,
+      "experienceGain": 12,
+      "timeRequired": 3500,
+      "resources": [
+        {
+          "itemId": "oak_log",
+          "chance": 1.0,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "maple_tree",
+      "name": "Maple Tree",
+      "successRate": 0.90,
+      "experienceGain": 35,
+      "timeRequired": 4500,
+      "resources": [
+        {
+          "itemId": "maple_log",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "oak_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "maple_sap",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "yew_tree",
+      "name": "Yew Tree",
+      "successRate": 0.85,
+      "experienceGain": 80,
+      "timeRequired": 5500,
+      "resources": [
+        {
+          "itemId": "yew_log",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "maple_log",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "yew_berry",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "magic_tree",
+      "name": "Magic Tree",
+      "successRate": 0.75,
+      "experienceGain": 180,
+      "timeRequired": 6500,
+      "resources": [
+        {
+          "itemId": "magic_log",
+          "chance": 1.0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "yew_log",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "magic_essence",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "elder_tree",
+      "name": "Elder Tree",
+      "successRate": 0.65,
+      "experienceGain": 350,
+      "timeRequired": 7500,
+      "resources": [
+        {
+          "itemId": "elder_log",
+          "chance": 1.0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "magic_log",
+          "chance": 0.15,
+          "quantity": 1
+        },
+        {
+          "itemId": "elder_essence",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 25,
+      "bonus": {
+        "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "goldGeneration": 0.1
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "goldGeneration": 0.15
+      }
+    }
+  ]
+}
+

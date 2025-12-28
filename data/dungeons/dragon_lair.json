@@ -1,0 +1,34 @@
+{
+  "id": "dragon_lair",
+  "name": "Dragon's Lair",
+  "description": "The lair of a powerful dragon.",
+  "tier": 3,
+  "requiredLevel": 15,
+  "requiredDungeonId": "haunted_forest",
+  "monsterPools": [
+    {
+      "monsterId": "dragon_whelp",
+      "weight": 70,
+      "minLevel": 15,
+      "maxLevel": 20
+    },
+    {
+      "monsterId": "vampire",
+      "weight": 20,
+      "minLevel": 18,
+      "maxLevel": 22
+    },
+    {
+      "monsterId": "minotaur",
+      "weight": 10,
+      "minLevel": 12,
+      "maxLevel": 18
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.0,
+    "goldBonus": 1.8,
+    "itemDropRate": 1.5
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "id": "charge",
+  "name": "Charge",
+  "description": "Rush towards an enemy, dealing damage and stunning them briefly.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 4,
+  "manaCost": 15,
+  "cooldown": 5,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 35,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 1.2
+      }
+    },
+    "debuffId": "stunned"
+  }
+}
+

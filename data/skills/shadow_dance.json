@@ -1,0 +1,19 @@
+{
+  "id": "shadow_dance",
+  "name": "Shadow Dance",
+  "description": "Enter a shadowy state allowing stealth abilities to be used without stealth.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 28,
+  "prerequisites": ["cloak_of_shadows"],
+  "manaCost": 70,
+  "cooldown": 60,
+  "target": "self",
+  "effect": {
+    "buffId": "shadow_dance"
+  }
+}
+

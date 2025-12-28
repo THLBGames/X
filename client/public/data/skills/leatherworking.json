@@ -1,0 +1,102 @@
+{
+  "id": "leatherworking",
+  "name": "Leatherworking",
+  "description": "Craft leather armor and bags",
+  "type": "production",
+  "category": "production",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.3)",
+  "recipes": [
+    {
+      "recipeId": "leather_armor",
+      "name": "Leather Armor",
+      "level": 5,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 5
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "leather_armor",
+        "quantity": 1
+      },
+      "experienceGain": 28,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "reinforced_leather",
+      "name": "Reinforced Leather",
+      "level": 30,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 8
+        },
+        {
+          "itemId": "metal_ring",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "reinforced_leather_armor",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "monster_hide_armor",
+      "name": "Monster Hide Armor",
+      "level": 60,
+      "ingredients": [
+        {
+          "itemId": "monster_pelt",
+          "quantity": 10
+        },
+        {
+          "itemId": "monster_bone",
+          "quantity": 5
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "monster_hide_armor",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 9500
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 30,
+      "bonus": {
+        "defense": 8,
+        "dexterity": 3
+      }
+    },
+    {
+      "level": 70,
+      "bonus": {
+        "defense": 15,
+        "dexterity": 6
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "defense": 25,
+        "dexterity": 10
+      }
+    }
+  ]
+}
+

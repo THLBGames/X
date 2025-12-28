@@ -1,0 +1,23 @@
+{
+  "experience": {
+    "baseExp": 100,
+    "expMultiplier": 1.15,
+    "expFormula": "baseExp * (expMultiplier ^ (level - 1))"
+  },
+  "combat": {
+    "baseDamageFormula": "attack * (1 - defense / (defense + 100))",
+    "defenseReductionFormula": "damage * (1 - defense / (defense + 100))",
+    "criticalDamageMultiplier": 1.5,
+    "turnTime": 1000
+  },
+  "economy": {
+    "itemValueMultiplier": 1.0,
+    "goldDropMultiplier": 1.0
+  },
+  "idle": {
+    "maxOfflineHours": 24,
+    "offlineExpRate": 0.5,
+    "offlineGoldRate": 0.5
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "id": "heroic_leap",
+  "name": "Heroic Leap",
+  "description": "Leap to a target location, dealing damage to enemies in the area.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 22,
+  "manaCost": 35,
+  "cooldown": 15,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 60,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 1.8
+      }
+    }
+  }
+}
+

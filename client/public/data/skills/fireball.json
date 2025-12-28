@@ -1,0 +1,23 @@
+{
+  "id": "fireball",
+  "name": "Fireball",
+  "description": "Hurl a ball of fire at your enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "manaCost": 20,
+  "cooldown": 2,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 40,
+      "scaling": {
+        "stat": "intelligence",
+        "multiplier": 2.0
+      }
+    }
+  }
+}
+

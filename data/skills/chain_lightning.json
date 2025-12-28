@@ -1,0 +1,25 @@
+{
+  "id": "chain_lightning",
+  "name": "Chain Lightning",
+  "description": "Cast a bolt of lightning that jumps between multiple enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 12,
+  "prerequisites": ["lightning_bolt"],
+  "manaCost": 40,
+  "cooldown": 6,
+  "target": "all_enemies",
+  "effect": {
+    "damage": {
+      "base": 50,
+      "scaling": {
+        "stat": "intelligence",
+        "multiplier": 2.2
+      }
+    }
+  }
+}
+

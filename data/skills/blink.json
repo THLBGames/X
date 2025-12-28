@@ -1,0 +1,18 @@
+{
+  "id": "blink",
+  "name": "Blink",
+  "description": "Instantly teleport a short distance, avoiding damage.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 5,
+  "manaCost": 20,
+  "cooldown": 8,
+  "target": "self",
+  "effect": {
+    "buffId": "blink"
+  }
+}
+

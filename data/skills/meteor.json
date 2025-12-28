@@ -1,0 +1,25 @@
+{
+  "id": "meteor",
+  "name": "Meteor",
+  "description": "Summon a massive meteor from the sky, dealing devastating damage to a large area.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 25,
+  "prerequisites": ["fireball"],
+  "manaCost": 80,
+  "cooldown": 30,
+  "target": "all_enemies",
+  "effect": {
+    "damage": {
+      "base": 150,
+      "scaling": {
+        "stat": "intelligence",
+        "multiplier": 3.5
+      }
+    }
+  }
+}
+

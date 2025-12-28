@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "tier", "level", "stats", "lootTable", "experienceReward", "goldReward"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "tier": { "type": "number" },
+    "level": { "type": "number" },
+    "stats": {
+      "type": "object",
+      "required": ["health", "maxHealth", "mana", "maxMana", "attack", "defense", "magicAttack", "magicDefense", "speed", "criticalChance", "criticalDamage"],
+      "properties": {
+        "health": { "type": "number" },
+        "maxHealth": { "type": "number" },
+        "mana": { "type": "number" },
+        "maxMana": { "type": "number" },
+        "attack": { "type": "number" },
+        "defense": { "type": "number" },
+        "magicAttack": { "type": "number" },
+        "magicDefense": { "type": "number" },
+        "speed": { "type": "number" },
+        "criticalChance": { "type": "number" },
+        "criticalDamage": { "type": "number" }
+      }
+    },
+    "abilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "type": { "enum": ["attack", "heal", "buff", "debuff"] },
+          "chance": { "type": "number", "minimum": 0, "maximum": 1 },
+          "effect": { "type": "object" }
+        }
+      }
+    },
+    "lootTable": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["itemId", "chance"],
+        "properties": {
+          "itemId": { "type": "string" },
+          "chance": { "type": "number", "minimum": 0, "maximum": 1 },
+          "min": { "type": "number" },
+          "max": { "type": "number" },
+          "quantity": { "type": "number" }
+        }
+      }
+    },
+    "experienceReward": { "type": "number" },
+    "goldReward": {
+      "type": "object",
+      "required": ["min", "max"],
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      }
+    }
+  }
+}
+

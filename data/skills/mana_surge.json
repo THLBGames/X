@@ -1,0 +1,24 @@
+{
+  "id": "mana_surge",
+  "name": "Mana Surge",
+  "description": "Instantly restore a large amount of mana.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 13,
+  "manaCost": 0,
+  "cooldown": 60,
+  "target": "self",
+  "effect": {
+    "heal": {
+      "base": 100,
+      "scaling": {
+        "stat": "wisdom",
+        "multiplier": 2.0
+      }
+    }
+  }
+}
+

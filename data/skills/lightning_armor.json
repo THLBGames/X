@@ -1,0 +1,18 @@
+{
+  "id": "lightning_armor",
+  "name": "Lightning Armor",
+  "description": "Envelop yourself in lightning, shocking nearby enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 10,
+  "manaCost": 32,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "lightning_armor"
+  }
+}
+

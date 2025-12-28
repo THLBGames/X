@@ -1,0 +1,168 @@
+.character-sheet {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.character-sheet h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.character-info {
+  margin-bottom: 10px;
+}
+
+.character-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.character-level {
+  color: #888;
+  margin-bottom: 3px;
+}
+
+.character-class {
+  color: #888;
+  text-transform: capitalize;
+}
+
+.character-gold {
+  color: #ffd700;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #444;
+}
+
+.change-class-button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #4a9eff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.change-class-button:hover {
+  background: #5aaeff;
+  transform: translateY(-1px);
+}
+
+.character-stats,
+.character-combat-stats {
+  margin-bottom: 10px;
+}
+
+.character-stats h3,
+.character-combat-stats h3 {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-bottom: 1px solid #333;
+  font-size: 0.85rem;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.character-experience {
+  margin-bottom: 10px;
+}
+
+.exp-bar-label {
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+}
+
+.exp-bar {
+  width: 100%;
+  height: 16px;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.exp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff, #0066cc);
+  transition: width 0.3s ease;
+}
+
+.character-skill-points {
+  padding: 10px;
+  background: #333;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  color: #4a9eff;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.open-skill-tree-button {
+  padding: 8px 16px;
+  background: #4a9eff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.open-skill-tree-button:hover {
+  background: #5aaeff;
+  transform: translateY(-1px);
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .character-sheet {
+    padding: 12px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .character-sheet {
+    padding: 10px;
+  }
+
+  .character-sheet h2 {
+    font-size: 1.1rem;
+  }
+
+  .character-name {
+    font-size: 1rem;
+  }
+
+  .stat-row {
+    font-size: 0.9rem;
+  }
+}
+

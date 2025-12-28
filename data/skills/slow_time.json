@@ -1,0 +1,18 @@
+{
+  "id": "slow_time",
+  "name": "Slow Time",
+  "description": "Slow down time in an area, reducing all enemies' speed.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 22,
+  "manaCost": 60,
+  "cooldown": 40,
+  "target": "all_enemies",
+  "effect": {
+    "debuffId": "time_slowed"
+  }
+}
+

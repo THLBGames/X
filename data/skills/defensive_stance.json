@@ -1,0 +1,18 @@
+{
+  "id": "defensive_stance",
+  "name": "Defensive Stance",
+  "description": "Enter a defensive stance, increasing defense and reducing damage taken.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 3,
+  "manaCost": 20,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "defensive_stance"
+  }
+}
+

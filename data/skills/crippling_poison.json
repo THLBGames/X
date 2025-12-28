@@ -1,0 +1,19 @@
+{
+  "id": "crippling_poison",
+  "name": "Crippling Poison",
+  "description": "Apply a poison that slows enemies and reduces their attack speed.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 7,
+  "prerequisites": ["poison_blade"],
+  "manaCost": 25,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "crippling_poison_weapon"
+  }
+}
+

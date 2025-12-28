@@ -1,0 +1,18 @@
+{
+  "id": "fire_armor",
+  "name": "Fire Armor",
+  "description": "Surround yourself with flames, dealing damage to melee attackers.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 9,
+  "manaCost": 35,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "fire_armor"
+  }
+}
+

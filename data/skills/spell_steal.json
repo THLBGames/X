@@ -1,0 +1,18 @@
+{
+  "id": "spell_steal",
+  "name": "Spell Steal",
+  "description": "Steal a beneficial buff from an enemy and apply it to yourself.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 24,
+  "manaCost": 40,
+  "cooldown": 15,
+  "target": "enemy",
+  "effect": {
+    "special": "spell_steal"
+  }
+}
+

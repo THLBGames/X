@@ -1,0 +1,337 @@
+.shop-panel {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #444;
+}
+
+.shop-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.shop-gold {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.gold-amount {
+  color: #fff;
+}
+
+.shop-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.shop-tab {
+  flex: 1;
+  padding: 8px;
+  background: #333;
+  border: 2px solid #444;
+  border-radius: 6px;
+  color: #ccc;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shop-tab:hover {
+  background: #3a3a3a;
+  border-color: #555;
+}
+
+.shop-tab.active {
+  background: #4a9eff;
+  border-color: #4a9eff;
+  color: #fff;
+}
+
+.shop-buy,
+.shop-sell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.shop-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.shop-search {
+  padding: 8px;
+  background: #1a1a1a;
+  border: 2px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.shop-search:focus {
+  outline: none;
+  border-color: #4a9eff;
+}
+
+.shop-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.category-button {
+  padding: 6px 12px;
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #ccc;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-button:hover {
+  background: #3a3a3a;
+  border-color: #555;
+}
+
+.category-button.active {
+  background: #4a9eff;
+  border-color: #4a9eff;
+  color: #fff;
+}
+
+.shop-items-grid {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding-right: 5px;
+}
+
+.sellable-items-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 5px;
+}
+
+.shop-item-card,
+.sell-item-card {
+  background: #333;
+  border: 2px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #fff;
+  flex: 1;
+}
+
+.item-rarity {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rarity-common {
+  background: #666;
+  color: #fff;
+}
+
+.rarity-uncommon {
+  background: #4a9eff;
+  color: #fff;
+}
+
+.rarity-rare {
+  background: #9d4edd;
+  color: #fff;
+}
+
+.rarity-epic {
+  background: #ff6b35;
+  color: #fff;
+}
+
+.rarity-legendary {
+  background: #ffd700;
+  color: #000;
+}
+
+.rarity-mythic {
+  background: #ff006e;
+  color: #fff;
+}
+
+.item-stock {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.item-description {
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.item-requirements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+.requirement {
+  background: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #ffd700;
+}
+
+.item-price,
+.item-sell-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.price-label {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.price-value {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.price-value.insufficient {
+  color: #ff4444;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.qty-button {
+  width: 28px;
+  height: 28px;
+  background: #444;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.qty-button:hover {
+  background: #555;
+  border-color: #666;
+}
+
+.qty-value {
+  min-width: 30px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.buy-button,
+.sell-button {
+  width: 100%;
+  padding: 8px;
+  background: #4a9eff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buy-button:hover:not(.disabled) {
+  background: #5aaeff;
+  transform: translateY(-1px);
+}
+
+.buy-button.disabled {
+  background: #555;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sell-button {
+  background: #4ecdc4;
+}
+
+.sell-button:hover {
+  background: #5eddd4;
+  transform: translateY(-1px);
+}
+
+.no-items {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #888;
+  padding: 40px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shop-items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-categories {
+    justify-content: center;
+  }
+}
+

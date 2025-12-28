@@ -1,0 +1,42 @@
+{
+  "id": "lich",
+  "name": "Lich",
+  "description": "A powerful undead spellcaster that commands dark magic.",
+  "tier": 3,
+  "level": 20,
+  "stats": {
+    "health": 300,
+    "maxHealth": 300,
+    "mana": 200,
+    "maxMana": 200,
+    "attack": 35,
+    "defense": 18,
+    "magicAttack": 80,
+    "magicDefense": 50,
+    "speed": 10,
+    "criticalChance": 8,
+    "criticalDamage": 1.8
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 150,
+      "max": 220
+    },
+    {
+      "itemId": "lich_phylactery",
+      "chance": 0.2
+    },
+    {
+      "itemId": "ancient_tome",
+      "chance": 0.4
+    }
+  ],
+  "experienceReward": 300,
+  "goldReward": {
+    "min": 150,
+    "max": 220
+  }
+}
+

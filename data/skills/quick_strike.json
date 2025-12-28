@@ -1,0 +1,24 @@
+{
+  "id": "quick_strike",
+  "name": "Quick Strike",
+  "description": "A fast attack that deals moderate damage.",
+  "type": "active",
+  "maxLevel": 5,
+  "unlockLevel": 2,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "manaCost": 10,
+  "cooldown": 2,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 25,
+      "scaling": {
+        "stat": "dexterity",
+        "multiplier": 1.2
+      }
+    }
+  }
+}
+

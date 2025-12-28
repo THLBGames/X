@@ -1,0 +1,19 @@
+{
+  "id": "frost_armor",
+  "name": "Frost Armor",
+  "description": "Encase yourself in ice, increasing defense and slowing attackers.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 7,
+  "prerequisites": ["mana_shield"],
+  "manaCost": 30,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "frost_armor"
+  }
+}
+

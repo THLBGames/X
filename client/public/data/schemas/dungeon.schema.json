@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "description", "tier", "monsterPools", "rewards"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "tier": { "type": "number" },
+    "requiredLevel": { "type": "number" },
+    "requiredDungeonId": { "type": "string" },
+    "monsterPools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["monsterId", "weight"],
+        "properties": {
+          "monsterId": { "type": "string" },
+          "weight": { "type": "number" },
+          "minLevel": { "type": "number" },
+          "maxLevel": { "type": "number" }
+        }
+      }
+    },
+    "rewards": {
+      "type": "object",
+      "required": ["experienceBonus", "goldBonus"],
+      "properties": {
+        "experienceBonus": { "type": "number" },
+        "goldBonus": { "type": "number" },
+        "itemDropRate": { "type": "number" }
+      }
+    },
+    "unlockConditions": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "number" },
+        "dungeonId": { "type": "string" }
+      }
+    }
+  }
+}
+

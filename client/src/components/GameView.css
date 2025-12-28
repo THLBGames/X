@@ -1,0 +1,145 @@
+.game-view {
+  display: grid;
+  grid-template-columns: 280px 1fr 450px;
+  grid-template-rows: 1fr;
+  height: 100%;
+  gap: 8px;
+  padding: 8px;
+}
+
+.game-view-with-skills {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  gap: 10px;
+  padding: 10px;
+}
+
+.game-view-left,
+.game-view-center,
+.game-view-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.game-view-left > .character-sheet {
+  flex: 0 0 auto;
+}
+
+.game-view-left > .skill-tree {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.game-view-right > .inventory-panel {
+  flex: 0 0 auto;
+  max-height: 40%;
+  min-height: 0;
+}
+
+.game-view-right > .skills-panel {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.right-panel-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #444;
+}
+
+.panel-tab {
+  flex: 1;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.panel-tab:hover {
+  color: #ccc;
+}
+
+.panel-tab.active {
+  color: #4a9eff;
+  border-bottom-color: #4a9eff;
+}
+
+.right-panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.character-creation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.character-creation h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .game-view {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 8px;
+    padding: 8px;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .game-view-with-skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 8px;
+    padding: 8px;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .game-view-left,
+  .game-view-center,
+  .game-view-right {
+    overflow-y: visible;
+    max-height: none;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .game-view {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .game-view-with-skills {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .character-creation h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+}
+

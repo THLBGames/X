@@ -1,0 +1,18 @@
+{
+  "id": "polymorph",
+  "name": "Polymorph",
+  "description": "Transform an enemy into a harmless creature, removing them from combat temporarily.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 20,
+  "manaCost": 50,
+  "cooldown": 25,
+  "target": "enemy",
+  "effect": {
+    "debuffId": "polymorphed"
+  }
+}
+

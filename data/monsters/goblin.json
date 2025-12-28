@@ -1,0 +1,38 @@
+{
+  "id": "goblin",
+  "name": "Goblin",
+  "description": "A small, weak creature that poses little threat.",
+  "tier": 1,
+  "level": 1,
+  "stats": {
+    "health": 50,
+    "maxHealth": 50,
+    "mana": 0,
+    "maxMana": 0,
+    "attack": 8,
+    "defense": 2,
+    "magicAttack": 0,
+    "magicDefense": 1,
+    "speed": 12,
+    "criticalChance": 2,
+    "criticalDamage": 1.5
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 5,
+      "max": 10
+    },
+    {
+      "itemId": "health_potion_small",
+      "chance": 0.1
+    }
+  ],
+  "experienceReward": 10,
+  "goldReward": {
+    "min": 5,
+    "max": 10
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "id": "cripple",
+  "name": "Cripple",
+  "description": "Cripple an enemy, significantly reducing their movement and attack speed.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 24,
+  "manaCost": 25,
+  "cooldown": 16,
+  "target": "enemy",
+  "effect": {
+    "debuffId": "crippled"
+  }
+}
+

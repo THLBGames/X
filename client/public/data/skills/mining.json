@@ -1,0 +1,174 @@
+{
+  "id": "mining",
+  "name": "Mining",
+  "description": "Extract ores and gems from stone deposits",
+  "type": "gathering",
+  "category": "gathering",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.1)",
+  "resourceNodes": [
+    {
+      "level": 1,
+      "nodeId": "copper_ore",
+      "name": "Copper Ore Vein",
+      "successRate": 0.95,
+      "experienceGain": 10,
+      "timeRequired": 3000,
+      "resources": [
+        {
+          "itemId": "copper_ore",
+          "chance": 1.0,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "stone",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "iron_ore",
+      "name": "Iron Ore Vein",
+      "successRate": 0.90,
+      "experienceGain": 25,
+      "timeRequired": 4000,
+      "resources": [
+        {
+          "itemId": "iron_ore",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "copper_ore",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "silver_ore",
+      "name": "Silver Ore Vein",
+      "successRate": 0.85,
+      "experienceGain": 50,
+      "timeRequired": 5000,
+      "resources": [
+        {
+          "itemId": "silver_ore",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "iron_ore",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "gold_ore",
+      "name": "Gold Ore Vein",
+      "successRate": 0.80,
+      "experienceGain": 100,
+      "timeRequired": 6000,
+      "resources": [
+        {
+          "itemId": "gold_ore",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "silver_ore",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_rare",
+          "chance": 0.1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "mithril_ore",
+      "name": "Mithril Ore Vein",
+      "successRate": 0.75,
+      "experienceGain": 200,
+      "timeRequired": 7000,
+      "resources": [
+        {
+          "itemId": "mithril_ore",
+          "chance": 1.0,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "gold_ore",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_epic",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "adamantite_ore",
+      "name": "Adamantite Ore Vein",
+      "successRate": 0.70,
+      "experienceGain": 400,
+      "timeRequired": 8000,
+      "resources": [
+        {
+          "itemId": "adamantite_ore",
+          "chance": 1.0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "mithril_ore",
+          "chance": 0.15,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_legendary",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 25,
+      "bonus": {
+        "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "goldGeneration": 0.1
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "goldGeneration": 0.2,
+        "itemFindRate": 0.1
+      }
+    }
+  ]
+}
+

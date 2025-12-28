@@ -1,0 +1,12 @@
+{
+  "id": "item_mastery",
+  "name": "Item Mastery",
+  "description": "Increases the effectiveness of all consumable items.",
+  "type": "passive",
+  "maxLevel": 5,
+  "unlockLevel": 3,
+  "passiveBonus": {
+    "special": "item_mastery"
+  }
+}
+

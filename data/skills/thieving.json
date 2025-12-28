@@ -1,0 +1,134 @@
+{
+  "id": "thieving",
+  "name": "Thieving",
+  "description": "Pickpocket and steal from NPCs and targets",
+  "type": "gathering",
+  "category": "gathering",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.15)",
+  "resourceNodes": [
+    {
+      "level": 1,
+      "nodeId": "common_npc",
+      "name": "Common NPC",
+      "successRate": 0.82,
+      "experienceGain": 18,
+      "timeRequired": 4000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 5,
+          "max": 15
+        },
+        {
+          "itemId": "common_item",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "merchant",
+      "name": "Merchant",
+      "successRate": 0.76,
+      "experienceGain": 52,
+      "timeRequired": 5000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 25,
+          "max": 60
+        },
+        {
+          "itemId": "uncommon_item",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "trade_good",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "noble",
+      "name": "Noble",
+      "successRate": 0.70,
+      "experienceGain": 125,
+      "timeRequired": 6000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 80,
+          "max": 150
+        },
+        {
+          "itemId": "rare_item",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "jewelry",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "royal_guard",
+      "name": "Royal Guard",
+      "successRate": 0.62,
+      "experienceGain": 280,
+      "timeRequired": 7000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 200,
+          "max": 400
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "royal_seal",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 40,
+      "bonus": {
+        "goldGeneration": 0.12,
+        "dexterity": 3
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "goldGeneration": 0.2,
+        "dexterity": 6
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "goldGeneration": 0.3,
+        "dexterity": 10
+      }
+    }
+  ]
+}
+

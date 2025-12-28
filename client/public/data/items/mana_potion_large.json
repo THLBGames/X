@@ -1,0 +1,15 @@
+{
+  "id": "mana_potion_large",
+  "name": "Large Mana Potion",
+  "description": "Restores 200 mana.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 50,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 200
+  }
+}
+

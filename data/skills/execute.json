@@ -1,0 +1,25 @@
+{
+  "id": "execute",
+  "name": "Execute",
+  "description": "Deal massive damage to an enemy with low health.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 10,
+  "prerequisites": ["power_strike"],
+  "manaCost": 30,
+  "cooldown": 6,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 100,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 2.5
+      }
+    }
+  }
+}
+

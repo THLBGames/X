@@ -1,0 +1,121 @@
+{
+  "id": "farming",
+  "name": "Farming",
+  "description": "Grow crops and raise livestock",
+  "type": "production",
+  "category": "hybrid",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.25)",
+  "resourceNodes": [
+    {
+      "level": 1,
+      "nodeId": "wheat_field",
+      "name": "Wheat Field",
+      "successRate": 0.93,
+      "experienceGain": 12,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "wheat",
+          "chance": 1.0,
+          "min": 3,
+          "max": 6
+        },
+        {
+          "itemId": "wheat_seed",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "vegetable_garden",
+      "name": "Vegetable Garden",
+      "successRate": 0.88,
+      "experienceGain": 40,
+      "timeRequired": 12000,
+      "resources": [
+        {
+          "itemId": "vegetable",
+          "chance": 1.0,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "wheat",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "herb_garden",
+      "name": "Herb Garden",
+      "successRate": 0.83,
+      "experienceGain": 95,
+      "timeRequired": 14000,
+      "resources": [
+        {
+          "itemId": "common_herb",
+          "chance": 1.0,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "uncommon_herb",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "recipeId": "fertilizer",
+      "name": "Fertilizer",
+      "level": 10,
+      "ingredients": [
+        {
+          "itemId": "compost",
+          "quantity": 3
+        },
+        {
+          "itemId": "bone_meal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 20,
+      "timeRequired": 5000
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 30,
+      "bonus": {
+        "goldGeneration": 0.08,
+        "health": 50
+      }
+    },
+    {
+      "level": 65,
+      "bonus": {
+        "goldGeneration": 0.15,
+        "health": 100
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "goldGeneration": 0.25,
+        "health": 200
+      }
+    }
+  ]
+}
+

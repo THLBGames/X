@@ -1,0 +1,19 @@
+{
+  "id": "rogue_agility",
+  "name": "Rogue's Agility",
+  "description": "Passively increases dexterity and speed.",
+  "type": "passive",
+  "maxLevel": 10,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "passiveBonus": {
+    "statBonus": {
+      "dexterity": 2
+    },
+    "combatStatBonus": {
+      "speed": 5
+    }
+  }
+}
+

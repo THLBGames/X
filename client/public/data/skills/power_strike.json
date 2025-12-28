@@ -1,0 +1,25 @@
+{
+  "id": "power_strike",
+  "name": "Power Strike",
+  "description": "A devastating melee attack with increased critical chance.",
+  "type": "active",
+  "maxLevel": 5,
+  "prerequisites": ["cleave"],
+  "requirements": {
+    "class": ["warrior"],
+    "level": 10
+  },
+  "manaCost": 25,
+  "cooldown": 4,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 50,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 2.0
+      }
+    }
+  }
+}
+

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "description", "type", "maxLevel", "effect"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "type": {
+      "enum": ["active", "passive"]
+    },
+    "maxLevel": { "type": "number" },
+    "prerequisites": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "number" },
+        "class": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "manaCost": { "type": "number" },
+    "cooldown": { "type": "number" },
+    "target": {
+      "enum": ["self", "enemy", "ally", "all_enemies", "all_allies"]
+    },
+    "effect": { "type": "object" },
+    "passiveBonus": { "type": "object" }
+  }
+}
+

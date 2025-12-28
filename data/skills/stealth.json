@@ -1,0 +1,18 @@
+{
+  "id": "stealth",
+  "name": "Stealth",
+  "description": "Enter stealth mode, becoming invisible to enemies and increasing critical strike chance.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 4,
+  "manaCost": 30,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "stealth"
+  }
+}
+

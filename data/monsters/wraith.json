@@ -1,0 +1,38 @@
+{
+  "id": "wraith",
+  "name": "Wraith",
+  "description": "An ethereal undead spirit that drains life.",
+  "tier": 2,
+  "level": 6,
+  "stats": {
+    "health": 110,
+    "maxHealth": 110,
+    "mana": 80,
+    "maxMana": 80,
+    "attack": 15,
+    "defense": 8,
+    "magicAttack": 30,
+    "magicDefense": 20,
+    "speed": 14,
+    "criticalChance": 6,
+    "criticalDamage": 1.8
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 30,
+      "max": 50
+    },
+    {
+      "itemId": "essence_of_death",
+      "chance": 0.4
+    }
+  ],
+  "experienceReward": 65,
+  "goldReward": {
+    "min": 30,
+    "max": 50
+  }
+}
+

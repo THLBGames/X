@@ -1,0 +1,19 @@
+{
+  "id": "arcane_power",
+  "name": "Arcane Power",
+  "description": "Enter a state of pure arcane power, dramatically increasing spell damage.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 28,
+  "prerequisites": ["arcane_explosion"],
+  "manaCost": 70,
+  "cooldown": 60,
+  "target": "self",
+  "effect": {
+    "buffId": "arcane_power"
+  }
+}
+

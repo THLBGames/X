@@ -1,0 +1,19 @@
+{
+  "id": "demoralize",
+  "name": "Demoralize",
+  "description": "Reduce enemy attack power and movement speed significantly.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 21,
+  "prerequisites": ["intimidate"],
+  "manaCost": 25,
+  "cooldown": 18,
+  "target": "all_enemies",
+  "effect": {
+    "debuffId": "demoralized"
+  }
+}
+

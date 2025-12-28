@@ -1,0 +1,25 @@
+{
+  "id": "shield_bash",
+  "name": "Shield Bash",
+  "description": "Bash your target with your shield, stunning them.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"],
+    "level": 5
+  },
+  "manaCost": 20,
+  "cooldown": 5,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 20,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 1.0
+      }
+    },
+    "debuffId": "stun"
+  }
+}
+

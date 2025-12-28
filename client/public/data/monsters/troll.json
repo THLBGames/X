@@ -1,0 +1,38 @@
+{
+  "id": "troll",
+  "name": "Troll",
+  "description": "A large, regenerating creature with immense strength.",
+  "tier": 2,
+  "level": 7,
+  "stats": {
+    "health": 250,
+    "maxHealth": 250,
+    "mana": 0,
+    "maxMana": 0,
+    "attack": 35,
+    "defense": 15,
+    "magicAttack": 0,
+    "magicDefense": 5,
+    "speed": 6,
+    "criticalChance": 4,
+    "criticalDamage": 1.5
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 40,
+      "max": 60
+    },
+    {
+      "itemId": "troll_blood",
+      "chance": 0.5
+    }
+  ],
+  "experienceReward": 80,
+  "goldReward": {
+    "min": 40,
+    "max": 60
+  }
+}
+

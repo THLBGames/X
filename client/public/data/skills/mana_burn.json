@@ -1,0 +1,25 @@
+{
+  "id": "mana_burn",
+  "name": "Mana Burn",
+  "description": "Burn an enemy's mana, dealing damage based on their mana pool.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 11,
+  "manaCost": 30,
+  "cooldown": 8,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 20,
+      "scaling": {
+        "stat": "intelligence",
+        "multiplier": 1.5
+      }
+    },
+    "debuffId": "mana_burned"
+  }
+}
+

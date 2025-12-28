@@ -1,0 +1,123 @@
+{
+  "id": "blacksmithing",
+  "name": "Blacksmithing",
+  "description": "Forge weapons and armor from metal",
+  "type": "production",
+  "category": "production",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.4)",
+  "recipes": [
+    {
+      "recipeId": "copper_sword",
+      "name": "Copper Sword",
+      "level": 5,
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "coal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "copper_sword",
+        "quantity": 1
+      },
+      "experienceGain": 30,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "iron_armor",
+      "name": "Iron Armor",
+      "level": 20,
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "leather",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "iron_armor",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "steel_weapon",
+      "name": "Steel Weapon",
+      "level": 40,
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        },
+        {
+          "itemId": "silver_ore",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "steel_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "mithril_gear",
+      "name": "Mithril Gear",
+      "level": 70,
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "mithril_gear",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 15000
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 35,
+      "bonus": {
+        "attack": 10,
+        "defense": 5
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "attack": 20,
+        "defense": 10
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "attack": 30,
+        "defense": 15
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,25 @@
+{
+  "id": "thunder_clap",
+  "name": "Thunder Clap",
+  "description": "Strike the ground, dealing damage and slowing all nearby enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 16,
+  "manaCost": 30,
+  "cooldown": 12,
+  "target": "all_enemies",
+  "effect": {
+    "damage": {
+      "base": 35,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 1.3
+      }
+    },
+    "debuffId": "slowed"
+  }
+}
+

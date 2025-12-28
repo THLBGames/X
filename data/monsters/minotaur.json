@@ -1,0 +1,38 @@
+{
+  "id": "minotaur",
+  "name": "Minotaur",
+  "description": "A powerful beast-man with incredible strength.",
+  "tier": 3,
+  "level": 12,
+  "stats": {
+    "health": 380,
+    "maxHealth": 380,
+    "mana": 30,
+    "maxMana": 30,
+    "attack": 65,
+    "defense": 28,
+    "magicAttack": 10,
+    "magicDefense": 12,
+    "speed": 10,
+    "criticalChance": 12,
+    "criticalDamage": 1.9
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 75,
+      "max": 120
+    },
+    {
+      "itemId": "minotaur_horn",
+      "chance": 0.5
+    }
+  ],
+  "experienceReward": 160,
+  "goldReward": {
+    "min": 75,
+    "max": 120
+  }
+}
+

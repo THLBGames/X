@@ -1,0 +1,26 @@
+{
+  "id": "armor_break",
+  "name": "Armor Break",
+  "description": "Shatter enemy armor, reducing their defense permanently for the battle.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 23,
+  "prerequisites": ["devastate"],
+  "manaCost": 30,
+  "cooldown": 20,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 40,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 1.2
+      }
+    },
+    "debuffId": "armor_broken"
+  }
+}
+

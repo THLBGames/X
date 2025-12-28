@@ -1,0 +1,17 @@
+{
+  "id": "sneak_attack",
+  "name": "Sneak Attack",
+  "description": "Increase critical strike chance and damage.",
+  "type": "passive",
+  "maxLevel": 10,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "passiveBonus": {
+    "combatStatBonus": {
+      "criticalChance": 3,
+      "criticalDamage": 0.1
+    }
+  }
+}
+

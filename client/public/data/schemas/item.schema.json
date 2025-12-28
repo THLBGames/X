@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "description", "type", "rarity", "stackable", "value"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "type": {
+      "enum": ["weapon", "armor", "accessory", "consumable", "material", "quest"]
+    },
+    "rarity": {
+      "enum": ["common", "uncommon", "rare", "epic", "legendary", "mythic"]
+    },
+    "stackable": { "type": "boolean" },
+    "maxStack": { "type": "number" },
+    "value": { "type": "number" },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "number" },
+        "class": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "stats": { "type": "object" }
+      }
+    },
+    "equipmentSlot": {
+      "enum": ["weapon", "offhand", "helmet", "chest", "legs", "boots", "gloves", "ring1", "ring2", "amulet"]
+    },
+    "statBonuses": { "type": "object" },
+    "combatStatBonuses": { "type": "object" },
+    "consumableEffect": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["heal", "mana", "buff", "experience"]
+        },
+        "amount": { "type": "number" },
+        "buffId": { "type": "string" },
+        "duration": { "type": "number" }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+{
+  "id": "frost_nova",
+  "name": "Frost Nova",
+  "description": "Create an explosion of ice that freezes all nearby enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 14,
+  "prerequisites": ["ice_lance"],
+  "manaCost": 45,
+  "cooldown": 12,
+  "target": "all_enemies",
+  "effect": {
+    "damage": {
+      "base": 40,
+      "scaling": {
+        "stat": "intelligence",
+        "multiplier": 1.8
+      }
+    },
+    "debuffId": "frozen"
+  }
+}
+

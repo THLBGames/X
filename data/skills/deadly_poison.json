@@ -1,0 +1,19 @@
+{
+  "id": "deadly_poison",
+  "name": "Deadly Poison",
+  "description": "Apply a lethal poison that deals heavy damage over time.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 14,
+  "prerequisites": ["crippling_poison"],
+  "manaCost": 30,
+  "cooldown": 0,
+  "target": "self",
+  "effect": {
+    "buffId": "deadly_poison_weapon"
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "id": "whirlwind",
+  "name": "Whirlwind",
+  "description": "Spin in a circle, attacking all nearby enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 5,
+  "prerequisites": ["cleave"],
+  "manaCost": 25,
+  "cooldown": 4,
+  "target": "all_enemies",
+  "effect": {
+    "damage": {
+      "base": 40,
+      "scaling": {
+        "stat": "strength",
+        "multiplier": 1.8
+      }
+    }
+  }
+}
+

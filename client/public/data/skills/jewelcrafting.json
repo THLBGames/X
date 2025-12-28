@@ -1,0 +1,106 @@
+{
+  "id": "jewelcrafting",
+  "name": "Jewelcrafting",
+  "description": "Create jewelry and gems",
+  "type": "production",
+  "category": "production",
+  "maxLevel": 99,
+  "experienceFormula": "baseExp * (level * 1.35)",
+  "recipes": [
+    {
+      "recipeId": "copper_ring",
+      "name": "Copper Ring",
+      "level": 10,
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "copper_ring",
+        "quantity": 1
+      },
+      "experienceGain": 35,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "silver_necklace",
+      "name": "Silver Necklace",
+      "level": 35,
+      "ingredients": [
+        {
+          "itemId": "silver_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "chain",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "silver_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "gold_jewelry",
+      "name": "Gold Jewelry Set",
+      "level": 65,
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        },
+        {
+          "itemId": "precious_metal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "gold_jewelry_set",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 10000
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 40,
+      "bonus": {
+        "goldGeneration": 0.1,
+        "luck": 5
+      }
+    },
+    {
+      "level": 80,
+      "bonus": {
+        "goldGeneration": 0.2,
+        "luck": 10
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "goldGeneration": 0.3,
+        "luck": 15
+      }
+    }
+  ]
+}
+

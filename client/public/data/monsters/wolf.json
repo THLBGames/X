@@ -1,0 +1,38 @@
+{
+  "id": "wolf",
+  "name": "Dire Wolf",
+  "description": "A fierce predator with sharp claws and fangs.",
+  "tier": 1,
+  "level": 2,
+  "stats": {
+    "health": 70,
+    "maxHealth": 70,
+    "mana": 0,
+    "maxMana": 0,
+    "attack": 15,
+    "defense": 4,
+    "magicAttack": 0,
+    "magicDefense": 2,
+    "speed": 18,
+    "criticalChance": 8,
+    "criticalDamage": 2.0
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 10,
+      "max": 18
+    },
+    {
+      "itemId": "wolf_pelt",
+      "chance": 0.4
+    }
+  ],
+  "experienceReward": 22,
+  "goldReward": {
+    "min": 10,
+    "max": 18
+  }
+}
+

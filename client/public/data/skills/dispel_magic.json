@@ -1,0 +1,18 @@
+{
+  "id": "dispel_magic",
+  "name": "Dispel Magic",
+  "description": "Remove all magical effects from a target.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["mage"]
+  },
+  "unlockLevel": 23,
+  "manaCost": 25,
+  "cooldown": 12,
+  "target": "enemy",
+  "effect": {
+    "special": "dispel_magic"
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "id": "fan_of_knives",
+  "name": "Fan of Knives",
+  "description": "Throw knives in all directions, hitting all nearby enemies.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 11,
+  "manaCost": 30,
+  "cooldown": 6,
+  "target": "all_enemies",
+  "effect": {
+    "damage": {
+      "base": 35,
+      "scaling": {
+        "stat": "dexterity",
+        "multiplier": 1.5
+      }
+    }
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "id": "expose_armor",
+  "name": "Expose Armor",
+  "description": "Strike at weak points, reducing enemy armor.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 17,
+  "manaCost": 20,
+  "cooldown": 8,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 25,
+      "scaling": {
+        "stat": "dexterity",
+        "multiplier": 1.0
+      }
+    },
+    "debuffId": "armor_exposed"
+  }
+}
+

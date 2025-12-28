@@ -1,0 +1,15 @@
+{
+  "id": "health_potion_large",
+  "name": "Large Health Potion",
+  "description": "Restores 300 health.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 50,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 300
+  }
+}
+

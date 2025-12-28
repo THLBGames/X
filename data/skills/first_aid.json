@@ -1,0 +1,21 @@
+{
+  "id": "first_aid",
+  "name": "First Aid",
+  "description": "Quickly bandage your wounds, restoring a moderate amount of health.",
+  "type": "active",
+  "maxLevel": 5,
+  "unlockLevel": 1,
+  "manaCost": 0,
+  "cooldown": 30,
+  "target": "self",
+  "effect": {
+    "heal": {
+      "base": 50,
+      "scaling": {
+        "stat": "vitality",
+        "multiplier": 1.5
+      }
+    }
+  }
+}
+

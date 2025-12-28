@@ -1,0 +1,18 @@
+{
+  "id": "smoke_bomb",
+  "name": "Smoke Bomb",
+  "description": "Throw a smoke bomb, blinding all enemies and allowing escape.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 10,
+  "manaCost": 30,
+  "cooldown": 25,
+  "target": "all_enemies",
+  "effect": {
+    "debuffId": "blinded"
+  }
+}
+

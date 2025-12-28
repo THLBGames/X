@@ -1,0 +1,42 @@
+{
+  "id": "balrog",
+  "name": "Balrog",
+  "description": "A demon of fire and shadow, one of the most powerful creatures.",
+  "tier": 3,
+  "level": 25,
+  "stats": {
+    "health": 600,
+    "maxHealth": 600,
+    "mana": 150,
+    "maxMana": 150,
+    "attack": 85,
+    "defense": 35,
+    "magicAttack": 70,
+    "magicDefense": 40,
+    "speed": 14,
+    "criticalChance": 12,
+    "criticalDamage": 2.2
+  },
+  "lootTable": [
+    {
+      "itemId": "gold",
+      "chance": 1.0,
+      "min": 200,
+      "max": 300
+    },
+    {
+      "itemId": "balrog_horn",
+      "chance": 0.6
+    },
+    {
+      "itemId": "demon_essence",
+      "chance": 0.5
+    }
+  ],
+  "experienceReward": 500,
+  "goldReward": {
+    "min": 200,
+    "max": 300
+  }
+}
+

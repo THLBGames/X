@@ -1,0 +1,25 @@
+{
+  "id": "kidney_shot",
+  "name": "Kidney Shot",
+  "description": "Strike a vital point, stunning the enemy.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 15,
+  "manaCost": 25,
+  "cooldown": 20,
+  "target": "enemy",
+  "effect": {
+    "damage": {
+      "base": 30,
+      "scaling": {
+        "stat": "dexterity",
+        "multiplier": 1.2
+      }
+    },
+    "debuffId": "stunned"
+  }
+}
+

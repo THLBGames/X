@@ -1,0 +1,18 @@
+{
+  "id": "taunt",
+  "name": "Taunt",
+  "description": "Draw enemy attention to yourself.",
+  "type": "active",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["warrior"],
+    "level": 3
+  },
+  "manaCost": 10,
+  "cooldown": 8,
+  "target": "all_enemies",
+  "effect": {
+    "debuffId": "taunted"
+  }
+}
+

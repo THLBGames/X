@@ -1,0 +1,16 @@
+{
+  "id": "second_wind",
+  "name": "Second Wind",
+  "description": "Recover health when your health drops below 30%.",
+  "type": "passive",
+  "maxLevel": 3,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 8,
+  "prerequisites": ["defensive_stance"],
+  "passiveBonus": {
+    "special": "second_wind"
+  }
+}
+

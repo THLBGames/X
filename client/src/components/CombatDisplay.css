@@ -1,0 +1,313 @@
+.combat-display {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.combat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 6px;
+}
+
+.combat-display h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.stop-combat-button {
+  padding: 8px 16px;
+  background: #4a1a1a;
+  border: 1px solid #ff4444;
+  border-radius: 6px;
+  color: #ff6666;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.stop-combat-button:hover {
+  background: #5a2a2a;
+  border-color: #ff6666;
+}
+
+.combat-active {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.combat-status {
+  background: #333;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-label {
+  color: #888;
+  font-weight: bold;
+}
+
+.status-value {
+  color: #fff;
+}
+
+.combat-ongoing {
+  color: #4a9eff;
+}
+
+.character-combat-info {
+  background: #333;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.exp-bar-container {
+  margin-top: 10px;
+}
+
+.exp-bar-label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.exp-bar {
+  width: 100%;
+  height: 20px;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.exp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff, #0066cc);
+  transition: width 0.3s ease;
+}
+
+.combat-stats {
+  background: #333;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.combat-stats h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 8px;
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a9eff;
+}
+
+.last-combat-result {
+  background: #1a3a1a;
+  border: 1px solid #4a9e4a;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.result-header {
+  font-weight: bold;
+  color: #4a9e4a;
+  margin-bottom: 8px;
+}
+
+.rewards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.combat-idle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #888;
+}
+
+.idle-message {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.idle-icon {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.idle-hint {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.combat-error {
+  color: #ff6666;
+  text-align: center;
+  padding: 20px;
+}
+
+.combat-loading {
+  color: #888;
+  text-align: center;
+  padding: 40px;
+  font-style: italic;
+}
+
+.combat-skills {
+  background: #333;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.combat-skills h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.level-up-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #4a9eff 0%, #0066cc 100%);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-out;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .combat-display {
+    padding: 12px;
+  }
+
+  .combat-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .level-up-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .combat-display {
+    padding: 10px;
+  }
+
+  .combat-display h2 {
+    font-size: 1.1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stat-item {
+    padding: 10px;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .idle-icon {
+    font-size: 3rem;
+  }
+
+  .level-up-notification {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
+

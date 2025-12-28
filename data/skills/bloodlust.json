@@ -1,0 +1,16 @@
+{
+  "id": "bloodlust",
+  "name": "Bloodlust",
+  "description": "Each kill increases your attack speed and damage temporarily.",
+  "type": "passive",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["warrior"]
+  },
+  "unlockLevel": 20,
+  "prerequisites": ["berserker_rage"],
+  "passiveBonus": {
+    "special": "bloodlust"
+  }
+}
+

@@ -1,0 +1,49 @@
+.damage-number {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 1000;
+  animation: floatUp 1.5s ease-out forwards;
+  white-space: nowrap;
+}
+
+.damage-number.critical {
+  color: #ffd700;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.damage-number.healing {
+  color: #4ecdc4;
+  font-size: 1.3rem;
+}
+
+.damage-number.fade-out {
+  animation: floatUpFadeOut 1.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes floatUpFadeOut {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(1.2);
+    opacity: 0;
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "id": "evasion",
+  "name": "Evasion",
+  "description": "Dodge all incoming attacks for a short duration.",
+  "type": "active",
+  "maxLevel": 5,
+  "requirements": {
+    "class": ["rogue"]
+  },
+  "unlockLevel": 8,
+  "manaCost": 35,
+  "cooldown": 30,
+  "target": "self",
+  "effect": {
+    "buffId": "evasion"
+  }
+}
+

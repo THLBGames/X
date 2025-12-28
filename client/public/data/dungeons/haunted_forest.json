@@ -1,0 +1,39 @@
+{
+  "id": "haunted_forest",
+  "name": "Haunted Forest",
+  "description": "A dark forest filled with undead creatures.",
+  "tier": 2,
+  "requiredLevel": 5,
+  "requiredDungeonId": "orc_encampment",
+  "monsterPools": [
+    {
+      "monsterId": "wraith",
+      "weight": 30,
+      "minLevel": 6,
+      "maxLevel": 10
+    },
+    {
+      "monsterId": "ghost",
+      "weight": 40,
+      "minLevel": 6,
+      "maxLevel": 9
+    },
+    {
+      "monsterId": "skeleton",
+      "weight": 20,
+      "minLevel": 5,
+      "maxLevel": 8
+    },
+    {
+      "monsterId": "zombie",
+      "weight": 10,
+      "minLevel": 5,
+      "maxLevel": 8
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.5,
+    "goldBonus": 1.3
+  }
+}
+

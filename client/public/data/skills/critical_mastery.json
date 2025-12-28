@@ -1,0 +1,16 @@
+{
+  "id": "critical_mastery",
+  "name": "Critical Mastery",
+  "description": "Increases critical strike damage and chance.",
+  "type": "passive",
+  "maxLevel": 5,
+  "unlockLevel": 10,
+  "prerequisites": ["lucky_strike"],
+  "passiveBonus": {
+    "combatStatBonus": {
+      "criticalChance": 2,
+      "criticalDamage": 0.2
+    }
+  }
+}
+

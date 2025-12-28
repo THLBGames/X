@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "description", "baseStats", "statGrowth", "availableSkills"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the class"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the class"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the class"
+    },
+    "baseStats": {
+      "type": "object",
+      "required": ["strength", "dexterity", "intelligence", "vitality", "wisdom", "luck"],
+      "properties": {
+        "strength": { "type": "number" },
+        "dexterity": { "type": "number" },
+        "intelligence": { "type": "number" },
+        "vitality": { "type": "number" },
+        "wisdom": { "type": "number" },
+        "luck": { "type": "number" }
+      }
+    },
+    "statGrowth": {
+      "type": "object",
+      "required": ["strength", "dexterity", "intelligence", "vitality", "wisdom", "luck"],
+      "properties": {
+        "strength": { "type": "number" },
+        "dexterity": { "type": "number" },
+        "intelligence": { "type": "number" },
+        "vitality": { "type": "number" },
+        "wisdom": { "type": "number" },
+        "luck": { "type": "number" }
+      }
+    },
+    "availableSkills": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "equipmentRestrictions": {
+      "type": "object",
+      "properties": {
+        "weaponTypes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "armorTypes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
