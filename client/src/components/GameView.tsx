@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { useGameLoop } from '../hooks/useGameLoop';
 import { useIdleSkills } from '../hooks/useIdleSkills';
+import { audioManager } from '../systems/audio/AudioManager';
+import TooltipWrapper from './TooltipWrapper';
 import DungeonSelector from './DungeonSelector';
 import CombatDisplay from './CombatDisplay';
 import InventoryPanel from './InventoryPanel';
@@ -11,16 +13,18 @@ import QuestPanel from './QuestPanel';
 import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
+import SettingsPanel from './SettingsPanel';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
 export default function GameView() {
   const character = useGameState((state) => state.character);
   const isCombatActive = useGameState((state) => state.isCombatActive);
-  const activeAction = useGameState((state) => state.activeAction);
+  const settings = useGameState((state) => state.settings);
   const [activeRightPanel, setActiveRightPanel] = useState<
     'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics'
   >('character');
+  const [showSettings, setShowSettings] = useState(false);
 
   // Initialize game loop
   useGameLoop();
@@ -29,6 +33,20 @@ export default function GameView() {
   // This ensures skills automatically resume and continue running even when Skills panel isn't open
   // Skills will continue executing in the background regardless of which tab is active
   useIdleSkills();
+
+  // Play background music when character exists
+  useEffect(() => {
+    if (character && settings.musicEnabled) {
+      // Play background music (placeholder path - replace with actual music file)
+      audioManager.playMusic('/audio/music/background.mp3', true);
+    } else {
+      audioManager.stopMusic();
+    }
+
+    return () => {
+      // Don't stop music on unmount, let it continue playing
+    };
+  }, [character, settings.musicEnabled]);
 
   if (!character) {
     return <CharacterCreation />;
@@ -48,48 +66,67 @@ export default function GameView() {
       </div>
       <div className="game-view-right">
         <div className="right-panel-tabs">
-          <button
-            className={`panel-tab ${activeRightPanel === 'character' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('character')}
-          >
-            Character
-          </button>
-          <button
-            className={`panel-tab ${activeRightPanel === 'equipment' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('equipment')}
-          >
-            Equipment
-          </button>
-          <button
-            className={`panel-tab ${activeRightPanel === 'inventory' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('inventory')}
-          >
-            Inventory
-          </button>
-          <button
-            className={`panel-tab ${activeRightPanel === 'skills' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('skills')}
-          >
-            Skills
-          </button>
-          <button
-            className={`panel-tab ${activeRightPanel === 'shop' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('shop')}
-          >
-            Shop
-          </button>
-          <button
-            className={`panel-tab ${activeRightPanel === 'quests' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('quests')}
-          >
-            Quests
-          </button>
-          <button
-            className={`panel-tab ${activeRightPanel === 'statistics' ? 'active' : ''}`}
-            onClick={() => setActiveRightPanel('statistics')}
-          >
-            Statistics
-          </button>
+          <TooltipWrapper content="View your character stats and information">
+            <button
+              className={`panel-tab ${activeRightPanel === 'character' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('character')}
+            >
+              Character
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Manage your equipped items">
+            <button
+              className={`panel-tab ${activeRightPanel === 'equipment' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('equipment')}
+            >
+              Equipment
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="View and manage your inventory">
+            <button
+              className={`panel-tab ${activeRightPanel === 'inventory' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('inventory')}
+            >
+              Inventory
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Train idle skills and view skill details">
+            <button
+              className={`panel-tab ${activeRightPanel === 'skills' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('skills')}
+            >
+              Skills
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Buy items, rent mercenaries, and purchase upgrades">
+            <button
+              className={`panel-tab ${activeRightPanel === 'shop' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('shop')}
+            >
+              Shop
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="View and track your quest progress">
+            <button
+              className={`panel-tab ${activeRightPanel === 'quests' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('quests')}
+            >
+              Quests
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="View statistics and achievements">
+            <button
+              className={`panel-tab ${activeRightPanel === 'statistics' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('statistics')}
+            >
+              Statistics
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Game settings and preferences">
+            <button className="panel-tab" onClick={() => setShowSettings(true)}>
+              Settings
+            </button>
+          </TooltipWrapper>
         </div>
         <div className="right-panel-content">
           {activeRightPanel === 'character' && <CharacterPanel />}
@@ -106,6 +143,7 @@ export default function GameView() {
           )}
         </div>
       </div>
+      <SettingsPanel isOpen={showSettings} onClose={() => setShowSettings(false)} />
     </div>
   );
 }

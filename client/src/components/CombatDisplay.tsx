@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
+import { audioManager } from '../systems/audio/AudioManager';
 import CombatArena from './CombatArena';
 import CombatSkillBar from './CombatSkillBar';
 import './CombatDisplay.css';
@@ -18,7 +19,8 @@ export default function CombatDisplay() {
   const stopCombat = useGameState((state) => state.stopCombat);
   const currentCombatState = useGameState((state) => state.currentCombatState);
   const queueSkill = useGameState((state) => state.queueSkill);
-  
+  const settings = useGameState((state) => state.settings);
+
   const [combatStats, setCombatStats] = useState<CombatStats>({
     combatsCompleted: 0,
     totalExperience: 0,
@@ -44,15 +46,31 @@ export default function CombatDisplay() {
   useEffect(() => {
     if (character && character.level > previousLevelRef.current) {
       const levelsGained = character.level - previousLevelRef.current;
-      setLevelUpMessage(`Level Up! You are now level ${character.level}!`);
+      const message = `Level Up! You are now level ${character.level}!`;
+      setLevelUpMessage(message);
       previousLevelRef.current = character.level;
-      
+
+      // Play level up sound
+      audioManager.playSound('/audio/sfx/level_up.mp3', 0.8);
+
+      // Show notification if enabled
+      if (settings.showNotifications && typeof window !== 'undefined') {
+        const event = new CustomEvent('showNotification', {
+          detail: {
+            message,
+            type: 'level-up',
+            duration: 5000,
+          },
+        });
+        window.dispatchEvent(event);
+      }
+
       // Clear message after 5 seconds
       setTimeout(() => {
         setLevelUpMessage(null);
       }, 5000);
     }
-  }, [character?.level]);
+  }, [character?.level, settings.showNotifications]);
 
   useEffect(() => {
     if (!isCombatActive) {
@@ -89,7 +107,7 @@ export default function CombatDisplay() {
           {currentCombatState ? (
             <>
               <CombatArena combatState={currentCombatState} />
-              
+
               <CombatSkillBar onSkillUse={handleSkillUse} />
 
               {combatStats.combatsCompleted > 0 && (
@@ -128,10 +146,8 @@ export default function CombatDisplay() {
         </div>
       )}
 
-      {levelUpMessage && (
-        <div className="level-up-notification">
-          {levelUpMessage}
-        </div>
+      {levelUpMessage && settings.showNotifications && (
+        <div className="level-up-notification">{levelUpMessage}</div>
       )}
     </div>
   );

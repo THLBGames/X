@@ -10,6 +10,8 @@ import type {
 import { getDataLoader } from '@/data';
 import { DungeonManager } from '../dungeon/DungeonManager';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
+import { SkillManager } from '../skills/SkillManager';
+import { audioManager } from '../audio/AudioManager';
 
 export interface CombatOptions {
   autoCombat?: boolean;
@@ -23,6 +25,7 @@ export class CombatEngine {
   private startTime: number = 0;
   private options: CombatOptions;
   private dungeonId?: string; // Store dungeon ID for chest drop logic
+  private character: Character | null = null; // Store character reference for skill validation
 
   constructor(options: CombatOptions = {}) {
     this.options = {
@@ -35,8 +38,9 @@ export class CombatEngine {
    * Initialize combat with player character and monsters
    */
   initialize(character: Character, monsters: Monster[], dungeonId?: string): void {
+    this.character = character;
     this.dungeonId = dungeonId;
-    
+
     const player: CombatParticipant = {
       id: 'player',
       name: character.name,
@@ -50,16 +54,18 @@ export class CombatEngine {
 
     // Add combat mercenaries as participants
     const combatMercenaries = MercenaryManager.getCombatMercenaries(character);
-    const mercenaryParticipants: CombatParticipant[] = combatMercenaries.map((mercenary, index) => ({
-      id: `mercenary_${mercenary.id}_${index}`,
-      name: mercenary.name,
-      isPlayer: true, // Mercenaries are on player's side
-      stats: { ...mercenary.stats! },
-      currentHealth: mercenary.stats!.health,
-      currentMana: mercenary.stats!.mana,
-      statusEffects: [],
-      isAlive: true,
-    }));
+    const mercenaryParticipants: CombatParticipant[] = combatMercenaries.map(
+      (mercenary, index) => ({
+        id: `mercenary_${mercenary.id}_${index}`,
+        name: mercenary.name,
+        isPlayer: true, // Mercenaries are on player's side
+        stats: { ...mercenary.stats! },
+        currentHealth: mercenary.stats!.health,
+        currentMana: mercenary.stats!.mana,
+        statusEffects: [],
+        isAlive: true,
+      })
+    );
 
     const monsterParticipants: CombatParticipant[] = monsters.map((monster, index) => ({
       id: `${monster.id}_${index}`,
@@ -119,7 +125,146 @@ export class CombatEngine {
   /**
    * Execute player action
    */
-  private executePlayerAction(actor: CombatParticipant): CombatAction {
+  private executePlayerAction(
+    actor: CombatParticipant,
+    queuedSkillId?: string | null
+  ): CombatAction {
+    const dataLoader = getDataLoader();
+
+    // Try to use skill if one is queued
+    if (queuedSkillId && this.character) {
+      const skill = dataLoader.getSkill(queuedSkillId);
+      const learnedSkill = this.character.learnedSkills.find((ls) => ls.skillId === queuedSkillId);
+
+      // Validate skill
+      if (skill && learnedSkill && learnedSkill.level > 0) {
+        // Check if skill is active type
+        if (skill.type === 'active' && skill.effect) {
+          // Check mana cost
+          const manaCost = skill.manaCost || 0;
+          if (actor.currentMana >= manaCost) {
+            // Deduct mana
+            actor.currentMana = Math.max(0, actor.currentMana - manaCost);
+
+            // Play skill cast sound
+            audioManager.playSound('/audio/sfx/skill_cast.mp3', 0.6);
+
+            // Calculate skill effect
+            const skillEffect = SkillManager.calculateSkillEffect(
+              skill,
+              learnedSkill.level,
+              this.character.currentStats
+            );
+
+            // Apply skill effects based on target type
+            const targetType = skill.target || 'enemy';
+            let action: CombatAction = {
+              actorId: actor.id,
+              type: 'skill',
+              skillId: queuedSkillId,
+              timestamp: Date.now(),
+            };
+
+            if (targetType === 'enemy' || targetType === 'all_enemies') {
+              const targets =
+                targetType === 'all_enemies'
+                  ? this.participants.filter((p) => !p.isPlayer && p.isAlive)
+                  : ([this.participants.find((p) => !p.isPlayer && p.isAlive)].filter(
+                      Boolean
+                    ) as CombatParticipant[]);
+
+              if (targets.length === 0) {
+                // No valid target, fall back to basic attack
+                return this.executeBasicAttack(actor);
+              }
+
+              if (skillEffect.damage) {
+                // Apply damage to target(s)
+                let totalDamage = 0;
+                for (const target of targets) {
+                  if (target) {
+                    const damage = skillEffect.damage!;
+                    this.applyDamage(target, damage);
+                    totalDamage += damage;
+                  }
+                }
+                action.damage = totalDamage;
+                action.targetId = targets[0]?.id;
+              } else {
+                // Skill has no damage effect but targets enemies - still execute skill (might have status effects)
+                action.targetId = targets[0]?.id;
+              }
+            } else if (targetType === 'self' || targetType === 'all_allies') {
+              const targets =
+                targetType === 'all_allies'
+                  ? this.participants.filter((p) => p.isPlayer && p.isAlive)
+                  : [actor];
+
+              if (skillEffect.heal) {
+                // Apply healing to target(s)
+                let totalHeal = 0;
+                for (const target of targets) {
+                  if (target) {
+                    const heal = skillEffect.heal!;
+                    target.currentHealth = Math.min(
+                      target.currentHealth + heal,
+                      target.stats.maxHealth
+                    );
+                    totalHeal += heal;
+                  }
+                }
+                action.heal = totalHeal;
+                action.targetId = actor.id;
+              } else {
+                // Skill has no heal effect but targets self/allies - still execute skill (might have status effects)
+                action.targetId = actor.id;
+              }
+            } else if (targetType === 'ally') {
+              // Find first alive ally (mercenary)
+              const ally = this.participants.find(
+                (p) => p.isPlayer && p.id !== 'player' && p.isAlive
+              );
+              if (!ally) {
+                // No valid ally, fall back to basic attack
+                return this.executeBasicAttack(actor);
+              }
+
+              if (skillEffect.heal) {
+                const heal = skillEffect.heal;
+                ally.currentHealth = Math.min(ally.currentHealth + heal, ally.stats.maxHealth);
+                action.heal = heal;
+                action.targetId = ally.id;
+              } else {
+                // Skill has no heal effect but targets ally - still execute skill (might have status effects)
+                action.targetId = ally.id;
+              }
+            }
+
+            // Apply status effects if skill has them
+            if (skill.effect.buffId || skill.effect.debuffId) {
+              action.effects = [];
+              if (skill.effect.buffId) {
+                action.effects.push(skill.effect.buffId);
+              }
+              if (skill.effect.debuffId) {
+                action.effects.push(skill.effect.debuffId);
+              }
+            }
+
+            return action;
+          }
+        }
+      }
+    }
+
+    // Fall back to basic attack if no skill or skill invalid
+    return this.executeBasicAttack(actor);
+  }
+
+  /**
+   * Execute basic attack (fallback when no skill is used)
+   */
+  private executeBasicAttack(actor: CombatParticipant): CombatAction {
     const target = this.participants.find((p) => !p.isPlayer && p.isAlive);
 
     if (!target) {
@@ -131,8 +276,15 @@ export class CombatEngine {
       };
     }
 
-    // For now, basic attack (skill system will be integrated later)
     const damage = this.calculateDamage(actor, target);
+
+    // Play attack sound
+    if (actor.isPlayer) {
+      audioManager.playSound('/audio/sfx/player_attack.mp3', 0.5);
+    } else {
+      audioManager.playSound('/audio/sfx/monster_attack.mp3', 0.5);
+    }
+
     this.applyDamage(target, damage);
 
     return {
@@ -179,9 +331,7 @@ export class CombatEngine {
     // Use monster abilities if available
     if (monsterData.abilities && monsterData.abilities.length > 0) {
       // Select random ability based on chance
-      const abilities = monsterData.abilities.filter(
-        (ability) => Math.random() <= ability.chance
-      );
+      const abilities = monsterData.abilities.filter((ability) => Math.random() <= ability.chance);
 
       if (abilities.length > 0) {
         const ability = abilities[Math.floor(Math.random() * abilities.length)];
@@ -255,6 +405,11 @@ export class CombatEngine {
     participant.currentHealth = Math.max(0, participant.currentHealth - damage);
     if (participant.currentHealth <= 0) {
       participant.isAlive = false;
+      // Play death sound
+      audioManager.playSound('/audio/sfx/death.mp3', 0.7);
+    } else {
+      // Play hit sound
+      audioManager.playSound('/audio/sfx/hit.mp3', 0.5);
     }
   }
 
@@ -316,7 +471,7 @@ export class CombatEngine {
     if (result === 'victory') {
       const dataLoader = getDataLoader();
       const defeatedMonsters = this.participants.filter((p) => !p.isPlayer && !p.isAlive);
-      
+
       let totalExperience = 0;
       let totalGold = 0;
       const allItems: Array<{ itemId: string; quantity: number }> = [];
@@ -327,10 +482,10 @@ export class CombatEngine {
         // Extract base monster ID (remove index suffix)
         const baseMonsterId = monsterParticipant.id.split('_').slice(0, -1).join('_');
         const monsterData = dataLoader.getMonster(baseMonsterId);
-        
+
         if (monsterData) {
           totalExperience += monsterData.experienceReward;
-          
+
           const goldAmount =
             monsterData.goldReward.min +
             Math.floor(
@@ -339,9 +494,10 @@ export class CombatEngine {
           totalGold += goldAmount;
 
           // Generate loot (use boss loot table if it's a boss)
-          const lootTable = monsterData.isBoss && monsterData.bossLootTable
-            ? monsterData.bossLootTable
-            : monsterData.lootTable;
+          const lootTable =
+            monsterData.isBoss && monsterData.bossLootTable
+              ? monsterData.bossLootTable
+              : monsterData.lootTable;
 
           const loot = DungeonManager.generateLoot(lootTable);
           allItems.push(...loot);
@@ -366,7 +522,7 @@ export class CombatEngine {
             // Normal monsters - 2% chance
             shouldDropChest = Math.random() <= 0.02;
           }
-          
+
           if (shouldDropChest) {
             allChests.push({ itemId: 'treasure_chest', quantity: 1 });
           }
@@ -379,6 +535,13 @@ export class CombatEngine {
         items: allItems,
         chests: allChests.length > 0 ? allChests : undefined,
       };
+    }
+
+    // Play victory or defeat sound
+    if (result === 'victory') {
+      audioManager.playSound('/audio/sfx/victory.mp3', 0.8);
+    } else if (result === 'defeat') {
+      audioManager.playSound('/audio/sfx/defeat.mp3', 0.8);
     }
 
     return {
@@ -453,4 +616,3 @@ export class CombatEngine {
     return Math.floor(this.actions.length / this.participants.length);
   }
 }
-

@@ -4,6 +4,8 @@ import { CharacterManager } from '../systems/character/CharacterManager';
 import { InventoryManager } from '../systems/inventory';
 import { ShopManager } from '../systems/shop';
 import { getDataLoader } from '../data';
+import { audioManager } from '../systems/audio/AudioManager';
+import TooltipWrapper from './TooltipWrapper';
 import ItemContextMenu from './ItemContextMenu';
 import type { EquipmentSlot, Item } from '@idle-rpg/shared';
 import './EquipmentPanel.css';
@@ -71,6 +73,9 @@ export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
       const updatedCharacter = CharacterManager.unequipItem(character, slot);
       setCharacter(updatedCharacter);
 
+      // Play unequip sound
+      audioManager.playSound('/audio/sfx/unequip.mp3', 0.5);
+
       // Add item back to inventory
       addItem(itemId, 1);
 
@@ -137,6 +142,9 @@ export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
       const updatedCharacter = CharacterManager.equipItem(character, itemId);
       setCharacter(updatedCharacter);
 
+      // Play equip sound
+      audioManager.playSound('/audio/sfx/equip.mp3', 0.6);
+
       // Remove item from inventory
       const newInventory = InventoryManager.removeItem(inventory, itemId, 1);
       setInventory(newInventory);
@@ -197,28 +205,31 @@ export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
                 {icon && <div className="slot-icon">{icon}</div>}
                 <div className="slot-label">{label}</div>
                 {equippedItem ? (
-                  <div
-                    className="equipped-item"
-                    onContextMenu={(e) => handleContextMenu(e, equippedItem, slot)}
+                  <TooltipWrapper
+                    content={`${equippedItem.name}\n${equippedItem.description || 'No description'}\n${equippedItem.type ? `Type: ${equippedItem.type}` : ''}${equippedItem.rarity ? `\nRarity: ${equippedItem.rarity}` : ''}`}
                   >
-                    <div className="item-name">{equippedItem.name}</div>
-                    {equippedItem.rarity && (
-                      <div className={`item-rarity ${equippedItem.rarity}`}>
-                        {equippedItem.rarity}
-                      </div>
-                    )}
-                  </div>
+                    <div
+                      className="equipped-item"
+                      onContextMenu={(e) => handleContextMenu(e, equippedItem, slot)}
+                    >
+                      <div className="item-name">{equippedItem.name}</div>
+                      {equippedItem.rarity && (
+                        <div className={`item-rarity ${equippedItem.rarity}`}>
+                          {equippedItem.rarity}
+                        </div>
+                      )}
+                    </div>
+                  </TooltipWrapper>
                 ) : (
-                  <div className="empty-slot">Empty</div>
+                  <TooltipWrapper content={`${label} slot - Drag an item here to equip`}>
+                    <div className="empty-slot">Empty</div>
+                  </TooltipWrapper>
                 )}
               </div>
               {isSelected && (
                 <div className="slot-actions">
                   {equippedItem ? (
-                    <button
-                      className="unequip-button"
-                      onClick={() => handleUnequip(slot)}
-                    >
+                    <button className="unequip-button" onClick={() => handleUnequip(slot)}>
                       Unequip
                     </button>
                   ) : (
@@ -237,9 +248,7 @@ export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
                             >
                               <div className="item-name">{item.name}</div>
                               {inventoryItem && inventoryItem.quantity > 1 && (
-                                <div className="item-quantity">
-                                  x{inventoryItem.quantity}
-                                </div>
+                                <div className="item-quantity">x{inventoryItem.quantity}</div>
                               )}
                             </div>
                           );
@@ -272,4 +281,3 @@ export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
     </div>
   );
 }
-

@@ -4,9 +4,12 @@ import { getDataLoader } from './data';
 import { getSaveManager } from './systems/save';
 import { IdleProgress } from './systems/idle';
 import { InventoryManager } from './systems/inventory';
+import { StatisticsManager } from './systems/statistics/StatisticsManager';
+import { audioManager } from './systems/audio/AudioManager';
 import GameView from './components/GameView';
 import DebugPanel from './components/DebugPanel';
 import OfflineProgressModal from './components/OfflineProgressModal';
+import NotificationManager, { showNotification } from './components/NotificationManager';
 
 // Declare global window interface for debug panel
 declare global {
@@ -88,7 +91,8 @@ function App() {
               offlineTimeMinutes: offlineTime / 60000,
               activeAction,
             });
-            if (offlineTime > 60000) { // Only if offline for more than 1 minute
+            if (offlineTime > 60000) {
+              // Only if offline for more than 1 minute
               try {
                 const result = IdleProgress.processOfflineActionProgress(
                   saveData.character,
@@ -104,7 +108,11 @@ function App() {
 
                 // Add gold to inventory
                 if (result.progress.gold > 0) {
-                  saveData.inventory = InventoryManager.addItem(saveData.inventory, 'gold', result.progress.gold);
+                  saveData.inventory = InventoryManager.addItem(
+                    saveData.inventory,
+                    'gold',
+                    result.progress.gold
+                  );
                 }
 
                 // Add items to inventory (load items on-demand if needed)
@@ -116,7 +124,11 @@ function App() {
                       // Try loading it on-demand
                       await dataLoader.loadItem(item.itemId);
                     }
-                    saveData.inventory = InventoryManager.addItem(saveData.inventory, item.itemId, item.quantity);
+                    saveData.inventory = InventoryManager.addItem(
+                      saveData.inventory,
+                      item.itemId,
+                      item.quantity
+                    );
                   } catch (error) {
                     console.warn(`Failed to add item ${item.itemId} to inventory:`, error);
                     // Continue with other items even if one fails
@@ -127,7 +139,7 @@ function App() {
                 if (result.progress.died) {
                   saveData.activeAction = null;
                 }
-                
+
                 // Show offline progress modal (always show, even with 0 progress)
                 const hoursOffline = offlineTime / (1000 * 60 * 60);
                 setOfflineProgress({
@@ -147,7 +159,7 @@ function App() {
           setDungeonProgress(saveData.dungeonProgress);
           updateSettings(saveData.settings);
           initialize(saveData);
-          
+
           // Note: Skill resumption is handled by useIdleSkills hook when SkillDetailView mounts
           // This ensures skills resume when the player opens the skills panel
         } else {
@@ -179,11 +191,65 @@ function App() {
     };
   }, []);
 
+  const settings = useGameState((state) => state.settings);
+
+  // Initialize audio manager
+  useEffect(() => {
+    audioManager.initialize();
+    return () => {
+      audioManager.cleanup();
+    };
+  }, []);
+
+  // Update audio settings when they change
+  useEffect(() => {
+    audioManager.updateSettings(settings);
+  }, [settings.soundEnabled, settings.musicEnabled, settings.soundVolume, settings.musicVolume]);
+
+  // Apply theme to root element (must be before early returns)
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove('theme-dark', 'theme-light', 'theme-auto');
+
+    if (settings.theme === 'auto') {
+      root.classList.add('theme-auto');
+      // Check system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.classList.add(prefersDark ? 'theme-dark' : 'theme-light');
+    } else {
+      root.classList.add(`theme-${settings.theme || 'dark'}`);
+    }
+  }, [settings.theme]);
+
+  // Apply font size to root element (must be before early returns)
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove('font-size-small', 'font-size-medium', 'font-size-large');
+    root.classList.add(`font-size-${settings.fontSize || 'medium'}`);
+  }, [settings.fontSize]);
+
+  // Apply animations setting (must be before early returns)
+  useEffect(() => {
+    const root = document.documentElement;
+    if (settings.animationsEnabled === false) {
+      root.classList.add('no-animations');
+    } else {
+      root.classList.remove('no-animations');
+    }
+  }, [settings.animationsEnabled]);
+
   // Save periodically and on close
   useEffect(() => {
     if (!character) return;
 
-    // Periodic save every 30 seconds
+    const autoSaveInterval = settings.autoSaveInterval || 30;
+
+    // Skip if auto-save is disabled
+    if (autoSaveInterval === 0) {
+      return;
+    }
+
+    // Periodic save based on settings
     const periodicSave = setInterval(async () => {
       try {
         const saveManager = getSaveManager();
@@ -206,7 +272,7 @@ function App() {
       } catch (error) {
         console.error('Failed to save:', error);
       }
-    }, 30000); // Save every 30 seconds
+    }, autoSaveInterval * 1000); // Use setting value in seconds
 
     // Save on close
     const handleBeforeUnload = async () => {
@@ -226,7 +292,6 @@ function App() {
             maxOfflineHours: currentState.maxOfflineHours ?? 8,
           };
           await saveManager.save(saveData);
-          console.log('Save on close completed, activeAction:', saveData.activeAction, 'lastOfflineTime:', saveData.lastOfflineTime);
         }
       } catch (error) {
         console.error('Failed to save on exit:', error);
@@ -240,12 +305,31 @@ function App() {
       // Try to save one more time on cleanup
       handleBeforeUnload();
     };
-  }, [character]);
+  }, [character, settings.autoSaveInterval]);
+
+  // Listen for notification events (must be before early returns)
+  useEffect(() => {
+    const handleNotification = (event: CustomEvent) => {
+      showNotification(event.detail.message, event.detail.type, event.detail.duration);
+    };
+
+    window.addEventListener('showNotification' as any, handleNotification as EventListener);
+    return () => {
+      window.removeEventListener('showNotification' as any, handleNotification as EventListener);
+    };
+  }, []);
 
   if (isLoading) {
     return (
       <div className="app">
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+          }}
+        >
           <div>Loading...</div>
         </div>
       </div>
@@ -255,6 +339,7 @@ function App() {
   return (
     <div className="app">
       <GameView />
+      <NotificationManager />
       <DebugPanel isOpen={showDebugPanel} onClose={() => setShowDebugPanel(false)} />
       {offlineProgress && (
         <OfflineProgressModal
@@ -270,4 +355,3 @@ function App() {
 }
 
 export default App;
-

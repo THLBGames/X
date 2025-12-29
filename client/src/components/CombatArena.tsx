@@ -40,8 +40,15 @@ export default function CombatArena({
     return { x: relativeX, y: relativeY };
   }, []);
 
+  const settings = useGameState((state) => state.settings);
+
   // Watch for new combat actions to trigger damage numbers
   useEffect(() => {
+    // Check if damage numbers are enabled
+    if (!settings.showDamageNumbers) {
+      return;
+    }
+
     const lastAction = combatState.recentActions[combatState.recentActions.length - 1];
     if (!lastAction || !lastAction.damage) return;
 
@@ -60,7 +67,7 @@ export default function CombatArena({
       x: position.x,
       y: position.y,
     });
-  }, [combatState.recentActions, addDamageNumber, getDamagePosition]);
+  }, [combatState.recentActions, addDamageNumber, getDamagePosition, settings.showDamageNumbers]);
 
   const isPlayerTurn = combatState.currentActor === 'player';
 
@@ -212,17 +219,18 @@ export default function CombatArena({
       </div>
 
       {/* Damage Numbers */}
-      {damageNumbers.map((damage) => (
-        <DamageNumber
-          key={damage.id}
-          value={damage.value}
-          isCritical={damage.isCritical}
-          isHealing={damage.isHealing}
-          x={damage.x}
-          y={damage.y}
-          onComplete={() => removeDamageNumber(damage.id)}
-        />
-      ))}
+      {settings.showDamageNumbers &&
+        damageNumbers.map((damage) => (
+          <DamageNumber
+            key={damage.id}
+            value={damage.value}
+            isCritical={damage.isCritical}
+            isHealing={damage.isHealing}
+            x={damage.x}
+            y={damage.y}
+            onComplete={() => removeDamageNumber(damage.id)}
+          />
+        ))}
 
       {/* Victory/Defeat Overlay */}
       {showResult && onResultComplete && (

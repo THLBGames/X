@@ -4,6 +4,9 @@ import { CharacterManager } from '../systems/character/CharacterManager';
 import { InventoryManager } from '../systems/inventory';
 import { ShopManager } from '../systems/shop';
 import { getDataLoader } from '../data';
+import { audioManager } from '../systems/audio/AudioManager';
+import { showNotification } from './NotificationManager';
+import TooltipWrapper from './TooltipWrapper';
 import ItemContextMenu from './ItemContextMenu';
 import SellItemModal from './SellItemModal';
 import type { Item, Inventory } from '@idle-rpg/shared';
@@ -94,7 +97,7 @@ export default function InventoryPanel() {
 
     const effect = item.consumableEffect;
 
-    const updatedCharacter = { ...character };
+    let updatedCharacter = { ...character };
 
     // Apply effect based on type
     if (effect.type === 'heal' && effect.amount) {
@@ -105,6 +108,7 @@ export default function InventoryPanel() {
           updatedCharacter.combatStats.maxHealth
         ),
       };
+      audioManager.playSound('/audio/sfx/heal.mp3', 0.6);
     } else if (effect.type === 'mana' && effect.amount) {
       updatedCharacter.combatStats = {
         ...updatedCharacter.combatStats,
@@ -113,30 +117,55 @@ export default function InventoryPanel() {
           updatedCharacter.combatStats.maxMana
         ),
       };
+      audioManager.playSound('/audio/sfx/mana_restore.mp3', 0.6);
     } else if (effect.type === 'experience' && effect.amount) {
-      // Add experience (this would need more complex logic)
-      // For now, just remove the item
+      // Add experience using CharacterManager
+      const result = CharacterManager.addExperience(updatedCharacter, effect.amount);
+      updatedCharacter = result.character;
+
+      // Show notification if level-up occurred
+      if (result.leveledUp) {
+        if (result.levelsGained === 1) {
+          showNotification(
+            `Level up! You are now level ${updatedCharacter.level}!`,
+            'level-up',
+            5000
+          );
+        } else {
+          showNotification(
+            `Level up! You gained ${result.levelsGained} levels! You are now level ${updatedCharacter.level}!`,
+            'level-up',
+            5000
+          );
+        }
+        audioManager.playSound('/audio/sfx/level_up.mp3', 0.8);
+      } else {
+        showNotification(`Gained ${effect.amount} experience!`, 'success', 3000);
+        audioManager.playSound('/audio/sfx/experience.mp3', 0.5);
+      }
     } else if (effect.type === 'offlineTime') {
       // Increase max offline hours permanently
       const hoursToAdd = effect.offlineTimeHours || 0;
       if (hoursToAdd > 0) {
-        setMaxOfflineHours(maxOfflineHours + hoursToAdd);
-        setCharacter(updatedCharacter);
-        const newInventory = InventoryManager.removeItem(inventory, itemId, 1);
-        setInventory(newInventory);
-        alert(
-          `Maximum offline time increased by ${hoursToAdd} hours! New max: ${maxOfflineHours + hoursToAdd} hours`
+        const newMaxHours = maxOfflineHours + hoursToAdd;
+        setMaxOfflineHours(newMaxHours);
+        showNotification(
+          `Maximum offline time increased by ${hoursToAdd} hours! New max: ${newMaxHours} hours`,
+          'success',
+          5000
         );
-        return; // Early return since we already handled inventory
+        audioManager.playSound('/audio/sfx/upgrade.mp3', 0.6);
       }
     } else if (effect.type === 'buff' && effect.buffId) {
       // Apply buff (would need buff system implementation)
-      // For now, just remove the item
+      // For now, just show a notification
+      showNotification(`Buff applied: ${effect.buffId}`, 'info', 3000);
+      audioManager.playSound('/audio/sfx/buff.mp3', 0.6);
     }
 
     setCharacter(updatedCharacter);
 
-    // Remove item from inventory
+    // Remove item from inventory after all effects
     const newInventory = InventoryManager.removeItem(inventory, itemId, 1);
     setInventory(newInventory);
   };
@@ -235,7 +264,15 @@ export default function InventoryPanel() {
                   }
                 }}
               >
-                <div className="item-name">{itemData?.name || item.itemId}</div>
+                <TooltipWrapper
+                  content={
+                    itemData
+                      ? `${itemData.name}\n${itemData.description || 'No description'}\n${itemData.type ? `Type: ${itemData.type}` : ''}${itemData.rarity ? `\nRarity: ${itemData.rarity}` : ''}`
+                      : item.itemId
+                  }
+                >
+                  <div className="item-name">{itemData?.name || item.itemId}</div>
+                </TooltipWrapper>
                 <div className="item-quantity">x{item.quantity}</div>
                 {itemData?.rarity && (
                   <div className={`item-rarity ${itemData.rarity}`}>{itemData.rarity}</div>

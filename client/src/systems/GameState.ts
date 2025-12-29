@@ -16,6 +16,7 @@ import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
 import { StatisticsManager } from '../systems/statistics/StatisticsManager';
 import { AchievementManager } from '../systems/achievements/AchievementManager';
+import { InventoryManager } from '../systems/inventory';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
@@ -126,6 +127,16 @@ const defaultSettings: GameSettings = {
   autoCombat: true,
   combatSpeed: 3,
   showDamageNumbers: true,
+  soundVolume: 100,
+  musicVolume: 100,
+  theme: 'dark',
+  fontSize: 'medium',
+  animationsEnabled: true,
+  showTooltips: true,
+  confirmItemDrop: true,
+  confirmItemSell: false,
+  showNotifications: true,
+  autoSaveInterval: 30, // 30 seconds
 };
 
 export const useGameState = create<GameState>((set, get) => ({
@@ -227,14 +238,9 @@ export const useGameState = create<GameState>((set, get) => ({
           };
         }
       }
-      const inventory = { ...state.inventory };
-      const existingItem = inventory.items.find((item) => item.itemId === itemId);
 
-      if (existingItem) {
-        existingItem.quantity += quantity;
-      } else {
-        inventory.items.push({ itemId, quantity });
-      }
+      // Use InventoryManager to properly stack items
+      const inventory = InventoryManager.addItem(state.inventory, itemId, quantity);
 
       return {
         inventory,
@@ -563,7 +569,17 @@ export const useGameState = create<GameState>((set, get) => ({
           const achievementData = dataLoader.getAchievement(achievement.achievementId);
           if (achievementData) {
             console.log(`Achievement unlocked: ${achievementData.name}`);
-            // TODO: Show UI notification
+            // Show UI notification
+            if (typeof window !== 'undefined') {
+              const event = new CustomEvent('showNotification', {
+                detail: {
+                  message: `Achievement Unlocked: ${achievementData.name}`,
+                  type: 'achievement',
+                  duration: 6000,
+                },
+              });
+              window.dispatchEvent(event);
+            }
           }
         }
 
@@ -609,13 +625,16 @@ export const useGameState = create<GameState>((set, get) => ({
   // Game state actions
   initialize: (saveData) => {
     if (saveData) {
+      // Consolidate inventory to fix any stacking issues
+      const consolidatedInventory = InventoryManager.consolidateInventory(saveData.inventory);
+
       set({
         character: {
           ...saveData.character,
           activeUpgrades: saveData.character.activeUpgrades || [],
           consumableUpgrades: saveData.character.consumableUpgrades || [],
         },
-        inventory: saveData.inventory,
+        inventory: consolidatedInventory,
         dungeonProgress: saveData.dungeonProgress,
         settings: saveData.settings,
         isInitialized: true,

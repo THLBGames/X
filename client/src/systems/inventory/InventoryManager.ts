@@ -13,35 +13,35 @@ export class InventoryManager {
       throw new Error(`Item not found: ${itemId}`);
     }
 
-    const newInventory = { ...inventory };
-    const existingItemIndex = newInventory.items.findIndex((invItem) => invItem.itemId === itemId);
+    const newInventory = { ...inventory, items: [...inventory.items] };
+    let remainingQuantity = quantity;
 
     if (item.stackable) {
-      // Stackable item - merge with existing
-      if (existingItemIndex !== -1) {
-        const existingItem = newInventory.items[existingItemIndex];
-        const maxStack = item.maxStack ?? 999999;
-        const totalQuantity = existingItem.quantity + quantity;
+      // Stackable item - try to merge with existing stacks first
+      const maxStack = item.maxStack ?? 999999;
 
-        if (totalQuantity > maxStack) {
-          // Fill current stack, add overflow to new stack
-          existingItem.quantity = maxStack;
-          const overflow = totalQuantity - maxStack;
-
-          // Try to add overflow if there's space
-          if (this.hasSpace(newInventory)) {
-            newInventory.items.push({ itemId, quantity: overflow });
+      // Find all existing stacks of this item and try to fill them
+      for (let i = 0; i < newInventory.items.length && remainingQuantity > 0; i++) {
+        const existingItem = newInventory.items[i];
+        if (existingItem.itemId === itemId) {
+          const spaceInStack = maxStack - existingItem.quantity;
+          if (spaceInStack > 0) {
+            const amountToAdd = Math.min(remainingQuantity, spaceInStack);
+            existingItem.quantity += amountToAdd;
+            remainingQuantity -= amountToAdd;
           }
-        } else {
-          existingItem.quantity = totalQuantity;
         }
-      } else {
-        // New stackable item
-        if (this.hasSpace(newInventory)) {
-          newInventory.items.push({ itemId, quantity });
-        } else {
+      }
+
+      // If there's still quantity remaining, create new stacks
+      while (remainingQuantity > 0) {
+        if (!this.hasSpace(newInventory)) {
           throw new Error('Inventory is full');
         }
+
+        const stackSize = Math.min(remainingQuantity, maxStack);
+        newInventory.items.push({ itemId, quantity: stackSize });
+        remainingQuantity -= stackSize;
       }
     } else {
       // Non-stackable item - add separate entries
@@ -184,7 +184,10 @@ export class InventoryManager {
   /**
    * Compare two items (for tooltip/comparison display)
    */
-  static compareItems(itemId1: string, itemId2: string): {
+  static compareItems(
+    itemId1: string,
+    itemId2: string
+  ): {
     better: 'item1' | 'item2' | 'equal' | 'incomparable';
     differences: Array<{ stat: string; item1: number; item2: number }>;
   } {
@@ -251,7 +254,10 @@ export class InventoryManager {
   /**
    * Sort inventory items
    */
-  static sortInventory(inventory: Inventory, sortBy: 'name' | 'rarity' | 'type' = 'name'): Inventory {
+  static sortInventory(
+    inventory: Inventory,
+    sortBy: 'name' | 'rarity' | 'type' = 'name'
+  ): Inventory {
     const dataLoader = getDataLoader();
     const newInventory = { ...inventory, items: [...inventory.items] };
 
@@ -281,9 +287,7 @@ export class InventoryManager {
           );
         }
         case 'type':
-          return (
-            itemA.type.localeCompare(itemB.type) || itemA.name.localeCompare(itemB.name)
-          );
+          return itemA.type.localeCompare(itemB.type) || itemA.name.localeCompare(itemB.name);
         default:
           return 0;
       }
@@ -298,5 +302,49 @@ export class InventoryManager {
   static getEquippedItems(equipment: Equipment): string[] {
     return Object.values(equipment).filter((itemId) => itemId !== undefined) as string[];
   }
-}
 
+  /**
+   * Consolidate inventory - merge all stacks of the same item
+   */
+  static consolidateInventory(inventory: Inventory): Inventory {
+    const dataLoader = getDataLoader();
+    const consolidated: Map<string, number> = new Map();
+
+    // Sum up all quantities for each item
+    for (const item of inventory.items) {
+      const current = consolidated.get(item.itemId) || 0;
+      consolidated.set(item.itemId, current + item.quantity);
+    }
+
+    // Rebuild inventory with consolidated items
+    const newItems: InventoryItem[] = [];
+    for (const [itemId, totalQuantity] of consolidated.entries()) {
+      const item = dataLoader.getItem(itemId);
+      if (!item) {
+        continue; // Skip invalid items
+      }
+
+      if (item.stackable) {
+        const maxStack = item.maxStack ?? 999999;
+        let remaining = totalQuantity;
+
+        // Create stacks up to maxStack
+        while (remaining > 0) {
+          const stackSize = Math.min(remaining, maxStack);
+          newItems.push({ itemId, quantity: stackSize });
+          remaining -= stackSize;
+        }
+      } else {
+        // Non-stackable items - create individual entries
+        for (let i = 0; i < totalQuantity; i++) {
+          newItems.push({ itemId, quantity: 1 });
+        }
+      }
+    }
+
+    return {
+      ...inventory,
+      items: newItems,
+    };
+  }
+}

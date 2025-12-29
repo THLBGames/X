@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { Item, Inventory } from '@idle-rpg/shared';
 import { ShopManager } from '../systems/shop';
+import { useGameState } from '../systems';
 import './ItemContextMenu.css';
 
 export interface ContextMenuAction {
@@ -41,6 +42,7 @@ export default function ItemContextMenu({
   onViewDetails,
 }: ItemContextMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
+  const settings = useGameState((state) => state.settings);
 
   useEffect(() => {
     // Small delay to prevent immediate closing when menu opens
@@ -151,7 +153,11 @@ export default function ItemContextMenu({
       actions.push({
         label: 'Sell',
         action: () => {
-          onSell?.(item.id);
+          const shouldConfirm = settings?.confirmItemSell === true;
+
+          if (!shouldConfirm || confirm(`Are you sure you want to sell ${item.name}?`)) {
+            onSell?.(item.id);
+          }
           onClose();
         },
       });
@@ -171,7 +177,9 @@ export default function ItemContextMenu({
       actions.push({
         label: 'Drop',
         action: () => {
-          if (confirm(`Are you sure you want to drop ${item.name}?`)) {
+          const shouldConfirm = settings?.confirmItemDrop !== false; // Default to true
+
+          if (!shouldConfirm || confirm(`Are you sure you want to drop ${item.name}?`)) {
             onDrop?.(item.id);
           }
           onClose();

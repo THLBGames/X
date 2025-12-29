@@ -28,7 +28,7 @@ export default function CharacterPanel() {
 
   const getActiveActionDisplay = () => {
     if (!activeAction) return null;
-    
+
     if (activeAction.type === 'combat') {
       const dungeon = dataLoader.getDungeon(activeAction.dungeonId);
       return `Combat: ${dungeon?.name || activeAction.dungeonId}`;
@@ -76,25 +76,15 @@ export default function CharacterPanel() {
             )}
           </div>
           <div className="character-gold">Gold: {gold.toLocaleString()}</div>
-          <div className="character-offline-hours">
-            Max Offline Time: {maxOfflineHours} hours
-          </div>
+          <div className="character-offline-hours">Max Offline Time: {maxOfflineHours} hours</div>
           {activeAction && (
-            <div className="character-active-action">
-              Active: {getActiveActionDisplay()}
-            </div>
+            <div className="character-active-action">{getActiveActionDisplay()}</div>
           )}
-          <button
-            className="change-class-button"
-            onClick={() => setShowClassChange(true)}
-          >
+          <button className="change-class-button" onClick={() => setShowClassChange(true)}>
             Change Class
           </button>
           {character.level >= 50 && (
-            <button
-              className="change-subclass-button"
-              onClick={() => setShowSubclass(true)}
-            >
+            <button className="change-subclass-button" onClick={() => setShowSubclass(true)}>
               {character.subclassId ? 'Change Subclass' : 'Select Subclass'}
             </button>
           )}
@@ -164,10 +154,7 @@ export default function CharacterPanel() {
         </div>
         <div className="character-skill-points">
           Skill Points: {character.skillPoints}
-          <button
-            className="open-skill-tree-button"
-            onClick={() => setShowSkillTree(true)}
-          >
+          <button className="open-skill-tree-button" onClick={() => setShowSkillTree(true)}>
             Open Skill Tree
           </button>
         </div>
@@ -177,15 +164,8 @@ export default function CharacterPanel() {
         onClose={() => setShowClassChange(false)}
         onConfirm={handleClassChange}
       />
-      <SkillTreeModal
-        isOpen={showSkillTree}
-        onClose={() => setShowSkillTree(false)}
-      />
-      <SubclassModal
-        isOpen={showSubclass}
-        onClose={() => setShowSubclass(false)}
-      />
+      <SkillTreeModal isOpen={showSkillTree} onClose={() => setShowSkillTree(false)} />
+      <SubclassModal isOpen={showSubclass} onClose={() => setShowSubclass(false)} />
     </>
   );
 }
-

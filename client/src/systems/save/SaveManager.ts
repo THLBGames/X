@@ -194,7 +194,7 @@ export class SaveManager {
       ? (() => {
           const baseExp = 100;
           const expToLevel2 = IdleSkillSystem.calculateExperienceForLevel(2, baseExp);
-          
+
           // If idleSkills is missing, initialize them
           if (!saveData.character.idleSkills) {
             return {
@@ -202,7 +202,7 @@ export class SaveManager {
               idleSkills: IdleSkillSystem.initializeIdleSkills(),
             };
           }
-          
+
           // Migrate existing idle skills from level 0 to level 1
           const characterWithSkills = {
             ...saveData.character,
@@ -254,18 +254,27 @@ export class SaveManager {
         })()
       : saveData.character;
 
+    // Migrate settings to include new fields with defaults
+    const migratedSettings = {
+      ...saveData.settings,
+      soundVolume: saveData.settings?.soundVolume ?? 100,
+      musicVolume: saveData.settings?.musicVolume ?? 100,
+      theme: saveData.settings?.theme ?? 'dark',
+      fontSize: saveData.settings?.fontSize ?? 'medium',
+      animationsEnabled: saveData.settings?.animationsEnabled ?? true,
+      showTooltips: saveData.settings?.showTooltips ?? true,
+      confirmItemDrop: saveData.settings?.confirmItemDrop ?? true,
+      confirmItemSell: saveData.settings?.confirmItemSell ?? false,
+      showNotifications: saveData.settings?.showNotifications ?? true,
+      autoSaveInterval: saveData.settings?.autoSaveInterval ?? 30,
+    };
+
     return {
       ...saveData,
       character: migratedCharacter,
       version: CURRENT_SAVE_VERSION,
       lastSaved: saveData.lastSaved || Date.now(),
-      settings: saveData.settings || {
-        soundEnabled: true,
-        musicEnabled: true,
-        autoCombat: true,
-        combatSpeed: 3,
-        showDamageNumbers: true,
-      },
+      settings: migratedSettings,
     };
   }
 
@@ -291,4 +300,3 @@ export class SaveManager {
 }
 
 export const getSaveManager = (): SaveManager => SaveManager.getInstance();
-

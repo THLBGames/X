@@ -139,24 +139,24 @@ export type SkillCategory = 'gathering' | 'production' | 'hybrid';
 export interface GameStatistics {
   // Monster kills - track each unique monster
   monsterKills: Record<string, number>; // monsterId -> kill count
-  
+
   // Items collected - track each unique item
   itemsCollected: Record<string, number>; // itemId -> total quantity ever collected
-  
+
   // Skill actions - track each skill
   skillActions: Record<string, number>; // skillId -> total actions completed
-  
+
   // Combat statistics
   totalCombats: number;
   totalCombatVictories: number;
   totalCombatDefeats: number;
   totalGoldEarned: number;
   totalExperienceEarned: number;
-  
+
   // Skill statistics
   totalSkillActions: number;
   totalSkillExperience: number;
-  
+
   // Time played
   totalPlayTime: number; // in seconds
   firstPlayed: number; // timestamp
@@ -636,12 +636,28 @@ export interface SaveData {
 }
 
 export interface GameSettings {
+  // Existing settings
   soundEnabled: boolean;
   musicEnabled: boolean;
   autoCombat: boolean;
   combatSpeed: number; // 1-5
   showDamageNumbers: boolean;
+
+  // New audio settings
+  soundVolume?: number; // 0-100
+  musicVolume?: number; // 0-100
+
+  // New UI settings
+  theme?: 'dark' | 'light' | 'auto';
+  fontSize?: 'small' | 'medium' | 'large';
+  animationsEnabled?: boolean;
+  showTooltips?: boolean;
+
+  // New gameplay settings
+  confirmItemDrop?: boolean;
+  confirmItemSell?: boolean;
+  showNotifications?: boolean;
+  autoSaveInterval?: number; // in seconds (0 = disabled)
 }
 
 // All types are already exported with their definitions above
-

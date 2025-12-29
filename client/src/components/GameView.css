@@ -56,14 +56,37 @@
 
 .right-panel-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   margin-bottom: 8px;
   border-bottom: 1px solid #444;
+  overflow-x: auto;
+  /* Custom scrollbar for tabs */
+  scrollbar-width: thin;
+  scrollbar-color: #444 #1a1a1a;
+}
+
+.right-panel-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.right-panel-tabs::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.right-panel-tabs::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+.right-panel-tabs::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .panel-tab {
   flex: 1;
-  padding: 6px;
+  min-width: 80px;
+  padding: 8px 6px;
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
@@ -72,6 +95,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .panel-tab:hover {
@@ -154,4 +178,3 @@
     padding: 4px;
   }
 }
-
