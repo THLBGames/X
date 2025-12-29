@@ -8,6 +8,7 @@ import type {
   Quest,
   Mercenary,
   SkillUpgrade,
+  Achievement,
 } from '@idle-rpg/shared';
 
 type DataCache<T> = Map<string, T>;
@@ -23,6 +24,7 @@ export class DataLoader {
   private questsCache: DataCache<Quest> = new Map();
   private mercenariesCache: DataCache<Mercenary> = new Map();
   private upgradesCache: DataCache<SkillUpgrade> = new Map();
+  private achievementsCache: DataCache<Achievement> = new Map();
   private configCache: GameConfig | null = null;
   private loaded = false;
 
@@ -51,6 +53,7 @@ export class DataLoader {
       this.loadQuests(),
       this.loadMercenaries(),
       this.loadUpgrades(),
+      this.loadAchievements(),
       this.loadConfig(),
     ]);
 
@@ -353,6 +356,35 @@ export class DataLoader {
     }
   }
 
+  private async loadAchievements(): Promise<void> {
+    // Load achievements from data directory using fetch
+    const achievementFiles = [
+      'combat_achievements',
+      'collection_achievements',
+      'skilling_achievements',
+      'completion_achievements',
+      'milestone_achievements',
+    ];
+
+    for (const fileName of achievementFiles) {
+      try {
+        const response = await fetch(`/data/achievements/${fileName}.json`);
+        if (response.ok) {
+          const data = await response.json();
+          // Handle both single achievement and array of achievements
+          const achievements = Array.isArray(data) ? data : [data];
+          for (const achievement of achievements) {
+            if (this.validateAchievement(achievement)) {
+              this.achievementsCache.set(achievement.id, achievement);
+            }
+          }
+        }
+      } catch (error) {
+        console.warn(`Failed to load achievements from ${fileName}:`, error);
+      }
+    }
+  }
+
   private async loadUpgrades(): Promise<void> {
     // Load all upgrades from data directory using fetch
     const skillIds = [
@@ -601,6 +633,20 @@ export class DataLoader {
     );
   }
 
+  getAchievement(id: string): Achievement | undefined {
+    return this.achievementsCache.get(id);
+  }
+
+  getAllAchievements(): Achievement[] {
+    return Array.from(this.achievementsCache.values());
+  }
+
+  getAchievementsByCategory(category: string): Achievement[] {
+    return Array.from(this.achievementsCache.values()).filter(
+      (achievement) => achievement.category === category
+    );
+  }
+
   getConfig(): GameConfig {
     if (!this.configCache) {
       return this.getDefaultConfig();
@@ -714,6 +760,19 @@ export class DataLoader {
       (data.scope === 'category' ? typeof data.category === 'string' : true) &&
       (data.type === 'permanent' ? typeof data.tier === 'string' : true) &&
       (data.type === 'consumable' ? typeof data.actionDuration === 'number' : true)
+    );
+  }
+
+  private validateAchievement(data: any): data is Achievement {
+    return (
+      data &&
+      typeof data.id === 'string' &&
+      typeof data.name === 'string' &&
+      typeof data.description === 'string' &&
+      typeof data.category === 'string' &&
+      ['combat', 'collection', 'skilling', 'completion', 'milestone'].includes(data.category) &&
+      data.requirements &&
+      typeof data.requirements === 'object'
     );
   }
 

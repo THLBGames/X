@@ -14,6 +14,8 @@ import type {
 import { QuestManager } from '../systems/quest/QuestManager';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
+import { StatisticsManager } from '../systems/statistics/StatisticsManager';
+import { AchievementManager } from '../systems/achievements/AchievementManager';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
@@ -76,6 +78,14 @@ interface GameState {
   purchaseUpgrade: (upgradeId: string) => void;
   activateConsumable: (upgradeId: string) => void;
   consumeUpgradeAction: (skillId: string) => void;
+
+  // Actions - Statistics
+  recordMonsterKill: (monsterId: string) => void;
+  recordItemCollected: (itemId: string, quantity: number) => void;
+  recordSkillAction: (skillId: string) => void;
+  updateCombatStats: (victory: boolean, gold: number, experience: number) => void;
+  checkAchievements: () => void;
+  claimAchievementRewards: (achievementId: string) => void;
 
   // Actions - Settings
   updateSettings: (settings: Partial<GameSettings>) => void;
@@ -189,13 +199,32 @@ export const useGameState = create<GameState>((set, get) => ({
         const allQuests = dataLoader.getAllQuests();
 
         for (const quest of allQuests) {
-          if (quest.type === 'item_collection' && quest.requirements.itemId === itemId) {
+          if (
+            quest.type === 'item_collection' &&
+            quest.requirements.itemId === itemId &&
+            updatedCharacter
+          ) {
             updatedCharacter = QuestManager.updateQuestProgress(
-              updatedCharacter!,
+              updatedCharacter,
               quest.id,
               quantity
             );
           }
+        }
+
+        // Record item collection in statistics
+        if (updatedCharacter) {
+          const statistics =
+            updatedCharacter.statistics || StatisticsManager.initializeStatistics();
+          const updatedStatistics = StatisticsManager.recordItemCollected(
+            statistics,
+            itemId,
+            quantity
+          );
+          updatedCharacter = {
+            ...updatedCharacter,
+            statistics: updatedStatistics,
+          };
         }
       }
       const inventory = { ...state.inventory };
@@ -449,6 +478,126 @@ export const useGameState = create<GameState>((set, get) => ({
       const updatedCharacter = UpgradeManager.consumeAction(state.character, skillId);
 
       return { character: updatedCharacter };
+    }),
+
+  // Statistics actions
+  recordMonsterKill: (monsterId: string) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
+      const updatedStatistics = StatisticsManager.recordMonsterKill(statistics, monsterId);
+
+      return {
+        character: {
+          ...state.character,
+          statistics: updatedStatistics,
+        },
+      };
+    }),
+
+  recordItemCollected: (itemId: string, quantity: number) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
+      const updatedStatistics = StatisticsManager.recordItemCollected(statistics, itemId, quantity);
+
+      return {
+        character: {
+          ...state.character,
+          statistics: updatedStatistics,
+        },
+      };
+    }),
+
+  recordSkillAction: (skillId: string) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
+      const updatedStatistics = StatisticsManager.recordSkillAction(statistics, skillId);
+
+      return {
+        character: {
+          ...state.character,
+          statistics: updatedStatistics,
+        },
+      };
+    }),
+
+  updateCombatStats: (victory: boolean, gold: number, experience: number) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
+      const updatedStatistics = StatisticsManager.updateCombatStats(
+        statistics,
+        victory,
+        gold,
+        experience
+      );
+
+      return {
+        character: {
+          ...state.character,
+          statistics: updatedStatistics,
+        },
+      };
+    }),
+
+  checkAchievements: () =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
+      const newlyCompleted = AchievementManager.checkAchievements(state.character, statistics);
+
+      if (newlyCompleted.length > 0) {
+        const existingCompleted = state.character.completedAchievements || [];
+        const updatedCompleted = [...existingCompleted, ...newlyCompleted];
+
+        // Show notification for each newly completed achievement
+        for (const achievement of newlyCompleted) {
+          const dataLoader = getDataLoader();
+          const achievementData = dataLoader.getAchievement(achievement.achievementId);
+          if (achievementData) {
+            console.log(`Achievement unlocked: ${achievementData.name}`);
+            // TODO: Show UI notification
+          }
+        }
+
+        return {
+          character: {
+            ...state.character,
+            completedAchievements: updatedCompleted,
+          },
+        };
+      }
+
+      return {};
+    }),
+
+  claimAchievementRewards: (achievementId: string) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      try {
+        const result = AchievementManager.claimAchievementRewards(
+          state.character,
+          state.inventory,
+          achievementId
+        );
+
+        return {
+          character: result.character,
+          inventory: result.inventory,
+        };
+      } catch (error) {
+        console.error('Failed to claim achievement rewards:', error);
+        alert(error instanceof Error ? error.message : 'Failed to claim rewards');
+        return {};
+      }
     }),
 
   // Settings actions

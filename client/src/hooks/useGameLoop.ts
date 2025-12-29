@@ -314,6 +314,26 @@ export function useGameLoop() {
           combatStatsRef.totalGold += goldReward;
         }
 
+        // Record monster kills and update combat stats
+        const combatState = state.currentCombatState;
+        if (combatState) {
+          const defeatedMonsters = combatState.monsters.filter((m) => m.currentHealth <= 0);
+          for (const monsterState of defeatedMonsters) {
+            // Extract base monster ID (remove index suffix)
+            const baseMonsterId = monsterState.monster.id.split('_').slice(0, -1).join('_');
+            const recordMonsterKill = useGameState.getState().recordMonsterKill;
+            recordMonsterKill(baseMonsterId);
+          }
+        }
+
+        // Update combat statistics
+        const experienceReward = DungeonManager.calculateExperienceReward(
+          combatLog.rewards.experience,
+          dungeon
+        );
+        const updateCombatStats = useGameState.getState().updateCombatStats;
+        updateCombatStats(true, goldReward, experienceReward);
+
         // Add items (validate item exists before adding)
         for (const item of combatLog.rewards.items || []) {
           try {
@@ -334,6 +354,10 @@ export function useGameLoop() {
         for (const chest of combatLog.rewards.chests || []) {
           addItem(chest.itemId, chest.quantity || 1);
         }
+
+        // Check for newly completed achievements
+        const checkAchievements = useGameState.getState().checkAchievements;
+        checkAchievements();
 
         // Consume battles for combat mercenaries
         let characterAfterMercenaries = state.character;
@@ -370,6 +394,12 @@ export function useGameLoop() {
         // Update combat stats
         combatStatsRef.combatsCompleted += 1;
         combatStatsRef.totalExperience += combatLog.rewards.experience;
+
+        // Update combat statistics (defeat)
+        if (combatLog.result === 'defeat') {
+          const updateCombatStats = useGameState.getState().updateCombatStats;
+          updateCombatStats(false, 0, 0);
+        }
 
         // Dispatch custom event for combat stats update
         window.dispatchEvent(

@@ -37,6 +37,30 @@ function App() {
     actionType: 'combat' | 'skill' | null;
   } | null>(null);
 
+  // Track play time
+  useEffect(() => {
+    if (!character) return;
+
+    const interval = setInterval(() => {
+      const updatePlayTime = () => {
+        const state = useGameState.getState();
+        if (!state.character || !state.character.statistics) return;
+
+        const statistics = state.character.statistics;
+        const updatedStatistics = StatisticsManager.updatePlayTime(statistics, 60); // Update every minute (60 seconds)
+
+        state.setCharacter({
+          ...state.character,
+          statistics: updatedStatistics,
+        });
+      };
+
+      updatePlayTime();
+    }, 60000); // Every minute
+
+    return () => clearInterval(interval);
+  }, [character]);
+
   useEffect(() => {
     // Initialize data loader and load save data
     const init = async () => {

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "collect_first_item",
+    "name": "Collector",
+    "description": "Collect your first item",
+    "category": "collection",
+    "requirements": {
+      "itemsCollected": {
+        "gold": 1
+      }
+    },
+    "rewards": {
+      "gold": 50
+    },
+    "hidden": false
+  },
+  {
+    "id": "collect_10_unique_items",
+    "name": "Item Hoarder",
+    "description": "Collect 10 unique items",
+    "category": "collection",
+    "requirements": {
+      "totalItems": 10
+    },
+    "rewards": {
+      "gold": 1000
+    },
+    "hidden": false
+  },
+  {
+    "id": "collect_50_unique_items",
+    "name": "Treasure Hunter",
+    "description": "Collect 50 unique items",
+    "category": "collection",
+    "requirements": {
+      "totalItems": 50
+    },
+    "rewards": {
+      "gold": 10000,
+      "title": "Treasure Hunter"
+    },
+    "hidden": false
+  }
+]
+

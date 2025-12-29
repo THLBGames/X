@@ -1,0 +1,59 @@
+[
+  {
+    "id": "complete_25_percent",
+    "name": "Quarter Complete",
+    "description": "Reach 25% game completion",
+    "category": "completion",
+    "requirements": {
+      "completionPercentage": 25
+    },
+    "rewards": {
+      "gold": 5000,
+      "title": "Quarter Master"
+    },
+    "hidden": false
+  },
+  {
+    "id": "complete_50_percent",
+    "name": "Halfway There",
+    "description": "Reach 50% game completion",
+    "category": "completion",
+    "requirements": {
+      "completionPercentage": 50
+    },
+    "rewards": {
+      "gold": 25000,
+      "title": "Halfway Hero"
+    },
+    "hidden": false
+  },
+  {
+    "id": "complete_75_percent",
+    "name": "Almost There",
+    "description": "Reach 75% game completion",
+    "category": "completion",
+    "requirements": {
+      "completionPercentage": 75
+    },
+    "rewards": {
+      "gold": 100000,
+      "title": "Near Completion"
+    },
+    "hidden": false
+  },
+  {
+    "id": "complete_100_percent",
+    "name": "Perfect Completion",
+    "description": "Reach 100% game completion",
+    "category": "completion",
+    "requirements": {
+      "completionPercentage": 100
+    },
+    "rewards": {
+      "gold": 500000,
+      "title": "Perfect Completionist"
+    },
+    "hidden": false
+  }
+]
+

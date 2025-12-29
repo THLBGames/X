@@ -1,5 +1,6 @@
 import type { SaveData } from '@idle-rpg/shared';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
+import { StatisticsManager } from '../statistics/StatisticsManager';
 
 const DB_NAME = 'idle-rpg-save';
 const DB_VERSION = 1;
@@ -237,6 +238,16 @@ export class SaveManager {
           // Ensure consumableUpgrades exists (initialize if missing)
           if (!characterWithSkills.consumableUpgrades) {
             characterWithSkills.consumableUpgrades = [];
+          }
+
+          // Ensure statistics exists (initialize if missing)
+          if (!characterWithSkills.statistics) {
+            characterWithSkills.statistics = StatisticsManager.initializeStatistics();
+          }
+
+          // Ensure completedAchievements exists (initialize if missing)
+          if (!characterWithSkills.completedAchievements) {
+            characterWithSkills.completedAchievements = [];
           }
 
           return characterWithSkills;

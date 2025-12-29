@@ -3,6 +3,7 @@ import { useGameState } from '../systems';
 import { IdleSkillSystem } from '../systems/skills/IdleSkillSystem';
 import { ResourceNodeManager } from '../systems/skills/ResourceNodeManager';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
+import { StatisticsManager } from '../systems/statistics/StatisticsManager';
 
 export interface ActiveSkillTraining {
   skillId: string;
@@ -216,10 +217,26 @@ export function useIdleSkills() {
         const consumeUpgradeAction = useGameState.getState().consumeUpgradeAction;
         consumeUpgradeAction(skillId);
 
-        // Update character (mercenary consumption already handled)
-        setCharacter(characterAfterMercenaries);
+        // Record skill action in statistics
+        const recordSkillAction = useGameState.getState().recordSkillAction;
+        recordSkillAction(skillId);
 
-        // Update last action time to reset the timer
+        // Update skill experience in statistics
+        if (characterAfterMercenaries) {
+          const statistics =
+            characterAfterMercenaries.statistics || StatisticsManager.initializeStatistics();
+          const updatedStatistics = {
+            ...statistics,
+            totalSkillExperience: statistics.totalSkillExperience + adjustedExperience,
+            lastPlayed: Date.now(),
+          };
+          characterAfterMercenaries = {
+            ...characterAfterMercenaries,
+            statistics: updatedStatistics,
+          };
+        }
+
+        // Update last action time BEFORE updating character (this ensures timer resets correctly)
         const now = Date.now();
         const currentTraining = sharedActiveSkills.get(skillId);
         if (currentTraining && currentTraining.nodeId === node.nodeId) {
@@ -229,6 +246,15 @@ export function useIdleSkills() {
           });
           notifyActiveSkillsListeners();
         }
+
+        // Update character (this ensures idleSkills are updated)
+        setCharacter(characterAfterMercenaries);
+
+        // Check for newly completed achievements (use setTimeout to ensure character state is updated first)
+        setTimeout(() => {
+          const checkAchievements = useGameState.getState().checkAchievements;
+          checkAchievements();
+        }, 0);
       }, adjustedTimeRequired);
 
       sharedIntervalRefs.set(skillId, intervalId);

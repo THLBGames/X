@@ -10,6 +10,7 @@ import ShopPanel from './ShopPanel';
 import QuestPanel from './QuestPanel';
 import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
+import StatisticsPanel from './StatisticsPanel';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
@@ -18,7 +19,7 @@ export default function GameView() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const activeAction = useGameState((state) => state.activeAction);
   const [activeRightPanel, setActiveRightPanel] = useState<
-    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests'
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics'
   >('character');
 
   // Initialize game loop
@@ -83,6 +84,12 @@ export default function GameView() {
           >
             Quests
           </button>
+          <button
+            className={`panel-tab ${activeRightPanel === 'statistics' ? 'active' : ''}`}
+            onClick={() => setActiveRightPanel('statistics')}
+          >
+            Statistics
+          </button>
         </div>
         <div className="right-panel-content">
           {activeRightPanel === 'character' && <CharacterPanel />}
@@ -90,6 +97,7 @@ export default function GameView() {
           {activeRightPanel === 'inventory' && <InventoryPanel />}
           {activeRightPanel === 'shop' && <ShopPanel />}
           {activeRightPanel === 'quests' && <QuestPanel />}
+          {activeRightPanel === 'statistics' && <StatisticsPanel />}
           {activeRightPanel === 'skills' && (
             <div className="skills-tab-placeholder">
               <p>Skills are displayed in the center area.</p>

@@ -135,6 +135,65 @@ export type SkillType = 'active' | 'passive' | 'gathering' | 'production';
 export type SkillTarget = 'self' | 'enemy' | 'ally' | 'all_enemies' | 'all_allies';
 export type SkillCategory = 'gathering' | 'production' | 'hybrid';
 
+// Statistics and Achievements
+export interface GameStatistics {
+  // Monster kills - track each unique monster
+  monsterKills: Record<string, number>; // monsterId -> kill count
+  
+  // Items collected - track each unique item
+  itemsCollected: Record<string, number>; // itemId -> total quantity ever collected
+  
+  // Skill actions - track each skill
+  skillActions: Record<string, number>; // skillId -> total actions completed
+  
+  // Combat statistics
+  totalCombats: number;
+  totalCombatVictories: number;
+  totalCombatDefeats: number;
+  totalGoldEarned: number;
+  totalExperienceEarned: number;
+  
+  // Skill statistics
+  totalSkillActions: number;
+  totalSkillExperience: number;
+  
+  // Time played
+  totalPlayTime: number; // in seconds
+  firstPlayed: number; // timestamp
+  lastPlayed: number; // timestamp
+}
+
+export interface Achievement {
+  id: string;
+  name: string;
+  description: string;
+  category: 'combat' | 'collection' | 'skilling' | 'completion' | 'milestone';
+  requirements: {
+    monsterKills?: Record<string, number>; // monsterId -> required kills
+    itemsCollected?: Record<string, number>; // itemId -> required quantity
+    skillActions?: Record<string, number>; // skillId -> required actions
+    skillLevels?: Record<string, number>; // skillId -> required level
+    totalCombats?: number;
+    totalGold?: number;
+    totalExperience?: number;
+    totalSkillActions?: number;
+    totalSkillExperience?: number;
+    totalPlayTime?: number; // in seconds
+  };
+  rewards?: {
+    gold?: number;
+    items?: Array<{ itemId: string; quantity: number }>;
+    title?: string; // Unlockable title
+  };
+  hidden?: boolean; // If true, don't show until unlocked
+}
+
+export interface CompletedAchievement {
+  achievementId: string;
+  completedAt: number; // timestamp
+  rewardsClaimed: boolean;
+}
+
 // Skill Upgrade system
 export type UpgradeType = 'permanent' | 'consumable';
 export type UpgradeScope = 'skill' | 'category';
@@ -378,6 +437,8 @@ export interface Character {
   activeMercenaries?: ActiveMercenary[]; // Currently rented mercenaries (max 2)
   activeUpgrades?: ActiveUpgrade[]; // Permanent upgrades (always active)
   consumableUpgrades?: ActiveUpgrade[]; // Active consumable upgrades
+  statistics?: GameStatistics; // Game statistics tracking
+  completedAchievements?: CompletedAchievement[]; // Completed achievements
 }
 
 export interface LearnedSkill {
@@ -570,6 +631,8 @@ export interface SaveData {
   activeMercenaries?: ActiveMercenary[]; // Currently rented mercenaries
   activeUpgrades?: ActiveUpgrade[]; // Permanent upgrades
   consumableUpgrades?: ActiveUpgrade[]; // Active consumable upgrades
+  statistics?: GameStatistics; // Game statistics tracking
+  completedAchievements?: CompletedAchievement[]; // Completed achievements
 }
 
 export interface GameSettings {

@@ -1,6 +1,7 @@
 import type { Character, Skill, IdleSkillLevel, ResourceNode, Mercenary } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
+import { UpgradeManager, type UpgradeBonuses } from '../upgrade/UpgradeManager';
 
 export class IdleSkillSystem {
   /**
@@ -89,10 +90,7 @@ export class IdleSkillSystem {
 
     // Calculate new level
     const baseExp = skill.experienceFormula ? 100 : 100; // Default base exp
-    const newLevel = Math.min(
-      this.getLevelFromExperience(skillExp, baseExp),
-      skill.maxLevel
-    );
+    const newLevel = Math.min(this.getLevelFromExperience(skillExp, baseExp), skill.maxLevel);
 
     // Calculate experience to next level
     const totalExpForCurrent = this.calculateTotalExperienceForLevel(newLevel, baseExp);
@@ -300,4 +298,3 @@ export class IdleSkillSystem {
     }));
   }
 }
-
