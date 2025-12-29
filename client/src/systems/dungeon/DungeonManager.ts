@@ -127,11 +127,25 @@ export class DungeonManager {
 
   /**
    * Generate loot from loot table
+   * Validates that all items exist before adding them to loot
    */
   static generateLoot(lootTable: LootEntry[]): Array<{ itemId: string; quantity: number }> {
     const loot: Array<{ itemId: string; quantity: number }> = [];
+    const dataLoader = getDataLoader();
 
     for (const entry of lootTable) {
+      // Skip "gold" as it's handled separately
+      if (entry.itemId === 'gold') {
+        continue;
+      }
+
+      // Validate item exists before adding to loot
+      const item = dataLoader.getItem(entry.itemId);
+      if (!item) {
+        console.warn(`Item not found in loot table: ${entry.itemId}. Skipping this loot entry.`);
+        continue;
+      }
+
       if (Math.random() <= entry.chance) {
         let quantity = 1;
 

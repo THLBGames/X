@@ -311,9 +311,20 @@ export function useGameLoop() {
           combatStatsRef.totalGold += goldReward;
         }
 
-        // Add items
+        // Add items (validate item exists before adding)
         for (const item of combatLog.rewards.items || []) {
-          addItem(item.itemId, item.quantity || 1);
+          try {
+            // Ensure item is loaded before adding
+            const itemData = dataLoader.getItem(item.itemId);
+            if (!itemData) {
+              console.warn(`Item not found when adding loot: ${item.itemId}. Skipping.`);
+              continue;
+            }
+            addItem(item.itemId, item.quantity || 1);
+          } catch (error) {
+            console.error(`Failed to add item ${item.itemId} to inventory:`, error);
+            // Continue with other items even if one fails
+          }
         }
 
         // Add chests (special loot)

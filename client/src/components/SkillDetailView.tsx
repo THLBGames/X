@@ -439,12 +439,14 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
                           {recipe.ingredients.map((ing, idx) => {
                             const haveQty = InventoryManager.getItemQuantity(inventory, ing.itemId);
                             const hasEnough = haveQty >= ing.quantity;
+                            const ingredientItem = dataLoader.getItem(ing.itemId);
+                            const ingredientName = ingredientItem?.name || ing.itemId;
                             return (
                               <span
                                 key={idx}
                                 className={`ingredient-item ${hasEnough ? '' : 'missing'}`}
                               >
-                                {ing.quantity}x {ing.itemId} {!hasEnough && `(have ${haveQty})`}
+                                {ing.quantity}x {ingredientName} {!hasEnough && `(have ${haveQty})`}
                               </span>
                             );
                           })}
@@ -454,7 +456,7 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
                         <span>Result:</span>
                         <div className="results-list">
                           <span className="result-item">
-                            {recipe.result.quantity}x {recipe.result.itemId}
+                            {recipe.result.quantity}x {dataLoader.getItem(recipe.result.itemId)?.name || recipe.result.itemId}
                           </span>
                         </div>
                       </div>
@@ -465,7 +467,11 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
                             if (skillLevel < recipe.level) {
                               alert(`Requires skill level ${recipe.level}`);
                             } else {
-                              alert(`Missing ingredients: ${canCraftResult.missingIngredients.map(m => `${m.itemId} (need ${m.required}, have ${m.have})`).join(', ')}`);
+                              alert(`Missing ingredients: ${canCraftResult.missingIngredients.map(m => {
+                                const item = dataLoader.getItem(m.itemId);
+                                const itemName = item?.name || m.itemId;
+                                return `${itemName} (need ${m.required}, have ${m.have})`;
+                              }).join(', ')}`);
                             }
                             return;
                           }

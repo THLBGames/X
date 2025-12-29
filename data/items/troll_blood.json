@@ -1,0 +1,11 @@
+{
+  "id": "troll_blood",
+  "name": "Troll Blood",
+  "description": "The blood of a troll, known for its regenerative properties.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25
+}
+

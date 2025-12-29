@@ -1,3 +1,4 @@
+import { getDataLoader } from '../data';
 import './OfflineProgressModal.css';
 
 interface OfflineProgressModalProps {
@@ -29,13 +30,15 @@ export default function OfflineProgressModal({
       <div className="modal-content offline-progress-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>Offline Progress</h2>
-          <button className="modal-close-button" onClick={onClose}>×</button>
+          <button className="modal-close-button" onClick={onClose}>
+            ×
+          </button>
         </div>
         <div className="modal-body">
           <div className="offline-time">
             You were offline for <strong>{hoursOffline.toFixed(2)} hours</strong>
           </div>
-          
+
           {progress.died ? (
             <div className="offline-died">
               <p className="died-message">⚠️ You died during offline combat!</p>
@@ -63,7 +66,7 @@ export default function OfflineProgressModal({
                   </div>
                 </div>
               )}
-              
+
               {actionType === 'skill' && (
                 <div className="offline-stats">
                   <div className="stat-row">
@@ -80,16 +83,21 @@ export default function OfflineProgressModal({
                   </div>
                 </div>
               )}
-              
+
               {progress.items.length > 0 && (
                 <div className="offline-items">
                   <h3>Items Gained:</h3>
                   <div className="items-list">
-                    {progress.items.map((item, idx) => (
-                      <div key={idx} className="item-gain">
-                        {item.itemId} x{item.quantity}
-                      </div>
-                    ))}
+                    {progress.items.map((item, idx) => {
+                      const dataLoader = getDataLoader();
+                      const itemData = dataLoader.getItem(item.itemId);
+                      const itemName = itemData?.name || item.itemId;
+                      return (
+                        <div key={idx} className="item-gain">
+                          {itemName} x{item.quantity}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -97,10 +105,11 @@ export default function OfflineProgressModal({
           )}
         </div>
         <div className="modal-footer">
-          <button className="modal-button" onClick={onClose}>Close</button>
+          <button className="modal-button" onClick={onClose}>
+            Close
+          </button>
         </div>
       </div>
     </div>
   );
 }
-

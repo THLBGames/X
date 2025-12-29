@@ -1,0 +1,11 @@
+{
+  "id": "poison_gland",
+  "name": "Poison Gland",
+  "description": "A venomous gland from a giant spider.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25
+}
+
