@@ -6,7 +6,6 @@ import SkillDetailView from './SkillDetailView';
 import type { Skill } from '@idle-rpg/shared';
 import './SkillsPanel.css';
 
-
 export default function SkillsPanel() {
   const character = useGameState((state) => state.character);
   const activeAction = useGameState((state) => state.activeAction);
@@ -20,7 +19,9 @@ export default function SkillsPanel() {
     hybrid: true,
   });
   const [searchTerm, setSearchTerm] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState<'all' | 'idle' | 'gathering' | 'production' | 'hybrid'>('all');
+  const [categoryFilter, setCategoryFilter] = useState<
+    'all' | 'idle' | 'gathering' | 'production' | 'hybrid'
+  >('all');
 
   if (!character) {
     return null;
@@ -32,7 +33,10 @@ export default function SkillsPanel() {
   // Organize skills into categories
   const skillCategories = useMemo(() => {
     const idleSkills = allSkills.filter(
-      (skill) => skill.category === 'gathering' || skill.category === 'production' || skill.category === 'hybrid'
+      (skill) =>
+        skill.category === 'gathering' ||
+        skill.category === 'production' ||
+        skill.category === 'hybrid'
     );
 
     return {
@@ -66,7 +70,8 @@ export default function SkillsPanel() {
       const filterSkills = (skills: Skill[]) =>
         skills.filter(
           (skill) =>
-            skill.name.toLowerCase().includes(query) || skill.description.toLowerCase().includes(query)
+            skill.name.toLowerCase().includes(query) ||
+            skill.description.toLowerCase().includes(query)
         );
 
       filtered.idle.gathering = filterSkills(filtered.idle.gathering);
@@ -121,12 +126,12 @@ export default function SkillsPanel() {
       skill.type === 'active'
         ? '#4a9eff'
         : skill.type === 'passive'
-        ? '#4ecdc4'
-        : skill.category === 'gathering'
-        ? '#90ee90'
-        : skill.category === 'production'
-        ? '#ffa500'
-        : '#888';
+          ? '#4ecdc4'
+          : skill.category === 'gathering'
+            ? '#90ee90'
+            : skill.category === 'production'
+              ? '#ffa500'
+              : '#888';
 
     return (
       <div
@@ -145,21 +150,14 @@ export default function SkillsPanel() {
     );
   };
 
-  const renderCategorySection = (
-    title: string,
-    categoryKey: string,
-    skills: Skill[]
-  ) => {
+  const renderCategorySection = (title: string, categoryKey: string, skills: Skill[]) => {
     if (skills.length === 0) return null;
 
     const isExpanded = expandedCategories[categoryKey] ?? true;
 
     return (
       <div className="skill-category-section">
-        <div
-          className="skill-category-header"
-          onClick={() => toggleCategory(categoryKey)}
-        >
+        <div className="skill-category-header" onClick={() => toggleCategory(categoryKey)}>
           <span className="category-chevron">{isExpanded ? '▼' : '▶'}</span>
           <span className="category-title">{title}</span>
           <span className="category-count">({skills.length})</span>
@@ -216,20 +214,17 @@ export default function SkillsPanel() {
         <div className="skills-sidebar-content">
           {/* Idle Skills Section */}
           <div className="skills-main-category">
-            <div
-              className="skills-main-category-header"
-              onClick={() => toggleCategory('idle')}
-            >
-              <span className="category-chevron">{expandedCategories.idle ? '▼' : '▶'}</span>
-              <span className="category-title">Idle Skills</span>
-            </div>
-              {expandedCategories.idle && (
-                <div className="skills-subcategories">
-                  {renderCategorySection('Gathering', 'gathering', filteredCategories.idle.gathering)}
-                  {renderCategorySection('Production', 'production', filteredCategories.idle.production)}
-                  {renderCategorySection('Hybrid', 'hybrid', filteredCategories.idle.hybrid)}
-                </div>
-              )}
+            {expandedCategories.idle && (
+              <div className="skills-subcategories">
+                {renderCategorySection('Gathering', 'gathering', filteredCategories.idle.gathering)}
+                {renderCategorySection(
+                  'Production',
+                  'production',
+                  filteredCategories.idle.production
+                )}
+                {renderCategorySection('Hybrid', 'hybrid', filteredCategories.idle.hybrid)}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -46,6 +46,21 @@
   border-top: 1px solid #444;
 }
 
+.character-offline-hours {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.character-active-action {
+  color: #4a9eff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #444;
+}
+
 .change-class-button {
   margin-top: 12px;
   padding: 8px 16px;

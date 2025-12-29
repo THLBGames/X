@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { useGameLoop } from '../hooks/useGameLoop';
 import { useIdleSkills } from '../hooks/useIdleSkills';
-import CharacterSheet from './CharacterSheet';
 import DungeonSelector from './DungeonSelector';
 import CombatDisplay from './CombatDisplay';
 import InventoryPanel from './InventoryPanel';
 import SkillsPanel from './SkillsPanel';
 import ShopPanel from './ShopPanel';
 import QuestPanel from './QuestPanel';
+import CharacterPanel from './CharacterPanel';
+import EquipmentPanel from './EquipmentPanel';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
@@ -16,26 +17,17 @@ export default function GameView() {
   const character = useGameState((state) => state.character);
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const activeAction = useGameState((state) => state.activeAction);
-  const [activeRightPanel, setActiveRightPanel] = useState<'inventory' | 'skills' | 'shop' | 'quests'>('inventory');
-  
+  const [activeRightPanel, setActiveRightPanel] = useState<
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests'
+  >('character');
+
   // Initialize game loop
   useGameLoop();
-  
+
   // Mount useIdleSkills globally so it's always available to resume skills after offline progress
-  // This ensures skills automatically resume even when Skills panel isn't open
+  // This ensures skills automatically resume and continue running even when Skills panel isn't open
+  // Skills will continue executing in the background regardless of which tab is active
   useIdleSkills();
-  
-  // Auto-open skills panel if there's an active skill action (so skills can resume)
-  useEffect(() => {
-    if (activeAction && activeAction.type === 'skill' && activeRightPanel !== 'skills') {
-      // Small delay to let the game initialize first
-      const timeoutId = setTimeout(() => {
-        console.log('Auto-opening skills panel to resume skill:', activeAction.skillId);
-        setActiveRightPanel('skills');
-      }, 1000);
-      return () => clearTimeout(timeoutId);
-    }
-  }, [activeAction, activeRightPanel]);
 
   if (!character) {
     return <CharacterCreation />;
@@ -43,9 +35,6 @@ export default function GameView() {
 
   return (
     <div className={`game-view ${activeRightPanel === 'skills' ? 'skills-active' : ''}`}>
-      <div className="game-view-left">
-        <CharacterSheet />
-      </div>
       <div className="game-view-center">
         {activeRightPanel === 'skills' ? (
           <SkillsPanel />
@@ -58,6 +47,18 @@ export default function GameView() {
       </div>
       <div className="game-view-right">
         <div className="right-panel-tabs">
+          <button
+            className={`panel-tab ${activeRightPanel === 'character' ? 'active' : ''}`}
+            onClick={() => setActiveRightPanel('character')}
+          >
+            Character
+          </button>
+          <button
+            className={`panel-tab ${activeRightPanel === 'equipment' ? 'active' : ''}`}
+            onClick={() => setActiveRightPanel('equipment')}
+          >
+            Equipment
+          </button>
           <button
             className={`panel-tab ${activeRightPanel === 'inventory' ? 'active' : ''}`}
             onClick={() => setActiveRightPanel('inventory')}
@@ -84,6 +85,8 @@ export default function GameView() {
           </button>
         </div>
         <div className="right-panel-content">
+          {activeRightPanel === 'character' && <CharacterPanel />}
+          {activeRightPanel === 'equipment' && <EquipmentPanel />}
           {activeRightPanel === 'inventory' && <InventoryPanel />}
           {activeRightPanel === 'shop' && <ShopPanel />}
           {activeRightPanel === 'quests' && <QuestPanel />}
@@ -98,5 +101,3 @@ export default function GameView() {
     </div>
   );
 }
-
-
