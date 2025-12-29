@@ -5,7 +5,8 @@ import { InventoryManager } from '../systems/inventory';
 import { ShopManager } from '../systems/shop';
 import { getDataLoader } from '../data';
 import ItemContextMenu from './ItemContextMenu';
-import type { Item } from '@idle-rpg/shared';
+import SellItemModal from './SellItemModal';
+import type { Item, Inventory } from '@idle-rpg/shared';
 import './InventoryPanel.css';
 
 export default function InventoryPanel() {
@@ -23,6 +24,8 @@ export default function InventoryPanel() {
     index: number;
     position: { x: number; y: number };
   } | null>(null);
+  const [sellModalItem, setSellModalItem] = useState<Item | null>(null);
+  const [isRightClick, setIsRightClick] = useState(false);
 
   const dataLoader = getDataLoader();
 
@@ -45,11 +48,11 @@ export default function InventoryPanel() {
   const handleDrop = (e: React.DragEvent, dropIndex: number) => {
     e.preventDefault();
     const dragIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
-    
+
     if (dragIndex !== dropIndex && dragIndex !== null && !isNaN(dragIndex)) {
       reorderInventoryItems(dragIndex, dropIndex);
     }
-    
+
     setDraggedIndex(null);
     setDragOverIndex(null);
   };
@@ -61,6 +64,7 @@ export default function InventoryPanel() {
 
   const handleContextMenu = (e: React.MouseEvent, item: Item, index: number) => {
     e.preventDefault();
+    e.stopPropagation();
     setContextMenu({
       item,
       index,
@@ -90,7 +94,7 @@ export default function InventoryPanel() {
 
     const effect = item.consumableEffect;
 
-    let updatedCharacter = { ...character };
+    const updatedCharacter = { ...character };
 
     // Apply effect based on type
     if (effect.type === 'heal' && effect.amount) {
@@ -120,7 +124,9 @@ export default function InventoryPanel() {
         setCharacter(updatedCharacter);
         const newInventory = InventoryManager.removeItem(inventory, itemId, 1);
         setInventory(newInventory);
-        alert(`Maximum offline time increased by ${hoursToAdd} hours! New max: ${maxOfflineHours + hoursToAdd} hours`);
+        alert(
+          `Maximum offline time increased by ${hoursToAdd} hours! New max: ${maxOfflineHours + hoursToAdd} hours`
+        );
         return; // Early return since we already handled inventory
       }
     } else if (effect.type === 'buff' && effect.buffId) {
@@ -135,16 +141,45 @@ export default function InventoryPanel() {
     setInventory(newInventory);
   };
 
-  const handleSell = (itemId: string) => {
+  const handleSell = (itemId: string, quantity?: number) => {
     const item = dataLoader.getItem(itemId);
     if (!item) return;
 
-    const result = ShopManager.sellItem(inventory, item, 1);
+    const sellQty = quantity || 1;
+    const result = ShopManager.sellItem(inventory, item, sellQty);
     if (result.success && result.newInventory) {
       setInventory(result.newInventory);
     } else {
       alert(result.message);
     }
+  };
+
+  const handleItemClick = (_e: React.MouseEvent, itemId: string) => {
+    // Don't handle click if it was a right-click (context menu was shown)
+    if (isRightClick) {
+      setIsRightClick(false);
+      return;
+    }
+
+    const item = dataLoader.getItem(itemId);
+    if (!item) return;
+
+    // Check if item can be sold
+    if (ShopManager.canSell(inventory, itemId)) {
+      setSellModalItem(item);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    // Detect right-click
+    if (e.button === 2) {
+      setIsRightClick(true);
+    }
+  };
+
+  const handleSellFromModal = (newInventory: Inventory) => {
+    setInventory(newInventory);
+    setSellModalItem(null);
   };
 
   const handleDropItem = (itemId: string) => {
@@ -178,21 +213,32 @@ export default function InventoryPanel() {
             return (
               <div
                 key={index}
-                className={`inventory-item ${isDragging ? 'dragging' : ''} ${isDragOver ? 'drag-over' : ''}`}
+                className={`inventory-item ${isDragging ? 'dragging' : ''} ${isDragOver ? 'drag-over' : ''} ${itemData && ShopManager.canSell(inventory, itemData.id) ? 'sellable' : ''}`}
                 draggable
                 onDragStart={(e) => handleDragStart(e, index)}
                 onDragOver={(e) => handleDragOver(e, index)}
                 onDragLeave={handleDragLeave}
                 onDrop={(e) => handleDrop(e, index)}
                 onDragEnd={handleDragEnd}
-                onContextMenu={(e) => itemData && handleContextMenu(e, itemData, index)}
+                onMouseDown={handleMouseDown}
+                onClick={(e) => {
+                  if (itemData) {
+                    handleItemClick(e, itemData.id);
+                  }
+                }}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setIsRightClick(true);
+                  if (itemData) {
+                    handleContextMenu(e, itemData, index);
+                  }
+                }}
               >
                 <div className="item-name">{itemData?.name || item.itemId}</div>
                 <div className="item-quantity">x{item.quantity}</div>
                 {itemData?.rarity && (
-                  <div className={`item-rarity ${itemData.rarity}`}>
-                    {itemData.rarity}
-                  </div>
+                  <div className={`item-rarity ${itemData.rarity}`}>{itemData.rarity}</div>
                 )}
               </div>
             );
@@ -203,6 +249,7 @@ export default function InventoryPanel() {
         <ItemContextMenu
           item={contextMenu.item}
           inventoryIndex={contextMenu.index}
+          inventory={inventory}
           position={contextMenu.position}
           onClose={() => setContextMenu(null)}
           onEquip={handleEquip}
@@ -212,7 +259,14 @@ export default function InventoryPanel() {
           onViewDetails={handleViewDetails}
         />
       )}
+      {sellModalItem && (
+        <SellItemModal
+          item={sellModalItem}
+          inventory={inventory}
+          onClose={() => setSellModalItem(null)}
+          onSell={handleSellFromModal}
+        />
+      )}
     </div>
   );
 }
-

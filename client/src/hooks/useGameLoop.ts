@@ -30,11 +30,11 @@ export function useGameLoop() {
   const addCombatAction = useGameState((state) => state.addCombatAction);
   const endCombat = useGameState((state) => state.endCombat);
   const queueSkill = useGameState((state) => state.queueSkill);
-  
+
   const combatCountRef = useRef(0);
   const lastSaveTimeRef = useRef(Date.now());
   const intervalRef = useRef<number | null>(null);
-  
+
   // Reset combat stats when combat starts
   useEffect(() => {
     if (isCombatActive) {
@@ -47,68 +47,67 @@ export function useGameLoop() {
     }
   }, [isCombatActive]);
 
-  const processCombatResult = useCallback(async (
-    combatResult: {
-      combatLog: any;
-      updatedCharacter: any;
-      rewards: any;
-    }
-  ) => {
-    if (!combatResult) return;
+  const processCombatResult = useCallback(
+    async (combatResult: { combatLog: any; updatedCharacter: any; rewards: any }) => {
+      if (!combatResult) return;
 
-    const { updatedCharacter, rewards } = combatResult;
+      const { updatedCharacter, rewards } = combatResult;
 
-    // Update character
-    setCharacter(updatedCharacter);
+      // Update character
+      setCharacter(updatedCharacter);
 
-    // Add gold
-    if (rewards.gold > 0) {
-      addItem('gold', rewards.gold);
-      combatStatsRef.totalGold += rewards.gold;
-    }
-
-    // Add items
-    for (const item of rewards.items || []) {
-      addItem(item.itemId, item.quantity || 1);
-    }
-
-    // Update combat stats
-    combatCountRef.current += 1;
-    combatStatsRef.combatsCompleted += 1;
-    combatStatsRef.totalExperience += rewards.experience || 0;
-
-    // Dispatch custom event for combat stats update
-    window.dispatchEvent(new CustomEvent('combatStatsUpdate', {
-      detail: { ...combatStatsRef }
-    }));
-
-    // Auto-save every 10 combats or every 30 seconds
-    const now = Date.now();
-    if (combatCountRef.current % 10 === 0 || now - lastSaveTimeRef.current > 30000) {
-      try {
-        const saveManager = getSaveManager();
-        const currentState = useGameState.getState();
-        
-        if (currentState.character) {
-          const saveData = {
-            version: '1.0.0',
-            character: currentState.character,
-            inventory: currentState.inventory,
-            dungeonProgress: currentState.dungeonProgress,
-            settings: currentState.settings,
-            lastSaved: now,
-            lastOfflineTime: now,
-            activeAction: currentState.activeAction ?? null,
-            maxOfflineHours: currentState.maxOfflineHours ?? 8,
-          };
-          await saveManager.save(saveData);
-          lastSaveTimeRef.current = now;
-        }
-      } catch (error) {
-        console.error('Auto-save failed:', error);
+      // Add gold
+      if (rewards.gold > 0) {
+        addItem('gold', rewards.gold);
+        combatStatsRef.totalGold += rewards.gold;
       }
-    }
-  }, [setCharacter, addItem]);
+
+      // Add items
+      for (const item of rewards.items || []) {
+        addItem(item.itemId, item.quantity || 1);
+      }
+
+      // Update combat stats
+      combatCountRef.current += 1;
+      combatStatsRef.combatsCompleted += 1;
+      combatStatsRef.totalExperience += rewards.experience || 0;
+
+      // Dispatch custom event for combat stats update
+      window.dispatchEvent(
+        new CustomEvent('combatStatsUpdate', {
+          detail: { ...combatStatsRef },
+        })
+      );
+
+      // Auto-save every 10 combats or every 30 seconds
+      const now = Date.now();
+      if (combatCountRef.current % 10 === 0 || now - lastSaveTimeRef.current > 30000) {
+        try {
+          const saveManager = getSaveManager();
+          const currentState = useGameState.getState();
+
+          if (currentState.character) {
+            const saveData = {
+              version: '1.0.0',
+              character: currentState.character,
+              inventory: currentState.inventory,
+              dungeonProgress: currentState.dungeonProgress,
+              settings: currentState.settings,
+              lastSaved: now,
+              lastOfflineTime: now,
+              activeAction: currentState.activeAction ?? null,
+              maxOfflineHours: currentState.maxOfflineHours ?? 8,
+            };
+            await saveManager.save(saveData);
+            lastSaveTimeRef.current = now;
+          }
+        } catch (error) {
+          console.error('Auto-save failed:', error);
+        }
+      }
+    },
+    [setCharacter, addItem]
+  );
 
   const startCombatTurn = useCallback(async () => {
     const state = useGameState.getState();
@@ -153,7 +152,6 @@ export function useGameLoop() {
         // Initialize combat state
         const player = combatEngine.getPlayer();
         if (player && monsters.length > 0) {
-          console.log('Starting combat with monsters:', monsters.length);
           startCombatWithMonsters(
             monsters,
             roundNum,
@@ -187,22 +185,26 @@ export function useGameLoop() {
     if (player && currentActor) {
       const recentActions = combatEngine.getRecentActions(20);
       const currentState = state.currentCombatState;
-      
+
       // Update player party (currently just the player, but structure supports summoned entities)
       let updatedPlayerParty = currentState?.playerParty || [];
       if (updatedPlayerParty.length > 0) {
         const playerPartyMember = updatedPlayerParty[0];
         if (playerPartyMember && playerPartyMember.id === 'player') {
-          updatedPlayerParty = [{
-            ...playerPartyMember,
-            currentHealth: player.currentHealth,
-            currentMana: player.currentMana,
-          }];
+          updatedPlayerParty = [
+            {
+              ...playerPartyMember,
+              currentHealth: player.currentHealth,
+              currentMana: player.currentMana,
+            },
+          ];
         }
       }
 
       // Determine current actor type and index
-      let currentActorType: 'player' | 'monster' | 'summoned' = currentActor.isPlayer ? 'player' : 'monster';
+      let currentActorType: 'player' | 'monster' | 'summoned' = currentActor.isPlayer
+        ? 'player'
+        : 'monster';
       let currentPlayerIndex: number | undefined = undefined;
       let currentMonsterIndex = currentState?.currentMonsterIndex || 0;
 
@@ -215,7 +217,7 @@ export function useGameLoop() {
           currentMonsterIndex = actingMonsterIndex;
         }
       }
-      
+
       // Only update monsters if we have a current state with monsters
       if (currentState && currentState.monsters && currentState.monsters.length > 0) {
         // Update monster states - match by index since we spawn them in order
@@ -225,7 +227,9 @@ export function useGameLoop() {
           const monsterParticipant = monsters.find((m) => {
             const parts = m.id.split('_');
             const baseId = parts.slice(0, -1).join('_');
-            return baseId === monsterState.monster.id || m.id === `${monsterState.monster.id}_${index}`;
+            return (
+              baseId === monsterState.monster.id || m.id === `${monsterState.monster.id}_${index}`
+            );
           });
           if (monsterParticipant && monsterParticipant.isAlive) {
             return {
@@ -278,8 +282,7 @@ export function useGameLoop() {
         setCombatActive(false);
         CombatManager.endCombat();
         endCombat();
-        console.log('Character was defeated. Stopping combat.');
-        
+
         // Dispatch combat complete event (for animations/UI)
         window.dispatchEvent(
           new CustomEvent('combatComplete', {
@@ -288,7 +291,7 @@ export function useGameLoop() {
         );
         return; // Exit early - don't process any further turns
       }
-      
+
       if (combatLog.result === 'victory' && combatLog.rewards) {
         // Clear current combat engine (but don't clear state yet - we'll start a new round)
         CombatManager.endCombat();
@@ -337,12 +340,9 @@ export function useGameLoop() {
         if (currentCombatState && currentCombatState.monsters.length > 0) {
           const monster = currentCombatState.monsters[0].monster;
           const allQuests = dataLoader.getAllQuests();
-          
+
           for (const quest of allQuests) {
-            if (
-              quest.type === 'monster_kills' &&
-              quest.requirements.monsterId === monster.id
-            ) {
+            if (quest.type === 'monster_kills' && quest.requirements.monsterId === monster.id) {
               const { updateQuestProgress } = useGameState.getState();
               updateQuestProgress(quest.id, 1);
             }
@@ -394,7 +394,11 @@ export function useGameLoop() {
 
         // Start new combat round - check if combat is still active (player might have stopped)
         const updatedState = useGameState.getState();
-        if (updatedState.isCombatActive && updatedState.character && updatedState.currentDungeonId) {
+        if (
+          updatedState.isCombatActive &&
+          updatedState.character &&
+          updatedState.currentDungeonId
+        ) {
           // Increment round number
           const newRoundNumber = (updatedState.combatRoundNumber || 0) + 1;
           setCombatRoundNumber(newRoundNumber);
@@ -483,7 +487,14 @@ export function useGameLoop() {
         intervalRef.current = null;
       }
     };
-  }, [isCombatActive, character, currentDungeonId, settings.combatSpeed, settings, startCombatTurn]);
+  }, [
+    isCombatActive,
+    character,
+    currentDungeonId,
+    settings.combatSpeed,
+    settings,
+    startCombatTurn,
+  ]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -494,4 +505,3 @@ export function useGameLoop() {
     };
   }, []);
 }
-

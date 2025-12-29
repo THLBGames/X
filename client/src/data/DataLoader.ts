@@ -122,18 +122,57 @@ export class DataLoader {
   }
 
   private async loadItems(): Promise<void> {
-    // Items are loaded on-demand via loadItem() method
-    // This is intentional to avoid loading 500+ items at startup
-    // Items will be cached when first accessed
-    
-    // However, we should load shop items (like offline time upgrades) at startup
-    const shopItemIds = [
-      'offline_time_upgrade_8h',
-      'offline_time_upgrade_24h',
-    ];
-    
-    for (const itemId of shopItemIds) {
-      await this.loadItem(itemId);
+    // Load all items from manifest file
+    try {
+      const manifest = await this.loadJsonFile<{ items: string[] }>('/data/items/manifest.json');
+      
+      if (manifest && manifest.items && Array.isArray(manifest.items)) {
+        console.log(`Loading ${manifest.items.length} items...`);
+        
+        // Load items in batches to avoid overwhelming the browser
+        const batchSize = 50;
+        for (let i = 0; i < manifest.items.length; i += batchSize) {
+          const batch = manifest.items.slice(i, i + batchSize);
+          await Promise.all(
+            batch.map(async (itemId) => {
+              try {
+                await this.loadItem(itemId);
+              } catch (error) {
+                console.warn(`Failed to load item ${itemId}:`, error);
+              }
+            })
+          );
+          
+          // Small delay between batches to prevent blocking
+          if (i + batchSize < manifest.items.length) {
+            await new Promise(resolve => setTimeout(resolve, 10));
+          }
+        }
+        
+        console.log(`Loaded ${this.itemsCache.size} items`);
+      } else {
+        console.warn('Items manifest not found or invalid, falling back to on-demand loading');
+        // Fallback: load essential shop items
+        const shopItemIds = [
+          'offline_time_upgrade_8h',
+          'offline_time_upgrade_24h',
+        ];
+        
+        for (const itemId of shopItemIds) {
+          await this.loadItem(itemId);
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load items manifest, falling back to on-demand loading:', error);
+      // Fallback: load essential shop items
+      const shopItemIds = [
+        'offline_time_upgrade_8h',
+        'offline_time_upgrade_24h',
+      ];
+      
+      for (const itemId of shopItemIds) {
+        await this.loadItem(itemId);
+      }
     }
   }
 

@@ -13,18 +13,16 @@ interface CombatArenaProps {
   onResultComplete?: () => void;
 }
 
-export default function CombatArena({ combatState, showResult, onResultComplete }: CombatArenaProps) {
+export default function CombatArena({
+  combatState,
+  showResult,
+  onResultComplete,
+}: CombatArenaProps) {
   const character = useGameState((state) => state.character);
   const arenaRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<HTMLDivElement>(null);
   const monsterRef = useRef<HTMLDivElement>(null);
   const { damageNumbers, addDamageNumber, removeDamageNumber } = useDamageNumbers();
-
-  // Debug: log combat state
-  useEffect(() => {
-    console.log('CombatArena - combatState:', combatState);
-    console.log('CombatArena - monsters:', combatState?.monsters);
-  }, [combatState]);
 
   // Calculate positions for damage numbers
   const getDamagePosition = useCallback((target: 'player' | 'monster') => {
@@ -73,16 +71,18 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
     playerParty = combatState.playerParty;
   } else if (combatState.playerHealth !== undefined) {
     // Fallback to old structure
-    playerParty = [{
-      id: 'player',
-      name: character?.name || 'You',
-      isSummoned: false,
-      currentHealth: combatState.playerHealth,
-      maxHealth: combatState.playerMaxHealth,
-      currentMana: combatState.playerMana,
-      maxMana: combatState.playerMaxMana,
-      level: character?.level,
-    }];
+    playerParty = [
+      {
+        id: 'player',
+        name: character?.name || 'You',
+        isSummoned: false,
+        currentHealth: combatState.playerHealth,
+        maxHealth: combatState.playerMaxHealth,
+        currentMana: combatState.playerMana,
+        maxMana: combatState.playerMaxMana,
+        level: character?.level,
+      },
+    ];
   }
 
   // Pad player party to 5 slots (player + 4 summon slots)
@@ -98,7 +98,8 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
     paddedMonsters.push(null);
   }
 
-  const isPlayerPartyTurn = combatState.currentActor === 'player' || combatState.currentActor === 'summoned';
+  const isPlayerPartyTurn =
+    combatState.currentActor === 'player' || combatState.currentActor === 'summoned';
   const currentPlayerIndex = combatState.currentPlayerIndex ?? 0;
 
   return (
@@ -156,7 +157,11 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
         })}
       </div>
 
-      <div className="combat-vs">VS<br/>Round {combatState.roundNumber + 1}</div>
+      <div className="combat-vs">
+        VS
+        <br />
+        Round {combatState.roundNumber + 1}
+      </div>
 
       <div className="monsters-container">
         {paddedMonsters.map((monsterState, index) => {
@@ -174,8 +179,7 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
             return null; // Don't render dead monsters
           }
 
-          const isCurrentMonster =
-            !isPlayerPartyTurn && index === combatState.currentMonsterIndex;
+          const isCurrentMonster = !isPlayerPartyTurn && index === combatState.currentMonsterIndex;
 
           return (
             <div
@@ -227,4 +231,3 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
     </div>
   );
 }
-

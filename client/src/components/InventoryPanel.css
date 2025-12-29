@@ -70,6 +70,15 @@
   transform: scale(1.05);
 }
 
+.inventory-item.sellable {
+  cursor: pointer;
+}
+
+.inventory-item.sellable:hover {
+  border-color: #4a9eff;
+  box-shadow: 0 0 8px rgba(74, 158, 255, 0.4);
+}
+
 .item-name {
   font-size: 0.85rem;
   font-weight: bold;

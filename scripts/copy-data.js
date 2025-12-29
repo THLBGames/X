@@ -34,3 +34,18 @@ function copyRecursive(src, dest) {
 copyRecursive(dataDir, publicDataDir);
 console.log('Data files copied to client/public/data');
 
+// Generate items manifest
+const itemsDir = path.join(publicDataDir, 'items');
+if (fs.existsSync(itemsDir)) {
+  const itemFiles = fs.readdirSync(itemsDir).filter(file => file.endsWith('.json'));
+  const itemIds = itemFiles.map(file => file.replace('.json', '')).sort();
+  
+  const manifest = {
+    items: itemIds
+  };
+  
+  const manifestPath = path.join(publicDataDir, 'items', 'manifest.json');
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+  console.log(`Generated items manifest with ${itemIds.length} items`);
+}
+

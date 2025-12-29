@@ -378,7 +378,6 @@ export const useGameState = create<GameState>((set, get) => ({
     playerMana,
     playerMaxMana
   ) => {
-    console.log('startCombatWithMonsters called with monsters:', monsters);
     const state = get();
     const character = state.character;
 
@@ -387,8 +386,6 @@ export const useGameState = create<GameState>((set, get) => ({
       currentHealth: monster.stats.health || monster.stats.maxHealth,
       maxHealth: monster.stats.maxHealth || monster.stats.health,
     }));
-    console.log('monsterStates created:', monsterStates);
-
     // Create player party member from character
     const playerPartyMember: ActivePlayerPartyMember = {
       id: 'player',
@@ -416,9 +413,6 @@ export const useGameState = create<GameState>((set, get) => ({
       roundNumber,
       isBossRound,
     };
-
-    console.log('Setting combat state with playerParty:', newCombatState.playerParty);
-    console.log('Player party member:', playerPartyMember);
 
     set({
       currentCombatState: newCombatState,

@@ -260,6 +260,7 @@ export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
           item={contextMenu.item}
           isEquipped={true}
           equippedSlot={contextMenu.slot}
+          inventory={inventory}
           position={contextMenu.position}
           onClose={() => setContextMenu(null)}
           onUnequip={(slot) => handleUnequip(slot as EquipmentSlot)}

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import type { Item } from '@idle-rpg/shared';
+import type { Item, Inventory } from '@idle-rpg/shared';
+import { ShopManager } from '../systems/shop';
 import './ItemContextMenu.css';
 
 export interface ContextMenuAction {
@@ -14,6 +15,7 @@ interface ItemContextMenuProps {
   inventoryIndex?: number;
   isEquipped?: boolean;
   equippedSlot?: string;
+  inventory?: Inventory;
   position: { x: number; y: number };
   onClose: () => void;
   onEquip?: (itemId: string) => void;
@@ -26,9 +28,9 @@ interface ItemContextMenuProps {
 
 export default function ItemContextMenu({
   item,
-  inventoryIndex,
   isEquipped,
   equippedSlot,
+  inventory,
   position,
   onClose,
   onEquip,
@@ -41,24 +43,38 @@ export default function ItemContextMenu({
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        onClose();
-      }
-    };
+    // Small delay to prevent immediate closing when menu opens
+    let handleClickOutside: ((event: MouseEvent) => void) | null = null;
+    let handleEscape: ((event: KeyboardEvent) => void) | null = null;
 
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    };
+    const timeoutId = setTimeout(() => {
+      handleClickOutside = (event: MouseEvent) => {
+        // Don't close if clicking on the menu itself
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+          onClose();
+        }
+      };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscape);
+      handleEscape = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          onClose();
+        }
+      };
+
+      // Use click instead of mousedown to avoid immediate closing
+      // Use a longer delay to ensure menu is fully rendered
+      document.addEventListener('click', handleClickOutside, true);
+      document.addEventListener('keydown', handleEscape);
+    }, 100); // Increased delay to 100ms
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscape);
+      clearTimeout(timeoutId);
+      if (handleClickOutside) {
+        document.removeEventListener('click', handleClickOutside, true);
+      }
+      if (handleEscape) {
+        document.removeEventListener('keydown', handleEscape);
+      }
     };
   }, [onClose]);
 
@@ -130,7 +146,8 @@ export default function ItemContextMenu({
     }
 
     // All items can be sold (except if equipped, then unequip first)
-    if (!isEquipped) {
+    // Check if item can actually be sold (has value, not gold, in inventory)
+    if (!isEquipped && inventory && ShopManager.canSell(inventory, item.id)) {
       actions.push({
         label: 'Sell',
         action: () => {
@@ -167,8 +184,8 @@ export default function ItemContextMenu({
   };
 
   const actions = getMenuActions();
-
   if (actions.length === 0) {
+    console.warn('ItemContextMenu: No actions available, returning null');
     return null;
   }
 
@@ -179,6 +196,12 @@ export default function ItemContextMenu({
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
+        position: 'fixed',
+        zIndex: 10000,
+      }}
+      onClick={(e) => {
+        // Prevent clicks inside the menu from closing it
+        e.stopPropagation();
       }}
     >
       <div className="context-menu-item-name">{item.name}</div>
@@ -196,4 +219,3 @@ export default function ItemContextMenu({
     </div>
   );
 }
-

@@ -24,7 +24,7 @@ const activeSkillsListeners = new Set<() => void>(); // Listeners to notify when
 
 // Helper to notify all listeners of activeSkills changes
 const notifyActiveSkillsListeners = () => {
-  activeSkillsListeners.forEach(listener => listener());
+  activeSkillsListeners.forEach((listener) => listener());
 };
 
 // Helper to get all active skills as an array
@@ -39,14 +39,14 @@ export const stopAllIdleSkills = () => {
     clearInterval(intervalId);
   }
   sharedIntervalRefs.clear();
-  
+
   // Clear all active skills
   sharedActiveSkills.clear();
   notifyActiveSkillsListeners();
-  
+
   // Clear resume attempt tracking
   sharedResumeAttempted.clear();
-  
+
   // Clear activeAction if it's a skill action
   const state = useGameState.getState();
   if (state.activeAction && state.activeAction.type === 'skill') {
@@ -72,10 +72,10 @@ export function useIdleSkills() {
       setActiveSkills(getSharedActiveSkills());
     };
     activeSkillsListeners.add(listener);
-    
+
     // Initialize with current shared state
     setActiveSkills(getSharedActiveSkills());
-    
+
     return () => {
       activeSkillsListeners.delete(listener);
     };
@@ -84,38 +84,38 @@ export function useIdleSkills() {
   /**
    * Stop training a skill
    */
-  const stopTraining = useCallback((skillId: string) => {
-    const intervalId = sharedIntervalRefs.get(skillId);
-    if (intervalId) {
-      clearInterval(intervalId);
-      sharedIntervalRefs.delete(skillId);
-    }
+  const stopTraining = useCallback(
+    (skillId: string) => {
+      const intervalId = sharedIntervalRefs.get(skillId);
+      if (intervalId) {
+        clearInterval(intervalId);
+        sharedIntervalRefs.delete(skillId);
+      }
 
-    // Remove from shared active skills
-    sharedActiveSkills.delete(skillId);
-    notifyActiveSkillsListeners();
-    
-    // If no skills are active, clear active action
-    if (sharedActiveSkills.size === 0) {
-      setActiveAction(null);
-    }
-  }, [setActiveAction]);
+      // Remove from shared active skills
+      sharedActiveSkills.delete(skillId);
+      notifyActiveSkillsListeners();
+
+      // If no skills are active, clear active action
+      if (sharedActiveSkills.size === 0) {
+        setActiveAction(null);
+      }
+    },
+    [setActiveAction]
+  );
 
   /**
    * Start training a gathering skill
    */
   const startGathering = useCallback(
     (skillId: string, nodeId?: string) => {
-      console.log('startGathering called with:', { skillId, nodeId, hasCharacter: !!character });
       if (!character) {
-        console.warn('startGathering: No character');
         return;
       }
 
       // Check if combat is active - if so, stop it before starting idle skill
       const state = useGameState.getState();
       if (state.isCombatActive || (state.activeAction && state.activeAction.type === 'combat')) {
-        console.log('Stopping combat to start idle skill');
         useGameState.getState().stopCombat();
       }
 
@@ -125,7 +125,6 @@ export function useIdleSkills() {
           )
         : ResourceNodeManager.getBestAvailableNode(character, skillId);
 
-      console.log('startGathering: Found node:', node?.nodeId || 'null');
       if (!node) {
         console.warn(`No available node for skill ${skillId}`);
         return;
@@ -137,11 +136,11 @@ export function useIdleSkills() {
       const now = Date.now();
       // Add to shared active skills with timing information
       const activeTraining: ActiveSkillTraining = {
-        skillId, 
+        skillId,
         nodeId: node.nodeId,
         startTime: now,
         lastActionTime: now,
-        timeRequired: node.timeRequired || 5000
+        timeRequired: node.timeRequired || 5000,
       };
       sharedActiveSkills.set(skillId, activeTraining);
       notifyActiveSkillsListeners();
@@ -179,27 +178,23 @@ export function useIdleSkills() {
         if (currentTraining && currentTraining.nodeId === node.nodeId) {
           sharedActiveSkills.set(skillId, {
             ...currentTraining,
-            lastActionTime: now
+            lastActionTime: now,
           });
           notifyActiveSkillsListeners();
         }
       }, node.timeRequired || 5000);
 
       sharedIntervalRefs.set(skillId, intervalId);
-      console.log('startGathering: Interval set for skill:', skillId, 'intervalId:', intervalId);
 
-      // Set active action for offline progress (must be set after everything else)
-      console.log('startGathering: Setting activeAction:', { type: 'skill', skillId, nodeId: node.nodeId });
       setActiveAction({ type: 'skill', skillId, nodeId: node.nodeId });
-      console.log('startGathering: activeAction set, current state:', useGameState.getState().activeAction);
-      
+
       // Clear resume attempt tracking since we've successfully started the skill
       const actionKey = `${skillId}-${node.nodeId || 'default'}`;
       sharedResumeAttempted.delete(actionKey);
     },
     [character, addItem, setCharacter, updateIdleSkill, stopTraining, setActiveAction]
   );
-  
+
   // Store startGathering in ref so resume effect can access it without dependency issues
   startGatheringRef.current = startGathering;
 
@@ -224,49 +219,37 @@ export function useIdleSkills() {
     // Get current state
     const currentActiveAction = activeAction;
     const currentCharacter = character;
-    
-    console.log('useIdleSkills resume effect triggered', { 
-      character: !!currentCharacter, 
-      activeAction: currentActiveAction 
-    });
-    
+
     // Only proceed if we have a valid skill action
     if (!currentActiveAction || currentActiveAction.type !== 'skill' || !currentCharacter) {
-      console.log('No valid active skill action, skipping resume', { currentActiveAction, hasCharacter: !!currentCharacter });
       return;
     }
-    
+
     const skillId = currentActiveAction.skillId;
     const nodeId = currentActiveAction.nodeId;
     const actionKey = `${skillId}-${nodeId || 'default'}`;
-    
+
     // Check if skill is already training (if so, we're done)
     if (sharedIntervalRefs.has(skillId)) {
-      console.log('Skill already training (interval exists), skipping resume');
       return;
     }
-    
+
     // Check if we've already attempted to resume this specific action
     // Only skip if we've tried AND the skill is not training (to avoid infinite loops)
     if (sharedResumeAttempted.get(actionKey)) {
-      console.log('Already attempted to resume this action, skipping:', actionKey);
       return;
     }
-    
-    console.log('Attempting to resume skill:', skillId, 'node:', nodeId);
-    
+
     // Mark that we're attempting to resume this action BEFORE calling startGathering
     // This prevents infinite loops if multiple instances try to resume
     sharedResumeAttempted.set(actionKey, true);
-    
+
     // Get the startGathering function from ref
     const startGatheringFn = startGatheringRef.current;
     if (startGatheringFn) {
-      console.log('Calling startGathering for skill:', skillId, 'node:', nodeId);
-      
       // Call startGathering - this will update state and potentially cause a remount
       startGatheringFn(skillId, nodeId);
-      
+
       // Clear the tracking after a short delay to allow the interval to be set
       // This ensures that if the component remounts, it can check if the skill is already training
       setTimeout(() => {
@@ -299,4 +282,3 @@ export function useIdleSkills() {
     activeSkills,
   };
 }
-

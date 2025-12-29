@@ -58,9 +58,7 @@ export default function SkillsPanel() {
 
   // Auto-select skill if there's an active action
   useEffect(() => {
-    console.log('SkillsPanel auto-select effect', { activeAction, selectedSkillId });
     if (activeAction && activeAction.type === 'skill' && !selectedSkillId) {
-      console.log('Auto-selecting skill:', activeAction.skillId);
       setSelectedSkillId(activeAction.skillId);
     }
   }, [activeAction, selectedSkillId]);
