@@ -32,6 +32,28 @@ const getSharedActiveSkills = (): ActiveSkillTraining[] => {
   return Array.from(sharedActiveSkills.values());
 };
 
+// Global function to stop all idle skills - can be called from anywhere
+export const stopAllIdleSkills = () => {
+  // Clear all intervals
+  for (const intervalId of sharedIntervalRefs.values()) {
+    clearInterval(intervalId);
+  }
+  sharedIntervalRefs.clear();
+  
+  // Clear all active skills
+  sharedActiveSkills.clear();
+  notifyActiveSkillsListeners();
+  
+  // Clear resume attempt tracking
+  sharedResumeAttempted.clear();
+  
+  // Clear activeAction if it's a skill action
+  const state = useGameState.getState();
+  if (state.activeAction && state.activeAction.type === 'skill') {
+    useGameState.getState().setActiveAction(null);
+  }
+};
+
 export function useIdleSkills() {
   const character = useGameState((state) => state.character);
   const setCharacter = useGameState((state) => state.setCharacter);
@@ -90,6 +112,13 @@ export function useIdleSkills() {
         return;
       }
 
+      // Check if combat is active - if so, stop it before starting idle skill
+      const state = useGameState.getState();
+      if (state.isCombatActive || (state.activeAction && state.activeAction.type === 'combat')) {
+        console.log('Stopping combat to start idle skill');
+        useGameState.getState().stopCombat();
+      }
+
       const node = nodeId
         ? ResourceNodeManager.getAllAvailableNodes(character, skillId).find(
             (n) => n.nodeId === nodeId
@@ -102,14 +131,8 @@ export function useIdleSkills() {
         return;
       }
 
-      // Stop existing training for this skill (without clearing activeAction - we'll set it below)
-      const existingIntervalId = sharedIntervalRefs.get(skillId);
-      if (existingIntervalId) {
-        clearInterval(existingIntervalId);
-        sharedIntervalRefs.delete(skillId);
-      }
-      // Remove from shared active skills (but don't clear activeAction via stopTraining)
-      sharedActiveSkills.delete(skillId);
+      // Stop ALL existing idle skills to ensure only one is active at a time
+      stopAllIdleSkills();
 
       const now = Date.now();
       // Add to shared active skills with timing information

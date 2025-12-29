@@ -13,6 +13,7 @@ import type {
 } from '@idle-rpg/shared';
 import { QuestManager } from '../systems/quest/QuestManager';
 import { getDataLoader } from '../data';
+import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
 interface GameState {
   // Character state
@@ -349,13 +350,17 @@ export const useGameState = create<GameState>((set, get) => ({
 
   setCurrentDungeon: (dungeonId) => set({ currentDungeonId: dungeonId }),
 
-  startCombat: (dungeonId) =>
+  startCombat: (dungeonId) => {
+    // Stop all idle skills before starting combat
+    stopAllIdleSkills();
+
     set({
       isCombatActive: true,
       currentDungeonId: dungeonId,
       combatRoundNumber: 0, // Start at round 0
       activeAction: { type: 'combat', dungeonId },
-    }),
+    });
+  },
 
   stopCombat: () =>
     set({

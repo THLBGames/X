@@ -18,10 +18,6 @@ export default function SkillsPanel() {
     production: true,
     hybrid: true,
   });
-  const [searchTerm, setSearchTerm] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState<
-    'all' | 'idle' | 'gathering' | 'production' | 'hybrid'
-  >('all');
 
   if (!character) {
     return null;
@@ -47,40 +43,6 @@ export default function SkillsPanel() {
       },
     };
   }, [allSkills]);
-
-  // Filter skills based on search term and category filter
-  const filteredCategories = useMemo(() => {
-    let filtered = { ...skillCategories };
-
-    // Apply category filter
-    if (categoryFilter === 'gathering') {
-      filtered.idle.production = [];
-      filtered.idle.hybrid = [];
-    } else if (categoryFilter === 'production') {
-      filtered.idle.gathering = [];
-      filtered.idle.hybrid = [];
-    } else if (categoryFilter === 'hybrid') {
-      filtered.idle.gathering = [];
-      filtered.idle.production = [];
-    }
-
-    // Apply search filter
-    if (searchTerm.trim()) {
-      const query = searchTerm.toLowerCase();
-      const filterSkills = (skills: Skill[]) =>
-        skills.filter(
-          (skill) =>
-            skill.name.toLowerCase().includes(query) ||
-            skill.description.toLowerCase().includes(query)
-        );
-
-      filtered.idle.gathering = filterSkills(filtered.idle.gathering);
-      filtered.idle.production = filterSkills(filtered.idle.production);
-      filtered.idle.hybrid = filterSkills(filtered.idle.hybrid);
-    }
-
-    return filtered;
-  }, [skillCategories, searchTerm, categoryFilter]);
 
   const getSkillLevel = (skillId: string): number => {
     // All skills in this panel are idle skills
@@ -176,39 +138,6 @@ export default function SkillsPanel() {
       <div className="skills-sidebar">
         <div className="skills-sidebar-header">
           <h2>Skills</h2>
-          <input
-            type="text"
-            placeholder="Search skills..."
-            className="skills-search-input"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <div className="category-filter-buttons">
-            <button
-              className={categoryFilter === 'all' ? 'active' : ''}
-              onClick={() => setCategoryFilter('all')}
-            >
-              All
-            </button>
-            <button
-              className={categoryFilter === 'gathering' ? 'active' : ''}
-              onClick={() => setCategoryFilter('gathering')}
-            >
-              Gathering
-            </button>
-            <button
-              className={categoryFilter === 'production' ? 'active' : ''}
-              onClick={() => setCategoryFilter('production')}
-            >
-              Production
-            </button>
-            <button
-              className={categoryFilter === 'hybrid' ? 'active' : ''}
-              onClick={() => setCategoryFilter('hybrid')}
-            >
-              Hybrid
-            </button>
-          </div>
         </div>
 
         <div className="skills-sidebar-content">
@@ -216,13 +145,9 @@ export default function SkillsPanel() {
           <div className="skills-main-category">
             {expandedCategories.idle && (
               <div className="skills-subcategories">
-                {renderCategorySection('Gathering', 'gathering', filteredCategories.idle.gathering)}
-                {renderCategorySection(
-                  'Production',
-                  'production',
-                  filteredCategories.idle.production
-                )}
-                {renderCategorySection('Hybrid', 'hybrid', filteredCategories.idle.hybrid)}
+                {renderCategorySection('Gathering', 'gathering', skillCategories.idle.gathering)}
+                {renderCategorySection('Production', 'production', skillCategories.idle.production)}
+                {renderCategorySection('Hybrid', 'hybrid', skillCategories.idle.hybrid)}
               </div>
             )}
           </div>

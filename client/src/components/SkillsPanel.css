@@ -29,61 +29,11 @@
 }
 
 .skills-sidebar-header h2 {
-  margin: 0 0 12px 0;
+  margin: 0;
   font-size: 1.2rem;
   color: #fff;
   border: none;
   padding: 0;
-}
-
-.skills-search-input {
-  width: 100%;
-  padding: 8px;
-  background: #333;
-  border: 1px solid #444;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-.skills-search-input::placeholder {
-  color: #888;
-}
-
-.skills-search-input:focus {
-  outline: none;
-  border-color: #4a9eff;
-  box-shadow: 0 0 5px rgba(74, 158, 255, 0.3);
-}
-
-.category-filter-buttons {
-  display: flex;
-  gap: 4px;
-  margin-top: 8px;
-}
-
-.category-filter-buttons button {
-  flex: 1;
-  padding: 6px 8px;
-  background: #333;
-  border: 1px solid #444;
-  border-radius: 4px;
-  color: #aaa;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.category-filter-buttons button:hover {
-  background: #3a3a3a;
-  color: #fff;
-}
-
-.category-filter-buttons button.active {
-  background: #4a9eff;
-  border-color: #4a9eff;
-  color: #fff;
 }
 
 .skills-sidebar-content {
@@ -334,16 +284,6 @@
 
   .skills-sidebar-header h2 {
     font-size: 1rem;
-  }
-
-  .skills-search-input {
-    font-size: 0.85rem;
-    padding: 6px;
-  }
-
-  .category-filter-buttons button {
-    font-size: 0.75rem;
-    padding: 5px 6px;
   }
 
   .skill-item {
