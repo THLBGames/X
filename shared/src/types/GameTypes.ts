@@ -135,6 +135,73 @@ export type SkillType = 'active' | 'passive' | 'gathering' | 'production';
 export type SkillTarget = 'self' | 'enemy' | 'ally' | 'all_enemies' | 'all_allies';
 export type SkillCategory = 'gathering' | 'production' | 'hybrid';
 
+// Skill Upgrade system
+export type UpgradeType = 'permanent' | 'consumable';
+export type UpgradeScope = 'skill' | 'category';
+export type UpgradeTier = 'I' | 'II' | 'III' | 'IV' | 'V';
+
+export interface SkillUpgrade {
+  id: string; // e.g., "mining_upgrade_I", "gathering_boost_consumable"
+  name: string;
+  description: string;
+  type: UpgradeType;
+  scope: UpgradeScope;
+  skillId?: string; // Required if scope === 'skill'
+  category?: SkillCategory; // Required if scope === 'category'
+  tier?: UpgradeTier; // Required if type === 'permanent'
+  price: number; // Base price for tier I, scales for higher tiers
+  // Permanent upgrade bonuses
+  bonuses?: {
+    experienceMultiplier?: number;
+    speedMultiplier?: number; // < 1 = faster
+    yieldMultiplier?: number;
+    successRateBonus?: number; // 0-1
+    unlocksNodes?: string[]; // Node IDs to unlock
+    unlocksRecipes?: string[]; // Recipe IDs to unlock
+  };
+  // Consumable upgrade properties
+  actionDuration?: number; // Number of actions (for consumables)
+  // Requirements
+  requirements?: {
+    skillLevel?: number; // Minimum skill level required
+    previousTierId?: string; // Required tier I-IV to upgrade to next tier
+  };
+}
+
+export interface ActiveUpgrade {
+  upgradeId: string;
+  tier: UpgradeTier; // For permanent upgrades
+  purchasedAt: number; // Timestamp
+  remainingActions?: number; // For consumables
+}
+
+// Mercenary system
+export type MercenaryType = 'combat' | 'skilling';
+
+export interface Mercenary {
+  id: string;
+  name: string;
+  description: string;
+  type: MercenaryType;
+  price: number; // One-time rental cost
+  duration: number; // Battles for combat, actions for skilling
+  // Combat mercenary properties
+  stats?: CombatStats; // Stats if combat type
+  // Skilling mercenary properties
+  bonuses?: {
+    experienceMultiplier?: number; // e.g., 1.5 = 50% more XP
+    speedMultiplier?: number; // e.g., 0.8 = 20% faster
+    yieldMultiplier?: number; // e.g., 1.3 = 30% more resources
+  };
+}
+
+export interface ActiveMercenary {
+  mercenaryId: string;
+  rentedAt: number; // Timestamp
+  remainingBattles?: number; // For combat mercenaries
+  remainingActions?: number; // For skilling mercenaries
+}
+
 export interface Skill {
   id: string;
   name: string;
@@ -308,6 +375,9 @@ export interface Character {
   idleSkills?: IdleSkillLevel[];
   skillBar?: string[]; // Array of skill IDs for combat skill bar (max 10)
   questProgress?: QuestProgress[]; // Quest progress tracking
+  activeMercenaries?: ActiveMercenary[]; // Currently rented mercenaries (max 2)
+  activeUpgrades?: ActiveUpgrade[]; // Permanent upgrades (always active)
+  consumableUpgrades?: ActiveUpgrade[]; // Active consumable upgrades
 }
 
 export interface LearnedSkill {
@@ -497,6 +567,9 @@ export interface SaveData {
   currentDungeonId?: string; // Currently selected dungeon
   activeAction?: ActiveAction; // Last active action (combat or skill)
   maxOfflineHours?: number; // Maximum offline hours (default 8, upgradable)
+  activeMercenaries?: ActiveMercenary[]; // Currently rented mercenaries
+  activeUpgrades?: ActiveUpgrade[]; // Permanent upgrades
+  consumableUpgrades?: ActiveUpgrade[]; // Active consumable upgrades
 }
 
 export interface GameSettings {

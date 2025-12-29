@@ -1,0 +1,19 @@
+{
+  "id": "cooking_upgrade_III",
+  "name": "Cooking Upgrade III",
+  "description": "Permanently increases cooking XP gain by 20%, speed by 12%, and yield by 12%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "cooking",
+  "tier": "III",
+  "price": 5196,
+  "bonuses": {
+    "experienceMultiplier": 1.2,
+    "speedMultiplier": 0.88,
+    "yieldMultiplier": 1.12,
+    "successRateBonus": 0.12
+  },
+  "requirements": {
+    "previousTierId": "cooking_upgrade_II"
+  }
+}

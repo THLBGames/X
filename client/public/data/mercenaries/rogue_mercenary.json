@@ -1,0 +1,22 @@
+{
+  "id": "rogue_mercenary",
+  "name": "Hired Rogue",
+  "description": "A swift assassin who strikes from the shadows. Fights alongside you for 50 battles.",
+  "type": "combat",
+  "price": 600,
+  "duration": 50,
+  "stats": {
+    "health": 180,
+    "maxHealth": 180,
+    "mana": 40,
+    "maxMana": 40,
+    "attack": 35,
+    "defense": 10,
+    "magicAttack": 5,
+    "magicDefense": 8,
+    "speed": 18,
+    "criticalChance": 15,
+    "criticalDamage": 2.0
+  }
+}
+

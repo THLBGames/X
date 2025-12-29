@@ -9,6 +9,7 @@ import type {
 } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { DungeonManager } from '../dungeon/DungeonManager';
+import { MercenaryManager } from '../mercenary/MercenaryManager';
 
 export interface CombatOptions {
   autoCombat?: boolean;
@@ -47,6 +48,19 @@ export class CombatEngine {
       isAlive: true,
     };
 
+    // Add combat mercenaries as participants
+    const combatMercenaries = MercenaryManager.getCombatMercenaries(character);
+    const mercenaryParticipants: CombatParticipant[] = combatMercenaries.map((mercenary, index) => ({
+      id: `mercenary_${mercenary.id}_${index}`,
+      name: mercenary.name,
+      isPlayer: true, // Mercenaries are on player's side
+      stats: { ...mercenary.stats! },
+      currentHealth: mercenary.stats!.health,
+      currentMana: mercenary.stats!.mana,
+      statusEffects: [],
+      isAlive: true,
+    }));
+
     const monsterParticipants: CombatParticipant[] = monsters.map((monster, index) => ({
       id: `${monster.id}_${index}`,
       name: monster.name,
@@ -58,7 +72,7 @@ export class CombatEngine {
       isAlive: true,
     }));
 
-    this.participants = [player, ...monsterParticipants];
+    this.participants = [player, ...mercenaryParticipants, ...monsterParticipants];
     this.currentTurnIndex = 0;
     this.actions = [];
     this.startTime = Date.now();

@@ -224,6 +224,21 @@ export class SaveManager {
             characterWithSkills.questProgress = [];
           }
 
+          // Ensure activeMercenaries exists (initialize if missing)
+          if (!characterWithSkills.activeMercenaries) {
+            characterWithSkills.activeMercenaries = [];
+          }
+
+          // Ensure activeUpgrades exists (initialize if missing)
+          if (!characterWithSkills.activeUpgrades) {
+            characterWithSkills.activeUpgrades = [];
+          }
+
+          // Ensure consumableUpgrades exists (initialize if missing)
+          if (!characterWithSkills.consumableUpgrades) {
+            characterWithSkills.consumableUpgrades = [];
+          }
+
           return characterWithSkills;
         })()
       : saveData.character;

@@ -6,6 +6,8 @@ import type {
   Dungeon,
   GameConfig,
   Quest,
+  Mercenary,
+  SkillUpgrade,
 } from '@idle-rpg/shared';
 
 type DataCache<T> = Map<string, T>;
@@ -19,6 +21,8 @@ export class DataLoader {
   private skillsCache: DataCache<Skill> = new Map();
   private dungeonsCache: DataCache<Dungeon> = new Map();
   private questsCache: DataCache<Quest> = new Map();
+  private mercenariesCache: DataCache<Mercenary> = new Map();
+  private upgradesCache: DataCache<SkillUpgrade> = new Map();
   private configCache: GameConfig | null = null;
   private loaded = false;
 
@@ -45,6 +49,8 @@ export class DataLoader {
       this.loadSkills(),
       this.loadDungeons(),
       this.loadQuests(),
+      this.loadMercenaries(),
+      this.loadUpgrades(),
       this.loadConfig(),
     ]);
 
@@ -324,6 +330,71 @@ export class DataLoader {
     }
   }
 
+  private async loadMercenaries(): Promise<void> {
+    // Load mercenaries from data directory using fetch
+    const mercenaryIds = [
+      'warrior_mercenary',
+      'mage_mercenary',
+      'rogue_mercenary',
+      'mining_mercenary',
+      'foraging_mercenary',
+      'crafting_mercenary',
+    ];
+    
+    for (const mercenaryId of mercenaryIds) {
+      try {
+        const data = await this.loadJsonFile<Mercenary>(`/data/mercenaries/${mercenaryId}.json`);
+        if (data && this.validateMercenary(data)) {
+          this.mercenariesCache.set(data.id, data);
+        }
+      } catch (error) {
+        console.warn(`Failed to load mercenary ${mercenaryId}:`, error);
+      }
+    }
+  }
+
+  private async loadUpgrades(): Promise<void> {
+    // Load all upgrades from data directory using fetch
+    const skillIds = [
+      'mining', 'fishing', 'woodcutting', 'herbalism', 'hunting', 'archaeology',
+      'quarrying', 'foraging', 'treasure_hunting', 'thieving', 'trapping', 'divination',
+      'cooking', 'blacksmithing', 'alchemy', 'enchanting', 'tailoring', 'leatherworking',
+      'jewelcrafting', 'engineering', 'runecrafting', 'farming',
+    ];
+    const categories = ['gathering', 'production', 'hybrid'];
+    const tiers = ['I', 'II', 'III', 'IV', 'V'];
+
+    const upgradeIds: string[] = [];
+
+    // Add permanent skill upgrades
+    for (const skillId of skillIds) {
+      for (const tier of tiers) {
+        upgradeIds.push(`${skillId}_upgrade_${tier}`);
+      }
+      upgradeIds.push(`${skillId}_boost_consumable`);
+    }
+
+    // Add permanent category upgrades
+    for (const category of categories) {
+      for (const tier of tiers) {
+        upgradeIds.push(`${category}_upgrade_${tier}`);
+      }
+      upgradeIds.push(`${category}_boost_consumable`);
+    }
+
+    // Load all upgrades
+    for (const upgradeId of upgradeIds) {
+      try {
+        const data = await this.loadJsonFile<SkillUpgrade>(`/data/upgrades/${upgradeId}.json`);
+        if (data && this.validateUpgrade(data)) {
+          this.upgradesCache.set(data.id, data);
+        }
+      } catch (error) {
+        console.warn(`Failed to load upgrade ${upgradeId}:`, error);
+      }
+    }
+  }
+
   private async loadConfig(): Promise<void> {
     try {
       const response = await fetch('/data/config/game.json');
@@ -502,6 +573,34 @@ export class DataLoader {
     return Array.from(this.questsCache.values());
   }
 
+  getMercenary(id: string): Mercenary | undefined {
+    return this.mercenariesCache.get(id);
+  }
+
+  getAllMercenaries(): Mercenary[] {
+    return Array.from(this.mercenariesCache.values());
+  }
+
+  getUpgrade(id: string): SkillUpgrade | undefined {
+    return this.upgradesCache.get(id);
+  }
+
+  getAllUpgrades(): SkillUpgrade[] {
+    return Array.from(this.upgradesCache.values());
+  }
+
+  getUpgradesForSkill(skillId: string): SkillUpgrade[] {
+    return Array.from(this.upgradesCache.values()).filter(
+      (upgrade) => upgrade.scope === 'skill' && upgrade.skillId === skillId
+    );
+  }
+
+  getUpgradesForCategory(category: string): SkillUpgrade[] {
+    return Array.from(this.upgradesCache.values()).filter(
+      (upgrade) => upgrade.scope === 'category' && upgrade.category === category
+    );
+  }
+
   getConfig(): GameConfig {
     if (!this.configCache) {
       return this.getDefaultConfig();
@@ -582,6 +681,39 @@ export class DataLoader {
       typeof data.type === 'string' &&
       data.requirements &&
       typeof data.requirements.quantity === 'number'
+    );
+  }
+
+  private validateMercenary(data: any): data is Mercenary {
+    return (
+      data &&
+      typeof data.id === 'string' &&
+      typeof data.name === 'string' &&
+      typeof data.description === 'string' &&
+      typeof data.type === 'string' &&
+      (data.type === 'combat' || data.type === 'skilling') &&
+      typeof data.price === 'number' &&
+      typeof data.duration === 'number' &&
+      (data.type === 'combat' ? data.stats : true) &&
+      (data.type === 'skilling' ? data.bonuses : true)
+    );
+  }
+
+  private validateUpgrade(data: any): data is SkillUpgrade {
+    return (
+      data &&
+      typeof data.id === 'string' &&
+      typeof data.name === 'string' &&
+      typeof data.description === 'string' &&
+      typeof data.type === 'string' &&
+      (data.type === 'permanent' || data.type === 'consumable') &&
+      typeof data.scope === 'string' &&
+      (data.scope === 'skill' || data.scope === 'category') &&
+      typeof data.price === 'number' &&
+      (data.scope === 'skill' ? typeof data.skillId === 'string' : true) &&
+      (data.scope === 'category' ? typeof data.category === 'string' : true) &&
+      (data.type === 'permanent' ? typeof data.tier === 'string' : true) &&
+      (data.type === 'consumable' ? typeof data.actionDuration === 'number' : true)
     );
   }
 

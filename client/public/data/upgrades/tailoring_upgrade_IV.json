@@ -1,0 +1,19 @@
+{
+  "id": "tailoring_upgrade_IV",
+  "name": "Tailoring Upgrade IV",
+  "description": "Permanently increases tailoring XP gain by 25%, speed by 15%, and yield by 15%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "tailoring",
+  "tier": "IV",
+  "price": 8000,
+  "bonuses": {
+    "experienceMultiplier": 1.25,
+    "speedMultiplier": 0.85,
+    "yieldMultiplier": 1.15,
+    "successRateBonus": 0.15
+  },
+  "requirements": {
+    "previousTierId": "tailoring_upgrade_III"
+  }
+}

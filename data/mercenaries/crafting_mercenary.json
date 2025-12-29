@@ -1,0 +1,14 @@
+{
+  "id": "crafting_mercenary",
+  "name": "Master Crafter",
+  "description": "A master craftsman who helps you create items faster and gain more experience. Provides bonuses for 100 crafting actions.",
+  "type": "skilling",
+  "price": 400,
+  "duration": 100,
+  "bonuses": {
+    "experienceMultiplier": 1.4,
+    "speedMultiplier": 0.8,
+    "yieldMultiplier": 1.1
+  }
+}
+

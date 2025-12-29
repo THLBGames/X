@@ -1,0 +1,14 @@
+{
+  "id": "mining_mercenary",
+  "name": "Mining Assistant",
+  "description": "A skilled miner who helps you gather resources faster. Provides bonuses for 100 mining actions.",
+  "type": "skilling",
+  "price": 300,
+  "duration": 100,
+  "bonuses": {
+    "experienceMultiplier": 1.25,
+    "speedMultiplier": 0.85,
+    "yieldMultiplier": 1.2
+  }
+}
+

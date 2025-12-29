@@ -1,0 +1,19 @@
+{
+  "id": "woodcutting_upgrade_V",
+  "name": "Woodcutting Upgrade V",
+  "description": "Permanently increases woodcutting XP gain by 30%, speed by 20%, and yield by 20%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "woodcutting",
+  "tier": "V",
+  "price": 11180,
+  "bonuses": {
+    "experienceMultiplier": 1.3,
+    "speedMultiplier": 0.8,
+    "yieldMultiplier": 1.2,
+    "successRateBonus": 0.2
+  },
+  "requirements": {
+    "previousTierId": "woodcutting_upgrade_IV"
+  }
+}

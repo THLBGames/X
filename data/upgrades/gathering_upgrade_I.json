@@ -1,0 +1,17 @@
+{
+  "id": "gathering_upgrade_I",
+  "name": "Gathering Upgrade I",
+  "description": "Permanently increases all gathering skill XP gain by 10%, speed by 5%, and yield by 5%",
+  "type": "permanent",
+  "scope": "category",
+  "category": "gathering",
+  "tier": "I",
+  "price": 2000,
+  "bonuses": {
+    "experienceMultiplier": 1.1,
+    "speedMultiplier": 0.95,
+    "yieldMultiplier": 1.05,
+    "successRateBonus": 0.05
+  },
+  "requirements": {}
+}

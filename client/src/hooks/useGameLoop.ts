@@ -1,10 +1,10 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useGameState } from '../systems';
 import { CharacterManager } from '../systems/character';
-import { InventoryManager } from '../systems/inventory';
 import { getSaveManager } from '../systems/save';
 import { CombatManager } from '../systems/combat/CombatManager';
 import { DungeonManager } from '../systems/dungeon';
+import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { getDataLoader } from '../data';
 
 // Global state for combat stats (shared across component instances)
@@ -333,6 +333,24 @@ export function useGameLoop() {
         // Add chests (special loot)
         for (const chest of combatLog.rewards.chests || []) {
           addItem(chest.itemId, chest.quantity || 1);
+        }
+
+        // Consume battles for combat mercenaries
+        let characterAfterMercenaries = state.character;
+        const activeCombatMercenaries = MercenaryManager.getCombatMercenaries(state.character);
+        for (const mercenary of activeCombatMercenaries) {
+          const activeMercenary = state.character.activeMercenaries?.find(
+            (m) => m.mercenaryId === mercenary.id
+          );
+          if (activeMercenary) {
+            characterAfterMercenaries = MercenaryManager.consumeBattle(
+              characterAfterMercenaries,
+              mercenary.id
+            );
+          }
+        }
+        if (characterAfterMercenaries !== state.character) {
+          setCharacter(characterAfterMercenaries);
         }
 
         // Update quest progress for monster kills

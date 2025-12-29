@@ -1,0 +1,22 @@
+{
+  "id": "mage_mercenary",
+  "name": "Hired Mage",
+  "description": "A spellcaster who provides magical support in combat. Fights alongside you for 50 battles.",
+  "type": "combat",
+  "price": 750,
+  "duration": 50,
+  "stats": {
+    "health": 150,
+    "maxHealth": 150,
+    "mana": 150,
+    "maxMana": 150,
+    "attack": 15,
+    "defense": 8,
+    "magicAttack": 45,
+    "magicDefense": 20,
+    "speed": 14,
+    "criticalChance": 8,
+    "criticalDamage": 1.8
+  }
+}
+

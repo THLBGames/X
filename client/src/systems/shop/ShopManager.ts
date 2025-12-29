@@ -7,6 +7,8 @@ export interface ShopTransactionResult {
   message: string;
   newInventory?: Inventory;
   newGold?: number;
+  upgradeTier?: string; // For upgrade purchases
+  actionDuration?: number; // For consumable activations
 }
 
 export class ShopManager {

@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 import { useGameState } from '../systems';
 import { IdleSkillSystem } from '../systems/skills/IdleSkillSystem';
 import { ResourceNodeManager } from '../systems/skills/ResourceNodeManager';
+import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 
 export interface ActiveSkillTraining {
   skillId: string;
@@ -145,6 +146,17 @@ export function useIdleSkills() {
       sharedActiveSkills.set(skillId, activeTraining);
       notifyActiveSkillsListeners();
 
+      // Get skilling mercenary bonuses
+      const mercenaryBonuses = IdleSkillSystem.getSkillingMercenaryBonuses(character);
+      // Get upgrade bonuses
+      const upgradeBonuses = IdleSkillSystem.getUpgradeBonuses(character, skillId);
+      // Combine speed multipliers (mercenary + upgrade)
+      const combinedSpeedMultiplier =
+        mercenaryBonuses.speedMultiplier * upgradeBonuses.speedMultiplier;
+      const adjustedTimeRequired = Math.floor(
+        (node.timeRequired || 5000) * combinedSpeedMultiplier
+      );
+
       // Start interval for gathering
       const intervalId = window.setInterval(() => {
         const currentCharacter = useGameState.getState().character;
@@ -156,21 +168,56 @@ export function useIdleSkills() {
         const result = ResourceNodeManager.gatherFromNode(currentCharacter, skillId, node);
 
         if (result.success) {
-          // Add resources to inventory
+          // Apply yield multipliers (mercenary + upgrade)
+          const mercenaryYield =
+            IdleSkillSystem.getSkillingMercenaryBonuses(currentCharacter).yieldMultiplier;
+          const upgradeYield = IdleSkillSystem.getUpgradeBonuses(
+            currentCharacter,
+            skillId
+          ).yieldMultiplier;
+          const combinedYieldMultiplier = mercenaryYield * upgradeYield;
           for (const resource of result.resources) {
-            addItem(resource.itemId, resource.quantity);
+            const adjustedQuantity = Math.floor(resource.quantity * combinedYieldMultiplier);
+            addItem(resource.itemId, adjustedQuantity);
           }
         }
 
-        // Add experience
+        // Apply experience multipliers (mercenary + upgrade)
+        const mercenaryExp =
+          IdleSkillSystem.getSkillingMercenaryBonuses(currentCharacter).experienceMultiplier;
+        const upgradeExp = IdleSkillSystem.getUpgradeBonuses(
+          currentCharacter,
+          skillId
+        ).experienceMultiplier;
+        const combinedExpMultiplier = mercenaryExp * upgradeExp;
+        const adjustedExperience = Math.floor(result.experience * combinedExpMultiplier);
         const expResult = IdleSkillSystem.addSkillExperience(
           currentCharacter,
           skillId,
-          result.experience
+          adjustedExperience
         );
 
-        // Update character
-        setCharacter(expResult.character);
+        // Consume actions for skilling mercenaries
+        let characterAfterMercenaries = expResult.character;
+        const activeSkillingMercenaries = MercenaryManager.getSkillingMercenaries(currentCharacter);
+        for (const mercenary of activeSkillingMercenaries) {
+          const activeMercenary = currentCharacter.activeMercenaries?.find(
+            (m) => m.mercenaryId === mercenary.id
+          );
+          if (activeMercenary) {
+            characterAfterMercenaries = MercenaryManager.consumeAction(
+              characterAfterMercenaries,
+              mercenary.id
+            );
+          }
+        }
+
+        // Consume actions for consumable upgrades
+        const consumeUpgradeAction = useGameState.getState().consumeUpgradeAction;
+        consumeUpgradeAction(skillId);
+
+        // Update character (mercenary consumption already handled)
+        setCharacter(characterAfterMercenaries);
 
         // Update last action time to reset the timer
         const now = Date.now();
@@ -182,7 +229,7 @@ export function useIdleSkills() {
           });
           notifyActiveSkillsListeners();
         }
-      }, node.timeRequired || 5000);
+      }, adjustedTimeRequired);
 
       sharedIntervalRefs.set(skillId, intervalId);
 

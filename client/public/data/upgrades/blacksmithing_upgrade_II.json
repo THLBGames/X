@@ -1,0 +1,19 @@
+{
+  "id": "blacksmithing_upgrade_II",
+  "name": "Blacksmithing Upgrade II",
+  "description": "Permanently increases blacksmithing XP gain by 15%, speed by 8%, and yield by 8%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "blacksmithing",
+  "tier": "II",
+  "price": 2828,
+  "bonuses": {
+    "experienceMultiplier": 1.15,
+    "speedMultiplier": 0.92,
+    "yieldMultiplier": 1.08,
+    "successRateBonus": 0.08
+  },
+  "requirements": {
+    "previousTierId": "blacksmithing_upgrade_I"
+  }
+}

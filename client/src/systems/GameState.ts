@@ -3,15 +3,17 @@ import type {
   Character,
   Inventory,
   DungeonProgress,
-  QuestProgress,
   GameSettings,
   SaveData,
   ActiveCombatState,
   CombatAction,
   Monster,
   ActiveAction,
+  ActivePlayerPartyMember,
 } from '@idle-rpg/shared';
 import { QuestManager } from '../systems/quest/QuestManager';
+import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
+import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
@@ -63,6 +65,17 @@ interface GameState {
   // Actions - Quest Progress
   updateQuestProgress: (questId: string, amount?: number) => void;
   completeQuest: (questId: string) => void;
+
+  // Actions - Mercenaries
+  rentMercenary: (mercenaryId: string) => void;
+  removeMercenary: (mercenaryId: string) => void;
+  consumeMercenaryBattle: (mercenaryId: string) => void;
+  consumeMercenaryAction: (mercenaryId: string) => void;
+
+  // Actions - Upgrades
+  purchaseUpgrade: (upgradeId: string) => void;
+  activateConsumable: (upgradeId: string) => void;
+  consumeUpgradeAction: (skillId: string) => void;
 
   // Actions - Settings
   updateSettings: (settings: Partial<GameSettings>) => void;
@@ -302,6 +315,142 @@ export const useGameState = create<GameState>((set, get) => ({
       return { character: updatedCharacter };
     }),
 
+  // Mercenary actions
+  rentMercenary: (mercenaryId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const result = MercenaryManager.rentMercenary(state.inventory, state.character, mercenaryId);
+
+      if (result.success && result.newInventory) {
+        const dataLoader = getDataLoader();
+        const mercenary = dataLoader.getMercenary(mercenaryId);
+        if (mercenary) {
+          const activeMercenary = MercenaryManager.createActiveMercenary(mercenary);
+          const updatedCharacter = {
+            ...state.character,
+            activeMercenaries: [...(state.character.activeMercenaries || []), activeMercenary],
+          };
+
+          return {
+            character: updatedCharacter,
+            inventory: result.newInventory,
+          };
+        }
+      }
+
+      return {};
+    }),
+
+  removeMercenary: (mercenaryId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = MercenaryManager.removeMercenary(state.character, mercenaryId);
+
+      return { character: updatedCharacter };
+    }),
+
+  consumeMercenaryBattle: (mercenaryId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = MercenaryManager.consumeBattle(state.character, mercenaryId);
+
+      return { character: updatedCharacter };
+    }),
+
+  consumeMercenaryAction: (mercenaryId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = MercenaryManager.consumeAction(state.character, mercenaryId);
+
+      return { character: updatedCharacter };
+    }),
+
+  // Upgrade actions
+  purchaseUpgrade: (upgradeId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const result = UpgradeManager.purchaseUpgrade(state.inventory, state.character, upgradeId);
+
+      if (result.success && result.newInventory) {
+        const dataLoader = getDataLoader();
+        const upgrade = dataLoader.getUpgrade(upgradeId);
+        if (upgrade && upgrade.type === 'permanent') {
+          const existingUpgrade = (state.character.activeUpgrades || []).find(
+            (au) => au.upgradeId === upgradeId
+          );
+
+          if (existingUpgrade && result.upgradeTier) {
+            // Upgrading existing upgrade
+            const updatedUpgrades = (state.character.activeUpgrades || []).map((au) =>
+              au.upgradeId === upgradeId ? { ...au, tier: result.upgradeTier as any } : au
+            );
+            return {
+              character: {
+                ...state.character,
+                activeUpgrades: updatedUpgrades,
+              },
+              inventory: result.newInventory,
+            };
+          } else if (result.upgradeTier) {
+            // Purchasing new upgrade
+            const newUpgrade = {
+              upgradeId: upgradeId,
+              tier: result.upgradeTier as any,
+              purchasedAt: Date.now(),
+            };
+            return {
+              character: {
+                ...state.character,
+                activeUpgrades: [...(state.character.activeUpgrades || []), newUpgrade],
+              },
+              inventory: result.newInventory,
+            };
+          }
+        }
+      }
+
+      return {};
+    }),
+
+  activateConsumable: (upgradeId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const result = UpgradeManager.activateConsumable(state.inventory, state.character, upgradeId);
+
+      if (result.success && result.newInventory && result.actionDuration) {
+        const newConsumable = {
+          upgradeId: upgradeId,
+          tier: 'I' as any, // Consumables don't have tiers, but required by interface
+          purchasedAt: Date.now(),
+          remainingActions: result.actionDuration,
+        };
+        return {
+          character: {
+            ...state.character,
+            consumableUpgrades: [...(state.character.consumableUpgrades || []), newConsumable],
+          },
+          inventory: result.newInventory,
+        };
+      }
+
+      return {};
+    }),
+
+  consumeUpgradeAction: (skillId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = UpgradeManager.consumeAction(state.character, skillId);
+
+      return { character: updatedCharacter };
+    }),
+
   // Settings actions
   updateSettings: (updates) =>
     set((state) => ({
@@ -312,13 +461,17 @@ export const useGameState = create<GameState>((set, get) => ({
   initialize: (saveData) => {
     if (saveData) {
       set({
-        character: saveData.character,
+        character: {
+          ...saveData.character,
+          activeUpgrades: saveData.character.activeUpgrades || [],
+          consumableUpgrades: saveData.character.consumableUpgrades || [],
+        },
         inventory: saveData.inventory,
         dungeonProgress: saveData.dungeonProgress,
         settings: saveData.settings,
         isInitialized: true,
         currentDungeonId: saveData.currentDungeonId,
-        combatRoundNumber: saveData.combatRoundNumber || 0,
+        combatRoundNumber: 0,
         activeAction: saveData.activeAction ?? null,
         maxOfflineHours: saveData.maxOfflineHours ?? 8,
       });
@@ -398,8 +551,23 @@ export const useGameState = create<GameState>((set, get) => ({
       level: character?.level,
     };
 
+    // Add combat mercenaries to party
+    const combatMercenaries = character ? MercenaryManager.getCombatMercenaries(character) : [];
+    const mercenaryPartyMembers: ActivePlayerPartyMember[] = combatMercenaries.map(
+      (mercenary, index) => ({
+        id: `mercenary_${mercenary.id}_${index}`,
+        name: mercenary.name,
+        isSummoned: true, // Mercenaries are treated as summoned
+        currentHealth: mercenary.stats!.health,
+        maxHealth: mercenary.stats!.maxHealth,
+        currentMana: mercenary.stats!.mana,
+        maxMana: mercenary.stats!.maxMana,
+        level: undefined,
+      })
+    );
+
     const newCombatState: ActiveCombatState = {
-      playerParty: [playerPartyMember], // Start with just player, summoned entities added later
+      playerParty: [playerPartyMember, ...mercenaryPartyMembers], // Player + mercenaries
       monsters: monsterStates,
       playerHealth, // Keep for backwards compatibility
       playerMaxHealth,
@@ -462,9 +630,9 @@ export const useGameState = create<GameState>((set, get) => ({
     }),
 
   setCombatRoundNumber: (round) =>
-    set((state) => ({
+    set({
       combatRoundNumber: round,
-    })),
+    }),
 
   setActiveAction: (action) => set({ activeAction: action }),
 

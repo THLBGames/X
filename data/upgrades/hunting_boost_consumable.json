@@ -1,0 +1,15 @@
+{
+  "id": "hunting_boost_consumable",
+  "name": "Hunting Boost",
+  "description": "Temporarily increases hunting speed by 30% for 50 actions",
+  "type": "consumable",
+  "scope": "skill",
+  "skillId": "hunting",
+  "price": 500,
+  "bonuses": {
+    "speedMultiplier": 0.7,
+    "experienceMultiplier": 1.2
+  },
+  "actionDuration": 50,
+  "requirements": {}
+}

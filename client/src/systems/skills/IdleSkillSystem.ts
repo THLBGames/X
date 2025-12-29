@@ -1,5 +1,6 @@
-import type { Character, Skill, IdleSkillLevel, ResourceNode } from '@idle-rpg/shared';
+import type { Character, Skill, IdleSkillLevel, ResourceNode, Mercenary } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
+import { MercenaryManager } from '../mercenary/MercenaryManager';
 
 export class IdleSkillSystem {
   /**
@@ -153,6 +154,47 @@ export class IdleSkillSystem {
 
     const skillLevel = this.getSkillLevel(character, skillId);
     return skill.recipes.filter((recipe) => skillLevel >= recipe.level);
+  }
+
+  /**
+   * Get skilling mercenary bonuses
+   */
+  static getSkillingMercenaryBonuses(character: Character): {
+    experienceMultiplier: number;
+    speedMultiplier: number;
+    yieldMultiplier: number;
+  } {
+    const skillingMercenaries = MercenaryManager.getSkillingMercenaries(character);
+    let experienceMultiplier = 1;
+    let speedMultiplier = 1;
+    let yieldMultiplier = 1;
+
+    for (const mercenary of skillingMercenaries) {
+      if (mercenary.bonuses) {
+        if (mercenary.bonuses.experienceMultiplier) {
+          experienceMultiplier *= mercenary.bonuses.experienceMultiplier;
+        }
+        if (mercenary.bonuses.speedMultiplier) {
+          speedMultiplier *= mercenary.bonuses.speedMultiplier;
+        }
+        if (mercenary.bonuses.yieldMultiplier) {
+          yieldMultiplier *= mercenary.bonuses.yieldMultiplier;
+        }
+      }
+    }
+
+    return {
+      experienceMultiplier,
+      speedMultiplier,
+      yieldMultiplier,
+    };
+  }
+
+  /**
+   * Get upgrade bonuses for a skill
+   */
+  static getUpgradeBonuses(character: Character, skillId: string): UpgradeBonuses {
+    return UpgradeManager.getUpgradeBonuses(character, skillId);
   }
 
   /**

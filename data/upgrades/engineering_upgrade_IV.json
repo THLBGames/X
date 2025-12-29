@@ -1,0 +1,19 @@
+{
+  "id": "engineering_upgrade_IV",
+  "name": "Engineering Upgrade IV",
+  "description": "Permanently increases engineering XP gain by 25%, speed by 15%, and yield by 15%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "engineering",
+  "tier": "IV",
+  "price": 8000,
+  "bonuses": {
+    "experienceMultiplier": 1.25,
+    "speedMultiplier": 0.85,
+    "yieldMultiplier": 1.15,
+    "successRateBonus": 0.15
+  },
+  "requirements": {
+    "previousTierId": "engineering_upgrade_III"
+  }
+}

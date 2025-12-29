@@ -1,0 +1,19 @@
+{
+  "id": "archaeology_upgrade_IV",
+  "name": "Archaeology Upgrade IV",
+  "description": "Permanently increases archaeology XP gain by 25%, speed by 15%, and yield by 15%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "archaeology",
+  "tier": "IV",
+  "price": 8000,
+  "bonuses": {
+    "experienceMultiplier": 1.25,
+    "speedMultiplier": 0.85,
+    "yieldMultiplier": 1.15,
+    "successRateBonus": 0.15
+  },
+  "requirements": {
+    "previousTierId": "archaeology_upgrade_III"
+  }
+}

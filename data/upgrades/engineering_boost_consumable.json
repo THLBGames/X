@@ -1,0 +1,15 @@
+{
+  "id": "engineering_boost_consumable",
+  "name": "Engineering Boost",
+  "description": "Temporarily increases engineering speed by 30% for 50 actions",
+  "type": "consumable",
+  "scope": "skill",
+  "skillId": "engineering",
+  "price": 500,
+  "bonuses": {
+    "speedMultiplier": 0.7,
+    "experienceMultiplier": 1.2
+  },
+  "actionDuration": 50,
+  "requirements": {}
+}

@@ -1,0 +1,19 @@
+{
+  "id": "gathering_upgrade_II",
+  "name": "Gathering Upgrade II",
+  "description": "Permanently increases all gathering skill XP gain by 15%, speed by 8%, and yield by 8%",
+  "type": "permanent",
+  "scope": "category",
+  "category": "gathering",
+  "tier": "II",
+  "price": 5656,
+  "bonuses": {
+    "experienceMultiplier": 1.15,
+    "speedMultiplier": 0.92,
+    "yieldMultiplier": 1.08,
+    "successRateBonus": 0.08
+  },
+  "requirements": {
+    "previousTierId": "gathering_upgrade_I"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "production_upgrade_III",
+  "name": "Production Upgrade III",
+  "description": "Permanently increases all production skill XP gain by 20%, speed by 12%, and yield by 12%",
+  "type": "permanent",
+  "scope": "category",
+  "category": "production",
+  "tier": "III",
+  "price": 10392,
+  "bonuses": {
+    "experienceMultiplier": 1.2,
+    "speedMultiplier": 0.88,
+    "yieldMultiplier": 1.12,
+    "successRateBonus": 0.12
+  },
+  "requirements": {
+    "previousTierId": "production_upgrade_II"
+  }
+}

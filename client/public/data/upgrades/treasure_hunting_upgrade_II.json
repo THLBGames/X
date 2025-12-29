@@ -1,0 +1,19 @@
+{
+  "id": "treasure_hunting_upgrade_II",
+  "name": "Treasure hunting Upgrade II",
+  "description": "Permanently increases treasure hunting XP gain by 15%, speed by 8%, and yield by 8%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "treasure_hunting",
+  "tier": "II",
+  "price": 2828,
+  "bonuses": {
+    "experienceMultiplier": 1.15,
+    "speedMultiplier": 0.92,
+    "yieldMultiplier": 1.08,
+    "successRateBonus": 0.08
+  },
+  "requirements": {
+    "previousTierId": "treasure_hunting_upgrade_I"
+  }
+}

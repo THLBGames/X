@@ -1,0 +1,15 @@
+{
+  "id": "hybrid_boost_consumable",
+  "name": "Hybrid Boost",
+  "description": "Temporarily increases all hybrid skill speed by 25% for 75 actions",
+  "type": "consumable",
+  "scope": "category",
+  "category": "hybrid",
+  "price": 1000,
+  "bonuses": {
+    "speedMultiplier": 0.75,
+    "experienceMultiplier": 1.15
+  },
+  "actionDuration": 75,
+  "requirements": {}
+}

@@ -1,5 +1,6 @@
 import type { Character, ResourceNode, ResourceDrop } from '@idle-rpg/shared';
 import { IdleSkillSystem } from './IdleSkillSystem';
+import { UpgradeManager } from '../upgrade/UpgradeManager';
 
 export interface GatheringResult {
   success: boolean;
@@ -27,9 +28,13 @@ export class ResourceNodeManager {
       };
     }
 
-    // Calculate success (base success rate + level bonus)
+    // Calculate success (base success rate + level bonus + upgrade bonus)
     const levelBonus = Math.min(skillLevel - node.level, 20) * 0.01; // +1% per level above requirement, max +20%
-    const successRate = Math.min(node.successRate + levelBonus, 0.95); // Cap at 95%
+    const upgradeBonuses = UpgradeManager.getUpgradeBonuses(character, skillId);
+    const successRate = Math.min(
+      node.successRate + levelBonus + upgradeBonuses.successRateBonus,
+      0.95
+    ); // Cap at 95%
     const success = Math.random() <= successRate;
 
     if (!success) {

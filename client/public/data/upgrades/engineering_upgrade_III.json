@@ -1,0 +1,19 @@
+{
+  "id": "engineering_upgrade_III",
+  "name": "Engineering Upgrade III",
+  "description": "Permanently increases engineering XP gain by 20%, speed by 12%, and yield by 12%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "engineering",
+  "tier": "III",
+  "price": 5196,
+  "bonuses": {
+    "experienceMultiplier": 1.2,
+    "speedMultiplier": 0.88,
+    "yieldMultiplier": 1.12,
+    "successRateBonus": 0.12
+  },
+  "requirements": {
+    "previousTierId": "engineering_upgrade_II"
+  }
+}

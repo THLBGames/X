@@ -1,0 +1,19 @@
+{
+  "id": "cooking_upgrade_V",
+  "name": "Cooking Upgrade V",
+  "description": "Permanently increases cooking XP gain by 30%, speed by 20%, and yield by 20%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "cooking",
+  "tier": "V",
+  "price": 11180,
+  "bonuses": {
+    "experienceMultiplier": 1.3,
+    "speedMultiplier": 0.8,
+    "yieldMultiplier": 1.2,
+    "successRateBonus": 0.2
+  },
+  "requirements": {
+    "previousTierId": "cooking_upgrade_IV"
+  }
+}

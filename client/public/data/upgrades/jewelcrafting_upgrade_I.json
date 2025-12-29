@@ -1,0 +1,17 @@
+{
+  "id": "jewelcrafting_upgrade_I",
+  "name": "Jewelcrafting Upgrade I",
+  "description": "Permanently increases jewelcrafting XP gain by 10%, speed by 5%, and yield by 5%",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "jewelcrafting",
+  "tier": "I",
+  "price": 1000,
+  "bonuses": {
+    "experienceMultiplier": 1.1,
+    "speedMultiplier": 0.95,
+    "yieldMultiplier": 1.05,
+    "successRateBonus": 0.05
+  },
+  "requirements": {}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "blacksmithing_boost_consumable",
+  "name": "Blacksmithing Boost",
+  "description": "Temporarily increases blacksmithing speed by 30% for 50 actions",
+  "type": "consumable",
+  "scope": "skill",
+  "skillId": "blacksmithing",
+  "price": 500,
+  "bonuses": {
+    "speedMultiplier": 0.7,
+    "experienceMultiplier": 1.2
+  },
+  "actionDuration": 50,
+  "requirements": {}
+}
