@@ -5,6 +5,7 @@
   "parentClass": "warrior",
   "unlockLevel": 50,
   "isSubclass": true,
+  "requiredQuestId": "guardian_quest",
   "baseStats": {
     "strength": 14,
     "dexterity": 7,

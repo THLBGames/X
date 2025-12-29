@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { SubclassManager } from '../systems/character/SubclassManager';
+import { QuestManager } from '../systems/quest/QuestManager';
 import type { CharacterClass } from '@idle-rpg/shared';
 import './SubclassModal.css';
 
@@ -71,7 +72,7 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
           </div>
 
           <div className="subclass-info">
-            <p>Subclasses unlock at level 50 and allow you to specialize your class.</p>
+            <p>Subclasses unlock at level 50 and require completing a specific quest.</p>
             <p>You can switch between unlocked subclasses freely.</p>
           </div>
 
@@ -81,6 +82,10 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
               const isSelected = selectedSubclassId === subclass.id;
               const canSelect = canSelectSubclass(subclass.id);
               const unlockLevel = subclass.unlockLevel || 50;
+              const quest = subclass.requiredQuestId ? dataLoader.getQuest(subclass.requiredQuestId) : null;
+              const questCompleted = subclass.requiredQuestId ? QuestManager.hasCompletedQuest(character, subclass.requiredQuestId) : true;
+              const questProgress = subclass.requiredQuestId ? QuestManager.getQuestProgress(character, subclass.requiredQuestId) : null;
+              const levelMet = character.level >= unlockLevel;
 
               return (
                 <div
@@ -91,11 +96,28 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
                   <div className="subclass-header">
                     <div className="subclass-name">{subclass.name}</div>
                     {isCurrent && <div className="current-badge">Current</div>}
-                    {!canSelect && character.level < unlockLevel && (
+                    {!canSelect && !levelMet && (
                       <div className="locked-badge">Lv. {unlockLevel}</div>
+                    )}
+                    {!canSelect && levelMet && !questCompleted && quest && (
+                      <div className="locked-badge">Quest Required</div>
                     )}
                   </div>
                   <div className="subclass-description">{subclass.description}</div>
+                  {quest && (
+                    <div className="subclass-quest-info">
+                      <div className="quest-label">Required Quest:</div>
+                      <div className="quest-name">{quest.name}</div>
+                      {questProgress && !questCompleted && (
+                        <div className="quest-progress">
+                          Progress: {questProgress.progress} / {questProgress.required}
+                        </div>
+                      )}
+                      {questCompleted && (
+                        <div className="quest-completed">✓ Quest Completed</div>
+                      )}
+                    </div>
+                  )}
                   <div className="subclass-stats">
                     <div className="stat-label">Stat Growth Focus:</div>
                     <div className="stat-growth-preview">

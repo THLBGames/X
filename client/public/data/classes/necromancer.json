@@ -5,6 +5,7 @@
   "parentClass": "mage",
   "unlockLevel": 50,
   "isSubclass": true,
+  "requiredQuestId": "necromancer_quest",
   "baseStats": {
     "strength": 6,
     "dexterity": 7,

@@ -1,0 +1,15 @@
+{
+  "id": "wizard_quest",
+  "name": "Path of the Arcane",
+  "description": "Prove your mastery of arcane magic by completing the Eternal Library dungeon.",
+  "type": "dungeon_completion",
+  "requirements": {
+    "dungeonId": "eternal_library",
+    "quantity": 1
+  },
+  "rewards": {
+    "experience": 1000,
+    "gold": 500
+  }
+}
+

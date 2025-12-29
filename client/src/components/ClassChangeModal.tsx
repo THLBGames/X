@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { ClassChangeManager } from '../systems/character/ClassChangeManager';
+import { QuestManager } from '../systems/quest/QuestManager';
 import type { CharacterClass } from '@idle-rpg/shared';
 import './ClassChangeModal.css';
 
@@ -11,11 +12,7 @@ interface ClassChangeModalProps {
   onConfirm: (newClassId: string) => void;
 }
 
-export default function ClassChangeModal({
-  isOpen,
-  onClose,
-  onConfirm,
-}: ClassChangeModalProps) {
+export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassChangeModalProps) {
   const character = useGameState((state) => state.character);
   const [selectedClassId, setSelectedClassId] = useState<string | null>(null);
   const [classes, setClasses] = useState<CharacterClass[]>([]);
@@ -34,6 +31,7 @@ export default function ClassChangeModal({
     return null;
   }
 
+  const dataLoader = getDataLoader();
   const selectedClass = classes.find((c) => c.id === selectedClassId);
   const currentClass = classes.find((c) => c.id === character.classId);
 
@@ -73,18 +71,48 @@ export default function ClassChangeModal({
             {classes.map((characterClass) => {
               const isCurrent = characterClass.id === character.classId;
               const isSelected = selectedClassId === characterClass.id;
+              const canChangeTo = ClassChangeManager.canChangeToClass(character, characterClass.id);
+              const unlockLevel = characterClass.unlockLevel || 50;
+              const levelMet = character.level >= unlockLevel;
+              const quest = characterClass.requiredQuestId
+                ? dataLoader.getQuest(characterClass.requiredQuestId)
+                : null;
+              const questCompleted = characterClass.requiredQuestId
+                ? QuestManager.hasCompletedQuest(character, characterClass.requiredQuestId)
+                : true;
+              const questProgress = characterClass.requiredQuestId
+                ? QuestManager.getQuestProgress(character, characterClass.requiredQuestId)
+                : null;
 
               return (
                 <div
                   key={characterClass.id}
-                  className={`class-option ${isCurrent ? 'current' : ''} ${isSelected ? 'selected' : ''} class-${characterClass.id}`}
-                  onClick={() => !isCurrent && setSelectedClassId(characterClass.id)}
+                  className={`class-option ${isCurrent ? 'current' : ''} ${isSelected ? 'selected' : ''} ${!canChangeTo ? 'locked' : ''} class-${characterClass.id}`}
+                  onClick={() => !isCurrent && canChangeTo && setSelectedClassId(characterClass.id)}
                 >
                   <div className="class-option-header">
                     <h3>{characterClass.name}</h3>
                     {isCurrent && <span className="current-badge">Current</span>}
+                    {!canChangeTo && !levelMet && (
+                      <span className="locked-badge">Lv. {unlockLevel}</span>
+                    )}
+                    {!canChangeTo && levelMet && !questCompleted && quest && (
+                      <span className="locked-badge">Quest Required</span>
+                    )}
                   </div>
                   <p className="class-option-description">{characterClass.description}</p>
+                  {quest && (
+                    <div className="class-quest-info">
+                      <div className="quest-label">Required Quest:</div>
+                      <div className="quest-name">{quest.name}</div>
+                      {questProgress && !questCompleted && (
+                        <div className="quest-progress">
+                          Progress: {questProgress.progress} / {questProgress.required}
+                        </div>
+                      )}
+                      {questCompleted && <div className="quest-completed">✓ Quest Completed</div>}
+                    </div>
+                  )}
                   <div className="class-option-stats">
                     <div className="stat-compact">
                       <span>STR</span>
@@ -146,7 +174,11 @@ export default function ClassChangeModal({
           <button
             className="button-confirm"
             onClick={handleConfirm}
-            disabled={!selectedClassId || selectedClassId === character.classId}
+            disabled={
+              !selectedClassId ||
+              selectedClassId === character.classId ||
+              !ClassChangeManager.canChangeToClass(character, selectedClassId)
+            }
           >
             Change Class
           </button>
@@ -155,4 +187,3 @@ export default function ClassChangeModal({
     </div>
   );
 }
-

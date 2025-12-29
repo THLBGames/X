@@ -1,0 +1,260 @@
+.quest-panel {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.quest-panel h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 6px;
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
+
+.quest-section {
+  margin-bottom: 20px;
+  flex: 0 0 auto;
+}
+
+.quest-section-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #aaa;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quest-section-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.quest-section-toggle:hover .quest-section-title {
+  color: #ccc;
+}
+
+.toggle-icon {
+  color: #888;
+  font-size: 0.8rem;
+  width: 16px;
+  display: inline-block;
+}
+
+.quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quest-card {
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  transition: all 0.2s;
+}
+
+.quest-card.active {
+  border-color: #555;
+}
+
+.quest-card.active:hover {
+  background: #3a3a3a;
+  border-color: #666;
+}
+
+.quest-card.completed {
+  opacity: 0.7;
+  border-color: #2a4a2a;
+  background: #2a3a2a;
+}
+
+.quest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quest-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  flex: 1;
+}
+
+.completed-checkmark {
+  color: #4ade80;
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+.quest-type-badge {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quest-type-badge.dungeon_completion {
+  background: #4a9eff;
+  color: #fff;
+}
+
+.quest-type-badge.monster_kills {
+  background: #f72585;
+  color: #fff;
+}
+
+.quest-type-badge.item_collection {
+  background: #ffb703;
+  color: #000;
+}
+
+.quest-type-badge.completed {
+  opacity: 0.6;
+}
+
+.quest-description {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.quest-requirement {
+  font-size: 0.9rem;
+  color: #4a9eff;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.quest-completion-status {
+  font-size: 0.9rem;
+  color: #4ade80;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.quest-progress-container {
+  margin-bottom: 10px;
+}
+
+.quest-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #222;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.quest-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff, #6bb6ff);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.quest-card.completed .quest-progress-fill {
+  background: linear-gradient(90deg, #4ade80, #6ee7b7);
+}
+
+.quest-progress-text {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+}
+
+.quest-rewards {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+.rewards-label {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rewards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reward-item {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #ffb703;
+}
+
+.no-quests {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .quest-panel {
+    padding: 12px;
+  }
+
+  .quest-card {
+    padding: 10px;
+  }
+
+  .quest-name {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .quest-panel {
+    padding: 10px;
+  }
+
+  .quest-panel h2 {
+    font-size: 1rem;
+  }
+
+  .quest-card {
+    padding: 8px;
+  }
+
+  .quest-name {
+    font-size: 0.9rem;
+  }
+
+  .quest-description {
+    font-size: 0.8rem;
+  }
+}
+

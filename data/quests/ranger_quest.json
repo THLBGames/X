@@ -1,0 +1,15 @@
+{
+  "id": "ranger_quest",
+  "name": "Hunter's Mark",
+  "description": "Prove your tracking skills by slaying 50 wolves in combat.",
+  "type": "monster_kills",
+  "requirements": {
+    "monsterId": "wolf",
+    "quantity": 50
+  },
+  "rewards": {
+    "experience": 1000,
+    "gold": 500
+  }
+}
+

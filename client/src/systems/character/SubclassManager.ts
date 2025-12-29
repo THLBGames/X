@@ -1,8 +1,16 @@
 import type { Character, CharacterClass, Stats } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { CharacterManager } from './CharacterManager';
+import { QuestManager } from '../quest/QuestManager';
 
 export class SubclassManager {
+  /**
+   * Check if a character has completed a quest
+   */
+  static hasCompletedQuest(character: Character, questId: string): boolean {
+    return QuestManager.hasCompletedQuest(character, questId);
+  }
+
   /**
    * Check if a character can unlock a subclass
    */
@@ -28,6 +36,13 @@ export class SubclassManager {
     const unlockLevel = subclass.unlockLevel || 50;
     if (character.level < unlockLevel) {
       return false;
+    }
+
+    // Check quest requirement
+    if (subclass.requiredQuestId) {
+      if (!this.hasCompletedQuest(character, subclass.requiredQuestId)) {
+        return false;
+      }
     }
 
     return true;

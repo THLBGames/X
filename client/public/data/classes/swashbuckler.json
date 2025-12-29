@@ -5,6 +5,7 @@
   "parentClass": "rogue",
   "unlockLevel": 50,
   "isSubclass": true,
+  "requiredQuestId": "swashbuckler_quest",
   "baseStats": {
     "strength": 12,
     "dexterity": 20,

@@ -5,6 +5,7 @@ import type {
   Skill,
   Dungeon,
   GameConfig,
+  Quest,
 } from '@idle-rpg/shared';
 
 type DataCache<T> = Map<string, T>;
@@ -17,6 +18,7 @@ export class DataLoader {
   private itemsCache: DataCache<Item> = new Map();
   private skillsCache: DataCache<Skill> = new Map();
   private dungeonsCache: DataCache<Dungeon> = new Map();
+  private questsCache: DataCache<Quest> = new Map();
   private configCache: GameConfig | null = null;
   private loaded = false;
 
@@ -42,6 +44,7 @@ export class DataLoader {
       this.loadItems(),
       this.loadSkills(),
       this.loadDungeons(),
+      this.loadQuests(),
       this.loadConfig(),
     ]);
 
@@ -259,6 +262,29 @@ export class DataLoader {
     }
   }
 
+  private async loadQuests(): Promise<void> {
+    // Load quests from data directory using fetch
+    const questIds = [
+      'wizard_quest',
+      'necromancer_quest',
+      'guardian_quest',
+      'berserker_quest',
+      'ranger_quest',
+      'swashbuckler_quest',
+    ];
+    
+    for (const questId of questIds) {
+      try {
+        const data = await this.loadJsonFile<Quest>(`/data/quests/${questId}.json`);
+        if (data && this.validateQuest(data)) {
+          this.questsCache.set(data.id, data);
+        }
+      } catch (error) {
+        console.warn(`Failed to load quest ${questId}:`, error);
+      }
+    }
+  }
+
   private async loadConfig(): Promise<void> {
     try {
       const response = await fetch('/data/config/game.json');
@@ -369,6 +395,15 @@ export class DataLoader {
   }
 
   /**
+   * Get only base classes (not subclasses)
+   */
+  getBaseClasses(): CharacterClass[] {
+    return Array.from(this.classesCache.values()).filter(
+      (cls) => !cls.isSubclass
+    );
+  }
+
+  /**
    * Get subclass by ID
    */
   getSubclass(id: string): CharacterClass | undefined {
@@ -418,6 +453,14 @@ export class DataLoader {
 
   getAllDungeons(): Dungeon[] {
     return Array.from(this.dungeonsCache.values());
+  }
+
+  getQuest(id: string): Quest | undefined {
+    return this.questsCache.get(id);
+  }
+
+  getAllQuests(): Quest[] {
+    return Array.from(this.questsCache.values());
   }
 
   getConfig(): GameConfig {
@@ -491,6 +534,18 @@ export class DataLoader {
     );
   }
 
+  private validateQuest(data: any): data is Quest {
+    return (
+      data &&
+      typeof data.id === 'string' &&
+      typeof data.name === 'string' &&
+      typeof data.description === 'string' &&
+      typeof data.type === 'string' &&
+      data.requirements &&
+      typeof data.requirements.quantity === 'number'
+    );
+  }
+
   private getDefaultConfig(): GameConfig {
     return {
       experience: {
@@ -523,6 +578,7 @@ export class DataLoader {
     this.itemsCache.clear();
     this.skillsCache.clear();
     this.dungeonsCache.clear();
+    this.questsCache.clear();
     this.configCache = null;
     this.loaded = false;
   }

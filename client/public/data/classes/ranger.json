@@ -5,6 +5,7 @@
   "parentClass": "rogue",
   "unlockLevel": 50,
   "isSubclass": true,
+  "requiredQuestId": "ranger_quest",
   "baseStats": {
     "strength": 10,
     "dexterity": 18,

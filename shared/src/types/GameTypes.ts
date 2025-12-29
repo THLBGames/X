@@ -38,6 +38,7 @@ export interface CharacterClass {
   parentClass?: string; // ID of parent class (for subclasses)
   unlockLevel?: number; // Level required to unlock (default 50 for subclasses)
   isSubclass?: boolean; // true if this is a subclass
+  requiredQuestId?: string; // Quest ID required to unlock this subclass
 }
 
 // Monster definition
@@ -306,6 +307,7 @@ export interface Character {
   // Idle skills (separate from combat skills)
   idleSkills?: IdleSkillLevel[];
   skillBar?: string[]; // Array of skill IDs for combat skill bar (max 10)
+  questProgress?: QuestProgress[]; // Quest progress tracking
 }
 
 export interface LearnedSkill {
@@ -415,6 +417,34 @@ export interface ActiveCombatState {
   isBossRound: boolean; // Is this a boss round?
 }
 
+// Quest system
+export type QuestType = 'dungeon_completion' | 'monster_kills' | 'item_collection';
+
+export interface Quest {
+  id: string;
+  name: string;
+  description: string;
+  type: QuestType;
+  requirements: {
+    dungeonId?: string; // For dungeon_completion quests
+    monsterId?: string; // For monster_kills quests
+    itemId?: string; // For item_collection quests
+    quantity: number; // Required quantity
+  };
+  rewards?: {
+    experience?: number;
+    gold?: number;
+    items?: Array<{ itemId: string; quantity: number }>;
+  };
+}
+
+export interface QuestProgress {
+  questId: string;
+  completed: boolean;
+  progress: number; // Current count
+  required: number; // Target count
+}
+
 // Dungeon progress
 export interface DungeonProgress {
   dungeonId: string;
@@ -460,6 +490,7 @@ export interface SaveData {
   character: Character;
   inventory: Inventory;
   dungeonProgress: DungeonProgress[];
+  questProgress?: QuestProgress[]; // Quest progress (also stored in character, kept here for backwards compatibility)
   settings: GameSettings;
   lastSaved: number; // Timestamp
   lastOfflineTime?: number; // Timestamp when game was last closed

@@ -3,6 +3,7 @@ import type {
   Character,
   Inventory,
   DungeonProgress,
+  QuestProgress,
   GameSettings,
   SaveData,
   ActiveCombatState,
@@ -10,20 +11,22 @@ import type {
   Monster,
   ActiveAction,
 } from '@idle-rpg/shared';
+import { QuestManager } from '../systems/quest/QuestManager';
+import { getDataLoader } from '../data';
 
 interface GameState {
   // Character state
   character: Character | null;
-  
+
   // Inventory state
   inventory: Inventory;
-  
+
   // Progress state
   dungeonProgress: DungeonProgress[];
-  
+
   // Settings
   settings: GameSettings;
-  
+
   // Game state flags
   isInitialized: boolean;
   isCombatActive: boolean;
@@ -33,29 +36,36 @@ interface GameState {
   combatRoundNumber: number;
   activeAction: ActiveAction;
   maxOfflineHours: number;
-  
+
   // Actions - Character
   setCharacter: (character: Character) => void;
   updateCharacter: (updates: Partial<Character>) => void;
-  updateIdleSkill: (skillId: string, skillData: { level: number; experience: number; experienceToNext: number }) => void;
+  updateIdleSkill: (
+    skillId: string,
+    skillData: { level: number; experience: number; experienceToNext: number }
+  ) => void;
   updateSkillBar: (skillBar: string[]) => void;
-  
+
   // Actions - Inventory
   setInventory: (inventory: Inventory) => void;
   addItem: (itemId: string, quantity: number) => void;
   removeItem: (itemId: string, quantity: number) => void;
   updateItemQuantity: (itemId: string, quantity: number) => void;
   reorderInventoryItems: (fromIndex: number, toIndex: number) => void;
-  
+
   // Actions - Progress
   setDungeonProgress: (progress: DungeonProgress[]) => void;
   updateDungeonProgress: (dungeonId: string, updates: Partial<DungeonProgress>) => void;
   unlockDungeon: (dungeonId: string) => void;
   completeDungeon: (dungeonId: string, time?: number) => void;
-  
+
+  // Actions - Quest Progress
+  updateQuestProgress: (questId: string, amount?: number) => void;
+  completeQuest: (questId: string) => void;
+
   // Actions - Settings
   updateSettings: (settings: Partial<GameSettings>) => void;
-  
+
   // Actions - Game state
   initialize: (saveData?: SaveData) => void;
   reset: () => void;
@@ -63,7 +73,15 @@ interface GameState {
   setCurrentDungeon: (dungeonId: string | null) => void;
   startCombat: (dungeonId: string) => void;
   stopCombat: () => void;
-  startCombatWithMonsters: (monsters: Monster[], roundNumber: number, isBossRound: boolean, playerHealth: number, playerMaxHealth: number, playerMana: number, playerMaxMana: number) => void;
+  startCombatWithMonsters: (
+    monsters: Monster[],
+    roundNumber: number,
+    isBossRound: boolean,
+    playerHealth: number,
+    playerMaxHealth: number,
+    playerMana: number,
+    playerMaxMana: number
+  ) => void;
   updateCombatState: (updates: Partial<ActiveCombatState>) => void;
   addCombatAction: (action: CombatAction) => void;
   endCombat: () => void;
@@ -150,6 +168,22 @@ export const useGameState = create<GameState>((set, get) => ({
 
   addItem: (itemId, quantity) =>
     set((state) => {
+      // Update quest progress for item_collection quests
+      let updatedCharacter = state.character;
+      if (state.character) {
+        const dataLoader = getDataLoader();
+        const allQuests = dataLoader.getAllQuests();
+
+        for (const quest of allQuests) {
+          if (quest.type === 'item_collection' && quest.requirements.itemId === itemId) {
+            updatedCharacter = QuestManager.updateQuestProgress(
+              updatedCharacter!,
+              quest.id,
+              quantity
+            );
+          }
+        }
+      }
       const inventory = { ...state.inventory };
       const existingItem = inventory.items.find((item) => item.itemId === itemId);
 
@@ -159,7 +193,10 @@ export const useGameState = create<GameState>((set, get) => ({
         inventory.items.push({ itemId, quantity });
       }
 
-      return { inventory };
+      return {
+        inventory,
+        character: updatedCharacter || state.character,
+      };
     }),
 
   removeItem: (itemId, quantity) =>
@@ -219,13 +256,50 @@ export const useGameState = create<GameState>((set, get) => ({
     }),
 
   completeDungeon: (dungeonId, time) =>
-    set((state) => ({
-      dungeonProgress: state.dungeonProgress.map((dp) =>
+    set((state) => {
+      const updatedDungeonProgress = state.dungeonProgress.map((dp) =>
         dp.dungeonId === dungeonId
           ? { ...dp, completed: true, timesCompleted: dp.timesCompleted + 1, bestTime: time }
           : dp
-      ),
-    })),
+      );
+
+      // Update quest progress for dungeon_completion quests
+      let updatedCharacter = state.character;
+      if (state.character) {
+        const dataLoader = getDataLoader();
+        const allQuests = dataLoader.getAllQuests();
+
+        for (const quest of allQuests) {
+          if (quest.type === 'dungeon_completion' && quest.requirements.dungeonId === dungeonId) {
+            updatedCharacter = QuestManager.updateQuestProgress(updatedCharacter!, quest.id, 1);
+          }
+        }
+      }
+
+      return {
+        dungeonProgress: updatedDungeonProgress,
+        character: updatedCharacter || state.character,
+      };
+    }),
+
+  // Quest progress actions
+  updateQuestProgress: (questId, amount = 1) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = QuestManager.updateQuestProgress(state.character, questId, amount);
+
+      return { character: updatedCharacter };
+    }),
+
+  completeQuest: (questId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = QuestManager.completeQuest(state.character, questId);
+
+      return { character: updatedCharacter };
+    }),
 
   // Settings actions
   updateSettings: (updates) =>
@@ -290,11 +364,19 @@ export const useGameState = create<GameState>((set, get) => ({
       activeAction: null, // Clear active action when stopping combat
     }),
 
-  startCombatWithMonsters: (monsters, roundNumber, isBossRound, playerHealth, playerMaxHealth, playerMana, playerMaxMana) => {
+  startCombatWithMonsters: (
+    monsters,
+    roundNumber,
+    isBossRound,
+    playerHealth,
+    playerMaxHealth,
+    playerMana,
+    playerMaxMana
+  ) => {
     console.log('startCombatWithMonsters called with monsters:', monsters);
     const state = get();
     const character = state.character;
-    
+
     const monsterStates = monsters.map((monster) => ({
       monster,
       currentHealth: monster.stats.health || monster.stats.maxHealth,
@@ -329,10 +411,10 @@ export const useGameState = create<GameState>((set, get) => ({
       roundNumber,
       isBossRound,
     };
-    
+
     console.log('Setting combat state with playerParty:', newCombatState.playerParty);
     console.log('Player party member:', playerPartyMember);
-    
+
     set({
       currentCombatState: newCombatState,
       queuedSkillId: null,
@@ -346,7 +428,8 @@ export const useGameState = create<GameState>((set, get) => ({
         currentCombatState: {
           ...state.currentCombatState,
           // Preserve existing monsters if not explicitly updated
-          monsters: updates.monsters !== undefined ? updates.monsters : state.currentCombatState.monsters,
+          monsters:
+            updates.monsters !== undefined ? updates.monsters : state.currentCombatState.monsters,
           ...updates,
         },
       };

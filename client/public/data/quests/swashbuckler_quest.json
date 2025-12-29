@@ -1,0 +1,15 @@
+{
+  "id": "swashbuckler_quest",
+  "name": "Duel of the Daring",
+  "description": "Show your swashbuckling prowess by completing the Bandit Camp dungeon.",
+  "type": "dungeon_completion",
+  "requirements": {
+    "dungeonId": "bandit_camp",
+    "quantity": 1
+  },
+  "rewards": {
+    "experience": 1000,
+    "gold": 500
+  }
+}
+

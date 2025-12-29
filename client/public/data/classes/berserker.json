@@ -5,6 +5,7 @@
   "parentClass": "warrior",
   "unlockLevel": 50,
   "isSubclass": true,
+  "requiredQuestId": "berserker_quest",
   "baseStats": {
     "strength": 18,
     "dexterity": 12,

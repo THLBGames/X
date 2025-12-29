@@ -1,6 +1,7 @@
 import type { Character, CharacterClass, Equipment } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { CharacterManager } from './CharacterManager';
+import { QuestManager } from '../quest/QuestManager';
 
 export interface ClassChangeResult {
   success: boolean;
@@ -10,6 +11,36 @@ export interface ClassChangeResult {
 }
 
 export class ClassChangeManager {
+  /**
+   * Check if a character can change to a specific class
+   */
+  static canChangeToClass(character: Character, newClassId: string): boolean {
+    const dataLoader = getDataLoader();
+    const newClass = dataLoader.getClass(newClassId);
+
+    if (!newClass) {
+      return false;
+    }
+
+    // If it's a specialized class (subclass), check requirements
+    if (newClass.isSubclass) {
+      // Check level requirement
+      const unlockLevel = newClass.unlockLevel || 50;
+      if (character.level < unlockLevel) {
+        return false;
+      }
+
+      // Check quest requirement
+      if (newClass.requiredQuestId) {
+        if (!QuestManager.hasCompletedQuest(character, newClass.requiredQuestId)) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
   /**
    * Change character's class
    * Preserves level, experience, idle skills
@@ -32,6 +63,29 @@ export class ClassChangeManager {
         character,
         unequippedItems: [],
         message: 'Character is already this class',
+      };
+    }
+
+    // Check if character can change to this class
+    if (!this.canChangeToClass(character, newClassId)) {
+      const unlockLevel = newClass.unlockLevel || 50;
+      const questName = newClass.requiredQuestId
+        ? dataLoader.getQuest(newClass.requiredQuestId)?.name || 'required quest'
+        : null;
+      
+      let message = `Cannot change to ${newClass.name}. `;
+      if (character.level < unlockLevel) {
+        message += `Requires level ${unlockLevel}. `;
+      }
+      if (newClass.requiredQuestId && !QuestManager.hasCompletedQuest(character, newClass.requiredQuestId)) {
+        message += `Requires completing: ${questName}.`;
+      }
+      
+      return {
+        success: false,
+        character,
+        unequippedItems: [],
+        message,
       };
     }
 

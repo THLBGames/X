@@ -19,9 +19,9 @@ export default function CharacterCreation() {
   const settings = useGameState((state) => state.settings);
 
   useEffect(() => {
-    // Load available classes
+    // Load available base classes only (not subclasses)
     const dataLoader = getDataLoader();
-    const availableClasses = dataLoader.getAllClasses();
+    const availableClasses = dataLoader.getBaseClasses();
     setClasses(availableClasses);
     
     // Select first class by default

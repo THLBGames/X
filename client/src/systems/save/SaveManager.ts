@@ -203,7 +203,7 @@ export class SaveManager {
           }
           
           // Migrate existing idle skills from level 0 to level 1
-          return {
+          const characterWithSkills = {
             ...saveData.character,
             idleSkills: saveData.character.idleSkills.map((skill) => {
               // If skill is at level 0, upgrade it to level 1
@@ -218,6 +218,13 @@ export class SaveManager {
               return skill;
             }),
           };
+
+          // Ensure questProgress exists (initialize if missing)
+          if (!characterWithSkills.questProgress) {
+            characterWithSkills.questProgress = [];
+          }
+
+          return characterWithSkills;
         })()
       : saveData.character;
 

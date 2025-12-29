@@ -5,6 +5,7 @@
   "parentClass": "mage",
   "unlockLevel": 50,
   "isSubclass": true,
+  "requiredQuestId": "wizard_quest",
   "baseStats": {
     "strength": 4,
     "dexterity": 6,

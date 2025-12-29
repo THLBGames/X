@@ -321,6 +321,23 @@ export function useGameLoop() {
           addItem(chest.itemId, chest.quantity || 1);
         }
 
+        // Update quest progress for monster kills
+        const currentCombatState = state.currentCombatState;
+        if (currentCombatState && currentCombatState.monsters.length > 0) {
+          const monster = currentCombatState.monsters[0].monster;
+          const allQuests = dataLoader.getAllQuests();
+          
+          for (const quest of allQuests) {
+            if (
+              quest.type === 'monster_kills' &&
+              quest.requirements.monsterId === monster.id
+            ) {
+              const { updateQuestProgress } = useGameState.getState();
+              updateQuestProgress(quest.id, 1);
+            }
+          }
+        }
+
         // Update combat stats
         combatStatsRef.combatsCompleted += 1;
         combatStatsRef.totalExperience += combatLog.rewards.experience;

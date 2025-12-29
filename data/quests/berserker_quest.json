@@ -1,0 +1,15 @@
+{
+  "id": "berserker_quest",
+  "name": "Rage of the Warrior",
+  "description": "Demonstrate your ferocity by completing the Orc Encampment dungeon.",
+  "type": "dungeon_completion",
+  "requirements": {
+    "dungeonId": "orc_encampment",
+    "quantity": 1
+  },
+  "rewards": {
+    "experience": 1000,
+    "gold": 500
+  }
+}
+

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { useGameLoop } from '../hooks/useGameLoop';
+import { useIdleSkills } from '../hooks/useIdleSkills';
 import CharacterSheet from './CharacterSheet';
 import DungeonSelector from './DungeonSelector';
 import CombatDisplay from './CombatDisplay';
 import InventoryPanel from './InventoryPanel';
 import SkillsPanel from './SkillsPanel';
 import ShopPanel from './ShopPanel';
+import QuestPanel from './QuestPanel';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
@@ -14,10 +16,14 @@ export default function GameView() {
   const character = useGameState((state) => state.character);
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const activeAction = useGameState((state) => state.activeAction);
-  const [activeRightPanel, setActiveRightPanel] = useState<'inventory' | 'skills' | 'shop'>('inventory');
+  const [activeRightPanel, setActiveRightPanel] = useState<'inventory' | 'skills' | 'shop' | 'quests'>('inventory');
   
   // Initialize game loop
   useGameLoop();
+  
+  // Mount useIdleSkills globally so it's always available to resume skills after offline progress
+  // This ensures skills automatically resume even when Skills panel isn't open
+  useIdleSkills();
   
   // Auto-open skills panel if there's an active skill action (so skills can resume)
   useEffect(() => {
@@ -70,10 +76,17 @@ export default function GameView() {
           >
             Shop
           </button>
+          <button
+            className={`panel-tab ${activeRightPanel === 'quests' ? 'active' : ''}`}
+            onClick={() => setActiveRightPanel('quests')}
+          >
+            Quests
+          </button>
         </div>
         <div className="right-panel-content">
           {activeRightPanel === 'inventory' && <InventoryPanel />}
           {activeRightPanel === 'shop' && <ShopPanel />}
+          {activeRightPanel === 'quests' && <QuestPanel />}
           {activeRightPanel === 'skills' && (
             <div className="skills-tab-placeholder">
               <p>Skills are displayed in the center area.</p>
