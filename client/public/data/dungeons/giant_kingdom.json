@@ -1,0 +1,42 @@
+{
+  "id": "giant_kingdom",
+  "name": "Giant Kingdom",
+  "description": "The realm of giants, where even the smallest threat is massive.",
+  "tier": 3,
+  "requiredLevel": 40,
+  "requiredDungeonId": "ancient_ruins",
+  "monsterPools": [
+    {
+      "monsterId": "giant",
+      "weight": 70,
+      "minLevel": 40,
+      "maxLevel": 45
+    },
+    {
+      "monsterId": "ogre",
+      "weight": 20,
+      "minLevel": 41,
+      "maxLevel": 46
+    },
+    {
+      "monsterId": "troll",
+      "weight": 10,
+      "minLevel": 40,
+      "maxLevel": 45
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "giant",
+      "weight": 100,
+      "minLevel": 45,
+      "maxLevel": 50
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.95,
+    "goldBonus": 1.9,
+    "itemDropRate": 1.75
+  }
+}
+

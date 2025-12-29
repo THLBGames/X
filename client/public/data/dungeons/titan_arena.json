@@ -1,0 +1,42 @@
+{
+  "id": "titan_arena",
+  "name": "Titan Arena",
+  "description": "An ancient arena where titans test their strength.",
+  "tier": 3,
+  "requiredLevel": 65,
+  "requiredDungeonId": "chaos_realm",
+  "monsterPools": [
+    {
+      "monsterId": "giant",
+      "weight": 60,
+      "minLevel": 65,
+      "maxLevel": 70
+    },
+    {
+      "monsterId": "minotaur",
+      "weight": 25,
+      "minLevel": 66,
+      "maxLevel": 71
+    },
+    {
+      "monsterId": "ogre",
+      "weight": 15,
+      "minLevel": 67,
+      "maxLevel": 72
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "giant",
+      "weight": 100,
+      "minLevel": 70,
+      "maxLevel": 75
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.4,
+    "goldBonus": 2.35,
+    "itemDropRate": 2.2
+  }
+}
+

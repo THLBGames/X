@@ -1,0 +1,10 @@
+{
+  "id": "dragon_scale",
+  "name": "Dragon Scale",
+  "description": "A scale from a dragon.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000
+}

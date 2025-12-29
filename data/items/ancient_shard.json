@@ -1,0 +1,11 @@
+{
+  "id": "ancient_shard",
+  "name": "Ancient Shard",
+  "description": "A fragment from an ancient civilization.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10
+}
+

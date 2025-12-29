@@ -1,0 +1,24 @@
+{
+  "id": "arcane_orb",
+  "name": "Arcane Orb",
+  "description": "An orb infused with arcane power.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 2500,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "offhand",
+  "statBonuses": {
+    "intelligence": 12,
+    "wisdom": 5
+  },
+  "combatStatBonuses": {
+    "magicAttack": 25,
+    "mana": 100
+  }
+}

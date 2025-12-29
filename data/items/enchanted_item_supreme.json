@@ -1,0 +1,11 @@
+{
+  "id": "enchanted_item_supreme",
+  "name": "Supreme Enchanted Item",
+  "description": "An item with supreme magical enchantments.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 3000
+}
+

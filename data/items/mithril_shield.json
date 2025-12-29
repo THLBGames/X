@@ -1,0 +1,22 @@
+{
+  "id": "mithril_shield",
+  "name": "Mithril Shield",
+  "description": "A legendary shield forged from mithril.",
+  "type": "armor",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 21600,
+  "requirements": {
+    "level": 51,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "offhand",
+  "statBonuses": {
+    "vitality": 12
+  },
+  "combatStatBonuses": {
+    "defense": 32
+  }
+}

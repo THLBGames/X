@@ -1,0 +1,23 @@
+{
+  "id": "steel_axe",
+  "name": "Steel Axe",
+  "description": "A well-forged steel axe.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 1250,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 7,
+    "vitality": 2
+  },
+  "combatStatBonuses": {
+    "attack": 27
+  }
+}

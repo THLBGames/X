@@ -1,0 +1,20 @@
+{
+  "id": "dexterity_ring_t1",
+  "name": "Ring of Agility",
+  "description": "A ring that enhances dexterity.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "dexterity": 2
+  },
+  "combatStatBonuses": {
+    "speed": 3,
+    "criticalChance": 1
+  }
+}

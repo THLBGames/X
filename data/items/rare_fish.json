@@ -1,0 +1,11 @@
+{
+  "id": "rare_fish",
+  "name": "Rare Fish",
+  "description": "A rare fish species.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 120
+}
+

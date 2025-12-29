@@ -1,0 +1,23 @@
+{
+  "id": "bronze_sword",
+  "name": "Bronze Sword",
+  "description": "A basic bronze blade.",
+  "type": "weapon",
+  "rarity": "common",
+  "stackable": false,
+  "value": 45,
+  "requirements": {
+    "level": 1,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 3,
+    "vitality": 1
+  },
+  "combatStatBonuses": {
+    "attack": 10
+  }
+}

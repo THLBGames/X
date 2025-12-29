@@ -1,0 +1,11 @@
+{
+  "id": "large_fish",
+  "name": "Large Fish",
+  "description": "A large fish, valuable for cooking.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30
+}
+

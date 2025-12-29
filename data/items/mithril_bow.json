@@ -1,0 +1,25 @@
+{
+  "id": "mithril_bow",
+  "name": "Mithril Bow",
+  "description": "A legendary bow forged from mithril.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 19200,
+  "requirements": {
+    "level": 51,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "dexterity": 12,
+    "luck": 4
+  },
+  "combatStatBonuses": {
+    "attack": 28,
+    "speed": 20,
+    "criticalChance": 8
+  }
+}

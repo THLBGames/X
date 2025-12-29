@@ -1,0 +1,24 @@
+{
+  "id": "phoenix_staff",
+  "name": "Phoenix Staff",
+  "description": "A staff with a phoenix feather core.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 125000,
+  "requirements": {
+    "level": 71,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "intelligence": 13,
+    "wisdom": 6
+  },
+  "combatStatBonuses": {
+    "magicAttack": 52,
+    "mana": 195
+  }
+}

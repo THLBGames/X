@@ -1,0 +1,11 @@
+{
+  "id": "common_trinket",
+  "name": "Common Trinket",
+  "description": "A simple decorative trinket.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5
+}
+

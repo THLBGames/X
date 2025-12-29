@@ -1,0 +1,49 @@
+{
+  "id": "world_ender_chamber",
+  "name": "World Ender Chamber",
+  "description": "The final chamber where the world-ending threat awaits. Only the strongest can survive.",
+  "tier": 4,
+  "requiredLevel": 85,
+  "requiredDungeonId": "forsaken_cathedral",
+  "guaranteedBossChest": true,
+  "monsterPools": [
+    {
+      "monsterId": "balrog",
+      "weight": 40,
+      "minLevel": 85,
+      "maxLevel": 90
+    },
+    {
+      "monsterId": "lich",
+      "weight": 35,
+      "minLevel": 86,
+      "maxLevel": 91
+    },
+    {
+      "monsterId": "giant",
+      "weight": 25,
+      "minLevel": 87,
+      "maxLevel": 92
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "balrog",
+      "weight": 50,
+      "minLevel": 90,
+      "maxLevel": 95
+    },
+    {
+      "monsterId": "lich",
+      "weight": 50,
+      "minLevel": 90,
+      "maxLevel": 95
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.75,
+    "goldBonus": 2.7,
+    "itemDropRate": 2.6
+  }
+}
+

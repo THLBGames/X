@@ -1,0 +1,42 @@
+{
+  "id": "dread_fortress",
+  "name": "Dread Fortress",
+  "description": "An impregnable fortress of darkness and despair.",
+  "tier": 4,
+  "requiredLevel": 79,
+  "requiredDungeonId": "celestial_sanctum",
+  "monsterPools": [
+    {
+      "monsterId": "balrog",
+      "weight": 45,
+      "minLevel": 79,
+      "maxLevel": 84
+    },
+    {
+      "monsterId": "lich",
+      "weight": 35,
+      "minLevel": 80,
+      "maxLevel": 85
+    },
+    {
+      "monsterId": "giant",
+      "weight": 20,
+      "minLevel": 81,
+      "maxLevel": 86
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "balrog",
+      "weight": 100,
+      "minLevel": 84,
+      "maxLevel": 89
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.65,
+    "goldBonus": 2.6,
+    "itemDropRate": 2.45
+  }
+}
+

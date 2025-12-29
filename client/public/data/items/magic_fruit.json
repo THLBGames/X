@@ -1,0 +1,14 @@
+{
+  "id": "magic_fruit",
+  "name": "Magic Fruit",
+  "description": "A fruit imbued with magical energy.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 120,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 250
+  }
+}

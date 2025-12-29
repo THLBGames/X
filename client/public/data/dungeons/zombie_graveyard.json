@@ -1,0 +1,34 @@
+{
+  "id": "zombie_graveyard",
+  "name": "Zombie Graveyard",
+  "description": "A cursed graveyard where the dead rise in greater numbers.",
+  "tier": 2,
+  "requiredLevel": 14,
+  "requiredDungeonId": "skeleton_crypt",
+  "monsterPools": [
+    {
+      "monsterId": "zombie",
+      "weight": 60,
+      "minLevel": 14,
+      "maxLevel": 18
+    },
+    {
+      "monsterId": "ghost",
+      "weight": 30,
+      "minLevel": 15,
+      "maxLevel": 19
+    },
+    {
+      "monsterId": "wraith",
+      "weight": 10,
+      "minLevel": 16,
+      "maxLevel": 20
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.4,
+    "goldBonus": 1.35,
+    "itemDropRate": 1.2
+  }
+}
+

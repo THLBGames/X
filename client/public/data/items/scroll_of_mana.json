@@ -1,0 +1,14 @@
+{
+  "id": "scroll_of_mana",
+  "name": "Scroll of Mana",
+  "description": "A scroll that restores mana.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 120,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 200
+  }
+}

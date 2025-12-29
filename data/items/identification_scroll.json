@@ -1,0 +1,14 @@
+{
+  "id": "identification_scroll",
+  "name": "Scroll of Identification",
+  "description": "Identifies unknown items.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 30,
+  "consumableEffect": {
+    "type": "buff",
+    "amount": 1
+  }
+}

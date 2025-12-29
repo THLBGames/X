@@ -1,0 +1,11 @@
+{
+  "id": "mushroom_spore",
+  "name": "Mushroom Spore",
+  "description": "Spores from mushrooms for cultivation.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8
+}
+

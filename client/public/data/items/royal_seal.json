@@ -1,0 +1,11 @@
+{
+  "id": "royal_seal",
+  "name": "Royal Seal",
+  "description": "An official seal from royalty.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000
+}
+

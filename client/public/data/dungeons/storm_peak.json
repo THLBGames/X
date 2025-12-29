@@ -1,0 +1,42 @@
+{
+  "id": "storm_peak",
+  "name": "Storm Peak",
+  "description": "A mountain peak constantly lashed by storms, home to dragons and giants.",
+  "tier": 3,
+  "requiredLevel": 71,
+  "requiredDungeonId": "eternal_library",
+  "monsterPools": [
+    {
+      "monsterId": "dragon_whelp",
+      "weight": 50,
+      "minLevel": 71,
+      "maxLevel": 76
+    },
+    {
+      "monsterId": "giant",
+      "weight": 35,
+      "minLevel": 72,
+      "maxLevel": 77
+    },
+    {
+      "monsterId": "minotaur",
+      "weight": 15,
+      "minLevel": 73,
+      "maxLevel": 78
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "dragon_whelp",
+      "weight": 100,
+      "minLevel": 76,
+      "maxLevel": 81
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.5,
+    "goldBonus": 2.45,
+    "itemDropRate": 2.3
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "id": "mithril_helmet",
+  "name": "Mithril Helmet",
+  "description": "A legendary helmet forged from mithril.",
+  "type": "armor",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 1600,
+  "requirements": {
+    "level": 68,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "vitality": 10,
+    "strength": 4
+  },
+  "combatStatBonuses": {
+    "defense": 45,
+    "magicDefense": 20
+  }
+}
+

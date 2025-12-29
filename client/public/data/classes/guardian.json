@@ -1,0 +1,65 @@
+{
+  "id": "guardian",
+  "name": "Guardian",
+  "description": "A defensive warrior specializing in protection, shields, and tanking damage for allies.",
+  "parentClass": "warrior",
+  "unlockLevel": 50,
+  "isSubclass": true,
+  "baseStats": {
+    "strength": 14,
+    "dexterity": 7,
+    "intelligence": 6,
+    "vitality": 18,
+    "wisdom": 10,
+    "luck": 7
+  },
+  "statGrowth": {
+    "strength": 2.5,
+    "dexterity": 1.0,
+    "intelligence": 0.6,
+    "vitality": 4.2,
+    "wisdom": 1.8,
+    "luck": 1.2
+  },
+  "availableSkills": [
+    "basic_attack",
+    "block",
+    "parry",
+    "dodge",
+    "counterattack",
+    "first_aid",
+    "potion_use",
+    "item_mastery",
+    "lucky_strike",
+    "critical_mastery",
+    "cleave",
+    "shield_bash",
+    "power_strike",
+    "taunt",
+    "warrior_strength",
+    "defensive_stance",
+    "charge",
+    "battle_cry",
+    "second_wind",
+    "shield_wall",
+    "thunder_clap",
+    "rally",
+    "war_cry",
+    "armor_break",
+    "sunder",
+    "shield_charge",
+    "guardian_aura",
+    "fortify",
+    "protect_ally",
+    "iron_will",
+    "bulwark",
+    "provoke",
+    "shield_maiden",
+    "tank_mastery"
+  ],
+  "equipmentRestrictions": {
+    "weaponTypes": ["sword", "mace", "spear"],
+    "armorTypes": ["heavy"]
+  }
+}
+

@@ -8,6 +8,7 @@ import type {
   ActiveCombatState,
   CombatAction,
   Monster,
+  ActiveAction,
 } from '@idle-rpg/shared';
 
 interface GameState {
@@ -30,6 +31,8 @@ interface GameState {
   currentCombatState: ActiveCombatState | null;
   queuedSkillId: string | null;
   combatRoundNumber: number;
+  activeAction: ActiveAction;
+  maxOfflineHours: number;
   
   // Actions - Character
   setCharacter: (character: Character) => void;
@@ -42,6 +45,7 @@ interface GameState {
   addItem: (itemId: string, quantity: number) => void;
   removeItem: (itemId: string, quantity: number) => void;
   updateItemQuantity: (itemId: string, quantity: number) => void;
+  reorderInventoryItems: (fromIndex: number, toIndex: number) => void;
   
   // Actions - Progress
   setDungeonProgress: (progress: DungeonProgress[]) => void;
@@ -65,6 +69,8 @@ interface GameState {
   endCombat: () => void;
   queueSkill: (skillId: string | null) => void;
   setCombatRoundNumber: (round: number) => void;
+  setActiveAction: (action: ActiveAction) => void;
+  setMaxOfflineHours: (hours: number) => void;
 }
 
 const defaultInventory: Inventory = {
@@ -92,6 +98,8 @@ export const useGameState = create<GameState>((set, get) => ({
   currentCombatState: null,
   queuedSkillId: null,
   combatRoundNumber: 0,
+  activeAction: null,
+  maxOfflineHours: 8, // Default 8 hours
 
   // Character actions
   setCharacter: (character) => set({ character }),
@@ -178,6 +186,15 @@ export const useGameState = create<GameState>((set, get) => ({
       return { inventory };
     }),
 
+  reorderInventoryItems: (fromIndex, toIndex) =>
+    set((state) => {
+      const inventory = { ...state.inventory };
+      const items = [...inventory.items];
+      const [movedItem] = items.splice(fromIndex, 1);
+      items.splice(toIndex, 0, movedItem);
+      return { inventory: { ...inventory, items } };
+    }),
+
   // Progress actions
   setDungeonProgress: (progress) => set({ dungeonProgress: progress }),
 
@@ -227,9 +244,11 @@ export const useGameState = create<GameState>((set, get) => ({
         isInitialized: true,
         currentDungeonId: saveData.currentDungeonId,
         combatRoundNumber: saveData.combatRoundNumber || 0,
+        activeAction: saveData.activeAction ?? null,
+        maxOfflineHours: saveData.maxOfflineHours ?? 8,
       });
     } else {
-      set({ isInitialized: true });
+      set({ isInitialized: true, activeAction: null, maxOfflineHours: 8 });
     }
   },
 
@@ -244,6 +263,8 @@ export const useGameState = create<GameState>((set, get) => ({
       currentCombatState: null,
       queuedSkillId: null,
       combatRoundNumber: 0,
+      activeAction: null,
+      maxOfflineHours: 8,
     }),
 
   setCombatActive: (active) =>
@@ -259,16 +280,21 @@ export const useGameState = create<GameState>((set, get) => ({
       isCombatActive: true,
       currentDungeonId: dungeonId,
       combatRoundNumber: 0, // Start at round 0
+      activeAction: { type: 'combat', dungeonId },
     }),
 
   stopCombat: () =>
     set({
       isCombatActive: false,
       combatRoundNumber: 0,
+      activeAction: null, // Clear active action when stopping combat
     }),
 
   startCombatWithMonsters: (monsters, roundNumber, isBossRound, playerHealth, playerMaxHealth, playerMana, playerMaxMana) => {
     console.log('startCombatWithMonsters called with monsters:', monsters);
+    const state = get();
+    const character = state.character;
+    
     const monsterStates = monsters.map((monster) => ({
       monster,
       currentHealth: monster.stats.health || monster.stats.maxHealth,
@@ -276,23 +302,41 @@ export const useGameState = create<GameState>((set, get) => ({
     }));
     console.log('monsterStates created:', monsterStates);
 
+    // Create player party member from character
+    const playerPartyMember: ActivePlayerPartyMember = {
+      id: 'player',
+      name: character?.name || 'Player',
+      isSummoned: false,
+      currentHealth: playerHealth,
+      maxHealth: playerMaxHealth,
+      currentMana: playerMana,
+      maxMana: playerMaxMana,
+      level: character?.level,
+    };
+
+    const newCombatState: ActiveCombatState = {
+      playerParty: [playerPartyMember], // Start with just player, summoned entities added later
+      monsters: monsterStates,
+      playerHealth, // Keep for backwards compatibility
+      playerMaxHealth,
+      playerMana,
+      playerMaxMana,
+      currentActor: 'player',
+      currentPlayerIndex: 0,
+      currentMonsterIndex: 0,
+      recentActions: [],
+      turnNumber: 0,
+      roundNumber,
+      isBossRound,
+    };
+    
+    console.log('Setting combat state with playerParty:', newCombatState.playerParty);
+    console.log('Player party member:', playerPartyMember);
+    
     set({
-      currentCombatState: {
-        monsters: monsterStates,
-        playerHealth,
-        playerMaxHealth,
-        playerMana,
-        playerMaxMana,
-        currentActor: 'player',
-        currentMonsterIndex: 0,
-        recentActions: [],
-        turnNumber: 0,
-        roundNumber,
-        isBossRound,
-      },
+      currentCombatState: newCombatState,
       queuedSkillId: null,
     });
-    console.log('currentCombatState set with monsters:', monsterStates);
   },
 
   updateCombatState: (updates) =>
@@ -339,4 +383,8 @@ export const useGameState = create<GameState>((set, get) => ({
     set((state) => ({
       combatRoundNumber: round,
     })),
+
+  setActiveAction: (action) => set({ activeAction: action }),
+
+  setMaxOfflineHours: (hours) => set({ maxOfflineHours: Math.max(8, hours) }), // Minimum 8 hours
 }));

@@ -1,0 +1,10 @@
+{
+  "id": "spirit_essence",
+  "name": "Spirit Essence",
+  "description": "Essence from spiritual beings.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 80
+}

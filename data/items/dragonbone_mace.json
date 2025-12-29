@@ -1,0 +1,23 @@
+{
+  "id": "dragonbone_mace",
+  "name": "Dragonbone Mace",
+  "description": "A fearsome mace crafted from dragon bones.",
+  "type": "weapon",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 245000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 30,
+    "vitality": 10
+  },
+  "combatStatBonuses": {
+    "attack": 90
+  }
+}

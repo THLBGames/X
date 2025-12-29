@@ -1,0 +1,11 @@
+{
+  "id": "silver_ore",
+  "name": "Silver Ore",
+  "description": "A precious metal ore used for crafting quality equipment and jewelry.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15
+}
+

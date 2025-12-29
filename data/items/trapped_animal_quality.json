@@ -1,0 +1,11 @@
+{
+  "id": "trapped_animal_quality",
+  "name": "Quality Trapped Animal",
+  "description": "A higher quality animal caught in a trap.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20
+}
+

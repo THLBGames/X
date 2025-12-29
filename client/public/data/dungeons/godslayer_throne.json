@@ -1,0 +1,61 @@
+{
+  "id": "godslayer_throne",
+  "name": "Godslayer Throne",
+  "description": "The ultimate challenge. Face the greatest threats in existence at the throne of the godslayers.",
+  "tier": 4,
+  "requiredLevel": 90,
+  "requiredDungeonId": "world_ender_chamber",
+  "guaranteedBossChest": true,
+  "monsterPools": [
+    {
+      "monsterId": "balrog",
+      "weight": 35,
+      "minLevel": 90,
+      "maxLevel": 95
+    },
+    {
+      "monsterId": "lich",
+      "weight": 35,
+      "minLevel": 91,
+      "maxLevel": 96
+    },
+    {
+      "monsterId": "giant",
+      "weight": 20,
+      "minLevel": 92,
+      "maxLevel": 97
+    },
+    {
+      "monsterId": "dragon_whelp",
+      "weight": 10,
+      "minLevel": 93,
+      "maxLevel": 99
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "balrog",
+      "weight": 34,
+      "minLevel": 95,
+      "maxLevel": 99
+    },
+    {
+      "monsterId": "lich",
+      "weight": 33,
+      "minLevel": 95,
+      "maxLevel": 99
+    },
+    {
+      "monsterId": "giant",
+      "weight": 33,
+      "minLevel": 95,
+      "maxLevel": 99
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.8,
+    "goldBonus": 2.75,
+    "itemDropRate": 2.7
+  }
+}
+

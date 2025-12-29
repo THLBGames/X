@@ -1,0 +1,24 @@
+{
+  "id": "adamantite_gauntlets",
+  "name": "Adamantite Gauntlets",
+  "description": "Legendary gauntlets forged from adamantite.",
+  "type": "armor",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 75000,
+  "requirements": {
+    "level": 71,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "strength": 13,
+    "vitality": 13
+  },
+  "combatStatBonuses": {
+    "defense": 26,
+    "attack": 13
+  }
+}

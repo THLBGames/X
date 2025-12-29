@@ -1,0 +1,20 @@
+{
+  "id": "legendary_ring_3",
+  "name": "Legendary Ring #4",
+  "description": "A legendary ring.",
+  "type": "accessory",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 25000,
+  "requirements": {
+    "level": 86
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "vitality": 10,
+    "luck": 10
+  },
+  "combatStatBonuses": {
+    "defense": 20
+  }
+}

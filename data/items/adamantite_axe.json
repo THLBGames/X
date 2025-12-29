@@ -1,0 +1,23 @@
+{
+  "id": "adamantite_axe",
+  "name": "Adamantite Axe",
+  "description": "A legendary axe forged from adamantite.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 85000,
+  "requirements": {
+    "level": 71,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 19,
+    "vitality": 6
+  },
+  "combatStatBonuses": {
+    "attack": 71
+  }
+}

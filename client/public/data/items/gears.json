@@ -1,0 +1,11 @@
+{
+  "id": "gears",
+  "name": "Gears",
+  "description": "Mechanical gears for engineering projects.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15
+}
+

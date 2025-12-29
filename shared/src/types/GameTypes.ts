@@ -35,6 +35,9 @@ export interface CharacterClass {
     weaponTypes?: string[];
     armorTypes?: string[];
   };
+  parentClass?: string; // ID of parent class (for subclasses)
+  unlockLevel?: number; // Level required to unlock (default 50 for subclasses)
+  isSubclass?: boolean; // true if this is a subclass
 }
 
 // Monster definition
@@ -110,10 +113,11 @@ export type EquipmentSlot =
   | 'amulet';
 
 export interface ConsumableEffect {
-  type: 'heal' | 'mana' | 'buff' | 'experience';
+  type: 'heal' | 'mana' | 'buff' | 'experience' | 'offlineTime';
   amount?: number;
   buffId?: string;
   duration?: number; // For buffs, in seconds
+  offlineTimeHours?: number; // Hours to add to max offline time (for offline time upgrades)
 }
 
 // Loot table entry
@@ -250,6 +254,7 @@ export interface Dungeon {
     level?: number;
     dungeonId?: string;
   };
+  guaranteedBossChest?: boolean; // If true, bosses always drop chests (for endgame dungeons)
 }
 
 export interface MonsterPool {
@@ -275,11 +280,19 @@ export interface StatusEffect {
   };
 }
 
+// Idle skill level tracking
+export interface IdleSkillLevel {
+  skillId: string;
+  level: number;
+  experience: number;
+}
+
 // Character state (player's character)
 export interface Character {
   id: string;
   name: string;
   classId: string;
+  subclassId?: string; // Subclass ID (e.g., "wizard", "necromancer")
   level: number;
   experience: number;
   experienceToNext: number;
@@ -375,13 +388,26 @@ export interface ActiveMonsterState {
   maxHealth: number;
 }
 
+export interface ActivePlayerPartyMember {
+  id: string;
+  name: string;
+  isSummoned: boolean; // true for summoned entities, false for player
+  currentHealth: number;
+  maxHealth: number;
+  currentMana: number;
+  maxMana: number;
+  level?: number;
+}
+
 export interface ActiveCombatState {
+  playerParty: ActivePlayerPartyMember[]; // Player + up to 4 summoned entities (max 5 total)
   monsters: ActiveMonsterState[]; // 1-5 monsters per round
-  playerHealth: number;
-  playerMaxHealth: number;
-  playerMana: number;
-  playerMaxMana: number;
-  currentActor: 'player' | 'monster';
+  playerHealth: number; // Deprecated: use playerParty[0] instead, kept for backwards compatibility
+  playerMaxHealth: number; // Deprecated
+  playerMana: number; // Deprecated
+  playerMaxMana: number; // Deprecated
+  currentActor: 'player' | 'monster' | 'summoned';
+  currentPlayerIndex?: number; // Which party member is acting
   currentMonsterIndex: number; // Which monster is currently acting
   recentActions: CombatAction[]; // Last 20 actions
   turnNumber: number;
@@ -422,6 +448,12 @@ export interface GameConfig {
   };
 }
 
+// Active action type - tracks what the player was doing when they went offline
+export type ActiveAction =
+  | { type: 'combat'; dungeonId: string }
+  | { type: 'skill'; skillId: string; nodeId?: string; recipeId?: string }
+  | null;
+
 // Save data structure
 export interface SaveData {
   version: string;
@@ -432,6 +464,8 @@ export interface SaveData {
   lastSaved: number; // Timestamp
   lastOfflineTime?: number; // Timestamp when game was last closed
   currentDungeonId?: string; // Currently selected dungeon
+  activeAction?: ActiveAction; // Last active action (combat or skill)
+  maxOfflineHours?: number; // Maximum offline hours (default 8, upgradable)
 }
 
 export interface GameSettings {
@@ -442,38 +476,5 @@ export interface GameSettings {
   showDamageNumbers: boolean;
 }
 
-// Export all types
-export type {
-  Stats,
-  CombatStats,
-  CharacterClass,
-  Monster,
-  MonsterAbility,
-  AbilityEffect,
-  Item,
-  EquipmentSlot,
-  ConsumableEffect,
-  LootEntry,
-  Skill,
-  SkillEffect,
-  PassiveBonus,
-  Dungeon,
-  MonsterPool,
-  StatusEffect,
-  Character,
-  LearnedSkill,
-  Equipment,
-  ActiveStatusEffect,
-  InventoryItem,
-  Inventory,
-  CombatParticipant,
-  CombatAction,
-  CombatLog,
-  CombatRewards,
-  DungeonProgress,
-  GameConfig,
-  SaveData,
-  GameSettings,
-  IdleSkillLevel,
-};
+// All types are already exported with their definitions above
 

@@ -1,0 +1,11 @@
+{
+  "id": "legendary_trinket",
+  "name": "Legendary Trinket",
+  "description": "An extremely valuable legendary trinket.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1500
+}
+

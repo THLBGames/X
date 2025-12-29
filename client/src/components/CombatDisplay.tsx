@@ -2,9 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import CombatArena from './CombatArena';
-import ActionLog from './ActionLog';
 import CombatSkillBar from './CombatSkillBar';
-import type { CombatLog as CombatLogType } from '@idle-rpg/shared';
 import './CombatDisplay.css';
 
 interface CombatStats {
@@ -93,8 +91,6 @@ export default function CombatDisplay() {
               <CombatArena combatState={currentCombatState} />
               
               <CombatSkillBar onSkillUse={handleSkillUse} />
-
-              <ActionLog actions={currentCombatState.recentActions} />
 
               {combatStats.combatsCompleted > 0 && (
                 <div className="combat-stats">

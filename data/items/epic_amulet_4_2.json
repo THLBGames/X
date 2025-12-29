@@ -1,0 +1,19 @@
+{
+  "id": "epic_amulet_4_2",
+  "name": "Epic Amulet #3",
+  "description": "A epic amulet.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 6250,
+  "requirements": {
+    "level": 71
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "strength": 13
+  },
+  "combatStatBonuses": {
+    "attack": 26
+  }
+}

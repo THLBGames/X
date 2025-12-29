@@ -1,0 +1,42 @@
+{
+  "id": "infernal_plains",
+  "name": "Infernal Plains",
+  "description": "A scorched wasteland where demons roam freely.",
+  "tier": 3,
+  "requiredLevel": 58,
+  "requiredDungeonId": "undead_citadel",
+  "monsterPools": [
+    {
+      "monsterId": "balrog",
+      "weight": 55,
+      "minLevel": 58,
+      "maxLevel": 63
+    },
+    {
+      "monsterId": "imp",
+      "weight": 30,
+      "minLevel": 59,
+      "maxLevel": 64
+    },
+    {
+      "monsterId": "dark_mage",
+      "weight": 15,
+      "minLevel": 60,
+      "maxLevel": 65
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "balrog",
+      "weight": 100,
+      "minLevel": 63,
+      "maxLevel": 68
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.25,
+    "goldBonus": 2.2,
+    "itemDropRate": 2.05
+  }
+}
+

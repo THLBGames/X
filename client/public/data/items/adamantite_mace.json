@@ -1,0 +1,23 @@
+{
+  "id": "adamantite_mace",
+  "name": "Adamantite Mace",
+  "description": "A legendary mace forged from adamantite.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 82500,
+  "requirements": {
+    "level": 71,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 19,
+    "vitality": 6
+  },
+  "combatStatBonuses": {
+    "attack": 58
+  }
+}

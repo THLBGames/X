@@ -1,0 +1,11 @@
+{
+  "id": "rare_berry",
+  "name": "Rare Berry",
+  "description": "Rare berries with unique properties.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30
+}
+

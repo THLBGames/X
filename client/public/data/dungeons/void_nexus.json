@@ -1,0 +1,42 @@
+{
+  "id": "void_nexus",
+  "name": "Void Nexus",
+  "description": "A convergence point of dark energies where reality tears apart.",
+  "tier": 3,
+  "requiredLevel": 60,
+  "requiredDungeonId": "infernal_plains",
+  "monsterPools": [
+    {
+      "monsterId": "shadow_stalker",
+      "weight": 50,
+      "minLevel": 60,
+      "maxLevel": 65
+    },
+    {
+      "monsterId": "wraith",
+      "weight": 35,
+      "minLevel": 61,
+      "maxLevel": 66
+    },
+    {
+      "monsterId": "dark_mage",
+      "weight": 15,
+      "minLevel": 62,
+      "maxLevel": 67
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "shadow_stalker",
+      "weight": 100,
+      "minLevel": 65,
+      "maxLevel": 70
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.3,
+    "goldBonus": 2.25,
+    "itemDropRate": 2.1
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "id": "iron_axe",
+  "name": "Iron Axe",
+  "description": "A reliable iron axe.",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 160,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 4,
+    "vitality": 1
+  },
+  "combatStatBonuses": {
+    "attack": 16
+  }
+}

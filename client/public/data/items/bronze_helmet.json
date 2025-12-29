@@ -1,0 +1,23 @@
+{
+  "id": "bronze_helmet",
+  "name": "Bronze Helmet",
+  "description": "A basic bronze helmet.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 35,
+  "requirements": {
+    "level": 1,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "vitality": 3,
+    "strength": 1
+  },
+  "combatStatBonuses": {
+    "defense": 6
+  }
+}

@@ -66,46 +66,125 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
 
   const isPlayerTurn = combatState.currentActor === 'player';
 
+  // Get player party (use new structure if available, fallback to old structure)
+  // Check both if playerParty exists AND has elements
+  let playerParty: ActivePlayerPartyMember[] = [];
+  if (combatState.playerParty && combatState.playerParty.length > 0) {
+    playerParty = combatState.playerParty;
+  } else if (combatState.playerHealth !== undefined) {
+    // Fallback to old structure
+    playerParty = [{
+      id: 'player',
+      name: character?.name || 'You',
+      isSummoned: false,
+      currentHealth: combatState.playerHealth,
+      maxHealth: combatState.playerMaxHealth,
+      currentMana: combatState.playerMana,
+      maxMana: combatState.playerMaxMana,
+      level: character?.level,
+    }];
+  }
+
+  // Pad player party to 5 slots (player + 4 summon slots)
+  const paddedPlayerParty = [...playerParty];
+  while (paddedPlayerParty.length < 5) {
+    paddedPlayerParty.push(null);
+  }
+
+  // Pad monsters to 5 slots
+  const monsters = combatState.monsters || [];
+  const paddedMonsters = [...monsters];
+  while (paddedMonsters.length < 5) {
+    paddedMonsters.push(null);
+  }
+
+  const isPlayerPartyTurn = combatState.currentActor === 'player' || combatState.currentActor === 'summoned';
+  const currentPlayerIndex = combatState.currentPlayerIndex ?? 0;
+
   return (
     <div className="combat-arena" ref={arenaRef}>
-      <div className={`combat-participant player-area ${isPlayerTurn ? 'active-turn' : ''}`} ref={playerRef}>
-        <div className="participant-info">
-          <div className="participant-name">{character?.name || 'You'}</div>
-          <div className="participant-level">Lv. {character?.level || '?'}</div>
-        </div>
-        <HealthBar
-          current={combatState.playerHealth}
-          max={combatState.playerMaxHealth}
-          label="Health"
-          barColor="#4a9eff"
-        />
-        <HealthBar
-          current={combatState.playerMana}
-          max={combatState.playerMaxMana}
-          label="Mana"
-          barColor="#4ecdc4"
-          height={16}
-        />
-        {isPlayerTurn && <div className="turn-indicator">Your Turn</div>}
+      <div className="player-party-container">
+        {paddedPlayerParty.map((partyMember, index) => {
+          if (!partyMember) {
+            return (
+              <div key={`empty-slot-${index}`} className="combat-participant empty-slot">
+                <div className="participant-name" style={{ color: '#555', fontStyle: 'italic' }}>
+                  Empty Slot
+                </div>
+              </div>
+            );
+          }
+
+          const isCurrentActor = isPlayerPartyTurn && index === currentPlayerIndex;
+          const isPlayer = !partyMember.isSummoned;
+
+          return (
+            <div
+              key={`party-${partyMember.id}-${index}`}
+              className={`combat-participant player-area ${isCurrentActor ? 'active-turn' : ''} ${isPlayer ? 'player-character' : 'summoned-character'}`}
+              ref={isPlayer && index === 0 ? playerRef : undefined}
+            >
+              <div className="participant-header">
+                <div className={isPlayer ? 'player-icon' : 'summoned-icon'}>
+                  <div className={isPlayer ? 'player-icon-inner' : 'summoned-icon-inner'}>
+                    {isPlayer ? '⚔️' : '✨'}
+                  </div>
+                </div>
+                <div className="participant-info">
+                  <div className="participant-name">{partyMember.name}</div>
+                  {partyMember.level !== undefined && (
+                    <div className="participant-level">Lv. {partyMember.level}</div>
+                  )}
+                </div>
+              </div>
+              <HealthBar
+                current={partyMember.currentHealth}
+                max={partyMember.maxHealth}
+                label="HP"
+                barColor={isPlayer ? '#4a9eff' : '#4ecdc4'}
+                height={12}
+              />
+              <HealthBar
+                current={partyMember.currentMana}
+                max={partyMember.maxMana}
+                label="MP"
+                barColor="#9b59b6"
+                height={12}
+              />
+            </div>
+          );
+        })}
       </div>
 
-      <div className="combat-vs">VS Round {combatState.roundNumber + 1}</div>
+      <div className="combat-vs">VS<br/>Round {combatState.roundNumber + 1}</div>
 
       <div className="monsters-container">
-        {combatState.monsters && combatState.monsters.length > 0 ? (
-          combatState.monsters
-            .filter((m) => m.currentHealth > 0)
-            .map((monsterState, index) => {
-            const isCurrentMonster =
-              !isPlayerTurn && index === combatState.currentMonsterIndex;
+        {paddedMonsters.map((monsterState, index) => {
+          if (!monsterState) {
             return (
-              <div
-                key={`monster-${index}-${monsterState.monster.id}`}
-                className={`combat-participant monster-area ${isCurrentMonster ? 'active-turn' : ''} ${monsterState.monster.isBoss ? 'boss-monster' : ''}`}
-                ref={index === 0 ? monsterRef : undefined}
-              >
+              <div key={`empty-monster-slot-${index}`} className="combat-participant empty-slot">
+                <div className="participant-name" style={{ color: '#555', fontStyle: 'italic' }}>
+                  Empty Slot
+                </div>
+              </div>
+            );
+          }
+
+          if (monsterState.currentHealth <= 0) {
+            return null; // Don't render dead monsters
+          }
+
+          const isCurrentMonster =
+            !isPlayerPartyTurn && index === combatState.currentMonsterIndex;
+
+          return (
+            <div
+              key={`monster-${index}-${monsterState.monster.id}`}
+              className={`combat-participant monster-area ${isCurrentMonster ? 'active-turn' : ''} ${monsterState.monster.isBoss ? 'boss-monster' : ''}`}
+              ref={index === 0 ? monsterRef : undefined}
+            >
+              <div className="participant-header">
                 <div className="monster-image-placeholder">
-                  {/* Placeholder for monster image/icon */}
                   <div className="monster-icon">👹</div>
                 </div>
                 <div className="participant-info">
@@ -115,19 +194,17 @@ export default function CombatArena({ combatState, showResult, onResultComplete 
                   </div>
                   <div className="participant-level">Lv. {monsterState.monster.level}</div>
                 </div>
-                <HealthBar
-                  current={monsterState.currentHealth}
-                  max={monsterState.maxHealth}
-                  label="Health"
-                  barColor={monsterState.monster.isBoss ? '#ff4444' : '#ff6b6b'}
-                />
-                {isCurrentMonster && <div className="turn-indicator">Enemy Turn</div>}
               </div>
-            );
-          })
-        ) : (
-          <div className="combat-loading">Loading monsters...</div>
-        )}
+              <HealthBar
+                current={monsterState.currentHealth}
+                max={monsterState.maxHealth}
+                label="HP"
+                barColor={monsterState.monster.isBoss ? '#ff4444' : '#ff6b6b'}
+                height={12}
+              />
+            </div>
+          );
+        })}
       </div>
 
       {/* Damage Numbers */}

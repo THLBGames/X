@@ -1,0 +1,24 @@
+{
+  "id": "phantom_pants",
+  "name": "Phantom Pants",
+  "description": "Pants that allow the wearer to move like a phantom.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 5900,
+  "requirements": {
+    "level": 87,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "legs",
+  "statBonuses": {
+    "dexterity": 17,
+    "luck": 5
+  },
+  "combatStatBonuses": {
+    "defense": 25,
+    "speed": 32,
+    "criticalChance": 6
+  }
+}
+

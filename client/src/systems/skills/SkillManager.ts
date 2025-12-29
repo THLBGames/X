@@ -123,7 +123,7 @@ export class SkillManager {
   }
 
   /**
-   * Get all available skills for character's class
+   * Get all available skills for character's class and subclass
    */
   static getAvailableSkills(character: Character): Skill[] {
     const dataLoader = getDataLoader();
@@ -133,12 +133,35 @@ export class SkillManager {
       return [];
     }
 
-    const availableSkills: Skill[] = [];
+    const availableSkillsSet = new Set<string>();
 
+    // Add base class skills
     for (const skillId of characterClass.availableSkills) {
+      availableSkillsSet.add(skillId);
+    }
+
+    // Add subclass skills if character has a subclass
+    if (character.subclassId) {
+      const subclass = dataLoader.getSubclass(character.subclassId);
+      if (subclass) {
+        for (const skillId of subclass.availableSkills) {
+          availableSkillsSet.add(skillId);
+        }
+      }
+    }
+
+    // Convert set to array and load skill data
+    const availableSkills: Skill[] = [];
+    for (const skillId of availableSkillsSet) {
       const skill = dataLoader.getSkill(skillId);
       if (skill) {
-        availableSkills.push(skill);
+        // Check if skill's class requirements match character's class or subclass
+        const skillClassReq = skill.requirements?.class;
+        if (!skillClassReq || 
+            skillClassReq.includes(character.classId) || 
+            (character.subclassId && skillClassReq.includes(character.subclassId))) {
+          availableSkills.push(skill);
+        }
       }
     }
 

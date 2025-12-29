@@ -1,0 +1,24 @@
+{
+  "id": "shadow_gloves",
+  "name": "Shadow Gloves",
+  "description": "Gloves that enhance stealth and precision.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 440,
+  "requirements": {
+    "level": 32,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "dexterity": 6,
+    "luck": 2
+  },
+  "combatStatBonuses": {
+    "defense": 10,
+    "speed": 10,
+    "criticalChance": 3
+  }
+}
+

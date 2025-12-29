@@ -5,6 +5,7 @@ import type {
   CombatStats,
   Equipment,
   LearnedSkill,
+  ActiveStatusEffect,
 } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { calculateExperienceForLevel, calculateTotalExperienceForLevel } from '@/utils/experience';
@@ -29,6 +30,7 @@ export class CharacterManager {
       id: `char_${Date.now()}`,
       name,
       classId,
+      subclassId: undefined,
       level: 1,
       experience: 0,
       experienceToNext: this.getExperienceForNextLevel(1),
@@ -261,22 +263,135 @@ export class CharacterManager {
   }
 
   /**
+   * Calculate current stats (base stats + equipment bonuses + status effects)
+   */
+  static calculateCurrentStats(
+    baseStats: Stats,
+    equipment: Equipment,
+    statusEffects: ActiveStatusEffect[]
+  ): Stats {
+    const dataLoader = getDataLoader();
+    const stats = { ...baseStats };
+    const equipmentSlots: Array<keyof Equipment> = [
+      'weapon',
+      'offhand',
+      'helmet',
+      'chest',
+      'legs',
+      'boots',
+      'gloves',
+      'ring1',
+      'ring2',
+      'amulet',
+    ];
+
+    // Apply equipment stat bonuses
+    for (const slot of equipmentSlots) {
+      const itemId = equipment[slot];
+      if (itemId) {
+        const item = dataLoader.getItem(itemId);
+        if (item?.statBonuses) {
+          Object.entries(item.statBonuses).forEach(([key, value]) => {
+            const statKey = key as keyof Stats;
+            if (value !== undefined) {
+              stats[statKey] = (stats[statKey] || 0) + value;
+            }
+          });
+        }
+      }
+    }
+
+    // Apply status effect stat modifiers
+    for (const effect of statusEffects) {
+      // In a real implementation, you'd load the status effect definition
+      // For now, status effects don't modify base stats directly
+    }
+
+    return stats;
+  }
+
+  /**
    * Update character's current stats based on equipment and status effects
    */
   static updateCharacterStats(character: Character): Character {
-    const newCombatStats = this.calculateCombatStats(
+    // Calculate current stats (base stats + equipment bonuses)
+    const currentStats = this.calculateCurrentStats(
       character.baseStats,
       character.equipment,
-      character.statusEffects.map((se) => {
-        // In a real implementation, you'd load the status effect definition
-        return { statModifier: {}, combatStatModifier: {} };
-      })
+      character.statusEffects
     );
+
+    // Calculate combat stats using current stats (which already include equipment stat bonuses)
+    // Pass empty equipment to calculateCombatStats so it doesn't apply stat bonuses twice
+    // but it still needs equipment to apply combat stat bonuses
+    const dataLoader = getDataLoader();
+    const equipmentSlots: Array<keyof Equipment> = [
+      'weapon',
+      'offhand',
+      'helmet',
+      'chest',
+      'legs',
+      'boots',
+      'gloves',
+      'ring1',
+      'ring2',
+      'amulet',
+    ];
+
+    const combatStats: CombatStats = {
+      health: 0,
+      maxHealth: 0,
+      mana: 0,
+      maxMana: 0,
+      attack: 0,
+      defense: 0,
+      magicAttack: 0,
+      magicDefense: 0,
+      speed: 0,
+      criticalChance: 0,
+      criticalDamage: 1.5,
+    };
+
+    // Calculate combat stats from current stats (which already include equipment bonuses)
+    combatStats.maxHealth = 100 + currentStats.vitality * 10;
+    combatStats.health = combatStats.maxHealth;
+
+    combatStats.maxMana = 50 + currentStats.wisdom * 5 + currentStats.intelligence * 3;
+    combatStats.mana = combatStats.maxMana;
+
+    combatStats.attack = currentStats.strength * 2 + currentStats.dexterity * 0.5;
+    combatStats.defense = currentStats.vitality * 1.5;
+    combatStats.magicAttack = currentStats.intelligence * 2 + currentStats.wisdom * 0.5;
+    combatStats.magicDefense = currentStats.wisdom * 1.5 + currentStats.intelligence * 0.5;
+    combatStats.speed = currentStats.dexterity * 1.5;
+    combatStats.criticalChance = (currentStats.dexterity + currentStats.luck) * 0.1;
+
+    // Apply equipment combat stat bonuses
+    for (const slot of equipmentSlots) {
+      const itemId = character.equipment[slot];
+      if (itemId) {
+        const item = dataLoader.getItem(itemId);
+        if (item?.combatStatBonuses) {
+          Object.entries(item.combatStatBonuses).forEach(([key, value]) => {
+            const combatStatKey = key as keyof CombatStats;
+            if (value !== undefined && combatStats[combatStatKey] !== undefined) {
+              (combatStats[combatStatKey] as number) += value;
+            }
+          });
+        }
+      }
+    }
+
+    // Apply status effect combat stat modifiers
+    for (const effect of character.statusEffects) {
+      // In a real implementation, you'd load the status effect definition
+      // For now, status effects don't modify combat stats directly
+    }
 
     return {
       ...character,
-      currentStats: { ...character.baseStats }, // Current stats = base stats (equipment/effects applied to combat stats)
-      combatStats: newCombatStats,
+      currentStats,
+      combatStats,
     };
   }
 

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useGameState } from '../systems';
-import { IdleProgress } from '../systems/idle';
 import { CharacterManager } from '../systems/character';
 import { InventoryManager } from '../systems/inventory';
 import { getSaveManager } from '../systems/save';
@@ -99,6 +98,8 @@ export function useGameLoop() {
             settings: currentState.settings,
             lastSaved: now,
             lastOfflineTime: now,
+            activeAction: currentState.activeAction ?? null,
+            maxOfflineHours: currentState.maxOfflineHours ?? 8,
           };
           await saveManager.save(saveData);
           lastSaveTimeRef.current = now;
@@ -145,7 +146,8 @@ export function useGameLoop() {
         combatEngine = CombatManager.startCombat(
           state.character,
           monsters,
-          state.settings.autoCombat
+          state.settings.autoCombat,
+          state.currentDungeonId || undefined
         );
 
         // Initialize combat state
@@ -186,6 +188,34 @@ export function useGameLoop() {
       const recentActions = combatEngine.getRecentActions(20);
       const currentState = state.currentCombatState;
       
+      // Update player party (currently just the player, but structure supports summoned entities)
+      let updatedPlayerParty = currentState?.playerParty || [];
+      if (updatedPlayerParty.length > 0) {
+        const playerPartyMember = updatedPlayerParty[0];
+        if (playerPartyMember && playerPartyMember.id === 'player') {
+          updatedPlayerParty = [{
+            ...playerPartyMember,
+            currentHealth: player.currentHealth,
+            currentMana: player.currentMana,
+          }];
+        }
+      }
+
+      // Determine current actor type and index
+      let currentActorType: 'player' | 'monster' | 'summoned' = currentActor.isPlayer ? 'player' : 'monster';
+      let currentPlayerIndex: number | undefined = undefined;
+      let currentMonsterIndex = currentState?.currentMonsterIndex || 0;
+
+      if (currentActor.isPlayer) {
+        currentPlayerIndex = 0; // Player is always at index 0
+      } else if (!currentActor.isPlayer && monsters.length > 0) {
+        // Find which monster is currently acting
+        const actingMonsterIndex = monsters.findIndex((m) => m.id === currentActor.id);
+        if (actingMonsterIndex >= 0) {
+          currentMonsterIndex = actingMonsterIndex;
+        }
+      }
+      
       // Only update monsters if we have a current state with monsters
       if (currentState && currentState.monsters && currentState.monsters.length > 0) {
         // Update monster states - match by index since we spawn them in order
@@ -210,21 +240,13 @@ export function useGameLoop() {
           };
         });
 
-        // Determine current monster index (for turn display)
-        let currentMonsterIndex = currentState.currentMonsterIndex || 0;
-        if (!currentActor.isPlayer && monsters.length > 0) {
-          // Find which monster is currently acting
-          const actingMonsterIndex = monsters.findIndex((m) => m.id === currentActor.id);
-          if (actingMonsterIndex >= 0) {
-            currentMonsterIndex = actingMonsterIndex;
-          }
-        }
-
         updateCombatState({
+          playerParty: updatedPlayerParty,
           monsters: updatedMonsters,
-          playerHealth: player.currentHealth,
+          playerHealth: player.currentHealth, // Keep for backwards compatibility
           playerMana: player.currentMana,
-          currentActor: currentActor.isPlayer ? 'player' : 'monster',
+          currentActor: currentActorType,
+          currentPlayerIndex,
           currentMonsterIndex,
           recentActions,
           turnNumber: combatEngine.getTurnNumber(),
@@ -232,9 +254,11 @@ export function useGameLoop() {
       } else {
         // No monsters in state yet, just update player stats (don't touch monsters)
         updateCombatState({
-          playerHealth: player.currentHealth,
+          playerParty: updatedPlayerParty,
+          playerHealth: player.currentHealth, // Keep for backwards compatibility
           playerMana: player.currentMana,
-          currentActor: currentActor.isPlayer ? 'player' : 'monster',
+          currentActor: currentActorType,
+          currentPlayerIndex,
           recentActions,
           turnNumber: combatEngine.getTurnNumber(),
         });
@@ -246,8 +270,25 @@ export function useGameLoop() {
       }
     }
 
-    // Check if combat is over
+    // Check if combat is over - do this BEFORE processing any results
+    // to ensure we don't continue if player is dead
     if (combatLog) {
+      if (combatLog.result === 'defeat') {
+        // Stop combat immediately to prevent any new combat from starting
+        setCombatActive(false);
+        CombatManager.endCombat();
+        endCombat();
+        console.log('Character was defeated. Stopping combat.');
+        
+        // Dispatch combat complete event (for animations/UI)
+        window.dispatchEvent(
+          new CustomEvent('combatComplete', {
+            detail: { result: 'defeat' },
+          })
+        );
+        return; // Exit early - don't process any further turns
+      }
+      
       if (combatLog.result === 'victory' && combatLog.rewards) {
         // Clear current combat engine (but don't clear state yet - we'll start a new round)
         CombatManager.endCombat();
@@ -345,7 +386,8 @@ export function useGameLoop() {
             const newCombatEngine = CombatManager.startCombat(
               updatedState.character,
               newMonsters,
-              updatedState.settings.autoCombat
+              updatedState.settings.autoCombat,
+              updatedState.currentDungeonId || undefined
             );
 
             // Initialize combat state for new round
@@ -365,20 +407,8 @@ export function useGameLoop() {
             console.error('Failed to spawn monsters for new round');
           }
         }
-      } else if (combatLog.result === 'defeat') {
-        // Dispatch combat complete event
-        window.dispatchEvent(
-          new CustomEvent('combatComplete', {
-            detail: { result: 'defeat' },
-          })
-        );
-        CombatManager.endCombat();
-        endCombat();
-        console.log('Character was defeated. Stopping combat.');
-        setTimeout(() => {
-          setCombatActive(false);
-        }, 2000); // Wait for defeat animation
       }
+      // Note: defeat handling is now at the top of this block (line 252), before victory processing
     }
   }, [
     startCombatWithMonsters,

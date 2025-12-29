@@ -1,0 +1,20 @@
+{
+  "id": "fill_ring1_t1",
+  "name": "Filler Ring1 T1",
+  "description": "A filler ring1.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 25,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "vitality": 1,
+    "luck": 1
+  },
+  "combatStatBonuses": {
+    "defense": 2
+  }
+}

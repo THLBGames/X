@@ -1,0 +1,14 @@
+{
+  "id": "scroll_of_healing",
+  "name": "Scroll of Healing",
+  "description": "A scroll that restores health.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 130,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 300
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "apprentice_gloves_rogue",
+  "name": "Apprentice Gloves",
+  "description": "Gloves for apprentice rogues.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 250,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "dexterity": 3
+  },
+  "combatStatBonuses": {
+    "defense": 4,
+    "speed": 3
+  }
+}

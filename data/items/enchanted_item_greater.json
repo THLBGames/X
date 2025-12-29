@@ -1,0 +1,11 @@
+{
+  "id": "enchanted_item_greater",
+  "name": "Greater Enchanted Item",
+  "description": "An item with powerful magical enchantments.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800
+}
+

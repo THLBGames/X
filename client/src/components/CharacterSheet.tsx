@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { useGameState } from '../systems';
 import { InventoryManager } from '../systems/inventory';
 import { ClassChangeManager } from '../systems/character/ClassChangeManager';
+import { getDataLoader } from '../data';
 import ClassChangeModal from './ClassChangeModal';
 import SkillTreeModal from './SkillTreeModal';
+import SubclassModal from './SubclassModal';
+import EquipmentPanel from './EquipmentPanel';
 import './CharacterSheet.css';
 
 export default function CharacterSheet() {
@@ -11,14 +14,31 @@ export default function CharacterSheet() {
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
   const setInventory = useGameState((state) => state.setInventory);
+  const activeAction = useGameState((state) => state.activeAction);
+  const maxOfflineHours = useGameState((state) => state.maxOfflineHours);
   const [showClassChange, setShowClassChange] = useState(false);
   const [showSkillTree, setShowSkillTree] = useState(false);
+  const [showSubclass, setShowSubclass] = useState(false);
 
   if (!character) {
     return null;
   }
 
   const gold = InventoryManager.getGold(inventory);
+  const dataLoader = getDataLoader();
+
+  const getActiveActionDisplay = () => {
+    if (!activeAction) return null;
+    
+    if (activeAction.type === 'combat') {
+      const dungeon = dataLoader.getDungeon(activeAction.dungeonId);
+      return `Combat: ${dungeon?.name || activeAction.dungeonId}`;
+    } else if (activeAction.type === 'skill') {
+      const skill = dataLoader.getSkill(activeAction.skillId);
+      return `Training: ${skill?.name || activeAction.skillId}`;
+    }
+    return null;
+  };
 
   const handleClassChange = (newClassId: string) => {
     try {
@@ -44,18 +64,42 @@ export default function CharacterSheet() {
     <>
       <div className="character-sheet">
         <h2>Character</h2>
-        <div className="character-info">
-          <div className="character-name">{character.name}</div>
-          <div className="character-level">Level {character.level}</div>
-          <div className="character-class">Class: {character.classId}</div>
-          <div className="character-gold">Gold: {gold.toLocaleString()}</div>
-          <button
-            className="change-class-button"
-            onClick={() => setShowClassChange(true)}
-          >
-            Change Class
-          </button>
+      <div className="character-info">
+        <div className="character-name">{character.name}</div>
+        <div className="character-level">Level {character.level}</div>
+        <div className="character-class">
+          Class: {character.classId}
+          {character.subclassId && (
+            <>
+              <br />
+              <span className="character-subclass">Subclass: {character.subclassId}</span>
+            </>
+          )}
         </div>
+        <div className="character-gold">Gold: {gold.toLocaleString()}</div>
+        <div className="character-offline-hours">
+          Max Offline Time: {maxOfflineHours} hours
+        </div>
+        {activeAction && (
+          <div className="character-active-action">
+            Active: {getActiveActionDisplay()}
+          </div>
+        )}
+        <button
+          className="change-class-button"
+          onClick={() => setShowClassChange(true)}
+        >
+          Change Class
+        </button>
+        {character.level >= 50 && (
+          <button
+            className="change-subclass-button"
+            onClick={() => setShowSubclass(true)}
+          >
+            {character.subclassId ? 'Change Subclass' : 'Select Subclass'}
+          </button>
+        )}
+      </div>
       <div className="character-stats">
         <h3>Stats</h3>
         <div className="stat-row">
@@ -128,6 +172,7 @@ export default function CharacterSheet() {
           Open Skill Tree
         </button>
       </div>
+      <EquipmentPanel />
       </div>
       <ClassChangeModal
         isOpen={showClassChange}
@@ -137,6 +182,10 @@ export default function CharacterSheet() {
       <SkillTreeModal
         isOpen={showSkillTree}
         onClose={() => setShowSkillTree(false)}
+      />
+      <SubclassModal
+        isOpen={showSubclass}
+        onClose={() => setShowSubclass(false)}
       />
     </>
   );

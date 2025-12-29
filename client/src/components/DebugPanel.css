@@ -1,0 +1,255 @@
+.debug-panel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.debug-panel-modal {
+  background: #1a1a1a;
+  border: 2px solid #4a9eff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.debug-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #444;
+  background: #2a2a2a;
+}
+
+.debug-panel-header h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.debug-panel-close {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.debug-panel-close:hover {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.debug-panel-tabs {
+  display: flex;
+  border-bottom: 1px solid #444;
+  background: #222;
+  overflow-x: auto;
+}
+
+.debug-tab {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.debug-tab:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.debug-tab.active {
+  color: #4a9eff;
+  border-bottom-color: #4a9eff;
+  background: #1a1a1a;
+}
+
+.debug-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.debug-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.debug-section {
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.debug-section h3 {
+  margin: 0 0 12px 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.debug-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.debug-input-group input {
+  flex: 1;
+  min-width: 150px;
+  padding: 8px 12px;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.debug-input-group input::placeholder {
+  color: #666;
+}
+
+.debug-input-group input:focus {
+  outline: none;
+  border-color: #4a9eff;
+  box-shadow: 0 0 5px rgba(74, 158, 255, 0.3);
+}
+
+.debug-input-group button {
+  padding: 8px 16px;
+  background: #4a9eff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.debug-input-group button:hover {
+  background: #5aaeff;
+  transform: translateY(-1px);
+}
+
+.debug-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.debug-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.debug-stat-item label {
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.debug-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.debug-button-secondary {
+  padding: 10px 20px;
+  background: #4ecdc4;
+  border: none;
+  border-radius: 4px;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.debug-button-secondary:hover {
+  background: #5eddd4;
+  transform: translateY(-1px);
+}
+
+.debug-button-danger {
+  padding: 10px 20px;
+  background: #ff4444;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.debug-button-danger:hover {
+  background: #ff6666;
+  transform: translateY(-1px);
+}
+
+.debug-warning {
+  margin: 10px 0 0 0;
+  color: #ff6666;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .debug-panel-modal {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .debug-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .debug-input-group {
+    flex-direction: column;
+  }
+
+  .debug-input-group input,
+  .debug-input-group button {
+    width: 100%;
+  }
+}
+

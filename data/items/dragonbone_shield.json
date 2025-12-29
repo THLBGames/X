@@ -1,0 +1,22 @@
+{
+  "id": "dragonbone_shield",
+  "name": "Dragonbone Shield",
+  "description": "A fearsome shield crafted from dragon bones.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 350000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "offhand",
+  "statBonuses": {
+    "vitality": 30
+  },
+  "combatStatBonuses": {
+    "defense": 80
+  }
+}

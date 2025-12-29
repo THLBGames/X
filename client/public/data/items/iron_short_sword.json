@@ -1,0 +1,25 @@
+{
+  "id": "iron_short_sword",
+  "name": "Iron Short Sword",
+  "description": "A reliable iron short sword.",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 176,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "dexterity": 4,
+    "luck": 1
+  },
+  "combatStatBonuses": {
+    "attack": 12,
+    "speed": 7,
+    "criticalChance": 3
+  }
+}

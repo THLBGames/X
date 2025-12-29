@@ -1,0 +1,10 @@
+{
+  "id": "air_core",
+  "name": "Air Core",
+  "description": "The core of an air elemental.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 187
+}

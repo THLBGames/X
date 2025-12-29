@@ -97,9 +97,6 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
           );
         })}
       </div>
-      {!isPlayerTurn && (
-        <div className="skill-bar-hint">Wait for your turn...</div>
-      )}
     </div>
   );
 }

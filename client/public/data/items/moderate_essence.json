@@ -1,0 +1,11 @@
+{
+  "id": "moderate_essence",
+  "name": "Moderate Essence",
+  "description": "A moderate amount of magical essence.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20
+}
+

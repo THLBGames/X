@@ -1,0 +1,20 @@
+{
+  "id": "magic_amulet_t3",
+  "name": "Amulet of Divinity",
+  "description": "A legendary amulet of magic.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 360,
+  "requirements": {
+    "level": 51
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "intelligence": 8
+  },
+  "combatStatBonuses": {
+    "magicAttack": 20,
+    "mana": 80
+  }
+}

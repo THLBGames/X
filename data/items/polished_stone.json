@@ -1,0 +1,11 @@
+{
+  "id": "polished_stone",
+  "name": "Polished Stone",
+  "description": "Smooth polished stone for decorative work.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15
+}
+

@@ -46,6 +46,24 @@
   min-height: 0;
 }
 
+.game-view.skills-active .game-view-center {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.skills-tab-placeholder {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.skills-tab-placeholder p {
+  margin: 8px 0;
+}
+
 .right-panel-tabs {
   display: flex;
   gap: 4px;

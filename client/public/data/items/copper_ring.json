@@ -1,0 +1,20 @@
+{
+  "id": "copper_ring",
+  "name": "Copper Ring",
+  "description": "A simple ring made from copper.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 5
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "strength": 1
+  },
+  "combatStatBonuses": {
+    "attack": 2
+  }
+}
+

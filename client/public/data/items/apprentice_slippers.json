@@ -1,0 +1,23 @@
+{
+  "id": "apprentice_slippers",
+  "name": "Apprentice Slippers",
+  "description": "Slippers for apprentice mages.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 280,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "boots",
+  "statBonuses": {
+    "intelligence": 1
+  },
+  "combatStatBonuses": {
+    "magicDefense": 6,
+    "mana": 15
+  }
+}

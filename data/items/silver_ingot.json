@@ -1,0 +1,10 @@
+{
+  "id": "silver_ingot",
+  "name": "Silver Ingot",
+  "description": "Refined silver ingot for crafting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20
+}

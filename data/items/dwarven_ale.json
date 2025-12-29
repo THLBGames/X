@@ -1,0 +1,14 @@
+{
+  "id": "dwarven_ale",
+  "name": "Dwarven Ale",
+  "description": "Strong ale that restores mana.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 40,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 100
+  }
+}

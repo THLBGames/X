@@ -1,0 +1,11 @@
+{
+  "id": "gem_rare",
+  "name": "Rare Gem",
+  "description": "A rare gem with enhanced properties for jewelry.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 75
+}
+

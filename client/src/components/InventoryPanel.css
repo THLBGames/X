@@ -47,13 +47,27 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
+  cursor: move;
+  user-select: none;
   transition: all 0.2s;
+  position: relative;
 }
 
 .inventory-item:hover {
   background: #3a3a3a;
   border-color: #555;
+}
+
+.inventory-item.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.inventory-item.drag-over {
+  border-color: #4a9eff;
+  background: #2a3a4a;
+  box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+  transform: scale(1.05);
 }
 
 .item-name {
@@ -68,6 +82,46 @@
   font-size: 0.75rem;
   color: #888;
   text-align: right;
+}
+
+.item-rarity {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-top: 4px;
+  display: inline-block;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.item-rarity.common {
+  background: #888;
+  color: #fff;
+}
+
+.item-rarity.uncommon {
+  background: #4a9eff;
+  color: #fff;
+}
+
+.item-rarity.rare {
+  background: #9d4edd;
+  color: #fff;
+}
+
+.item-rarity.epic {
+  background: #f72585;
+  color: #fff;
+}
+
+.item-rarity.legendary {
+  background: #ffb703;
+  color: #000;
+}
+
+.item-rarity.mythic {
+  background: #ff006e;
+  color: #fff;
 }
 
 /* Tablet and below */

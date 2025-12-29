@@ -1,0 +1,19 @@
+{
+  "id": "amulet_tier1_3",
+  "name": "Amulet Tier 1 #3",
+  "description": "An amulet from tier 1.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "strength": 2
+  },
+  "combatStatBonuses": {
+    "attack": 4
+  }
+}

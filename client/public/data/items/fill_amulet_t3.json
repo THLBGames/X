@@ -1,0 +1,20 @@
+{
+  "id": "fill_amulet_t3",
+  "name": "Filler Amulet T3",
+  "description": "A filler amulet.",
+  "type": "accessory",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 125,
+  "requirements": {
+    "level": 31
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "vitality": 2,
+    "luck": 2
+  },
+  "combatStatBonuses": {
+    "defense": 5
+  }
+}

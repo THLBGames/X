@@ -1,0 +1,15 @@
+{
+  "id": "health_food",
+  "name": "Health Food",
+  "description": "A nutritious meal that restores health.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 15,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 50
+  }
+}
+

@@ -1,0 +1,11 @@
+{
+  "id": "ancient_artifact",
+  "name": "Ancient Artifact",
+  "description": "A powerful artifact from a lost civilization.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000
+}
+

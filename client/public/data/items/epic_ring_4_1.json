@@ -1,0 +1,20 @@
+{
+  "id": "epic_ring_4_1",
+  "name": "Epic Ring #2",
+  "description": "A epic ring.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 5000,
+  "requirements": {
+    "level": 71
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "intelligence": 13
+  },
+  "combatStatBonuses": {
+    "magicAttack": 32,
+    "mana": 130
+  }
+}

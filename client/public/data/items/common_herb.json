@@ -1,0 +1,11 @@
+{
+  "id": "common_herb",
+  "name": "Common Herb",
+  "description": "A basic herb used in alchemy and cooking.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

@@ -1,0 +1,14 @@
+{
+  "id": "sapphire_amulet",
+  "name": "Sapphire Amulet",
+  "description": "An amulet with a sapphire gem.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 70,
+  "consumableEffect": {
+    "type": "amulet",
+    "amount": "intelligence"
+  }
+}

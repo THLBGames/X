@@ -1,0 +1,20 @@
+{
+  "id": "ring_tier3_2",
+  "name": "Ring Tier 3 #2",
+  "description": "A ring from tier 3.",
+  "type": "accessory",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 150,
+  "requirements": {
+    "level": 31
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "intelligence": 5
+  },
+  "combatStatBonuses": {
+    "magicAttack": 12,
+    "mana": 50
+  }
+}

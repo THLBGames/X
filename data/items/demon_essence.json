@@ -1,0 +1,10 @@
+{
+  "id": "demon_essence",
+  "name": "Demon Essence",
+  "description": "Essence extracted from demons.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800
+}

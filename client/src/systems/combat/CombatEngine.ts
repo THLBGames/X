@@ -21,6 +21,7 @@ export class CombatEngine {
   private actions: CombatAction[] = [];
   private startTime: number = 0;
   private options: CombatOptions;
+  private dungeonId?: string; // Store dungeon ID for chest drop logic
 
   constructor(options: CombatOptions = {}) {
     this.options = {
@@ -32,7 +33,9 @@ export class CombatEngine {
   /**
    * Initialize combat with player character and monsters
    */
-  initialize(character: Character, monsters: Monster[]): void {
+  initialize(character: Character, monsters: Monster[], dungeonId?: string): void {
+    this.dungeonId = dungeonId;
+    
     const player: CombatParticipant = {
       id: 'player',
       name: character.name,
@@ -329,10 +332,28 @@ export class CombatEngine {
           const loot = DungeonManager.generateLoot(lootTable);
           allItems.push(...loot);
 
-          // Chance for special chest drop (10% for bosses, 2% for normal)
-          const chestChance = monsterData.isBoss ? 0.1 : 0.02;
-          if (Math.random() <= chestChance) {
-            // Spawn a special chest (we'll create chest items later)
+          // Check for guaranteed chest drop (endgame dungeons)
+          let shouldDropChest = false;
+          if (monsterData.isBoss) {
+            if (this.dungeonId) {
+              const dungeon = dataLoader.getDungeon(this.dungeonId);
+              if (dungeon?.guaranteedBossChest) {
+                // Endgame dungeon - guaranteed chest for bosses
+                shouldDropChest = true;
+              } else {
+                // Regular boss - 10% chance
+                shouldDropChest = Math.random() <= 0.1;
+              }
+            } else {
+              // No dungeon context - use default 10% chance
+              shouldDropChest = Math.random() <= 0.1;
+            }
+          } else {
+            // Normal monsters - 2% chance
+            shouldDropChest = Math.random() <= 0.02;
+          }
+          
+          if (shouldDropChest) {
             allChests.push({ itemId: 'treasure_chest', quantity: 1 });
           }
         }

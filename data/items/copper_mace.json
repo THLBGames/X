@@ -1,0 +1,23 @@
+{
+  "id": "copper_mace",
+  "name": "Copper Mace",
+  "description": "A basic mace forged from copper.",
+  "type": "weapon",
+  "rarity": "common",
+  "stackable": false,
+  "value": 48,
+  "requirements": {
+    "level": 1,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 3,
+    "vitality": 1
+  },
+  "combatStatBonuses": {
+    "attack": 9
+  }
+}

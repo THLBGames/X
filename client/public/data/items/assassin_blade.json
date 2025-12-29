@@ -1,0 +1,24 @@
+{
+  "id": "assassin_blade",
+  "name": "Assassin Blade",
+  "description": "A deadly blade favored by assassins.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 700,
+  "requirements": {
+    "level": 45,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "dexterity": 10,
+    "luck": 3
+  },
+  "combatStatBonuses": {
+    "attack": 25,
+    "speed": 15,
+    "criticalChance": 8
+  }
+}
+

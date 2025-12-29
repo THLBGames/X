@@ -1,0 +1,11 @@
+{
+  "id": "fertilizer",
+  "name": "Fertilizer",
+  "description": "Enriched fertilizer for improving crop yields.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5
+}
+

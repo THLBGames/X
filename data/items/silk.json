@@ -1,0 +1,11 @@
+{
+  "id": "silk",
+  "name": "Silk",
+  "description": "Fine silk material for quality clothing.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15
+}
+

@@ -1,0 +1,25 @@
+{
+  "id": "mithril_dagger",
+  "name": "Mithril Dagger",
+  "description": "A legendary dagger forged from mithril.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 16800,
+  "requirements": {
+    "level": 51,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "dexterity": 12,
+    "luck": 4
+  },
+  "combatStatBonuses": {
+    "attack": 24,
+    "speed": 20,
+    "criticalChance": 8
+  }
+}

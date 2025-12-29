@@ -32,6 +32,11 @@
   text-transform: capitalize;
 }
 
+.character-subclass {
+  color: #4ecdc4;
+  font-weight: bold;
+}
+
 .character-gold {
   color: #ffd700;
   font-size: 1rem;
@@ -57,6 +62,25 @@
 
 .change-class-button:hover {
   background: #5aaeff;
+  transform: translateY(-1px);
+}
+
+.change-subclass-button {
+  margin-top: 8px;
+  padding: 8px 16px;
+  background: #4ecdc4;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.change-subclass-button:hover {
+  background: #5eddd4;
   transform: translateY(-1px);
 }
 

@@ -1,0 +1,25 @@
+{
+  "id": "silver_bow",
+  "name": "Silver Bow",
+  "description": "A bow reinforced with silver.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 1600,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "dexterity": 7,
+    "luck": 2
+  },
+  "combatStatBonuses": {
+    "attack": 17,
+    "speed": 12,
+    "criticalChance": 5
+  }
+}

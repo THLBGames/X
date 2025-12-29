@@ -1,0 +1,27 @@
+{
+  "id": "spider_nest",
+  "name": "Spider Nest",
+  "description": "A web-filled nest crawling with dangerous spiders.",
+  "tier": 1,
+  "requiredLevel": 3,
+  "requiredDungeonId": "goblin_cave",
+  "monsterPools": [
+    {
+      "monsterId": "spider",
+      "weight": 80,
+      "minLevel": 3,
+      "maxLevel": 5
+    },
+    {
+      "monsterId": "goblin",
+      "weight": 20,
+      "minLevel": 3,
+      "maxLevel": 5
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.15,
+    "goldBonus": 1.1
+  }
+}
+

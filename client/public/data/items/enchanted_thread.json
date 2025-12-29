@@ -1,0 +1,11 @@
+{
+  "id": "enchanted_thread",
+  "name": "Enchanted Thread",
+  "description": "Thread infused with magical energy.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50
+}
+

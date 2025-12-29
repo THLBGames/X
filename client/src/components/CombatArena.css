@@ -1,50 +1,60 @@
 .combat-arena {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* player party | vs | monsters */
+  gap: 16px;
+  padding: 16px;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border: 2px solid #444;
   border-radius: 8px;
-  min-height: 250px;
-  gap: 20px;
+  max-height: calc(100vh - 300px); /* Leave room for other UI */
+  overflow: visible;
+  min-height: 500px;
+}
+
+.player-party-container {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(100px, 1fr));
+  gap: 8px;
+  overflow: visible;
+}
+
+.monsters-container {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(100px, 1fr));
+  gap: 8px;
+  overflow: visible;
 }
 
 .combat-participant {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 15px;
+  gap: 6px;
+  padding: 8px;
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
-}
-
-.player-area {
-  flex: 0 0 250px;
-}
-
-.monsters-container .combat-participant {
-  min-width: 250px;
+  min-height: 100px;
+  overflow: visible;
 }
 
 .monster-image-placeholder {
-  width: 80px;
-  height: 80px;
+  width: 32px;
+  height: 32px;
   background: rgba(255, 107, 107, 0.2);
-  border: 2px solid #ff6b6b;
-  border-radius: 8px;
+  border: 1px solid #ff6b6b;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .monster-icon {
-  font-size: 2.5rem;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  font-size: 1.2rem;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 .boss-monster .monster-image-placeholder {
@@ -65,16 +75,27 @@
   background: rgba(255, 107, 107, 0.1);
 }
 
+.participant-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .participant-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
+  min-width: 0;
 }
 
 .participant-name {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .combat-participant.player-area .participant-name {
@@ -86,22 +107,24 @@
 }
 
 .participant-level {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: #888;
   background: #2a2a2a;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
 .turn-indicator {
   text-align: center;
   font-weight: bold;
   color: #ffd700;
-  font-size: 0.9rem;
-  padding: 6px;
+  font-size: 0.75rem;
+  padding: 4px;
   background: rgba(255, 215, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 3px;
   animation: pulse 1.5s ease-in-out infinite;
+  margin-top: 2px;
 }
 
 @keyframes pulse {
@@ -114,21 +137,18 @@
 }
 
 .combat-vs {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #888;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
-.monsters-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-height: 400px;
-  overflow-y: auto;
-}
 
 .boss-monster {
   border-color: #ff4444 !important;
@@ -141,20 +161,60 @@
   background: rgba(255, 68, 68, 0.15) !important;
 }
 
+.player-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(74, 158, 255, 0.2);
+  border: 1px solid #4a9eff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.player-icon-inner {
+  font-size: 1.2rem;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.summoned-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(78, 205, 196, 0.2);
+  border: 1px solid #4ecdc4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.summoned-icon-inner {
+  font-size: 1.2rem;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .combat-arena {
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    max-height: none;
   }
 
   .combat-vs {
-    transform: rotate(90deg);
+    writing-mode: horizontal-tb;
+    padding: 8px;
   }
 
+  .player-party-container,
   .monsters-container {
-    max-height: 300px;
+    grid-template-rows: repeat(5, minmax(90px, auto));
+    max-height: 450px;
+    overflow-y: auto;
   }
 }
 

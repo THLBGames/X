@@ -5,18 +5,37 @@ import { getSaveManager } from './systems/save';
 import { IdleProgress } from './systems/idle';
 import { InventoryManager } from './systems/inventory';
 import GameView from './components/GameView';
+import DebugPanel from './components/DebugPanel';
+import OfflineProgressModal from './components/OfflineProgressModal';
+
+// Declare global window interface for debug panel
+declare global {
+  interface Window {
+    openDebugPanel: () => void;
+  }
+}
 
 function App() {
   const initialize = useGameState((state) => state.initialize);
   const character = useGameState((state) => state.character);
-  const currentDungeonId = useGameState((state) => state.currentDungeonId);
   const setCharacter = useGameState((state) => state.setCharacter);
   const setInventory = useGameState((state) => state.setInventory);
   const setDungeonProgress = useGameState((state) => state.setDungeonProgress);
   const updateSettings = useGameState((state) => state.updateSettings);
-  const addItem = useGameState((state) => state.addItem);
   const [isLoading, setIsLoading] = useState(true);
-  const [offlineProgressApplied, setOfflineProgressApplied] = useState(false);
+  const [showDebugPanel, setShowDebugPanel] = useState(false);
+  const [offlineProgress, setOfflineProgress] = useState<{
+    hoursOffline: number;
+    progress: {
+      combatsCompleted?: number;
+      actionsCompleted?: number;
+      experience: number;
+      gold: number;
+      items: Array<{ itemId: string; quantity: number }>;
+      died?: boolean;
+    };
+    actionType: 'combat' | 'skill' | null;
+  } | null>(null);
 
   useEffect(() => {
     // Initialize data loader and load save data
@@ -33,33 +52,65 @@ function App() {
 
         if (saveData) {
           // Calculate offline progress if applicable
-          // Use first unlocked dungeon if no current dungeon selected
-          const dungeonIdForOffline = (saveData as any).currentDungeonId || (saveData.dungeonProgress.find(p => p.unlocked)?.dungeonId);
-          if (saveData.lastOfflineTime && saveData.character && dungeonIdForOffline) {
+          const activeAction = saveData.activeAction ?? null;
+          const maxOfflineHours = saveData.maxOfflineHours ?? 8;
+
+          if (saveData.lastOfflineTime && saveData.character && activeAction) {
             const offlineTime = Date.now() - saveData.lastOfflineTime;
+            console.log('Offline progress check:', {
+              lastOfflineTime: saveData.lastOfflineTime,
+              currentTime: Date.now(),
+              offlineTimeMs: offlineTime,
+              offlineTimeMinutes: offlineTime / 60000,
+              activeAction,
+            });
             if (offlineTime > 60000) { // Only if offline for more than 1 minute
               try {
-                const result = IdleProgress.processOfflineProgress(
+                const result = IdleProgress.processOfflineActionProgress(
                   saveData.character,
-                  dungeonIdForOffline,
-                  saveData.lastOfflineTime
+                  activeAction,
+                  offlineTime,
+                  maxOfflineHours
                 );
+                console.log('Offline progress result:', result.progress);
 
-                // Apply offline rewards
-                if (result.progress.experience > 0 || result.progress.gold > 0 || result.progress.items.length > 0) {
-                  // Update character
-                  saveData.character = result.character;
+                // Always show offline progress modal, even if no progress was made
+                // Update character
+                saveData.character = result.character;
 
-                  // Add gold to inventory
-                  if (result.progress.gold > 0) {
-                    saveData.inventory = InventoryManager.addItem(saveData.inventory, 'gold', result.progress.gold);
-                  }
+                // Add gold to inventory
+                if (result.progress.gold > 0) {
+                  saveData.inventory = InventoryManager.addItem(saveData.inventory, 'gold', result.progress.gold);
+                }
 
-                  // Add items to inventory
-                  for (const item of result.progress.items) {
+                // Add items to inventory (load items on-demand if needed)
+                for (const item of result.progress.items) {
+                  try {
+                    // Ensure item is loaded before adding
+                    const itemData = dataLoader.getItem(item.itemId);
+                    if (!itemData) {
+                      // Try loading it on-demand
+                      await dataLoader.loadItem(item.itemId);
+                    }
                     saveData.inventory = InventoryManager.addItem(saveData.inventory, item.itemId, item.quantity);
+                  } catch (error) {
+                    console.warn(`Failed to add item ${item.itemId} to inventory:`, error);
+                    // Continue with other items even if one fails
                   }
                 }
+
+                // Clear active action if player died in combat
+                if (result.progress.died) {
+                  saveData.activeAction = null;
+                }
+                
+                // Show offline progress modal (always show, even with 0 progress)
+                const hoursOffline = offlineTime / (1000 * 60 * 60);
+                setOfflineProgress({
+                  hoursOffline,
+                  progress: result.progress,
+                  actionType: activeAction.type,
+                });
               } catch (error) {
                 console.error('Failed to process offline progress:', error);
               }
@@ -72,7 +123,9 @@ function App() {
           setDungeonProgress(saveData.dungeonProgress);
           updateSettings(saveData.settings);
           initialize(saveData);
-          setOfflineProgressApplied(true);
+          
+          // Note: Skill resumption is handled by useIdleSkills hook when SkillDetailView mounts
+          // This ensures skills resume when the player opens the skills panel
         } else {
           // No save data, initialize empty
           initialize();
@@ -89,32 +142,78 @@ function App() {
     init();
   }, [initialize, setCharacter, setInventory, setDungeonProgress, updateSettings]);
 
-  // Save last offline time when component unmounts or game closes
+  // Expose debug panel via window API
   useEffect(() => {
-    const handleBeforeUnload = async () => {
-      if (character) {
-        try {
-          const saveManager = getSaveManager();
-          const currentState = useGameState.getState();
+    // Set up window API function
+    window.openDebugPanel = () => {
+      setShowDebugPanel(true);
+    };
+
+    // Cleanup on unmount
+    return () => {
+      delete (window as any).openDebugPanel;
+    };
+  }, []);
+
+  // Save periodically and on close
+  useEffect(() => {
+    if (!character) return;
+
+    // Periodic save every 30 seconds
+    const periodicSave = setInterval(async () => {
+      try {
+        const saveManager = getSaveManager();
+        const currentState = useGameState.getState();
+        if (currentState.character) {
           const saveData = {
             version: '1.0.0',
-            character: currentState.character!,
+            character: currentState.character,
+            inventory: currentState.inventory,
+            dungeonProgress: currentState.dungeonProgress,
+            settings: currentState.settings,
+            lastSaved: Date.now(),
+            lastOfflineTime: Date.now(), // Update lastOfflineTime periodically
+            activeAction: currentState.activeAction ?? null,
+            maxOfflineHours: currentState.maxOfflineHours ?? 8,
+          };
+          await saveManager.save(saveData);
+          console.log('Periodic save completed, activeAction:', saveData.activeAction);
+        }
+      } catch (error) {
+        console.error('Failed to save:', error);
+      }
+    }, 30000); // Save every 30 seconds
+
+    // Save on close
+    const handleBeforeUnload = async () => {
+      try {
+        const saveManager = getSaveManager();
+        const currentState = useGameState.getState();
+        if (currentState.character) {
+          const saveData = {
+            version: '1.0.0',
+            character: currentState.character,
             inventory: currentState.inventory,
             dungeonProgress: currentState.dungeonProgress,
             settings: currentState.settings,
             lastSaved: Date.now(),
             lastOfflineTime: Date.now(),
+            activeAction: currentState.activeAction ?? null,
+            maxOfflineHours: currentState.maxOfflineHours ?? 8,
           };
           await saveManager.save(saveData);
-        } catch (error) {
-          console.error('Failed to save on exit:', error);
+          console.log('Save on close completed, activeAction:', saveData.activeAction, 'lastOfflineTime:', saveData.lastOfflineTime);
         }
+      } catch (error) {
+        console.error('Failed to save on exit:', error);
       }
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => {
+      clearInterval(periodicSave);
       window.removeEventListener('beforeunload', handleBeforeUnload);
+      // Try to save one more time on cleanup
       handleBeforeUnload();
     };
   }, [character]);
@@ -132,6 +231,16 @@ function App() {
   return (
     <div className="app">
       <GameView />
+      <DebugPanel isOpen={showDebugPanel} onClose={() => setShowDebugPanel(false)} />
+      {offlineProgress && (
+        <OfflineProgressModal
+          isOpen={true}
+          onClose={() => setOfflineProgress(null)}
+          hoursOffline={offlineProgress.hoursOffline}
+          progress={offlineProgress.progress}
+          actionType={offlineProgress.actionType}
+        />
+      )}
     </div>
   );
 }

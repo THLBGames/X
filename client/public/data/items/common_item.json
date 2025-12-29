@@ -1,0 +1,11 @@
+{
+  "id": "common_item",
+  "name": "Common Item",
+  "description": "A common item used in enchanting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5
+}
+

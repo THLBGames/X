@@ -1,0 +1,27 @@
+{
+  "id": "wolf_den",
+  "name": "Wolf Den",
+  "description": "A den of wild wolves protecting their territory.",
+  "tier": 1,
+  "requiredLevel": 7,
+  "requiredDungeonId": "orc_encampment",
+  "monsterPools": [
+    {
+      "monsterId": "wolf",
+      "weight": 80,
+      "minLevel": 7,
+      "maxLevel": 10
+    },
+    {
+      "monsterId": "bandit",
+      "weight": 20,
+      "minLevel": 7,
+      "maxLevel": 10
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.2,
+    "goldBonus": 1.15
+  }
+}
+

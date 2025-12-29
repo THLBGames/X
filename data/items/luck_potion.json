@@ -1,0 +1,14 @@
+{
+  "id": "luck_potion",
+  "name": "Luck Potion",
+  "description": "Temporarily increases luck.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 250,
+  "consumableEffect": {
+    "type": "buff",
+    "amount": 20
+  }
+}

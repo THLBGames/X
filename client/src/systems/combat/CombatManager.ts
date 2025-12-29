@@ -7,9 +7,9 @@ export class CombatManager {
   /**
    * Start a new combat instance
    */
-  static startCombat(character: Character, monsters: Monster[], autoCombat: boolean = true): CombatEngine {
+  static startCombat(character: Character, monsters: Monster[], autoCombat: boolean = true, dungeonId?: string): CombatEngine {
     this.combatEngine = new CombatEngine({ autoCombat });
-    this.combatEngine.initialize(character, monsters);
+    this.combatEngine.initialize(character, monsters, dungeonId);
     return this.combatEngine;
   }
 

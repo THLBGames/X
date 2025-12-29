@@ -1,0 +1,21 @@
+{
+  "id": "steel_weapon",
+  "name": "Steel Weapon",
+  "description": "A well-crafted weapon made from steel.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 400,
+  "requirements": {
+    "level": 35
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 5,
+    "dexterity": 2
+  },
+  "combatStatBonuses": {
+    "attack": 18
+  }
+}
+

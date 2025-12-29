@@ -1,0 +1,10 @@
+{
+  "id": "earth_core",
+  "name": "Earth Core",
+  "description": "The core of an earth elemental.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 195
+}

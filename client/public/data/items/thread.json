@@ -1,0 +1,11 @@
+{
+  "id": "thread",
+  "name": "Thread",
+  "description": "Basic thread used in tailoring and leatherworking.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

@@ -1,0 +1,11 @@
+{
+  "id": "legendary_fish",
+  "name": "Legendary Fish",
+  "description": "A legendary fish of immense value.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 500
+}
+

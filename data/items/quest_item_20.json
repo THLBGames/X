@@ -1,0 +1,9 @@
+{
+  "id": "quest_item_20",
+  "name": "Quest Item 20",
+  "description": "An item required for quest #20.",
+  "type": "quest",
+  "rarity": "common",
+  "stackable": false,
+  "value": 200
+}

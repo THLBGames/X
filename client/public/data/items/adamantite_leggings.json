@@ -1,0 +1,23 @@
+{
+  "id": "adamantite_leggings",
+  "name": "Adamantite Leggings",
+  "description": "Legendary leggings forged from adamantite.",
+  "type": "armor",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 78750,
+  "requirements": {
+    "level": 71,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "legs",
+  "statBonuses": {
+    "vitality": 19,
+    "strength": 6
+  },
+  "combatStatBonuses": {
+    "defense": 32
+  }
+}

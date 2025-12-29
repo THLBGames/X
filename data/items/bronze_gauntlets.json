@@ -1,0 +1,24 @@
+{
+  "id": "bronze_gauntlets",
+  "name": "Bronze Gauntlets",
+  "description": "Basic bronze gauntlets.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 28,
+  "requirements": {
+    "level": 1,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "strength": 2,
+    "vitality": 2
+  },
+  "combatStatBonuses": {
+    "defense": 4,
+    "attack": 2
+  }
+}

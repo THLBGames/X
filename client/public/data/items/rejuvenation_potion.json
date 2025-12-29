@@ -1,0 +1,14 @@
+{
+  "id": "rejuvenation_potion",
+  "name": "Rejuvenation Potion",
+  "description": "Restores both health and mana.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 200,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 200
+  }
+}

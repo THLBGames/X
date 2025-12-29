@@ -1,0 +1,11 @@
+{
+  "id": "steel",
+  "name": "Steel",
+  "description": "Refined iron used for crafting quality weapons and armor.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20
+}
+

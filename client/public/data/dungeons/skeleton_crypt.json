@@ -1,0 +1,36 @@
+{
+  "id": "skeleton_crypt",
+  "name": "Skeleton Crypt",
+  "description": "An underground crypt filled with animated skeletons.",
+  "tier": 2,
+  "requiredLevel": 8,
+  "requiredDungeonId": "old_cemetery",
+  "monsterPools": [
+    {
+      "monsterId": "skeleton",
+      "weight": 70,
+      "minLevel": 8,
+      "maxLevel": 11
+    },
+    {
+      "monsterId": "wraith",
+      "weight": 30,
+      "minLevel": 9,
+      "maxLevel": 12
+    }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "dark_mage",
+      "weight": 100,
+      "minLevel": 12,
+      "maxLevel": 15
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.3,
+    "goldBonus": 1.25,
+    "itemDropRate": 1.2
+  }
+}
+

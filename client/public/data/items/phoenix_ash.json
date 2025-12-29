@@ -1,0 +1,10 @@
+{
+  "id": "phoenix_ash",
+  "name": "Phoenix Ash",
+  "description": "Ash from a phoenix.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2500
+}

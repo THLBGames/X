@@ -1,0 +1,10 @@
+{
+  "id": "chaos_shard",
+  "name": "Chaos Shard",
+  "description": "A shard of pure chaos.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1800
+}

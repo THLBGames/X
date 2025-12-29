@@ -1,0 +1,11 @@
+{
+  "id": "energy_wisp",
+  "name": "Energy Wisp",
+  "description": "A small wisp of magical energy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8
+}
+

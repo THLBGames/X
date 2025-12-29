@@ -1,0 +1,11 @@
+{
+  "id": "elder_essence",
+  "name": "Elder Essence",
+  "description": "Essence from ancient elder trees.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 600
+}
+

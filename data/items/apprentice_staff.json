@@ -1,0 +1,23 @@
+{
+  "id": "apprentice_staff",
+  "name": "Apprentice Staff",
+  "description": "A staff used by apprentice mages.",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 200,
+  "requirements": {
+    "level": 20,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "intelligence": 4,
+    "wisdom": 2
+  },
+  "combatStatBonuses": {
+    "magicAttack": 15,
+    "mana": 50
+  }
+}
+

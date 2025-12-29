@@ -49,7 +49,7 @@ export class DataLoader {
   }
 
   private async loadClasses(): Promise<void> {
-    // Load classes from data directory using fetch
+    // Load base classes from data directory using fetch
     const classIds = ['warrior', 'mage', 'rogue'];
     
     for (const classId of classIds) {
@@ -60,6 +60,20 @@ export class DataLoader {
         }
       } catch (error) {
         console.warn(`Failed to load class ${classId}:`, error);
+      }
+    }
+
+    // Load subclasses
+    const subclassIds = ['wizard', 'necromancer', 'guardian', 'berserker', 'ranger', 'swashbuckler'];
+    
+    for (const subclassId of subclassIds) {
+      try {
+        const data = await this.loadJsonFile<CharacterClass>(`/data/classes/${subclassId}.json`);
+        if (data && this.validateClass(data)) {
+          this.classesCache.set(data.id, data);
+        }
+      } catch (error) {
+        console.warn(`Failed to load subclass ${subclassId}:`, error);
       }
     }
   }
@@ -105,8 +119,19 @@ export class DataLoader {
   }
 
   private async loadItems(): Promise<void> {
-    // Items will be loaded on-demand or via manifest
-    // For now, this is a placeholder
+    // Items are loaded on-demand via loadItem() method
+    // This is intentional to avoid loading 500+ items at startup
+    // Items will be cached when first accessed
+    
+    // However, we should load shop items (like offline time upgrades) at startup
+    const shopItemIds = [
+      'offline_time_upgrade_8h',
+      'offline_time_upgrade_24h',
+    ];
+    
+    for (const itemId of shopItemIds) {
+      await this.loadItem(itemId);
+    }
   }
 
   private async loadSkills(): Promise<void> {
@@ -122,6 +147,42 @@ export class DataLoader {
         classData.availableSkills.forEach((skillId) => skillIdsSet.add(skillId));
       }
     }
+
+    // Also load subclasses
+    const subclassIds = ['wizard', 'necromancer', 'guardian', 'berserker', 'ranger', 'swashbuckler'];
+    for (const subclassId of subclassIds) {
+      const subclassData = this.classesCache.get(subclassId);
+      if (subclassData && subclassData.availableSkills) {
+        subclassData.availableSkills.forEach((skillId) => skillIdsSet.add(skillId));
+      }
+    }
+
+    // Add all idle skills (these are not in class definitions)
+    const idleSkillIds = [
+      'mining',
+      'fishing',
+      'woodcutting',
+      'herbalism',
+      'hunting',
+      'archaeology',
+      'quarrying',
+      'foraging',
+      'treasure_hunting',
+      'thieving',
+      'trapping',
+      'divination',
+      'cooking',
+      'blacksmithing',
+      'alchemy',
+      'enchanting',
+      'tailoring',
+      'leatherworking',
+      'jewelcrafting',
+      'engineering',
+      'runecrafting',
+      'farming',
+    ];
+    idleSkillIds.forEach((skillId) => skillIdsSet.add(skillId));
 
     // Convert set to array and load all skills
     const skillIds = Array.from(skillIdsSet);
@@ -142,8 +203,49 @@ export class DataLoader {
   }
 
   private async loadDungeons(): Promise<void> {
-    // Load dungeons from data directory using fetch
-    const dungeonIds = ['forest_clearing', 'orc_encampment', 'haunted_forest', 'dragon_lair'];
+    // Load all dungeons from data directory using fetch
+    const dungeonIds = [
+      'forest_clearing',
+      'goblin_cave',
+      'spider_nest',
+      'bandit_camp',
+      'old_cemetery',
+      'orc_encampment',
+      'wolf_den',
+      'skeleton_crypt',
+      'haunted_forest',
+      'troll_cave',
+      'imp_infestation',
+      'zombie_graveyard',
+      'dark_catacombs',
+      'ogre_stronghold',
+      'ghost_manor',
+      'minotaur_labyrinth',
+      'vampire_coven',
+      'dragon_lair',
+      'shadow_realm',
+      'demon_forge',
+      'lich_tower',
+      'ancient_ruins',
+      'giant_kingdom',
+      'balrog_pit',
+      'cursed_castle',
+      'abyssal_chasm',
+      'dragon_roost',
+      'undead_citadel',
+      'infernal_plains',
+      'void_nexus',
+      'chaos_realm',
+      'titan_arena',
+      'eternal_library',
+      'storm_peak',
+      'underworld_gate',
+      'celestial_sanctum',
+      'dread_fortress',
+      'forsaken_cathedral',
+      'world_ender_chamber',
+      'godslayer_throne',
+    ];
     
     for (const dungeonId of dungeonIds) {
       try {
@@ -264,6 +366,26 @@ export class DataLoader {
 
   getAllClasses(): CharacterClass[] {
     return Array.from(this.classesCache.values());
+  }
+
+  /**
+   * Get subclass by ID
+   */
+  getSubclass(id: string): CharacterClass | undefined {
+    const subclass = this.classesCache.get(id);
+    if (subclass && subclass.isSubclass) {
+      return subclass;
+    }
+    return undefined;
+  }
+
+  /**
+   * Get all subclasses for a given base class
+   */
+  getSubclassesForClass(classId: string): CharacterClass[] {
+    return Array.from(this.classesCache.values()).filter(
+      (cls) => cls.isSubclass && cls.parentClass === classId
+    );
   }
 
   getMonster(id: string): Monster | undefined {
@@ -387,7 +509,7 @@ export class DataLoader {
         goldDropMultiplier: 1.0,
       },
       idle: {
-        maxOfflineHours: 24,
+        maxOfflineHours: 8, // Base minimum - user's actual max comes from character data
         offlineExpRate: 0.5,
         offlineGoldRate: 0.5,
       },
