@@ -186,30 +186,95 @@ export function useGameLoop() {
       const recentActions = combatEngine.getRecentActions(20);
       const currentState = state.currentCombatState;
 
-      // Update player party (currently just the player, but structure supports summoned entities)
+      // Update player party (player + mercenaries)
+      // If playerParty doesn't exist or is empty, initialize it from combat engine
       let updatedPlayerParty = currentState?.playerParty || [];
+      if (updatedPlayerParty.length === 0) {
+        // Initialize playerParty from combat engine participants
+        const allParticipants = combatEngine.getParticipants();
+        const playerParticipants = allParticipants.filter((p) => p.isPlayer);
+        updatedPlayerParty = playerParticipants.map((participant) => {
+          const isPlayer = participant.id === 'player';
+          return {
+            id: participant.id,
+            name: participant.name,
+            isSummoned: !isPlayer,
+            currentHealth: participant.currentHealth,
+            maxHealth: participant.stats.maxHealth,
+            currentMana: participant.currentMana,
+            maxMana: participant.stats.maxMana,
+            level: isPlayer ? state.character?.level : undefined,
+          };
+        });
+      }
+
       if (updatedPlayerParty.length > 0) {
         const playerPartyMember = updatedPlayerParty[0];
         if (playerPartyMember && playerPartyMember.id === 'player') {
+          // Update player's health/mana, but preserve mercenaries
+          // Ensure health/mana don't exceed max values and are never negative
+          // If player is dead, ensure health is 0
+          const health = player.isAlive ? player.currentHealth : 0;
+          const clampedHealth = Math.min(Math.max(0, health), playerPartyMember.maxHealth);
+          const clampedMana = Math.min(Math.max(0, player.currentMana), playerPartyMember.maxMana);
           updatedPlayerParty = [
             {
               ...playerPartyMember,
-              currentHealth: player.currentHealth,
-              currentMana: player.currentMana,
+              currentHealth: clampedHealth,
+              currentMana: clampedMana,
             },
+            ...updatedPlayerParty.slice(1), // Preserve mercenaries (all members after player)
           ];
         }
       }
 
+      // Update mercenary health/mana from combat engine participants
+      const allParticipants = combatEngine.getParticipants();
+      updatedPlayerParty = updatedPlayerParty.map((partyMember) => {
+        if (partyMember.id === 'player') {
+          return partyMember; // Already updated above
+        }
+        // Find corresponding mercenary participant in combat engine
+        const mercenaryParticipant = allParticipants.find(
+          (p) => p.id === partyMember.id && p.isPlayer
+        );
+        if (mercenaryParticipant) {
+          // Ensure health/mana don't exceed max values and are never negative
+          // If participant is dead, ensure health is 0
+          const health = mercenaryParticipant.isAlive ? mercenaryParticipant.currentHealth : 0;
+          const clampedHealth = Math.min(Math.max(0, health), partyMember.maxHealth);
+          const clampedMana = Math.min(
+            Math.max(0, mercenaryParticipant.currentMana),
+            partyMember.maxMana
+          );
+          return {
+            ...partyMember,
+            currentHealth: clampedHealth,
+            currentMana: clampedMana,
+          };
+        }
+        // If participant not found (shouldn't happen, but handle gracefully)
+        // Keep current health but ensure it's valid
+        return {
+          ...partyMember,
+          currentHealth: Math.min(Math.max(0, partyMember.currentHealth), partyMember.maxHealth),
+          currentMana: Math.min(Math.max(0, partyMember.currentMana), partyMember.maxMana),
+        };
+      });
+
       // Determine current actor type and index
-      let currentActorType: 'player' | 'monster' | 'summoned' = currentActor.isPlayer
-        ? 'player'
+      const currentActorType: 'player' | 'monster' | 'summoned' = currentActor.isPlayer
+        ? currentActor.id === 'player'
+          ? 'player'
+          : 'summoned'
         : 'monster';
       let currentPlayerIndex: number | undefined = undefined;
       let currentMonsterIndex = currentState?.currentMonsterIndex || 0;
 
       if (currentActor.isPlayer) {
-        currentPlayerIndex = 0; // Player is always at index 0
+        // Find the index of the current actor in the player party
+        const actorIndex = updatedPlayerParty.findIndex((p) => p.id === currentActor.id);
+        currentPlayerIndex = actorIndex >= 0 ? actorIndex : 0; // Default to 0 if not found
       } else if (!currentActor.isPlayer && monsters.length > 0) {
         // Find which monster is currently acting
         const actingMonsterIndex = monsters.findIndex((m) => m.id === currentActor.id);

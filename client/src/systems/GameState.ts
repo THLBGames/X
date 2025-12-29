@@ -556,21 +556,40 @@ export const useGameState = create<GameState>((set, get) => ({
     set((state) => {
       if (!state.character) return {};
 
+      // Ensure statistics exists
       const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
-      const newlyCompleted = AchievementManager.checkAchievements(state.character, statistics);
 
-      if (newlyCompleted.length > 0) {
-        const existingCompleted = state.character.completedAchievements || [];
-        const updatedCompleted = [...existingCompleted, ...newlyCompleted];
+      // Ensure completedAchievements exists
+      const existingCompleted = state.character.completedAchievements || [];
+      const existingCompletedIds = new Set(existingCompleted.map((ca) => ca.achievementId));
+
+      // Check for newly completed achievements
+      // Pass character with current completedAchievements to avoid duplicates
+      const characterWithCompleted = {
+        ...state.character,
+        completedAchievements: existingCompleted,
+      };
+      const newlyCompleted = AchievementManager.checkAchievements(
+        characterWithCompleted,
+        statistics
+      );
+
+      // Filter out any achievements that are already completed (prevent duplicates)
+      const trulyNew = newlyCompleted.filter(
+        (achievement) => !existingCompletedIds.has(achievement.achievementId)
+      );
+
+      if (trulyNew.length > 0) {
+        const updatedCompleted = [...existingCompleted, ...trulyNew];
 
         // Show notification for each newly completed achievement
-        for (const achievement of newlyCompleted) {
+        for (const achievement of trulyNew) {
           const dataLoader = getDataLoader();
           const achievementData = dataLoader.getAchievement(achievement.achievementId);
           if (achievementData) {
             console.log(`Achievement unlocked: ${achievementData.name}`);
             // Show UI notification
-            if (typeof window !== 'undefined') {
+            if (typeof window !== 'undefined' && state.settings.showNotifications !== false) {
               const event = new CustomEvent('showNotification', {
                 detail: {
                   message: `Achievement Unlocked: ${achievementData.name}`,
@@ -583,10 +602,22 @@ export const useGameState = create<GameState>((set, get) => ({
           }
         }
 
+        // Update both character and ensure statistics is persisted
         return {
           character: {
             ...state.character,
             completedAchievements: updatedCompleted,
+            statistics: statistics, // Ensure statistics is persisted
+          },
+        };
+      }
+
+      // Even if no new achievements, ensure statistics is persisted
+      if (!state.character.statistics) {
+        return {
+          character: {
+            ...state.character,
+            statistics: statistics,
           },
         };
       }
@@ -699,8 +730,17 @@ export const useGameState = create<GameState>((set, get) => ({
     playerMana,
     playerMaxMana
   ) => {
+    // Get the latest state to ensure we have the most up-to-date character with mercenaries
     const state = get();
     const character = state.character;
+
+    if (!character) {
+      console.error('Cannot start combat: no character');
+      return;
+    }
+
+    // Debug: Log character's active mercenaries
+    console.log('Character activeMercenaries:', character.activeMercenaries);
 
     const monsterStates = monsters.map((monster) => ({
       monster,
@@ -710,19 +750,30 @@ export const useGameState = create<GameState>((set, get) => ({
     // Create player party member from character
     const playerPartyMember: ActivePlayerPartyMember = {
       id: 'player',
-      name: character?.name || 'Player',
+      name: character.name || 'Player',
       isSummoned: false,
       currentHealth: playerHealth,
       maxHealth: playerMaxHealth,
       currentMana: playerMana,
       maxMana: playerMaxMana,
-      level: character?.level,
+      level: character.level,
     };
 
-    // Add combat mercenaries to party
-    const combatMercenaries = character ? MercenaryManager.getCombatMercenaries(character) : [];
-    const mercenaryPartyMembers: ActivePlayerPartyMember[] = combatMercenaries.map(
-      (mercenary, index) => ({
+    // Add combat mercenaries to party - ensure we're using the latest character state
+    const combatMercenaries = MercenaryManager.getCombatMercenaries(character);
+    console.log(
+      'Starting combat with mercenaries:',
+      combatMercenaries.map((m) => m.name)
+    );
+    const mercenaryPartyMembers: ActivePlayerPartyMember[] = combatMercenaries
+      .filter((mercenary) => {
+        if (!mercenary.stats) {
+          console.error(`Mercenary ${mercenary.id} has no stats!`);
+          return false;
+        }
+        return true;
+      })
+      .map((mercenary, index) => ({
         id: `mercenary_${mercenary.id}_${index}`,
         name: mercenary.name,
         isSummoned: true, // Mercenaries are treated as summoned
@@ -731,8 +782,7 @@ export const useGameState = create<GameState>((set, get) => ({
         currentMana: mercenary.stats!.mana,
         maxMana: mercenary.stats!.maxMana,
         level: undefined,
-      })
-    );
+      }));
 
     const newCombatState: ActiveCombatState = {
       playerParty: [playerPartyMember, ...mercenaryPartyMembers], // Player + mercenaries
@@ -750,6 +800,10 @@ export const useGameState = create<GameState>((set, get) => ({
       isBossRound,
     };
 
+    console.log(
+      'Setting combat state with playerParty:',
+      newCombatState.playerParty.map((p) => p.name)
+    );
     set({
       currentCombatState: newCombatState,
       queuedSkillId: null,
@@ -765,6 +819,11 @@ export const useGameState = create<GameState>((set, get) => ({
           // Preserve existing monsters if not explicitly updated
           monsters:
             updates.monsters !== undefined ? updates.monsters : state.currentCombatState.monsters,
+          // Preserve existing playerParty if not explicitly updated
+          playerParty:
+            updates.playerParty !== undefined
+              ? updates.playerParty
+              : state.currentCombatState.playerParty,
           ...updates,
         },
       };

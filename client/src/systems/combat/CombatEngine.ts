@@ -297,6 +297,18 @@ export class CombatEngine {
   }
 
   /**
+   * Get a random player-side target (player or mercenary)
+   */
+  private getRandomPlayerTarget(): CombatParticipant | null {
+    const playerTargets = this.participants.filter((p) => p.isPlayer && p.isAlive);
+    if (playerTargets.length === 0) {
+      return null;
+    }
+    // Randomly select from all player-side participants (player + mercenaries)
+    return playerTargets[Math.floor(Math.random() * playerTargets.length)];
+  }
+
+  /**
    * Execute monster action
    */
   private executeMonsterAction(actor: CombatParticipant): CombatAction {
@@ -307,7 +319,7 @@ export class CombatEngine {
 
     if (!monsterData) {
       // Fallback to basic attack
-      const target = this.participants.find((p) => p.isPlayer && p.isAlive);
+      const target = this.getRandomPlayerTarget();
       if (!target) {
         return {
           actorId: actor.id,
@@ -318,6 +330,7 @@ export class CombatEngine {
 
       const damage = this.calculateDamage(actor, target);
       this.applyDamage(target, damage);
+      audioManager.playSound('monster_attack'); // Play sound for monster attack
 
       return {
         actorId: actor.id,
@@ -335,11 +348,12 @@ export class CombatEngine {
 
       if (abilities.length > 0) {
         const ability = abilities[Math.floor(Math.random() * abilities.length)];
-        const target = this.participants.find((p) => p.isPlayer && p.isAlive);
+        const target = this.getRandomPlayerTarget();
 
         if (target && ability.effect.damage) {
           const damage = ability.effect.damage;
           this.applyDamage(target, damage);
+          audioManager.playSound('monster_attack'); // Play sound for monster ability
 
           return {
             actorId: actor.id,
@@ -353,7 +367,7 @@ export class CombatEngine {
     }
 
     // Default to basic attack
-    const target = this.participants.find((p) => p.isPlayer && p.isAlive);
+    const target = this.getRandomPlayerTarget();
     if (!target) {
       return {
         actorId: actor.id,
@@ -364,6 +378,7 @@ export class CombatEngine {
 
     const damage = this.calculateDamage(actor, target);
     this.applyDamage(target, damage);
+    audioManager.playSound('monster_attack'); // Play sound for monster basic attack
 
     return {
       actorId: actor.id,

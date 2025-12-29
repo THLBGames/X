@@ -43,6 +43,11 @@ export class CharacterManager {
       statusEffects: [],
       idleSkills: IdleSkillSystem.initializeIdleSkills(),
       skillBar: [], // Initialize empty skill bar
+      activeMercenaries: [], // Initialize empty mercenaries array
+      activeUpgrades: [], // Initialize empty upgrades array
+      consumableUpgrades: [], // Initialize empty consumable upgrades array
+      statistics: undefined, // Will be initialized when needed
+      completedAchievements: [], // Initialize empty achievements array
     };
   }
 
@@ -52,7 +57,10 @@ export class CharacterManager {
   static calculateCombatStats(
     baseStats: Stats,
     equipment: Equipment,
-    statusEffects: Array<{ statModifier?: Partial<Stats>; combatStatModifier?: Partial<CombatStats> }>
+    statusEffects: Array<{
+      statModifier?: Partial<Stats>;
+      combatStatModifier?: Partial<CombatStats>;
+    }>
   ): CombatStats {
     const dataLoader = getDataLoader();
     let stats = { ...baseStats };
@@ -174,7 +182,10 @@ export class CharacterManager {
   /**
    * Add experience to character and handle level ups
    */
-  static addExperience(character: Character, experience: number): {
+  static addExperience(
+    character: Character,
+    experience: number
+  ): {
     character: Character;
     leveledUp: boolean;
     levelsGained: number;
@@ -221,8 +232,7 @@ export class CharacterManager {
     const newBaseStats: Stats = {
       strength: character.baseStats.strength + characterClass.statGrowth.strength,
       dexterity: character.baseStats.dexterity + characterClass.statGrowth.dexterity,
-      intelligence:
-        character.baseStats.intelligence + characterClass.statGrowth.intelligence,
+      intelligence: character.baseStats.intelligence + characterClass.statGrowth.intelligence,
       vitality: character.baseStats.vitality + characterClass.statGrowth.vitality,
       wisdom: character.baseStats.wisdom + characterClass.statGrowth.wisdom,
       luck: character.baseStats.luck + characterClass.statGrowth.luck,
@@ -259,7 +269,11 @@ export class CharacterManager {
   static getExperienceForNextLevel(level: number): number {
     const dataLoader = getDataLoader();
     const config = dataLoader.getConfig();
-    return calculateExperienceForLevel(level + 1, config.experience.baseExp, config.experience.expMultiplier);
+    return calculateExperienceForLevel(
+      level + 1,
+      config.experience.baseExp,
+      config.experience.expMultiplier
+    );
   }
 
   /**
@@ -398,11 +412,7 @@ export class CharacterManager {
   /**
    * Learn a skill
    */
-  static learnSkill(
-    character: Character,
-    skillId: string,
-    level: number = 1
-  ): Character {
+  static learnSkill(character: Character, skillId: string, level: number = 1): Character {
     const dataLoader = getDataLoader();
     const skill = dataLoader.getSkill(skillId);
 
@@ -411,9 +421,7 @@ export class CharacterManager {
     }
 
     // Check if already learned
-    const existingSkillIndex = character.learnedSkills.findIndex(
-      (ls) => ls.skillId === skillId
-    );
+    const existingSkillIndex = character.learnedSkills.findIndex((ls) => ls.skillId === skillId);
 
     if (existingSkillIndex !== -1) {
       // Upgrade existing skill
@@ -482,4 +490,3 @@ export class CharacterManager {
     return this.updateCharacterStats(updatedCharacter);
   }
 }
-
