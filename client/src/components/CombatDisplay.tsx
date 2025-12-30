@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useGameState } from '../systems';
-import { getDataLoader } from '../data';
+// import { getDataLoader } from '../data';
 import { audioManager } from '../systems/audio/AudioManager';
 import CombatArena from './CombatArena';
 import CombatSkillBar from './CombatSkillBar';

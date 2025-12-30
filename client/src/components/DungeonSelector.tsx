@@ -12,32 +12,9 @@ export default function DungeonSelector() {
   const setCurrentDungeon = useGameState((state) => state.setCurrentDungeon);
   const startCombat = useGameState((state) => state.startCombat);
   
-  const [availableDungeons, setAvailableDungeons] = useState<Dungeon[]>([]);
   const [selectedDungeonId, setSelectedDungeonId] = useState<string | null>(currentDungeonId);
 
-  useEffect(() => {
-    if (character) {
-      try {
-        const dataLoader = getDataLoader();
-        const allDungeons = dataLoader.getAllDungeons();
-        
-        if (allDungeons.length === 0) {
-          console.warn('No dungeons found in game data');
-          return;
-        }
-        
-        const completedDungeonIds = dungeonProgress.filter(p => p.completed).map(p => p.dungeonId);
-        const available = DungeonManager.getAvailableDungeons(character.level, completedDungeonIds);
-        setAvailableDungeons(allDungeons.filter(d => 
-          available.some(ad => ad.id === d.id) || 
-          dungeonProgress.some(dp => dp.dungeonId === d.id && dp.unlocked)
-        ));
-      } catch (error) {
-        console.error('Failed to load dungeons:', error);
-        setAvailableDungeons([]);
-      }
-    }
-  }, [character, dungeonProgress]);
+  // Note: availableDungeons was calculated but never used - component uses allDungeons directly
 
   useEffect(() => {
     setSelectedDungeonId(currentDungeonId);
