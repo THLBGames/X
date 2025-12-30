@@ -8,7 +8,7 @@ import type {
   ActiveStatusEffect,
 } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
-import { calculateExperienceForLevel, calculateTotalExperienceForLevel } from '@/utils/experience';
+import { calculateExperienceForLevel } from '@/utils/experience';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
 
 export class CharacterManager {
@@ -191,7 +191,7 @@ export class CharacterManager {
     levelsGained: number;
   } {
     const dataLoader = getDataLoader();
-    const config = dataLoader.getConfig();
+    // const config = dataLoader.getConfig();
     let newCharacter = { ...character };
     let leveledUp = false;
     let levelsGained = 0;
@@ -316,7 +316,8 @@ export class CharacterManager {
     }
 
     // Apply status effect stat modifiers
-    for (const effect of statusEffects) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    for (const _effect of statusEffects) {
       // In a real implementation, you'd load the status effect definition
       // For now, status effects don't modify base stats directly
     }

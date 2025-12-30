@@ -492,7 +492,7 @@ export class IdleProgress {
   } {
     const dataLoader = getDataLoader();
     const dungeon = dataLoader.getDungeon(dungeonId);
-    const _config = dataLoader.getConfig();
+    // const config = dataLoader.getConfig();
 
     if (!dungeon || dungeon.monsterPools.length === 0) {
       return { experiencePerHour: 0, goldPerHour: 0 };

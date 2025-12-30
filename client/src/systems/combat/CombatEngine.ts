@@ -22,6 +22,7 @@ export class CombatEngine {
   private currentTurnIndex: number = 0;
   private actions: CombatAction[] = [];
   private startTime: number = 0;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private _options: CombatOptions;
   private dungeonId?: string; // Store dungeon ID for chest drop logic
   private character: Character | null = null; // Store character reference for skill validation
