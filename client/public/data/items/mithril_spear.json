@@ -1,0 +1,23 @@
+{
+  "id": "mithril_spear",
+  "name": "Mithril Spear",
+  "description": "A legendary spear forged from mithril.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 18600,
+  "requirements": {
+    "level": 51,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 12,
+    "vitality": 4
+  },
+  "combatStatBonuses": {
+    "attack": 40
+  }
+}

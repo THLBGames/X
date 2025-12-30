@@ -1,0 +1,11 @@
+{
+  "id": "dark_gem",
+  "name": "Dark Gem",
+  "description": "A gem infused with dark magic.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 200
+}
+

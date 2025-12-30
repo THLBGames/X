@@ -1,0 +1,11 @@
+{
+  "id": "jewelry",
+  "name": "Jewelry",
+  "description": "Valuable jewelry piece.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150
+}
+

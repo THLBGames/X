@@ -1,0 +1,14 @@
+{
+  "id": "greater_healing_potion",
+  "name": "Greater Healing Potion",
+  "description": "A powerful potion that restores health.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 180,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 300
+  }
+}

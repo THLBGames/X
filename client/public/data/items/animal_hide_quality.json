@@ -1,0 +1,11 @@
+{
+  "id": "animal_hide_quality",
+  "name": "Quality Animal Hide",
+  "description": "High-quality hide from larger animals.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12
+}
+

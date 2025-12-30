@@ -1,0 +1,11 @@
+{
+  "id": "rare_herb",
+  "name": "Rare Herb",
+  "description": "A rare herb with potent properties for advanced alchemy.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25
+}
+

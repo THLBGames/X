@@ -1,0 +1,11 @@
+{
+  "id": "balrog_horn",
+  "name": "Balrog Horn",
+  "description": "A horn from a powerful balrog demon.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 600
+}
+

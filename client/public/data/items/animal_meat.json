@@ -1,0 +1,11 @@
+{
+  "id": "animal_meat",
+  "name": "Animal Meat",
+  "description": "Meat from a trapped animal.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3
+}
+

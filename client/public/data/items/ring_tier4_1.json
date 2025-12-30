@@ -1,0 +1,19 @@
+{
+  "id": "ring_tier4_1",
+  "name": "Ring Tier 4 #1",
+  "description": "A ring from tier 4.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 360,
+  "requirements": {
+    "level": 51
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "strength": 8
+  },
+  "combatStatBonuses": {
+    "attack": 16
+  }
+}

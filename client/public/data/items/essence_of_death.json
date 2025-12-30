@@ -1,0 +1,11 @@
+{
+  "id": "essence_of_death",
+  "name": "Essence of Death",
+  "description": "A dark essence extracted from a wraith.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30
+}
+

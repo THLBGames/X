@@ -1,0 +1,22 @@
+{
+  "id": "basic_dagger",
+  "name": "Basic Dagger",
+  "description": "A simple dagger for stealthy attacks.",
+  "type": "weapon",
+  "rarity": "common",
+  "stackable": false,
+  "value": 50,
+  "requirements": {
+    "level": 1,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "dexterity": 3
+  },
+  "combatStatBonuses": {
+    "attack": 6,
+    "speed": 5
+  }
+}
+

@@ -1,0 +1,20 @@
+{
+  "id": "ogre_club",
+  "name": "Ogre Club",
+  "description": "A crude but effective club used by ogres.",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 150,
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 5
+  },
+  "combatStatBonuses": {
+    "attack": 25
+  },
+  "requirements": {
+    "level": 9
+  }
+}
+

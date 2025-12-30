@@ -314,7 +314,9 @@ export class CombatEngine {
   private executeMonsterAction(actor: CombatParticipant): CombatAction {
     const dataLoader = getDataLoader();
     // Extract base monster ID (remove index suffix like "_0", "_1", etc.)
-    const baseMonsterId = actor.id.split('_').slice(0, -1).join('_') || actor.id;
+    // If ID doesn't have underscore, use the original ID
+    const idParts = actor.id.split('_');
+    const baseMonsterId = idParts.length > 1 ? idParts.slice(0, -1).join('_') : actor.id;
     const monsterData = dataLoader.getMonster(baseMonsterId);
 
     if (!monsterData) {
@@ -494,8 +496,11 @@ export class CombatEngine {
 
       // Process rewards from each defeated monster
       for (const monsterParticipant of defeatedMonsters) {
-        // Extract base monster ID (remove index suffix)
-        const baseMonsterId = monsterParticipant.id.split('_').slice(0, -1).join('_');
+        // Extract base monster ID (remove index suffix like "_0", "_1", etc.)
+        // If ID doesn't have underscore, use the original ID
+        const idParts = monsterParticipant.id.split('_');
+        const baseMonsterId =
+          idParts.length > 1 ? idParts.slice(0, -1).join('_') : monsterParticipant.id;
         const monsterData = dataLoader.getMonster(baseMonsterId);
 
         if (monsterData) {
@@ -572,6 +577,23 @@ export class CombatEngine {
    */
   getParticipants(): CombatParticipant[] {
     return [...this.participants];
+  }
+
+  /**
+   * Remove a participant by ID (e.g., when a mercenary is dismissed)
+   */
+  removeParticipant(id: string): void {
+    const index = this.participants.findIndex((p) => p.id === id);
+    if (index !== -1) {
+      this.participants.splice(index, 1);
+      // Adjust currentTurnIndex if necessary
+      if (this.currentTurnIndex >= this.participants.length) {
+        this.currentTurnIndex = 0;
+      } else if (this.currentTurnIndex > index) {
+        // If we removed a participant before the current turn, adjust the index
+        this.currentTurnIndex--;
+      }
+    }
   }
 
   /**

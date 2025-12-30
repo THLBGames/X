@@ -1,0 +1,23 @@
+{
+  "id": "mage_orb",
+  "name": "Mage Orb",
+  "description": "An orb that enhances magical power.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 500,
+  "requirements": {
+    "level": 35,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "offhand",
+  "statBonuses": {
+    "intelligence": 5,
+    "wisdom": 2
+  },
+  "combatStatBonuses": {
+    "magicAttack": 20,
+    "mana": 80
+  }
+}
+

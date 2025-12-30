@@ -1,0 +1,16 @@
+{
+  "id": "elixir_power",
+  "name": "Elixir of Power",
+  "description": "A powerful elixir that enhances combat abilities.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "power_boost",
+    "duration": 600
+  }
+}
+

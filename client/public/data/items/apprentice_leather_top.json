@@ -1,0 +1,24 @@
+{
+  "id": "apprentice_leather_top",
+  "name": "Apprentice Leather Top",
+  "description": "The top portion of apprentice leather armor.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 320,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "chest",
+  "statBonuses": {
+    "dexterity": 3,
+    "vitality": 1
+  },
+  "combatStatBonuses": {
+    "defense": 7,
+    "speed": 4
+  }
+}

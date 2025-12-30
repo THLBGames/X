@@ -3,7 +3,7 @@ import { useGameState } from '../systems';
 import { IdleSkillSystem } from '../systems/skills/IdleSkillSystem';
 import { ResourceNodeManager } from '../systems/skills/ResourceNodeManager';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
-import { StatisticsManager } from '../systems/statistics/StatisticsManager';
+import { gameEventEmitter } from '../systems/events/GameEventEmitter';
 
 export interface ActiveSkillTraining {
   skillId: string;
@@ -217,24 +217,14 @@ export function useIdleSkills() {
         const consumeUpgradeAction = useGameState.getState().consumeUpgradeAction;
         consumeUpgradeAction(skillId);
 
-        // Record skill action in statistics
-        const recordSkillAction = useGameState.getState().recordSkillAction;
-        recordSkillAction(skillId);
-
-        // Update skill experience in statistics
-        if (characterAfterMercenaries) {
-          const statistics =
-            characterAfterMercenaries.statistics || StatisticsManager.initializeStatistics();
-          const updatedStatistics = {
-            ...statistics,
-            totalSkillExperience: statistics.totalSkillExperience + adjustedExperience,
-            lastPlayed: Date.now(),
-          };
-          characterAfterMercenaries = {
-            ...characterAfterMercenaries,
-            statistics: updatedStatistics,
-          };
-        }
+        // Record skill action with experience (event will be emitted automatically)
+        // The event listener will update both skill action count and skill experience
+        // Emit skill_action event with experience for statistics update
+        gameEventEmitter.emit({
+          type: 'skill_action',
+          skillId,
+          experience: adjustedExperience,
+        });
 
         // Update last action time BEFORE updating character (this ensures timer resets correctly)
         const now = Date.now();
@@ -250,10 +240,8 @@ export function useIdleSkills() {
         // Update character (this ensures idleSkills are updated)
         setCharacter(characterAfterMercenaries);
 
-        // Check for newly completed achievements
-        // The guard mechanism in checkAchievements will handle concurrent calls
-        const checkAchievements = useGameState.getState().checkAchievements;
-        checkAchievements();
+        // Achievements will be checked automatically by event listeners
+        // No need to manually call checkAchievements() here
       }, adjustedTimeRequired);
 
       sharedIntervalRefs.set(skillId, intervalId);

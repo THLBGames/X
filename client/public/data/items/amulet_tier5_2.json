@@ -1,0 +1,20 @@
+{
+  "id": "amulet_tier5_2",
+  "name": "Amulet Tier 5 #2",
+  "description": "An amulet from tier 5.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 750,
+  "requirements": {
+    "level": 71
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "vitality": 6,
+    "luck": 6
+  },
+  "combatStatBonuses": {
+    "defense": 13
+  }
+}

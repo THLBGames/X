@@ -1,0 +1,23 @@
+{
+  "id": "mithril_axe",
+  "name": "Mithril Axe",
+  "description": "A legendary axe forged from mithril.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 18000,
+  "requirements": {
+    "level": 51,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 12,
+    "vitality": 4
+  },
+  "combatStatBonuses": {
+    "attack": 44
+  }
+}

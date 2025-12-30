@@ -1,0 +1,11 @@
+{
+  "id": "medium_fish",
+  "name": "Medium Fish",
+  "description": "A medium-sized fish.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8
+}
+

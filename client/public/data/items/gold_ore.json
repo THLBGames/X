@@ -1,0 +1,11 @@
+{
+  "id": "gold_ore",
+  "name": "Gold Ore",
+  "description": "A valuable metal ore used for crafting high-quality jewelry and equipment.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50
+}
+

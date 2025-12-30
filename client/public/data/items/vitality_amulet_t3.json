@@ -1,0 +1,20 @@
+{
+  "id": "vitality_amulet_t3",
+  "name": "Amulet of Immortality",
+  "description": "A legendary amulet of vitality.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 360,
+  "requirements": {
+    "level": 51
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "vitality": 4,
+    "luck": 4
+  },
+  "combatStatBonuses": {
+    "defense": 8
+  }
+}

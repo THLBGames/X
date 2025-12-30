@@ -1,0 +1,22 @@
+{
+  "id": "steel_leggings",
+  "name": "Steel Leggings",
+  "description": "Sturdy steel leggings.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 450,
+  "requirements": {
+    "level": 31,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "legs",
+  "statBonuses": {
+    "vitality": 5,
+    "strength": 2
+  },
+  "combatStatBonuses": {
+    "defense": 20
+  }
+}
+

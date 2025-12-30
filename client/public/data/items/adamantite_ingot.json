@@ -1,0 +1,10 @@
+{
+  "id": "adamantite_ingot",
+  "name": "Adamantite Ingot",
+  "description": "Refined adamantite ingot for crafting.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800
+}

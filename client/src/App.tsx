@@ -4,8 +4,8 @@ import { getDataLoader } from './data';
 import { getSaveManager } from './systems/save';
 import { IdleProgress } from './systems/idle';
 import { InventoryManager } from './systems/inventory';
-import { StatisticsManager } from './systems/statistics/StatisticsManager';
 import { audioManager } from './systems/audio/AudioManager';
+import { gameEventEmitter } from './systems/events/GameEventEmitter';
 import GameView from './components/GameView';
 import DebugPanel from './components/DebugPanel';
 import OfflineProgressModal from './components/OfflineProgressModal';
@@ -45,20 +45,8 @@ function App() {
     if (!character) return;
 
     const interval = setInterval(() => {
-      const updatePlayTime = () => {
-        const state = useGameState.getState();
-        if (!state.character || !state.character.statistics) return;
-
-        const statistics = state.character.statistics;
-        const updatedStatistics = StatisticsManager.updatePlayTime(statistics, 60); // Update every minute (60 seconds)
-
-        state.setCharacter({
-          ...state.character,
-          statistics: updatedStatistics,
-        });
-      };
-
-      updatePlayTime();
+      // Emit play_time_updated event (statistics will be updated by event listener)
+      gameEventEmitter.emit({ type: 'play_time_updated', deltaSeconds: 60 });
     }, 60000); // Every minute
 
     return () => clearInterval(interval);

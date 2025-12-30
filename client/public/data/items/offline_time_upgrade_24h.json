@@ -1,0 +1,14 @@
+{
+  "id": "offline_time_upgrade_24h",
+  "name": "Offline Time Upgrade (+24 Hours)",
+  "description": "Permanently increases your maximum offline progress time by 24 hours.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 15000,
+  "consumableEffect": {
+    "type": "offlineTime",
+    "offlineTimeHours": 24
+  }
+}

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { StatisticsManager } from '../systems/statistics/StatisticsManager';
@@ -8,16 +8,32 @@ import './StatisticsPanel.css';
 
 export default function StatisticsPanel() {
   const character = useGameState((state) => state.character);
-  // const claimAchievementRewards = useGameState((state) => state.claimAchievementRewards);
-  // const setInventory = useGameState((state) => state.setInventory);
+  const claimAchievementRewards = useGameState((state) => state.claimAchievementRewards);
+  // Subscribe to statistics directly using a selector that tracks the statistics object
+  // This ensures re-renders when statistics change
+  const statistics = useGameState((state) => state.character?.statistics);
 
   const [activeTab, setActiveTab] = useState<'statistics' | 'achievements' | 'completion'>(
     'statistics'
   );
   const [achievementCategoryFilter, setAchievementCategoryFilter] = useState<string>('all');
-
-  const statistics = character?.statistics;
   const dataLoader = getDataLoader();
+
+  // Debug: Log when statistics change to verify re-renders
+  useEffect(() => {
+    if (statistics) {
+      console.debug('StatisticsPanel: Statistics updated', {
+        totalCombats: statistics.totalCombats,
+        totalExperienceEarned: statistics.totalExperienceEarned,
+      });
+    }
+  }, [
+    statistics?.totalCombats,
+    statistics?.totalExperienceEarned,
+    statistics?.monsterKills,
+    statistics?.itemsCollected,
+    statistics?.skillActions,
+  ]);
 
   // Calculate completion stats
   const completionStats = useMemo(() => {
@@ -83,16 +99,13 @@ export default function StatisticsPanel() {
     if (!character) return;
 
     try {
-      const result = AchievementManager.claimAchievementRewards(
-        character,
-        useGameState.getState().inventory,
-        achievementId
-      );
-      useGameState.getState().setInventory(result.inventory);
-      useGameState.getState().setCharacter(result.character);
-      alert('Rewards claimed!');
+      // Use the GameState action which handles both character and inventory updates atomically
+      // This ensures React properly detects the state changes and updates the UI
+      claimAchievementRewards(achievementId);
+      // Success feedback is handled by the GameState action (alert on error)
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Failed to claim rewards');
+      // Error handling is done in GameState, but log for debugging
+      console.error('Failed to claim achievement rewards:', error);
     }
   };
 
@@ -154,7 +167,9 @@ export default function StatisticsPanel() {
               </div>
               <div className="stat-item">
                 <div className="stat-label">Total Experience</div>
-                <div className="stat-value">{statistics.totalExperienceEarned.toLocaleString()}</div>
+                <div className="stat-value">
+                  {statistics.totalExperienceEarned.toLocaleString()}
+                </div>
               </div>
             </div>
           </div>
@@ -208,9 +223,8 @@ export default function StatisticsPanel() {
                     </div>
                   );
                 })}
-              {Object.keys(statistics.itemsCollected).filter((id) => id !== 'gold').length === 0 && (
-                <div className="no-stats">No items collected yet</div>
-              )}
+              {Object.keys(statistics.itemsCollected).filter((id) => id !== 'gold').length ===
+                0 && <div className="no-stats">No items collected yet</div>}
             </div>
           </div>
 
@@ -301,10 +315,15 @@ export default function StatisticsPanel() {
 
           <div className="achievements-list">
             {filteredAchievements.map((achievement) => {
-              const isCompleted = AchievementManager.isAchievementCompleted(character, achievement.id);
+              const isCompleted = AchievementManager.isAchievementCompleted(
+                character,
+                achievement.id
+              );
               const completedAchievement = character.completedAchievements?.find(
                 (ca) => ca.achievementId === achievement.id
               );
+              // Calculate progress - this will recalculate when statistics or character changes
+              // because the component re-renders when those values change
               const progress = AchievementManager.getAchievementProgress(
                 achievement,
                 statistics,
@@ -313,14 +332,12 @@ export default function StatisticsPanel() {
 
               return (
                 <div
-                  key={achievement.id}
+                  key={`${achievement.id}-${statistics?.totalCombats || 0}-${statistics?.monsterKills ? Object.keys(statistics.monsterKills).length : 0}`}
                   className={`achievement-card ${isCompleted ? 'completed' : ''} ${achievement.hidden && !isCompleted ? 'hidden' : ''}`}
                 >
                   <div className="achievement-header">
                     <div className="achievement-name">{achievement.name}</div>
-                    {isCompleted && (
-                      <div className="achievement-badge">✓ Completed</div>
-                    )}
+                    {isCompleted && <div className="achievement-badge">✓ Completed</div>}
                   </div>
                   <div className="achievement-description">{achievement.description}</div>
                   <div className="achievement-category">{achievement.category}</div>
@@ -334,7 +351,46 @@ export default function StatisticsPanel() {
                         />
                       </div>
                       <div className="progress-text">
-                        {progress.progress} / {progress.total} ({progress.percentage.toFixed(1)}%)
+                        {(() => {
+                          // Show detailed progress based on achievement requirements
+                          const req = achievement.requirements;
+                          if (req.totalCombats !== undefined) {
+                            const currentCombats = statistics?.totalCombats || 0;
+                            return `${currentCombats} / ${req.totalCombats} combats completed`;
+                          }
+                          if (req.monsterKills) {
+                            const kills = Object.entries(req.monsterKills)
+                              .map(([monsterId, required]) => {
+                                const actual = statistics.monsterKills[monsterId] || 0;
+                                const monster = dataLoader.getMonster(monsterId);
+                                return `${monster?.name || monsterId}: ${actual}/${required}`;
+                              })
+                              .join(', ');
+                            return kills || `${progress.progress} / ${progress.total}`;
+                          }
+                          if (req.itemsCollected) {
+                            const items = Object.entries(req.itemsCollected)
+                              .map(([itemId, required]) => {
+                                const actual = statistics.itemsCollected[itemId] || 0;
+                                const item = dataLoader.getItem(itemId);
+                                return `${item?.name || itemId}: ${actual}/${required}`;
+                              })
+                              .join(', ');
+                            return items || `${progress.progress} / ${progress.total}`;
+                          }
+                          if (req.skillActions) {
+                            const actions = Object.entries(req.skillActions)
+                              .map(([skillId, required]) => {
+                                const actual = statistics.skillActions[skillId] || 0;
+                                const skill = dataLoader.getSkill(skillId);
+                                return `${skill?.name || skillId}: ${actual}/${required}`;
+                              })
+                              .join(', ');
+                            return actions || `${progress.progress} / ${progress.total}`;
+                          }
+                          // Fallback to generic progress
+                          return `${progress.progress} / ${progress.total} (${progress.percentage.toFixed(1)}%)`;
+                        })()}
                       </div>
                     </div>
                   )}
@@ -471,8 +527,8 @@ export default function StatisticsPanel() {
               )}
               {completionStats.items.completed < completionStats.items.total && (
                 <div className="requirement-item">
-                  Collect {completionStats.items.total - completionStats.items.completed} more unique
-                  items
+                  Collect {completionStats.items.total - completionStats.items.completed} more
+                  unique items
                 </div>
               )}
               {completionStats.skills.completed < completionStats.skills.total && (
@@ -491,4 +547,3 @@ export default function StatisticsPanel() {
     </div>
   );
 }
-

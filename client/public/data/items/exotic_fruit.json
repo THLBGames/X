@@ -1,0 +1,11 @@
+{
+  "id": "exotic_fruit",
+  "name": "Exotic Fruit",
+  "description": "Exotic fruit with enhanced properties.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50
+}
+

@@ -29,11 +29,28 @@ export class StatisticsManager {
    * Record a monster kill
    */
   static recordMonsterKill(statistics: GameStatistics, monsterId: string): GameStatistics {
+    // Validate monster ID - skip if empty or invalid
+    if (!monsterId || monsterId.trim() === '') {
+      console.warn(
+        `[StatisticsManager] Attempted to record kill with invalid monster ID: "${monsterId}"`
+      );
+      return statistics;
+    }
+
+    // Clean up any existing empty string entries (legacy bug fix)
+    const cleanedMonsterKills = { ...statistics.monsterKills };
+    if (cleanedMonsterKills[''] !== undefined) {
+      console.warn(
+        `[StatisticsManager] Removing invalid empty string monster kill entry (count: ${cleanedMonsterKills['']})`
+      );
+      delete cleanedMonsterKills[''];
+    }
+
     return {
       ...statistics,
       monsterKills: {
-        ...statistics.monsterKills,
-        [monsterId]: (statistics.monsterKills[monsterId] || 0) + 1,
+        ...cleanedMonsterKills,
+        [monsterId]: (cleanedMonsterKills[monsterId] || 0) + 1,
       },
       lastPlayed: Date.now(),
     };
@@ -165,7 +182,7 @@ export class StatisticsManager {
     const idleSkills = allSkills.filter(
       (skill) => skill.type === 'gathering' || skill.type === 'production'
     );
-    
+
     let maxedSkills = 0;
     for (const skill of idleSkills) {
       const skillLevel = IdleSkillSystem.getSkillLevel(character, skill.id);
@@ -195,4 +212,3 @@ export class StatisticsManager {
     return Math.round(average * 100) / 100; // Round to 2 decimal places
   }
 }
-

@@ -1,0 +1,23 @@
+{
+  "id": "arcane_staff",
+  "name": "Arcane Staff",
+  "description": "A staff imbued with arcane power.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 600,
+  "requirements": {
+    "level": 40,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "intelligence": 8,
+    "wisdom": 4
+  },
+  "combatStatBonuses": {
+    "magicAttack": 30,
+    "mana": 100
+  }
+}
+

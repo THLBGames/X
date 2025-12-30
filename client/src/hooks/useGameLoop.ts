@@ -359,6 +359,68 @@ export function useGameLoop() {
       }
 
       if (combatLog.result === 'victory' && combatLog.rewards) {
+        // IMPORTANT: Get defeated monsters from combat engine BEFORE clearing it
+        // This ensures we capture ALL defeated monsters, including those killed by mercenaries
+        const currentCombatEngine = CombatManager.getCurrentCombat();
+        const defeatedMonsterIds: string[] = [];
+
+        if (currentCombatEngine) {
+          // Get all defeated monsters directly from combat engine participants
+          // This is the most reliable source as it has the actual combat state
+          const allParticipants = currentCombatEngine.getParticipants();
+          const defeatedMonsterParticipants = allParticipants.filter(
+            (p) => !p.isPlayer && !p.isAlive
+          );
+
+          console.debug(
+            `Recording ${defeatedMonsterParticipants.length} defeated monsters from combat engine (including mercenary kills)`
+          );
+
+          for (const monsterParticipant of defeatedMonsterParticipants) {
+            // Extract base monster ID (remove index suffix like "_0", "_1", etc.)
+            // If ID doesn't have underscore, use the original ID
+            const idParts = monsterParticipant.id.split('_');
+            const baseMonsterId =
+              idParts.length > 1 ? idParts.slice(0, -1).join('_') : monsterParticipant.id;
+
+            // Validate that we have a valid monster ID
+            if (!baseMonsterId || baseMonsterId.trim() === '') {
+              console.warn(
+                `[useGameLoop] Invalid monster ID extracted from: ${monsterParticipant.id}`
+              );
+              continue;
+            }
+
+            defeatedMonsterIds.push(baseMonsterId);
+          }
+        } else {
+          // Fallback: use combat state if combat engine is not available
+          const combatState = state.currentCombatState;
+          if (combatState) {
+            const defeatedMonsters = combatState.monsters.filter((m) => m.currentHealth <= 0);
+            console.debug(
+              `Fallback: Recording ${defeatedMonsters.length} defeated monsters from combat state`
+            );
+            for (const monsterState of defeatedMonsters) {
+              // Extract base monster ID (remove index suffix like "_0", "_1", etc.)
+              // If ID doesn't have underscore, use the original ID
+              const idParts = monsterState.monster.id.split('_');
+              const baseMonsterId =
+                idParts.length > 1 ? idParts.slice(0, -1).join('_') : monsterState.monster.id;
+
+              // Validate that we have a valid monster ID
+              if (!baseMonsterId || baseMonsterId.trim() === '') {
+                console.warn(
+                  `[useGameLoop] Invalid monster ID extracted from: ${monsterState.monster.id}`
+                );
+                continue;
+              }
+
+              defeatedMonsterIds.push(baseMonsterId);
+            }
+          }
+        }
+
         // Clear current combat engine (but don't clear state yet - we'll start a new round)
         CombatManager.endCombat();
 
@@ -409,15 +471,41 @@ export function useGameLoop() {
           combatStatsRef.totalGold += goldReward;
         }
 
-        // Record monster kills and update combat stats
-        const combatState = state.currentCombatState;
-        if (combatState) {
-          const defeatedMonsters = combatState.monsters.filter((m) => m.currentHealth <= 0);
-          for (const monsterState of defeatedMonsters) {
-            // Extract base monster ID (remove index suffix)
-            const baseMonsterId = monsterState.monster.id.split('_').slice(0, -1).join('_');
-            const recordMonsterKill = useGameState.getState().recordMonsterKill;
-            recordMonsterKill(baseMonsterId);
+        // Record monster kills from combat engine (BEFORE it was cleared)
+        // Use the defeatedMonsterIds we collected earlier
+        // This ensures we capture ALL defeated monsters, including those killed by mercenaries
+        for (const baseMonsterId of defeatedMonsterIds) {
+          const recordMonsterKill = useGameState.getState().recordMonsterKill;
+          recordMonsterKill(baseMonsterId); // This emits a monster_killed event
+          console.debug(`Recorded monster kill: ${baseMonsterId}`);
+        }
+
+        // Fallback: if we didn't get any from combat engine, try combat state
+        if (defeatedMonsterIds.length === 0) {
+          const combatState = state.currentCombatState;
+          if (combatState) {
+            const defeatedMonsters = combatState.monsters.filter((m) => m.currentHealth <= 0);
+            console.debug(
+              `Fallback: Recording ${defeatedMonsters.length} defeated monsters from combat state`
+            );
+            for (const monsterState of defeatedMonsters) {
+              // Extract base monster ID (remove index suffix like "_0", "_1", etc.)
+              // If ID doesn't have underscore, use the original ID
+              const idParts = monsterState.monster.id.split('_');
+              const baseMonsterId =
+                idParts.length > 1 ? idParts.slice(0, -1).join('_') : monsterState.monster.id;
+
+              // Validate that we have a valid monster ID
+              if (!baseMonsterId || baseMonsterId.trim() === '') {
+                console.warn(
+                  `[useGameLoop] Invalid monster ID extracted from: ${monsterState.monster.id}`
+                );
+                continue;
+              }
+
+              const recordMonsterKill = useGameState.getState().recordMonsterKill;
+              recordMonsterKill(baseMonsterId); // This emits a monster_killed event
+            }
           }
         }
 
@@ -428,6 +516,14 @@ export function useGameLoop() {
         );
         const updateCombatStats = useGameState.getState().updateCombatStats;
         updateCombatStats(true, goldReward, experienceReward);
+
+        // Debug: Log statistics update
+        const stateAfterStats = useGameState.getState();
+        if (stateAfterStats.character?.statistics) {
+          console.debug(
+            `Combat stats updated - Total combats: ${stateAfterStats.character.statistics.totalCombats}`
+          );
+        }
 
         // Add items (validate item exists before adding)
         for (const item of combatLog.rewards.items || []) {
@@ -450,9 +546,8 @@ export function useGameLoop() {
           addItem(chest.itemId, chest.quantity || 1);
         }
 
-        // Check for newly completed achievements
-        const checkAchievements = useGameState.getState().checkAchievements;
-        checkAchievements();
+        // Achievements will be checked automatically by event listeners
+        // No need to manually call checkAchievements() here
 
         // Consume battles for combat mercenaries
         // Use characterWithExperience (which includes the XP we just added) instead of state.character

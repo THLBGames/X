@@ -1,0 +1,11 @@
+{
+  "id": "mithril_ore",
+  "name": "Mithril Ore",
+  "description": "A rare magical metal ore used for crafting powerful equipment.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150
+}
+

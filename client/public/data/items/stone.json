@@ -1,0 +1,11 @@
+{
+  "id": "stone",
+  "name": "Stone",
+  "description": "A basic stone material found while mining.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1
+}
+

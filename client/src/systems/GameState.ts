@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { gameEventEmitter } from './events/GameEventEmitter';
 import type {
   Character,
   Inventory,
@@ -17,6 +18,7 @@ import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
 import { StatisticsManager } from '../systems/statistics/StatisticsManager';
 import { AchievementManager } from '../systems/achievements/AchievementManager';
 import { InventoryManager } from '../systems/inventory';
+import { CombatManager } from './combat/CombatManager';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
@@ -160,6 +162,29 @@ export const useGameState = create<GameState>((set, get) => ({
   // Character actions
   setCharacter: (character) =>
     set((state) => {
+      // CRITICAL: Always preserve the most recent statistics from state if the new character
+      // doesn't have statistics or has older statistics. This prevents statistics from being
+      // reset when multiple setCharacter calls happen in quick succession.
+      const existingStatistics = state.character?.statistics;
+      const newStatistics = character.statistics;
+
+      // Use the new statistics if it exists and is more recent (has a later lastPlayed)
+      // Otherwise, preserve existing statistics to prevent data loss
+      let finalStatistics = newStatistics;
+      if (existingStatistics && newStatistics) {
+        // If both exist, use the one with the more recent lastPlayed timestamp
+        finalStatistics =
+          newStatistics.lastPlayed >= existingStatistics.lastPlayed
+            ? newStatistics
+            : existingStatistics;
+      } else if (existingStatistics && !newStatistics) {
+        // If new character doesn't have statistics, preserve existing
+        finalStatistics = existingStatistics;
+      } else if (!existingStatistics && newStatistics) {
+        // If we have new statistics but no existing, use new
+        finalStatistics = newStatistics;
+      }
+
       // Preserve and merge completedAchievements to prevent achievements from being lost
       // This is critical - achievements should never be lost when character is updated
       if (state.character?.completedAchievements) {
@@ -176,14 +201,26 @@ export const useGameState = create<GameState>((set, get) => ({
           }
         }
 
+        // IMPORTANT: Create a new character object to ensure Zustand detects the change
+        // This is critical for React re-renders when nested properties like statistics change
         return {
           character: {
             ...character,
             completedAchievements: mergedCompleted,
+            // Always use the preserved statistics and create a new object reference
+            statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
           },
         };
       }
-      return { character };
+      // IMPORTANT: Always create a new character object, even if no merging is needed
+      // This ensures Zustand detects changes to nested properties like statistics
+      return {
+        character: {
+          ...character,
+          // Always use the preserved statistics and create a new object reference
+          statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
+        },
+      };
     }),
 
   updateCharacter: (updates) =>
@@ -251,25 +288,13 @@ export const useGameState = create<GameState>((set, get) => ({
             );
           }
         }
-
-        // Record item collection in statistics
-        if (updatedCharacter) {
-          const statistics =
-            updatedCharacter.statistics || StatisticsManager.initializeStatistics();
-          const updatedStatistics = StatisticsManager.recordItemCollected(
-            statistics,
-            itemId,
-            quantity
-          );
-          updatedCharacter = {
-            ...updatedCharacter,
-            statistics: updatedStatistics,
-          };
-        }
       }
 
       // Use InventoryManager to properly stack items
       const inventory = InventoryManager.addItem(state.inventory, itemId, quantity);
+
+      // Emit item_collected event (statistics will be updated by event listener)
+      gameEventEmitter.emit({ type: 'item_collected', itemId, quantity });
 
       return {
         inventory,
@@ -412,6 +437,53 @@ export const useGameState = create<GameState>((set, get) => ({
 
       const updatedCharacter = MercenaryManager.removeMercenary(state.character, mercenaryId);
 
+      // If combat is active, update combat state to remove dismissed mercenary from UI immediately
+      if (state.isCombatActive && state.currentCombatState) {
+        // Remove dismissed mercenary from playerParty
+        // Mercenary IDs in playerParty are in format: mercenary_{mercenaryId}_{index}
+        const updatedPlayerParty = (state.currentCombatState.playerParty || []).filter(
+          (member: ActivePlayerPartyMember) => {
+            // Keep player
+            if (member.id === 'player') return true;
+            // Mercenary IDs are in format: mercenary_{mercenaryId}_{index}
+            // Extract the mercenaryId from the member ID
+            const idParts = member.id.split('_');
+            if (idParts.length >= 2 && idParts[0] === 'mercenary') {
+              const memberMercenaryId = idParts[1];
+              return memberMercenaryId !== mercenaryId;
+            }
+            // If ID format is unexpected, keep it (shouldn't happen)
+            return true;
+          }
+        );
+
+        const updatedCombatState: ActiveCombatState = {
+          ...state.currentCombatState,
+          playerParty: updatedPlayerParty,
+        };
+
+        // Also remove from combat engine if it exists
+        // This ensures the mercenary doesn't take turns or get targeted
+        const combatEngine = CombatManager.getCurrentCombat();
+        if (combatEngine) {
+          const allParticipants = combatEngine.getParticipants();
+          // Find and remove the dismissed mercenary from participants
+          const mercenaryParticipant = allParticipants.find(
+            (p) => p.isPlayer && p.id.startsWith(`mercenary_${mercenaryId}_`)
+          );
+          if (mercenaryParticipant) {
+            // Remove from combat engine participants
+            combatEngine.removeParticipant(mercenaryParticipant.id);
+            console.debug(`Removed mercenary ${mercenaryId} from combat state and engine`);
+          }
+        }
+
+        return {
+          character: updatedCharacter,
+          currentCombatState: updatedCombatState,
+        };
+      }
+
       return { character: updatedCharacter };
     }),
 
@@ -516,70 +588,32 @@ export const useGameState = create<GameState>((set, get) => ({
     }),
 
   // Statistics actions
-  recordMonsterKill: (monsterId: string) =>
-    set((state) => {
-      if (!state.character) return {};
+  recordMonsterKill: (monsterId: string) => {
+    // Emit monster_killed event (statistics will be updated by event listener)
+    console.log(`[GameState] Emitting monster_killed event for: ${monsterId}`);
+    gameEventEmitter.emit({ type: 'monster_killed', monsterId });
+  },
 
-      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
-      const updatedStatistics = StatisticsManager.recordMonsterKill(statistics, monsterId);
+  recordItemCollected: (itemId: string, quantity: number) => {
+    // Emit item_collected event (statistics will be updated by event listener)
+    // Note: addItem() already emits this event, so this is mainly for backward compatibility
+    gameEventEmitter.emit({ type: 'item_collected', itemId, quantity });
+  },
 
-      return {
-        character: {
-          ...state.character,
-          statistics: updatedStatistics,
-        },
-      };
-    }),
+  recordSkillAction: (skillId: string, experience?: number) => {
+    // Emit skill_action event (statistics will be updated by event listener)
+    // Experience is optional - if not provided, only skill action count is updated
+    gameEventEmitter.emit({ type: 'skill_action', skillId, experience });
+  },
 
-  recordItemCollected: (itemId: string, quantity: number) =>
-    set((state) => {
-      if (!state.character) return {};
-
-      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
-      const updatedStatistics = StatisticsManager.recordItemCollected(statistics, itemId, quantity);
-
-      return {
-        character: {
-          ...state.character,
-          statistics: updatedStatistics,
-        },
-      };
-    }),
-
-  recordSkillAction: (skillId: string) =>
-    set((state) => {
-      if (!state.character) return {};
-
-      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
-      const updatedStatistics = StatisticsManager.recordSkillAction(statistics, skillId);
-
-      return {
-        character: {
-          ...state.character,
-          statistics: updatedStatistics,
-        },
-      };
-    }),
-
-  updateCombatStats: (victory: boolean, gold: number, experience: number) =>
-    set((state) => {
-      if (!state.character) return {};
-
-      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
-      const updatedStatistics = StatisticsManager.updateCombatStats(
-        statistics,
-        victory,
-        gold,
-        experience
-      );
-
-      return {
-        character: {
-          ...state.character,
-          statistics: updatedStatistics,
-        },
-      };
-    }),
+  updateCombatStats: (victory: boolean, gold: number, experience: number) => {
+    // Emit combat_won or combat_lost event (statistics will be updated by event listener)
+    if (victory) {
+      gameEventEmitter.emit({ type: 'combat_won', gold, experience });
+    } else {
+      gameEventEmitter.emit({ type: 'combat_lost' });
+    }
+  },
 
   checkAchievements: () => {
     // Guard: prevent concurrent execution
@@ -646,16 +680,9 @@ export const useGameState = create<GameState>((set, get) => ({
         );
 
         // If no truly new achievements, don't do anything
+        // CRITICAL: Don't update character if no new achievements, as this could overwrite
+        // statistics that were updated by event listeners. Just return empty object.
         if (trulyNew.length === 0) {
-          // Even if no new achievements, ensure statistics is persisted
-          if (!latestCharacter.statistics) {
-            return {
-              character: {
-                ...latestCharacter,
-                statistics: statistics,
-              },
-            };
-          }
           return {};
         }
 
@@ -693,11 +720,17 @@ export const useGameState = create<GameState>((set, get) => ({
         }
 
         // Update both character and ensure statistics is persisted
+        // CRITICAL: Get the absolute latest statistics from state to prevent overwriting
+        // statistics that were updated by event listeners after we started checking achievements
+        const absoluteLatestState = get();
+        const mostRecentStatistics = absoluteLatestState.character?.statistics || statistics;
+
         return {
           character: {
             ...latestCharacter,
             completedAchievements: finalCompleted,
-            statistics: statistics, // Ensure statistics is persisted
+            // Use the most recent statistics from state, creating a new object reference
+            statistics: mostRecentStatistics ? { ...mostRecentStatistics } : mostRecentStatistics,
           },
         };
       });

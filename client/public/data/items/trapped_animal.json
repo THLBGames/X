@@ -1,0 +1,11 @@
+{
+  "id": "trapped_animal",
+  "name": "Trapped Animal",
+  "description": "An animal caught in a trap.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5
+}
+

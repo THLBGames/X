@@ -1,0 +1,11 @@
+{
+  "id": "rotten_flesh",
+  "name": "Rotten Flesh",
+  "description": "Decaying flesh from a zombie.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

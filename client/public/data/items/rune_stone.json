@@ -1,0 +1,11 @@
+{
+  "id": "rune_stone",
+  "name": "Rune Stone",
+  "description": "A stone suitable for rune inscribing.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8
+}
+

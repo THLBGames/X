@@ -3,6 +3,7 @@ import { useGameState } from '../systems';
 import { useGameLoop } from '../hooks/useGameLoop';
 import { useIdleSkills } from '../hooks/useIdleSkills';
 import { audioManager } from '../systems/audio/AudioManager';
+import { initializeEventListeners } from '../systems/events/GameEventListeners';
 import TooltipWrapper from './TooltipWrapper';
 import DungeonSelector from './DungeonSelector';
 import CombatDisplay from './CombatDisplay';
@@ -33,6 +34,12 @@ export default function GameView() {
   // This ensures skills automatically resume and continue running even when Skills panel isn't open
   // Skills will continue executing in the background regardless of which tab is active
   useIdleSkills();
+
+  // Initialize event listeners for statistics and achievements
+  useEffect(() => {
+    const cleanup = initializeEventListeners();
+    return cleanup;
+  }, []);
 
   // Play background music when character exists
   useEffect(() => {

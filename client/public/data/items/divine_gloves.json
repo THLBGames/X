@@ -1,0 +1,24 @@
+{
+  "id": "divine_gloves",
+  "name": "Divine Gloves",
+  "description": "Gloves blessed with divine power.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 6100,
+  "requirements": {
+    "level": 89,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "intelligence": 14,
+    "wisdom": 8
+  },
+  "combatStatBonuses": {
+    "magicDefense": 42,
+    "magicAttack": 28,
+    "mana": 160
+  }
+}
+

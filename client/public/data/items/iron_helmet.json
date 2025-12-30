@@ -1,0 +1,22 @@
+{
+  "id": "iron_helmet",
+  "name": "Iron Helmet",
+  "description": "A solid iron helmet.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 160,
+  "requirements": {
+    "level": 18,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "vitality": 3,
+    "strength": 1
+  },
+  "combatStatBonuses": {
+    "defense": 12
+  }
+}
+

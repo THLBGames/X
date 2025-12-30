@@ -1,0 +1,20 @@
+{
+  "id": "intelligence_ring_t2",
+  "name": "Ring of Wisdom",
+  "description": "A powerful ring of intellect.",
+  "type": "accessory",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 60,
+  "requirements": {
+    "level": 16
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "intelligence": 3
+  },
+  "combatStatBonuses": {
+    "magicAttack": 7,
+    "mana": 30
+  }
+}

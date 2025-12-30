@@ -1,0 +1,11 @@
+{
+  "id": "uncommon_trinket",
+  "name": "Uncommon Trinket",
+  "description": "A decorative trinket of moderate value.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20
+}
+

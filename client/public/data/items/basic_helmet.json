@@ -1,0 +1,20 @@
+{
+  "id": "basic_helmet",
+  "name": "Basic Helmet",
+  "description": "A simple protective helmet.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 45,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "vitality": 1
+  },
+  "combatStatBonuses": {
+    "defense": 4
+  }
+}
+

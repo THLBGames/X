@@ -1,0 +1,11 @@
+{
+  "id": "ectoplasm",
+  "name": "Ectoplasm",
+  "description": "A spectral substance left behind by ghosts.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20
+}
+

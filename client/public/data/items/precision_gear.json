@@ -1,0 +1,11 @@
+{
+  "id": "precision_gear",
+  "name": "Precision Gear",
+  "description": "High-precision gear for advanced engineering.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 180
+}
+

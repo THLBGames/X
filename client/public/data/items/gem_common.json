@@ -1,0 +1,11 @@
+{
+  "id": "gem_common",
+  "name": "Common Gem",
+  "description": "A basic gem used in jewelry crafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10
+}
+

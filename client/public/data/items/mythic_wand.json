@@ -1,0 +1,24 @@
+{
+  "id": "mythic_wand",
+  "name": "Mythic Wand",
+  "description": "A legendary wand of immense magical power.",
+  "type": "weapon",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 275000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "intelligence": 20,
+    "wisdom": 10
+  },
+  "combatStatBonuses": {
+    "magicAttack": 80,
+    "mana": 300
+  }
+}

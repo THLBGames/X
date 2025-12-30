@@ -1,0 +1,22 @@
+{
+  "id": "mage_gloves",
+  "name": "Mage Gloves",
+  "description": "Gloves that enhance magical focus.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 32,
+  "requirements": {
+    "level": 1,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "intelligence": 1
+  },
+  "combatStatBonuses": {
+    "magicDefense": 3,
+    "mana": 10
+  }
+}
+

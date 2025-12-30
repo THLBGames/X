@@ -1,0 +1,20 @@
+{
+  "id": "amulet_tier2_2",
+  "name": "Amulet Tier 2 #2",
+  "description": "An amulet from tier 2.",
+  "type": "accessory",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 60,
+  "requirements": {
+    "level": 16
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "vitality": 1,
+    "luck": 1
+  },
+  "combatStatBonuses": {
+    "defense": 3
+  }
+}

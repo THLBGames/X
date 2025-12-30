@@ -1,0 +1,21 @@
+{
+  "id": "steel_sword",
+  "name": "Steel Sword",
+  "description": "A well-forged steel blade.",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 250,
+  "requirements": {
+    "level": 25,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 5
+  },
+  "combatStatBonuses": {
+    "attack": 18
+  }
+}
+

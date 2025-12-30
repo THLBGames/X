@@ -1,0 +1,24 @@
+{
+  "id": "apprentice_wand",
+  "name": "Apprentice Wand",
+  "description": "A wand used by apprentice mages.",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 360,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "intelligence": 3,
+    "wisdom": 1
+  },
+  "combatStatBonuses": {
+    "magicAttack": 12,
+    "mana": 45
+  }
+}

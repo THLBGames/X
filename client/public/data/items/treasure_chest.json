@@ -1,0 +1,15 @@
+{
+  "id": "treasure_chest",
+  "name": "Treasure Chest",
+  "description": "A special chest that can be opened to reveal rare loot. Right-click to open.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 10,
+  "value": 100,
+  "consumableEffect": {
+    "type": "custom",
+    "description": "Opens the chest to reveal random loot"
+  }
+}
+

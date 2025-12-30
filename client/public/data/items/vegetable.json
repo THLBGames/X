@@ -1,0 +1,11 @@
+{
+  "id": "vegetable",
+  "name": "Vegetable",
+  "description": "Fresh vegetables from farming.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

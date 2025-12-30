@@ -1,0 +1,14 @@
+{
+  "id": "magic_cake",
+  "name": "Magic Cake",
+  "description": "A cake imbued with magical properties.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 600,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 800
+  }
+}

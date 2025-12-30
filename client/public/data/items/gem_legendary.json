@@ -1,0 +1,11 @@
+{
+  "id": "gem_legendary",
+  "name": "Legendary Gem",
+  "description": "A legendary gem with divine properties.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1200
+}
+
