@@ -179,6 +179,8 @@ export interface Achievement {
     totalSkillActions?: number;
     totalSkillExperience?: number;
     totalPlayTime?: number; // in seconds
+    totalItems?: number; // Total unique items collected (excluding gold)
+    completionPercentage?: number; // Overall game completion percentage (0-100)
   };
   rewards?: {
     gold?: number;

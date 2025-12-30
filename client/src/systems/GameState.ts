@@ -162,9 +162,28 @@ export const useGameState = create<GameState>((set, get) => ({
   // Character actions
   setCharacter: (character) =>
     set((state) => {
-      // CRITICAL: Always preserve the most recent statistics from state if the new character
-      // doesn't have statistics or has older statistics. This prevents statistics from being
-      // reset when multiple setCharacter calls happen in quick succession.
+      // CRITICAL: Check if this is a completely new character (different ID or no existing character)
+      // If so, don't preserve old statistics or achievements - start fresh
+      const isNewCharacter = !state.character || state.character.id !== character.id;
+
+      if (isNewCharacter) {
+        // New character - use the character's own statistics and achievements (don't preserve old ones)
+        console.log(
+          `[GameState] New character detected (${character.id}), starting fresh with no preserved statistics/achievements`
+        );
+        return {
+          character: {
+            ...character,
+            // Use the character's own statistics (or undefined if not set)
+            statistics: character.statistics ? { ...character.statistics } : character.statistics,
+            // Use the character's own achievements (or empty array if not set)
+            completedAchievements: character.completedAchievements || [],
+          },
+        };
+      }
+
+      // Same character - preserve statistics and achievements to prevent data loss
+      // This prevents statistics from being reset when multiple setCharacter calls happen in quick succession
       const existingStatistics = state.character?.statistics;
       const newStatistics = character.statistics;
 
@@ -187,9 +206,31 @@ export const useGameState = create<GameState>((set, get) => ({
 
       // Preserve and merge completedAchievements to prevent achievements from being lost
       // This is critical - achievements should never be lost when character is updated
-      if (state.character?.completedAchievements) {
+      // EXCEPTION: If new character explicitly has an empty array, treat it as a reset
+      const newCompleted = character.completedAchievements;
+      const shouldResetAchievements =
+        Array.isArray(newCompleted) &&
+        newCompleted.length === 0 &&
+        state.character?.completedAchievements &&
+        state.character.completedAchievements.length > 0;
+
+      if (shouldResetAchievements) {
+        // Explicit reset - use empty array
+        console.log(
+          '[GameState] Detected explicit achievement reset (empty array), clearing all achievements'
+        );
+        return {
+          character: {
+            ...character,
+            completedAchievements: [],
+            // Always use the preserved statistics and create a new object reference
+            statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
+          },
+        };
+      }
+
+      if (state.character?.completedAchievements && newCompleted) {
         const existingCompleted = state.character.completedAchievements;
-        const newCompleted = character.completedAchievements || [];
 
         // Merge: combine both arrays, removing duplicates
         const existingIds = new Set(existingCompleted.map((ca) => ca.achievementId));
@@ -212,11 +253,18 @@ export const useGameState = create<GameState>((set, get) => ({
           },
         };
       }
+
+      // Fallback: If newCompleted is undefined/null, preserve existing achievements
+      // If newCompleted is an empty array but we didn't reset (e.g., character had no achievements before), use empty array
+      const finalCompletedAchievements =
+        newCompleted !== undefined ? newCompleted : state.character?.completedAchievements || [];
+
       // IMPORTANT: Always create a new character object, even if no merging is needed
       // This ensures Zustand detects changes to nested properties like statistics
       return {
         character: {
           ...character,
+          completedAchievements: finalCompletedAchievements,
           // Always use the preserved statistics and create a new object reference
           statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
         },

@@ -82,7 +82,13 @@ export default function StatisticsPanel() {
       }
       return a.category.localeCompare(b.category);
     });
-  }, [allAchievements, achievementCategoryFilter, character]);
+  }, [
+    allAchievements,
+    achievementCategoryFilter,
+    character,
+    // Include completedAchievements in dependencies to ensure re-render when they change
+    character?.completedAchievements?.length,
+  ]);
 
   // Format play time
   const formatPlayTime = (seconds: number): string => {
@@ -332,7 +338,7 @@ export default function StatisticsPanel() {
 
               return (
                 <div
-                  key={`${achievement.id}-${statistics?.totalCombats || 0}-${statistics?.monsterKills ? Object.keys(statistics.monsterKills).length : 0}`}
+                  key={`${achievement.id}-${isCompleted ? 'completed' : 'incomplete'}-${character?.completedAchievements?.length || 0}-${statistics?.totalCombats || 0}`}
                   className={`achievement-card ${isCompleted ? 'completed' : ''} ${achievement.hidden && !isCompleted ? 'hidden' : ''}`}
                 >
                   <div className="achievement-header">

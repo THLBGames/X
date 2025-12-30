@@ -4,6 +4,7 @@ import { CharacterManager } from '../systems/character/CharacterManager';
 import { InventoryManager } from '../systems/inventory';
 import { IdleSkillSystem } from '../systems/skills/IdleSkillSystem';
 import { SkillManager } from '../systems/skills/SkillManager';
+import { StatisticsManager } from '../systems/statistics/StatisticsManager';
 import { getDataLoader } from '../data';
 import type { Stats } from '@idle-rpg/shared';
 import './DebugPanel.css';
@@ -21,7 +22,9 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
   const setDungeonProgress = useGameState((state) => state.setDungeonProgress);
   const updateIdleSkill = useGameState((state) => state.updateIdleSkill);
 
-  const [activeTab, setActiveTab] = useState<'character' | 'stats' | 'items' | 'skills' | 'progress'>('character');
+  const [activeTab, setActiveTab] = useState<
+    'character' | 'stats' | 'items' | 'skills' | 'progress'
+  >('character');
 
   // Character tab inputs
   const [levelInput, setLevelInput] = useState('');
@@ -72,7 +75,8 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
     const newBaseStats: Stats = {
       strength: classData.baseStats.strength + (level - 1) * classData.statGrowth.strength,
       dexterity: classData.baseStats.dexterity + (level - 1) * classData.statGrowth.dexterity,
-      intelligence: classData.baseStats.intelligence + (level - 1) * classData.statGrowth.intelligence,
+      intelligence:
+        classData.baseStats.intelligence + (level - 1) * classData.statGrowth.intelligence,
       vitality: classData.baseStats.vitality + (level - 1) * classData.statGrowth.vitality,
       wisdom: classData.baseStats.wisdom + (level - 1) * classData.statGrowth.wisdom,
       luck: classData.baseStats.luck + (level - 1) * classData.statGrowth.luck,
@@ -240,7 +244,9 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
   };
 
   const handleClearInventory = () => {
-    if (!confirm('Are you sure you want to clear all items from inventory? This cannot be undone.')) {
+    if (
+      !confirm('Are you sure you want to clear all items from inventory? This cannot be undone.')
+    ) {
       return;
     }
 
@@ -369,7 +375,11 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
   };
 
   const handleResetCharacter = () => {
-    if (!confirm('Are you sure you want to reset your character? This will reset level, XP, skills, and inventory. This cannot be undone.')) {
+    if (
+      !confirm(
+        'Are you sure you want to reset your character? This will reset level, XP, skills, inventory (including gold), statistics, achievements, mercenaries, upgrades, equipment, and quest progress. This cannot be undone.'
+      )
+    ) {
       return;
     }
 
@@ -388,29 +398,38 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
       skillPoints: 0,
       baseStats: { ...classData.baseStats },
       currentStats: { ...classData.baseStats },
-      learnedSkills: [],
-      idleSkills: IdleSkillSystem.initializeIdleSkills(),
-      skillBar: [],
+      learnedSkills: [], // Reset learned combat skills
+      idleSkills: IdleSkillSystem.initializeIdleSkills(), // Reset idle skills to level 1
+      skillBar: [], // Reset skill bar
+      equipment: {}, // Reset equipment
+      statusEffects: [], // Reset status effects
+      questProgress: [], // Reset quest progress
+      activeMercenaries: [], // Reset active mercenaries
+      activeUpgrades: [], // Reset active upgrades
+      consumableUpgrades: [], // Reset consumable upgrades
+      statistics: StatisticsManager.initializeStatistics(), // Reset statistics to default (all zeros)
+      completedAchievements: [], // Reset completed achievements
     };
 
     const finalCharacter = CharacterManager.updateCharacterStats(resetCharacter);
+
+    // CRITICAL: Set character with explicit empty arrays for achievements
+    // The setCharacter function will detect this and reset achievements instead of merging
     setCharacter(finalCharacter);
 
-    // Clear inventory (keep gold if desired, or clear everything)
-    const gold = InventoryManager.getGold(inventory);
-    let resetInventory = {
+    // Clear inventory completely (including gold)
+    const resetInventory = {
       items: [] as Array<{ itemId: string; quantity: number }>,
       maxSlots: inventory.maxSlots,
     };
-    if (gold > 0) {
-      resetInventory = InventoryManager.addGold(resetInventory, gold);
-    }
     setInventory(resetInventory);
 
     // Reset dungeon progress
     setDungeonProgress([]);
 
-    alert('Character reset to level 1');
+    alert(
+      'Character fully reset to level 1 (including inventory, gold, statistics, and achievements)'
+    );
   };
 
   return (
@@ -418,7 +437,9 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
       <div className="debug-panel-modal" onClick={(e) => e.stopPropagation()}>
         <div className="debug-panel-header">
           <h2>Debug Panel</h2>
-          <button className="debug-panel-close" onClick={onClose}>×</button>
+          <button className="debug-panel-close" onClick={onClose}>
+            ×
+          </button>
         </div>
 
         <div className="debug-panel-tabs">
@@ -553,7 +574,9 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
                         onChange={(e) => setDexterityInput(e.target.value)}
                         placeholder={`Current: ${character.baseStats.dexterity}`}
                       />
-                      <button onClick={() => handleSetStat('dexterity', dexterityInput)}>Set</button>
+                      <button onClick={() => handleSetStat('dexterity', dexterityInput)}>
+                        Set
+                      </button>
                     </div>
                   </div>
 
@@ -567,7 +590,9 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
                         onChange={(e) => setIntelligenceInput(e.target.value)}
                         placeholder={`Current: ${character.baseStats.intelligence}`}
                       />
-                      <button onClick={() => handleSetStat('intelligence', intelligenceInput)}>Set</button>
+                      <button onClick={() => handleSetStat('intelligence', intelligenceInput)}>
+                        Set
+                      </button>
                     </div>
                   </div>
 
@@ -684,7 +709,9 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
                     style={{ width: '100px' }}
                   />
                   <button onClick={handleGrantSkill}>Grant Skill</button>
-                  <button className="debug-button-danger" onClick={handleRemoveSkill}>Remove Skill</button>
+                  <button className="debug-button-danger" onClick={handleRemoveSkill}>
+                    Remove Skill
+                  </button>
                 </div>
               </div>
 
@@ -741,4 +768,3 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
     </div>
   );
 }
-

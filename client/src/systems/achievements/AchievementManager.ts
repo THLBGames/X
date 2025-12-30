@@ -8,6 +8,7 @@ import type {
 import { getDataLoader } from '@/data';
 import { InventoryManager } from '../inventory';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
+import { StatisticsManager } from '../statistics/StatisticsManager';
 
 export interface AchievementProgress {
   progress: number;
@@ -113,6 +114,25 @@ export class AchievementManager {
     // Check total play time
     if (requirements.totalPlayTime !== undefined) {
       if (statistics.totalPlayTime < requirements.totalPlayTime) {
+        return false;
+      }
+    }
+
+    // Check total unique items collected
+    if (requirements.totalItems !== undefined) {
+      // Count unique items collected (excluding gold)
+      const uniqueItemsCollected = Object.keys(statistics.itemsCollected).filter(
+        (itemId) => itemId !== 'gold'
+      ).length;
+      if (uniqueItemsCollected < requirements.totalItems) {
+        return false;
+      }
+    }
+
+    // Check completion percentage
+    if (requirements.completionPercentage !== undefined) {
+      const completionPercentage = StatisticsManager.getCompletionPercentage(statistics, character);
+      if (completionPercentage < requirements.completionPercentage) {
         return false;
       }
     }
@@ -293,11 +313,7 @@ export class AchievementManager {
     // Grant item rewards
     if (rewards?.items) {
       for (const item of rewards.items) {
-        updatedInventory = InventoryManager.addItem(
-          updatedInventory,
-          item.itemId,
-          item.quantity
-        );
+        updatedInventory = InventoryManager.addItem(updatedInventory, item.itemId, item.quantity);
       }
     }
 
@@ -318,4 +334,3 @@ export class AchievementManager {
     };
   }
 }
-
