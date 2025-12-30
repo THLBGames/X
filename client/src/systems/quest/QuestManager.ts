@@ -1,4 +1,4 @@
-import type { Character, Quest, QuestProgress } from '@idle-rpg/shared';
+import type { Character, QuestProgress } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 export class QuestManager {

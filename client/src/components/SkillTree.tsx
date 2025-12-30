@@ -16,7 +16,7 @@ export default function SkillTree() {
   }
 
   const skillTree = SkillManager.getSkillTree(character);
-  const dataLoader = getDataLoader();
+  const _dataLoader = getDataLoader();
 
   // Filter skills
   let filteredSkills = skillTree;

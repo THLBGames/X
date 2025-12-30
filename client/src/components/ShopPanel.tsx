@@ -5,7 +5,7 @@ import { ShopManager } from '../systems/shop';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
 import { InventoryManager } from '../systems/inventory';
-import type { Item, Mercenary, SkillUpgrade } from '@idle-rpg/shared';
+import type { Item } from '@idle-rpg/shared';
 import './ShopPanel.css';
 
 export default function ShopPanel() {
@@ -18,7 +18,7 @@ export default function ShopPanel() {
   const [mercenaryFilter, setMercenaryFilter] = useState<string>('all');
   const [upgradeTypeFilter, setUpgradeTypeFilter] = useState<'all' | 'permanent' | 'consumable'>('all');
   const [upgradeScopeFilter, setUpgradeScopeFilter] = useState<'all' | 'skill' | 'category'>('all');
-  const [upgradeSkillFilter, setUpgradeSkillFilter] = useState<string>('all');
+  const [_upgradeSkillFilter, _setUpgradeSkillFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [buyQuantity, setBuyQuantity] = useState<Record<string, number>>({});
   const [sellQuantity, setSellQuantity] = useState<Record<string, number>>({});

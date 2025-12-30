@@ -1,6 +1,6 @@
 import type { Character, CharacterClass, Stats } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
-import { CharacterManager } from './CharacterManager';
+// CharacterManager imported but not used directly
 import { QuestManager } from '../quest/QuestManager';
 
 export class SubclassManager {

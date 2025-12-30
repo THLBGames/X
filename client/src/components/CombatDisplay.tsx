@@ -27,7 +27,7 @@ export default function CombatDisplay() {
     totalGold: 0,
   });
   const [levelUpMessage, setLevelUpMessage] = useState<string | null>(null);
-  const [combatResult, setCombatResult] = useState<'victory' | 'defeat' | null>(null);
+  const [_combatResult, _setCombatResult] = useState<'victory' | 'defeat' | null>(null);
   const previousLevelRef = useRef(character?.level || 1);
 
   // Listen for combat stats updates
@@ -45,7 +45,7 @@ export default function CombatDisplay() {
   // Watch for level ups
   useEffect(() => {
     if (character && character.level > previousLevelRef.current) {
-      const levelsGained = character.level - previousLevelRef.current;
+      const _levelsGained = character.level - previousLevelRef.current;
       const message = `Level Up! You are now level ${character.level}!`;
       setLevelUpMessage(message);
       previousLevelRef.current = character.level;
@@ -85,7 +85,7 @@ export default function CombatDisplay() {
   }, [isCombatActive, character?.level]);
 
   const dataLoader = getDataLoader();
-  const dungeon = currentDungeonId ? dataLoader.getDungeon(currentDungeonId) : null;
+  const _dungeon = currentDungeonId ? dataLoader.getDungeon(currentDungeonId) : null;
 
   const handleSkillUse = (skillId: string) => {
     queueSkill(skillId);

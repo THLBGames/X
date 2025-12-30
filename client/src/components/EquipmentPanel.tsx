@@ -14,7 +14,7 @@ interface EquipmentPanelProps {
   onItemClick?: (itemId: string) => void;
 }
 
-export default function EquipmentPanel({ onItemClick }: EquipmentPanelProps) {
+export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentPanelProps) {
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);

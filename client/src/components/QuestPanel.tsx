@@ -154,7 +154,7 @@ export default function QuestPanel() {
           </button>
           {showCompleted && (
             <div className="quest-list">
-              {completedQuests.map(({ quest, progress }) => (
+              {completedQuests.map(({ quest, progress: _progress }) => (
                 <div key={quest.id} className="quest-card completed">
                   <div className="quest-header">
                     <div className="quest-name">

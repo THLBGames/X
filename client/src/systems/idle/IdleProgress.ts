@@ -1,4 +1,4 @@
-import type { Character, Dungeon, CombatLog, CombatRewards, ActiveAction } from '@idle-rpg/shared';
+import type { Character, CombatLog, CombatRewards, ActiveAction } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { CombatEngine } from '../combat';
 import { DungeonManager } from '../dungeon';
@@ -492,7 +492,7 @@ export class IdleProgress {
   } {
     const dataLoader = getDataLoader();
     const dungeon = dataLoader.getDungeon(dungeonId);
-    const config = dataLoader.getConfig();
+    const _config = dataLoader.getConfig();
 
     if (!dungeon || dungeon.monsterPools.length === 0) {
       return { experiencePerHour: 0, goldPerHour: 0 };

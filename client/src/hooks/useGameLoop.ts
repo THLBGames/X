@@ -20,11 +20,11 @@ export function useGameLoop() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const settings = useGameState((state) => state.settings);
   const setCharacter = useGameState((state) => state.setCharacter);
-  const setInventory = useGameState((state) => state.setInventory);
+  const _setInventory = useGameState((state) => state.setInventory);
   const addItem = useGameState((state) => state.addItem);
   const setCombatActive = useGameState((state) => state.setCombatActive);
   const startCombatWithMonsters = useGameState((state) => state.startCombatWithMonsters);
-  const combatRoundNumber = useGameState((state) => state.combatRoundNumber);
+  const _combatRoundNumber = useGameState((state) => state.combatRoundNumber);
   const setCombatRoundNumber = useGameState((state) => state.setCombatRoundNumber);
   const updateCombatState = useGameState((state) => state.updateCombatState);
   const addCombatAction = useGameState((state) => state.addCombatAction);
@@ -47,7 +47,7 @@ export function useGameLoop() {
     }
   }, [isCombatActive]);
 
-  const processCombatResult = useCallback(
+  const _processCombatResult = useCallback(
     async (combatResult: { combatLog: any; updatedCharacter: any; rewards: any }) => {
       if (!combatResult) return;
 
@@ -561,7 +561,7 @@ export function useGameLoop() {
     setCombatRoundNumber,
   ]);
 
-  const runCombatIteration = useCallback(async () => {
+  const _runCombatIteration = useCallback(async () => {
     // This is now handled by startCombatTurn in the interval
     await startCombatTurn();
   }, [startCombatTurn]);

@@ -5,7 +5,6 @@ import type {
   CombatAction,
   CombatLog,
   CombatRewards,
-  Skill,
 } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { DungeonManager } from '../dungeon/DungeonManager';
@@ -23,12 +22,12 @@ export class CombatEngine {
   private currentTurnIndex: number = 0;
   private actions: CombatAction[] = [];
   private startTime: number = 0;
-  private options: CombatOptions;
+  private _options: CombatOptions;
   private dungeonId?: string; // Store dungeon ID for chest drop logic
   private character: Character | null = null; // Store character reference for skill validation
 
   constructor(options: CombatOptions = {}) {
-    this.options = {
+    this._options = {
       autoCombat: options.autoCombat ?? true,
       combatSpeed: options.combatSpeed ?? 1000,
     };

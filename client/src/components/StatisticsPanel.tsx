@@ -3,13 +3,13 @@ import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { StatisticsManager } from '../systems/statistics/StatisticsManager';
 import { AchievementManager } from '../systems/achievements/AchievementManager';
-import type { Achievement } from '@idle-rpg/shared';
+// Achievement type imported but not used directly
 import './StatisticsPanel.css';
 
 export default function StatisticsPanel() {
   const character = useGameState((state) => state.character);
-  const claimAchievementRewards = useGameState((state) => state.claimAchievementRewards);
-  const setInventory = useGameState((state) => state.setInventory);
+  const _claimAchievementRewards = useGameState((state) => state.claimAchievementRewards);
+  const _setInventory = useGameState((state) => state.setInventory);
 
   const [activeTab, setActiveTab] = useState<'statistics' | 'achievements' | 'completion'>(
     'statistics'

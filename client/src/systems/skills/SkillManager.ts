@@ -1,4 +1,4 @@
-import type { Character, Skill, LearnedSkill } from '@idle-rpg/shared';
+import type { Character, Skill } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 export class SkillManager {

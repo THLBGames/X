@@ -69,8 +69,6 @@ export default function CombatArena({
     });
   }, [combatState.recentActions, addDamageNumber, getDamagePosition, settings.showDamageNumbers]);
 
-  const isPlayerTurn = combatState.currentActor === 'player';
-
   // Get player party (use new structure if available, fallback to old structure)
   // Check both if playerParty exists AND has elements
   let playerParty: ActivePlayerPartyMember[] = [];
@@ -93,7 +91,7 @@ export default function CombatArena({
   }
 
   // Pad player party to 5 slots (player + 4 summon slots)
-  const paddedPlayerParty = [...playerParty];
+  const paddedPlayerParty: (ActivePlayerPartyMember | null)[] = [...playerParty];
   while (paddedPlayerParty.length < 5) {
     paddedPlayerParty.push(null);
   }

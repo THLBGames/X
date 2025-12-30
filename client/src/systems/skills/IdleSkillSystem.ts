@@ -1,4 +1,4 @@
-import type { Character, Skill, IdleSkillLevel, ResourceNode, Mercenary } from '@idle-rpg/shared';
+import type { Character, IdleSkillLevel, ResourceNode } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
 import { UpgradeManager, type UpgradeBonuses } from '../upgrade/UpgradeManager';
@@ -93,9 +93,9 @@ export class IdleSkillSystem {
     const newLevel = Math.min(this.getLevelFromExperience(skillExp, baseExp), skill.maxLevel);
 
     // Calculate experience to next level
-    const totalExpForCurrent = this.calculateTotalExperienceForLevel(newLevel, baseExp);
+    const _totalExpForCurrent = this.calculateTotalExperienceForLevel(newLevel, baseExp);
     const totalExpForNext = this.calculateTotalExperienceForLevel(newLevel + 1, baseExp);
-    const expToNext = totalExpForNext - skillExp;
+    const _expToNext = totalExpForNext - skillExp;
 
     // Update or create skill entry
     const skillIndex = idleSkills.findIndex((s) => s.skillId === skillId);

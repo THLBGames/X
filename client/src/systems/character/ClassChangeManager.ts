@@ -1,4 +1,4 @@
-import type { Character, CharacterClass, Equipment } from '@idle-rpg/shared';
+import type { Character, Equipment } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { CharacterManager } from './CharacterManager';
 import { QuestManager } from '../quest/QuestManager';

@@ -1,4 +1,4 @@
-import type { Character, ResourceNode, ResourceDrop } from '@idle-rpg/shared';
+import type { Character, ResourceNode } from '@idle-rpg/shared';
 import { IdleSkillSystem } from './IdleSkillSystem';
 import { UpgradeManager } from '../upgrade/UpgradeManager';
 

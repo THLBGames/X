@@ -4,7 +4,6 @@ import type {
   SkillUpgrade,
   ActiveUpgrade,
   UpgradeTier,
-  SkillCategory,
 } from '@idle-rpg/shared';
 import type { ShopTransactionResult } from '../shop';
 import { getDataLoader } from '@/data';
@@ -70,8 +69,6 @@ export class UpgradeManager {
     canUpgrade: boolean;
     reason?: string;
   } {
-    const dataLoader = getDataLoader();
-
     // Check skill level requirement
     if (upgrade.requirements?.skillLevel) {
       if (upgrade.scope === 'skill' && upgrade.skillId) {
@@ -224,7 +221,7 @@ export class UpgradeManager {
    */
   static activateConsumable(
     inventory: Inventory,
-    character: Character,
+    _character: Character,
     upgradeId: string
   ): ShopTransactionResult {
     const dataLoader = getDataLoader();

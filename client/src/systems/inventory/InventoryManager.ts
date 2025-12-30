@@ -1,4 +1,4 @@
-import type { Inventory, InventoryItem, Item, Equipment, EquipmentSlot } from '@idle-rpg/shared';
+import type { Inventory, InventoryItem, Equipment, EquipmentSlot } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 export class InventoryManager {
@@ -147,7 +147,7 @@ export class InventoryManager {
   /**
    * Check if item can be equipped
    */
-  static canEquipItem(itemId: string, equipment: Equipment, characterClassId?: string): boolean {
+  static canEquipItem(itemId: string, _equipment: Equipment, characterClassId?: string): boolean {
     const dataLoader = getDataLoader();
     const item = dataLoader.getItem(itemId);
 

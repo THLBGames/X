@@ -19,7 +19,7 @@ export default function SellItemModal({
   onSell,
 }: SellItemModalProps) {
   const [quantity, setQuantity] = useState(1);
-  const dataLoader = getDataLoader();
+  const _dataLoader = getDataLoader();
 
   // Get available quantity of this item
   const availableQuantity = InventoryManager.getItemQuantity(inventory, item.id);

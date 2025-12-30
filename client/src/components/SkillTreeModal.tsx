@@ -21,7 +21,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
   }
 
   const skillTree = SkillManager.getSkillTree(character);
-  const dataLoader = getDataLoader();
+  const _dataLoader = getDataLoader();
 
   // Filter skills
   let filteredSkills = skillTree;

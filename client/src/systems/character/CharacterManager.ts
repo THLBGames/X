@@ -242,7 +242,7 @@ export class CharacterManager {
     const newCombatStats = this.calculateCombatStats(
       newBaseStats,
       character.equipment,
-      character.statusEffects.map((se) => {
+      character.statusEffects.map((_se) => {
         // In a real implementation, you'd load the status effect definition
         return { statModifier: {}, combatStatModifier: {} };
       })
@@ -397,7 +397,7 @@ export class CharacterManager {
     }
 
     // Apply status effect combat stat modifiers
-    for (const effect of character.statusEffects) {
+    for (const _effect of character.statusEffects) {
       // In a real implementation, you'd load the status effect definition
       // For now, status effects don't modify combat stats directly
     }
