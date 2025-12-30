@@ -1,7 +1,7 @@
 {
   "name": "@idle-rpg/electron",
   "version": "1.0.0",
-  "description": "Electron wrapper for Idle RPG",
+  "description": "Electron wrapper for Tales of Heroes, Legends & Beasts",
   "main": "main.js",
   "scripts": {
     "build": "electron-builder",

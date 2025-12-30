@@ -11,6 +11,7 @@ import type {
   Monster,
   ActiveAction,
   ActivePlayerPartyMember,
+  AutoSkillSetting,
 } from '@idle-rpg/shared';
 import { QuestManager } from '../systems/quest/QuestManager';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
@@ -119,6 +120,8 @@ interface GameState {
   setCombatRoundNumber: (round: number) => void;
   setActiveAction: (action: ActiveAction) => void;
   setMaxOfflineHours: (hours: number) => void;
+  updateAutoSkillSetting: (skillId: string, setting: AutoSkillSetting) => void;
+  removeAutoSkillSetting: (skillId: string) => void;
 }
 
 const defaultInventory: Inventory = {
@@ -304,10 +307,16 @@ export const useGameState = create<GameState>((set, get) => ({
       if (!state.character) return {};
       // Limit to 8 skills for combat skill bar
       const limitedSkillBar = skillBar.slice(0, 8);
+
+      // Remove auto-skill settings for skills that are no longer in the skill bar
+      const currentSettings = state.character.autoSkillSettings || [];
+      const updatedSettings = currentSettings.filter((s) => limitedSkillBar.includes(s.skillId));
+
       return {
         character: {
           ...state.character,
           skillBar: limitedSkillBar,
+          autoSkillSettings: updatedSettings,
         },
       };
     }),
@@ -1030,4 +1039,46 @@ export const useGameState = create<GameState>((set, get) => ({
   setActiveAction: (action) => set({ activeAction: action }),
 
   setMaxOfflineHours: (hours) => set({ maxOfflineHours: Math.max(8, hours) }), // Minimum 8 hours
+
+  updateAutoSkillSetting: (skillId, setting) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const currentSettings = state.character.autoSkillSettings || [];
+      const existingIndex = currentSettings.findIndex((s) => s.skillId === skillId);
+
+      let updatedSettings: AutoSkillSetting[];
+      if (existingIndex >= 0) {
+        // Update existing setting
+        updatedSettings = [...currentSettings];
+        updatedSettings[existingIndex] = setting;
+      } else {
+        // Add new setting
+        updatedSettings = [...currentSettings, setting];
+      }
+
+      return {
+        character: {
+          ...state.character,
+          autoSkillSettings: updatedSettings,
+        },
+      };
+    }),
+
+  removeAutoSkillSetting: (skillId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const currentSettings = state.character.autoSkillSettings || [];
+      const updatedSettings = currentSettings.filter(
+        (s: AutoSkillSetting) => s.skillId !== skillId
+      );
+
+      return {
+        character: {
+          ...state.character,
+          autoSkillSettings: updatedSettings,
+        },
+      };
+    }),
 }));

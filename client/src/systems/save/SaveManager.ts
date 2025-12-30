@@ -250,6 +250,11 @@ export class SaveManager {
             characterWithSkills.completedAchievements = [];
           }
 
+          // Ensure autoSkillSettings exists (initialize if missing)
+          if (!characterWithSkills.autoSkillSettings) {
+            characterWithSkills.autoSkillSettings = [];
+          }
+
           return characterWithSkills;
         })()
       : saveData.character;

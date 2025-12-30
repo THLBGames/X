@@ -10,6 +10,7 @@ import GameView from './components/GameView';
 import DebugPanel from './components/DebugPanel';
 import OfflineProgressModal from './components/OfflineProgressModal';
 import NotificationManager, { showNotification } from './components/NotificationManager';
+import LandingScreen from './components/LandingScreen';
 
 // Declare global window interface for debug panel
 declare global {
@@ -27,6 +28,7 @@ function App() {
   const updateSettings = useGameState((state) => state.updateSettings);
   const [isLoading, setIsLoading] = useState(true);
   const [showDebugPanel, setShowDebugPanel] = useState(false);
+  const [showLandingScreen, setShowLandingScreen] = useState(false);
   const [offlineProgress, setOfflineProgress] = useState<{
     hoursOffline: number;
     progress: {
@@ -165,6 +167,15 @@ function App() {
 
     init();
   }, [initialize, setCharacter, setInventory, setDungeonProgress, updateSettings]);
+
+  // Show landing screen if no character exists after loading
+  useEffect(() => {
+    if (!isLoading && !character) {
+      setShowLandingScreen(true);
+    } else if (character) {
+      setShowLandingScreen(false);
+    }
+  }, [isLoading, character]);
 
   // Expose debug panel via window API
   useEffect(() => {
@@ -320,6 +331,15 @@ function App() {
         >
           <div>Loading...</div>
         </div>
+      </div>
+    );
+  }
+
+  // Show landing screen if no character exists
+  if (showLandingScreen && !character) {
+    return (
+      <div className="app">
+        <LandingScreen onEnter={() => setShowLandingScreen(false)} />
       </div>
     );
   }

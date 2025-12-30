@@ -43,3 +43,29 @@
   font-size: 0.8rem;
 }
 
+.skill-button.on-cooldown {
+  position: relative;
+  opacity: 0.6;
+  cursor: not-allowed;
+  overflow: hidden;
+}
+
+.skill-button-cooldown {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  text-shadow: 0 0 4px rgba(255, 107, 107, 0.8);
+  z-index: 2;
+  position: relative;
+}
+
+.skill-button-cooldown-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: height 0.1s linear;
+  pointer-events: none;
+  z-index: 1;
+}

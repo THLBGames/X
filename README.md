@@ -1,4 +1,4 @@
-# Idle RPG Game
+# Tales of Heroes, Legends & Beasts
 
 A data-driven idle RPG game built with React, TypeScript, and Electron. Features class-based characters, dungeon combat zones, hundreds of monsters, thousands of items, and 20+ skills with offline progress support.
 

@@ -6,10 +6,19 @@ export class CombatManager {
 
   /**
    * Start a new combat instance
+   * @param currentHealth Optional: current health to preserve from previous combat
+   * @param currentMana Optional: current mana to preserve from previous combat
    */
-  static startCombat(character: Character, monsters: Monster[], autoCombat: boolean = true, dungeonId?: string): CombatEngine {
+  static startCombat(
+    character: Character,
+    monsters: Monster[],
+    autoCombat: boolean = true,
+    dungeonId?: string,
+    currentHealth?: number,
+    currentMana?: number
+  ): CombatEngine {
     this.combatEngine = new CombatEngine({ autoCombat });
-    this.combatEngine.initialize(character, monsters, dungeonId);
+    this.combatEngine.initialize(character, monsters, dungeonId, currentHealth, currentMana);
     return this.combatEngine;
   }
 
@@ -27,4 +36,3 @@ export class CombatManager {
     this.combatEngine = null;
   }
 }
-

@@ -17,6 +17,24 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
+.game-branding {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #444;
+}
+
+.game-title-branding {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a9eff;
+  text-shadow: 
+    0 0 10px rgba(74, 158, 255, 0.5),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
 .character-creation-container h1 {
   text-align: center;
   margin-bottom: 30px;

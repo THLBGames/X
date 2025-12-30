@@ -196,6 +196,21 @@ export interface CompletedAchievement {
   rewardsClaimed: boolean;
 }
 
+export interface AutoSkillSetting {
+  skillId: string;
+  enabled: boolean; // Whether auto-use is enabled
+  condition:
+    | 'always'
+    | 'never'
+    | 'player_health_below'
+    | 'player_health_above'
+    | 'player_mana_above'
+    | 'enemy_health_below'
+    | 'enemy_health_above';
+  threshold?: number; // Percentage threshold (0-100) for condition types that need it
+  priority?: number; // Priority order (lower = higher priority, 1-8)
+}
+
 // Skill Upgrade system
 export type UpgradeType = 'permanent' | 'consumable';
 export type UpgradeScope = 'skill' | 'category';
@@ -441,6 +456,7 @@ export interface Character {
   consumableUpgrades?: ActiveUpgrade[]; // Active consumable upgrades
   statistics?: GameStatistics; // Game statistics tracking
   completedAchievements?: CompletedAchievement[]; // Completed achievements
+  autoSkillSettings?: AutoSkillSetting[]; // Automatic skill usage settings
 }
 
 export interface LearnedSkill {
@@ -548,6 +564,7 @@ export interface ActiveCombatState {
   turnNumber: number;
   roundNumber: number; // Current round (boss every 10 rounds)
   isBossRound: boolean; // Is this a boss round?
+  skillCooldowns?: Record<string, number>; // skillId -> timestamp when cooldown ends (milliseconds)
 }
 
 // Quest system

@@ -107,6 +107,9 @@ export default function CharacterCreation() {
   return (
     <div className="character-creation">
       <div className="character-creation-container">
+        <div className="game-branding">
+          <h2 className="game-title-branding">Tales of Heroes, Legends & Beasts</h2>
+        </div>
         <h1>Create Your Character</h1>
         
         <div className="character-creation-form">

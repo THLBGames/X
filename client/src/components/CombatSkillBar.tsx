@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
+import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
+import type { AutoSkillSetting } from '@idle-rpg/shared';
 import SkillButton from './SkillButton';
 import SkillTreeModal from './SkillTreeModal';
+import AutoSkillConfigModal from './AutoSkillConfigModal';
+import TooltipWrapper from './TooltipWrapper';
 import './CombatSkillBar.css';
 
 interface CombatSkillBarProps {
@@ -12,10 +16,27 @@ interface CombatSkillBarProps {
 export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
   const character = useGameState((state) => state.character);
   const currentCombatState = useGameState((state) => state.currentCombatState);
+  const isCombatActive = useGameState((state) => state.isCombatActive);
+  const updateAutoSkillSetting = useGameState((state) => state.updateAutoSkillSetting);
   const isPlayerTurn = currentCombatState?.currentActor === 'player';
   const playerMana = currentCombatState?.playerMana || 0;
   const dataLoader = getDataLoader();
   const [showSkillTree, setShowSkillTree] = useState(false);
+  const [configSkillId, setConfigSkillId] = useState<string | null>(null);
+
+  // Update cooldown display in real-time
+  const [, setCooldownUpdate] = useState(0);
+  useEffect(() => {
+    if (!isCombatActive || !currentCombatState?.skillCooldowns) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setCooldownUpdate((prev) => prev + 1);
+    }, 100); // Update every 100ms for smooth cooldown display
+
+    return () => clearInterval(interval);
+  }, [isCombatActive, currentCombatState?.skillCooldowns]);
 
   // Handle keyboard shortcuts (1-8)
   useEffect(() => {
@@ -83,24 +104,98 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
             );
           }
 
-          const canUse = playerMana >= (skill.manaCost || 0);
+          // Check cooldown
+          const skillCooldowns = currentCombatState?.skillCooldowns || {};
+          const cooldownEndTime = skillCooldowns[skillId] || 0;
+          const now = Date.now();
+          const isOnCooldown = cooldownEndTime > 0 && now < cooldownEndTime;
+          const cooldownRemaining = isOnCooldown ? Math.ceil((cooldownEndTime - now) / 1000) : 0;
+
+          const canUse = playerMana >= (skill.manaCost || 0) && !isOnCooldown;
           const skillLevel =
             character.learnedSkills.find((ls) => ls.skillId === skillId)?.level || 0;
+          const autoSetting = AutoSkillManager.getAutoSkillSetting(character, skillId);
+          const hasAutoUse = autoSetting.enabled && autoSetting.condition !== 'never';
+
+          const getConditionTooltip = (setting: AutoSkillSetting): string => {
+            if (!setting.enabled || setting.condition === 'never') {
+              return 'Manual use only';
+            }
+            switch (setting.condition) {
+              case 'always':
+                return 'Auto: Always use when available';
+              case 'player_health_below':
+                return `Auto: Use when player health < ${setting.threshold}%`;
+              case 'player_health_above':
+                return `Auto: Use when player health > ${setting.threshold}%`;
+              case 'player_mana_above':
+                return `Auto: Use when player mana > ${setting.threshold}%`;
+              case 'enemy_health_below':
+                return `Auto: Use when enemy health < ${setting.threshold}%`;
+              case 'enemy_health_above':
+                return `Auto: Use when enemy health > ${setting.threshold}%`;
+              default:
+                return 'Manual use only';
+            }
+          };
 
           return (
-            <div key={index} className={`skill-slot ${!canUse || !isPlayerTurn ? 'disabled' : ''}`}>
-              <div className="skill-slot-number">{index + 1}</div>
-              <SkillButton
-                skill={skill}
-                mana={playerMana}
-                onUse={() => onSkillUse(skillId)}
-                disabled={!canUse || !isPlayerTurn}
-              />
-              {skillLevel > 0 && <div className="skill-level-indicator">Lv.{skillLevel}</div>}
-            </div>
+            <TooltipWrapper key={index} content={getConditionTooltip(autoSetting)}>
+              <div
+                className={`skill-slot ${!canUse || !isPlayerTurn || isOnCooldown ? 'disabled' : ''} ${isOnCooldown ? 'on-cooldown' : ''}`}
+              >
+                <div className="skill-slot-number">{index + 1}</div>
+                <SkillButton
+                  skill={skill}
+                  mana={playerMana}
+                  onUse={() => onSkillUse(skillId)}
+                  disabled={!canUse || !isPlayerTurn || isOnCooldown}
+                  cooldownRemaining={cooldownRemaining}
+                />
+                {skillLevel > 0 && <div className="skill-level-indicator">Lv.{skillLevel}</div>}
+                {hasAutoUse && (
+                  <div
+                    className={`skill-auto-indicator ${
+                      autoSetting.condition === 'player_health_below' ||
+                      autoSetting.condition === 'enemy_health_below'
+                        ? 'auto-heal'
+                        : autoSetting.condition === 'player_health_above' ||
+                            autoSetting.condition === 'enemy_health_above'
+                          ? 'auto-damage'
+                          : 'auto-default'
+                    }`}
+                    title={getConditionTooltip(autoSetting)}
+                  >
+                    A
+                  </div>
+                )}
+                <button
+                  className="skill-settings-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setConfigSkillId(skillId);
+                  }}
+                  title="Configure auto-skill settings"
+                >
+                  ⚙
+                </button>
+              </div>
+            </TooltipWrapper>
           );
         })}
       </div>
+      {configSkillId && character && (
+        <AutoSkillConfigModal
+          isOpen={true}
+          skillId={configSkillId}
+          currentSetting={AutoSkillManager.getAutoSkillSetting(character, configSkillId)}
+          onClose={() => setConfigSkillId(null)}
+          onSave={(setting) => {
+            updateAutoSkillSetting(configSkillId, setting);
+            setConfigSkillId(null);
+          }}
+        />
+      )}
     </div>
   );
 }

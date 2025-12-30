@@ -1,7 +1,7 @@
 {
   "name": "@idle-rpg/shared",
   "version": "1.0.0",
-  "description": "Shared types and utilities for Idle RPG",
+  "description": "Shared types and utilities for Tales of Heroes, Legends & Beasts",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {

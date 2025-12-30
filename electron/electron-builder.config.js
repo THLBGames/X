@@ -1,6 +1,6 @@
 module.exports = {
   appId: 'com.idlerpg.game',
-  productName: 'Idle RPG',
+  productName: 'Tales of Heroes, Legends & Beasts',
   directories: {
     output: 'dist-electron',
   },

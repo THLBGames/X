@@ -1,7 +1,7 @@
 {
   "name": "idle-rpg",
   "version": "1.0.0",
-  "description": "Data-driven idle RPG game for web and Steam",
+  "description": "Tales of Heroes, Legends & Beasts - A data-driven idle RPG game for web and Steam",
   "private": true,
   "workspaces": [
     "client",

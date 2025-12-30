@@ -5,6 +5,7 @@ import { getSaveManager } from '../systems/save';
 import { CombatManager } from '../systems/combat/CombatManager';
 import { DungeonManager } from '../systems/dungeon';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
+import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
 import { getDataLoader } from '../data';
 
 // Global state for combat stats (shared across component instances)
@@ -132,6 +133,15 @@ export function useGameLoop() {
         const roundNum = state.combatRoundNumber || 0;
         const isBossRound = roundNum > 0 && roundNum % 10 === 0;
 
+        // Get current player health/mana from previous combat state (if exists)
+        // This preserves health/mana between rounds
+        const previousCombatState = state.currentCombatState;
+        const currentPlayerHealth =
+          previousCombatState?.playerParty?.[0]?.currentHealth ??
+          state.character.combatStats.health;
+        const currentPlayerMana =
+          previousCombatState?.playerParty?.[0]?.currentMana ?? state.character.combatStats.mana;
+
         // Spawn 1-5 monsters for this round
         const monsters = DungeonManager.spawnMonsterWave(
           dungeon,
@@ -147,7 +157,9 @@ export function useGameLoop() {
           state.character,
           monsters,
           state.settings.autoCombat,
-          state.currentDungeonId || undefined
+          state.currentDungeonId || undefined,
+          currentPlayerHealth,
+          currentPlayerMana
         );
 
         // Initialize combat state
@@ -172,11 +184,36 @@ export function useGameLoop() {
       }
     }
 
-    // Execute one turn
-    const queuedSkillId = state.queuedSkillId;
+    // Check for auto-skill usage if no manual skill is queued
+    let queuedSkillId = state.queuedSkillId;
+    if (!queuedSkillId && state.character) {
+      const player = combatEngine.getPlayer();
+      const monsters = combatEngine.getMonsters();
+      const firstAliveMonster = monsters.find((m) => m.isAlive);
+
+      if (player && firstAliveMonster) {
+        const autoSkillId = AutoSkillManager.selectAutoSkill(
+          state.character,
+          player.currentHealth,
+          player.stats.maxHealth,
+          player.currentMana,
+          player.stats.maxMana,
+          firstAliveMonster.currentHealth,
+          firstAliveMonster.stats.maxHealth
+        );
+
+        if (autoSkillId) {
+          queuedSkillId = autoSkillId;
+          queueSkill(autoSkillId);
+        }
+      }
+    }
+
+    // Clear queue after getting the skill (or use the queued one)
+    const skillToUse = queuedSkillId;
     queueSkill(null); // Clear queue
 
-    const combatLog = combatEngine.executeTurn(queuedSkillId);
+    const combatLog = combatEngine.executeTurn(skillToUse);
 
     // Update combat state
     const player = combatEngine.getPlayer();
@@ -320,6 +357,7 @@ export function useGameLoop() {
           currentMonsterIndex,
           recentActions,
           turnNumber: combatEngine.getTurnNumber(),
+          skillCooldowns: combatEngine.getSkillCooldowns(),
         });
       } else {
         // No monsters in state yet, just update player stats (don't touch monsters)
@@ -331,6 +369,7 @@ export function useGameLoop() {
           currentPlayerIndex,
           recentActions,
           turnNumber: combatEngine.getTurnNumber(),
+          skillCooldowns: combatEngine.getSkillCooldowns(),
         });
       }
 
@@ -648,12 +687,23 @@ export function useGameLoop() {
           );
 
           if (newMonsters.length > 0) {
+            // Get current player health/mana from previous combat state to preserve between rounds
+            const previousCombatState = updatedState.currentCombatState;
+            const currentPlayerHealth =
+              previousCombatState?.playerParty?.[0]?.currentHealth ??
+              updatedState.character.combatStats.health;
+            const currentPlayerMana =
+              previousCombatState?.playerParty?.[0]?.currentMana ??
+              updatedState.character.combatStats.mana;
+
             // Start new combat with new monsters
             const newCombatEngine = CombatManager.startCombat(
               updatedState.character,
               newMonsters,
               updatedState.settings.autoCombat,
-              updatedState.currentDungeonId || undefined
+              updatedState.currentDungeonId || undefined,
+              currentPlayerHealth,
+              currentPlayerMana
             );
 
             // Initialize combat state for new round

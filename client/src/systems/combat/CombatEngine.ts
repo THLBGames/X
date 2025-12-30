@@ -26,6 +26,7 @@ export class CombatEngine {
   private _options: CombatOptions;
   private dungeonId?: string; // Store dungeon ID for chest drop logic
   private character: Character | null = null; // Store character reference for skill validation
+  private skillCooldowns: Map<string, number> = new Map(); // skillId -> timestamp when cooldown ends (milliseconds)
 
   constructor(options: CombatOptions = {}) {
     this._options = {
@@ -36,20 +37,32 @@ export class CombatEngine {
 
   /**
    * Initialize combat with player character and monsters
+   * @param currentHealth Optional: current health to preserve from previous combat (defaults to max)
+   * @param currentMana Optional: current mana to preserve from previous combat (defaults to max)
    */
-  initialize(character: Character, monsters: Monster[], dungeonId?: string): void {
+  initialize(
+    character: Character,
+    monsters: Monster[],
+    dungeonId?: string,
+    currentHealth?: number,
+    currentMana?: number
+  ): void {
     this.character = character;
     this.dungeonId = dungeonId;
+
+    // Use provided current health/mana, or default to max values
+    const playerHealth = currentHealth !== undefined ? currentHealth : character.combatStats.health;
+    const playerMana = currentMana !== undefined ? currentMana : character.combatStats.mana;
 
     const player: CombatParticipant = {
       id: 'player',
       name: character.name,
       isPlayer: true,
       stats: { ...character.combatStats },
-      currentHealth: character.combatStats.health,
-      currentMana: character.combatStats.mana,
+      currentHealth: Math.min(Math.max(0, playerHealth), character.combatStats.health), // Clamp to valid range
+      currentMana: Math.min(Math.max(0, playerMana), character.combatStats.mana), // Clamp to valid range
       statusEffects: [],
-      isAlive: true,
+      isAlive: playerHealth > 0,
     };
 
     // Add combat mercenaries as participants
@@ -140,6 +153,16 @@ export class CombatEngine {
       if (skill && learnedSkill && learnedSkill.level > 0) {
         // Check if skill is active type
         if (skill.type === 'active' && skill.effect) {
+          // Check cooldown
+          if (skill.cooldown && skill.cooldown > 0) {
+            const cooldownEndTime = this.skillCooldowns.get(queuedSkillId) || 0;
+            const now = Date.now();
+            if (now < cooldownEndTime) {
+              // Skill is on cooldown, fall back to basic attack
+              return this.executeBasicAttack(actor);
+            }
+          }
+
           // Check mana cost
           const manaCost = skill.manaCost || 0;
           if (actor.currentMana >= manaCost) {
@@ -249,6 +272,12 @@ export class CombatEngine {
               if (skill.effect.debuffId) {
                 action.effects.push(skill.effect.debuffId);
               }
+            }
+
+            // Set cooldown if skill has one
+            if (skill.cooldown && skill.cooldown > 0) {
+              const cooldownEndTime = Date.now() + skill.cooldown * 1000; // Convert seconds to milliseconds
+              this.skillCooldowns.set(queuedSkillId, cooldownEndTime);
             }
 
             return action;
@@ -651,5 +680,33 @@ export class CombatEngine {
    */
   getTurnNumber(): number {
     return Math.floor(this.actions.length / this.participants.length);
+  }
+
+  /**
+   * Get skill cooldowns as a record (for state updates)
+   */
+  getSkillCooldowns(): Record<string, number> {
+    const cooldowns: Record<string, number> = {};
+    this.skillCooldowns.forEach((endTime, skillId) => {
+      cooldowns[skillId] = endTime;
+    });
+    return cooldowns;
+  }
+
+  /**
+   * Check if a skill is on cooldown
+   */
+  isSkillOnCooldown(skillId: string): boolean {
+    const cooldownEndTime = this.skillCooldowns.get(skillId) || 0;
+    return Date.now() < cooldownEndTime;
+  }
+
+  /**
+   * Get remaining cooldown time for a skill (in seconds)
+   */
+  getSkillCooldownRemaining(skillId: string): number {
+    const cooldownEndTime = this.skillCooldowns.get(skillId) || 0;
+    const remaining = cooldownEndTime - Date.now();
+    return remaining > 0 ? Math.ceil(remaining / 1000) : 0;
   }
 }
