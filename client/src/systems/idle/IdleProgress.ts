@@ -1,6 +1,7 @@
 import type { Character, CombatLog, CombatRewards, ActiveAction } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { CombatEngine } from '../combat';
+import { AutoSkillManager } from '../combat/AutoSkillManager';
 import { DungeonManager } from '../dungeon';
 import { CharacterManager } from '../character';
 import { ResourceNodeManager } from '../skills/ResourceNodeManager';
@@ -66,15 +67,10 @@ export class IdleProgress {
 
       // Simulate combat (assume victory)
       const rewards: CombatRewards = {
-        experience: DungeonManager.calculateExperienceReward(
-          monster.experienceReward,
-          dungeon
-        ),
+        experience: DungeonManager.calculateExperienceReward(monster.experienceReward, dungeon),
         gold: DungeonManager.calculateGoldReward(
           monster.goldReward.min +
-            Math.floor(
-              Math.random() * (monster.goldReward.max - monster.goldReward.min + 1)
-            ),
+            Math.floor(Math.random() * (monster.goldReward.max - monster.goldReward.min + 1)),
           dungeon
         ),
         items: DungeonManager.generateLoot(monster.lootTable),
@@ -130,7 +126,9 @@ export class IdleProgress {
 
     // Find the node to use
     let node = nodeId
-      ? IdleSkillSystem.getAvailableResourceNodes(character, skillId).find((n) => n.nodeId === nodeId)
+      ? IdleSkillSystem.getAvailableResourceNodes(character, skillId).find(
+          (n) => n.nodeId === nodeId
+        )
       : ResourceNodeManager.getBestAvailableNode(character, skillId);
 
     if (!node) {
@@ -321,13 +319,22 @@ export class IdleProgress {
     let updatedCharacter = character;
 
     if (activeAction.type === 'combat') {
-      // Process combat offline progress
-      progress = this.calculateOfflineCombatProgress(character, activeAction.dungeonId, actualOfflineTimeMs);
+      // Process combat offline progress using real combat engine
+      progress = this.calculateOfflineCombatProgress(
+        character,
+        activeAction.dungeonId,
+        actualOfflineTimeMs
+      );
 
       // Apply experience
       if (progress.experience > 0) {
         const result = CharacterManager.addExperience(updatedCharacter, progress.experience);
         updatedCharacter = result.character;
+
+        // Recalculate stats if leveled up
+        if (result.leveledUp) {
+          updatedCharacter = CharacterManager.updateCharacterStats(updatedCharacter);
+        }
       }
 
       // If player died, don't update character further
@@ -348,7 +355,11 @@ export class IdleProgress {
 
       // Apply skill experience
       if (progress.experience > 0) {
-        const result = IdleSkillSystem.addSkillExperience(updatedCharacter, activeAction.skillId, progress.experience);
+        const result = IdleSkillSystem.addSkillExperience(
+          updatedCharacter,
+          activeAction.skillId,
+          progress.experience
+        );
         updatedCharacter = result.character;
       }
     } else {
@@ -370,7 +381,7 @@ export class IdleProgress {
   }
 
   /**
-   * Calculate offline combat progress with death detection
+   * Calculate offline combat progress with death detection using real combat engine
    */
   static calculateOfflineCombatProgress(
     character: Character,
@@ -400,7 +411,7 @@ export class IdleProgress {
     const offlineCombatTime = offlineTimeSeconds * config.idle.offlineExpRate;
     const maxCombats = Math.floor(offlineCombatTime / avgCombatTime);
 
-    // Simulate combats with death detection
+    // Simulate combats using real combat engine
     let totalExperience = 0;
     let totalGold = 0;
     const items: Array<{ itemId: string; quantity: number }> = [];
@@ -408,46 +419,106 @@ export class IdleProgress {
     let combatsCompleted = 0;
     let playerDied = false;
 
-    for (let i = 0; i < maxCombats; i++) {
-      const monster = DungeonManager.spawnMonster(dungeon, character.level);
-      if (!monster) {
+    // Track current character state (health/mana) between combats
+    let currentCharacter = character;
+    let currentHealth = character.combatStats.health;
+    let currentMana = character.combatStats.mana;
+
+    for (let combatIndex = 0; combatIndex < maxCombats; combatIndex++) {
+      // Determine if this is a boss round (every 10 combats, starting at combat 10, 20, 30, etc.)
+      const roundNumber = combatIndex + 1;
+      const isBossRound = roundNumber > 0 && roundNumber % 10 === 0;
+
+      // Spawn monsters using the same logic as online combat (1-5 monsters, bosses on boss rounds)
+      const monsters = DungeonManager.spawnMonsterWave(
+        dungeon,
+        currentCharacter.level,
+        isBossRound
+      );
+
+      if (monsters.length === 0) {
         continue;
       }
 
-      // Simplified combat simulation - check if player would win or die
-      // This is a simplified version - in a real implementation, you'd run full combat simulation
-      const playerPower = character.combatStats.attack + character.combatStats.magicAttack;
-      const monsterHealth = monster.stats.maxHealth || monster.stats.health;
-      const monsterPower = (monster.stats.attack || 0) + (monster.stats.magicAttack || 0);
+      // Create combat engine instance
+      const combatEngine = new CombatEngine({ autoCombat: true });
+      combatEngine.initialize(currentCharacter, monsters, dungeonId, currentHealth, currentMana);
 
-      // Estimate turns needed
-      const playerTurnsToKill = Math.ceil(monsterHealth / playerPower);
-      const monsterTurnsToKill = Math.ceil(character.combatStats.maxHealth / monsterPower);
+      // Run combat until victory or defeat
+      let combatLog: CombatLog | null = null;
+      const maxTurns = 1000; // Safety limit to prevent infinite loops
+      let turnCount = 0;
 
-      // Player dies if monster would kill them first
-      if (monsterTurnsToKill < playerTurnsToKill) {
-        playerDied = true;
-        break; // Stop processing if player dies
+      while (combatLog === null && turnCount < maxTurns) {
+        // Get current combat state for auto-skill selection
+        const player = combatEngine.getPlayer();
+        const combatMonsters = combatEngine.getMonsters();
+        const firstAliveMonster = combatMonsters.find((m) => m.isAlive);
+
+        let queuedSkillId: string | null = null;
+
+        // Use auto-skill manager to select skill (same as online combat)
+        if (player && firstAliveMonster && currentCharacter) {
+          queuedSkillId =
+            AutoSkillManager.selectAutoSkill(
+              currentCharacter,
+              player.currentHealth,
+              player.stats.maxHealth,
+              player.currentMana,
+              player.stats.maxMana,
+              firstAliveMonster.currentHealth,
+              firstAliveMonster.stats.maxHealth
+            ) || null;
+        }
+
+        // Execute turn
+        combatLog = combatEngine.executeTurn(queuedSkillId);
+        turnCount++;
       }
 
-      // Player wins
-      const rewards: CombatRewards = {
-        experience: DungeonManager.calculateExperienceReward(monster.experienceReward, dungeon),
-        gold: DungeonManager.calculateGoldReward(
-          monster.goldReward.min +
-            Math.floor(Math.random() * (monster.goldReward.max - monster.goldReward.min + 1)),
-          dungeon
-        ),
-        items: DungeonManager.generateLoot(monster.lootTable),
-      };
+      // Handle combat result
+      if (!combatLog) {
+        // Combat didn't complete (safety limit reached or error)
+        console.warn('Offline combat did not complete within turn limit');
+        break;
+      }
 
-      totalExperience += rewards.experience;
-      totalGold += rewards.gold;
-      combatsCompleted++;
+      if (combatLog.result === 'defeat') {
+        // Player died - stop processing
+        playerDied = true;
+        break;
+      }
 
-      // Aggregate items
-      for (const lootItem of rewards.items) {
-        itemCounts[lootItem.itemId] = (itemCounts[lootItem.itemId] || 0) + lootItem.quantity;
+      if (combatLog.result === 'victory' && combatLog.rewards) {
+        // Player won - collect rewards
+        const combatExp = combatLog.rewards.experience || 0;
+        totalExperience += combatExp;
+        totalGold += combatLog.rewards.gold || 0;
+        combatsCompleted++;
+
+        // Aggregate items
+        for (const lootItem of combatLog.rewards.items || []) {
+          itemCounts[lootItem.itemId] = (itemCounts[lootItem.itemId] || 0) + lootItem.quantity;
+        }
+
+        // Note: Experience is accumulated but not applied during offline simulation
+        // It will be applied once at the end in processOfflineActionProgress
+        // Character stats remain constant during offline progress for consistency
+
+        // Get player's health/mana after combat for next combat
+        const playerAfterCombat = combatEngine.getPlayer();
+        if (playerAfterCombat) {
+          currentHealth = playerAfterCombat.currentHealth;
+          currentMana = playerAfterCombat.currentMana;
+
+          // Clamp to valid ranges
+          currentHealth = Math.max(0, Math.min(currentHealth, currentCharacter.combatStats.health));
+          currentMana = Math.max(0, Math.min(currentMana, currentCharacter.combatStats.mana));
+        } else {
+          // If player is dead somehow, restore to max
+          currentHealth = currentCharacter.combatStats.health;
+          currentMana = currentCharacter.combatStats.mana;
+        }
       }
     }
 
@@ -507,15 +578,11 @@ export class IdleProgress {
     const avgCombatTime = this.estimateCombatTime(character.level, avgMonster.level);
     const combatsPerHour = 3600 / avgCombatTime; // 3600 seconds per hour
 
-    const baseExp = DungeonManager.calculateExperienceReward(
-      avgMonster.experienceReward,
+    const baseExp = DungeonManager.calculateExperienceReward(avgMonster.experienceReward, dungeon);
+    const baseGold = DungeonManager.calculateGoldReward(
+      (avgMonster.goldReward.min + avgMonster.goldReward.max) / 2,
       dungeon
     );
-    const baseGold =
-      DungeonManager.calculateGoldReward(
-        (avgMonster.goldReward.min + avgMonster.goldReward.max) / 2,
-        dungeon
-      );
 
     return {
       experiencePerHour: Math.floor(baseExp * combatsPerHour),
@@ -523,4 +590,3 @@ export class IdleProgress {
     };
   }
 }
-
