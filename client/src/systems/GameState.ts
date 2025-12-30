@@ -834,6 +834,11 @@ export const useGameState = create<GameState>((set, get) => ({
       // Consolidate inventory to fix any stacking issues
       const consolidatedInventory = InventoryManager.consolidateInventory(saveData.inventory);
 
+      // If we have an active combat action but no currentDungeonId, set it from the action
+      const dungeonId =
+        saveData.currentDungeonId ||
+        (saveData.activeAction?.type === 'combat' ? saveData.activeAction.dungeonId : null);
+
       set({
         character: {
           ...saveData.character,
@@ -844,7 +849,7 @@ export const useGameState = create<GameState>((set, get) => ({
         dungeonProgress: saveData.dungeonProgress,
         settings: saveData.settings,
         isInitialized: true,
-        currentDungeonId: saveData.currentDungeonId,
+        currentDungeonId: dungeonId,
         combatRoundNumber: 0,
         activeAction: saveData.activeAction ?? null,
         maxOfflineHours: saveData.maxOfflineHours ?? 8,

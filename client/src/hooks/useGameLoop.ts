@@ -43,6 +43,7 @@ export function useGameLoop() {
   useEffect(() => {
     const currentActiveAction = activeAction;
     const currentCharacter = character;
+    const currentDungeonIdState = currentDungeonId;
 
     // Only proceed if we have a valid combat action and combat is not already active
     if (
@@ -58,9 +59,25 @@ export function useGameLoop() {
 
     // Resume combat by calling startCombat
     // This will set isCombatActive to true and the combat loop will start
-    console.log('Resuming combat after offline progress:', dungeonId);
-    startCombat(dungeonId);
-  }, [activeAction, character, isCombatActive, startCombat]);
+    // Use a small delay to ensure state updates have propagated
+    console.log(
+      'Resuming combat after offline progress:',
+      dungeonId,
+      'currentDungeonId:',
+      currentDungeonIdState
+    );
+
+    // Use setTimeout to ensure this runs after any pending state updates
+    const timeoutId = setTimeout(() => {
+      const state = useGameState.getState();
+      // Double-check that combat isn't already active (might have been started by another effect)
+      if (!state.isCombatActive && state.activeAction?.type === 'combat') {
+        startCombat(dungeonId);
+      }
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, [activeAction, character, isCombatActive, currentDungeonId, startCombat]);
 
   // Reset combat stats when combat starts
   useEffect(() => {
@@ -123,6 +140,7 @@ export function useGameLoop() {
               settings: currentState.settings,
               lastSaved: now,
               lastOfflineTime: now,
+              currentDungeonId: currentState.currentDungeonId ?? undefined,
               activeAction: currentState.activeAction ?? null,
               maxOfflineHours: currentState.maxOfflineHours ?? 8,
             };

@@ -262,6 +262,7 @@ function App() {
             settings: currentState.settings,
             lastSaved: Date.now(),
             lastOfflineTime: Date.now(), // Update lastOfflineTime periodically
+            currentDungeonId: currentState.currentDungeonId ?? undefined,
             activeAction: currentState.activeAction ?? null,
             maxOfflineHours: currentState.maxOfflineHours ?? 8,
           };
@@ -287,6 +288,7 @@ function App() {
             settings: currentState.settings,
             lastSaved: Date.now(),
             lastOfflineTime: Date.now(),
+            currentDungeonId: currentState.currentDungeonId ?? undefined,
             activeAction: currentState.activeAction ?? null,
             maxOfflineHours: currentState.maxOfflineHours ?? 8,
           };
