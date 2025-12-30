@@ -1,0 +1,11 @@
+{
+  "id": "small_fish",
+  "name": "Small Fish",
+  "description": "A small fish caught while fishing.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

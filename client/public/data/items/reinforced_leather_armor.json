@@ -1,0 +1,22 @@
+{
+  "id": "reinforced_leather_armor",
+  "name": "Reinforced Leather Armor",
+  "description": "Sturdy leather armor with metal reinforcements.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 250,
+  "requirements": {
+    "level": 25,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "chest",
+  "statBonuses": {
+    "dexterity": 5,
+    "vitality": 2
+  },
+  "combatStatBonuses": {
+    "defense": 18
+  }
+}
+

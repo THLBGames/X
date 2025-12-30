@@ -1,0 +1,23 @@
+{
+  "id": "phantom_mask",
+  "name": "Phantom Mask",
+  "description": "A mask that conceals the wearer.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 300000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "dexterity": 20
+  },
+  "combatStatBonuses": {
+    "defense": 30,
+    "speed": 20
+  }
+}

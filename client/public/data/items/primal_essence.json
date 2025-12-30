@@ -1,0 +1,10 @@
+{
+  "id": "primal_essence",
+  "name": "Primal Essence",
+  "description": "Essence from the beginning of time.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000
+}

@@ -1,0 +1,10 @@
+{
+  "id": "order_shard",
+  "name": "Order Shard",
+  "description": "A shard of pure order.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1800
+}

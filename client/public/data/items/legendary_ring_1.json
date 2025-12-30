@@ -1,0 +1,20 @@
+{
+  "id": "legendary_ring_1",
+  "name": "Legendary Ring #2",
+  "description": "A legendary ring.",
+  "type": "accessory",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 25000,
+  "requirements": {
+    "level": 86
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "intelligence": 20
+  },
+  "combatStatBonuses": {
+    "magicAttack": 50,
+    "mana": 200
+  }
+}

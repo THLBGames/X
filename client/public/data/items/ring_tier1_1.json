@@ -1,0 +1,19 @@
+{
+  "id": "ring_tier1_1",
+  "name": "Ring Tier 1 #1",
+  "description": "A ring from tier 1.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "strength": 2
+  },
+  "combatStatBonuses": {
+    "attack": 4
+  }
+}

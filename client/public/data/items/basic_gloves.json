@@ -1,0 +1,20 @@
+{
+  "id": "basic_gloves",
+  "name": "Basic Gloves",
+  "description": "Simple gloves for hand protection.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 28,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "vitality": 1
+  },
+  "combatStatBonuses": {
+    "defense": 2
+  }
+}
+

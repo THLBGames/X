@@ -1,0 +1,11 @@
+{
+  "id": "precious_metal",
+  "name": "Precious Metal",
+  "description": "Refined precious metal for high-tier jewelry.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 200
+}
+

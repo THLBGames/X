@@ -1,0 +1,20 @@
+{
+  "id": "fill_amulet_t2",
+  "name": "Filler Amulet T2",
+  "description": "A filler amulet.",
+  "type": "accessory",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 50,
+  "requirements": {
+    "level": 16
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "vitality": 1,
+    "luck": 1
+  },
+  "combatStatBonuses": {
+    "defense": 3
+  }
+}

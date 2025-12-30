@@ -1,0 +1,23 @@
+{
+  "id": "steel_mace",
+  "name": "Steel Mace",
+  "description": "A well-forged steel mace.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 1200,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 7,
+    "vitality": 2
+  },
+  "combatStatBonuses": {
+    "attack": 22
+  }
+}

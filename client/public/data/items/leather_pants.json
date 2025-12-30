@@ -1,0 +1,22 @@
+{
+  "id": "leather_pants",
+  "name": "Leather Pants",
+  "description": "Light leather pants for agile fighters.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 35,
+  "requirements": {
+    "level": 1,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "legs",
+  "statBonuses": {
+    "dexterity": 2
+  },
+  "combatStatBonuses": {
+    "defense": 4,
+    "speed": 3
+  }
+}
+

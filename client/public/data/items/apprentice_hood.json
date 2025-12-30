@@ -1,0 +1,23 @@
+{
+  "id": "apprentice_hood",
+  "name": "Apprentice Hood",
+  "description": "A hood for apprentice mages.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 320,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "intelligence": 3
+  },
+  "combatStatBonuses": {
+    "magicDefense": 7,
+    "mana": 22
+  }
+}

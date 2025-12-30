@@ -1,0 +1,11 @@
+{
+  "id": "rare_item",
+  "name": "Rare Item",
+  "description": "A rare item used in enchanting.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 80
+}
+

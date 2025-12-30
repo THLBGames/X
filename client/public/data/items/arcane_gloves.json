@@ -1,0 +1,24 @@
+{
+  "id": "arcane_gloves",
+  "name": "Arcane Gloves",
+  "description": "Gloves infused with arcane power.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 460,
+  "requirements": {
+    "level": 36,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "intelligence": 6,
+    "wisdom": 2
+  },
+  "combatStatBonuses": {
+    "magicDefense": 16,
+    "magicAttack": 8,
+    "mana": 65
+  }
+}
+

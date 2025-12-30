@@ -1,0 +1,11 @@
+{
+  "id": "granite",
+  "name": "Granite",
+  "description": "Durable granite stone for construction.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10
+}
+

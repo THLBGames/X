@@ -1,0 +1,11 @@
+{
+  "id": "pearl",
+  "name": "Pearl",
+  "description": "A beautiful pearl found in shells.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25
+}
+

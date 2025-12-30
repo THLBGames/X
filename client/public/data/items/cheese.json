@@ -1,0 +1,14 @@
+{
+  "id": "cheese",
+  "name": "Cheese",
+  "description": "A block of cheese that restores health.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 8,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 40
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "mage_robes_bottom",
+  "name": "Mage Robe Bottom",
+  "description": "The bottom portion of mage robes.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 38,
+  "requirements": {
+    "level": 1,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "legs",
+  "statBonuses": {
+    "intelligence": 1
+  },
+  "combatStatBonuses": {
+    "magicDefense": 4,
+    "mana": 12
+  }
+}
+

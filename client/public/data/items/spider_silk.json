@@ -1,0 +1,11 @@
+{
+  "id": "spider_silk",
+  "name": "Spider Silk",
+  "description": "Strong silk threads from a giant spider.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10
+}
+

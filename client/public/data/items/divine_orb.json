@@ -1,0 +1,24 @@
+{
+  "id": "divine_orb",
+  "name": "Divine Orb",
+  "description": "An orb blessed with divine magic.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 325000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "offhand",
+  "statBonuses": {
+    "intelligence": 50,
+    "wisdom": 20
+  },
+  "combatStatBonuses": {
+    "magicAttack": 100,
+    "mana": 400
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "mage_slippers",
+  "name": "Mage Slippers",
+  "description": "Light slippers that enhance magical movement.",
+  "type": "armor",
+  "rarity": "common",
+  "stackable": false,
+  "value": 45,
+  "requirements": {
+    "level": 1,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "boots",
+  "statBonuses": {
+    "intelligence": 1
+  },
+  "combatStatBonuses": {
+    "magicDefense": 4,
+    "mana": 10
+  }
+}
+

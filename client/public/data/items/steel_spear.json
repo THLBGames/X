@@ -1,0 +1,23 @@
+{
+  "id": "steel_spear",
+  "name": "Steel Spear",
+  "description": "A well-forged steel spear.",
+  "type": "weapon",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 1300,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 7,
+    "vitality": 2
+  },
+  "combatStatBonuses": {
+    "attack": 25
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "mutton",
+  "name": "Mutton",
+  "description": "Cooked mutton that restores health.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 35,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 100
+  }
+}

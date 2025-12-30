@@ -1,0 +1,23 @@
+{
+  "id": "enchanted_hood",
+  "name": "Enchanted Hood",
+  "description": "A hood with magical enchantments.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 2400,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "intelligence": 5
+  },
+  "combatStatBonuses": {
+    "magicDefense": 12,
+    "mana": 37
+  }
+}

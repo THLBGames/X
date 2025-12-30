@@ -1,0 +1,24 @@
+{
+  "id": "dragonhide_armor",
+  "name": "Dragonhide Armor",
+  "description": "Armor crafted from dragon hide.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 375000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "chest",
+  "statBonuses": {
+    "dexterity": 20,
+    "vitality": 10
+  },
+  "combatStatBonuses": {
+    "defense": 50,
+    "speed": 30
+  }
+}

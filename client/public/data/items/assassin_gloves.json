@@ -1,0 +1,23 @@
+{
+  "id": "assassin_gloves",
+  "name": "Assassin Gloves",
+  "description": "Gloves favored by assassins.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 2200,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "dexterity": 5
+  },
+  "combatStatBonuses": {
+    "defense": 7,
+    "speed": 5
+  }
+}

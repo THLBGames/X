@@ -1,0 +1,24 @@
+{
+  "id": "divine_boots",
+  "name": "Divine Boots",
+  "description": "Boots blessed with divine power.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 6000,
+  "requirements": {
+    "level": 90,
+    "class": ["mage"]
+  },
+  "equipmentSlot": "boots",
+  "statBonuses": {
+    "intelligence": 15,
+    "wisdom": 8
+  },
+  "combatStatBonuses": {
+    "magicDefense": 45,
+    "magicAttack": 25,
+    "mana": 180
+  }
+}
+

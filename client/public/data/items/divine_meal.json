@@ -1,0 +1,14 @@
+{
+  "id": "divine_meal",
+  "name": "Divine Meal",
+  "description": "A meal blessed by the gods.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 500,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 600
+  }
+}

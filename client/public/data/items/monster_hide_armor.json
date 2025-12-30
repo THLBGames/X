@@ -1,0 +1,23 @@
+{
+  "id": "monster_hide_armor",
+  "name": "Monster Hide Armor",
+  "description": "Armor crafted from tough monster hides.",
+  "type": "armor",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 1400,
+  "requirements": {
+    "level": 60,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "chest",
+  "statBonuses": {
+    "dexterity": 10,
+    "vitality": 5
+  },
+  "combatStatBonuses": {
+    "defense": 35,
+    "speed": 15
+  }
+}
+

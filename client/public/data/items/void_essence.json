@@ -1,0 +1,11 @@
+{
+  "id": "void_essence",
+  "name": "Void Essence",
+  "description": "Essence drawn from the void, containing immense power.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1000
+}
+

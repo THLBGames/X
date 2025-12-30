@@ -1,0 +1,11 @@
+{
+  "id": "coal",
+  "name": "Coal",
+  "description": "Fuel used in smelting and blacksmithing.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1
+}
+

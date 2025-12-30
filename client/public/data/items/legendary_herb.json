@@ -1,0 +1,11 @@
+{
+  "id": "legendary_herb",
+  "name": "Legendary Herb",
+  "description": "A legendary herb with divine properties for master alchemy.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 400
+}
+

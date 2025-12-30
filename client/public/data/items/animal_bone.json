@@ -1,0 +1,11 @@
+{
+  "id": "animal_bone",
+  "name": "Animal Bone",
+  "description": "Bones from animals, used in various crafting recipes.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

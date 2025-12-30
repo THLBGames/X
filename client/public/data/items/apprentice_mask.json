@@ -1,0 +1,23 @@
+{
+  "id": "apprentice_mask",
+  "name": "Apprentice Mask",
+  "description": "A mask for apprentice rogues.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 300,
+  "requirements": {
+    "level": 16,
+    "class": [
+      "rogue"
+    ]
+  },
+  "equipmentSlot": "helmet",
+  "statBonuses": {
+    "dexterity": 3
+  },
+  "combatStatBonuses": {
+    "defense": 4,
+    "speed": 3
+  }
+}

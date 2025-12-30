@@ -1,0 +1,23 @@
+{
+  "id": "iron_gauntlets",
+  "name": "Iron Gauntlets",
+  "description": "Heavy iron gauntlets for warriors.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 130,
+  "requirements": {
+    "level": 15,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "strength": 2,
+    "vitality": 2
+  },
+  "combatStatBonuses": {
+    "defense": 9,
+    "attack": 3
+  }
+}
+

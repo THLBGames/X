@@ -1,0 +1,21 @@
+{
+  "id": "iron_boots",
+  "name": "Iron Boots",
+  "description": "Heavy iron boots for warriors.",
+  "type": "armor",
+  "rarity": "uncommon",
+  "stackable": false,
+  "value": 140,
+  "requirements": {
+    "level": 16,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "boots",
+  "statBonuses": {
+    "vitality": 3
+  },
+  "combatStatBonuses": {
+    "defense": 10
+  }
+}
+

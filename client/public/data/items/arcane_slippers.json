@@ -1,0 +1,23 @@
+{
+  "id": "arcane_slippers",
+  "name": "Arcane Slippers",
+  "description": "Slippers enchanted with arcane power.",
+  "type": "armor",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 2400,
+  "requirements": {
+    "level": 31,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "boots",
+  "statBonuses": {
+    "intelligence": 2
+  },
+  "combatStatBonuses": {
+    "magicDefense": 10,
+    "mana": 25
+  }
+}

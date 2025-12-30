@@ -1,0 +1,20 @@
+{
+  "id": "intelligence_ring_t1",
+  "name": "Ring of Intellect",
+  "description": "A ring that enhances magical power.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "intelligence": 2
+  },
+  "combatStatBonuses": {
+    "magicAttack": 5,
+    "mana": 20
+  }
+}

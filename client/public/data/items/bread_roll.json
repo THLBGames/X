@@ -1,0 +1,14 @@
+{
+  "id": "bread_roll",
+  "name": "Bread Roll",
+  "description": "A small bread roll that restores health.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 6,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 35
+  }
+}

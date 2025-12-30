@@ -1,0 +1,11 @@
+{
+  "id": "animal_pelt",
+  "name": "Animal Pelt",
+  "description": "A pelt from a trapped animal.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4
+}
+

@@ -1,0 +1,10 @@
+{
+  "id": "void_shard",
+  "name": "Void Shard",
+  "description": "A shard from the void.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1500
+}

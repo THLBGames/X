@@ -1,0 +1,10 @@
+{
+  "id": "angel_feather",
+  "name": "Angel Feather",
+  "description": "A feather from an angel.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 900
+}

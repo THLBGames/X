@@ -1,0 +1,11 @@
+{
+  "id": "berry_seed",
+  "name": "Berry Seed",
+  "description": "Seeds from berry bushes.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1
+}
+

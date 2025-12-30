@@ -1,0 +1,20 @@
+{
+  "id": "vitality_amulet_t1",
+  "name": "Amulet of Vitality",
+  "description": "An amulet that enhances health.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "amulet",
+  "statBonuses": {
+    "vitality": 1,
+    "luck": 1
+  },
+  "combatStatBonuses": {
+    "defense": 2
+  }
+}

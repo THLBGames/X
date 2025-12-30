@@ -1,0 +1,11 @@
+{
+  "id": "oak_log",
+  "name": "Oak Log",
+  "description": "A sturdy log from an oak tree, used for crafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2
+}
+

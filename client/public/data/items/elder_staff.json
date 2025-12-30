@@ -1,0 +1,24 @@
+{
+  "id": "elder_staff",
+  "name": "Elder Staff",
+  "description": "A staff from an ancient elder tree.",
+  "type": "weapon",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 112500,
+  "requirements": {
+    "level": 71,
+    "class": [
+      "mage"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "intelligence": 13,
+    "wisdom": 6
+  },
+  "combatStatBonuses": {
+    "magicAttack": 52,
+    "mana": 195
+  }
+}

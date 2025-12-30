@@ -1,0 +1,19 @@
+{
+  "id": "strength_ring_t1",
+  "name": "Ring of Strength",
+  "description": "A ring that enhances physical power.",
+  "type": "accessory",
+  "rarity": "common",
+  "stackable": false,
+  "value": 30,
+  "requirements": {
+    "level": 1
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "strength": 2
+  },
+  "combatStatBonuses": {
+    "attack": 4
+  }
+}

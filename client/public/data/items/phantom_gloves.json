@@ -1,0 +1,24 @@
+{
+  "id": "phantom_gloves",
+  "name": "Phantom Gloves",
+  "description": "Gloves that allow phantom-like precision.",
+  "type": "armor",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 5850,
+  "requirements": {
+    "level": 86,
+    "class": ["rogue"]
+  },
+  "equipmentSlot": "gloves",
+  "statBonuses": {
+    "dexterity": 16,
+    "luck": 5
+  },
+  "combatStatBonuses": {
+    "defense": 22,
+    "speed": 28,
+    "criticalChance": 7
+  }
+}
+

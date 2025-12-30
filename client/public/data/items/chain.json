@@ -1,0 +1,11 @@
+{
+  "id": "chain",
+  "name": "Chain",
+  "description": "Metal chain links used in jewelry crafting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12
+}
+

@@ -1,0 +1,23 @@
+{
+  "id": "mithril_boots",
+  "name": "Mithril Boots",
+  "description": "Legendary boots forged from mithril.",
+  "type": "armor",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 1500,
+  "requirements": {
+    "level": 65,
+    "class": ["warrior"]
+  },
+  "equipmentSlot": "boots",
+  "statBonuses": {
+    "vitality": 9,
+    "strength": 3
+  },
+  "combatStatBonuses": {
+    "defense": 40,
+    "magicDefense": 15
+  }
+}
+

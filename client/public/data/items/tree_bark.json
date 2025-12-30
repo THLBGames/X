@@ -1,0 +1,11 @@
+{
+  "id": "tree_bark",
+  "name": "Tree Bark",
+  "description": "Bark stripped from trees, useful for crafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1
+}
+

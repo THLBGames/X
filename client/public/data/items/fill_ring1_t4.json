@@ -1,0 +1,20 @@
+{
+  "id": "fill_ring1_t4",
+  "name": "Filler Ring1 T4",
+  "description": "A filler ring1.",
+  "type": "accessory",
+  "rarity": "epic",
+  "stackable": false,
+  "value": 300,
+  "requirements": {
+    "level": 51
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "vitality": 4,
+    "luck": 4
+  },
+  "combatStatBonuses": {
+    "defense": 8
+  }
+}

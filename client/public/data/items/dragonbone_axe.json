@@ -1,0 +1,23 @@
+{
+  "id": "dragonbone_axe",
+  "name": "Dragonbone Axe",
+  "description": "A fearsome axe crafted from dragon bones.",
+  "type": "weapon",
+  "rarity": "legendary",
+  "stackable": false,
+  "value": 250000,
+  "requirements": {
+    "level": 86,
+    "class": [
+      "warrior"
+    ]
+  },
+  "equipmentSlot": "weapon",
+  "statBonuses": {
+    "strength": 30,
+    "vitality": 10
+  },
+  "combatStatBonuses": {
+    "attack": 110
+  }
+}

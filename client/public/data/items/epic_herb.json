@@ -1,0 +1,11 @@
+{
+  "id": "epic_herb",
+  "name": "Epic Herb",
+  "description": "An extremely rare herb with powerful magical properties.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 100
+}
+

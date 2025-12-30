@@ -61,6 +61,9 @@ export default function GameView() {
 
   return (
     <div className={`game-view ${activeRightPanel === 'skills' ? 'skills-active' : ''}`}>
+      <div className="game-header">
+        <h2 className="game-title-header">Tales of Heroes, Legends & Beasts</h2>
+      </div>
       <div className="game-view-center">
         {activeRightPanel === 'skills' ? (
           <SkillsPanel />

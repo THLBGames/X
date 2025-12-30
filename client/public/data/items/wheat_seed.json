@@ -1,0 +1,11 @@
+{
+  "id": "wheat_seed",
+  "name": "Wheat Seed",
+  "description": "Seeds for planting wheat.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1
+}
+

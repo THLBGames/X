@@ -1,0 +1,11 @@
+{
+  "id": "pearl_rare",
+  "name": "Rare Pearl",
+  "description": "An extremely rare and valuable pearl.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 300
+}
+

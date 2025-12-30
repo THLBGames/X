@@ -1,0 +1,20 @@
+{
+  "id": "ring_tier3_3",
+  "name": "Ring Tier 3 #3",
+  "description": "A ring from tier 3.",
+  "type": "accessory",
+  "rarity": "rare",
+  "stackable": false,
+  "value": 150,
+  "requirements": {
+    "level": 31
+  },
+  "equipmentSlot": "ring1",
+  "statBonuses": {
+    "dexterity": 5
+  },
+  "combatStatBonuses": {
+    "speed": 7,
+    "criticalChance": 2
+  }
+}

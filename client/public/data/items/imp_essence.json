@@ -1,0 +1,11 @@
+{
+  "id": "imp_essence",
+  "name": "Imp Essence",
+  "description": "The essence of a small demonic creature.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12
+}
+
