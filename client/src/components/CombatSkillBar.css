@@ -16,7 +16,37 @@
 .skill-bar-message {
   color: #888;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-bar-message-text {
   font-style: italic;
+}
+
+.skill-bar-open-tree-button {
+  background: #4a9eff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skill-bar-open-tree-button:hover {
+  background: #3a8eef;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(74, 158, 255, 0.3);
+}
+
+.skill-bar-open-tree-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(74, 158, 255, 0.2);
 }
 
 .skill-bar-slots {
@@ -87,4 +117,3 @@
   font-weight: bold;
   border: 1px solid #2a2a2a;
 }
-

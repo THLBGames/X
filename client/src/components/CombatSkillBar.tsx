@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import SkillButton from './SkillButton';
+import SkillTreeModal from './SkillTreeModal';
 import './CombatSkillBar.css';
 
 interface CombatSkillBarProps {
@@ -14,6 +15,7 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
   const isPlayerTurn = currentCombatState?.currentActor === 'player';
   const playerMana = currentCombatState?.playerMana || 0;
   const dataLoader = getDataLoader();
+  const [showSkillTree, setShowSkillTree] = useState(false);
 
   // Handle keyboard shortcuts (1-8)
   useEffect(() => {
@@ -39,11 +41,17 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
 
   if (!character || !character.skillBar || character.skillBar.length === 0) {
     return (
-      <div className="combat-skill-bar empty">
-        <div className="skill-bar-message">
-          No skills assigned to skill bar. Open Skills panel to assign skills.
+      <>
+        <div className="combat-skill-bar empty">
+          <div className="skill-bar-message">
+            <div className="skill-bar-message-text">No skills assigned to skill bar.</div>
+            <button className="skill-bar-open-tree-button" onClick={() => setShowSkillTree(true)}>
+              Open Skill Tree
+            </button>
+          </div>
         </div>
-      </div>
+        <SkillTreeModal isOpen={showSkillTree} onClose={() => setShowSkillTree(false)} />
+      </>
     );
   }
 
@@ -76,13 +84,11 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
           }
 
           const canUse = playerMana >= (skill.manaCost || 0);
-          const skillLevel = character.learnedSkills.find((ls) => ls.skillId === skillId)?.level || 0;
+          const skillLevel =
+            character.learnedSkills.find((ls) => ls.skillId === skillId)?.level || 0;
 
           return (
-            <div
-              key={index}
-              className={`skill-slot ${!canUse || !isPlayerTurn ? 'disabled' : ''}`}
-            >
+            <div key={index} className={`skill-slot ${!canUse || !isPlayerTurn ? 'disabled' : ''}`}>
               <div className="skill-slot-number">{index + 1}</div>
               <SkillButton
                 skill={skill}
@@ -90,9 +96,7 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
                 onUse={() => onSkillUse(skillId)}
                 disabled={!canUse || !isPlayerTurn}
               />
-              {skillLevel > 0 && (
-                <div className="skill-level-indicator">Lv.{skillLevel}</div>
-              )}
+              {skillLevel > 0 && <div className="skill-level-indicator">Lv.{skillLevel}</div>}
             </div>
           );
         })}
@@ -100,4 +104,3 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
     </div>
   );
 }
-

@@ -364,14 +364,43 @@ export function useGameLoop() {
 
         const dataLoader = getDataLoader();
         const dungeon = dataLoader.getDungeon(state.currentDungeonId);
-        if (!dungeon) return;
+        if (!dungeon) {
+          console.warn('No dungeon found for currentDungeonId:', state.currentDungeonId);
+          return;
+        }
 
         // Add experience
-        const { character: updatedCharacter } = CharacterManager.addExperience(
-          state.character,
-          DungeonManager.calculateExperienceReward(combatLog.rewards.experience, dungeon)
+        const baseExperience = combatLog.rewards.experience || 0;
+        const calculatedExperience = DungeonManager.calculateExperienceReward(
+          baseExperience,
+          dungeon
         );
-        setCharacter(updatedCharacter);
+        console.log(
+          'Combat XP - Base:',
+          baseExperience,
+          'Calculated:',
+          calculatedExperience,
+          'Dungeon:',
+          dungeon.id
+        );
+
+        // Track the character with experience added - this will be used later for mercenary consumption
+        let characterWithExperience = state.character;
+        if (calculatedExperience > 0 && state.character) {
+          const { character: updatedCharacter } = CharacterManager.addExperience(
+            state.character,
+            calculatedExperience
+          );
+          characterWithExperience = updatedCharacter;
+          setCharacter(updatedCharacter);
+        } else {
+          console.warn(
+            'No experience to award - baseExperience:',
+            baseExperience,
+            'calculatedExperience:',
+            calculatedExperience
+          );
+        }
 
         // Add gold
         const goldReward = DungeonManager.calculateGoldReward(combatLog.rewards.gold, dungeon);
@@ -426,10 +455,12 @@ export function useGameLoop() {
         checkAchievements();
 
         // Consume battles for combat mercenaries
-        let characterAfterMercenaries = state.character;
-        const activeCombatMercenaries = MercenaryManager.getCombatMercenaries(state.character);
+        // Use characterWithExperience (which includes the XP we just added) instead of state.character
+        let characterAfterMercenaries = characterWithExperience;
+        const activeCombatMercenaries =
+          MercenaryManager.getCombatMercenaries(characterWithExperience);
         for (const mercenary of activeCombatMercenaries) {
-          const activeMercenary = state.character.activeMercenaries?.find(
+          const activeMercenary = characterWithExperience.activeMercenaries?.find(
             (m) => m.mercenaryId === mercenary.id
           );
           if (activeMercenary) {
@@ -439,7 +470,7 @@ export function useGameLoop() {
             );
           }
         }
-        if (characterAfterMercenaries !== state.character) {
+        if (characterAfterMercenaries !== characterWithExperience) {
           setCharacter(characterAfterMercenaries);
         }
 

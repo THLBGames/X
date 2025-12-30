@@ -250,11 +250,10 @@ export function useIdleSkills() {
         // Update character (this ensures idleSkills are updated)
         setCharacter(characterAfterMercenaries);
 
-        // Check for newly completed achievements (use setTimeout to ensure character state is updated first)
-        setTimeout(() => {
-          const checkAchievements = useGameState.getState().checkAchievements;
-          checkAchievements();
-        }, 0);
+        // Check for newly completed achievements
+        // The guard mechanism in checkAchievements will handle concurrent calls
+        const checkAchievements = useGameState.getState().checkAchievements;
+        checkAchievements();
       }, adjustedTimeRequired);
 
       sharedIntervalRefs.set(skillId, intervalId);

@@ -20,6 +20,9 @@ import { InventoryManager } from '../systems/inventory';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
+// Guard flag to prevent concurrent achievement checks
+let isCheckingAchievements = false;
+
 interface GameState {
   // Character state
   character: Character | null;
@@ -155,7 +158,33 @@ export const useGameState = create<GameState>((set, get) => ({
   maxOfflineHours: 8, // Default 8 hours
 
   // Character actions
-  setCharacter: (character) => set({ character }),
+  setCharacter: (character) =>
+    set((state) => {
+      // Preserve and merge completedAchievements to prevent achievements from being lost
+      // This is critical - achievements should never be lost when character is updated
+      if (state.character?.completedAchievements) {
+        const existingCompleted = state.character.completedAchievements;
+        const newCompleted = character.completedAchievements || [];
+
+        // Merge: combine both arrays, removing duplicates
+        const existingIds = new Set(existingCompleted.map((ca) => ca.achievementId));
+        const mergedCompleted = [...existingCompleted];
+
+        for (const achievement of newCompleted) {
+          if (!existingIds.has(achievement.achievementId)) {
+            mergedCompleted.push(achievement);
+          }
+        }
+
+        return {
+          character: {
+            ...character,
+            completedAchievements: mergedCompleted,
+          },
+        };
+      }
+      return { character };
+    }),
 
   updateCharacter: (updates) =>
     set((state) => ({
@@ -552,35 +581,96 @@ export const useGameState = create<GameState>((set, get) => ({
       };
     }),
 
-  checkAchievements: () =>
-    set((state) => {
-      if (!state.character) return {};
+  checkAchievements: () => {
+    // Guard: prevent concurrent execution
+    if (isCheckingAchievements) {
+      console.debug('Achievement check already in progress, skipping...');
+      return;
+    }
 
-      // Ensure statistics exists
-      const statistics = state.character.statistics || StatisticsManager.initializeStatistics();
+    isCheckingAchievements = true;
+    try {
+      // Get the latest state BEFORE entering set() to ensure we have the most recent data
+      const currentState = get();
+      if (!currentState.character) {
+        return;
+      }
 
-      // Ensure completedAchievements exists
-      const existingCompleted = state.character.completedAchievements || [];
-      const existingCompletedIds = new Set(existingCompleted.map((ca) => ca.achievementId));
+      set((state) => {
+        // Double-check character still exists
+        if (!state.character) return {};
 
-      // Check for newly completed achievements
-      // Pass character with current completedAchievements to avoid duplicates
-      const characterWithCompleted = {
-        ...state.character,
-        completedAchievements: existingCompleted,
-      };
-      const newlyCompleted = AchievementManager.checkAchievements(
-        characterWithCompleted,
-        statistics
-      );
+        // Get the absolute latest state INSIDE set() to ensure we're checking against the most recent completedAchievements
+        // This is critical - we need the state that includes any previous updates
+        const latestState = get();
+        const latestCharacter = latestState.character;
+        if (!latestCharacter) return {};
 
-      // Filter out any achievements that are already completed (prevent duplicates)
-      const trulyNew = newlyCompleted.filter(
-        (achievement) => !existingCompletedIds.has(achievement.achievementId)
-      );
+        // Ensure statistics exists
+        const statistics = latestCharacter.statistics || StatisticsManager.initializeStatistics();
 
-      if (trulyNew.length > 0) {
-        const updatedCompleted = [...existingCompleted, ...trulyNew];
+        // Ensure completedAchievements exists - use latest state
+        const existingCompleted = latestCharacter.completedAchievements || [];
+        const existingCompletedIds = new Set(existingCompleted.map((ca) => ca.achievementId));
+
+        console.debug(
+          `Checking achievements. Already completed: ${existingCompleted.length}`,
+          existingCompleted.map((ca) => ca.achievementId)
+        );
+
+        // Check for newly completed achievements
+        // Pass character with current completedAchievements to avoid duplicates
+        const characterWithCompleted = {
+          ...latestCharacter,
+          completedAchievements: existingCompleted,
+        };
+        const newlyCompleted = AchievementManager.checkAchievements(
+          characterWithCompleted,
+          statistics
+        );
+
+        console.debug(
+          `Found ${newlyCompleted.length} newly completed achievements:`,
+          newlyCompleted.map((a) => a.achievementId)
+        );
+
+        // Filter out any achievements that are already completed (prevent duplicates)
+        // This is a critical safety check
+        const trulyNew = newlyCompleted.filter(
+          (achievement) => !existingCompletedIds.has(achievement.achievementId)
+        );
+
+        console.debug(
+          `After filtering: ${trulyNew.length} truly new achievements:`,
+          trulyNew.map((a) => a.achievementId)
+        );
+
+        // If no truly new achievements, don't do anything
+        if (trulyNew.length === 0) {
+          // Even if no new achievements, ensure statistics is persisted
+          if (!latestCharacter.statistics) {
+            return {
+              character: {
+                ...latestCharacter,
+                statistics: statistics,
+              },
+            };
+          }
+          return {};
+        }
+
+        // Double-check: ensure we're not adding duplicates
+        const finalCompleted = [...existingCompleted];
+        for (const achievement of trulyNew) {
+          // One more safety check - ensure it's not already in the array
+          if (!finalCompleted.some((ca) => ca.achievementId === achievement.achievementId)) {
+            finalCompleted.push(achievement);
+          } else {
+            console.warn(
+              `Attempted to add duplicate achievement: ${achievement.achievementId}. Skipping.`
+            );
+          }
+        }
 
         // Show notification for each newly completed achievement
         for (const achievement of trulyNew) {
@@ -589,7 +679,7 @@ export const useGameState = create<GameState>((set, get) => ({
           if (achievementData) {
             console.log(`Achievement unlocked: ${achievementData.name}`);
             // Show UI notification
-            if (typeof window !== 'undefined' && state.settings.showNotifications !== false) {
+            if (typeof window !== 'undefined' && latestState.settings.showNotifications !== false) {
               const event = new CustomEvent('showNotification', {
                 detail: {
                   message: `Achievement Unlocked: ${achievementData.name}`,
@@ -605,25 +695,20 @@ export const useGameState = create<GameState>((set, get) => ({
         // Update both character and ensure statistics is persisted
         return {
           character: {
-            ...state.character,
-            completedAchievements: updatedCompleted,
+            ...latestCharacter,
+            completedAchievements: finalCompleted,
             statistics: statistics, // Ensure statistics is persisted
           },
         };
-      }
-
-      // Even if no new achievements, ensure statistics is persisted
-      if (!state.character.statistics) {
-        return {
-          character: {
-            ...state.character,
-            statistics: statistics,
-          },
-        };
-      }
-
-      return {};
-    }),
+      });
+    } finally {
+      // Clear the guard flag after a small delay to ensure state update is processed
+      // This prevents race conditions where the next call happens before React has processed the update
+      setTimeout(() => {
+        isCheckingAchievements = false;
+      }, 0);
+    }
+  },
 
   claimAchievementRewards: (achievementId: string) =>
     set((state) => {
