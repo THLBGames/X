@@ -19,11 +19,13 @@ export function useGameLoop() {
   const character = useGameState((state) => state.character);
   const currentDungeonId = useGameState((state) => state.currentDungeonId);
   const isCombatActive = useGameState((state) => state.isCombatActive);
+  const activeAction = useGameState((state) => state.activeAction);
   const settings = useGameState((state) => state.settings);
   const setCharacter = useGameState((state) => state.setCharacter);
   // const setInventory = useGameState((state) => state.setInventory);
   const addItem = useGameState((state) => state.addItem);
   const setCombatActive = useGameState((state) => state.setCombatActive);
+  const startCombat = useGameState((state) => state.startCombat);
   const startCombatWithMonsters = useGameState((state) => state.startCombatWithMonsters);
   // const combatRoundNumber = useGameState((state) => state.combatRoundNumber);
   const setCombatRoundNumber = useGameState((state) => state.setCombatRoundNumber);
@@ -35,6 +37,30 @@ export function useGameLoop() {
   const combatCountRef = useRef(0);
   const lastSaveTimeRef = useRef(Date.now());
   const intervalRef = useRef<number | null>(null);
+
+  // Resume combat if there's an active combat action after offline progress
+  // This runs when activeAction changes to a combat action (e.g., after offline progress is processed)
+  useEffect(() => {
+    const currentActiveAction = activeAction;
+    const currentCharacter = character;
+
+    // Only proceed if we have a valid combat action and combat is not already active
+    if (
+      !currentActiveAction ||
+      currentActiveAction.type !== 'combat' ||
+      !currentCharacter ||
+      isCombatActive
+    ) {
+      return;
+    }
+
+    const dungeonId = currentActiveAction.dungeonId;
+
+    // Resume combat by calling startCombat
+    // This will set isCombatActive to true and the combat loop will start
+    console.log('Resuming combat after offline progress:', dungeonId);
+    startCombat(dungeonId);
+  }, [activeAction, character, isCombatActive, startCombat]);
 
   // Reset combat stats when combat starts
   useEffect(() => {
