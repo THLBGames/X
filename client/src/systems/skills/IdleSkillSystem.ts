@@ -103,7 +103,6 @@ export class IdleSkillSystem {
       skillId,
       level: newLevel,
       experience: skillExp,
-      experienceToNext: expToNext,
     };
 
     if (skillIndex !== -1) {

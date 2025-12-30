@@ -297,11 +297,11 @@ export const useGameState = create<GameState>((set, get) => ({
         return {
           dungeonProgress: [
             ...state.dungeonProgress,
-            { dungeonId, completed: false, timesCompleted: 0 },
+            { dungeonId, completed: false, timesCompleted: 0, unlocked: true },
           ],
         };
       }
-      return {};
+      return state;
     }),
 
   completeDungeon: (dungeonId, time) =>

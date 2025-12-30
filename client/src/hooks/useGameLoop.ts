@@ -460,12 +460,6 @@ export function useGameLoop() {
         combatStatsRef.combatsCompleted += 1;
         combatStatsRef.totalExperience += combatLog.rewards.experience;
 
-        // Update combat statistics (defeat)
-        if (combatLog.result === 'defeat') {
-          const updateCombatStats = useGameState.getState().updateCombatStats;
-          updateCombatStats(false, 0, 0);
-        }
-
         // Dispatch custom event for combat stats update
         window.dispatchEvent(
           new CustomEvent('combatStatsUpdate', {

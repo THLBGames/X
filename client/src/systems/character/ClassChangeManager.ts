@@ -108,8 +108,9 @@ export class ClassChangeManager {
       'legs',
       'boots',
       'gloves',
-      'accessory1',
-      'accessory2',
+      'ring1',
+      'ring2',
+      'amulet',
     ];
 
     for (const slot of equipmentSlots) {
@@ -159,7 +160,10 @@ export class ClassChangeManager {
     const newCombatStats = CharacterManager.calculateCombatStats(
       newBaseStats,
       newEquipment,
-      character.statusEffects
+      character.statusEffects.map(() => ({
+        statModifier: {},
+        combatStatModifier: {},
+      }))
     );
 
     // Reset learned combat skills (keep idle skills)

@@ -4,7 +4,7 @@ import { useDamageNumbers } from '../hooks/useDamageNumbers';
 import HealthBar from './HealthBar';
 import DamageNumber from './DamageNumber';
 import CombatResultOverlay from './CombatResultOverlay';
-import type { ActiveCombatState } from '@idle-rpg/shared';
+import type { ActiveCombatState, ActivePlayerPartyMember, ActiveMonsterState } from '@idle-rpg/shared';
 import './CombatArena.css';
 
 interface CombatArenaProps {
@@ -100,7 +100,7 @@ export default function CombatArena({
 
   // Pad monsters to 5 slots
   const monsters = combatState.monsters || [];
-  const paddedMonsters = [...monsters];
+  const paddedMonsters: (ActiveMonsterState | null)[] = [...monsters];
   while (paddedMonsters.length < 5) {
     paddedMonsters.push(null);
   }

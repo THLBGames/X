@@ -3,8 +3,8 @@ import type {
   Inventory,
   Mercenary,
   ActiveMercenary,
-  ShopTransactionResult,
 } from '@idle-rpg/shared';
+import type { ShopTransactionResult } from '../shop';
 import { getDataLoader } from '@/data';
 import { InventoryManager } from '../inventory';
 

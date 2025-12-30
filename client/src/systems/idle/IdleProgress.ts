@@ -215,7 +215,7 @@ export class IdleProgress {
 
     // Run combat
     const combatEngine = new CombatEngine({ autoCombat });
-    combatEngine.initialize(character, monster);
+    combatEngine.initialize(character, [monster]);
 
     // Execute combat turns until completion
     let combatLog: CombatLog | null = null;

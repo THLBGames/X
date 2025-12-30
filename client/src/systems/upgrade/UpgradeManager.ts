@@ -3,10 +3,10 @@ import type {
   Inventory,
   SkillUpgrade,
   ActiveUpgrade,
-  ShopTransactionResult,
   UpgradeTier,
   SkillCategory,
 } from '@idle-rpg/shared';
+import type { ShopTransactionResult } from '../shop';
 import { getDataLoader } from '@/data';
 import { InventoryManager } from '../inventory';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
