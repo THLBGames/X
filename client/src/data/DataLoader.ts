@@ -12,7 +12,6 @@ import type {
 } from '@idle-rpg/shared';
 
 type DataCache<T> = Map<string, T>;
-type DataCollection<T> = { [key: string]: T };
 
 export class DataLoader {
   private static instance: DataLoader;
@@ -131,12 +130,48 @@ export class DataLoader {
   }
 
   private async loadItems(): Promise<void> {
-    // Load all items from manifest file
+    // Try to load combined items.json file first (much faster - single file vs 500+ files)
+    try {
+      const combinedData = await this.loadJsonFile<{ 
+        version?: string;
+        total_items?: number;
+        items: { [key: string]: Item };
+      }>('/data/items/items.json');
+      
+      if (combinedData && combinedData.items && typeof combinedData.items === 'object') {
+        console.log(`Loading ${Object.keys(combinedData.items).length} items from combined file...`);
+        
+        let loadedCount = 0;
+        for (const [itemId, itemData] of Object.entries(combinedData.items)) {
+          try {
+            // Remove _source_file metadata if present (it's just for debugging)
+            const cleanedItemData = { ...itemData };
+            if ('_source_file' in cleanedItemData) {
+              delete (cleanedItemData as Record<string, unknown>)._source_file;
+            }
+            
+            if (this.validateItem(cleanedItemData as Item)) {
+              this.itemsCache.set(itemId, cleanedItemData as Item);
+              loadedCount++;
+            }
+          } catch (error) {
+            console.warn(`Failed to validate item ${itemId}:`, error);
+          }
+        }
+        
+        console.log(`Loaded ${loadedCount} items from combined file`);
+        return; // Successfully loaded from combined file
+      }
+    } catch (error) {
+      console.warn('Combined items.json not found, falling back to individual files:', error);
+    }
+    
+    // Fallback: Load items from individual files (old method)
     try {
       const manifest = await this.loadJsonFile<{ items: string[] }>('/data/items/manifest.json');
       
       if (manifest && manifest.items && Array.isArray(manifest.items)) {
-        console.log(`Loading ${manifest.items.length} items...`);
+        console.log(`Loading ${manifest.items.length} items from individual files...`);
         
         // Load items in batches to avoid overwhelming the browser
         const batchSize = 50;
@@ -492,14 +527,27 @@ export class DataLoader {
   }
 
   async loadItem(id: string): Promise<Item | null> {
+    // Check cache first
     if (this.itemsCache.has(id)) {
       return this.itemsCache.get(id)!;
     }
-    const data = await this.loadJsonFile<Item>(`/data/items/${id}.json`);
-    if (data && this.validateItem(data)) {
-      this.itemsCache.set(id, data);
-      return data;
+    
+    // Try loading from individual file (fallback for items not in combined file)
+    try {
+      const data = await this.loadJsonFile<Item>(`/data/items/${id}.json`);
+      if (data && this.validateItem(data)) {
+        this.itemsCache.set(id, data);
+        return data;
+      }
+    } catch (error) {
+      // Item file not found, might be in combined file but not loaded yet
+      // Try loading combined file if we haven't already
+      if (!this.loaded) {
+        // If loadAll hasn't been called yet, the item will be loaded when loadAll runs
+        console.warn(`Item ${id} not found and loadAll hasn't been called yet`);
+      }
     }
+    
     return null;
   }
 
