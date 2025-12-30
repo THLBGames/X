@@ -13,7 +13,7 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    outDir: 'dist',
+    outDir: path.resolve(__dirname, 'dist'),
     sourcemap: true,
   },
 });
