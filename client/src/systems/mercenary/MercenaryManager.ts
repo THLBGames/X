@@ -4,12 +4,12 @@ import type {
   Mercenary,
   ActiveMercenary,
 } from '@idle-rpg/shared';
+import { MAX_MERCENARIES } from '@idle-rpg/shared';
 import type { ShopTransactionResult } from '../shop';
 import { getDataLoader } from '@/data';
 import { InventoryManager } from '../inventory';
 
 export class MercenaryManager {
-  private static readonly MAX_MERCENARIES = 2;
 
   /**
    * Rent a mercenary
@@ -31,10 +31,10 @@ export class MercenaryManager {
 
     // Check if player can rent more mercenaries
     const activeCount = (character.activeMercenaries || []).length;
-    if (activeCount >= this.MAX_MERCENARIES) {
+    if (activeCount >= MAX_MERCENARIES) {
       return {
         success: false,
-        message: `You can only have ${this.MAX_MERCENARIES} active mercenaries at a time`,
+        message: `You can only have ${MAX_MERCENARIES} active mercenaries at a time`,
       };
     }
 
@@ -183,7 +183,7 @@ export class MercenaryManager {
    */
   static canRentMore(character: Character): boolean {
     const activeCount = (character.activeMercenaries || []).length;
-    return activeCount < this.MAX_MERCENARIES;
+    return activeCount < MAX_MERCENARIES;
   }
 
   /**

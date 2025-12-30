@@ -7,6 +7,7 @@ import { DungeonManager } from '../systems/dungeon';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
 import { AutoConsumableManager } from '../systems/combat/AutoConsumableManager';
+import { CombatActionType } from '@idle-rpg/shared';
 import { getDataLoader } from '../data';
 
 // Global state for combat stats (shared across component instances)
@@ -293,12 +294,12 @@ export function useGameLoop() {
       const recentActions = combatEngine.getRecentActions(1);
       if (recentActions.length > 0) {
         const lastAction = recentActions[0];
-        if (lastAction.type === 'item' && lastAction.itemId === consumableToUse) {
+        if (lastAction.type === CombatActionType.ITEM && lastAction.itemId === consumableToUse) {
           removeItem(consumableToUse, 1);
         }
       } else if (combatLog) {
         // Combat ended, check combat log
-        const action = combatLog.actions?.find((a) => a.type === 'item' && a.itemId === consumableToUse);
+        const action = combatLog.actions?.find((a) => a.type === CombatActionType.ITEM && a.itemId === consumableToUse);
         if (action) {
           removeItem(consumableToUse, 1);
         }

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import type { Item, Inventory } from '@idle-rpg/shared';
+import type { Item, Inventory, ItemType, ConsumableEffectType } from '@idle-rpg/shared';
+import { VALID_COMBAT_CONSUMABLE_EFFECTS } from '@idle-rpg/shared';
 import { ShopManager } from '../systems/shop';
 import { useGameState } from '../systems';
 import './ItemContextMenu.css';
@@ -139,7 +140,7 @@ export default function ItemContextMenu({
     }
 
     // Consumable items
-    if (item.type === 'consumable' && item.consumableEffect) {
+    if (item.type === (ItemType.CONSUMABLE as string) && item.consumableEffect) {
       actions.push({
         label: 'Use',
         action: () => {
@@ -150,8 +151,7 @@ export default function ItemContextMenu({
       
       // Only show "Equip to Consumable Bar" for combat-useful consumables
       // Exclude: experience, offlineTime, and custom effects (like treasure chests)
-      const validCombatEffects = ['heal', 'mana', 'buff'];
-      if (validCombatEffects.includes(item.consumableEffect.type)) {
+      if (VALID_COMBAT_CONSUMABLE_EFFECTS.includes(item.consumableEffect.type as ConsumableEffectType)) {
         actions.push({
           label: 'Equip to Consumable Bar',
           action: () => {

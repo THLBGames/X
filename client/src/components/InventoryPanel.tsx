@@ -9,7 +9,9 @@ import { showNotification } from './NotificationManager';
 import TooltipWrapper from './TooltipWrapper';
 import ItemContextMenu from './ItemContextMenu';
 import SellItemModal from './SellItemModal';
-import type { Item, Inventory } from '@idle-rpg/shared';
+import type { Item, Inventory, ItemType, ConsumableEffectType } from '@idle-rpg/shared';
+import { VALID_COMBAT_CONSUMABLE_EFFECTS, MAX_CONSUMABLE_BAR_SLOTS } from '@idle-rpg/shared';
+import { UI_MESSAGES } from '../constants/ui';
 import './InventoryPanel.css';
 
 export default function InventoryPanel() {
@@ -101,7 +103,7 @@ export default function InventoryPanel() {
     let updatedCharacter = { ...character };
 
     // Apply effect based on type
-    if (effect.type === 'heal' && effect.amount) {
+    if (effect.type === ConsumableEffectType.HEAL && effect.amount) {
       updatedCharacter.combatStats = {
         ...updatedCharacter.combatStats,
         health: Math.min(
@@ -110,7 +112,7 @@ export default function InventoryPanel() {
         ),
       };
       audioManager.playSound('/audio/sfx/heal.mp3', 0.6);
-    } else if (effect.type === 'mana' && effect.amount) {
+    } else if (effect.type === ConsumableEffectType.MANA && effect.amount) {
       updatedCharacter.combatStats = {
         ...updatedCharacter.combatStats,
         mana: Math.min(
@@ -119,7 +121,7 @@ export default function InventoryPanel() {
         ),
       };
       audioManager.playSound('/audio/sfx/mana_restore.mp3', 0.6);
-    } else if (effect.type === 'experience' && effect.amount) {
+    } else if (effect.type === ConsumableEffectType.EXPERIENCE && effect.amount) {
       // Add experience using CharacterManager
       const result = CharacterManager.addExperience(updatedCharacter, effect.amount);
       updatedCharacter = result.character;
@@ -128,20 +130,20 @@ export default function InventoryPanel() {
       if (result.leveledUp) {
         if (result.levelsGained === 1) {
           showNotification(
-            `Level up! You are now level ${updatedCharacter.level}!`,
+            UI_MESSAGES.LEVEL_UP(updatedCharacter.level),
             'level-up',
             5000
           );
         } else {
           showNotification(
-            `Level up! You gained ${result.levelsGained} levels! You are now level ${updatedCharacter.level}!`,
+            UI_MESSAGES.LEVEL_UP_MULTIPLE(result.levelsGained, updatedCharacter.level),
             'level-up',
             5000
           );
         }
         audioManager.playSound('/audio/sfx/level_up.mp3', 0.8);
       } else {
-        showNotification(`Gained ${effect.amount} experience!`, 'success', 3000);
+        showNotification(UI_MESSAGES.GAINED_EXPERIENCE(effect.amount), 'success', 3000);
         audioManager.playSound('/audio/sfx/experience.mp3', 0.5);
       }
     } else if (effect.type === 'offlineTime') {
@@ -151,16 +153,16 @@ export default function InventoryPanel() {
         const newMaxHours = maxOfflineHours + hoursToAdd;
         setMaxOfflineHours(newMaxHours);
         showNotification(
-          `Maximum offline time increased by ${hoursToAdd} hours! New max: ${newMaxHours} hours`,
+          UI_MESSAGES.OFFLINE_TIME_INCREASED(hoursToAdd, newMaxHours),
           'success',
           5000
         );
         audioManager.playSound('/audio/sfx/upgrade.mp3', 0.6);
       }
-    } else if (effect.type === 'buff' && effect.buffId) {
+    } else if (effect.type === ConsumableEffectType.BUFF && effect.buffId) {
       // Apply buff (would need buff system implementation)
       // For now, just show a notification
-      showNotification(`Buff applied: ${effect.buffId}`, 'info', 3000);
+      showNotification(UI_MESSAGES.BUFF_APPLIED(effect.buffId), 'info', 3000);
       audioManager.playSound('/audio/sfx/buff.mp3', 0.6);
     }
 
@@ -229,17 +231,16 @@ export default function InventoryPanel() {
     if (!character) return;
 
     const item = dataLoader.getItem(itemId);
-    if (!item || item.type !== 'consumable' || !item.consumableEffect) {
-      alert('This item cannot be equipped to the consumable bar.');
+    if (!item || item.type !== (ItemType.CONSUMABLE as string) || !item.consumableEffect) {
+      alert(UI_MESSAGES.ITEM_CANNOT_EQUIP_CONSUMABLE_BAR);
       return;
     }
 
     // Only allow combat-useful consumables (heal, mana, buff)
     // Exclude: experience, offlineTime, and custom effects (like treasure chests)
     const effect = item.consumableEffect;
-    const validCombatEffects = ['heal', 'mana', 'buff'];
-    if (!validCombatEffects.includes(effect.type)) {
-      alert('Only healing potions, mana potions, and buff items can be equipped to the consumable bar.');
+    if (!VALID_COMBAT_CONSUMABLE_EFFECTS.includes(effect.type as ConsumableEffectType)) {
+      alert(UI_MESSAGES.ONLY_COMBAT_CONSUMABLES);
       return;
     }
 
@@ -249,13 +250,13 @@ export default function InventoryPanel() {
     if (currentConsumableBar.includes(itemId)) {
       // Remove from bar
       updateConsumableBar(currentConsumableBar.filter((id) => id !== itemId));
-      showNotification(`${item.name} removed from consumable bar`, 'info', 3000);
-    } else if (currentConsumableBar.length >= 3) {
-      alert('Consumable bar is full (3 slots). Remove an item first.');
+      showNotification(UI_MESSAGES.ITEM_REMOVED_FROM_CONSUMABLE_BAR(item.name), 'info', 3000);
+    } else if (currentConsumableBar.length >= MAX_CONSUMABLE_BAR_SLOTS) {
+      alert(UI_MESSAGES.CONSUMABLE_BAR_FULL(MAX_CONSUMABLE_BAR_SLOTS));
     } else {
       // Add to bar
       updateConsumableBar([...currentConsumableBar, itemId]);
-      showNotification(`${item.name} added to consumable bar`, 'success', 3000);
+      showNotification(UI_MESSAGES.ITEM_ADDED_TO_CONSUMABLE_BAR(item.name), 'success', 3000);
     }
   };
 

@@ -14,6 +14,12 @@ import type {
   AutoSkillSetting,
   AutoConsumableSetting,
 } from '@idle-rpg/shared';
+import {
+  MAX_INVENTORY_SLOTS,
+  MAX_SKILL_BAR_SLOTS,
+  MAX_CONSUMABLE_BAR_SLOTS,
+} from '@idle-rpg/shared';
+import { DEFAULT_SETTINGS, DEFAULT_MAX_OFFLINE_HOURS } from '../constants/defaults';
 import { QuestManager } from '../systems/quest/QuestManager';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
@@ -132,26 +138,10 @@ interface GameState {
 
 const defaultInventory: Inventory = {
   items: [],
-  maxSlots: 50,
+  maxSlots: MAX_INVENTORY_SLOTS,
 };
 
-const defaultSettings: GameSettings = {
-  soundEnabled: true,
-  musicEnabled: true,
-  autoCombat: true,
-  combatSpeed: 3,
-  showDamageNumbers: true,
-  soundVolume: 100,
-  musicVolume: 100,
-  theme: 'dark',
-  fontSize: 'medium',
-  animationsEnabled: true,
-  showTooltips: true,
-  confirmItemDrop: true,
-  confirmItemSell: false,
-  showNotifications: true,
-  autoSaveInterval: 30, // 30 seconds
-};
+const defaultSettings: GameSettings = DEFAULT_SETTINGS;
 
 export const useGameState = create<GameState>((set, get) => ({
   // Initial state
@@ -167,7 +157,7 @@ export const useGameState = create<GameState>((set, get) => ({
   queuedConsumableId: null,
   combatRoundNumber: 0,
   activeAction: null,
-  maxOfflineHours: 8, // Default 8 hours
+  maxOfflineHours: DEFAULT_MAX_OFFLINE_HOURS,
 
   // Character actions
   setCharacter: (character) =>
@@ -312,8 +302,8 @@ export const useGameState = create<GameState>((set, get) => ({
   updateSkillBar: (skillBar) =>
     set((state) => {
       if (!state.character) return {};
-      // Limit to 8 skills for combat skill bar
-      const limitedSkillBar = skillBar.slice(0, 8);
+      // Limit to MAX_SKILL_BAR_SLOTS skills for combat skill bar
+      const limitedSkillBar = skillBar.slice(0, MAX_SKILL_BAR_SLOTS);
 
       // Remove auto-skill settings for skills that are no longer in the skill bar
       const currentSettings = state.character.autoSkillSettings || [];
@@ -331,8 +321,8 @@ export const useGameState = create<GameState>((set, get) => ({
   updateConsumableBar: (consumableBar) =>
     set((state) => {
       if (!state.character) return {};
-      // Limit to 3 consumables for consumable bar
-      const limitedConsumableBar = consumableBar.slice(0, 3);
+      // Limit to MAX_CONSUMABLE_BAR_SLOTS consumables for consumable bar
+      const limitedConsumableBar = consumableBar.slice(0, MAX_CONSUMABLE_BAR_SLOTS);
 
       // Remove auto-consumable settings for items that are no longer in the bar
       const currentSettings = state.character.autoConsumableSettings || [];
@@ -878,10 +868,10 @@ export const useGameState = create<GameState>((set, get) => ({
         currentDungeonId: dungeonId,
         combatRoundNumber: 0,
         activeAction: saveData.activeAction ?? null,
-        maxOfflineHours: saveData.maxOfflineHours ?? 8,
+        maxOfflineHours: saveData.maxOfflineHours ?? DEFAULT_MAX_OFFLINE_HOURS,
       });
     } else {
-      set({ isInitialized: true, activeAction: null, maxOfflineHours: 8 });
+      set({ isInitialized: true, activeAction: null, maxOfflineHours: DEFAULT_MAX_OFFLINE_HOURS });
     }
   },
 
@@ -897,7 +887,7 @@ export const useGameState = create<GameState>((set, get) => ({
       queuedSkillId: null,
       combatRoundNumber: 0,
       activeAction: null,
-      maxOfflineHours: 8,
+        maxOfflineHours: DEFAULT_MAX_OFFLINE_HOURS,
     }),
 
   setCombatActive: (active) =>
@@ -1075,7 +1065,7 @@ export const useGameState = create<GameState>((set, get) => ({
 
   setActiveAction: (action) => set({ activeAction: action }),
 
-  setMaxOfflineHours: (hours) => set({ maxOfflineHours: Math.max(8, hours) }), // Minimum 8 hours
+  setMaxOfflineHours: (hours) => set({ maxOfflineHours: Math.max(DEFAULT_MAX_OFFLINE_HOURS, hours) }),
 
   updateAutoSkillSetting: (skillId, setting) =>
     set((state) => {

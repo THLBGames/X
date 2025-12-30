@@ -3,6 +3,8 @@ import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
 import type { AutoSkillSetting } from '@idle-rpg/shared';
+import { AutoCondition, SKILL_CONDITION_DESCRIPTIONS, MAX_SKILL_BAR_SLOTS } from '@idle-rpg/shared';
+import { UI_TOOLTIPS } from '../constants/ui';
 import SkillButton from './SkillButton';
 import SkillTreeModal from './SkillTreeModal';
 import AutoSkillConfigModal from './AutoSkillConfigModal';
@@ -76,12 +78,12 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
     );
   }
 
-  // Ensure we have exactly 8 slots (pad with nulls)
+  // Ensure we have exactly MAX_SKILL_BAR_SLOTS slots (pad with nulls)
   const skillSlots: (string | null)[] = [...character.skillBar];
-  while (skillSlots.length < 8) {
+  while (skillSlots.length < MAX_SKILL_BAR_SLOTS) {
     skillSlots.push(null);
   }
-  skillSlots.splice(8); // Limit to 8
+  skillSlots.splice(MAX_SKILL_BAR_SLOTS); // Limit to MAX_SKILL_BAR_SLOTS
 
   return (
     <div className="combat-skill-bar">
@@ -115,28 +117,32 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
           const skillLevel =
             character.learnedSkills.find((ls) => ls.skillId === skillId)?.level || 0;
           const autoSetting = AutoSkillManager.getAutoSkillSetting(character, skillId);
-          const hasAutoUse = autoSetting.enabled && autoSetting.condition !== 'never';
+          const hasAutoUse = autoSetting.enabled && autoSetting.condition !== AutoCondition.NEVER;
 
           const getConditionTooltip = (setting: AutoSkillSetting): string => {
-            if (!setting.enabled || setting.condition === 'never') {
-              return 'Manual use only';
+            if (!setting.enabled || setting.condition === AutoCondition.NEVER) {
+              return UI_TOOLTIPS.MANUAL_USE_ONLY;
             }
-            switch (setting.condition) {
-              case 'always':
-                return 'Auto: Always use when available';
-              case 'player_health_below':
-                return `Auto: Use when player health < ${setting.threshold}%`;
-              case 'player_health_above':
-                return `Auto: Use when player health > ${setting.threshold}%`;
-              case 'player_mana_above':
-                return `Auto: Use when player mana > ${setting.threshold}%`;
-              case 'enemy_health_below':
-                return `Auto: Use when enemy health < ${setting.threshold}%`;
-              case 'enemy_health_above':
-                return `Auto: Use when enemy health > ${setting.threshold}%`;
-              default:
-                return 'Manual use only';
+            if (setting.condition === AutoCondition.ALWAYS) {
+              return UI_TOOLTIPS.AUTO_ALWAYS_AVAILABLE;
             }
+            if (setting.threshold !== undefined) {
+              switch (setting.condition) {
+                case AutoCondition.PLAYER_HEALTH_BELOW:
+                  return UI_TOOLTIPS.AUTO_PLAYER_HEALTH_BELOW(setting.threshold);
+                case AutoCondition.PLAYER_HEALTH_ABOVE:
+                  return UI_TOOLTIPS.AUTO_PLAYER_HEALTH_ABOVE(setting.threshold);
+                case AutoCondition.PLAYER_MANA_ABOVE:
+                  return UI_TOOLTIPS.AUTO_PLAYER_MANA_ABOVE(setting.threshold);
+                case AutoCondition.ENEMY_HEALTH_BELOW:
+                  return UI_TOOLTIPS.AUTO_ENEMY_HEALTH_BELOW(setting.threshold);
+                case AutoCondition.ENEMY_HEALTH_ABOVE:
+                  return UI_TOOLTIPS.AUTO_ENEMY_HEALTH_ABOVE(setting.threshold);
+                default:
+                  return UI_TOOLTIPS.MANUAL_USE_ONLY;
+              }
+            }
+            return SKILL_CONDITION_DESCRIPTIONS[setting.condition] || UI_TOOLTIPS.MANUAL_USE_ONLY;
           };
 
           return (

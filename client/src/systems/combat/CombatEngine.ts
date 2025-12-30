@@ -6,7 +6,9 @@ import type {
   CombatLog,
   CombatRewards,
   Inventory,
+  ItemType,
 } from '@idle-rpg/shared';
+import { CombatActionType, ConsumableEffectType } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { DungeonManager } from '../dungeon/DungeonManager';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
@@ -198,7 +200,7 @@ export class CombatEngine {
             const targetType = skill.target || 'enemy';
             let action: CombatAction = {
               actorId: actor.id,
-              type: 'skill',
+              type: CombatActionType.SKILL,
               skillId: queuedSkillId,
               timestamp: Date.now(),
             };
@@ -320,7 +322,7 @@ export class CombatEngine {
     const item = dataLoader.getItem(itemId);
 
     // Validate item
-    if (!item || item.type !== 'consumable' || !item.consumableEffect) {
+    if (!item || item.type !== (ItemType.CONSUMABLE as string) || !item.consumableEffect) {
       return null;
     }
 
@@ -333,25 +335,25 @@ export class CombatEngine {
     const effect = item.consumableEffect;
     const action: CombatAction = {
       actorId: actor.id,
-      type: 'item',
+      type: CombatActionType.ITEM,
       itemId: itemId,
       timestamp: Date.now(),
     };
 
     // Apply effect based on type
-    if (effect.type === 'heal' && effect.amount) {
+    if (effect.type === ConsumableEffectType.HEAL && effect.amount) {
       const heal = effect.amount;
       actor.currentHealth = Math.min(actor.currentHealth + heal, actor.stats.maxHealth);
       action.heal = heal;
       action.targetId = actor.id;
       audioManager.playSound('/audio/sfx/heal.mp3', 0.6);
-    } else if (effect.type === 'mana' && effect.amount) {
+    } else if (effect.type === ConsumableEffectType.MANA && effect.amount) {
       const manaRestore = effect.amount;
       actor.currentMana = Math.min(actor.currentMana + manaRestore, actor.stats.maxMana);
       action.manaRestore = manaRestore;
       action.targetId = actor.id;
       audioManager.playSound('/audio/sfx/mana_restore.mp3', 0.6);
-    } else if (effect.type === 'buff' && effect.buffId) {
+    } else if (effect.type === ConsumableEffectType.BUFF && effect.buffId) {
       // Apply buff (would need buff system implementation)
       action.targetId = actor.id;
       audioManager.playSound('/audio/sfx/buff.mp3', 0.6);
@@ -374,7 +376,7 @@ export class CombatEngine {
       // No valid target
       return {
         actorId: actor.id,
-        type: 'defend',
+        type: CombatActionType.DEFEND,
         timestamp: Date.now(),
       };
     }
@@ -393,7 +395,7 @@ export class CombatEngine {
     return {
       actorId: actor.id,
       targetId: target.id,
-      type: 'attack',
+      type: CombatActionType.ATTACK,
       damage,
       timestamp: Date.now(),
     };
@@ -428,7 +430,7 @@ export class CombatEngine {
       if (!target) {
         return {
           actorId: actor.id,
-          type: 'defend',
+          type: CombatActionType.DEFEND,
           timestamp: Date.now(),
         };
       }
@@ -463,7 +465,7 @@ export class CombatEngine {
           return {
             actorId: actor.id,
             targetId: target.id,
-            type: 'skill',
+            type: CombatActionType.SKILL,
             damage,
             timestamp: Date.now(),
           };
@@ -488,7 +490,7 @@ export class CombatEngine {
     return {
       actorId: actor.id,
       targetId: target.id,
-      type: 'attack',
+      type: CombatActionType.ATTACK,
       damage,
       timestamp: Date.now(),
     };

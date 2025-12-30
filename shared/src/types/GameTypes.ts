@@ -1,3 +1,24 @@
+// Import enums
+import {
+  ItemType,
+  ItemRarity,
+  ConsumableEffectType,
+  CombatActionType,
+  AutoCondition,
+  EquipmentSlot,
+  SkillType,
+  SkillTarget,
+  SkillCategory,
+  MonsterAbilityType,
+  StatusEffectType,
+  UpgradeType,
+  UpgradeScope,
+  UpgradeTier,
+  MercenaryType,
+  QuestType,
+  CombatResult,
+} from '../constants/enums';
+
 // Base stats that characters and monsters have
 export interface Stats {
   strength: number;
@@ -63,7 +84,7 @@ export interface Monster {
 export interface MonsterAbility {
   id: string;
   name: string;
-  type: 'attack' | 'heal' | 'buff' | 'debuff';
+  type: MonsterAbilityType;
   chance: number; // 0-1, probability of using this ability
   effect: AbilityEffect;
 }
@@ -76,8 +97,8 @@ export interface AbilityEffect {
 }
 
 // Item definitions
-export type ItemType = 'weapon' | 'armor' | 'accessory' | 'consumable' | 'material' | 'quest';
-export type ItemRarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary' | 'mythic';
+// ItemType and ItemRarity are now enums - re-export for backward compatibility
+export { ItemType, ItemRarity };
 
 export interface Item {
   id: string;
@@ -101,20 +122,11 @@ export interface Item {
   consumableEffect?: ConsumableEffect;
 }
 
-export type EquipmentSlot =
-  | 'weapon'
-  | 'offhand'
-  | 'helmet'
-  | 'chest'
-  | 'legs'
-  | 'boots'
-  | 'gloves'
-  | 'ring1'
-  | 'ring2'
-  | 'amulet';
+// EquipmentSlot is now an enum - re-export for backward compatibility
+export { EquipmentSlot };
 
 export interface ConsumableEffect {
-  type: 'heal' | 'mana' | 'buff' | 'experience' | 'offlineTime';
+  type: ConsumableEffectType;
   amount?: number;
   buffId?: string;
   duration?: number; // For buffs, in seconds
@@ -131,9 +143,8 @@ export interface LootEntry {
 }
 
 // Skill definitions
-export type SkillType = 'active' | 'passive' | 'gathering' | 'production';
-export type SkillTarget = 'self' | 'enemy' | 'ally' | 'all_enemies' | 'all_allies';
-export type SkillCategory = 'gathering' | 'production' | 'hybrid';
+// SkillType, SkillTarget, and SkillCategory are now enums - re-export for backward compatibility
+export { SkillType, SkillTarget, SkillCategory };
 
 // Statistics and Achievements
 export interface GameStatistics {
@@ -199,14 +210,7 @@ export interface CompletedAchievement {
 export interface AutoSkillSetting {
   skillId: string;
   enabled: boolean; // Whether auto-use is enabled
-  condition:
-    | 'always'
-    | 'never'
-    | 'player_health_below'
-    | 'player_health_above'
-    | 'player_mana_above'
-    | 'enemy_health_below'
-    | 'enemy_health_above';
+  condition: AutoCondition;
   threshold?: number; // Percentage threshold (0-100) for condition types that need it
   priority?: number; // Priority order (lower = higher priority, 1-8)
 }
@@ -214,21 +218,14 @@ export interface AutoSkillSetting {
 export interface AutoConsumableSetting {
   itemId: string;
   enabled: boolean; // Whether auto-use is enabled
-  condition:
-    | 'always'
-    | 'never'
-    | 'player_health_below'
-    | 'player_health_above'
-    | 'player_mana_below'
-    | 'player_mana_above';
+  condition: AutoCondition;
   threshold?: number; // Percentage threshold (0-100) for condition types that need it
   priority?: number; // Priority order (lower = higher priority, 1-3)
 }
 
 // Skill Upgrade system
-export type UpgradeType = 'permanent' | 'consumable';
-export type UpgradeScope = 'skill' | 'category';
-export type UpgradeTier = 'I' | 'II' | 'III' | 'IV' | 'V';
+// UpgradeType, UpgradeScope, and UpgradeTier are now enums - re-export for backward compatibility
+export { UpgradeType, UpgradeScope, UpgradeTier };
 
 export interface SkillUpgrade {
   id: string; // e.g., "mining_upgrade_I", "gathering_boost_consumable"
@@ -266,7 +263,8 @@ export interface ActiveUpgrade {
 }
 
 // Mercenary system
-export type MercenaryType = 'combat' | 'skilling';
+// MercenaryType is now an enum - re-export for backward compatibility
+export { MercenaryType };
 
 export interface Mercenary {
   id: string;
@@ -426,7 +424,7 @@ export interface MonsterPool {
 export interface StatusEffect {
   id: string;
   name: string;
-  type: 'buff' | 'debuff';
+  type: StatusEffectType;
   duration: number; // In seconds, -1 for permanent until removed
   stacks: boolean; // Can stack multiple times
   maxStacks?: number;
@@ -526,7 +524,7 @@ export interface CombatParticipant {
 export interface CombatAction {
   actorId: string;
   targetId?: string;
-  type: 'attack' | 'skill' | 'item' | 'defend' | 'consumable';
+  type: CombatActionType;
   skillId?: string;
   itemId?: string;
   damage?: number;
@@ -538,7 +536,7 @@ export interface CombatAction {
 
 export interface CombatLog {
   actions: CombatAction[];
-  result: 'victory' | 'defeat' | 'ongoing';
+  result: CombatResult;
   rewards?: CombatRewards;
   duration: number; // In seconds
 }
@@ -585,7 +583,8 @@ export interface ActiveCombatState {
 }
 
 // Quest system
-export type QuestType = 'dungeon_completion' | 'monster_kills' | 'item_collection';
+// QuestType is now an enum - re-export for backward compatibility
+export { QuestType };
 
 export interface Quest {
   id: string;

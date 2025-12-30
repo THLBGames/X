@@ -3,6 +3,8 @@ import { useGameState } from '../systems';
 import { SkillManager } from '../systems/skills/SkillManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
 import { getDataLoader } from '../data';
+import { MAX_SKILL_BAR_SLOTS } from '@idle-rpg/shared';
+import { UI_MESSAGES } from '../constants/ui';
 import AutoSkillConfigModal from './AutoSkillConfigModal';
 import './SkillTreeModal.css';
 
@@ -52,7 +54,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
     if (result.success && result.character) {
       setCharacter(result.character);
     } else {
-      alert(result.reason || 'Cannot learn skill');
+      alert(result.reason || UI_MESSAGES.CANNOT_LEARN_SKILL());
     }
   };
 
@@ -62,11 +64,11 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
     if (currentSkillBar.includes(skillId)) {
       // Remove from skill bar
       updateSkillBar(currentSkillBar.filter((id) => id !== skillId));
-    } else if (currentSkillBar.length < 8) {
+    } else if (currentSkillBar.length < MAX_SKILL_BAR_SLOTS) {
       // Add to skill bar
       updateSkillBar([...currentSkillBar, skillId]);
     } else {
-      alert('Skill bar is full (max 8 skills)');
+      alert(UI_MESSAGES.SKILL_BAR_FULL(MAX_SKILL_BAR_SLOTS));
     }
   };
 

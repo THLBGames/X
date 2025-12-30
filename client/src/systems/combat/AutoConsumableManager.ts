@@ -1,4 +1,5 @@
-import type { Character, AutoConsumableSetting, Inventory } from '@idle-rpg/shared';
+import type { Character, AutoConsumableSetting, Inventory, ItemType } from '@idle-rpg/shared';
+import { AutoCondition, ConsumableEffectType, VALID_COMBAT_CONSUMABLE_EFFECTS, DEFAULT_PRIORITY } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 /**
@@ -37,7 +38,7 @@ export class AutoConsumableManager {
 
     for (const itemId of character.consumableBar) {
       const setting = character.autoConsumableSettings.find((s) => s.itemId === itemId);
-      if (!setting || !setting.enabled || setting.condition === 'never') {
+      if (!setting || !setting.enabled || setting.condition === AutoCondition.NEVER) {
         continue;
       }
 
@@ -48,14 +49,13 @@ export class AutoConsumableManager {
       }
 
       // Check if item is consumable type
-      if (item.type !== 'consumable' || !item.consumableEffect) {
+      if (item.type !== (ItemType.CONSUMABLE as string) || !item.consumableEffect) {
         continue;
       }
 
       // Only allow combat-useful consumables (heal, mana, buff)
       // Exclude: experience, offlineTime, and custom effects (like treasure chests)
-      const validCombatEffects = ['heal', 'mana', 'buff'];
-      if (!validCombatEffects.includes(item.consumableEffect.type)) {
+      if (!VALID_COMBAT_CONSUMABLE_EFFECTS.includes(item.consumableEffect.type as ConsumableEffectType)) {
         continue;
       }
 
@@ -103,28 +103,28 @@ export class AutoConsumableManager {
     playerMaxMana: number
   ): boolean {
     switch (setting.condition) {
-      case 'always':
+      case AutoCondition.ALWAYS:
         return true;
 
-      case 'never':
+      case AutoCondition.NEVER:
         return false;
 
-      case 'player_health_below':
+      case AutoCondition.PLAYER_HEALTH_BELOW:
         if (setting.threshold === undefined) return false;
         const playerHealthPercent = (playerHealth / playerMaxHealth) * 100;
         return playerHealthPercent < setting.threshold;
 
-      case 'player_health_above':
+      case AutoCondition.PLAYER_HEALTH_ABOVE:
         if (setting.threshold === undefined) return false;
         const playerHealthPercentAbove = (playerHealth / playerMaxHealth) * 100;
         return playerHealthPercentAbove > setting.threshold;
 
-      case 'player_mana_below':
+      case AutoCondition.PLAYER_MANA_BELOW:
         if (setting.threshold === undefined) return false;
         const playerManaPercent = (playerMana / playerMaxMana) * 100;
         return playerManaPercent < setting.threshold;
 
-      case 'player_mana_above':
+      case AutoCondition.PLAYER_MANA_ABOVE:
         if (setting.threshold === undefined) return false;
         const playerManaPercentAbove = (playerMana / playerMaxMana) * 100;
         return playerManaPercentAbove > setting.threshold;
@@ -147,11 +147,11 @@ export class AutoConsumableManager {
     return {
       itemId,
       enabled: false,
-      condition: 'never',
+      condition: AutoCondition.NEVER,
       priority:
         character.consumableBar?.indexOf(itemId) !== undefined
           ? character.consumableBar.indexOf(itemId) + 1
-          : 1,
+          : DEFAULT_PRIORITY,
     };
   }
 }

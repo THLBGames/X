@@ -1,6 +1,7 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { useGameState } from '../systems';
 import { useDamageNumbers } from '../hooks/useDamageNumbers';
+import { MAX_PLAYER_PARTY_SLOTS } from '@idle-rpg/shared';
 import HealthBar from './HealthBar';
 import DamageNumber from './DamageNumber';
 import CombatResultOverlay from './CombatResultOverlay';
@@ -90,16 +91,16 @@ export default function CombatArena({
     ];
   }
 
-  // Pad player party to 5 slots (player + 4 summon slots)
+  // Pad player party to MAX_PLAYER_PARTY_SLOTS slots (player + summon slots)
   const paddedPlayerParty: (ActivePlayerPartyMember | null)[] = [...playerParty];
-  while (paddedPlayerParty.length < 5) {
+  while (paddedPlayerParty.length < MAX_PLAYER_PARTY_SLOTS) {
     paddedPlayerParty.push(null);
   }
 
-  // Pad monsters to 5 slots
+  // Pad monsters to MAX_PLAYER_PARTY_SLOTS slots
   const monsters = combatState.monsters || [];
   const paddedMonsters: (ActiveMonsterState | null)[] = [...monsters];
-  while (paddedMonsters.length < 5) {
+  while (paddedMonsters.length < MAX_PLAYER_PARTY_SLOTS) {
     paddedMonsters.push(null);
   }
 

@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { AutoConsumableManager } from '../systems/combat/AutoConsumableManager';
-import type { AutoConsumableSetting } from '@idle-rpg/shared';
+import type { AutoConsumableSetting, ConsumableEffectType } from '@idle-rpg/shared';
+import { AutoCondition, ConsumableEffectType as ConsumableEffectTypeEnum, CONSUMABLE_CONDITION_DESCRIPTIONS } from '@idle-rpg/shared';
+import { UI_TOOLTIPS, UI_LABELS } from '../constants/ui';
 import TooltipWrapper from './TooltipWrapper';
 import AutoConsumableConfigModal from './AutoConsumableConfigModal';
 import './ConsumableBar.css';
@@ -25,16 +27,16 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
     return null; // Don't show empty consumable bar
   }
 
-  // Ensure we have exactly 3 slots (pad with nulls)
+  // Ensure we have exactly MAX_CONSUMABLE_BAR_SLOTS slots (pad with nulls)
   const consumableSlots: (string | null)[] = [...character.consumableBar];
-  while (consumableSlots.length < 3) {
+  while (consumableSlots.length < MAX_CONSUMABLE_BAR_SLOTS) {
     consumableSlots.push(null);
   }
-  consumableSlots.splice(3); // Limit to 3
+  consumableSlots.splice(MAX_CONSUMABLE_BAR_SLOTS); // Limit to MAX_CONSUMABLE_BAR_SLOTS
 
   return (
     <div className="consumable-bar">
-      <div className="consumable-bar-label">Consumables</div>
+      <div className="consumable-bar-label">{UI_LABELS.CONSUMABLES}</div>
       <div className="consumable-bar-slots">
         {consumableSlots.map((itemId, index) => {
           if (!itemId) {
@@ -61,39 +63,43 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
 
           const canUse = hasItem && (isPlayerTurn || !isCombatActive);
           const autoSetting = AutoConsumableManager.getAutoConsumableSetting(character, itemId);
-          const hasAutoUse = autoSetting.enabled && autoSetting.condition !== 'never';
+          const hasAutoUse = autoSetting.enabled && autoSetting.condition !== AutoCondition.NEVER;
 
           const getConditionTooltip = (setting: AutoConsumableSetting): string => {
-            if (!setting.enabled || setting.condition === 'never') {
-              return 'Manual use only';
+            if (!setting.enabled || setting.condition === AutoCondition.NEVER) {
+              return UI_TOOLTIPS.MANUAL_USE_ONLY;
             }
-            switch (setting.condition) {
-              case 'always':
-                return 'Auto: Always use when available';
-              case 'player_health_below':
-                return `Auto: Use when player health < ${setting.threshold}%`;
-              case 'player_health_above':
-                return `Auto: Use when player health > ${setting.threshold}%`;
-              case 'player_mana_below':
-                return `Auto: Use when player mana < ${setting.threshold}%`;
-              case 'player_mana_above':
-                return `Auto: Use when player mana > ${setting.threshold}%`;
-              default:
-                return 'Manual use only';
+            if (setting.condition === AutoCondition.ALWAYS) {
+              return UI_TOOLTIPS.AUTO_ALWAYS_AVAILABLE;
             }
+            if (setting.threshold !== undefined) {
+              switch (setting.condition) {
+                case AutoCondition.PLAYER_HEALTH_BELOW:
+                  return UI_TOOLTIPS.AUTO_PLAYER_HEALTH_BELOW(setting.threshold);
+                case AutoCondition.PLAYER_HEALTH_ABOVE:
+                  return UI_TOOLTIPS.AUTO_PLAYER_HEALTH_ABOVE(setting.threshold);
+                case AutoCondition.PLAYER_MANA_BELOW:
+                  return UI_TOOLTIPS.AUTO_PLAYER_MANA_BELOW(setting.threshold);
+                case AutoCondition.PLAYER_MANA_ABOVE:
+                  return UI_TOOLTIPS.AUTO_PLAYER_MANA_ABOVE(setting.threshold);
+                default:
+                  return UI_TOOLTIPS.MANUAL_USE_ONLY;
+              }
+            }
+            return CONSUMABLE_CONDITION_DESCRIPTIONS[setting.condition] || UI_TOOLTIPS.MANUAL_USE_ONLY;
           };
 
           const getEffectDescription = (): string => {
             const effect = item.consumableEffect;
             if (!effect) return '';
-            switch (effect.type) {
-              case 'heal':
+            switch (effect.type as ConsumableEffectType) {
+              case ConsumableEffectTypeEnum.HEAL:
                 return `Heals ${effect.amount || 0} HP`;
-              case 'mana':
+              case ConsumableEffectTypeEnum.MANA:
                 return `Restores ${effect.amount || 0} MP`;
-              case 'buff':
+              case ConsumableEffectTypeEnum.BUFF:
                 return `Applies buff: ${effect.buffId || 'Unknown'}`;
-              case 'experience':
+              case ConsumableEffectTypeEnum.EXPERIENCE:
                 return `Grants ${effect.amount || 0} XP`;
               default:
                 return '';
@@ -146,7 +152,7 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
                     e.stopPropagation();
                     setConfigItemId(itemId);
                   }}
-                  title="Configure auto-consumable settings"
+                  title={UI_TOOLTIPS.CONFIGURE_AUTO_CONSUMABLE}
                 >
                   ⚙
                 </button>

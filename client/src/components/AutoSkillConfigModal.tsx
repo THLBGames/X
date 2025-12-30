@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react';
 import type { AutoSkillSetting } from '@idle-rpg/shared';
+import {
+  AutoCondition,
+  CONDITIONS_REQUIRING_THRESHOLD,
+  SKILL_PRIORITY_MIN,
+  SKILL_PRIORITY_MAX,
+  THRESHOLD_MIN,
+  THRESHOLD_MAX,
+  DEFAULT_THRESHOLD,
+  DEFAULT_PRIORITY,
+  SKILL_CONDITION_DESCRIPTIONS,
+} from '@idle-rpg/shared';
+import { UI_MESSAGES, UI_LABELS } from '../constants/ui';
 import { getDataLoader } from '../data';
 import './AutoSkillConfigModal.css';
 
@@ -23,10 +35,10 @@ export default function AutoSkillConfigModal({
     currentSetting.condition
   );
   const [threshold, setThreshold] = useState<string>(
-    currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : '50'
+    currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : DEFAULT_THRESHOLD.toString()
   );
   const [priority, setPriority] = useState<string>(
-    currentSetting.priority !== undefined ? currentSetting.priority.toString() : '1'
+    currentSetting.priority !== undefined ? currentSetting.priority.toString() : DEFAULT_PRIORITY.toString()
   );
 
   const dataLoader = getDataLoader();
@@ -38,9 +50,9 @@ export default function AutoSkillConfigModal({
       setEnabled(currentSetting.enabled);
       setCondition(currentSetting.condition);
       setThreshold(
-        currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : '50'
+        currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : DEFAULT_THRESHOLD.toString()
       );
-      setPriority(currentSetting.priority !== undefined ? currentSetting.priority.toString() : '1');
+      setPriority(currentSetting.priority !== undefined ? currentSetting.priority.toString() : DEFAULT_PRIORITY.toString());
     }
   }, [isOpen, currentSetting]);
 
@@ -48,25 +60,20 @@ export default function AutoSkillConfigModal({
     return null;
   }
 
-  const needsThreshold =
-    condition === 'player_health_below' ||
-    condition === 'player_health_above' ||
-    condition === 'player_mana_above' ||
-    condition === 'enemy_health_below' ||
-    condition === 'enemy_health_above';
+  const needsThreshold = CONDITIONS_REQUIRING_THRESHOLD.includes(condition);
 
   const handleSave = () => {
     // Validate inputs
     const thresholdNum = needsThreshold ? parseInt(threshold, 10) : undefined;
     const priorityNum = parseInt(priority, 10);
 
-    if (needsThreshold && (thresholdNum === undefined || thresholdNum < 0 || thresholdNum > 100)) {
-      alert('Threshold must be between 0 and 100');
+    if (needsThreshold && (thresholdNum === undefined || thresholdNum < THRESHOLD_MIN || thresholdNum > THRESHOLD_MAX)) {
+      alert(UI_MESSAGES.THRESHOLD_RANGE_ERROR);
       return;
     }
 
-    if (priorityNum < 1 || priorityNum > 8) {
-      alert('Priority must be between 1 and 8');
+    if (priorityNum < SKILL_PRIORITY_MIN || priorityNum > SKILL_PRIORITY_MAX) {
+      alert(UI_MESSAGES.SKILL_PRIORITY_RANGE_ERROR(SKILL_PRIORITY_MIN, SKILL_PRIORITY_MAX));
       return;
     }
 
@@ -83,31 +90,14 @@ export default function AutoSkillConfigModal({
   };
 
   const getConditionDescription = (cond: AutoSkillSetting['condition']): string => {
-    switch (cond) {
-      case 'always':
-        return 'Always use when available (if mana allows)';
-      case 'never':
-        return 'Never use automatically (manual only)';
-      case 'player_health_below':
-        return 'Use when player health is below threshold';
-      case 'player_health_above':
-        return 'Use when player health is above threshold';
-      case 'player_mana_above':
-        return 'Use when player mana is above threshold';
-      case 'enemy_health_below':
-        return 'Use when enemy health is below threshold';
-      case 'enemy_health_above':
-        return 'Use when enemy health is above threshold';
-      default:
-        return '';
-    }
+    return SKILL_CONDITION_DESCRIPTIONS[cond] || '';
   };
 
   return (
     <div className="auto-skill-config-overlay" onClick={onClose}>
       <div className="auto-skill-config-modal" onClick={(e) => e.stopPropagation()}>
         <div className="auto-skill-config-header">
-          <h3>Auto-Skill Configuration</h3>
+          <h3>{UI_LABELS.AUTO_SKILL_CONFIG_TITLE}</h3>
           <button className="auto-skill-config-close" onClick={onClose}>
             ×
           </button>
@@ -128,25 +118,25 @@ export default function AutoSkillConfigModal({
                 checked={enabled}
                 onChange={(e) => setEnabled(e.target.checked)}
               />
-              <span>Enable automatic use</span>
+              <span>{UI_LABELS.ENABLE_AUTOMATIC_USE}</span>
             </label>
           </div>
 
           <div className="auto-skill-config-field">
             <label>
-              Condition:
+              {UI_LABELS.CONDITION}
               <select
                 value={condition}
                 onChange={(e) => setCondition(e.target.value as AutoSkillSetting['condition'])}
                 disabled={!enabled}
               >
-                <option value="never">Never (manual only)</option>
-                <option value="always">Always (when available)</option>
-                <option value="player_health_below">Player health below %</option>
-                <option value="player_health_above">Player health above %</option>
-                <option value="player_mana_above">Player mana above %</option>
-                <option value="enemy_health_below">Enemy health below %</option>
-                <option value="enemy_health_above">Enemy health above %</option>
+                <option value={AutoCondition.NEVER}>{UI_LABELS.NEVER_MANUAL_ONLY}</option>
+                <option value={AutoCondition.ALWAYS}>{UI_LABELS.ALWAYS_WHEN_AVAILABLE}</option>
+                <option value={AutoCondition.PLAYER_HEALTH_BELOW}>{UI_LABELS.PLAYER_HEALTH_BELOW}</option>
+                <option value={AutoCondition.PLAYER_HEALTH_ABOVE}>{UI_LABELS.PLAYER_HEALTH_ABOVE}</option>
+                <option value={AutoCondition.PLAYER_MANA_ABOVE}>{UI_LABELS.PLAYER_MANA_ABOVE}</option>
+                <option value={AutoCondition.ENEMY_HEALTH_BELOW}>{UI_LABELS.ENEMY_HEALTH_BELOW}</option>
+                <option value={AutoCondition.ENEMY_HEALTH_ABOVE}>{UI_LABELS.ENEMY_HEALTH_ABOVE}</option>
               </select>
             </label>
             <div className="auto-skill-config-hint">{getConditionDescription(condition)}</div>
@@ -155,11 +145,11 @@ export default function AutoSkillConfigModal({
           {needsThreshold && (
             <div className="auto-skill-config-field">
               <label>
-                Threshold (%):
+                {UI_LABELS.THRESHOLD_PERCENT}
                 <input
                   type="number"
-                  min="0"
-                  max="100"
+                  min={THRESHOLD_MIN}
+                  max={THRESHOLD_MAX}
                   value={threshold}
                   onChange={(e) => setThreshold(e.target.value)}
                   disabled={!enabled}
@@ -170,28 +160,28 @@ export default function AutoSkillConfigModal({
 
           <div className="auto-skill-config-field">
             <label>
-              Priority (1-8, lower = higher priority):
+              {UI_LABELS.SKILL_PRIORITY_RANGE(SKILL_PRIORITY_MIN, SKILL_PRIORITY_MAX)}:
               <input
                 type="number"
-                min="1"
-                max="8"
+                min={SKILL_PRIORITY_MIN}
+                max={SKILL_PRIORITY_MAX}
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
                 disabled={!enabled}
               />
             </label>
             <div className="auto-skill-config-hint">
-              Skills with lower priority numbers are used first
+              {UI_LABELS.PRIORITY_HINT_SKILLS}
             </div>
           </div>
         </div>
 
         <div className="auto-skill-config-actions">
           <button className="auto-skill-config-cancel" onClick={onClose}>
-            Cancel
+            {UI_LABELS.CANCEL}
           </button>
           <button className="auto-skill-config-save" onClick={handleSave}>
-            Save
+            {UI_LABELS.SAVE}
           </button>
         </div>
       </div>

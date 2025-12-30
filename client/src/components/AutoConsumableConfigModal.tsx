@@ -1,5 +1,18 @@
 import { useState, useEffect } from 'react';
 import type { AutoConsumableSetting } from '@idle-rpg/shared';
+import {
+  AutoCondition,
+  CONDITIONS_REQUIRING_THRESHOLD,
+  CONSUMABLE_PRIORITY_MIN,
+  CONSUMABLE_PRIORITY_MAX,
+  THRESHOLD_MIN,
+  THRESHOLD_MAX,
+  DEFAULT_THRESHOLD,
+  DEFAULT_PRIORITY,
+  CONSUMABLE_CONDITION_DESCRIPTIONS,
+  ConsumableEffectType,
+} from '@idle-rpg/shared';
+import { UI_MESSAGES, UI_LABELS } from '../constants/ui';
 import { getDataLoader } from '../data';
 import './AutoConsumableConfigModal.css';
 
@@ -23,10 +36,10 @@ export default function AutoConsumableConfigModal({
     currentSetting.condition
   );
   const [threshold, setThreshold] = useState<string>(
-    currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : '50'
+    currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : DEFAULT_THRESHOLD.toString()
   );
   const [priority, setPriority] = useState<string>(
-    currentSetting.priority !== undefined ? currentSetting.priority.toString() : '1'
+    currentSetting.priority !== undefined ? currentSetting.priority.toString() : DEFAULT_PRIORITY.toString()
   );
 
   const dataLoader = getDataLoader();
@@ -38,9 +51,9 @@ export default function AutoConsumableConfigModal({
       setEnabled(currentSetting.enabled);
       setCondition(currentSetting.condition);
       setThreshold(
-        currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : '50'
+        currentSetting.threshold !== undefined ? currentSetting.threshold.toString() : DEFAULT_THRESHOLD.toString()
       );
-      setPriority(currentSetting.priority !== undefined ? currentSetting.priority.toString() : '1');
+      setPriority(currentSetting.priority !== undefined ? currentSetting.priority.toString() : DEFAULT_PRIORITY.toString());
     }
   }, [isOpen, currentSetting]);
 
@@ -48,24 +61,20 @@ export default function AutoConsumableConfigModal({
     return null;
   }
 
-  const needsThreshold =
-    condition === 'player_health_below' ||
-    condition === 'player_health_above' ||
-    condition === 'player_mana_below' ||
-    condition === 'player_mana_above';
+  const needsThreshold = CONDITIONS_REQUIRING_THRESHOLD.includes(condition);
 
   const handleSave = () => {
     // Validate inputs
     const thresholdNum = needsThreshold ? parseInt(threshold, 10) : undefined;
     const priorityNum = parseInt(priority, 10);
 
-    if (needsThreshold && (thresholdNum === undefined || thresholdNum < 0 || thresholdNum > 100)) {
-      alert('Threshold must be between 0 and 100');
+    if (needsThreshold && (thresholdNum === undefined || thresholdNum < THRESHOLD_MIN || thresholdNum > THRESHOLD_MAX)) {
+      alert(UI_MESSAGES.THRESHOLD_RANGE_ERROR);
       return;
     }
 
-    if (priorityNum < 1 || priorityNum > 3) {
-      alert('Priority must be between 1 and 3');
+    if (priorityNum < CONSUMABLE_PRIORITY_MIN || priorityNum > CONSUMABLE_PRIORITY_MAX) {
+      alert(UI_MESSAGES.CONSUMABLE_PRIORITY_RANGE_ERROR(CONSUMABLE_PRIORITY_MIN, CONSUMABLE_PRIORITY_MAX));
       return;
     }
 
@@ -82,29 +91,14 @@ export default function AutoConsumableConfigModal({
   };
 
   const getConditionDescription = (cond: AutoConsumableSetting['condition']): string => {
-    switch (cond) {
-      case 'always':
-        return 'Always use when available (if in inventory)';
-      case 'never':
-        return 'Never use automatically (manual only)';
-      case 'player_health_below':
-        return 'Use when player health is below threshold';
-      case 'player_health_above':
-        return 'Use when player health is above threshold';
-      case 'player_mana_below':
-        return 'Use when player mana is below threshold';
-      case 'player_mana_above':
-        return 'Use when player mana is above threshold';
-      default:
-        return '';
-    }
+    return CONSUMABLE_CONDITION_DESCRIPTIONS[cond] || '';
   };
 
   return (
     <div className="auto-consumable-config-overlay" onClick={onClose}>
       <div className="auto-consumable-config-modal" onClick={(e) => e.stopPropagation()}>
         <div className="auto-consumable-config-header">
-          <h3>Auto-Consumable Configuration</h3>
+          <h3>{UI_LABELS.AUTO_CONSUMABLE_CONFIG_TITLE}</h3>
           <button className="auto-consumable-config-close" onClick={onClose}>
             ×
           </button>
@@ -116,10 +110,10 @@ export default function AutoConsumableConfigModal({
             <div className="auto-consumable-config-item-description">{item.description}</div>
             {item.consumableEffect && (
               <div className="auto-consumable-config-item-effect">
-                {item.consumableEffect.type === 'heal' && `Heals ${item.consumableEffect.amount || 0} HP`}
-                {item.consumableEffect.type === 'mana' && `Restores ${item.consumableEffect.amount || 0} MP`}
-                {item.consumableEffect.type === 'buff' && `Applies buff: ${item.consumableEffect.buffId || 'Unknown'}`}
-                {item.consumableEffect.type === 'experience' && `Grants ${item.consumableEffect.amount || 0} XP`}
+                {item.consumableEffect.type === ConsumableEffectType.HEAL && `Heals ${item.consumableEffect.amount || 0} HP`}
+                {item.consumableEffect.type === ConsumableEffectType.MANA && `Restores ${item.consumableEffect.amount || 0} MP`}
+                {item.consumableEffect.type === ConsumableEffectType.BUFF && `Applies buff: ${item.consumableEffect.buffId || 'Unknown'}`}
+                {item.consumableEffect.type === ConsumableEffectType.EXPERIENCE && `Grants ${item.consumableEffect.amount || 0} XP`}
               </div>
             )}
           </div>
@@ -133,24 +127,24 @@ export default function AutoConsumableConfigModal({
                 checked={enabled}
                 onChange={(e) => setEnabled(e.target.checked)}
               />
-              <span>Enable automatic use</span>
+              <span>{UI_LABELS.ENABLE_AUTOMATIC_USE}</span>
             </label>
           </div>
 
           <div className="auto-consumable-config-field">
             <label>
-              Condition:
+              {UI_LABELS.CONDITION}
               <select
                 value={condition}
                 onChange={(e) => setCondition(e.target.value as AutoConsumableSetting['condition'])}
                 disabled={!enabled}
               >
-                <option value="never">Never (manual only)</option>
-                <option value="always">Always (when available)</option>
-                <option value="player_health_below">Player health below %</option>
-                <option value="player_health_above">Player health above %</option>
-                <option value="player_mana_below">Player mana below %</option>
-                <option value="player_mana_above">Player mana above %</option>
+                <option value={AutoCondition.NEVER}>{UI_LABELS.NEVER_MANUAL_ONLY}</option>
+                <option value={AutoCondition.ALWAYS}>{UI_LABELS.ALWAYS_WHEN_AVAILABLE}</option>
+                <option value={AutoCondition.PLAYER_HEALTH_BELOW}>{UI_LABELS.PLAYER_HEALTH_BELOW}</option>
+                <option value={AutoCondition.PLAYER_HEALTH_ABOVE}>{UI_LABELS.PLAYER_HEALTH_ABOVE}</option>
+                <option value={AutoCondition.PLAYER_MANA_BELOW}>{UI_LABELS.PLAYER_MANA_BELOW}</option>
+                <option value={AutoCondition.PLAYER_MANA_ABOVE}>{UI_LABELS.PLAYER_MANA_ABOVE}</option>
               </select>
             </label>
             <div className="auto-consumable-config-hint">{getConditionDescription(condition)}</div>
@@ -159,11 +153,11 @@ export default function AutoConsumableConfigModal({
           {needsThreshold && (
             <div className="auto-consumable-config-field">
               <label>
-                Threshold (%):
+                {UI_LABELS.THRESHOLD_PERCENT}
                 <input
                   type="number"
-                  min="0"
-                  max="100"
+                  min={THRESHOLD_MIN}
+                  max={THRESHOLD_MAX}
                   value={threshold}
                   onChange={(e) => setThreshold(e.target.value)}
                   disabled={!enabled}
@@ -174,28 +168,28 @@ export default function AutoConsumableConfigModal({
 
           <div className="auto-consumable-config-field">
             <label>
-              Priority (1-3, lower = higher priority):
+              {UI_LABELS.CONSUMABLE_PRIORITY_RANGE(CONSUMABLE_PRIORITY_MIN, CONSUMABLE_PRIORITY_MAX)}:
               <input
                 type="number"
-                min="1"
-                max="3"
+                min={CONSUMABLE_PRIORITY_MIN}
+                max={CONSUMABLE_PRIORITY_MAX}
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
                 disabled={!enabled}
               />
             </label>
             <div className="auto-consumable-config-hint">
-              Consumables with lower priority numbers are used first
+              {UI_LABELS.PRIORITY_HINT_CONSUMABLES}
             </div>
           </div>
         </div>
 
         <div className="auto-consumable-config-actions">
           <button className="auto-consumable-config-cancel" onClick={onClose}>
-            Cancel
+            {UI_LABELS.CANCEL}
           </button>
           <button className="auto-consumable-config-save" onClick={handleSave}>
-            Save
+            {UI_LABELS.SAVE}
           </button>
         </div>
       </div>

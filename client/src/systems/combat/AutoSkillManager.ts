@@ -1,4 +1,5 @@
 import type { Character, AutoSkillSetting } from '@idle-rpg/shared';
+import { AutoCondition, SkillType, DEFAULT_PRIORITY } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 /**
@@ -38,7 +39,7 @@ export class AutoSkillManager {
 
     for (const skillId of character.skillBar) {
       const setting = character.autoSkillSettings.find((s) => s.skillId === skillId);
-      if (!setting || !setting.enabled || setting.condition === 'never') {
+      if (!setting || !setting.enabled || setting.condition === AutoCondition.NEVER) {
         continue;
       }
 
@@ -55,7 +56,7 @@ export class AutoSkillManager {
       }
 
       // Check if skill is active type
-      if (skill.type !== 'active') {
+      if (skill.type !== SkillType.ACTIVE) {
         continue;
       }
 
@@ -107,33 +108,33 @@ export class AutoSkillManager {
     enemyMaxHealth: number
   ): boolean {
     switch (setting.condition) {
-      case 'always':
+      case AutoCondition.ALWAYS:
         return true;
 
-      case 'never':
+      case AutoCondition.NEVER:
         return false;
 
-      case 'player_health_below':
+      case AutoCondition.PLAYER_HEALTH_BELOW:
         if (setting.threshold === undefined) return false;
         const playerHealthPercent = (playerHealth / playerMaxHealth) * 100;
         return playerHealthPercent < setting.threshold;
 
-      case 'player_health_above':
+      case AutoCondition.PLAYER_HEALTH_ABOVE:
         if (setting.threshold === undefined) return false;
         const playerHealthPercentAbove = (playerHealth / playerMaxHealth) * 100;
         return playerHealthPercentAbove > setting.threshold;
 
-      case 'player_mana_above':
+      case AutoCondition.PLAYER_MANA_ABOVE:
         if (setting.threshold === undefined) return false;
         const playerManaPercent = (playerMana / playerMaxMana) * 100;
         return playerManaPercent > setting.threshold;
 
-      case 'enemy_health_below':
+      case AutoCondition.ENEMY_HEALTH_BELOW:
         if (setting.threshold === undefined || enemyMaxHealth === 0) return false;
         const enemyHealthPercent = (enemyHealth / enemyMaxHealth) * 100;
         return enemyHealthPercent < setting.threshold;
 
-      case 'enemy_health_above':
+      case AutoCondition.ENEMY_HEALTH_ABOVE:
         if (setting.threshold === undefined || enemyMaxHealth === 0) return false;
         const enemyHealthPercentAbove = (enemyHealth / enemyMaxHealth) * 100;
         return enemyHealthPercentAbove > setting.threshold;
@@ -156,11 +157,11 @@ export class AutoSkillManager {
     return {
       skillId,
       enabled: false,
-      condition: 'never',
+      condition: AutoCondition.NEVER,
       priority:
         character.skillBar?.indexOf(skillId) !== undefined
           ? character.skillBar.indexOf(skillId) + 1
-          : 1,
+          : DEFAULT_PRIORITY,
     };
   }
 }
