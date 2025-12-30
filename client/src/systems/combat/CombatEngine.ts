@@ -5,6 +5,7 @@ import type {
   CombatAction,
   CombatLog,
   CombatRewards,
+  Inventory,
 } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { DungeonManager } from '../dungeon/DungeonManager';
@@ -26,6 +27,7 @@ export class CombatEngine {
   private _options: CombatOptions;
   private dungeonId?: string; // Store dungeon ID for chest drop logic
   private character: Character | null = null; // Store character reference for skill validation
+  private inventory: Inventory | null = null; // Store inventory reference for consumable validation
   private skillCooldowns: Map<string, number> = new Map(); // skillId -> timestamp when cooldown ends (milliseconds)
 
   constructor(options: CombatOptions = {}) {
@@ -45,9 +47,11 @@ export class CombatEngine {
     monsters: Monster[],
     dungeonId?: string,
     currentHealth?: number,
-    currentMana?: number
+    currentMana?: number,
+    inventory?: Inventory
   ): void {
     this.character = character;
+    this.inventory = inventory || null;
     this.dungeonId = dungeonId;
 
     // Use provided current health/mana, or default to max values
@@ -103,7 +107,7 @@ export class CombatEngine {
   /**
    * Execute one turn of combat
    */
-  executeTurn(queuedSkillId?: string | null): CombatLog | null {
+  executeTurn(queuedSkillId?: string | null, queuedConsumableId?: string | null): CombatLog | null {
     if (this.isCombatOver()) {
       return this.generateCombatLog();
     }
@@ -117,8 +121,19 @@ export class CombatEngine {
     let action: CombatAction;
 
     if (actor.isPlayer) {
-      // Player action (can be skill or attack)
-      action = this.executePlayerAction(actor, queuedSkillId);
+      // Player action (can be consumable, skill, or attack)
+      // Consumables take priority over skills
+      if (queuedConsumableId) {
+        const consumableAction = this.executeConsumableAction(actor, queuedConsumableId);
+        if (consumableAction) {
+          action = consumableAction;
+        } else {
+          // Consumable failed, try skill or attack
+          action = this.executePlayerAction(actor, queuedSkillId);
+        }
+      } else {
+        action = this.executePlayerAction(actor, queuedSkillId);
+      }
     } else {
       // Monster action
       action = this.executeMonsterAction(actor);
@@ -288,6 +303,65 @@ export class CombatEngine {
 
     // Fall back to basic attack if no skill or skill invalid
     return this.executeBasicAttack(actor);
+  }
+
+  /**
+   * Execute consumable action
+   */
+  private executeConsumableAction(
+    actor: CombatParticipant,
+    itemId: string
+  ): CombatAction | null {
+    if (!this.character || !this.inventory) {
+      return null;
+    }
+
+    const dataLoader = getDataLoader();
+    const item = dataLoader.getItem(itemId);
+
+    // Validate item
+    if (!item || item.type !== 'consumable' || !item.consumableEffect) {
+      return null;
+    }
+
+    // Check if player has the item in inventory
+    const inventoryItem = this.inventory.items.find((invItem) => invItem.itemId === itemId);
+    if (!inventoryItem || inventoryItem.quantity === 0) {
+      return null;
+    }
+
+    const effect = item.consumableEffect;
+    const action: CombatAction = {
+      actorId: actor.id,
+      type: 'item',
+      itemId: itemId,
+      timestamp: Date.now(),
+    };
+
+    // Apply effect based on type
+    if (effect.type === 'heal' && effect.amount) {
+      const heal = effect.amount;
+      actor.currentHealth = Math.min(actor.currentHealth + heal, actor.stats.maxHealth);
+      action.heal = heal;
+      action.targetId = actor.id;
+      audioManager.playSound('/audio/sfx/heal.mp3', 0.6);
+    } else if (effect.type === 'mana' && effect.amount) {
+      const manaRestore = effect.amount;
+      actor.currentMana = Math.min(actor.currentMana + manaRestore, actor.stats.maxMana);
+      action.manaRestore = manaRestore;
+      action.targetId = actor.id;
+      audioManager.playSound('/audio/sfx/mana_restore.mp3', 0.6);
+    } else if (effect.type === 'buff' && effect.buffId) {
+      // Apply buff (would need buff system implementation)
+      action.targetId = actor.id;
+      audioManager.playSound('/audio/sfx/buff.mp3', 0.6);
+    } else {
+      // Unknown effect type or no effect
+      return null;
+    }
+
+    // Note: Item consumption is handled by the caller (useGameLoop) to update inventory state
+    return action;
   }
 
   /**

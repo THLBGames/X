@@ -12,6 +12,7 @@ import type {
   ActiveAction,
   ActivePlayerPartyMember,
   AutoSkillSetting,
+  AutoConsumableSetting,
 } from '@idle-rpg/shared';
 import { QuestManager } from '../systems/quest/QuestManager';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
@@ -45,6 +46,7 @@ interface GameState {
   currentDungeonId: string | null;
   currentCombatState: ActiveCombatState | null;
   queuedSkillId: string | null;
+  queuedConsumableId: string | null;
   combatRoundNumber: number;
   activeAction: ActiveAction;
   maxOfflineHours: number;
@@ -57,6 +59,7 @@ interface GameState {
     skillData: { level: number; experience: number; experienceToNext: number }
   ) => void;
   updateSkillBar: (skillBar: string[]) => void;
+  updateConsumableBar: (consumableBar: string[]) => void;
 
   // Actions - Inventory
   setInventory: (inventory: Inventory) => void;
@@ -122,6 +125,9 @@ interface GameState {
   setMaxOfflineHours: (hours: number) => void;
   updateAutoSkillSetting: (skillId: string, setting: AutoSkillSetting) => void;
   removeAutoSkillSetting: (skillId: string) => void;
+  updateAutoConsumableSetting: (itemId: string, setting: AutoConsumableSetting) => void;
+  removeAutoConsumableSetting: (itemId: string) => void;
+  queueConsumable: (itemId: string | null) => void;
 }
 
 const defaultInventory: Inventory = {
@@ -158,6 +164,7 @@ export const useGameState = create<GameState>((set, get) => ({
   currentDungeonId: null,
   currentCombatState: null,
   queuedSkillId: null,
+  queuedConsumableId: null,
   combatRoundNumber: 0,
   activeAction: null,
   maxOfflineHours: 8, // Default 8 hours
@@ -317,6 +324,25 @@ export const useGameState = create<GameState>((set, get) => ({
           ...state.character,
           skillBar: limitedSkillBar,
           autoSkillSettings: updatedSettings,
+        },
+      };
+    }),
+
+  updateConsumableBar: (consumableBar) =>
+    set((state) => {
+      if (!state.character) return {};
+      // Limit to 3 consumables for consumable bar
+      const limitedConsumableBar = consumableBar.slice(0, 3);
+
+      // Remove auto-consumable settings for items that are no longer in the bar
+      const currentSettings = state.character.autoConsumableSettings || [];
+      const updatedSettings = currentSettings.filter((s) => limitedConsumableBar.includes(s.itemId));
+
+      return {
+        character: {
+          ...state.character,
+          consumableBar: limitedConsumableBar,
+          autoConsumableSettings: updatedSettings,
         },
       };
     }),
@@ -1028,12 +1054,18 @@ export const useGameState = create<GameState>((set, get) => ({
     set({
       currentCombatState: null,
       queuedSkillId: null,
+      queuedConsumableId: null,
       // Keep combatRoundNumber so it persists across rounds
     }),
 
   queueSkill: (skillId) =>
     set({
       queuedSkillId: skillId,
+    }),
+
+  queueConsumable: (itemId) =>
+    set({
+      queuedConsumableId: itemId,
     }),
 
   setCombatRoundNumber: (round) =>
@@ -1083,6 +1115,48 @@ export const useGameState = create<GameState>((set, get) => ({
         character: {
           ...state.character,
           autoSkillSettings: updatedSettings,
+        },
+      };
+    }),
+
+  updateAutoConsumableSetting: (itemId, setting) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const currentSettings = state.character.autoConsumableSettings || [];
+      const existingIndex = currentSettings.findIndex((s) => s.itemId === itemId);
+
+      let updatedSettings: AutoConsumableSetting[];
+      if (existingIndex >= 0) {
+        // Update existing setting
+        updatedSettings = [...currentSettings];
+        updatedSettings[existingIndex] = setting;
+      } else {
+        // Add new setting
+        updatedSettings = [...currentSettings, setting];
+      }
+
+      return {
+        character: {
+          ...state.character,
+          autoConsumableSettings: updatedSettings,
+        },
+      };
+    }),
+
+  removeAutoConsumableSetting: (itemId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const currentSettings = state.character.autoConsumableSettings || [];
+      const updatedSettings = currentSettings.filter(
+        (s: AutoConsumableSetting) => s.itemId !== itemId
+      );
+
+      return {
+        character: {
+          ...state.character,
+          autoConsumableSettings: updatedSettings,
         },
       };
     }),

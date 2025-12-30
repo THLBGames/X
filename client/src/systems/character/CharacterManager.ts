@@ -41,6 +41,7 @@ export class CharacterManager {
       statusEffects: [],
       idleSkills: IdleSkillSystem.initializeIdleSkills(),
       skillBar: [], // Initialize empty skill bar
+      consumableBar: [], // Initialize empty consumable bar
       activeMercenaries: [], // Initialize empty mercenaries array
       activeUpgrades: [], // Initialize empty upgrades array
       consumableUpgrades: [], // Initialize empty consumable upgrades array

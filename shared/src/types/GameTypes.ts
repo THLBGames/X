@@ -211,6 +211,20 @@ export interface AutoSkillSetting {
   priority?: number; // Priority order (lower = higher priority, 1-8)
 }
 
+export interface AutoConsumableSetting {
+  itemId: string;
+  enabled: boolean; // Whether auto-use is enabled
+  condition:
+    | 'always'
+    | 'never'
+    | 'player_health_below'
+    | 'player_health_above'
+    | 'player_mana_below'
+    | 'player_mana_above';
+  threshold?: number; // Percentage threshold (0-100) for condition types that need it
+  priority?: number; // Priority order (lower = higher priority, 1-3)
+}
+
 // Skill Upgrade system
 export type UpgradeType = 'permanent' | 'consumable';
 export type UpgradeScope = 'skill' | 'category';
@@ -449,7 +463,8 @@ export interface Character {
   statusEffects: ActiveStatusEffect[];
   // Idle skills (separate from combat skills)
   idleSkills?: IdleSkillLevel[];
-  skillBar?: string[]; // Array of skill IDs for combat skill bar (max 10)
+  skillBar?: string[]; // Array of skill IDs for combat skill bar (max 8)
+  consumableBar?: string[]; // Array of item IDs for consumable bar (max 3) - food/potion items
   questProgress?: QuestProgress[]; // Quest progress tracking
   activeMercenaries?: ActiveMercenary[]; // Currently rented mercenaries (max 2)
   activeUpgrades?: ActiveUpgrade[]; // Permanent upgrades (always active)
@@ -457,6 +472,7 @@ export interface Character {
   statistics?: GameStatistics; // Game statistics tracking
   completedAchievements?: CompletedAchievement[]; // Completed achievements
   autoSkillSettings?: AutoSkillSetting[]; // Automatic skill usage settings
+  autoConsumableSettings?: AutoConsumableSetting[]; // Automatic consumable usage settings
 }
 
 export interface LearnedSkill {
@@ -510,11 +526,12 @@ export interface CombatParticipant {
 export interface CombatAction {
   actorId: string;
   targetId?: string;
-  type: 'attack' | 'skill' | 'item' | 'defend';
+  type: 'attack' | 'skill' | 'item' | 'defend' | 'consumable';
   skillId?: string;
   itemId?: string;
   damage?: number;
   heal?: number;
+  manaRestore?: number;
   effects?: string[]; // Status effect IDs applied
   timestamp: number;
 }

@@ -6,6 +6,7 @@ import { CombatManager } from '../systems/combat/CombatManager';
 import { DungeonManager } from '../systems/dungeon';
 import { MercenaryManager } from '../systems/mercenary/MercenaryManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
+import { AutoConsumableManager } from '../systems/combat/AutoConsumableManager';
 import { getDataLoader } from '../data';
 
 // Global state for combat stats (shared across component instances)
@@ -33,6 +34,9 @@ export function useGameLoop() {
   const addCombatAction = useGameState((state) => state.addCombatAction);
   const endCombat = useGameState((state) => state.endCombat);
   const queueSkill = useGameState((state) => state.queueSkill);
+  const queueConsumable = useGameState((state) => state.queueConsumable);
+  const inventory = useGameState((state) => state.inventory);
+  const removeItem = useGameState((state) => state.removeItem);
 
   const combatCountRef = useRef(0);
   const lastSaveTimeRef = useRef(Date.now());
@@ -203,7 +207,8 @@ export function useGameLoop() {
           state.settings.autoCombat,
           state.currentDungeonId || undefined,
           currentPlayerHealth,
-          currentPlayerMana
+          currentPlayerMana,
+          state.inventory
         );
 
         // Initialize combat state
@@ -228,9 +233,30 @@ export function useGameLoop() {
       }
     }
 
-    // Check for auto-skill usage if no manual skill is queued
+    // Check for auto-consumable usage first (consumables take priority)
+    let queuedConsumableId = state.queuedConsumableId;
+    if (!queuedConsumableId && state.character) {
+      const player = combatEngine.getPlayer();
+      if (player) {
+        const autoConsumableId = AutoConsumableManager.selectAutoConsumable(
+          state.character,
+          state.inventory,
+          player.currentHealth,
+          player.stats.maxHealth,
+          player.currentMana,
+          player.stats.maxMana
+        );
+
+        if (autoConsumableId) {
+          queuedConsumableId = autoConsumableId;
+          queueConsumable(autoConsumableId);
+        }
+      }
+    }
+
+    // Check for auto-skill usage if no manual skill is queued and no consumable is queued
     let queuedSkillId = state.queuedSkillId;
-    if (!queuedSkillId && state.character) {
+    if (!queuedSkillId && !queuedConsumableId && state.character) {
       const player = combatEngine.getPlayer();
       const monsters = combatEngine.getMonsters();
       const firstAliveMonster = monsters.find((m) => m.isAlive);
@@ -253,11 +279,31 @@ export function useGameLoop() {
       }
     }
 
-    // Clear queue after getting the skill (or use the queued one)
+    // Clear queues after getting the actions (or use the queued ones)
+    const consumableToUse = queuedConsumableId;
     const skillToUse = queuedSkillId;
+    queueConsumable(null); // Clear queue
     queueSkill(null); // Clear queue
 
-    const combatLog = combatEngine.executeTurn(skillToUse);
+    const combatLog = combatEngine.executeTurn(skillToUse, consumableToUse);
+
+    // If consumable was used, remove it from inventory
+    if (consumableToUse) {
+      // Check if consumable was actually used by looking at recent actions
+      const recentActions = combatEngine.getRecentActions(1);
+      if (recentActions.length > 0) {
+        const lastAction = recentActions[0];
+        if (lastAction.type === 'item' && lastAction.itemId === consumableToUse) {
+          removeItem(consumableToUse, 1);
+        }
+      } else if (combatLog) {
+        // Combat ended, check combat log
+        const action = combatLog.actions?.find((a) => a.type === 'item' && a.itemId === consumableToUse);
+        if (action) {
+          removeItem(consumableToUse, 1);
+        }
+      }
+    }
 
     // Update combat state
     const player = combatEngine.getPlayer();
@@ -747,7 +793,8 @@ export function useGameLoop() {
               updatedState.settings.autoCombat,
               updatedState.currentDungeonId || undefined,
               currentPlayerHealth,
-              currentPlayerMana
+              currentPlayerMana,
+              updatedState.inventory
             );
 
             // Initialize combat state for new round

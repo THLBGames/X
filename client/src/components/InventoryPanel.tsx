@@ -18,6 +18,7 @@ export default function InventoryPanel() {
   const setCharacter = useGameState((state) => state.setCharacter);
   const setInventory = useGameState((state) => state.setInventory);
   const reorderInventoryItems = useGameState((state) => state.reorderInventoryItems);
+  const updateConsumableBar = useGameState((state) => state.updateConsumableBar);
   const setMaxOfflineHours = useGameState((state) => state.setMaxOfflineHours);
   const maxOfflineHours = useGameState((state) => state.maxOfflineHours);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
@@ -224,6 +225,40 @@ export default function InventoryPanel() {
     }
   };
 
+  const handleEquipToConsumableBar = (itemId: string) => {
+    if (!character) return;
+
+    const item = dataLoader.getItem(itemId);
+    if (!item || item.type !== 'consumable' || !item.consumableEffect) {
+      alert('This item cannot be equipped to the consumable bar.');
+      return;
+    }
+
+    // Only allow combat-useful consumables (heal, mana, buff)
+    // Exclude: experience, offlineTime, and custom effects (like treasure chests)
+    const effect = item.consumableEffect;
+    const validCombatEffects = ['heal', 'mana', 'buff'];
+    if (!validCombatEffects.includes(effect.type)) {
+      alert('Only healing potions, mana potions, and buff items can be equipped to the consumable bar.');
+      return;
+    }
+
+    const currentConsumableBar = character.consumableBar || [];
+    
+    // Check if item is already in the bar
+    if (currentConsumableBar.includes(itemId)) {
+      // Remove from bar
+      updateConsumableBar(currentConsumableBar.filter((id) => id !== itemId));
+      showNotification(`${item.name} removed from consumable bar`, 'info', 3000);
+    } else if (currentConsumableBar.length >= 3) {
+      alert('Consumable bar is full (3 slots). Remove an item first.');
+    } else {
+      // Add to bar
+      updateConsumableBar([...currentConsumableBar, itemId]);
+      showNotification(`${item.name} added to consumable bar`, 'success', 3000);
+    }
+  };
+
   return (
     <div className="inventory-panel">
       <h2>Inventory</h2>
@@ -294,6 +329,7 @@ export default function InventoryPanel() {
           onSell={handleSell}
           onDrop={handleDropItem}
           onViewDetails={handleViewDetails}
+          onEquipToConsumableBar={handleEquipToConsumableBar}
         />
       )}
       {sellModalItem && (

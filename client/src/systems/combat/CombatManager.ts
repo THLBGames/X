@@ -1,4 +1,4 @@
-import type { Character, Monster } from '@idle-rpg/shared';
+import type { Character, Monster, Inventory } from '@idle-rpg/shared';
 import { CombatEngine } from './CombatEngine';
 
 export class CombatManager {
@@ -15,10 +15,11 @@ export class CombatManager {
     autoCombat: boolean = true,
     dungeonId?: string,
     currentHealth?: number,
-    currentMana?: number
+    currentMana?: number,
+    inventory?: Inventory
   ): CombatEngine {
     this.combatEngine = new CombatEngine({ autoCombat });
-    this.combatEngine.initialize(character, monsters, dungeonId, currentHealth, currentMana);
+    this.combatEngine.initialize(character, monsters, dungeonId, currentHealth, currentMana, inventory);
     return this.combatEngine;
   }
 

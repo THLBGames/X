@@ -25,6 +25,7 @@ interface ItemContextMenuProps {
   onSell?: (itemId: string, quantity?: number) => void;
   onDrop?: (itemId: string, quantity?: number) => void;
   onViewDetails?: (itemId: string) => void;
+  onEquipToConsumableBar?: (itemId: string) => void;
 }
 
 export default function ItemContextMenu({
@@ -40,6 +41,7 @@ export default function ItemContextMenu({
   onSell,
   onDrop,
   onViewDetails,
+  onEquipToConsumableBar,
 }: ItemContextMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const settings = useGameState((state) => state.settings);
@@ -145,6 +147,19 @@ export default function ItemContextMenu({
           onClose();
         },
       });
+      
+      // Only show "Equip to Consumable Bar" for combat-useful consumables
+      // Exclude: experience, offlineTime, and custom effects (like treasure chests)
+      const validCombatEffects = ['heal', 'mana', 'buff'];
+      if (validCombatEffects.includes(item.consumableEffect.type)) {
+        actions.push({
+          label: 'Equip to Consumable Bar',
+          action: () => {
+            onEquipToConsumableBar?.(item.id);
+            onClose();
+          },
+        });
+      }
     }
 
     // All items can be sold (except if equipped, then unequip first)

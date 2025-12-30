@@ -4,6 +4,7 @@ import { useGameState } from '../systems';
 import { audioManager } from '../systems/audio/AudioManager';
 import CombatArena from './CombatArena';
 import CombatSkillBar from './CombatSkillBar';
+import ConsumableBar from './ConsumableBar';
 import './CombatDisplay.css';
 
 interface CombatStats {
@@ -19,6 +20,7 @@ export default function CombatDisplay() {
   const stopCombat = useGameState((state) => state.stopCombat);
   const currentCombatState = useGameState((state) => state.currentCombatState);
   const queueSkill = useGameState((state) => state.queueSkill);
+  const queueConsumable = useGameState((state) => state.queueConsumable);
   const settings = useGameState((state) => state.settings);
 
   const [combatStats, setCombatStats] = useState<CombatStats>({
@@ -91,6 +93,10 @@ export default function CombatDisplay() {
     queueSkill(skillId);
   };
 
+  const handleConsumableUse = (itemId: string) => {
+    queueConsumable(itemId);
+  };
+
   return (
     <div className="combat-display">
       <div className="combat-header">
@@ -109,6 +115,7 @@ export default function CombatDisplay() {
               <CombatArena combatState={currentCombatState} />
 
               <CombatSkillBar onSkillUse={handleSkillUse} />
+              <ConsumableBar onConsumableUse={handleConsumableUse} />
 
               {combatStats.combatsCompleted > 0 && (
                 <div className="combat-stats">
