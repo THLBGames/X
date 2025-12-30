@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useGameState } from '../systems';
 import { SkillManager } from '../systems/skills/SkillManager';
-import { getDataLoader } from '../data';
+// import { getDataLoader } from '../data';
 import './SkillTreeModal.css';
 
 interface SkillTreeModalProps {

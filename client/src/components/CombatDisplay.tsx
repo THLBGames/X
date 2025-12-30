@@ -15,7 +15,7 @@ interface CombatStats {
 export default function CombatDisplay() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const character = useGameState((state) => state.character);
-  const currentDungeonId = useGameState((state) => state.currentDungeonId);
+  // const currentDungeonId = useGameState((state) => state.currentDungeonId);
   const stopCombat = useGameState((state) => state.stopCombat);
   const currentCombatState = useGameState((state) => state.currentCombatState);
   const queueSkill = useGameState((state) => state.queueSkill);
@@ -83,7 +83,7 @@ export default function CombatDisplay() {
     }
   }, [isCombatActive, character?.level]);
 
-  const dataLoader = getDataLoader();
+  // const dataLoader = getDataLoader();
   // Dungeon data available if needed
   // const dungeon = currentDungeonId ? dataLoader.getDungeon(currentDungeonId) : null;
 

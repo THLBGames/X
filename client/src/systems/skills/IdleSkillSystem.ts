@@ -94,7 +94,7 @@ export class IdleSkillSystem {
 
     // Calculate experience to next level
     // const totalExpForCurrent = this.calculateTotalExperienceForLevel(newLevel, baseExp);
-    const totalExpForNext = this.calculateTotalExperienceForLevel(newLevel + 1, baseExp);
+    // const totalExpForNext = this.calculateTotalExperienceForLevel(newLevel + 1, baseExp);
     // const expToNext = totalExpForNext - skillExp;
 
     // Update or create skill entry

@@ -47,7 +47,7 @@ export function useGameLoop() {
     }
   }, [isCombatActive]);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // @ts-expect-error - Function kept for future use
   const _processCombatResult = useCallback(
     async (combatResult: { combatLog: any; updatedCharacter: any; rewards: any }) => {
       if (!combatResult) return;
@@ -562,7 +562,7 @@ export function useGameLoop() {
     setCombatRoundNumber,
   ]);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // @ts-expect-error - Function kept for future use
   const _runCombatIteration = useCallback(async () => {
     // This is now handled by startCombatTurn in the interval
     await startCombatTurn();

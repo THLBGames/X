@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ShopManager } from '../systems/shop';
 import { InventoryManager } from '../systems/inventory';
-import { getDataLoader } from '../data';
+// import { getDataLoader } from '../data';
 import type { Item, Inventory } from '@idle-rpg/shared';
 import './SellItemModal.css';
 

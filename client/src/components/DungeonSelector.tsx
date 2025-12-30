@@ -12,7 +12,7 @@ export default function DungeonSelector() {
   const setCurrentDungeon = useGameState((state) => state.setCurrentDungeon);
   const startCombat = useGameState((state) => state.startCombat);
   
-  // const [availableDungeons, setAvailableDungeons] = useState<Dungeon[]>([]);
+  const [availableDungeons, setAvailableDungeons] = useState<Dungeon[]>([]);
   const [selectedDungeonId, setSelectedDungeonId] = useState<string | null>(currentDungeonId);
 
   useEffect(() => {

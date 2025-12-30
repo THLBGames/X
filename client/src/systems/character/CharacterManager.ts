@@ -1,10 +1,8 @@
 import type {
   Character,
-  CharacterClass,
   Stats,
   CombatStats,
   Equipment,
-  LearnedSkill,
   ActiveStatusEffect,
 } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
@@ -190,7 +188,7 @@ export class CharacterManager {
     leveledUp: boolean;
     levelsGained: number;
   } {
-    const dataLoader = getDataLoader();
+    // const dataLoader = getDataLoader();
     // const config = dataLoader.getConfig();
     let newCharacter = { ...character };
     let leveledUp = false;
