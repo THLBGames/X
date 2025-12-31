@@ -1,0 +1,844 @@
+{
+  "version": "1.0.0",
+  "total_monsters": 22,
+  "monsters": {
+    "balrog": {
+      "id": "balrog",
+      "name": "Balrog",
+      "description": "A demon of fire and shadow, one of the most powerful creatures.",
+      "tier": 3,
+      "level": 25,
+      "stats": {
+        "health": 600,
+        "maxHealth": 600,
+        "mana": 150,
+        "maxMana": 150,
+        "attack": 85,
+        "defense": 35,
+        "magicAttack": 70,
+        "magicDefense": 40,
+        "speed": 14,
+        "criticalChance": 12,
+        "criticalDamage": 2.2
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 200,
+          "max": 300
+        },
+        {
+          "itemId": "balrog_horn",
+          "chance": 0.6
+        },
+        {
+          "itemId": "demon_essence",
+          "chance": 0.5
+        }
+      ],
+      "experienceReward": 500,
+      "goldReward": {
+        "min": 200,
+        "max": 300
+      }
+    },
+    "bandit": {
+      "id": "bandit",
+      "name": "Bandit",
+      "description": "A human outlaw skilled with weapons.",
+      "tier": 1,
+      "level": 4,
+      "stats": {
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 20,
+        "maxMana": 20,
+        "attack": 22,
+        "defense": 7,
+        "magicAttack": 0,
+        "magicDefense": 3,
+        "speed": 13,
+        "criticalChance": 12,
+        "criticalDamage": 1.8
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 20,
+          "max": 35
+        },
+        {
+          "itemId": "leather_scraps",
+          "chance": 0.4
+        }
+      ],
+      "experienceReward": 32,
+      "goldReward": {
+        "min": 20,
+        "max": 35
+      }
+    },
+    "dark_mage": {
+      "id": "dark_mage",
+      "name": "Dark Mage",
+      "description": "A human spellcaster corrupted by dark magic.",
+      "tier": 2,
+      "level": 10,
+      "stats": {
+        "health": 140,
+        "maxHealth": 140,
+        "mana": 150,
+        "maxMana": 150,
+        "attack": 18,
+        "defense": 10,
+        "magicAttack": 55,
+        "magicDefense": 35,
+        "speed": 11,
+        "criticalChance": 8,
+        "criticalDamage": 1.7
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 55,
+          "max": 90
+        },
+        {
+          "itemId": "dark_gem",
+          "chance": 0.3
+        },
+        {
+          "itemId": "mana_potion_medium",
+          "chance": 0.4
+        }
+      ],
+      "experienceReward": 125,
+      "goldReward": {
+        "min": 55,
+        "max": 90
+      }
+    },
+    "dragon_whelp": {
+      "id": "dragon_whelp",
+      "name": "Dragon Whelp",
+      "description": "A young dragon, already dangerous despite its age.",
+      "tier": 3,
+      "level": 15,
+      "stats": {
+        "health": 400,
+        "maxHealth": 400,
+        "mana": 100,
+        "maxMana": 100,
+        "attack": 60,
+        "defense": 25,
+        "magicAttack": 50,
+        "magicDefense": 30,
+        "speed": 12,
+        "criticalChance": 10,
+        "criticalDamage": 2.0
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 100,
+          "max": 150
+        },
+        {
+          "itemId": "dragon_scale",
+          "chance": 0.6
+        },
+        {
+          "itemId": "dragon_blood",
+          "chance": 0.3
+        }
+      ],
+      "experienceReward": 200,
+      "goldReward": {
+        "min": 100,
+        "max": 150
+      }
+    },
+    "ghost": {
+      "id": "ghost",
+      "name": "Ghost",
+      "description": "A spectral entity that can phase through attacks.",
+      "tier": 2,
+      "level": 6,
+      "stats": {
+        "health": 95,
+        "maxHealth": 95,
+        "mana": 60,
+        "maxMana": 60,
+        "attack": 16,
+        "defense": 6,
+        "magicAttack": 28,
+        "magicDefense": 22,
+        "speed": 17,
+        "criticalChance": 9,
+        "criticalDamage": 1.7
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 28,
+          "max": 45
+        },
+        {
+          "itemId": "ectoplasm",
+          "chance": 0.4
+        }
+      ],
+      "experienceReward": 55,
+      "goldReward": {
+        "min": 28,
+        "max": 45
+      }
+    },
+    "giant": {
+      "id": "giant",
+      "name": "Stone Giant",
+      "description": "A massive elemental creature made of living stone.",
+      "tier": 3,
+      "level": 22,
+      "stats": {
+        "health": 750,
+        "maxHealth": 750,
+        "mana": 50,
+        "maxMana": 50,
+        "attack": 90,
+        "defense": 50,
+        "magicAttack": 20,
+        "magicDefense": 45,
+        "speed": 8,
+        "criticalChance": 8,
+        "criticalDamage": 1.9
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 180,
+          "max": 250
+        },
+        {
+          "itemId": "giant_stone",
+          "chance": 0.7
+        }
+      ],
+      "experienceReward": 400,
+      "goldReward": {
+        "min": 180,
+        "max": 250
+      }
+    },
+    "goblin": {
+      "id": "goblin",
+      "name": "Goblin",
+      "description": "A small, weak creature that poses little threat.",
+      "tier": 1,
+      "level": 1,
+      "stats": {
+        "health": 50,
+        "maxHealth": 50,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 8,
+        "defense": 2,
+        "magicAttack": 0,
+        "magicDefense": 1,
+        "speed": 12,
+        "criticalChance": 2,
+        "criticalDamage": 1.5
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 5,
+          "max": 10
+        },
+        {
+          "itemId": "health_potion_small",
+          "chance": 0.1
+        }
+      ],
+      "experienceReward": 10,
+      "goldReward": {
+        "min": 5,
+        "max": 10
+      }
+    },
+    "goblin_shaman": {
+      "id": "goblin_shaman",
+      "name": "Goblin Shaman",
+      "description": "A goblin spellcaster that uses dark magic.",
+      "tier": 2,
+      "level": 5,
+      "stats": {
+        "health": 90,
+        "maxHealth": 90,
+        "mana": 50,
+        "maxMana": 50,
+        "attack": 10,
+        "defense": 4,
+        "magicAttack": 25,
+        "magicDefense": 12,
+        "speed": 11,
+        "criticalChance": 3,
+        "criticalDamage": 1.5
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 25,
+          "max": 40
+        },
+        {
+          "itemId": "mana_potion_small",
+          "chance": 0.3
+        }
+      ],
+      "experienceReward": 50,
+      "goldReward": {
+        "min": 25,
+        "max": 40
+      }
+    },
+    "imp": {
+      "id": "imp",
+      "name": "Imp",
+      "description": "A small demonic creature with fire magic.",
+      "tier": 1,
+      "level": 5,
+      "stats": {
+        "health": 85,
+        "maxHealth": 85,
+        "mana": 40,
+        "maxMana": 40,
+        "attack": 12,
+        "defense": 5,
+        "magicAttack": 20,
+        "magicDefense": 10,
+        "speed": 16,
+        "criticalChance": 7,
+        "criticalDamage": 1.6
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 22,
+          "max": 38
+        },
+        {
+          "itemId": "imp_essence",
+          "chance": 0.3
+        }
+      ],
+      "experienceReward": 38,
+      "goldReward": {
+        "min": 22,
+        "max": 38
+      }
+    },
+    "lich": {
+      "id": "lich",
+      "name": "Lich",
+      "description": "A powerful undead spellcaster that commands dark magic.",
+      "tier": 3,
+      "level": 20,
+      "stats": {
+        "health": 300,
+        "maxHealth": 300,
+        "mana": 200,
+        "maxMana": 200,
+        "attack": 35,
+        "defense": 18,
+        "magicAttack": 80,
+        "magicDefense": 50,
+        "speed": 10,
+        "criticalChance": 8,
+        "criticalDamage": 1.8
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 150,
+          "max": 220
+        },
+        {
+          "itemId": "lich_phylactery",
+          "chance": 0.2
+        },
+        {
+          "itemId": "ancient_tome",
+          "chance": 0.4
+        }
+      ],
+      "experienceReward": 300,
+      "goldReward": {
+        "min": 150,
+        "max": 220
+      }
+    },
+    "minotaur": {
+      "id": "minotaur",
+      "name": "Minotaur",
+      "description": "A powerful beast-man with incredible strength.",
+      "tier": 3,
+      "level": 12,
+      "stats": {
+        "health": 380,
+        "maxHealth": 380,
+        "mana": 30,
+        "maxMana": 30,
+        "attack": 65,
+        "defense": 28,
+        "magicAttack": 10,
+        "magicDefense": 12,
+        "speed": 10,
+        "criticalChance": 12,
+        "criticalDamage": 1.9
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 75,
+          "max": 120
+        },
+        {
+          "itemId": "minotaur_horn",
+          "chance": 0.5
+        }
+      ],
+      "experienceReward": 160,
+      "goldReward": {
+        "min": 75,
+        "max": 120
+      }
+    },
+    "ogre": {
+      "id": "ogre",
+      "name": "Ogre",
+      "description": "A massive brute with devastating attacks.",
+      "tier": 2,
+      "level": 9,
+      "stats": {
+        "health": 320,
+        "maxHealth": 320,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 50,
+        "defense": 22,
+        "magicAttack": 0,
+        "magicDefense": 6,
+        "speed": 7,
+        "criticalChance": 6,
+        "criticalDamage": 1.8
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 50,
+          "max": 80
+        },
+        {
+          "itemId": "ogre_club",
+          "chance": 0.2
+        }
+      ],
+      "experienceReward": 110,
+      "goldReward": {
+        "min": 50,
+        "max": 80
+      }
+    },
+    "orc": {
+      "id": "orc",
+      "name": "Orc",
+      "description": "A brutish warrior with high strength but low intelligence.",
+      "tier": 1,
+      "level": 3,
+      "stats": {
+        "health": 120,
+        "maxHealth": 120,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 20,
+        "defense": 8,
+        "magicAttack": 0,
+        "magicDefense": 3,
+        "speed": 8,
+        "criticalChance": 3,
+        "criticalDamage": 1.5
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 15,
+          "max": 25
+        },
+        {
+          "itemId": "health_potion_small",
+          "chance": 0.2
+        }
+      ],
+      "experienceReward": 30,
+      "goldReward": {
+        "min": 15,
+        "max": 25
+      }
+    },
+    "orc_warrior": {
+      "id": "orc_warrior",
+      "name": "Orc Warrior",
+      "description": "A heavily armored orc warrior trained for combat.",
+      "tier": 2,
+      "level": 8,
+      "stats": {
+        "health": 180,
+        "maxHealth": 180,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 40,
+        "defense": 20,
+        "magicAttack": 0,
+        "magicDefense": 8,
+        "speed": 9,
+        "criticalChance": 5,
+        "criticalDamage": 1.6
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 45,
+          "max": 70
+        },
+        {
+          "itemId": "iron_ore",
+          "chance": 0.3
+        }
+      ],
+      "experienceReward": 95,
+      "goldReward": {
+        "min": 45,
+        "max": 70
+      }
+    },
+    "shadow_stalker": {
+      "id": "shadow_stalker",
+      "name": "Shadow Stalker",
+      "description": "A creature that exists between light and shadow.",
+      "tier": 2,
+      "level": 11,
+      "stats": {
+        "health": 200,
+        "maxHealth": 200,
+        "mana": 80,
+        "maxMana": 80,
+        "attack": 42,
+        "defense": 14,
+        "magicAttack": 38,
+        "magicDefense": 25,
+        "speed": 22,
+        "criticalChance": 18,
+        "criticalDamage": 2.1
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 60,
+          "max": 100
+        },
+        {
+          "itemId": "shadow_essence",
+          "chance": 0.5
+        }
+      ],
+      "experienceReward": 140,
+      "goldReward": {
+        "min": 60,
+        "max": 100
+      }
+    },
+    "skeleton": {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "description": "An undead warrior animated by dark magic.",
+      "tier": 1,
+      "level": 2,
+      "stats": {
+        "health": 80,
+        "maxHealth": 80,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 12,
+        "defense": 5,
+        "magicAttack": 0,
+        "magicDefense": 8,
+        "speed": 10,
+        "criticalChance": 2.5,
+        "criticalDamage": 1.5
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 8,
+          "max": 15
+        },
+        {
+          "itemId": "bone_fragment",
+          "chance": 0.3
+        }
+      ],
+      "experienceReward": 20,
+      "goldReward": {
+        "min": 8,
+        "max": 15
+      }
+    },
+    "spider": {
+      "id": "spider",
+      "name": "Giant Spider",
+      "description": "A venomous arachnid that can poison its prey.",
+      "tier": 1,
+      "level": 4,
+      "stats": {
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 18,
+        "defense": 6,
+        "magicAttack": 5,
+        "magicDefense": 4,
+        "speed": 15,
+        "criticalChance": 5,
+        "criticalDamage": 1.75
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 18,
+          "max": 28
+        },
+        {
+          "itemId": "spider_silk",
+          "chance": 0.3
+        },
+        {
+          "itemId": "poison_gland",
+          "chance": 0.2
+        }
+      ],
+      "experienceReward": 35,
+      "goldReward": {
+        "min": 18,
+        "max": 28
+      }
+    },
+    "troll": {
+      "id": "troll",
+      "name": "Troll",
+      "description": "A large, regenerating creature with immense strength.",
+      "tier": 2,
+      "level": 7,
+      "stats": {
+        "health": 250,
+        "maxHealth": 250,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 35,
+        "defense": 15,
+        "magicAttack": 0,
+        "magicDefense": 5,
+        "speed": 6,
+        "criticalChance": 4,
+        "criticalDamage": 1.5
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 40,
+          "max": 60
+        },
+        {
+          "itemId": "troll_blood",
+          "chance": 0.5
+        }
+      ],
+      "experienceReward": 80,
+      "goldReward": {
+        "min": 40,
+        "max": 60
+      }
+    },
+    "vampire": {
+      "id": "vampire",
+      "name": "Vampire",
+      "description": "An undead creature that drains life from its victims.",
+      "tier": 3,
+      "level": 18,
+      "stats": {
+        "health": 350,
+        "maxHealth": 350,
+        "mana": 120,
+        "maxMana": 120,
+        "attack": 55,
+        "defense": 22,
+        "magicAttack": 45,
+        "magicDefense": 28,
+        "speed": 20,
+        "criticalChance": 15,
+        "criticalDamage": 2.0
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 120,
+          "max": 180
+        },
+        {
+          "itemId": "vampire_fang",
+          "chance": 0.4
+        },
+        {
+          "itemId": "blood_crystal",
+          "chance": 0.25
+        }
+      ],
+      "experienceReward": 250,
+      "goldReward": {
+        "min": 120,
+        "max": 180
+      }
+    },
+    "wolf": {
+      "id": "wolf",
+      "name": "Dire Wolf",
+      "description": "A fierce predator with sharp claws and fangs.",
+      "tier": 1,
+      "level": 2,
+      "stats": {
+        "health": 70,
+        "maxHealth": 70,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 15,
+        "defense": 4,
+        "magicAttack": 0,
+        "magicDefense": 2,
+        "speed": 18,
+        "criticalChance": 8,
+        "criticalDamage": 2.0
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 10,
+          "max": 18
+        },
+        {
+          "itemId": "wolf_pelt",
+          "chance": 0.4
+        }
+      ],
+      "experienceReward": 22,
+      "goldReward": {
+        "min": 10,
+        "max": 18
+      }
+    },
+    "wraith": {
+      "id": "wraith",
+      "name": "Wraith",
+      "description": "An ethereal undead spirit that drains life.",
+      "tier": 2,
+      "level": 6,
+      "stats": {
+        "health": 110,
+        "maxHealth": 110,
+        "mana": 80,
+        "maxMana": 80,
+        "attack": 15,
+        "defense": 8,
+        "magicAttack": 30,
+        "magicDefense": 20,
+        "speed": 14,
+        "criticalChance": 6,
+        "criticalDamage": 1.8
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 30,
+          "max": 50
+        },
+        {
+          "itemId": "essence_of_death",
+          "chance": 0.4
+        }
+      ],
+      "experienceReward": 65,
+      "goldReward": {
+        "min": 30,
+        "max": 50
+      }
+    },
+    "zombie": {
+      "id": "zombie",
+      "name": "Zombie",
+      "description": "A slow but resilient undead creature.",
+      "tier": 1,
+      "level": 3,
+      "stats": {
+        "health": 150,
+        "maxHealth": 150,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 14,
+        "defense": 10,
+        "magicAttack": 0,
+        "magicDefense": 5,
+        "speed": 5,
+        "criticalChance": 1,
+        "criticalDamage": 1.5
+      },
+      "lootTable": [
+        {
+          "itemId": "gold",
+          "chance": 1.0,
+          "min": 12,
+          "max": 20
+        },
+        {
+          "itemId": "rotten_flesh",
+          "chance": 0.5
+        }
+      ],
+      "experienceReward": 25,
+      "goldReward": {
+        "min": 12,
+        "max": 20
+      }
+    }
+  }
+}

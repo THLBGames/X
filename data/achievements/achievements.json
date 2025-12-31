@@ -1,0 +1,265 @@
+{
+  "version": "1.0.0",
+  "total_achievements": 19,
+  "achievements": {
+    "collect_first_item": {
+      "id": "collect_first_item",
+      "name": "Collector",
+      "description": "Collect your first item",
+      "category": "collection",
+      "requirements": {
+        "itemsCollected": {
+          "gold": 1
+        }
+      },
+      "rewards": {
+        "gold": 50
+      },
+      "hidden": false
+    },
+    "collect_10_unique_items": {
+      "id": "collect_10_unique_items",
+      "name": "Item Hoarder",
+      "description": "Collect 10 unique items",
+      "category": "collection",
+      "requirements": {
+        "totalItems": 10
+      },
+      "rewards": {
+        "gold": 1000
+      },
+      "hidden": false
+    },
+    "collect_50_unique_items": {
+      "id": "collect_50_unique_items",
+      "name": "Treasure Hunter",
+      "description": "Collect 50 unique items",
+      "category": "collection",
+      "requirements": {
+        "totalItems": 50
+      },
+      "rewards": {
+        "gold": 10000,
+        "title": "Treasure Hunter"
+      },
+      "hidden": false
+    },
+    "first_kill": {
+      "id": "first_kill",
+      "name": "First Blood",
+      "description": "Kill your first monster",
+      "category": "combat",
+      "requirements": {
+        "totalCombats": 1
+      },
+      "rewards": {
+        "gold": 100
+      },
+      "hidden": false
+    },
+    "kill_10_monsters": {
+      "id": "kill_10_monsters",
+      "name": "Monster Hunter",
+      "description": "Kill 10 monsters",
+      "category": "combat",
+      "requirements": {
+        "totalCombats": 10
+      },
+      "rewards": {
+        "gold": 500
+      },
+      "hidden": false
+    },
+    "kill_100_monsters": {
+      "id": "kill_100_monsters",
+      "name": "Veteran Slayer",
+      "description": "Kill 100 monsters",
+      "category": "combat",
+      "requirements": {
+        "totalCombats": 100
+      },
+      "rewards": {
+        "gold": 5000,
+        "title": "Veteran Slayer"
+      },
+      "hidden": false
+    },
+    "kill_1000_monsters": {
+      "id": "kill_1000_monsters",
+      "name": "Master Slayer",
+      "description": "Kill 1000 monsters",
+      "category": "combat",
+      "requirements": {
+        "totalCombats": 1000
+      },
+      "rewards": {
+        "gold": 50000,
+        "title": "Master Slayer"
+      },
+      "hidden": false
+    },
+    "complete_25_percent": {
+      "id": "complete_25_percent",
+      "name": "Quarter Complete",
+      "description": "Reach 25% game completion",
+      "category": "completion",
+      "requirements": {
+        "completionPercentage": 25
+      },
+      "rewards": {
+        "gold": 5000,
+        "title": "Quarter Master"
+      },
+      "hidden": false
+    },
+    "complete_50_percent": {
+      "id": "complete_50_percent",
+      "name": "Halfway There",
+      "description": "Reach 50% game completion",
+      "category": "completion",
+      "requirements": {
+        "completionPercentage": 50
+      },
+      "rewards": {
+        "gold": 25000,
+        "title": "Halfway Hero"
+      },
+      "hidden": false
+    },
+    "complete_75_percent": {
+      "id": "complete_75_percent",
+      "name": "Almost There",
+      "description": "Reach 75% game completion",
+      "category": "completion",
+      "requirements": {
+        "completionPercentage": 75
+      },
+      "rewards": {
+        "gold": 100000,
+        "title": "Near Completion"
+      },
+      "hidden": false
+    },
+    "complete_100_percent": {
+      "id": "complete_100_percent",
+      "name": "Perfect Completion",
+      "description": "Reach 100% game completion",
+      "category": "completion",
+      "requirements": {
+        "completionPercentage": 100
+      },
+      "rewards": {
+        "gold": 500000,
+        "title": "Perfect Completionist"
+      },
+      "hidden": false
+    },
+    "earn_1000_gold": {
+      "id": "earn_1000_gold",
+      "name": "Wealthy",
+      "description": "Earn 1000 gold",
+      "category": "milestone",
+      "requirements": {
+        "totalGold": 1000
+      },
+      "rewards": {
+        "gold": 500
+      },
+      "hidden": false
+    },
+    "earn_10000_gold": {
+      "id": "earn_10000_gold",
+      "name": "Rich",
+      "description": "Earn 10000 gold",
+      "category": "milestone",
+      "requirements": {
+        "totalGold": 10000
+      },
+      "rewards": {
+        "gold": 5000
+      },
+      "hidden": false
+    },
+    "earn_100000_gold": {
+      "id": "earn_100000_gold",
+      "name": "Millionaire",
+      "description": "Earn 100000 gold",
+      "category": "milestone",
+      "requirements": {
+        "totalGold": 100000
+      },
+      "rewards": {
+        "gold": 50000,
+        "title": "Millionaire"
+      },
+      "hidden": false
+    },
+    "play_1_hour": {
+      "id": "play_1_hour",
+      "name": "Dedicated Player",
+      "description": "Play for 1 hour",
+      "category": "milestone",
+      "requirements": {
+        "totalPlayTime": 3600
+      },
+      "rewards": {
+        "gold": 1000
+      },
+      "hidden": false
+    },
+    "play_10_hours": {
+      "id": "play_10_hours",
+      "name": "Veteran Player",
+      "description": "Play for 10 hours",
+      "category": "milestone",
+      "requirements": {
+        "totalPlayTime": 36000
+      },
+      "rewards": {
+        "gold": 10000,
+        "title": "Veteran Player"
+      },
+      "hidden": false
+    },
+    "first_skill_action": {
+      "id": "first_skill_action",
+      "name": "Getting Started",
+      "description": "Complete your first skill action",
+      "category": "skilling",
+      "requirements": {
+        "totalSkillActions": 1
+      },
+      "rewards": {
+        "gold": 100
+      },
+      "hidden": false
+    },
+    "100_skill_actions": {
+      "id": "100_skill_actions",
+      "name": "Dedicated Worker",
+      "description": "Complete 100 skill actions",
+      "category": "skilling",
+      "requirements": {
+        "totalSkillActions": 100
+      },
+      "rewards": {
+        "gold": 1000
+      },
+      "hidden": false
+    },
+    "1000_skill_actions": {
+      "id": "1000_skill_actions",
+      "name": "Master Craftsman",
+      "description": "Complete 1000 skill actions",
+      "category": "skilling",
+      "requirements": {
+        "totalSkillActions": 1000
+      },
+      "rewards": {
+        "gold": 10000,
+        "title": "Master Craftsman"
+      },
+      "hidden": false
+    }
+  }
+}

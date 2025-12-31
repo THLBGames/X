@@ -60,406 +60,270 @@ export class DataLoader {
   }
 
   private async loadClasses(): Promise<void> {
-    // Load base classes from data directory using fetch
-    const classIds = ['warrior', 'mage', 'rogue'];
+    // Load combined classes.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_classes?: number;
+      classes: { [key: string]: CharacterClass };
+    }>('/data/classes/classes.json');
     
-    for (const classId of classIds) {
+    if (!combinedData || !combinedData.classes || typeof combinedData.classes !== 'object') {
+      throw new Error('Failed to load classes.json - file not found or invalid format');
+    }
+    
+    console.log(`Loading ${Object.keys(combinedData.classes).length} classes from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [classId, classData] of Object.entries(combinedData.classes)) {
       try {
-        const data = await this.loadJsonFile<CharacterClass>(`/data/classes/${classId}.json`);
-        if (data && this.validateClass(data)) {
-          this.classesCache.set(data.id, data);
+        if (this.validateClass(classData)) {
+          this.classesCache.set(classId, classData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load class ${classId}:`, error);
+        console.warn(`Failed to validate class ${classId}:`, error);
       }
     }
-
-    // Load subclasses
-    const subclassIds = ['wizard', 'necromancer', 'guardian', 'berserker', 'ranger', 'swashbuckler'];
     
-    for (const subclassId of subclassIds) {
-      try {
-        const data = await this.loadJsonFile<CharacterClass>(`/data/classes/${subclassId}.json`);
-        if (data && this.validateClass(data)) {
-          this.classesCache.set(data.id, data);
-        }
-      } catch (error) {
-        console.warn(`Failed to load subclass ${subclassId}:`, error);
-      }
-    }
+    console.log(`Loaded ${loadedCount} classes from combined file`);
   }
 
   private async loadMonsters(): Promise<void> {
-    // Load monsters from data directory using fetch
-    // List all monster IDs based on files in data/monsters directory
-    const monsterIds = [
-      'goblin',
-      'wolf',
-      'skeleton',
-      'orc',
-      'orc_warrior',
-      'spider',
-      'zombie',
-      'ghost',
-      'imp',
-      'bandit',
-      'troll',
-      'ogre',
-      'minotaur',
-      'dark_mage',
-      'goblin_shaman',
-      'shadow_stalker',
-      'vampire',
-      'wraith',
-      'giant',
-      'dragon_whelp',
-      'lich',
-      'balrog',
-    ];
-
-    for (const monsterId of monsterIds) {
+    // Load combined monsters.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_monsters?: number;
+      monsters: { [key: string]: Monster };
+    }>('/data/monsters/monsters.json');
+    
+    if (!combinedData || !combinedData.monsters || typeof combinedData.monsters !== 'object') {
+      throw new Error('Failed to load monsters.json - file not found or invalid format');
+    }
+    
+    console.log(`Loading ${Object.keys(combinedData.monsters).length} monsters from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [monsterId, monsterData] of Object.entries(combinedData.monsters)) {
       try {
-        const data = await this.loadJsonFile<Monster>(`/data/monsters/${monsterId}.json`);
-        if (data && this.validateMonster(data)) {
-          this.monstersCache.set(data.id, data);
+        if (this.validateMonster(monsterData)) {
+          this.monstersCache.set(monsterId, monsterData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load monster ${monsterId}:`, error);
+        console.warn(`Failed to validate monster ${monsterId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} monsters from combined file`);
   }
 
   private async loadItems(): Promise<void> {
-    // Try to load combined items.json file first (much faster - single file vs 500+ files)
-    try {
-      const combinedData = await this.loadJsonFile<{ 
-        version?: string;
-        total_items?: number;
-        items: { [key: string]: Item };
-      }>('/data/items/items.json');
-      
-      if (combinedData && combinedData.items && typeof combinedData.items === 'object') {
-        console.log(`Loading ${Object.keys(combinedData.items).length} items from combined file...`);
-        
-        let loadedCount = 0;
-        for (const [itemId, itemData] of Object.entries(combinedData.items)) {
-          try {
-            // Remove _source_file metadata if present (it's just for debugging)
-            const cleanedItemData = { ...itemData };
-            if ('_source_file' in cleanedItemData) {
-              delete (cleanedItemData as Record<string, unknown>)._source_file;
-            }
-            
-            if (this.validateItem(cleanedItemData as Item)) {
-              this.itemsCache.set(itemId, cleanedItemData as Item);
-              loadedCount++;
-            }
-          } catch (error) {
-            console.warn(`Failed to validate item ${itemId}:`, error);
-          }
-        }
-        
-        console.log(`Loaded ${loadedCount} items from combined file`);
-        return; // Successfully loaded from combined file
-      }
-    } catch (error) {
-      console.warn('Combined items.json not found, falling back to individual files:', error);
+    // Load combined items.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_items?: number;
+      items: { [key: string]: Item };
+    }>('/data/items/items.json');
+    
+    if (!combinedData || !combinedData.items || typeof combinedData.items !== 'object') {
+      throw new Error('Failed to load items.json - file not found or invalid format');
     }
     
-    // Fallback: Load items from individual files (old method)
-    try {
-      const manifest = await this.loadJsonFile<{ items: string[] }>('/data/items/manifest.json');
-      
-      if (manifest && manifest.items && Array.isArray(manifest.items)) {
-        console.log(`Loading ${manifest.items.length} items from individual files...`);
-        
-        // Load items in batches to avoid overwhelming the browser
-        const batchSize = 50;
-        for (let i = 0; i < manifest.items.length; i += batchSize) {
-          const batch = manifest.items.slice(i, i + batchSize);
-          await Promise.all(
-            batch.map(async (itemId) => {
-              try {
-                await this.loadItem(itemId);
-              } catch (error) {
-                console.warn(`Failed to load item ${itemId}:`, error);
-              }
-            })
-          );
-          
-          // Small delay between batches to prevent blocking
-          if (i + batchSize < manifest.items.length) {
-            await new Promise(resolve => setTimeout(resolve, 10));
-          }
+    console.log(`Loading ${Object.keys(combinedData.items).length} items from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [itemId, itemData] of Object.entries(combinedData.items)) {
+      try {
+        // Remove _source_file metadata if present (it's just for debugging)
+        const cleanedItemData = { ...itemData };
+        if ('_source_file' in cleanedItemData) {
+          delete (cleanedItemData as Record<string, unknown>)._source_file;
         }
         
-        console.log(`Loaded ${this.itemsCache.size} items`);
-      } else {
-        console.warn('Items manifest not found or invalid, falling back to on-demand loading');
-        // Fallback: load essential shop items
-        const shopItemIds = [
-          'offline_time_upgrade_8h',
-          'offline_time_upgrade_24h',
-        ];
-        
-        for (const itemId of shopItemIds) {
-          await this.loadItem(itemId);
+        if (this.validateItem(cleanedItemData as Item)) {
+          this.itemsCache.set(itemId, cleanedItemData as Item);
+          loadedCount++;
         }
-      }
-    } catch (error) {
-      console.warn('Failed to load items manifest, falling back to on-demand loading:', error);
-      // Fallback: load essential shop items
-      const shopItemIds = [
-        'offline_time_upgrade_8h',
-        'offline_time_upgrade_24h',
-      ];
-      
-      for (const itemId of shopItemIds) {
-        await this.loadItem(itemId);
+      } catch (error) {
+        console.warn(`Failed to validate item ${itemId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} items from combined file`);
   }
 
   private async loadSkills(): Promise<void> {
-    // Load skills from data directory using fetch
-    // Get all skill IDs from already-loaded class definitions
-    const skillIdsSet = new Set<string>();
+    // Load combined skills.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_skills?: number;
+      skills: { [key: string]: Skill };
+    }>('/data/skills/skills.json');
     
-    // Classes should already be loaded, so we can use the cache
-    const classIds = ['warrior', 'mage', 'rogue'];
-    for (const classId of classIds) {
-      const classData = this.classesCache.get(classId);
-      if (classData && classData.availableSkills) {
-        classData.availableSkills.forEach((skillId) => skillIdsSet.add(skillId));
-      }
+    if (!combinedData || !combinedData.skills || typeof combinedData.skills !== 'object') {
+      throw new Error('Failed to load skills.json - file not found or invalid format');
     }
-
-    // Also load subclasses
-    const subclassIds = ['wizard', 'necromancer', 'guardian', 'berserker', 'ranger', 'swashbuckler'];
-    for (const subclassId of subclassIds) {
-      const subclassData = this.classesCache.get(subclassId);
-      if (subclassData && subclassData.availableSkills) {
-        subclassData.availableSkills.forEach((skillId) => skillIdsSet.add(skillId));
-      }
-    }
-
-    // Add all idle skills (these are not in class definitions)
-    const idleSkillIds = [
-      'mining',
-      'fishing',
-      'woodcutting',
-      'herbalism',
-      'hunting',
-      'archaeology',
-      'quarrying',
-      'foraging',
-      'treasure_hunting',
-      'thieving',
-      'trapping',
-      'divination',
-      'cooking',
-      'blacksmithing',
-      'alchemy',
-      'enchanting',
-      'tailoring',
-      'leatherworking',
-      'jewelcrafting',
-      'engineering',
-      'runecrafting',
-      'farming',
-    ];
-    idleSkillIds.forEach((skillId) => skillIdsSet.add(skillId));
-
-    // Convert set to array and load all skills
-    const skillIds = Array.from(skillIdsSet);
     
-    // Load all skills
-    const loadPromises = skillIds.map(async (skillId) => {
+    console.log(`Loading ${Object.keys(combinedData.skills).length} skills from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [skillId, skillData] of Object.entries(combinedData.skills)) {
       try {
-        const data = await this.loadJsonFile<Skill>(`/data/skills/${skillId}.json`);
-        if (data && this.validateSkill(data)) {
-          this.skillsCache.set(data.id, data);
+        if (this.validateSkill(skillData)) {
+          this.skillsCache.set(skillId, skillData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load skill ${skillId}:`, error);
+        console.warn(`Failed to validate skill ${skillId}:`, error);
       }
-    });
-
-    await Promise.all(loadPromises);
+    }
+    
+    console.log(`Loaded ${loadedCount} skills from combined file`);
   }
 
   private async loadDungeons(): Promise<void> {
-    // Load all dungeons from data directory using fetch
-    const dungeonIds = [
-      'forest_clearing',
-      'goblin_cave',
-      'spider_nest',
-      'bandit_camp',
-      'old_cemetery',
-      'orc_encampment',
-      'wolf_den',
-      'skeleton_crypt',
-      'haunted_forest',
-      'troll_cave',
-      'imp_infestation',
-      'zombie_graveyard',
-      'dark_catacombs',
-      'ogre_stronghold',
-      'ghost_manor',
-      'minotaur_labyrinth',
-      'vampire_coven',
-      'dragon_lair',
-      'shadow_realm',
-      'demon_forge',
-      'lich_tower',
-      'ancient_ruins',
-      'giant_kingdom',
-      'balrog_pit',
-      'cursed_castle',
-      'abyssal_chasm',
-      'dragon_roost',
-      'undead_citadel',
-      'infernal_plains',
-      'void_nexus',
-      'chaos_realm',
-      'titan_arena',
-      'eternal_library',
-      'storm_peak',
-      'underworld_gate',
-      'celestial_sanctum',
-      'dread_fortress',
-      'forsaken_cathedral',
-      'world_ender_chamber',
-      'godslayer_throne',
-    ];
+    // Load combined dungeons.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_dungeons?: number;
+      dungeons: { [key: string]: Dungeon };
+    }>('/data/dungeons/dungeons.json');
     
-    for (const dungeonId of dungeonIds) {
+    if (!combinedData || !combinedData.dungeons || typeof combinedData.dungeons !== 'object') {
+      throw new Error('Failed to load dungeons.json - file not found or invalid format');
+    }
+    
+    console.log(`Loading ${Object.keys(combinedData.dungeons).length} dungeons from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [dungeonId, dungeonData] of Object.entries(combinedData.dungeons)) {
       try {
-        const data = await this.loadJsonFile<Dungeon>(`/data/dungeons/${dungeonId}.json`);
-        if (data && this.validateDungeon(data)) {
-          this.dungeonsCache.set(data.id, data);
+        if (this.validateDungeon(dungeonData)) {
+          this.dungeonsCache.set(dungeonId, dungeonData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load dungeon ${dungeonId}:`, error);
+        console.warn(`Failed to validate dungeon ${dungeonId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} dungeons from combined file`);
   }
 
   private async loadQuests(): Promise<void> {
-    // Load quests from data directory using fetch
-    const questIds = [
-      'wizard_quest',
-      'necromancer_quest',
-      'guardian_quest',
-      'berserker_quest',
-      'ranger_quest',
-      'swashbuckler_quest',
-    ];
+    // Load combined quests.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_quests?: number;
+      quests: { [key: string]: Quest };
+    }>('/data/quests/quests.json');
     
-    for (const questId of questIds) {
+    if (!combinedData || !combinedData.quests || typeof combinedData.quests !== 'object') {
+      throw new Error('Failed to load quests.json - file not found or invalid format');
+    }
+    
+    console.log(`Loading ${Object.keys(combinedData.quests).length} quests from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [questId, questData] of Object.entries(combinedData.quests)) {
       try {
-        const data = await this.loadJsonFile<Quest>(`/data/quests/${questId}.json`);
-        if (data && this.validateQuest(data)) {
-          this.questsCache.set(data.id, data);
+        if (this.validateQuest(questData)) {
+          this.questsCache.set(questId, questData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load quest ${questId}:`, error);
+        console.warn(`Failed to validate quest ${questId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} quests from combined file`);
   }
 
   private async loadMercenaries(): Promise<void> {
-    // Load mercenaries from data directory using fetch
-    const mercenaryIds = [
-      'warrior_mercenary',
-      'mage_mercenary',
-      'rogue_mercenary',
-      'mining_mercenary',
-      'foraging_mercenary',
-      'crafting_mercenary',
-    ];
+    // Load combined mercenaries.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_mercenaries?: number;
+      mercenaries: { [key: string]: Mercenary };
+    }>('/data/mercenaries/mercenaries.json');
     
-    for (const mercenaryId of mercenaryIds) {
+    if (!combinedData || !combinedData.mercenaries || typeof combinedData.mercenaries !== 'object') {
+      throw new Error('Failed to load mercenaries.json - file not found or invalid format');
+    }
+    
+    console.log(`Loading ${Object.keys(combinedData.mercenaries).length} mercenaries from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [mercenaryId, mercenaryData] of Object.entries(combinedData.mercenaries)) {
       try {
-        const data = await this.loadJsonFile<Mercenary>(`/data/mercenaries/${mercenaryId}.json`);
-        if (data && this.validateMercenary(data)) {
-          this.mercenariesCache.set(data.id, data);
+        if (this.validateMercenary(mercenaryData)) {
+          this.mercenariesCache.set(mercenaryId, mercenaryData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load mercenary ${mercenaryId}:`, error);
+        console.warn(`Failed to validate mercenary ${mercenaryId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} mercenaries from combined file`);
   }
 
   private async loadAchievements(): Promise<void> {
-    // Load achievements from data directory using fetch
-    const achievementFiles = [
-      'combat_achievements',
-      'collection_achievements',
-      'skilling_achievements',
-      'completion_achievements',
-      'milestone_achievements',
-    ];
-
-    for (const fileName of achievementFiles) {
+    // Load combined achievements.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_achievements?: number;
+      achievements: { [key: string]: Achievement };
+    }>('/data/achievements/achievements.json');
+    
+    if (!combinedData || !combinedData.achievements || typeof combinedData.achievements !== 'object') {
+      throw new Error('Failed to load achievements.json - file not found or invalid format');
+    }
+    
+    console.log(`Loading ${Object.keys(combinedData.achievements).length} achievements from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [achievementId, achievementData] of Object.entries(combinedData.achievements)) {
       try {
-        const response = await fetch(`/data/achievements/${fileName}.json`);
-        if (response.ok) {
-          const data = await response.json();
-          // Handle both single achievement and array of achievements
-          const achievements = Array.isArray(data) ? data : [data];
-          for (const achievement of achievements) {
-            if (this.validateAchievement(achievement)) {
-              this.achievementsCache.set(achievement.id, achievement);
-            }
-          }
+        if (this.validateAchievement(achievementData)) {
+          this.achievementsCache.set(achievementId, achievementData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load achievements from ${fileName}:`, error);
+        console.warn(`Failed to validate achievement ${achievementId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} achievements from combined file`);
   }
 
   private async loadUpgrades(): Promise<void> {
-    // Load all upgrades from data directory using fetch
-    const skillIds = [
-      'mining', 'fishing', 'woodcutting', 'herbalism', 'hunting', 'archaeology',
-      'quarrying', 'foraging', 'treasure_hunting', 'thieving', 'trapping', 'divination',
-      'cooking', 'blacksmithing', 'alchemy', 'enchanting', 'tailoring', 'leatherworking',
-      'jewelcrafting', 'engineering', 'runecrafting', 'farming',
-    ];
-    const categories = ['gathering', 'production', 'hybrid'];
-    const tiers = ['I', 'II', 'III', 'IV', 'V'];
-
-    const upgradeIds: string[] = [];
-
-    // Add permanent skill upgrades
-    for (const skillId of skillIds) {
-      for (const tier of tiers) {
-        upgradeIds.push(`${skillId}_upgrade_${tier}`);
-      }
-      upgradeIds.push(`${skillId}_boost_consumable`);
+    // Load combined upgrades.json file
+    const combinedData = await this.loadJsonFile<{ 
+      version?: string;
+      total_upgrades?: number;
+      upgrades: { [key: string]: SkillUpgrade };
+    }>('/data/upgrades/upgrades.json');
+    
+    if (!combinedData || !combinedData.upgrades || typeof combinedData.upgrades !== 'object') {
+      throw new Error('Failed to load upgrades.json - file not found or invalid format');
     }
-
-    // Add permanent category upgrades
-    for (const category of categories) {
-      for (const tier of tiers) {
-        upgradeIds.push(`${category}_upgrade_${tier}`);
-      }
-      upgradeIds.push(`${category}_boost_consumable`);
-    }
-
-    // Load all upgrades
-    for (const upgradeId of upgradeIds) {
+    
+    console.log(`Loading ${Object.keys(combinedData.upgrades).length} upgrades from combined file...`);
+    
+    let loadedCount = 0;
+    for (const [upgradeId, upgradeData] of Object.entries(combinedData.upgrades)) {
       try {
-        const data = await this.loadJsonFile<SkillUpgrade>(`/data/upgrades/${upgradeId}.json`);
-        if (data && this.validateUpgrade(data)) {
-          this.upgradesCache.set(data.id, data);
+        if (this.validateUpgrade(upgradeData)) {
+          this.upgradesCache.set(upgradeId, upgradeData);
+          loadedCount++;
         }
       } catch (error) {
-        console.warn(`Failed to load upgrade ${upgradeId}:`, error);
+        console.warn(`Failed to validate upgrade ${upgradeId}:`, error);
       }
     }
+    
+    console.log(`Loaded ${loadedCount} upgrades from combined file`);
   }
 
   private async loadConfig(): Promise<void> {
@@ -527,25 +391,16 @@ export class DataLoader {
   }
 
   async loadItem(id: string): Promise<Item | null> {
-    // Check cache first
+    // Check cache first (items should be loaded from combined file via loadAll)
     if (this.itemsCache.has(id)) {
       return this.itemsCache.get(id)!;
     }
     
-    // Try loading from individual file (fallback for items not in combined file)
-    try {
-      const data = await this.loadJsonFile<Item>(`/data/items/${id}.json`);
-      if (data && this.validateItem(data)) {
-        this.itemsCache.set(id, data);
-        return data;
-      }
-    } catch (error) {
-      // Item file not found, might be in combined file but not loaded yet
-      // Try loading combined file if we haven't already
-      if (!this.loaded) {
-        // If loadAll hasn't been called yet, the item will be loaded when loadAll runs
-        console.warn(`Item ${id} not found and loadAll hasn't been called yet`);
-      }
+    // Item not found - should have been loaded from combined file
+    if (!this.loaded) {
+      console.warn(`Item ${id} not found in cache and loadAll hasn't been called yet`);
+    } else {
+      console.warn(`Item ${id} not found in cache - not in combined file`);
     }
     
     return null;

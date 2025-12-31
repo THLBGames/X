@@ -1,0 +1,2706 @@
+{
+  "version": "1.0.0",
+  "total_upgrades": 150,
+  "upgrades": {
+    "alchemy_boost_consumable": {
+      "id": "alchemy_boost_consumable",
+      "name": "Alchemy Boost",
+      "description": "Temporarily increases alchemy speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "alchemy_upgrade_I": {
+      "id": "alchemy_upgrade_I",
+      "name": "Alchemy Upgrade I",
+      "description": "Permanently increases alchemy XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "alchemy_upgrade_II": {
+      "id": "alchemy_upgrade_II",
+      "name": "Alchemy Upgrade II",
+      "description": "Permanently increases alchemy XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "alchemy_upgrade_I"
+      }
+    },
+    "alchemy_upgrade_III": {
+      "id": "alchemy_upgrade_III",
+      "name": "Alchemy Upgrade III",
+      "description": "Permanently increases alchemy XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "alchemy_upgrade_II"
+      }
+    },
+    "alchemy_upgrade_IV": {
+      "id": "alchemy_upgrade_IV",
+      "name": "Alchemy Upgrade IV",
+      "description": "Permanently increases alchemy XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "alchemy_upgrade_III"
+      }
+    },
+    "alchemy_upgrade_V": {
+      "id": "alchemy_upgrade_V",
+      "name": "Alchemy Upgrade V",
+      "description": "Permanently increases alchemy XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "alchemy_upgrade_IV"
+      }
+    },
+    "archaeology_boost_consumable": {
+      "id": "archaeology_boost_consumable",
+      "name": "Archaeology Boost",
+      "description": "Temporarily increases archaeology speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "archaeology",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "archaeology_upgrade_I": {
+      "id": "archaeology_upgrade_I",
+      "name": "Archaeology Upgrade I",
+      "description": "Permanently increases archaeology XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "archaeology",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "archaeology_upgrade_II": {
+      "id": "archaeology_upgrade_II",
+      "name": "Archaeology Upgrade II",
+      "description": "Permanently increases archaeology XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "archaeology",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "archaeology_upgrade_I"
+      }
+    },
+    "archaeology_upgrade_III": {
+      "id": "archaeology_upgrade_III",
+      "name": "Archaeology Upgrade III",
+      "description": "Permanently increases archaeology XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "archaeology",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "archaeology_upgrade_II"
+      }
+    },
+    "archaeology_upgrade_IV": {
+      "id": "archaeology_upgrade_IV",
+      "name": "Archaeology Upgrade IV",
+      "description": "Permanently increases archaeology XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "archaeology",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "archaeology_upgrade_III"
+      }
+    },
+    "archaeology_upgrade_V": {
+      "id": "archaeology_upgrade_V",
+      "name": "Archaeology Upgrade V",
+      "description": "Permanently increases archaeology XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "archaeology",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "archaeology_upgrade_IV"
+      }
+    },
+    "blacksmithing_boost_consumable": {
+      "id": "blacksmithing_boost_consumable",
+      "name": "Blacksmithing Boost",
+      "description": "Temporarily increases blacksmithing speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "blacksmithing_upgrade_I": {
+      "id": "blacksmithing_upgrade_I",
+      "name": "Blacksmithing Upgrade I",
+      "description": "Permanently increases blacksmithing XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "blacksmithing_upgrade_II": {
+      "id": "blacksmithing_upgrade_II",
+      "name": "Blacksmithing Upgrade II",
+      "description": "Permanently increases blacksmithing XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "blacksmithing_upgrade_I"
+      }
+    },
+    "blacksmithing_upgrade_III": {
+      "id": "blacksmithing_upgrade_III",
+      "name": "Blacksmithing Upgrade III",
+      "description": "Permanently increases blacksmithing XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "blacksmithing_upgrade_II"
+      }
+    },
+    "blacksmithing_upgrade_IV": {
+      "id": "blacksmithing_upgrade_IV",
+      "name": "Blacksmithing Upgrade IV",
+      "description": "Permanently increases blacksmithing XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "blacksmithing_upgrade_III"
+      }
+    },
+    "blacksmithing_upgrade_V": {
+      "id": "blacksmithing_upgrade_V",
+      "name": "Blacksmithing Upgrade V",
+      "description": "Permanently increases blacksmithing XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "blacksmithing_upgrade_IV"
+      }
+    },
+    "cooking_boost_consumable": {
+      "id": "cooking_boost_consumable",
+      "name": "Cooking Boost",
+      "description": "Temporarily increases cooking speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "cooking",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "cooking_upgrade_I": {
+      "id": "cooking_upgrade_I",
+      "name": "Cooking Upgrade I",
+      "description": "Permanently increases cooking XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "cooking_upgrade_II": {
+      "id": "cooking_upgrade_II",
+      "name": "Cooking Upgrade II",
+      "description": "Permanently increases cooking XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_I"
+      }
+    },
+    "cooking_upgrade_III": {
+      "id": "cooking_upgrade_III",
+      "name": "Cooking Upgrade III",
+      "description": "Permanently increases cooking XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_II"
+      }
+    },
+    "cooking_upgrade_IV": {
+      "id": "cooking_upgrade_IV",
+      "name": "Cooking Upgrade IV",
+      "description": "Permanently increases cooking XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_III"
+      }
+    },
+    "cooking_upgrade_V": {
+      "id": "cooking_upgrade_V",
+      "name": "Cooking Upgrade V",
+      "description": "Permanently increases cooking XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_IV"
+      }
+    },
+    "divination_boost_consumable": {
+      "id": "divination_boost_consumable",
+      "name": "Divination Boost",
+      "description": "Temporarily increases divination speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "divination",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "divination_upgrade_I": {
+      "id": "divination_upgrade_I",
+      "name": "Divination Upgrade I",
+      "description": "Permanently increases divination XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "divination",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "divination_upgrade_II": {
+      "id": "divination_upgrade_II",
+      "name": "Divination Upgrade II",
+      "description": "Permanently increases divination XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "divination",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "divination_upgrade_I"
+      }
+    },
+    "divination_upgrade_III": {
+      "id": "divination_upgrade_III",
+      "name": "Divination Upgrade III",
+      "description": "Permanently increases divination XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "divination",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "divination_upgrade_II"
+      }
+    },
+    "divination_upgrade_IV": {
+      "id": "divination_upgrade_IV",
+      "name": "Divination Upgrade IV",
+      "description": "Permanently increases divination XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "divination",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "divination_upgrade_III"
+      }
+    },
+    "divination_upgrade_V": {
+      "id": "divination_upgrade_V",
+      "name": "Divination Upgrade V",
+      "description": "Permanently increases divination XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "divination",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "divination_upgrade_IV"
+      }
+    },
+    "enchanting_boost_consumable": {
+      "id": "enchanting_boost_consumable",
+      "name": "Enchanting Boost",
+      "description": "Temporarily increases enchanting speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "enchanting",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "enchanting_upgrade_I": {
+      "id": "enchanting_upgrade_I",
+      "name": "Enchanting Upgrade I",
+      "description": "Permanently increases enchanting XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "enchanting",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "enchanting_upgrade_II": {
+      "id": "enchanting_upgrade_II",
+      "name": "Enchanting Upgrade II",
+      "description": "Permanently increases enchanting XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "enchanting",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "enchanting_upgrade_I"
+      }
+    },
+    "enchanting_upgrade_III": {
+      "id": "enchanting_upgrade_III",
+      "name": "Enchanting Upgrade III",
+      "description": "Permanently increases enchanting XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "enchanting",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "enchanting_upgrade_II"
+      }
+    },
+    "enchanting_upgrade_IV": {
+      "id": "enchanting_upgrade_IV",
+      "name": "Enchanting Upgrade IV",
+      "description": "Permanently increases enchanting XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "enchanting",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "enchanting_upgrade_III"
+      }
+    },
+    "enchanting_upgrade_V": {
+      "id": "enchanting_upgrade_V",
+      "name": "Enchanting Upgrade V",
+      "description": "Permanently increases enchanting XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "enchanting",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "enchanting_upgrade_IV"
+      }
+    },
+    "engineering_boost_consumable": {
+      "id": "engineering_boost_consumable",
+      "name": "Engineering Boost",
+      "description": "Temporarily increases engineering speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "engineering",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "engineering_upgrade_I": {
+      "id": "engineering_upgrade_I",
+      "name": "Engineering Upgrade I",
+      "description": "Permanently increases engineering XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "engineering_upgrade_II": {
+      "id": "engineering_upgrade_II",
+      "name": "Engineering Upgrade II",
+      "description": "Permanently increases engineering XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_I"
+      }
+    },
+    "engineering_upgrade_III": {
+      "id": "engineering_upgrade_III",
+      "name": "Engineering Upgrade III",
+      "description": "Permanently increases engineering XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_II"
+      }
+    },
+    "engineering_upgrade_IV": {
+      "id": "engineering_upgrade_IV",
+      "name": "Engineering Upgrade IV",
+      "description": "Permanently increases engineering XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_III"
+      }
+    },
+    "engineering_upgrade_V": {
+      "id": "engineering_upgrade_V",
+      "name": "Engineering Upgrade V",
+      "description": "Permanently increases engineering XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_IV"
+      }
+    },
+    "farming_boost_consumable": {
+      "id": "farming_boost_consumable",
+      "name": "Farming Boost",
+      "description": "Temporarily increases farming speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "farming",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "farming_upgrade_I": {
+      "id": "farming_upgrade_I",
+      "name": "Farming Upgrade I",
+      "description": "Permanently increases farming XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "farming",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "farming_upgrade_II": {
+      "id": "farming_upgrade_II",
+      "name": "Farming Upgrade II",
+      "description": "Permanently increases farming XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "farming",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "farming_upgrade_I"
+      }
+    },
+    "farming_upgrade_III": {
+      "id": "farming_upgrade_III",
+      "name": "Farming Upgrade III",
+      "description": "Permanently increases farming XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "farming",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "farming_upgrade_II"
+      }
+    },
+    "farming_upgrade_IV": {
+      "id": "farming_upgrade_IV",
+      "name": "Farming Upgrade IV",
+      "description": "Permanently increases farming XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "farming",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "farming_upgrade_III"
+      }
+    },
+    "farming_upgrade_V": {
+      "id": "farming_upgrade_V",
+      "name": "Farming Upgrade V",
+      "description": "Permanently increases farming XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "farming",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "farming_upgrade_IV"
+      }
+    },
+    "fishing_boost_consumable": {
+      "id": "fishing_boost_consumable",
+      "name": "Fishing Boost",
+      "description": "Temporarily increases fishing speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "fishing",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "fishing_upgrade_I": {
+      "id": "fishing_upgrade_I",
+      "name": "Fishing Upgrade I",
+      "description": "Permanently increases fishing XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "fishing",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "fishing_upgrade_II": {
+      "id": "fishing_upgrade_II",
+      "name": "Fishing Upgrade II",
+      "description": "Permanently increases fishing XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "fishing",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "fishing_upgrade_I"
+      }
+    },
+    "fishing_upgrade_III": {
+      "id": "fishing_upgrade_III",
+      "name": "Fishing Upgrade III",
+      "description": "Permanently increases fishing XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "fishing",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "fishing_upgrade_II"
+      }
+    },
+    "fishing_upgrade_IV": {
+      "id": "fishing_upgrade_IV",
+      "name": "Fishing Upgrade IV",
+      "description": "Permanently increases fishing XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "fishing",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "fishing_upgrade_III"
+      }
+    },
+    "fishing_upgrade_V": {
+      "id": "fishing_upgrade_V",
+      "name": "Fishing Upgrade V",
+      "description": "Permanently increases fishing XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "fishing",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "fishing_upgrade_IV"
+      }
+    },
+    "foraging_boost_consumable": {
+      "id": "foraging_boost_consumable",
+      "name": "Foraging Boost",
+      "description": "Temporarily increases foraging speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "foraging",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "foraging_upgrade_I": {
+      "id": "foraging_upgrade_I",
+      "name": "Foraging Upgrade I",
+      "description": "Permanently increases foraging XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "foraging",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "foraging_upgrade_II": {
+      "id": "foraging_upgrade_II",
+      "name": "Foraging Upgrade II",
+      "description": "Permanently increases foraging XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "foraging",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "foraging_upgrade_I"
+      }
+    },
+    "foraging_upgrade_III": {
+      "id": "foraging_upgrade_III",
+      "name": "Foraging Upgrade III",
+      "description": "Permanently increases foraging XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "foraging",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "foraging_upgrade_II"
+      }
+    },
+    "foraging_upgrade_IV": {
+      "id": "foraging_upgrade_IV",
+      "name": "Foraging Upgrade IV",
+      "description": "Permanently increases foraging XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "foraging",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "foraging_upgrade_III"
+      }
+    },
+    "foraging_upgrade_V": {
+      "id": "foraging_upgrade_V",
+      "name": "Foraging Upgrade V",
+      "description": "Permanently increases foraging XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "foraging",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "foraging_upgrade_IV"
+      }
+    },
+    "gathering_boost_consumable": {
+      "id": "gathering_boost_consumable",
+      "name": "Gathering Boost",
+      "description": "Temporarily increases all gathering skill speed by 25% for 75 actions",
+      "type": "consumable",
+      "scope": "category",
+      "category": "gathering",
+      "price": 1000,
+      "bonuses": {
+        "speedMultiplier": 0.75,
+        "experienceMultiplier": 1.15
+      },
+      "actionDuration": 75,
+      "requirements": {}
+    },
+    "gathering_upgrade_I": {
+      "id": "gathering_upgrade_I",
+      "name": "Gathering Upgrade I",
+      "description": "Permanently increases all gathering skill XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "gathering",
+      "tier": "I",
+      "price": 2000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "gathering_upgrade_II": {
+      "id": "gathering_upgrade_II",
+      "name": "Gathering Upgrade II",
+      "description": "Permanently increases all gathering skill XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "gathering",
+      "tier": "II",
+      "price": 5656,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "gathering_upgrade_I"
+      }
+    },
+    "gathering_upgrade_III": {
+      "id": "gathering_upgrade_III",
+      "name": "Gathering Upgrade III",
+      "description": "Permanently increases all gathering skill XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "gathering",
+      "tier": "III",
+      "price": 10392,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "gathering_upgrade_II"
+      }
+    },
+    "gathering_upgrade_IV": {
+      "id": "gathering_upgrade_IV",
+      "name": "Gathering Upgrade IV",
+      "description": "Permanently increases all gathering skill XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "gathering",
+      "tier": "IV",
+      "price": 16000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "gathering_upgrade_III"
+      }
+    },
+    "gathering_upgrade_V": {
+      "id": "gathering_upgrade_V",
+      "name": "Gathering Upgrade V",
+      "description": "Permanently increases all gathering skill XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "gathering",
+      "tier": "V",
+      "price": 22360,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "gathering_upgrade_IV"
+      }
+    },
+    "herbalism_boost_consumable": {
+      "id": "herbalism_boost_consumable",
+      "name": "Herbalism Boost",
+      "description": "Temporarily increases herbalism speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "herbalism",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "herbalism_upgrade_I": {
+      "id": "herbalism_upgrade_I",
+      "name": "Herbalism Upgrade I",
+      "description": "Permanently increases herbalism XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "herbalism",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "herbalism_upgrade_II": {
+      "id": "herbalism_upgrade_II",
+      "name": "Herbalism Upgrade II",
+      "description": "Permanently increases herbalism XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "herbalism",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "herbalism_upgrade_I"
+      }
+    },
+    "herbalism_upgrade_III": {
+      "id": "herbalism_upgrade_III",
+      "name": "Herbalism Upgrade III",
+      "description": "Permanently increases herbalism XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "herbalism",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "herbalism_upgrade_II"
+      }
+    },
+    "herbalism_upgrade_IV": {
+      "id": "herbalism_upgrade_IV",
+      "name": "Herbalism Upgrade IV",
+      "description": "Permanently increases herbalism XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "herbalism",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "herbalism_upgrade_III"
+      }
+    },
+    "herbalism_upgrade_V": {
+      "id": "herbalism_upgrade_V",
+      "name": "Herbalism Upgrade V",
+      "description": "Permanently increases herbalism XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "herbalism",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "herbalism_upgrade_IV"
+      }
+    },
+    "hunting_boost_consumable": {
+      "id": "hunting_boost_consumable",
+      "name": "Hunting Boost",
+      "description": "Temporarily increases hunting speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "hunting",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "hunting_upgrade_I": {
+      "id": "hunting_upgrade_I",
+      "name": "Hunting Upgrade I",
+      "description": "Permanently increases hunting XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "hunting",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "hunting_upgrade_II": {
+      "id": "hunting_upgrade_II",
+      "name": "Hunting Upgrade II",
+      "description": "Permanently increases hunting XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "hunting",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "hunting_upgrade_I"
+      }
+    },
+    "hunting_upgrade_III": {
+      "id": "hunting_upgrade_III",
+      "name": "Hunting Upgrade III",
+      "description": "Permanently increases hunting XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "hunting",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "hunting_upgrade_II"
+      }
+    },
+    "hunting_upgrade_IV": {
+      "id": "hunting_upgrade_IV",
+      "name": "Hunting Upgrade IV",
+      "description": "Permanently increases hunting XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "hunting",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "hunting_upgrade_III"
+      }
+    },
+    "hunting_upgrade_V": {
+      "id": "hunting_upgrade_V",
+      "name": "Hunting Upgrade V",
+      "description": "Permanently increases hunting XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "hunting",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "hunting_upgrade_IV"
+      }
+    },
+    "hybrid_boost_consumable": {
+      "id": "hybrid_boost_consumable",
+      "name": "Hybrid Boost",
+      "description": "Temporarily increases all hybrid skill speed by 25% for 75 actions",
+      "type": "consumable",
+      "scope": "category",
+      "category": "hybrid",
+      "price": 1000,
+      "bonuses": {
+        "speedMultiplier": 0.75,
+        "experienceMultiplier": 1.15
+      },
+      "actionDuration": 75,
+      "requirements": {}
+    },
+    "hybrid_upgrade_I": {
+      "id": "hybrid_upgrade_I",
+      "name": "Hybrid Upgrade I",
+      "description": "Permanently increases all hybrid skill XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "hybrid",
+      "tier": "I",
+      "price": 2000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "hybrid_upgrade_II": {
+      "id": "hybrid_upgrade_II",
+      "name": "Hybrid Upgrade II",
+      "description": "Permanently increases all hybrid skill XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "hybrid",
+      "tier": "II",
+      "price": 5656,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "hybrid_upgrade_I"
+      }
+    },
+    "hybrid_upgrade_III": {
+      "id": "hybrid_upgrade_III",
+      "name": "Hybrid Upgrade III",
+      "description": "Permanently increases all hybrid skill XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "hybrid",
+      "tier": "III",
+      "price": 10392,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "hybrid_upgrade_II"
+      }
+    },
+    "hybrid_upgrade_IV": {
+      "id": "hybrid_upgrade_IV",
+      "name": "Hybrid Upgrade IV",
+      "description": "Permanently increases all hybrid skill XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "hybrid",
+      "tier": "IV",
+      "price": 16000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "hybrid_upgrade_III"
+      }
+    },
+    "hybrid_upgrade_V": {
+      "id": "hybrid_upgrade_V",
+      "name": "Hybrid Upgrade V",
+      "description": "Permanently increases all hybrid skill XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "hybrid",
+      "tier": "V",
+      "price": 22360,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "hybrid_upgrade_IV"
+      }
+    },
+    "jewelcrafting_boost_consumable": {
+      "id": "jewelcrafting_boost_consumable",
+      "name": "Jewelcrafting Boost",
+      "description": "Temporarily increases jewelcrafting speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "jewelcrafting_upgrade_I": {
+      "id": "jewelcrafting_upgrade_I",
+      "name": "Jewelcrafting Upgrade I",
+      "description": "Permanently increases jewelcrafting XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "jewelcrafting_upgrade_II": {
+      "id": "jewelcrafting_upgrade_II",
+      "name": "Jewelcrafting Upgrade II",
+      "description": "Permanently increases jewelcrafting XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "jewelcrafting_upgrade_I"
+      }
+    },
+    "jewelcrafting_upgrade_III": {
+      "id": "jewelcrafting_upgrade_III",
+      "name": "Jewelcrafting Upgrade III",
+      "description": "Permanently increases jewelcrafting XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "jewelcrafting_upgrade_II"
+      }
+    },
+    "jewelcrafting_upgrade_IV": {
+      "id": "jewelcrafting_upgrade_IV",
+      "name": "Jewelcrafting Upgrade IV",
+      "description": "Permanently increases jewelcrafting XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "jewelcrafting_upgrade_III"
+      }
+    },
+    "jewelcrafting_upgrade_V": {
+      "id": "jewelcrafting_upgrade_V",
+      "name": "Jewelcrafting Upgrade V",
+      "description": "Permanently increases jewelcrafting XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "jewelcrafting_upgrade_IV"
+      }
+    },
+    "leatherworking_boost_consumable": {
+      "id": "leatherworking_boost_consumable",
+      "name": "Leatherworking Boost",
+      "description": "Temporarily increases leatherworking speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "leatherworking",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "leatherworking_upgrade_I": {
+      "id": "leatherworking_upgrade_I",
+      "name": "Leatherworking Upgrade I",
+      "description": "Permanently increases leatherworking XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "leatherworking",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "leatherworking_upgrade_II": {
+      "id": "leatherworking_upgrade_II",
+      "name": "Leatherworking Upgrade II",
+      "description": "Permanently increases leatherworking XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "leatherworking",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "leatherworking_upgrade_I"
+      }
+    },
+    "leatherworking_upgrade_III": {
+      "id": "leatherworking_upgrade_III",
+      "name": "Leatherworking Upgrade III",
+      "description": "Permanently increases leatherworking XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "leatherworking",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "leatherworking_upgrade_II"
+      }
+    },
+    "leatherworking_upgrade_IV": {
+      "id": "leatherworking_upgrade_IV",
+      "name": "Leatherworking Upgrade IV",
+      "description": "Permanently increases leatherworking XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "leatherworking",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "leatherworking_upgrade_III"
+      }
+    },
+    "leatherworking_upgrade_V": {
+      "id": "leatherworking_upgrade_V",
+      "name": "Leatherworking Upgrade V",
+      "description": "Permanently increases leatherworking XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "leatherworking",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "leatherworking_upgrade_IV"
+      }
+    },
+    "mining_boost_consumable": {
+      "id": "mining_boost_consumable",
+      "name": "Mining Boost",
+      "description": "Temporarily increases mining speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "mining",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "mining_upgrade_I": {
+      "id": "mining_upgrade_I",
+      "name": "Mining Upgrade I",
+      "description": "Permanently increases mining XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "mining",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "mining_upgrade_II": {
+      "id": "mining_upgrade_II",
+      "name": "Mining Upgrade II",
+      "description": "Permanently increases mining XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "mining",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "mining_upgrade_I"
+      }
+    },
+    "mining_upgrade_III": {
+      "id": "mining_upgrade_III",
+      "name": "Mining Upgrade III",
+      "description": "Permanently increases mining XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "mining",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "mining_upgrade_II"
+      }
+    },
+    "mining_upgrade_IV": {
+      "id": "mining_upgrade_IV",
+      "name": "Mining Upgrade IV",
+      "description": "Permanently increases mining XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "mining",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "mining_upgrade_III"
+      }
+    },
+    "mining_upgrade_V": {
+      "id": "mining_upgrade_V",
+      "name": "Mining Upgrade V",
+      "description": "Permanently increases mining XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "mining",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "mining_upgrade_IV"
+      }
+    },
+    "production_boost_consumable": {
+      "id": "production_boost_consumable",
+      "name": "Production Boost",
+      "description": "Temporarily increases all production skill speed by 25% for 75 actions",
+      "type": "consumable",
+      "scope": "category",
+      "category": "production",
+      "price": 1000,
+      "bonuses": {
+        "speedMultiplier": 0.75,
+        "experienceMultiplier": 1.15
+      },
+      "actionDuration": 75,
+      "requirements": {}
+    },
+    "production_upgrade_I": {
+      "id": "production_upgrade_I",
+      "name": "Production Upgrade I",
+      "description": "Permanently increases all production skill XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "production",
+      "tier": "I",
+      "price": 2000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "production_upgrade_II": {
+      "id": "production_upgrade_II",
+      "name": "Production Upgrade II",
+      "description": "Permanently increases all production skill XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "production",
+      "tier": "II",
+      "price": 5656,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "production_upgrade_I"
+      }
+    },
+    "production_upgrade_III": {
+      "id": "production_upgrade_III",
+      "name": "Production Upgrade III",
+      "description": "Permanently increases all production skill XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "production",
+      "tier": "III",
+      "price": 10392,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "production_upgrade_II"
+      }
+    },
+    "production_upgrade_IV": {
+      "id": "production_upgrade_IV",
+      "name": "Production Upgrade IV",
+      "description": "Permanently increases all production skill XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "production",
+      "tier": "IV",
+      "price": 16000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "production_upgrade_III"
+      }
+    },
+    "production_upgrade_V": {
+      "id": "production_upgrade_V",
+      "name": "Production Upgrade V",
+      "description": "Permanently increases all production skill XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "category",
+      "category": "production",
+      "tier": "V",
+      "price": 22360,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "production_upgrade_IV"
+      }
+    },
+    "quarrying_boost_consumable": {
+      "id": "quarrying_boost_consumable",
+      "name": "Quarrying Boost",
+      "description": "Temporarily increases quarrying speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "quarrying",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "quarrying_upgrade_I": {
+      "id": "quarrying_upgrade_I",
+      "name": "Quarrying Upgrade I",
+      "description": "Permanently increases quarrying XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "quarrying",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "quarrying_upgrade_II": {
+      "id": "quarrying_upgrade_II",
+      "name": "Quarrying Upgrade II",
+      "description": "Permanently increases quarrying XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "quarrying",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "quarrying_upgrade_I"
+      }
+    },
+    "quarrying_upgrade_III": {
+      "id": "quarrying_upgrade_III",
+      "name": "Quarrying Upgrade III",
+      "description": "Permanently increases quarrying XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "quarrying",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "quarrying_upgrade_II"
+      }
+    },
+    "quarrying_upgrade_IV": {
+      "id": "quarrying_upgrade_IV",
+      "name": "Quarrying Upgrade IV",
+      "description": "Permanently increases quarrying XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "quarrying",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "quarrying_upgrade_III"
+      }
+    },
+    "quarrying_upgrade_V": {
+      "id": "quarrying_upgrade_V",
+      "name": "Quarrying Upgrade V",
+      "description": "Permanently increases quarrying XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "quarrying",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "quarrying_upgrade_IV"
+      }
+    },
+    "runecrafting_boost_consumable": {
+      "id": "runecrafting_boost_consumable",
+      "name": "Runecrafting Boost",
+      "description": "Temporarily increases runecrafting speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "runecrafting",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "runecrafting_upgrade_I": {
+      "id": "runecrafting_upgrade_I",
+      "name": "Runecrafting Upgrade I",
+      "description": "Permanently increases runecrafting XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "runecrafting",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "runecrafting_upgrade_II": {
+      "id": "runecrafting_upgrade_II",
+      "name": "Runecrafting Upgrade II",
+      "description": "Permanently increases runecrafting XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "runecrafting",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "runecrafting_upgrade_I"
+      }
+    },
+    "runecrafting_upgrade_III": {
+      "id": "runecrafting_upgrade_III",
+      "name": "Runecrafting Upgrade III",
+      "description": "Permanently increases runecrafting XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "runecrafting",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "runecrafting_upgrade_II"
+      }
+    },
+    "runecrafting_upgrade_IV": {
+      "id": "runecrafting_upgrade_IV",
+      "name": "Runecrafting Upgrade IV",
+      "description": "Permanently increases runecrafting XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "runecrafting",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "runecrafting_upgrade_III"
+      }
+    },
+    "runecrafting_upgrade_V": {
+      "id": "runecrafting_upgrade_V",
+      "name": "Runecrafting Upgrade V",
+      "description": "Permanently increases runecrafting XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "runecrafting",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "runecrafting_upgrade_IV"
+      }
+    },
+    "tailoring_boost_consumable": {
+      "id": "tailoring_boost_consumable",
+      "name": "Tailoring Boost",
+      "description": "Temporarily increases tailoring speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "tailoring_upgrade_I": {
+      "id": "tailoring_upgrade_I",
+      "name": "Tailoring Upgrade I",
+      "description": "Permanently increases tailoring XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "tailoring_upgrade_II": {
+      "id": "tailoring_upgrade_II",
+      "name": "Tailoring Upgrade II",
+      "description": "Permanently increases tailoring XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "tailoring_upgrade_I"
+      }
+    },
+    "tailoring_upgrade_III": {
+      "id": "tailoring_upgrade_III",
+      "name": "Tailoring Upgrade III",
+      "description": "Permanently increases tailoring XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "tailoring_upgrade_II"
+      }
+    },
+    "tailoring_upgrade_IV": {
+      "id": "tailoring_upgrade_IV",
+      "name": "Tailoring Upgrade IV",
+      "description": "Permanently increases tailoring XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "tailoring_upgrade_III"
+      }
+    },
+    "tailoring_upgrade_V": {
+      "id": "tailoring_upgrade_V",
+      "name": "Tailoring Upgrade V",
+      "description": "Permanently increases tailoring XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "tailoring_upgrade_IV"
+      }
+    },
+    "thieving_boost_consumable": {
+      "id": "thieving_boost_consumable",
+      "name": "Thieving Boost",
+      "description": "Temporarily increases thieving speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "thieving",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "thieving_upgrade_I": {
+      "id": "thieving_upgrade_I",
+      "name": "Thieving Upgrade I",
+      "description": "Permanently increases thieving XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "thieving",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "thieving_upgrade_II": {
+      "id": "thieving_upgrade_II",
+      "name": "Thieving Upgrade II",
+      "description": "Permanently increases thieving XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "thieving",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "thieving_upgrade_I"
+      }
+    },
+    "thieving_upgrade_III": {
+      "id": "thieving_upgrade_III",
+      "name": "Thieving Upgrade III",
+      "description": "Permanently increases thieving XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "thieving",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "thieving_upgrade_II"
+      }
+    },
+    "thieving_upgrade_IV": {
+      "id": "thieving_upgrade_IV",
+      "name": "Thieving Upgrade IV",
+      "description": "Permanently increases thieving XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "thieving",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "thieving_upgrade_III"
+      }
+    },
+    "thieving_upgrade_V": {
+      "id": "thieving_upgrade_V",
+      "name": "Thieving Upgrade V",
+      "description": "Permanently increases thieving XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "thieving",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "thieving_upgrade_IV"
+      }
+    },
+    "trapping_boost_consumable": {
+      "id": "trapping_boost_consumable",
+      "name": "Trapping Boost",
+      "description": "Temporarily increases trapping speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "trapping",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "trapping_upgrade_I": {
+      "id": "trapping_upgrade_I",
+      "name": "Trapping Upgrade I",
+      "description": "Permanently increases trapping XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "trapping_upgrade_II": {
+      "id": "trapping_upgrade_II",
+      "name": "Trapping Upgrade II",
+      "description": "Permanently increases trapping XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "trapping_upgrade_I"
+      }
+    },
+    "trapping_upgrade_III": {
+      "id": "trapping_upgrade_III",
+      "name": "Trapping Upgrade III",
+      "description": "Permanently increases trapping XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "trapping_upgrade_II"
+      }
+    },
+    "trapping_upgrade_IV": {
+      "id": "trapping_upgrade_IV",
+      "name": "Trapping Upgrade IV",
+      "description": "Permanently increases trapping XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "trapping_upgrade_III"
+      }
+    },
+    "trapping_upgrade_V": {
+      "id": "trapping_upgrade_V",
+      "name": "Trapping Upgrade V",
+      "description": "Permanently increases trapping XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "trapping_upgrade_IV"
+      }
+    },
+    "treasure_hunting_boost_consumable": {
+      "id": "treasure_hunting_boost_consumable",
+      "name": "Treasure hunting Boost",
+      "description": "Temporarily increases treasure hunting speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "treasure_hunting",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "treasure_hunting_upgrade_I": {
+      "id": "treasure_hunting_upgrade_I",
+      "name": "Treasure hunting Upgrade I",
+      "description": "Permanently increases treasure hunting XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "treasure_hunting",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "treasure_hunting_upgrade_II": {
+      "id": "treasure_hunting_upgrade_II",
+      "name": "Treasure hunting Upgrade II",
+      "description": "Permanently increases treasure hunting XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "treasure_hunting",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "treasure_hunting_upgrade_I"
+      }
+    },
+    "treasure_hunting_upgrade_III": {
+      "id": "treasure_hunting_upgrade_III",
+      "name": "Treasure hunting Upgrade III",
+      "description": "Permanently increases treasure hunting XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "treasure_hunting",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "treasure_hunting_upgrade_II"
+      }
+    },
+    "treasure_hunting_upgrade_IV": {
+      "id": "treasure_hunting_upgrade_IV",
+      "name": "Treasure hunting Upgrade IV",
+      "description": "Permanently increases treasure hunting XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "treasure_hunting",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "treasure_hunting_upgrade_III"
+      }
+    },
+    "treasure_hunting_upgrade_V": {
+      "id": "treasure_hunting_upgrade_V",
+      "name": "Treasure hunting Upgrade V",
+      "description": "Permanently increases treasure hunting XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "treasure_hunting",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "treasure_hunting_upgrade_IV"
+      }
+    },
+    "woodcutting_boost_consumable": {
+      "id": "woodcutting_boost_consumable",
+      "name": "Woodcutting Boost",
+      "description": "Temporarily increases woodcutting speed by 30% for 50 actions",
+      "type": "consumable",
+      "scope": "skill",
+      "skillId": "woodcutting",
+      "price": 500,
+      "bonuses": {
+        "speedMultiplier": 0.7,
+        "experienceMultiplier": 1.2
+      },
+      "actionDuration": 50,
+      "requirements": {}
+    },
+    "woodcutting_upgrade_I": {
+      "id": "woodcutting_upgrade_I",
+      "name": "Woodcutting Upgrade I",
+      "description": "Permanently increases woodcutting XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "woodcutting",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {}
+    },
+    "woodcutting_upgrade_II": {
+      "id": "woodcutting_upgrade_II",
+      "name": "Woodcutting Upgrade II",
+      "description": "Permanently increases woodcutting XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "woodcutting",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "woodcutting_upgrade_I"
+      }
+    },
+    "woodcutting_upgrade_III": {
+      "id": "woodcutting_upgrade_III",
+      "name": "Woodcutting Upgrade III",
+      "description": "Permanently increases woodcutting XP gain by 20%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "woodcutting",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "woodcutting_upgrade_II"
+      }
+    },
+    "woodcutting_upgrade_IV": {
+      "id": "woodcutting_upgrade_IV",
+      "name": "Woodcutting Upgrade IV",
+      "description": "Permanently increases woodcutting XP gain by 25%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "woodcutting",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "woodcutting_upgrade_III"
+      }
+    },
+    "woodcutting_upgrade_V": {
+      "id": "woodcutting_upgrade_V",
+      "name": "Woodcutting Upgrade V",
+      "description": "Permanently increases woodcutting XP gain by 30%, speed by 20%, and yield by 20%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "woodcutting",
+      "tier": "V",
+      "price": 11180,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.2
+      },
+      "requirements": {
+        "previousTierId": "woodcutting_upgrade_IV"
+      }
+    }
+  }
+}

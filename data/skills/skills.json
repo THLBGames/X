@@ -1,0 +1,5185 @@
+{
+  "version": "1.0.0",
+  "total_skills": 124,
+  "skills": {
+    "adrenaline_rush": {
+      "id": "adrenaline_rush",
+      "name": "Adrenaline Rush",
+      "description": "Enter a state of heightened awareness, increasing all damage and speed.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 25,
+      "prerequisites": [
+        "slice_and_dice"
+      ],
+      "manaCost": 60,
+      "cooldown": 90,
+      "target": "self",
+      "effect": {
+        "buffId": "adrenaline_rush"
+      }
+    },
+    "alchemy": {
+      "id": "alchemy",
+      "name": "Alchemy",
+      "description": "Create potions and magical compounds",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.35)",
+      "recipes": [
+        {
+          "recipeId": "health_potion_basic",
+          "name": "Basic Health Potion",
+          "level": 1,
+          "ingredients": [
+            {
+              "itemId": "common_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "water",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "health_potion_small",
+            "quantity": 1
+          },
+          "experienceGain": 15,
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "mana_potion",
+          "name": "Mana Potion",
+          "level": 15,
+          "ingredients": [
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "energy_wisp",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "mana_potion_small",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "strength_potion",
+          "name": "Strength Potion",
+          "level": 35,
+          "ingredients": [
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "essence_crystal",
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_fang",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "strength_potion",
+            "quantity": 1
+          },
+          "experienceGain": 120,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "elixir",
+          "name": "Elixir of Power",
+          "level": 65,
+          "ingredients": [
+            {
+              "itemId": "epic_herb",
+              "quantity": 4
+            },
+            {
+              "itemId": "mana_crystal",
+              "quantity": 2
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "elixir_power",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 8000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 40,
+          "bonus": {
+            "mana": 75,
+            "magicAttack": 8
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "mana": 150,
+            "magicAttack": 15
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "mana": 250,
+            "magicAttack": 25
+          }
+        }
+      ]
+    },
+    "ambush": {
+      "id": "ambush",
+      "name": "Ambush",
+      "description": "Strike from stealth, dealing massive damage. Only usable while stealthed.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 6,
+      "prerequisites": [
+        "stealth"
+      ],
+      "manaCost": 25,
+      "cooldown": 0,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 80,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 2.5
+          }
+        }
+      }
+    },
+    "arcane_explosion": {
+      "id": "arcane_explosion",
+      "name": "Arcane Explosion",
+      "description": "Release a burst of arcane energy, damaging all nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 18,
+      "prerequisites": [
+        "arcane_missile"
+      ],
+      "manaCost": 35,
+      "cooldown": 5,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 45,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 2.0
+          }
+        }
+      }
+    },
+    "arcane_missile": {
+      "id": "arcane_missile",
+      "name": "Arcane Missile",
+      "description": "Launch multiple arcane missiles at your target.",
+      "type": "active",
+      "maxLevel": 5,
+      "prerequisites": [
+        "lightning_bolt"
+      ],
+      "requirements": {
+        "class": [
+          "mage"
+        ],
+        "level": 15
+      },
+      "manaCost": 35,
+      "cooldown": 4,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 25,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.5
+          }
+        }
+      }
+    },
+    "arcane_power": {
+      "id": "arcane_power",
+      "name": "Arcane Power",
+      "description": "Enter a state of pure arcane power, dramatically increasing spell damage.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 28,
+      "prerequisites": [
+        "arcane_explosion"
+      ],
+      "manaCost": 70,
+      "cooldown": 60,
+      "target": "self",
+      "effect": {
+        "buffId": "arcane_power"
+      }
+    },
+    "archaeology": {
+      "id": "archaeology",
+      "name": "Archaeology",
+      "description": "Excavate ancient artifacts and relics from dig sites",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.15)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "ancient_site",
+          "name": "Ancient Dig Site",
+          "successRate": 0.85,
+          "experienceGain": 20,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "ancient_shard",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_coin",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "nodeId": "ruined_temple",
+          "name": "Ruined Temple",
+          "successRate": 0.8,
+          "experienceGain": 70,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "ancient_relic",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_shard",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scroll",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "lost_city",
+          "name": "Lost City Ruins",
+          "successRate": 0.72,
+          "experienceGain": 180,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "ancient_artifact",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scroll",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "forgotten_tomb",
+          "name": "Forgotten Tomb",
+          "successRate": 0.65,
+          "experienceGain": 400,
+          "timeRequired": 10000,
+          "resources": [
+            {
+              "itemId": "ancient_treasure",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 40,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "itemFindRate": 0.05
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "goldGeneration": 0.2,
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.3,
+            "itemFindRate": 0.15
+          }
+        }
+      ]
+    },
+    "armor_break": {
+      "id": "armor_break",
+      "name": "Armor Break",
+      "description": "Shatter enemy armor, reducing their defense permanently for the battle.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 23,
+      "prerequisites": [
+        "devastate"
+      ],
+      "manaCost": 30,
+      "cooldown": 20,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 40,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.2
+          }
+        },
+        "debuffId": "armor_broken"
+      }
+    },
+    "assassinate": {
+      "id": "assassinate",
+      "name": "Assassinate",
+      "description": "Execute a powerful finishing move that deals massive damage to low-health enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 20,
+      "prerequisites": [
+        "shadow_strike",
+        "sneak_attack"
+      ],
+      "manaCost": 50,
+      "cooldown": 15,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 150,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 3.5
+          }
+        }
+      }
+    },
+    "backstab": {
+      "id": "backstab",
+      "name": "Backstab",
+      "description": "Strike from behind for massive damage.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "manaCost": 15,
+      "cooldown": 4,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 35,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 2.5
+          }
+        }
+      }
+    },
+    "basic_attack": {
+      "id": "basic_attack",
+      "name": "Basic Attack",
+      "description": "A standard melee or ranged attack.",
+      "type": "active",
+      "maxLevel": 1,
+      "unlockLevel": 1,
+      "manaCost": 0,
+      "cooldown": 0,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 20,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.0
+          }
+        }
+      }
+    },
+    "battle_cry": {
+      "id": "battle_cry",
+      "name": "Battle Cry",
+      "description": "Let out a mighty battle cry, increasing attack power for a short time.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 6,
+      "manaCost": 25,
+      "cooldown": 20,
+      "target": "self",
+      "effect": {
+        "buffId": "battle_cry"
+      }
+    },
+    "berserker_rage": {
+      "id": "berserker_rage",
+      "name": "Berserker Rage",
+      "description": "Enter a rage that increases your attack damage.",
+      "type": "active",
+      "maxLevel": 3,
+      "prerequisites": [
+        "power_strike"
+      ],
+      "requirements": {
+        "class": [
+          "warrior"
+        ],
+        "level": 15
+      },
+      "manaCost": 40,
+      "cooldown": 30,
+      "target": "self",
+      "effect": {
+        "buffId": "berserker_rage"
+      }
+    },
+    "blacksmithing": {
+      "id": "blacksmithing",
+      "name": "Blacksmithing",
+      "description": "Forge weapons and armor from metal",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.4)",
+      "recipes": [
+        {
+          "recipeId": "copper_sword",
+          "name": "Copper Sword",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "copper_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "coal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "copper_sword",
+            "quantity": 1
+          },
+          "experienceGain": 30,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "iron_armor",
+          "name": "Iron Armor",
+          "level": 20,
+          "ingredients": [
+            {
+              "itemId": "iron_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "leather",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "iron_armor",
+            "quantity": 1
+          },
+          "experienceGain": 85,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "steel_weapon",
+          "name": "Steel Weapon",
+          "level": 40,
+          "ingredients": [
+            {
+              "itemId": "iron_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "coal",
+              "quantity": 5
+            },
+            {
+              "itemId": "silver_ore",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "steel_weapon",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "mithril_gear",
+          "name": "Mithril Gear",
+          "level": 70,
+          "ingredients": [
+            {
+              "itemId": "mithril_ore",
+              "quantity": 12
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "mithril_gear",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 15000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 35,
+          "bonus": {
+            "attack": 10,
+            "defense": 5
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "attack": 20,
+            "defense": 10
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "attack": 30,
+            "defense": 15
+          }
+        }
+      ]
+    },
+    "blade_flurry": {
+      "id": "blade_flurry",
+      "name": "Blade Flurry",
+      "description": "Strike all nearby enemies with rapid blade attacks.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 13,
+      "prerequisites": [
+        "dual_wield"
+      ],
+      "manaCost": 35,
+      "cooldown": 8,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 40,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.8
+          }
+        }
+      }
+    },
+    "blink": {
+      "id": "blink",
+      "name": "Blink",
+      "description": "Instantly teleport a short distance, avoiding damage.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 5,
+      "manaCost": 20,
+      "cooldown": 8,
+      "target": "self",
+      "effect": {
+        "buffId": "blink"
+      }
+    },
+    "block": {
+      "id": "block",
+      "name": "Block",
+      "description": "Raise your shield or weapon to block incoming attacks.",
+      "type": "active",
+      "maxLevel": 5,
+      "unlockLevel": 2,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "manaCost": 10,
+      "cooldown": 5,
+      "target": "self",
+      "effect": {
+        "buffId": "blocking"
+      }
+    },
+    "bloodlust": {
+      "id": "bloodlust",
+      "name": "Bloodlust",
+      "description": "Each kill increases your attack speed and damage temporarily.",
+      "type": "passive",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 20,
+      "prerequisites": [
+        "berserker_rage"
+      ],
+      "passiveBonus": {
+        "special": "bloodlust"
+      }
+    },
+    "chain_lightning": {
+      "id": "chain_lightning",
+      "name": "Chain Lightning",
+      "description": "Cast a bolt of lightning that jumps between multiple enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 12,
+      "prerequisites": [
+        "lightning_bolt"
+      ],
+      "manaCost": 40,
+      "cooldown": 6,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 50,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 2.2
+          }
+        }
+      }
+    },
+    "charge": {
+      "id": "charge",
+      "name": "Charge",
+      "description": "Rush towards an enemy, dealing damage and stunning them briefly.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 4,
+      "manaCost": 15,
+      "cooldown": 5,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 35,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.2
+          }
+        },
+        "debuffId": "stunned"
+      }
+    },
+    "cleave": {
+      "id": "cleave",
+      "name": "Cleave",
+      "description": "A powerful melee attack that strikes multiple enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "manaCost": 15,
+      "cooldown": 3,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 30,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.5
+          }
+        }
+      }
+    },
+    "cloak_of_shadows": {
+      "id": "cloak_of_shadows",
+      "name": "Cloak of Shadows",
+      "description": "Become immune to magical effects for a short duration.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 22,
+      "prerequisites": [
+        "vanish"
+      ],
+      "manaCost": 45,
+      "cooldown": 45,
+      "target": "self",
+      "effect": {
+        "buffId": "cloak_of_shadows"
+      }
+    },
+    "combustion": {
+      "id": "combustion",
+      "name": "Combustion",
+      "description": "Cause your fire spells to have a chance to explode for additional damage.",
+      "type": "passive",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 26,
+      "prerequisites": [
+        "fire_nova"
+      ],
+      "passiveBonus": {
+        "special": "combustion"
+      }
+    },
+    "cooking": {
+      "id": "cooking",
+      "name": "Cooking",
+      "description": "Prepare food and consumables",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.3)",
+      "recipes": [
+        {
+          "recipeId": "bread",
+          "name": "Bread",
+          "level": 1,
+          "ingredients": [
+            {
+              "itemId": "wheat",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "bread",
+            "quantity": 1
+          },
+          "experienceGain": 10,
+          "timeRequired": 3000
+        },
+        {
+          "recipeId": "health_food",
+          "name": "Health Food",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "raw_meat",
+              "quantity": 1
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "health_food",
+            "quantity": 1
+          },
+          "experienceGain": 25,
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "quality_meal",
+          "name": "Quality Meal",
+          "level": 25,
+          "ingredients": [
+            {
+              "itemId": "raw_meat_quality",
+              "quantity": 1
+            },
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "fruit",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "quality_meal",
+            "quantity": 1
+          },
+          "experienceGain": 75,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "feast",
+          "name": "Grand Feast",
+          "level": 60,
+          "ingredients": [
+            {
+              "itemId": "raw_meat_premium",
+              "quantity": 2
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "exotic_fruit",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "grand_feast",
+            "quantity": 1
+          },
+          "experienceGain": 200,
+          "timeRequired": 6000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 30,
+          "bonus": {
+            "health": 100,
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "health": 200,
+            "goldGeneration": 0.1
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "health": 300,
+            "goldGeneration": 0.15
+          }
+        }
+      ]
+    },
+    "counterattack": {
+      "id": "counterattack",
+      "name": "Counterattack",
+      "description": "When you successfully block or dodge, counterattack with increased damage.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 6,
+      "requirements": {
+        "class": [
+          "warrior",
+          "rogue"
+        ]
+      },
+      "passiveBonus": {
+        "special": "counterattack"
+      }
+    },
+    "cripple": {
+      "id": "cripple",
+      "name": "Cripple",
+      "description": "Cripple an enemy, significantly reducing their movement and attack speed.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 24,
+      "manaCost": 25,
+      "cooldown": 16,
+      "target": "enemy",
+      "effect": {
+        "debuffId": "crippled"
+      }
+    },
+    "crippling_poison": {
+      "id": "crippling_poison",
+      "name": "Crippling Poison",
+      "description": "Apply a poison that slows enemies and reduces their attack speed.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 7,
+      "prerequisites": [
+        "poison_blade"
+      ],
+      "manaCost": 25,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "crippling_poison_weapon"
+      }
+    },
+    "critical_mastery": {
+      "id": "critical_mastery",
+      "name": "Critical Mastery",
+      "description": "Increases critical strike damage and chance.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 10,
+      "prerequisites": [
+        "lucky_strike"
+      ],
+      "passiveBonus": {
+        "combatStatBonus": {
+          "criticalChance": 2,
+          "criticalDamage": 0.2
+        }
+      }
+    },
+    "deadly_poison": {
+      "id": "deadly_poison",
+      "name": "Deadly Poison",
+      "description": "Apply a lethal poison that deals heavy damage over time.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 14,
+      "prerequisites": [
+        "crippling_poison"
+      ],
+      "manaCost": 30,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "deadly_poison_weapon"
+      }
+    },
+    "death_mark": {
+      "id": "death_mark",
+      "name": "Death Mark",
+      "description": "Mark an enemy for death. When they die, you gain significant bonuses.",
+      "type": "passive",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 30,
+      "prerequisites": [
+        "vendetta"
+      ],
+      "passiveBonus": {
+        "special": "death_mark"
+      }
+    },
+    "defensive_stance": {
+      "id": "defensive_stance",
+      "name": "Defensive Stance",
+      "description": "Enter a defensive stance, increasing defense and reducing damage taken.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 3,
+      "manaCost": 20,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "defensive_stance"
+      }
+    },
+    "demoralize": {
+      "id": "demoralize",
+      "name": "Demoralize",
+      "description": "Reduce enemy attack power and movement speed significantly.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 21,
+      "prerequisites": [
+        "intimidate"
+      ],
+      "manaCost": 25,
+      "cooldown": 18,
+      "target": "all_enemies",
+      "effect": {
+        "debuffId": "demoralized"
+      }
+    },
+    "devastate": {
+      "id": "devastate",
+      "name": "Devastate",
+      "description": "A crushing blow that reduces enemy armor.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 11,
+      "prerequisites": [
+        "rend"
+      ],
+      "manaCost": 25,
+      "cooldown": 8,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 50,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.5
+          }
+        },
+        "debuffId": "armor_reduction"
+      }
+    },
+    "dispel_magic": {
+      "id": "dispel_magic",
+      "name": "Dispel Magic",
+      "description": "Remove all magical effects from a target.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 23,
+      "manaCost": 25,
+      "cooldown": 12,
+      "target": "enemy",
+      "effect": {
+        "special": "dispel_magic"
+      }
+    },
+    "divination": {
+      "id": "divination",
+      "name": "Divination",
+      "description": "Gather energy and essence from the environment",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.2)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "energy_spring",
+          "name": "Energy Spring",
+          "successRate": 0.88,
+          "experienceGain": 16,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "energy_wisp",
+              "chance": 1.0,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "minor_essence",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "essence_well",
+          "name": "Essence Well",
+          "successRate": 0.82,
+          "experienceGain": 75,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "essence_crystal",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "energy_wisp",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "moderate_essence",
+              "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 65,
+          "nodeId": "mana_font",
+          "name": "Mana Font",
+          "successRate": 0.75,
+          "experienceGain": 190,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "mana_crystal",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "essence_crystal",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "greater_essence",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "arcane_wisp",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "void_rift",
+          "name": "Void Rift",
+          "successRate": 0.65,
+          "experienceGain": 420,
+          "timeRequired": 9000,
+          "resources": [
+            {
+              "itemId": "void_essence",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "mana_crystal",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "supreme_essence",
+              "chance": 0.45,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 40,
+          "bonus": {
+            "mana": 50,
+            "magicAttack": 5
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "mana": 100,
+            "magicAttack": 10
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "mana": 200,
+            "magicAttack": 20
+          }
+        }
+      ]
+    },
+    "dodge": {
+      "id": "dodge",
+      "name": "Dodge",
+      "description": "Increase your chance to avoid attacks entirely.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "passiveBonus": {
+        "combatStatBonus": {
+          "speed": 5
+        }
+      }
+    },
+    "dual_wield": {
+      "id": "dual_wield",
+      "name": "Dual Wield",
+      "description": "Master the art of wielding two weapons.",
+      "type": "passive",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ],
+        "level": 8
+      },
+      "passiveBonus": {
+        "combatStatBonus": {
+          "attack": 10
+        }
+      }
+    },
+    "enchanting": {
+      "id": "enchanting",
+      "name": "Enchanting",
+      "description": "Add magical properties to items",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.4)",
+      "recipes": [
+        {
+          "recipeId": "minor_enchant",
+          "name": "Minor Enchantment",
+          "level": 10,
+          "ingredients": [
+            {
+              "itemId": "minor_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "common_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_item_minor",
+            "quantity": 1
+          },
+          "experienceGain": 40,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "moderate_enchant",
+          "name": "Moderate Enchantment",
+          "level": 35,
+          "ingredients": [
+            {
+              "itemId": "moderate_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "uncommon_item",
+              "quantity": 1
+            },
+            {
+              "itemId": "essence_crystal",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_item_moderate",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "greater_enchant",
+          "name": "Greater Enchantment",
+          "level": 60,
+          "ingredients": [
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "rare_item",
+              "quantity": 1
+            },
+            {
+              "itemId": "mana_crystal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_item_greater",
+            "quantity": 1
+          },
+          "experienceGain": 250,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "supreme_enchant",
+          "name": "Supreme Enchantment",
+          "level": 90,
+          "ingredients": [
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            },
+            {
+              "itemId": "void_essence",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_item_supreme",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 12000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 45,
+          "bonus": {
+            "magicAttack": 12,
+            "magicDefense": 8
+          }
+        },
+        {
+          "level": 85,
+          "bonus": {
+            "magicAttack": 25,
+            "magicDefense": 15
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "magicAttack": 40,
+            "magicDefense": 25
+          }
+        }
+      ]
+    },
+    "engineering": {
+      "id": "engineering",
+      "name": "Engineering",
+      "description": "Build mechanical devices and gadgets",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.4)",
+      "recipes": [
+        {
+          "recipeId": "simple_tool",
+          "name": "Simple Tool",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "iron_ore",
+              "quantity": 3
+            },
+            {
+              "itemId": "wood",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "simple_tool",
+            "quantity": 1
+          },
+          "experienceGain": 30,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "mechanical_device",
+          "name": "Mechanical Device",
+          "level": 40,
+          "ingredients": [
+            {
+              "itemId": "steel",
+              "quantity": 6
+            },
+            {
+              "itemId": "gears",
+              "quantity": 4
+            },
+            {
+              "itemId": "spring",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "mechanical_device",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "advanced_gadget",
+          "name": "Advanced Gadget",
+          "level": 75,
+          "ingredients": [
+            {
+              "itemId": "mithril_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "precision_gear",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "advanced_gadget",
+            "quantity": 1
+          },
+          "experienceGain": 380,
+          "timeRequired": 13000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 50,
+          "bonus": {
+            "itemFindRate": 0.1,
+            "intelligence": 5
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "itemFindRate": 0.2,
+            "intelligence": 10
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "itemFindRate": 0.3,
+            "intelligence": 15
+          }
+        }
+      ]
+    },
+    "evasion": {
+      "id": "evasion",
+      "name": "Evasion",
+      "description": "Dodge all incoming attacks for a short duration.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 8,
+      "manaCost": 35,
+      "cooldown": 30,
+      "target": "self",
+      "effect": {
+        "buffId": "evasion"
+      }
+    },
+    "execute": {
+      "id": "execute",
+      "name": "Execute",
+      "description": "Deal massive damage to an enemy with low health.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 10,
+      "prerequisites": [
+        "power_strike"
+      ],
+      "manaCost": 30,
+      "cooldown": 6,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 100,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 2.5
+          }
+        }
+      }
+    },
+    "expose_armor": {
+      "id": "expose_armor",
+      "name": "Expose Armor",
+      "description": "Strike at weak points, reducing enemy armor.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 17,
+      "manaCost": 20,
+      "cooldown": 8,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 25,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.0
+          }
+        },
+        "debuffId": "armor_exposed"
+      }
+    },
+    "fan_of_knives": {
+      "id": "fan_of_knives",
+      "name": "Fan of Knives",
+      "description": "Throw knives in all directions, hitting all nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 11,
+      "manaCost": 30,
+      "cooldown": 6,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 35,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.5
+          }
+        }
+      }
+    },
+    "farming": {
+      "id": "farming",
+      "name": "Farming",
+      "description": "Grow crops and raise livestock",
+      "type": "production",
+      "category": "hybrid",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.25)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "wheat_field",
+          "name": "Wheat Field",
+          "successRate": 0.93,
+          "experienceGain": 12,
+          "timeRequired": 10000,
+          "resources": [
+            {
+              "itemId": "wheat",
+              "chance": 1.0,
+              "min": 3,
+              "max": 6
+            },
+            {
+              "itemId": "wheat_seed",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "nodeId": "vegetable_garden",
+          "name": "Vegetable Garden",
+          "successRate": 0.88,
+          "experienceGain": 40,
+          "timeRequired": 12000,
+          "resources": [
+            {
+              "itemId": "vegetable",
+              "chance": 1.0,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "wheat",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "herb_garden",
+          "name": "Herb Garden",
+          "successRate": 0.83,
+          "experienceGain": 95,
+          "timeRequired": 14000,
+          "resources": [
+            {
+              "itemId": "common_herb",
+              "chance": 1.0,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "uncommon_herb",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "recipes": [
+        {
+          "recipeId": "fertilizer",
+          "name": "Fertilizer",
+          "level": 10,
+          "ingredients": [
+            {
+              "itemId": "compost",
+              "quantity": 3
+            },
+            {
+              "itemId": "bone_meal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 20,
+          "timeRequired": 5000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 30,
+          "bonus": {
+            "goldGeneration": 0.08,
+            "health": 50
+          }
+        },
+        {
+          "level": 65,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "health": 100
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.25,
+            "health": 200
+          }
+        }
+      ]
+    },
+    "fire_armor": {
+      "id": "fire_armor",
+      "name": "Fire Armor",
+      "description": "Surround yourself with flames, dealing damage to melee attackers.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 9,
+      "manaCost": 35,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "fire_armor"
+      }
+    },
+    "fire_nova": {
+      "id": "fire_nova",
+      "name": "Fire Nova",
+      "description": "Create an explosion of fire that burns all nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 16,
+      "prerequisites": [
+        "fireball"
+      ],
+      "manaCost": 50,
+      "cooldown": 10,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 60,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 2.5
+          }
+        },
+        "debuffId": "burning"
+      }
+    },
+    "fireball": {
+      "id": "fireball",
+      "name": "Fireball",
+      "description": "Hurl a ball of fire at your enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "manaCost": 20,
+      "cooldown": 2,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 40,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 2.0
+          }
+        }
+      }
+    },
+    "first_aid": {
+      "id": "first_aid",
+      "name": "First Aid",
+      "description": "Quickly bandage your wounds, restoring a moderate amount of health.",
+      "type": "active",
+      "maxLevel": 5,
+      "unlockLevel": 1,
+      "manaCost": 0,
+      "cooldown": 30,
+      "target": "self",
+      "effect": {
+        "heal": {
+          "base": 50,
+          "scaling": {
+            "stat": "vitality",
+            "multiplier": 1.5
+          }
+        }
+      }
+    },
+    "fishing": {
+      "id": "fishing",
+      "name": "Fishing",
+      "description": "Catch fish and aquatic resources from water",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "small_fish",
+          "name": "Small Fish School",
+          "successRate": 0.9,
+          "experienceGain": 8,
+          "timeRequired": 4000,
+          "resources": [
+            {
+              "itemId": "small_fish",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "fish_bone",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "nodeId": "medium_fish",
+          "name": "Medium Fish School",
+          "successRate": 0.85,
+          "experienceGain": 30,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "medium_fish",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "small_fish",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "nodeId": "large_fish",
+          "name": "Large Fish School",
+          "successRate": 0.8,
+          "experienceGain": 75,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "large_fish",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "medium_fish",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "pearl",
+              "chance": 0.1,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "rare_fish",
+          "name": "Rare Fish Spot",
+          "successRate": 0.75,
+          "experienceGain": 150,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "rare_fish",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "large_fish",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "pearl",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 85,
+          "nodeId": "legendary_fish",
+          "name": "Legendary Fish Spot",
+          "successRate": 0.65,
+          "experienceGain": 300,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "legendary_fish",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "rare_fish",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "pearl_rare",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 30,
+          "bonus": {
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "health": 50
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "health": 100
+          }
+        }
+      ]
+    },
+    "foraging": {
+      "id": "foraging",
+      "name": "Foraging",
+      "description": "Find wild fruits, berries, and mushrooms",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "berry_bush",
+          "name": "Berry Bush",
+          "successRate": 0.95,
+          "experienceGain": 8,
+          "timeRequired": 2500,
+          "resources": [
+            {
+              "itemId": "berry",
+              "chance": 1.0,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "berry_seed",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "fruit_tree",
+          "name": "Fruit Tree",
+          "successRate": 0.9,
+          "experienceGain": 22,
+          "timeRequired": 3500,
+          "resources": [
+            {
+              "itemId": "fruit",
+              "chance": 1.0,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "berry",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "mushroom_patch",
+          "name": "Mushroom Patch",
+          "successRate": 0.85,
+          "experienceGain": 55,
+          "timeRequired": 4000,
+          "resources": [
+            {
+              "itemId": "mushroom",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "fruit",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "mushroom_spore",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "exotic_grove",
+          "name": "Exotic Grove",
+          "successRate": 0.78,
+          "experienceGain": 130,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "exotic_fruit",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "mushroom",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_berry",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 25,
+          "bonus": {
+            "health": 30
+          }
+        },
+        {
+          "level": 55,
+          "bonus": {
+            "health": 60,
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "health": 120,
+            "goldGeneration": 0.1
+          }
+        }
+      ]
+    },
+    "frost_armor": {
+      "id": "frost_armor",
+      "name": "Frost Armor",
+      "description": "Encase yourself in ice, increasing defense and slowing attackers.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 7,
+      "prerequisites": [
+        "mana_shield"
+      ],
+      "manaCost": 30,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "frost_armor"
+      }
+    },
+    "frost_bolt": {
+      "id": "frost_bolt",
+      "name": "Frost Bolt",
+      "description": "Launch a bolt of ice that slows the target.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ],
+        "level": 5
+      },
+      "manaCost": 18,
+      "cooldown": 2,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 35,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.8
+          }
+        },
+        "debuffId": "slow"
+      }
+    },
+    "frost_nova": {
+      "id": "frost_nova",
+      "name": "Frost Nova",
+      "description": "Create an explosion of ice that freezes all nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 14,
+      "prerequisites": [
+        "ice_lance"
+      ],
+      "manaCost": 45,
+      "cooldown": 12,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 40,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.8
+          }
+        },
+        "debuffId": "frozen"
+      }
+    },
+    "frostbite": {
+      "id": "frostbite",
+      "name": "Frostbite",
+      "description": "Cause enemies to suffer from frostbite, taking damage over time.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 19,
+      "prerequisites": [
+        "ice_lance"
+      ],
+      "manaCost": 28,
+      "cooldown": 8,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 20,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.2
+          }
+        },
+        "debuffId": "frostbite"
+      }
+    },
+    "fury": {
+      "id": "fury",
+      "name": "Fury",
+      "description": "Increases critical strike chance and damage for a short duration.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 19,
+      "prerequisites": [
+        "bloodlust"
+      ],
+      "manaCost": 45,
+      "cooldown": 40,
+      "target": "self",
+      "effect": {
+        "buffId": "fury"
+      }
+    },
+    "garrote": {
+      "id": "garrote",
+      "name": "Garrote",
+      "description": "Silently strangle an enemy from behind, dealing damage and silencing them.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 16,
+      "prerequisites": [
+        "backstab"
+      ],
+      "manaCost": 35,
+      "cooldown": 12,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 50,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 2.0
+          }
+        },
+        "debuffId": "silenced"
+      }
+    },
+    "herbalism": {
+      "id": "herbalism",
+      "name": "Herbalism",
+      "description": "Gather herbs and plants for alchemy and cooking",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "common_herb",
+          "name": "Common Herb Patch",
+          "successRate": 0.92,
+          "experienceGain": 10,
+          "timeRequired": 3000,
+          "resources": [
+            {
+              "itemId": "common_herb",
+              "chance": 1.0,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "herb_seed",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "uncommon_herb",
+          "name": "Uncommon Herb Patch",
+          "successRate": 0.88,
+          "experienceGain": 28,
+          "timeRequired": 4000,
+          "resources": [
+            {
+              "itemId": "uncommon_herb",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "common_herb",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "rare_herb",
+          "name": "Rare Herb Patch",
+          "successRate": 0.82,
+          "experienceGain": 65,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "rare_herb",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "uncommon_herb",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "herb_essence",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 55,
+          "nodeId": "epic_herb",
+          "name": "Epic Herb Patch",
+          "successRate": 0.75,
+          "experienceGain": 140,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "epic_herb",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "herb_essence",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "legendary_herb",
+          "name": "Legendary Herb Patch",
+          "successRate": 0.65,
+          "experienceGain": 280,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "legendary_herb",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "epic_herb",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "herb_essence_rare",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 30,
+          "bonus": {
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "mana": 30
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "mana": 60
+          }
+        }
+      ]
+    },
+    "heroic_leap": {
+      "id": "heroic_leap",
+      "name": "Heroic Leap",
+      "description": "Leap to a target location, dealing damage to enemies in the area.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 22,
+      "manaCost": 35,
+      "cooldown": 15,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 60,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.8
+          }
+        }
+      }
+    },
+    "hunting": {
+      "id": "hunting",
+      "name": "Hunting",
+      "description": "Track and hunt animals for resources",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "small_game",
+          "name": "Small Game Trail",
+          "successRate": 0.88,
+          "experienceGain": 15,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "raw_meat",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "animal_hide",
+              "chance": 0.6,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "nodeId": "medium_game",
+          "name": "Medium Game Trail",
+          "successRate": 0.83,
+          "experienceGain": 45,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "raw_meat_quality",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "animal_hide",
+              "chance": 0.7,
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_bone",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "large_game",
+          "name": "Large Game Trail",
+          "successRate": 0.78,
+          "experienceGain": 120,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "raw_meat_premium",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "animal_hide_quality",
+              "chance": 0.8,
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_bone",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_fang",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 75,
+          "nodeId": "rare_game",
+          "name": "Rare Game Trail",
+          "successRate": 0.7,
+          "experienceGain": 250,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "raw_meat_exotic",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "animal_hide_rare",
+              "chance": 0.85,
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_fang",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_claw",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 35,
+          "bonus": {
+            "goldGeneration": 0.05,
+            "attack": 5
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "attack": 10
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "attack": 15
+          }
+        }
+      ]
+    },
+    "ice_lance": {
+      "id": "ice_lance",
+      "name": "Ice Lance",
+      "description": "Hurl a sharp shard of ice that pierces through enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 8,
+      "prerequisites": [
+        "frost_bolt"
+      ],
+      "manaCost": 25,
+      "cooldown": 3,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 45,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 2.0
+          }
+        },
+        "debuffId": "slowed"
+      }
+    },
+    "intimidate": {
+      "id": "intimidate",
+      "name": "Intimidate",
+      "description": "Intimidate enemies, reducing their attack power.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 7,
+      "prerequisites": [
+        "taunt"
+      ],
+      "manaCost": 20,
+      "cooldown": 15,
+      "target": "all_enemies",
+      "effect": {
+        "debuffId": "intimidated"
+      }
+    },
+    "item_mastery": {
+      "id": "item_mastery",
+      "name": "Item Mastery",
+      "description": "Increases the effectiveness of all consumable items.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 3,
+      "passiveBonus": {
+        "special": "item_mastery"
+      }
+    },
+    "jewelcrafting": {
+      "id": "jewelcrafting",
+      "name": "Jewelcrafting",
+      "description": "Create jewelry and gems",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.35)",
+      "recipes": [
+        {
+          "recipeId": "copper_ring",
+          "name": "Copper Ring",
+          "level": 10,
+          "ingredients": [
+            {
+              "itemId": "copper_ore",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_common",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "copper_ring",
+            "quantity": 1
+          },
+          "experienceGain": 35,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "silver_necklace",
+          "name": "Silver Necklace",
+          "level": 35,
+          "ingredients": [
+            {
+              "itemId": "silver_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            },
+            {
+              "itemId": "chain",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "silver_necklace",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "gold_jewelry",
+          "name": "Gold Jewelry Set",
+          "level": 65,
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 3
+            },
+            {
+              "itemId": "precious_metal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "gold_jewelry_set",
+            "quantity": 1
+          },
+          "experienceGain": 300,
+          "timeRequired": 10000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 40,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "luck": 5
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "goldGeneration": 0.2,
+            "luck": 10
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.3,
+            "luck": 15
+          }
+        }
+      ]
+    },
+    "kidney_shot": {
+      "id": "kidney_shot",
+      "name": "Kidney Shot",
+      "description": "Strike a vital point, stunning the enemy.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 15,
+      "manaCost": 25,
+      "cooldown": 20,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 30,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.2
+          }
+        },
+        "debuffId": "stunned"
+      }
+    },
+    "last_stand": {
+      "id": "last_stand",
+      "name": "Last Stand",
+      "description": "When health drops below 20%, gain massive defense and health regeneration.",
+      "type": "passive",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 30,
+      "prerequisites": [
+        "shield_wall",
+        "second_wind"
+      ],
+      "passiveBonus": {
+        "special": "last_stand"
+      }
+    },
+    "leatherworking": {
+      "id": "leatherworking",
+      "name": "Leatherworking",
+      "description": "Craft leather armor and bags",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.3)",
+      "recipes": [
+        {
+          "recipeId": "leather_armor",
+          "name": "Leather Armor",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "animal_hide",
+              "quantity": 5
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "leather_armor",
+            "quantity": 1
+          },
+          "experienceGain": 28,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "reinforced_leather",
+          "name": "Reinforced Leather",
+          "level": 30,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 8
+            },
+            {
+              "itemId": "metal_ring",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "reinforced_leather_armor",
+            "quantity": 1
+          },
+          "experienceGain": 100,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "monster_hide_armor",
+          "name": "Monster Hide Armor",
+          "level": 60,
+          "ingredients": [
+            {
+              "itemId": "monster_pelt",
+              "quantity": 10
+            },
+            {
+              "itemId": "monster_bone",
+              "quantity": 5
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "monster_hide_armor",
+            "quantity": 1
+          },
+          "experienceGain": 240,
+          "timeRequired": 9500
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 30,
+          "bonus": {
+            "defense": 8,
+            "dexterity": 3
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "defense": 15,
+            "dexterity": 6
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "defense": 25,
+            "dexterity": 10
+          }
+        }
+      ]
+    },
+    "lethal_injection": {
+      "id": "lethal_injection",
+      "name": "Lethal Injection",
+      "description": "Inject a deadly poison that deals massive damage over time.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 29,
+      "prerequisites": [
+        "deadly_poison"
+      ],
+      "manaCost": 45,
+      "cooldown": 25,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 30,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.5
+          }
+        },
+        "debuffId": "lethal_poison"
+      }
+    },
+    "lightning_armor": {
+      "id": "lightning_armor",
+      "name": "Lightning Armor",
+      "description": "Envelop yourself in lightning, shocking nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 10,
+      "manaCost": 32,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "lightning_armor"
+      }
+    },
+    "lightning_bolt": {
+      "id": "lightning_bolt",
+      "name": "Lightning Bolt",
+      "description": "Strike your enemy with lightning.",
+      "type": "active",
+      "maxLevel": 5,
+      "prerequisites": [
+        "fireball"
+      ],
+      "requirements": {
+        "class": [
+          "mage"
+        ],
+        "level": 10
+      },
+      "manaCost": 25,
+      "cooldown": 3,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 55,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 2.2
+          }
+        }
+      }
+    },
+    "lucky_strike": {
+      "id": "lucky_strike",
+      "name": "Lucky Strike",
+      "description": "Increases your luck, improving critical strike chance and item find rate.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 5,
+      "passiveBonus": {
+        "statBonus": {
+          "luck": 2
+        },
+        "combatStatBonus": {
+          "criticalChance": 1
+        }
+      }
+    },
+    "mage_intellect": {
+      "id": "mage_intellect",
+      "name": "Mage's Intellect",
+      "description": "Passively increases intelligence and magic power.",
+      "type": "passive",
+      "maxLevel": 10,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "passiveBonus": {
+        "statBonus": {
+          "intelligence": 2
+        },
+        "combatStatBonus": {
+          "magicAttack": 8
+        }
+      }
+    },
+    "magic_missile": {
+      "id": "magic_missile",
+      "name": "Magic Missile",
+      "description": "Fire multiple homing missiles that never miss their target.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 4,
+      "prerequisites": [
+        "arcane_missile"
+      ],
+      "manaCost": 18,
+      "cooldown": 2,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 30,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.8
+          }
+        }
+      }
+    },
+    "mana_burn": {
+      "id": "mana_burn",
+      "name": "Mana Burn",
+      "description": "Burn an enemy's mana, dealing damage based on their mana pool.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 11,
+      "manaCost": 30,
+      "cooldown": 8,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 20,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.5
+          }
+        },
+        "debuffId": "mana_burned"
+      }
+    },
+    "mana_shield": {
+      "id": "mana_shield",
+      "name": "Mana Shield",
+      "description": "Create a shield that absorbs damage using mana.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "mage"
+        ],
+        "level": 8
+      },
+      "manaCost": 30,
+      "cooldown": 20,
+      "target": "self",
+      "effect": {
+        "buffId": "mana_shield"
+      }
+    },
+    "mana_surge": {
+      "id": "mana_surge",
+      "name": "Mana Surge",
+      "description": "Instantly restore a large amount of mana.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 13,
+      "manaCost": 0,
+      "cooldown": 60,
+      "target": "self",
+      "effect": {
+        "heal": {
+          "base": 100,
+          "scaling": {
+            "stat": "wisdom",
+            "multiplier": 2.0
+          }
+        }
+      }
+    },
+    "marked_for_death": {
+      "id": "marked_for_death",
+      "name": "Marked for Death",
+      "description": "Mark an enemy, causing all attacks against them to deal bonus damage.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 21,
+      "manaCost": 30,
+      "cooldown": 20,
+      "target": "enemy",
+      "effect": {
+        "debuffId": "marked_for_death"
+      }
+    },
+    "meteor": {
+      "id": "meteor",
+      "name": "Meteor",
+      "description": "Summon a massive meteor from the sky, dealing devastating damage to a large area.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 25,
+      "prerequisites": [
+        "fireball"
+      ],
+      "manaCost": 80,
+      "cooldown": 30,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 150,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 3.5
+          }
+        }
+      }
+    },
+    "mining": {
+      "id": "mining",
+      "name": "Mining",
+      "description": "Extract ores and gems from stone deposits",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "copper_ore",
+          "name": "Copper Ore Vein",
+          "successRate": 0.95,
+          "experienceGain": 10,
+          "timeRequired": 3000,
+          "resources": [
+            {
+              "itemId": "copper_ore",
+              "chance": 1.0,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "stone",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "iron_ore",
+          "name": "Iron Ore Vein",
+          "successRate": 0.9,
+          "experienceGain": 25,
+          "timeRequired": 4000,
+          "resources": [
+            {
+              "itemId": "iron_ore",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "copper_ore",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "nodeId": "silver_ore",
+          "name": "Silver Ore Vein",
+          "successRate": 0.85,
+          "experienceGain": 50,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "silver_ore",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "iron_ore",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "gold_ore",
+          "name": "Gold Ore Vein",
+          "successRate": 0.8,
+          "experienceGain": 100,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "gold_ore",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "silver_ore",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_rare",
+              "chance": 0.1,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "mithril_ore",
+          "name": "Mithril Ore Vein",
+          "successRate": 0.75,
+          "experienceGain": 200,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "mithril_ore",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "gold_ore",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_epic",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "adamantite_ore",
+          "name": "Adamantite Ore Vein",
+          "successRate": 0.7,
+          "experienceGain": 400,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "adamantite_ore",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "mithril_ore",
+              "chance": 0.15,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_legendary",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 25,
+          "bonus": {
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "goldGeneration": 0.1
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.2,
+            "itemFindRate": 0.1
+          }
+        }
+      ]
+    },
+    "mortal_strike": {
+      "id": "mortal_strike",
+      "name": "Mortal Strike",
+      "description": "A devastating strike that deals extra damage and reduces healing received.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 15,
+      "prerequisites": [
+        "execute"
+      ],
+      "manaCost": 35,
+      "cooldown": 8,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 80,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 2.2
+          }
+        },
+        "debuffId": "mortal_wound"
+      }
+    },
+    "overpower": {
+      "id": "overpower",
+      "name": "Overpower",
+      "description": "An unstoppable attack that ignores enemy defense.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 14,
+      "prerequisites": [
+        "whirlwind"
+      ],
+      "manaCost": 30,
+      "cooldown": 10,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 60,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 2.0
+          }
+        }
+      }
+    },
+    "parry": {
+      "id": "parry",
+      "name": "Parry",
+      "description": "Deflect incoming attacks, reducing damage taken.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 4,
+      "requirements": {
+        "class": [
+          "warrior",
+          "rogue"
+        ]
+      },
+      "passiveBonus": {
+        "combatStatBonus": {
+          "defense": 5
+        }
+      }
+    },
+    "poison_blade": {
+      "id": "poison_blade",
+      "name": "Poison Blade",
+      "description": "Coat your weapon in poison, causing attacks to poison enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 5,
+      "prerequisites": [
+        "poison_strike"
+      ],
+      "manaCost": 20,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "poison_blade"
+      }
+    },
+    "poison_strike": {
+      "id": "poison_strike",
+      "name": "Poison Strike",
+      "description": "Attack with a poisoned blade that deals damage over time.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ],
+        "level": 5
+      },
+      "manaCost": 18,
+      "cooldown": 3,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 25,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.5
+          }
+        },
+        "debuffId": "poison"
+      }
+    },
+    "polymorph": {
+      "id": "polymorph",
+      "name": "Polymorph",
+      "description": "Transform an enemy into a harmless creature, removing them from combat temporarily.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 20,
+      "manaCost": 50,
+      "cooldown": 25,
+      "target": "enemy",
+      "effect": {
+        "debuffId": "polymorphed"
+      }
+    },
+    "potion_use": {
+      "id": "potion_use",
+      "name": "Potion Use",
+      "description": "Mastery of potions allows you to use them more effectively.",
+      "type": "passive",
+      "maxLevel": 5,
+      "unlockLevel": 1,
+      "passiveBonus": {
+        "special": "potion_mastery"
+      }
+    },
+    "power_strike": {
+      "id": "power_strike",
+      "name": "Power Strike",
+      "description": "A devastating melee attack with increased critical chance.",
+      "type": "active",
+      "maxLevel": 5,
+      "prerequisites": [
+        "cleave"
+      ],
+      "requirements": {
+        "class": [
+          "warrior"
+        ],
+        "level": 10
+      },
+      "manaCost": 25,
+      "cooldown": 4,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 50,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 2.0
+          }
+        }
+      }
+    },
+    "quarrying": {
+      "id": "quarrying",
+      "name": "Quarrying",
+      "description": "Extract stone and construction materials",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "limestone_quarry",
+          "name": "Limestone Quarry",
+          "successRate": 0.93,
+          "experienceGain": 11,
+          "timeRequired": 3500,
+          "resources": [
+            {
+              "itemId": "limestone",
+              "chance": 1.0,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "rough_stone",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "nodeId": "granite_quarry",
+          "name": "Granite Quarry",
+          "successRate": 0.88,
+          "experienceGain": 32,
+          "timeRequired": 4500,
+          "resources": [
+            {
+              "itemId": "granite",
+              "chance": 1.0,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "limestone",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 45,
+          "nodeId": "marble_quarry",
+          "name": "Marble Quarry",
+          "successRate": 0.82,
+          "experienceGain": 90,
+          "timeRequired": 5500,
+          "resources": [
+            {
+              "itemId": "marble",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "granite",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "polished_stone",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "obsidian_quarry",
+          "name": "Obsidian Quarry",
+          "successRate": 0.75,
+          "experienceGain": 220,
+          "timeRequired": 6500,
+          "resources": [
+            {
+              "itemId": "obsidian",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "marble",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "volcanic_stone",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 30,
+          "bonus": {
+            "defense": 5
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "defense": 10,
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "defense": 20,
+            "goldGeneration": 0.1
+          }
+        }
+      ]
+    },
+    "quick_strike": {
+      "id": "quick_strike",
+      "name": "Quick Strike",
+      "description": "A fast attack that deals moderate damage.",
+      "type": "active",
+      "maxLevel": 5,
+      "unlockLevel": 2,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "manaCost": 10,
+      "cooldown": 2,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 25,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.2
+          }
+        }
+      }
+    },
+    "rally": {
+      "id": "rally",
+      "name": "Rally",
+      "description": "Instantly restore a large amount of health and remove negative effects.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 25,
+      "prerequisites": [
+        "second_wind"
+      ],
+      "manaCost": 50,
+      "cooldown": 60,
+      "target": "self",
+      "effect": {
+        "heal": {
+          "base": 200,
+          "scaling": {
+            "stat": "vitality",
+            "multiplier": 3.0
+          }
+        }
+      }
+    },
+    "reckless_strike": {
+      "id": "reckless_strike",
+      "name": "Reckless Strike",
+      "description": "A powerful attack that deals high damage but leaves you vulnerable.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 17,
+      "prerequisites": [
+        "overpower"
+      ],
+      "manaCost": 40,
+      "cooldown": 12,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 100,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 2.8
+          }
+        },
+        "debuffId": "vulnerable"
+      }
+    },
+    "rend": {
+      "id": "rend",
+      "name": "Rend",
+      "description": "Cause the enemy to bleed, taking damage over time.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 9,
+      "manaCost": 20,
+      "cooldown": 12,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 15,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 0.8
+          }
+        },
+        "debuffId": "bleeding"
+      }
+    },
+    "rogue_agility": {
+      "id": "rogue_agility",
+      "name": "Rogue's Agility",
+      "description": "Passively increases dexterity and speed.",
+      "type": "passive",
+      "maxLevel": 10,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "passiveBonus": {
+        "statBonus": {
+          "dexterity": 2
+        },
+        "combatStatBonus": {
+          "speed": 5
+        }
+      }
+    },
+    "runecrafting": {
+      "id": "runecrafting",
+      "name": "Runecrafting",
+      "description": "Inscribe runes on items to enhance their power",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.4)",
+      "recipes": [
+        {
+          "recipeId": "minor_rune",
+          "name": "Minor Rune",
+          "level": 15,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 2
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "minor_rune",
+            "quantity": 1
+          },
+          "experienceGain": 45,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "greater_rune",
+          "name": "Greater Rune",
+          "level": 45,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "mana_crystal",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "greater_rune",
+            "quantity": 1
+          },
+          "experienceGain": 160,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "supreme_rune",
+          "name": "Supreme Rune",
+          "level": 80,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "supreme_rune",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 12000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 50,
+          "bonus": {
+            "magicAttack": 15,
+            "magicDefense": 10
+          }
+        },
+        {
+          "level": 95,
+          "bonus": {
+            "magicAttack": 30,
+            "magicDefense": 20
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "magicAttack": 50,
+            "magicDefense": 35
+          }
+        }
+      ]
+    },
+    "rupture": {
+      "id": "rupture",
+      "name": "Rupture",
+      "description": "Tear open an enemy's wounds, causing them to bleed heavily.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 18,
+      "prerequisites": [
+        "shadow_strike"
+      ],
+      "manaCost": 30,
+      "cooldown": 10,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 40,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 1.5
+          }
+        },
+        "debuffId": "rupture"
+      }
+    },
+    "scorch": {
+      "id": "scorch",
+      "name": "Scorch",
+      "description": "A quick fire spell that reduces enemy fire resistance.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 6,
+      "manaCost": 15,
+      "cooldown": 4,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 25,
+          "scaling": {
+            "stat": "intelligence",
+            "multiplier": 1.5
+          }
+        },
+        "debuffId": "fire_vulnerability"
+      }
+    },
+    "second_wind": {
+      "id": "second_wind",
+      "name": "Second Wind",
+      "description": "Recover health when your health drops below 30%.",
+      "type": "passive",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 8,
+      "prerequisites": [
+        "defensive_stance"
+      ],
+      "passiveBonus": {
+        "special": "second_wind"
+      }
+    },
+    "shadow_clone": {
+      "id": "shadow_clone",
+      "name": "Shadow Clone",
+      "description": "Create a shadowy clone that attacks alongside you.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 26,
+      "prerequisites": [
+        "shadow_step"
+      ],
+      "manaCost": 55,
+      "cooldown": 40,
+      "target": "self",
+      "effect": {
+        "buffId": "shadow_clone"
+      }
+    },
+    "shadow_dance": {
+      "id": "shadow_dance",
+      "name": "Shadow Dance",
+      "description": "Enter a shadowy state allowing stealth abilities to be used without stealth.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 28,
+      "prerequisites": [
+        "cloak_of_shadows"
+      ],
+      "manaCost": 70,
+      "cooldown": 60,
+      "target": "self",
+      "effect": {
+        "buffId": "shadow_dance"
+      }
+    },
+    "shadow_step": {
+      "id": "shadow_step",
+      "name": "Shadow Step",
+      "description": "Teleport behind your enemy and strike.",
+      "type": "active",
+      "maxLevel": 3,
+      "prerequisites": [
+        "backstab"
+      ],
+      "requirements": {
+        "class": [
+          "rogue"
+        ],
+        "level": 12
+      },
+      "manaCost": 30,
+      "cooldown": 8,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 45,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 2.8
+          }
+        }
+      }
+    },
+    "shadow_strike": {
+      "id": "shadow_strike",
+      "name": "Shadow Strike",
+      "description": "Strike from the shadows, dealing shadow damage that ignores armor.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 9,
+      "prerequisites": [
+        "backstab"
+      ],
+      "manaCost": 30,
+      "cooldown": 6,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 60,
+          "scaling": {
+            "stat": "dexterity",
+            "multiplier": 2.2
+          }
+        }
+      }
+    },
+    "shield_bash": {
+      "id": "shield_bash",
+      "name": "Shield Bash",
+      "description": "Bash your target with your shield, stunning them.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ],
+        "level": 5
+      },
+      "manaCost": 20,
+      "cooldown": 5,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 20,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.0
+          }
+        },
+        "debuffId": "stun"
+      }
+    },
+    "shield_wall": {
+      "id": "shield_wall",
+      "name": "Shield Wall",
+      "description": "Raise your shield, blocking all incoming damage for a short duration.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 12,
+      "prerequisites": [
+        "shield_bash"
+      ],
+      "manaCost": 40,
+      "cooldown": 30,
+      "target": "self",
+      "effect": {
+        "buffId": "shield_wall"
+      }
+    },
+    "slice_and_dice": {
+      "id": "slice_and_dice",
+      "name": "Slice and Dice",
+      "description": "Increase your attack speed dramatically for a short duration.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 19,
+      "manaCost": 40,
+      "cooldown": 30,
+      "target": "self",
+      "effect": {
+        "buffId": "slice_and_dice"
+      }
+    },
+    "slow_time": {
+      "id": "slow_time",
+      "name": "Slow Time",
+      "description": "Slow down time in an area, reducing all enemies' speed.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 22,
+      "manaCost": 60,
+      "cooldown": 40,
+      "target": "all_enemies",
+      "effect": {
+        "debuffId": "time_slowed"
+      }
+    },
+    "smoke_bomb": {
+      "id": "smoke_bomb",
+      "name": "Smoke Bomb",
+      "description": "Throw a smoke bomb, blinding all enemies and allowing escape.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 10,
+      "manaCost": 30,
+      "cooldown": 25,
+      "target": "all_enemies",
+      "effect": {
+        "debuffId": "blinded"
+      }
+    },
+    "sneak_attack": {
+      "id": "sneak_attack",
+      "name": "Sneak Attack",
+      "description": "Increase critical strike chance and damage.",
+      "type": "passive",
+      "maxLevel": 10,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "passiveBonus": {
+        "combatStatBonus": {
+          "criticalChance": 3,
+          "criticalDamage": 0.1
+        }
+      }
+    },
+    "spell_power": {
+      "id": "spell_power",
+      "name": "Spell Power",
+      "description": "Passively increase all spell damage.",
+      "type": "passive",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 17,
+      "prerequisites": [
+        "mage_intellect"
+      ],
+      "passiveBonus": {
+        "combatStatBonus": {
+          "magicAttack": 5
+        }
+      }
+    },
+    "spell_steal": {
+      "id": "spell_steal",
+      "name": "Spell Steal",
+      "description": "Steal a beneficial buff from an enemy and apply it to yourself.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 24,
+      "manaCost": 40,
+      "cooldown": 15,
+      "target": "enemy",
+      "effect": {
+        "special": "spell_steal"
+      }
+    },
+    "stealth": {
+      "id": "stealth",
+      "name": "Stealth",
+      "description": "Enter stealth mode, becoming invisible to enemies and increasing critical strike chance.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 4,
+      "manaCost": 30,
+      "cooldown": 0,
+      "target": "self",
+      "effect": {
+        "buffId": "stealth"
+      }
+    },
+    "sunder": {
+      "id": "sunder",
+      "name": "Sunder",
+      "description": "Strike enemy armor, reducing their defense. Stacks up to 3 times.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 8,
+      "manaCost": 15,
+      "cooldown": 6,
+      "target": "enemy",
+      "effect": {
+        "damage": {
+          "base": 25,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.0
+          }
+        },
+        "debuffId": "sundered"
+      }
+    },
+    "tailoring": {
+      "id": "tailoring",
+      "name": "Tailoring",
+      "description": "Craft cloth armor and accessories",
+      "type": "production",
+      "category": "production",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.3)",
+      "recipes": [
+        {
+          "recipeId": "cloth_robe",
+          "name": "Cloth Robe",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 5
+            },
+            {
+              "itemId": "thread",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "cloth_robe",
+            "quantity": 1
+          },
+          "experienceGain": 25,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "silk_armor",
+          "name": "Silk Armor",
+          "level": 30,
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 8
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_common",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "silk_armor",
+            "quantity": 1
+          },
+          "experienceGain": 95,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "mage_robes",
+          "name": "Mage Robes",
+          "level": 55,
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 10
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "mage_robes",
+            "quantity": 1
+          },
+          "experienceGain": 220,
+          "timeRequired": 9000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 35,
+          "bonus": {
+            "magicDefense": 10,
+            "mana": 50
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "magicDefense": 20,
+            "mana": 100
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "magicDefense": 30,
+            "mana": 150
+          }
+        }
+      ]
+    },
+    "taunt": {
+      "id": "taunt",
+      "name": "Taunt",
+      "description": "Draw enemy attention to yourself.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ],
+        "level": 3
+      },
+      "manaCost": 10,
+      "cooldown": 8,
+      "target": "all_enemies",
+      "effect": {
+        "debuffId": "taunted"
+      }
+    },
+    "teleport": {
+      "id": "teleport",
+      "name": "Teleport",
+      "description": "Teleport to a target location, leaving a magical mark.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "mage"
+        ]
+      },
+      "unlockLevel": 15,
+      "prerequisites": [
+        "blink"
+      ],
+      "manaCost": 30,
+      "cooldown": 20,
+      "target": "self",
+      "effect": {
+        "buffId": "teleport"
+      }
+    },
+    "thieving": {
+      "id": "thieving",
+      "name": "Thieving",
+      "description": "Pickpocket and steal from NPCs and targets",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.15)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "common_npc",
+          "name": "Common NPC",
+          "successRate": 0.82,
+          "experienceGain": 18,
+          "timeRequired": 4000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 5,
+              "max": 15
+            },
+            {
+              "itemId": "common_item",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "nodeId": "merchant",
+          "name": "Merchant",
+          "successRate": 0.76,
+          "experienceGain": 52,
+          "timeRequired": 5000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 25,
+              "max": 60
+            },
+            {
+              "itemId": "uncommon_item",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "trade_good",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "noble",
+          "name": "Noble",
+          "successRate": 0.7,
+          "experienceGain": 125,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 80,
+              "max": 150
+            },
+            {
+              "itemId": "rare_item",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "jewelry",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "royal_guard",
+          "name": "Royal Guard",
+          "successRate": 0.62,
+          "experienceGain": 280,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 200,
+              "max": 400
+            },
+            {
+              "itemId": "epic_item",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "royal_seal",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 40,
+          "bonus": {
+            "goldGeneration": 0.12,
+            "dexterity": 3
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "goldGeneration": 0.2,
+            "dexterity": 6
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.3,
+            "dexterity": 10
+          }
+        }
+      ]
+    },
+    "thunder_clap": {
+      "id": "thunder_clap",
+      "name": "Thunder Clap",
+      "description": "Strike the ground, dealing damage and slowing all nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 16,
+      "manaCost": 30,
+      "cooldown": 12,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 35,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.3
+          }
+        },
+        "debuffId": "slowed"
+      }
+    },
+    "trapping": {
+      "id": "trapping",
+      "name": "Trapping",
+      "description": "Set traps for animals and monsters",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "small_trap",
+          "name": "Small Animal Trap",
+          "successRate": 0.85,
+          "experienceGain": 14,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "trapped_animal",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "animal_pelt",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "nodeId": "medium_trap",
+          "name": "Medium Animal Trap",
+          "successRate": 0.8,
+          "experienceGain": 60,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "trapped_animal_quality",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "animal_pelt",
+              "chance": 0.7,
+              "quantity": 1
+            },
+            {
+              "itemId": "animal_meat",
+              "chance": 0.6,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "large_trap",
+          "name": "Large Monster Trap",
+          "successRate": 0.72,
+          "experienceGain": 160,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "trapped_monster",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "monster_pelt",
+              "chance": 0.8,
+              "quantity": 1
+            },
+            {
+              "itemId": "monster_bone",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "monster_essence",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 35,
+          "bonus": {
+            "goldGeneration": 0.08,
+            "luck": 2
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "luck": 4
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.25,
+            "luck": 6
+          }
+        }
+      ]
+    },
+    "treasure_hunting": {
+      "id": "treasure_hunting",
+      "name": "Treasure Hunting",
+      "description": "Discover buried treasures and loot",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.2)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "small_cache",
+          "name": "Small Treasure Cache",
+          "successRate": 0.8,
+          "experienceGain": 25,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 10,
+              "max": 30
+            },
+            {
+              "itemId": "common_trinket",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "nodeId": "medium_chest",
+          "name": "Medium Treasure Chest",
+          "successRate": 0.75,
+          "experienceGain": 85,
+          "timeRequired": 10000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 50,
+              "max": 100
+            },
+            {
+              "itemId": "uncommon_trinket",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_common",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "large_hoard",
+          "name": "Large Treasure Hoard",
+          "successRate": 0.68,
+          "experienceGain": 200,
+          "timeRequired": 12000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 150,
+              "max": 300
+            },
+            {
+              "itemId": "rare_trinket",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_rare",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_coin",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "legendary_trove",
+          "name": "Legendary Treasure Trove",
+          "successRate": 0.6,
+          "experienceGain": 450,
+          "timeRequired": 15000,
+          "resources": [
+            {
+              "itemId": "gold",
+              "chance": 1.0,
+              "min": 500,
+              "max": 1000
+            },
+            {
+              "itemId": "legendary_trinket",
+              "chance": 0.7,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_epic",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 35,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "itemFindRate": 0.05
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "goldGeneration": 0.25,
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.4,
+            "itemFindRate": 0.2
+          }
+        }
+      ]
+    },
+    "vanish": {
+      "id": "vanish",
+      "name": "Vanish",
+      "description": "Instantly enter stealth and remove all negative effects.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 12,
+      "prerequisites": [
+        "stealth"
+      ],
+      "manaCost": 40,
+      "cooldown": 60,
+      "target": "self",
+      "effect": {
+        "buffId": "vanish"
+      }
+    },
+    "vendetta": {
+      "id": "vendetta",
+      "name": "Vendetta",
+      "description": "Mark an enemy for vengeance, dealing increased damage based on damage taken.",
+      "type": "active",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "rogue"
+        ]
+      },
+      "unlockLevel": 27,
+      "prerequisites": [
+        "marked_for_death"
+      ],
+      "manaCost": 50,
+      "cooldown": 45,
+      "target": "enemy",
+      "effect": {
+        "debuffId": "vendetta"
+      }
+    },
+    "victory_rush": {
+      "id": "victory_rush",
+      "name": "Victory Rush",
+      "description": "After defeating an enemy, your next attack deals bonus damage and heals you.",
+      "type": "passive",
+      "maxLevel": 3,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 18,
+      "passiveBonus": {
+        "special": "victory_rush"
+      }
+    },
+    "war_cry": {
+      "id": "war_cry",
+      "name": "War Cry",
+      "description": "Increases all allies' attack power and reduces enemy morale.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 13,
+      "prerequisites": [
+        "battle_cry"
+      ],
+      "manaCost": 30,
+      "cooldown": 25,
+      "target": "all_allies",
+      "effect": {
+        "buffId": "war_cry"
+      }
+    },
+    "warrior_strength": {
+      "id": "warrior_strength",
+      "name": "Warrior's Strength",
+      "description": "Passively increases strength and attack power.",
+      "type": "passive",
+      "maxLevel": 10,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "passiveBonus": {
+        "statBonus": {
+          "strength": 2
+        },
+        "combatStatBonus": {
+          "attack": 5
+        }
+      }
+    },
+    "whirlwind": {
+      "id": "whirlwind",
+      "name": "Whirlwind",
+      "description": "Spin in a circle, attacking all nearby enemies.",
+      "type": "active",
+      "maxLevel": 5,
+      "requirements": {
+        "class": [
+          "warrior"
+        ]
+      },
+      "unlockLevel": 5,
+      "prerequisites": [
+        "cleave"
+      ],
+      "manaCost": 25,
+      "cooldown": 4,
+      "target": "all_enemies",
+      "effect": {
+        "damage": {
+          "base": 40,
+          "scaling": {
+            "stat": "strength",
+            "multiplier": 1.8
+          }
+        }
+      }
+    },
+    "woodcutting": {
+      "id": "woodcutting",
+      "name": "Woodcutting",
+      "description": "Harvest wood and materials from trees",
+      "type": "gathering",
+      "category": "gathering",
+      "maxLevel": 99,
+      "experienceFormula": "baseExp * (level * 1.1)",
+      "resourceNodes": [
+        {
+          "level": 1,
+          "nodeId": "oak_tree",
+          "name": "Oak Tree",
+          "successRate": 0.95,
+          "experienceGain": 12,
+          "timeRequired": 3500,
+          "resources": [
+            {
+              "itemId": "oak_log",
+              "chance": 1.0,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "tree_bark",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "nodeId": "maple_tree",
+          "name": "Maple Tree",
+          "successRate": 0.9,
+          "experienceGain": 35,
+          "timeRequired": 4500,
+          "resources": [
+            {
+              "itemId": "maple_log",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "oak_log",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "maple_sap",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "nodeId": "yew_tree",
+          "name": "Yew Tree",
+          "successRate": 0.85,
+          "experienceGain": 80,
+          "timeRequired": 5500,
+          "resources": [
+            {
+              "itemId": "yew_log",
+              "chance": 1.0,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "maple_log",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "yew_berry",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "magic_tree",
+          "name": "Magic Tree",
+          "successRate": 0.75,
+          "experienceGain": 180,
+          "timeRequired": 6500,
+          "resources": [
+            {
+              "itemId": "magic_log",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "yew_log",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "magic_essence",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "elder_tree",
+          "name": "Elder Tree",
+          "successRate": 0.65,
+          "experienceGain": 350,
+          "timeRequired": 7500,
+          "resources": [
+            {
+              "itemId": "elder_log",
+              "chance": 1.0,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "magic_log",
+              "chance": 0.15,
+              "quantity": 1
+            },
+            {
+              "itemId": "elder_essence",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 25,
+          "bonus": {
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "goldGeneration": 0.1
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.15
+          }
+        }
+      ]
+    }
+  }
+}

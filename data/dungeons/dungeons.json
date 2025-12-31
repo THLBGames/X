@@ -1,0 +1,140 @@
+{
+  "version": "1.0.0",
+  "total_dungeons": 4,
+  "dungeons": {
+    "dragon_lair": {
+      "id": "dragon_lair",
+      "name": "Dragon's Lair",
+      "description": "The lair of a powerful dragon.",
+      "tier": 3,
+      "requiredLevel": 15,
+      "requiredDungeonId": "haunted_forest",
+      "monsterPools": [
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 70,
+          "minLevel": 15,
+          "maxLevel": 20
+        },
+        {
+          "monsterId": "vampire",
+          "weight": 20,
+          "minLevel": 18,
+          "maxLevel": 22
+        },
+        {
+          "monsterId": "minotaur",
+          "weight": 10,
+          "minLevel": 12,
+          "maxLevel": 18
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.0,
+        "goldBonus": 1.8,
+        "itemDropRate": 1.5
+      }
+    },
+    "forest_clearing": {
+      "id": "forest_clearing",
+      "name": "Forest Clearing",
+      "description": "A peaceful clearing where weak monsters gather.",
+      "tier": 1,
+      "requiredLevel": 1,
+      "monsterPools": [
+        {
+          "monsterId": "goblin",
+          "weight": 50,
+          "minLevel": 1,
+          "maxLevel": 3
+        },
+        {
+          "monsterId": "wolf",
+          "weight": 30,
+          "minLevel": 1,
+          "maxLevel": 4
+        },
+        {
+          "monsterId": "skeleton",
+          "weight": 20,
+          "minLevel": 2,
+          "maxLevel": 4
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.0,
+        "goldBonus": 1.0
+      }
+    },
+    "haunted_forest": {
+      "id": "haunted_forest",
+      "name": "Haunted Forest",
+      "description": "A dark forest filled with undead creatures.",
+      "tier": 2,
+      "requiredLevel": 5,
+      "requiredDungeonId": "orc_encampment",
+      "monsterPools": [
+        {
+          "monsterId": "wraith",
+          "weight": 30,
+          "minLevel": 6,
+          "maxLevel": 10
+        },
+        {
+          "monsterId": "ghost",
+          "weight": 40,
+          "minLevel": 6,
+          "maxLevel": 9
+        },
+        {
+          "monsterId": "skeleton",
+          "weight": 20,
+          "minLevel": 5,
+          "maxLevel": 8
+        },
+        {
+          "monsterId": "zombie",
+          "weight": 10,
+          "minLevel": 5,
+          "maxLevel": 8
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.5,
+        "goldBonus": 1.3
+      }
+    },
+    "orc_encampment": {
+      "id": "orc_encampment",
+      "name": "Orc Encampment",
+      "description": "An encampment of orc warriors.",
+      "tier": 1,
+      "requiredLevel": 3,
+      "requiredDungeonId": "forest_clearing",
+      "monsterPools": [
+        {
+          "monsterId": "orc",
+          "weight": 60,
+          "minLevel": 3,
+          "maxLevel": 6
+        },
+        {
+          "monsterId": "bandit",
+          "weight": 30,
+          "minLevel": 4,
+          "maxLevel": 7
+        },
+        {
+          "monsterId": "zombie",
+          "weight": 10,
+          "minLevel": 3,
+          "maxLevel": 6
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.2,
+        "goldBonus": 1.1
+      }
+    }
+  }
+}

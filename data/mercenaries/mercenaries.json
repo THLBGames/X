@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "total_mercenaries": 6,
+  "mercenaries": {
+    "crafting_mercenary": {
+      "id": "crafting_mercenary",
+      "name": "Master Crafter",
+      "description": "A master craftsman who helps you create items faster and gain more experience. Provides bonuses for 100 crafting actions.",
+      "type": "skilling",
+      "price": 400,
+      "duration": 100,
+      "bonuses": {
+        "experienceMultiplier": 1.4,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.1
+      }
+    },
+    "foraging_mercenary": {
+      "id": "foraging_mercenary",
+      "name": "Foraging Expert",
+      "description": "An expert forager who helps you collect materials more efficiently. Provides bonuses for 100 foraging actions.",
+      "type": "skilling",
+      "price": 300,
+      "duration": 100,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.9,
+        "yieldMultiplier": 1.15
+      }
+    },
+    "mage_mercenary": {
+      "id": "mage_mercenary",
+      "name": "Hired Mage",
+      "description": "A spellcaster who provides magical support in combat. Fights alongside you for 50 battles.",
+      "type": "combat",
+      "price": 750,
+      "duration": 50,
+      "stats": {
+        "health": 150,
+        "maxHealth": 150,
+        "mana": 150,
+        "maxMana": 150,
+        "attack": 15,
+        "defense": 8,
+        "magicAttack": 45,
+        "magicDefense": 20,
+        "speed": 14,
+        "criticalChance": 8,
+        "criticalDamage": 1.8
+      }
+    },
+    "mining_mercenary": {
+      "id": "mining_mercenary",
+      "name": "Mining Assistant",
+      "description": "A skilled miner who helps you gather resources faster. Provides bonuses for 100 mining actions.",
+      "type": "skilling",
+      "price": 300,
+      "duration": 100,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.2
+      }
+    },
+    "rogue_mercenary": {
+      "id": "rogue_mercenary",
+      "name": "Hired Rogue",
+      "description": "A swift assassin who strikes from the shadows. Fights alongside you for 50 battles.",
+      "type": "combat",
+      "price": 600,
+      "duration": 50,
+      "stats": {
+        "health": 180,
+        "maxHealth": 180,
+        "mana": 40,
+        "maxMana": 40,
+        "attack": 35,
+        "defense": 10,
+        "magicAttack": 5,
+        "magicDefense": 8,
+        "speed": 18,
+        "criticalChance": 15,
+        "criticalDamage": 2.0
+      }
+    },
+    "warrior_mercenary": {
+      "id": "warrior_mercenary",
+      "name": "Hired Warrior",
+      "description": "A skilled fighter who joins your party in combat. Fights alongside you for 50 battles.",
+      "type": "combat",
+      "price": 500,
+      "duration": 50,
+      "stats": {
+        "health": 200,
+        "maxHealth": 200,
+        "mana": 50,
+        "maxMana": 50,
+        "attack": 30,
+        "defense": 15,
+        "magicAttack": 0,
+        "magicDefense": 5,
+        "speed": 12,
+        "criticalChance": 5,
+        "criticalDamage": 1.5
+      }
+    }
+  }
+}

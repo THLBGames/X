@@ -1,0 +1,224 @@
+{
+  "version": "1.0.0",
+  "total_classes": 3,
+  "classes": {
+    "mage": {
+      "id": "mage",
+      "name": "Mage",
+      "description": "A master of arcane magic, specializing in devastating spell attacks.",
+      "baseStats": {
+        "strength": 5,
+        "dexterity": 7,
+        "intelligence": 16,
+        "vitality": 8,
+        "wisdom": 13,
+        "luck": 6
+      },
+      "statGrowth": {
+        "strength": 0.5,
+        "dexterity": 1,
+        "intelligence": 3.5,
+        "vitality": 1.5,
+        "wisdom": 2.5,
+        "luck": 1
+      },
+      "availableSkills": [
+        "basic_attack",
+        "first_aid",
+        "potion_use",
+        "item_mastery",
+        "lucky_strike",
+        "critical_mastery",
+        "fireball",
+        "frost_bolt",
+        "lightning_bolt",
+        "mana_shield",
+        "arcane_missile",
+        "mage_intellect",
+        "blink",
+        "teleport",
+        "meteor",
+        "chain_lightning",
+        "ice_lance",
+        "frost_nova",
+        "fire_nova",
+        "arcane_explosion",
+        "polymorph",
+        "slow_time",
+        "mana_burn",
+        "spell_steal",
+        "arcane_power",
+        "combustion",
+        "frost_armor",
+        "fire_armor",
+        "lightning_armor",
+        "mana_surge",
+        "spell_power",
+        "magic_missile",
+        "scorch",
+        "frostbite",
+        "dispel_magic"
+      ],
+      "equipmentRestrictions": {
+        "weaponTypes": [
+          "staff",
+          "wand"
+        ],
+        "armorTypes": [
+          "light",
+          "cloth"
+        ]
+      }
+    },
+    "rogue": {
+      "id": "rogue",
+      "name": "Rogue",
+      "description": "A nimble and stealthy fighter who relies on speed and critical strikes.",
+      "baseStats": {
+        "strength": 9,
+        "dexterity": 16,
+        "intelligence": 8,
+        "vitality": 9,
+        "wisdom": 7,
+        "luck": 12
+      },
+      "statGrowth": {
+        "strength": 1.5,
+        "dexterity": 3.5,
+        "intelligence": 1,
+        "vitality": 1.5,
+        "wisdom": 1,
+        "luck": 2
+      },
+      "availableSkills": [
+        "basic_attack",
+        "parry",
+        "dodge",
+        "counterattack",
+        "quick_strike",
+        "first_aid",
+        "potion_use",
+        "item_mastery",
+        "lucky_strike",
+        "critical_mastery",
+        "backstab",
+        "poison_strike",
+        "shadow_step",
+        "dual_wield",
+        "sneak_attack",
+        "rogue_agility",
+        "stealth",
+        "ambush",
+        "evasion",
+        "vanish",
+        "smoke_bomb",
+        "poison_blade",
+        "crippling_poison",
+        "deadly_poison",
+        "shadow_strike",
+        "assassinate",
+        "blade_flurry",
+        "fan_of_knives",
+        "kidney_shot",
+        "garrote",
+        "rupture",
+        "expose_armor",
+        "slice_and_dice",
+        "adrenaline_rush",
+        "cloak_of_shadows",
+        "shadow_dance",
+        "marked_for_death",
+        "vendetta",
+        "shadow_clone",
+        "lethal_injection",
+        "death_mark"
+      ],
+      "equipmentRestrictions": {
+        "weaponTypes": [
+          "dagger",
+          "sword",
+          "bow"
+        ],
+        "armorTypes": [
+          "light",
+          "medium"
+        ]
+      }
+    },
+    "warrior": {
+      "id": "warrior",
+      "name": "Warrior",
+      "description": "A powerful melee fighter who excels in close combat with high strength and vitality.",
+      "baseStats": {
+        "strength": 15,
+        "dexterity": 8,
+        "intelligence": 5,
+        "vitality": 12,
+        "wisdom": 6,
+        "luck": 7
+      },
+      "statGrowth": {
+        "strength": 3,
+        "dexterity": 1,
+        "intelligence": 0.5,
+        "vitality": 2.5,
+        "wisdom": 1,
+        "luck": 1
+      },
+      "availableSkills": [
+        "basic_attack",
+        "block",
+        "parry",
+        "counterattack",
+        "first_aid",
+        "potion_use",
+        "item_mastery",
+        "lucky_strike",
+        "critical_mastery",
+        "cleave",
+        "shield_bash",
+        "power_strike",
+        "berserker_rage",
+        "taunt",
+        "warrior_strength",
+        "whirlwind",
+        "execute",
+        "defensive_stance",
+        "charge",
+        "battle_cry",
+        "second_wind",
+        "shield_wall",
+        "mortal_strike",
+        "bloodlust",
+        "victory_rush",
+        "overpower",
+        "intimidate",
+        "rend",
+        "devastate",
+        "thunder_clap",
+        "rally",
+        "heroic_leap",
+        "war_cry",
+        "reckless_strike",
+        "last_stand",
+        "fury",
+        "demoralize",
+        "armor_break",
+        "sunder",
+        "cripple"
+      ],
+      "equipmentRestrictions": {
+        "weaponTypes": [
+          "sword",
+          "axe",
+          "mace",
+          "spear"
+        ],
+        "armorTypes": [
+          "heavy",
+          "medium"
+        ]
+      }
+    }
+  }
+}
