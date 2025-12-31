@@ -3,7 +3,7 @@ import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { AutoConsumableManager } from '../systems/combat/AutoConsumableManager';
 import type { AutoConsumableSetting, ConsumableEffectType } from '@idle-rpg/shared';
-import { AutoCondition, ConsumableEffectType as ConsumableEffectTypeEnum, CONSUMABLE_CONDITION_DESCRIPTIONS } from '@idle-rpg/shared';
+import { AutoCondition, ConsumableEffectType as ConsumableEffectTypeEnum, CONSUMABLE_CONDITION_DESCRIPTIONS, MAX_CONSUMABLE_BAR_SLOTS } from '@idle-rpg/shared';
 import { UI_TOOLTIPS, UI_LABELS } from '../constants/ui';
 import TooltipWrapper from './TooltipWrapper';
 import AutoConsumableConfigModal from './AutoConsumableConfigModal';
