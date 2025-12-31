@@ -7,7 +7,8 @@ import { getDataLoader } from '../data';
 import { audioManager } from '../systems/audio/AudioManager';
 import TooltipWrapper from './TooltipWrapper';
 import ItemContextMenu from './ItemContextMenu';
-import type { EquipmentSlot, Item } from '@idle-rpg/shared';
+import type { Item } from '@idle-rpg/shared';
+import { EquipmentSlot } from '@idle-rpg/shared';
 import './EquipmentPanel.css';
 
 interface EquipmentPanelProps {
@@ -40,16 +41,16 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
     label: string;
     icon?: string;
   }> = [
-    { slot: 'helmet', label: 'Head', icon: '⛑️' },
-    { slot: 'weapon', label: 'Weapon', icon: '⚔️' },
-    { slot: 'offhand', label: 'Offhand', icon: '🛡️' },
-    { slot: 'chest', label: 'Chest', icon: '🦺' },
-    { slot: 'gloves', label: 'Gloves', icon: '🧤' },
-    { slot: 'legs', label: 'Pants', icon: '👖' },
-    { slot: 'boots', label: 'Boots', icon: '👢' },
-    { slot: 'ring1', label: 'Ring 1', icon: '💍' },
-    { slot: 'ring2', label: 'Ring 2', icon: '💍' },
-    { slot: 'amulet', label: 'Amulet', icon: '📿' },
+    { slot: EquipmentSlot.HELMET, label: 'Head', icon: '⛑️' },
+    { slot: EquipmentSlot.WEAPON, label: 'Weapon', icon: '⚔️' },
+    { slot: EquipmentSlot.OFFHAND, label: 'Offhand', icon: '🛡️' },
+    { slot: EquipmentSlot.CHEST, label: 'Chest', icon: '🦺' },
+    { slot: EquipmentSlot.GLOVES, label: 'Gloves', icon: '🧤' },
+    { slot: EquipmentSlot.LEGS, label: 'Pants', icon: '👖' },
+    { slot: EquipmentSlot.BOOTS, label: 'Boots', icon: '👢' },
+    { slot: EquipmentSlot.RING1, label: 'Ring 1', icon: '💍' },
+    { slot: EquipmentSlot.RING2, label: 'Ring 2', icon: '💍' },
+    { slot: EquipmentSlot.AMULET, label: 'Amulet', icon: '📿' },
   ];
 
   const handleSlotClick = (slot: EquipmentSlot) => {

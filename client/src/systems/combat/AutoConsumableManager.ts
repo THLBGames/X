@@ -1,5 +1,5 @@
-import type { Character, AutoConsumableSetting, Inventory, ItemType } from '@idle-rpg/shared';
-import { AutoCondition, ConsumableEffectType, VALID_COMBAT_CONSUMABLE_EFFECTS, DEFAULT_PRIORITY } from '@idle-rpg/shared';
+import type { Character, AutoConsumableSetting, Inventory } from '@idle-rpg/shared';
+import { AutoCondition, ConsumableEffectType, VALID_COMBAT_CONSUMABLE_EFFECTS, DEFAULT_PRIORITY, ItemType } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 /**

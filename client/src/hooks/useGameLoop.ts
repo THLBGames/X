@@ -36,7 +36,6 @@ export function useGameLoop() {
   const endCombat = useGameState((state) => state.endCombat);
   const queueSkill = useGameState((state) => state.queueSkill);
   const queueConsumable = useGameState((state) => state.queueConsumable);
-  const inventory = useGameState((state) => state.inventory);
   const removeItem = useGameState((state) => state.removeItem);
 
   const combatCountRef = useRef(0);

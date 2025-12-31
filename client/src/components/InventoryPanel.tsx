@@ -9,8 +9,8 @@ import { showNotification } from './NotificationManager';
 import TooltipWrapper from './TooltipWrapper';
 import ItemContextMenu from './ItemContextMenu';
 import SellItemModal from './SellItemModal';
-import type { Item, Inventory, ItemType, ConsumableEffectType } from '@idle-rpg/shared';
-import { VALID_COMBAT_CONSUMABLE_EFFECTS, MAX_CONSUMABLE_BAR_SLOTS } from '@idle-rpg/shared';
+import type { Item, Inventory } from '@idle-rpg/shared';
+import { VALID_COMBAT_CONSUMABLE_EFFECTS, MAX_CONSUMABLE_BAR_SLOTS, ItemType, ConsumableEffectType } from '@idle-rpg/shared';
 import { UI_MESSAGES } from '../constants/ui';
 import './InventoryPanel.css';
 

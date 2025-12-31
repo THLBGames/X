@@ -6,9 +6,8 @@ import type {
   CombatLog,
   CombatRewards,
   Inventory,
-  ItemType,
 } from '@idle-rpg/shared';
-import { CombatActionType, ConsumableEffectType } from '@idle-rpg/shared';
+import { CombatActionType, ConsumableEffectType, ItemType, CombatResult } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { DungeonManager } from '../dungeon/DungeonManager';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
@@ -442,7 +441,7 @@ export class CombatEngine {
       return {
         actorId: actor.id,
         targetId: target.id,
-        type: 'attack',
+        type: CombatActionType.ATTACK,
         damage,
         timestamp: Date.now(),
       };
@@ -478,7 +477,7 @@ export class CombatEngine {
     if (!target) {
       return {
         actorId: actor.id,
-        type: 'defend',
+        type: CombatActionType.DEFEND,
         timestamp: Date.now(),
       };
     }
@@ -568,16 +567,16 @@ export class CombatEngine {
   /**
    * Get combat result
    */
-  getResult(): 'victory' | 'defeat' | 'ongoing' {
+  getResult(): CombatResult {
     const alivePlayers = this.participants.filter((p) => p.isPlayer && p.isAlive);
     const aliveMonsters = this.participants.filter((p) => !p.isPlayer && p.isAlive);
 
     if (alivePlayers.length === 0) {
-      return 'defeat';
+      return CombatResult.DEFEAT;
     } else if (aliveMonsters.length === 0) {
-      return 'victory';
+      return CombatResult.VICTORY;
     } else {
-      return 'ongoing';
+      return CombatResult.ONGOING;
     }
   }
 
@@ -590,7 +589,7 @@ export class CombatEngine {
 
     let rewards: CombatRewards | undefined;
 
-    if (result === 'victory') {
+    if (result === CombatResult.VICTORY) {
       const dataLoader = getDataLoader();
       const defeatedMonsters = this.participants.filter((p) => !p.isPlayer && !p.isAlive);
 
@@ -663,9 +662,9 @@ export class CombatEngine {
     }
 
     // Play victory or defeat sound
-    if (result === 'victory') {
+    if (result === CombatResult.VICTORY) {
       audioManager.playSound('/audio/sfx/victory.mp3', 0.8);
-    } else if (result === 'defeat') {
+    } else if (result === CombatResult.DEFEAT) {
       audioManager.playSound('/audio/sfx/defeat.mp3', 0.8);
     }
 

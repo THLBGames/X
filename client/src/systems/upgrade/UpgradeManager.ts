@@ -3,8 +3,8 @@ import type {
   Inventory,
   SkillUpgrade,
   ActiveUpgrade,
-  UpgradeTier,
 } from '@idle-rpg/shared';
+import { UpgradeTier } from '@idle-rpg/shared';
 import type { ShopTransactionResult } from '../shop';
 import { getDataLoader } from '@/data';
 import { InventoryManager } from '../inventory';
@@ -38,7 +38,7 @@ export class UpgradeManager {
    * Get tier string from tier number
    */
   private static getTierString(tierNum: number): UpgradeTier {
-    const tiers: UpgradeTier[] = ['I', 'II', 'III', 'IV', 'V'];
+    const tiers: UpgradeTier[] = [UpgradeTier.I, UpgradeTier.II, UpgradeTier.III, UpgradeTier.IV, UpgradeTier.V];
     return tiers[tierNum - 1];
   }
 
@@ -139,7 +139,7 @@ export class UpgradeManager {
 
     if (existingUpgrade) {
       // Check if already at max tier
-      if (existingUpgrade.tier === 'V') {
+      if (existingUpgrade.tier === UpgradeTier.V) {
         return {
           success: false,
           message: 'Upgrade already at maximum tier',

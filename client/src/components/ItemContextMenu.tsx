@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import type { Item, Inventory, ItemType, ConsumableEffectType } from '@idle-rpg/shared';
-import { VALID_COMBAT_CONSUMABLE_EFFECTS } from '@idle-rpg/shared';
+import type { Item, Inventory, ConsumableEffectType } from '@idle-rpg/shared';
+import { VALID_COMBAT_CONSUMABLE_EFFECTS, ItemType } from '@idle-rpg/shared';
 import { ShopManager } from '../systems/shop';
 import { useGameState } from '../systems';
 import './ItemContextMenu.css';
