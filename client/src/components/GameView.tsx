@@ -44,8 +44,7 @@ export default function GameView() {
   // Play background music when character exists
   useEffect(() => {
     if (character && settings.musicEnabled) {
-      // Play background music (placeholder path - replace with actual music file)
-      audioManager.playMusic('/audio/music/background.mp3', true);
+      audioManager.playMusic('/audio/music/background.wav', true);
     } else {
       audioManager.stopMusic();
     }
