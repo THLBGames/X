@@ -1,0 +1,35 @@
+{
+    "id": "minotaur_labyrinth",
+    "name": "Minotaur Labyrinth",
+    "description": "A twisting maze where minotaurs guard ancient treasures.",
+    "tier": 3,
+    "requiredLevel": 23,
+    "requiredDungeonId": "ghost_manor",
+    "monsterPools": [
+      {
+        "monsterId": "minotaur",
+        "weight": 70,
+        "minLevel": 23,
+        "maxLevel": 27
+      },
+      {
+        "monsterId": "giant",
+        "weight": 30,
+        "minLevel": 24,
+        "maxLevel": 28
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "minotaur",
+        "weight": 100,
+        "minLevel": 28,
+        "maxLevel": 32
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 1.6,
+      "goldBonus": 1.55,
+      "itemDropRate": 1.4
+    }
+  }

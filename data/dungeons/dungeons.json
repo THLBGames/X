@@ -1,7 +1,373 @@
 {
   "version": "1.0.0",
-  "total_dungeons": 4,
+  "total_dungeons": 40,
   "dungeons": {
+    "abyssal_chasm": {
+      "id": "abyssal_chasm",
+      "name": "Abyssal Chasm",
+      "description": "A bottomless chasm from which demons and shadows emerge.",
+      "tier": 3,
+      "requiredLevel": 49,
+      "requiredDungeonId": "cursed_castle",
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 50,
+          "minLevel": 49,
+          "maxLevel": 54
+        },
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 35,
+          "minLevel": 50,
+          "maxLevel": 55
+        },
+        {
+          "monsterId": "imp",
+          "weight": 15,
+          "minLevel": 51,
+          "maxLevel": 56
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 100,
+          "minLevel": 54,
+          "maxLevel": 59
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.1,
+        "goldBonus": 2.05,
+        "itemDropRate": 1.9
+      }
+    },
+    "ancient_ruins": {
+      "id": "ancient_ruins",
+      "name": "Ancient Ruins",
+      "description": "Crumbling ruins of an ancient civilization, guarded by powerful guardians.",
+      "tier": 3,
+      "requiredLevel": 35,
+      "requiredDungeonId": "lich_tower",
+      "monsterPools": [
+        {
+          "monsterId": "giant",
+          "weight": 40,
+          "minLevel": 35,
+          "maxLevel": 40
+        },
+        {
+          "monsterId": "minotaur",
+          "weight": 35,
+          "minLevel": 36,
+          "maxLevel": 41
+        },
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 25,
+          "minLevel": 37,
+          "maxLevel": 42
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "giant",
+          "weight": 100,
+          "minLevel": 40,
+          "maxLevel": 45
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.9,
+        "goldBonus": 1.85,
+        "itemDropRate": 1.7
+      }
+    },
+    "balrog_pit": {
+      "id": "balrog_pit",
+      "name": "Balrog Pit",
+      "description": "A deep pit where balrogs are spawned from the depths of hell.",
+      "tier": 3,
+      "requiredLevel": 43,
+      "requiredDungeonId": "giant_kingdom",
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 60,
+          "minLevel": 43,
+          "maxLevel": 48
+        },
+        {
+          "monsterId": "imp",
+          "weight": 30,
+          "minLevel": 44,
+          "maxLevel": 49
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 10,
+          "minLevel": 45,
+          "maxLevel": 50
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 100,
+          "minLevel": 48,
+          "maxLevel": 53
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.0,
+        "goldBonus": 1.95,
+        "itemDropRate": 1.8
+      }
+    },
+    "bandit_camp": {
+      "id": "bandit_camp",
+      "name": "Bandit Camp",
+      "description": "A camp of bandits preying on travelers.",
+      "tier": 1,
+      "requiredLevel": 4,
+      "requiredDungeonId": "spider_nest",
+      "monsterPools": [
+        {
+          "monsterId": "bandit",
+          "weight": 75,
+          "minLevel": 4,
+          "maxLevel": 6
+        },
+        {
+          "monsterId": "orc",
+          "weight": 25,
+          "minLevel": 4,
+          "maxLevel": 7
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.2,
+        "goldBonus": 1.15
+      }
+    },
+    "celestial_sanctum": {
+      "id": "celestial_sanctum",
+      "name": "Celestial Sanctum",
+      "description": "A sacred place where celestial and infernal forces clash.",
+      "tier": 4,
+      "requiredLevel": 77,
+      "requiredDungeonId": "underworld_gate",
+      "monsterPools": [
+        {
+          "monsterId": "giant",
+          "weight": 40,
+          "minLevel": 77,
+          "maxLevel": 82
+        },
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 35,
+          "minLevel": 78,
+          "maxLevel": 83
+        },
+        {
+          "monsterId": "lich",
+          "weight": 25,
+          "minLevel": 79,
+          "maxLevel": 84
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "giant",
+          "weight": 100,
+          "minLevel": 82,
+          "maxLevel": 87
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.6,
+        "goldBonus": 2.55,
+        "itemDropRate": 2.4
+      }
+    },
+    "chaos_realm": {
+      "id": "chaos_realm",
+      "name": "Chaos Realm",
+      "description": "A realm of pure chaos where all manner of creatures converge.",
+      "tier": 3,
+      "requiredLevel": 63,
+      "requiredDungeonId": "void_nexus",
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 30,
+          "minLevel": 63,
+          "maxLevel": 68
+        },
+        {
+          "monsterId": "lich",
+          "weight": 30,
+          "minLevel": 64,
+          "maxLevel": 69
+        },
+        {
+          "monsterId": "giant",
+          "weight": 25,
+          "minLevel": 65,
+          "maxLevel": 70
+        },
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 15,
+          "minLevel": 66,
+          "maxLevel": 71
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 50,
+          "minLevel": 68,
+          "maxLevel": 73
+        },
+        {
+          "monsterId": "lich",
+          "weight": 50,
+          "minLevel": 68,
+          "maxLevel": 73
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.35,
+        "goldBonus": 2.3,
+        "itemDropRate": 2.15
+      }
+    },
+    "cursed_castle": {
+      "id": "cursed_castle",
+      "name": "Cursed Castle",
+      "description": "A once-proud castle now cursed and filled with undead horrors.",
+      "tier": 3,
+      "requiredLevel": 46,
+      "requiredDungeonId": "balrog_pit",
+      "monsterPools": [
+        {
+          "monsterId": "lich",
+          "weight": 40,
+          "minLevel": 46,
+          "maxLevel": 51
+        },
+        {
+          "monsterId": "vampire",
+          "weight": 35,
+          "minLevel": 47,
+          "maxLevel": 52
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 25,
+          "minLevel": 48,
+          "maxLevel": 53
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 51,
+          "maxLevel": 56
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.05,
+        "goldBonus": 2.0,
+        "itemDropRate": 1.85
+      }
+    },
+    "dark_catacombs": {
+      "id": "dark_catacombs",
+      "name": "Dark Catacombs",
+      "description": "Endless underground tunnels filled with dark creatures.",
+      "tier": 2,
+      "requiredLevel": 17,
+      "requiredDungeonId": "zombie_graveyard",
+      "monsterPools": [
+        {
+          "monsterId": "skeleton",
+          "weight": 40,
+          "minLevel": 17,
+          "maxLevel": 21
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 35,
+          "minLevel": 18,
+          "maxLevel": 22
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 25,
+          "minLevel": 19,
+          "maxLevel": 23
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 22,
+          "maxLevel": 25
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.45,
+        "goldBonus": 1.4,
+        "itemDropRate": 1.25
+      }
+    },
+    "demon_forge": {
+      "id": "demon_forge",
+      "name": "Demon Forge",
+      "description": "An infernal forge where demons craft weapons of destruction.",
+      "tier": 3,
+      "requiredLevel": 31,
+      "requiredDungeonId": "shadow_realm",
+      "monsterPools": [
+        {
+          "monsterId": "imp",
+          "weight": 50,
+          "minLevel": 31,
+          "maxLevel": 35
+        },
+        {
+          "monsterId": "balrog",
+          "weight": 40,
+          "minLevel": 32,
+          "maxLevel": 36
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 10,
+          "minLevel": 33,
+          "maxLevel": 37
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 100,
+          "minLevel": 36,
+          "maxLevel": 40
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.8,
+        "goldBonus": 1.75,
+        "itemDropRate": 1.6
+      }
+    },
     "dragon_lair": {
       "id": "dragon_lair",
       "name": "Dragon's Lair",
@@ -35,6 +401,129 @@
         "itemDropRate": 1.5
       }
     },
+    "dragon_roost": {
+      "id": "dragon_roost",
+      "name": "Dragon Roost",
+      "description": "A mountain peak where dragons nest and guard their hoards.",
+      "tier": 3,
+      "requiredLevel": 52,
+      "requiredDungeonId": "abyssal_chasm",
+      "monsterPools": [
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 70,
+          "minLevel": 52,
+          "maxLevel": 57
+        },
+        {
+          "monsterId": "giant",
+          "weight": 20,
+          "minLevel": 53,
+          "maxLevel": 58
+        },
+        {
+          "monsterId": "minotaur",
+          "weight": 10,
+          "minLevel": 54,
+          "maxLevel": 59
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 100,
+          "minLevel": 57,
+          "maxLevel": 62
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.15,
+        "goldBonus": 2.1,
+        "itemDropRate": 1.95
+      }
+    },
+    "dread_fortress": {
+      "id": "dread_fortress",
+      "name": "Dread Fortress",
+      "description": "An impregnable fortress of darkness and despair.",
+      "tier": 4,
+      "requiredLevel": 79,
+      "requiredDungeonId": "celestial_sanctum",
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 45,
+          "minLevel": 79,
+          "maxLevel": 84
+        },
+        {
+          "monsterId": "lich",
+          "weight": 35,
+          "minLevel": 80,
+          "maxLevel": 85
+        },
+        {
+          "monsterId": "giant",
+          "weight": 20,
+          "minLevel": 81,
+          "maxLevel": 86
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 100,
+          "minLevel": 84,
+          "maxLevel": 89
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.65,
+        "goldBonus": 2.6,
+        "itemDropRate": 2.45
+      }
+    },
+    "eternal_library": {
+      "id": "eternal_library",
+      "name": "Eternal Library",
+      "description": "A vast library guarded by ancient magical constructs and liches.",
+      "tier": 3,
+      "requiredLevel": 68,
+      "requiredDungeonId": "titan_arena",
+      "monsterPools": [
+        {
+          "monsterId": "lich",
+          "weight": 55,
+          "minLevel": 68,
+          "maxLevel": 73
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 30,
+          "minLevel": 69,
+          "maxLevel": 74
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 15,
+          "minLevel": 70,
+          "maxLevel": 75
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 73,
+          "maxLevel": 78
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.45,
+        "goldBonus": 2.4,
+        "itemDropRate": 2.25
+      }
+    },
     "forest_clearing": {
       "id": "forest_clearing",
       "name": "Forest Clearing",
@@ -64,6 +553,215 @@
       "rewards": {
         "experienceBonus": 1.0,
         "goldBonus": 1.0
+      }
+    },
+    "forsaken_cathedral": {
+      "id": "forsaken_cathedral",
+      "name": "Forsaken Cathedral",
+      "description": "A once-holy cathedral now defiled and filled with the worst abominations.",
+      "tier": 4,
+      "requiredLevel": 81,
+      "requiredDungeonId": "dread_fortress",
+      "monsterPools": [
+        {
+          "monsterId": "lich",
+          "weight": 50,
+          "minLevel": 81,
+          "maxLevel": 86
+        },
+        {
+          "monsterId": "vampire",
+          "weight": 30,
+          "minLevel": 82,
+          "maxLevel": 87
+        },
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 20,
+          "minLevel": 83,
+          "maxLevel": 88
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 86,
+          "maxLevel": 91
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.7,
+        "goldBonus": 2.65,
+        "itemDropRate": 2.5
+      }
+    },
+    "ghost_manor": {
+      "id": "ghost_manor",
+      "name": "Ghost Manor",
+      "description": "An abandoned manor haunted by vengeful spirits.",
+      "tier": 2,
+      "requiredLevel": 21,
+      "requiredDungeonId": "ogre_stronghold",
+      "monsterPools": [
+        {
+          "monsterId": "ghost",
+          "weight": 50,
+          "minLevel": 21,
+          "maxLevel": 25
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 35,
+          "minLevel": 22,
+          "maxLevel": 26
+        },
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 15,
+          "minLevel": 23,
+          "maxLevel": 27
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "vampire",
+          "weight": 100,
+          "minLevel": 26,
+          "maxLevel": 29
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.55,
+        "goldBonus": 1.5,
+        "itemDropRate": 1.3
+      }
+    },
+    "giant_kingdom": {
+      "id": "giant_kingdom",
+      "name": "Giant Kingdom",
+      "description": "The realm of giants, where even the smallest threat is massive.",
+      "tier": 3,
+      "requiredLevel": 40,
+      "requiredDungeonId": "ancient_ruins",
+      "monsterPools": [
+        {
+          "monsterId": "giant",
+          "weight": 70,
+          "minLevel": 40,
+          "maxLevel": 45
+        },
+        {
+          "monsterId": "ogre",
+          "weight": 20,
+          "minLevel": 41,
+          "maxLevel": 46
+        },
+        {
+          "monsterId": "troll",
+          "weight": 10,
+          "minLevel": 40,
+          "maxLevel": 45
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "giant",
+          "weight": 100,
+          "minLevel": 45,
+          "maxLevel": 50
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.95,
+        "goldBonus": 1.9,
+        "itemDropRate": 1.75
+      }
+    },
+    "goblin_cave": {
+      "id": "goblin_cave",
+      "name": "Goblin Cave",
+      "description": "A dark cave infested with goblins and their shaman leaders.",
+      "tier": 1,
+      "requiredLevel": 2,
+      "requiredDungeonId": "forest_clearing",
+      "monsterPools": [
+        {
+          "monsterId": "goblin",
+          "weight": 70,
+          "minLevel": 2,
+          "maxLevel": 4
+        },
+        {
+          "monsterId": "goblin_shaman",
+          "weight": 30,
+          "minLevel": 2,
+          "maxLevel": 5
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.1,
+        "goldBonus": 1.05
+      }
+    },
+    "godslayer_throne": {
+      "id": "godslayer_throne",
+      "name": "Godslayer Throne",
+      "description": "The ultimate challenge. Face the greatest threats in existence at the throne of the godslayers.",
+      "tier": 4,
+      "requiredLevel": 90,
+      "requiredDungeonId": "world_ender_chamber",
+      "guaranteedBossChest": true,
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 35,
+          "minLevel": 90,
+          "maxLevel": 95
+        },
+        {
+          "monsterId": "lich",
+          "weight": 35,
+          "minLevel": 91,
+          "maxLevel": 96
+        },
+        {
+          "monsterId": "giant",
+          "weight": 20,
+          "minLevel": 92,
+          "maxLevel": 97
+        },
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 10,
+          "minLevel": 93,
+          "maxLevel": 99
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 34,
+          "minLevel": 95,
+          "maxLevel": 99
+        },
+        {
+          "monsterId": "lich",
+          "weight": 33,
+          "minLevel": 95,
+          "maxLevel": 99
+        },
+        {
+          "monsterId": "giant",
+          "weight": 33,
+          "minLevel": 95,
+          "maxLevel": 99
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.8,
+        "goldBonus": 2.75,
+        "itemDropRate": 2.7
       }
     },
     "haunted_forest": {
@@ -104,6 +802,214 @@
         "goldBonus": 1.3
       }
     },
+    "imp_infestation": {
+      "id": "imp_infestation",
+      "name": "Imp Infestation",
+      "description": "A portal rift has opened, allowing imps to swarm into the world.",
+      "tier": 1,
+      "requiredLevel": 12,
+      "requiredDungeonId": "troll_cave",
+      "monsterPools": [
+        {
+          "monsterId": "imp",
+          "weight": 85,
+          "minLevel": 12,
+          "maxLevel": 16
+        },
+        {
+          "monsterId": "goblin_shaman",
+          "weight": 15,
+          "minLevel": 13,
+          "maxLevel": 17
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.25,
+        "goldBonus": 1.2
+      }
+    },
+    "infernal_plains": {
+      "id": "infernal_plains",
+      "name": "Infernal Plains",
+      "description": "A scorched wasteland where demons roam freely.",
+      "tier": 3,
+      "requiredLevel": 58,
+      "requiredDungeonId": "undead_citadel",
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 55,
+          "minLevel": 58,
+          "maxLevel": 63
+        },
+        {
+          "monsterId": "imp",
+          "weight": 30,
+          "minLevel": 59,
+          "maxLevel": 64
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 15,
+          "minLevel": 60,
+          "maxLevel": 65
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 100,
+          "minLevel": 63,
+          "maxLevel": 68
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.25,
+        "goldBonus": 2.2,
+        "itemDropRate": 2.05
+      }
+    },
+    "lich_tower": {
+      "id": "lich_tower",
+      "name": "Lich Tower",
+      "description": "A towering structure ruled by an ancient lich.",
+      "tier": 3,
+      "requiredLevel": 33,
+      "requiredDungeonId": "demon_forge",
+      "monsterPools": [
+        {
+          "monsterId": "lich",
+          "weight": 50,
+          "minLevel": 33,
+          "maxLevel": 37
+        },
+        {
+          "monsterId": "skeleton",
+          "weight": 30,
+          "minLevel": 34,
+          "maxLevel": 38
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 20,
+          "minLevel": 35,
+          "maxLevel": 39
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 38,
+          "maxLevel": 42
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.85,
+        "goldBonus": 1.8,
+        "itemDropRate": 1.65
+      }
+    },
+    "minotaur_labyrinth": {
+      "id": "minotaur_labyrinth",
+      "name": "Minotaur Labyrinth",
+      "description": "A twisting maze where minotaurs guard ancient treasures.",
+      "tier": 3,
+      "requiredLevel": 23,
+      "requiredDungeonId": "ghost_manor",
+      "monsterPools": [
+        {
+          "monsterId": "minotaur",
+          "weight": 70,
+          "minLevel": 23,
+          "maxLevel": 27
+        },
+        {
+          "monsterId": "giant",
+          "weight": 30,
+          "minLevel": 24,
+          "maxLevel": 28
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "minotaur",
+          "weight": 100,
+          "minLevel": 28,
+          "maxLevel": 32
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.6,
+        "goldBonus": 1.55,
+        "itemDropRate": 1.4
+      }
+    },
+    "ogre_stronghold": {
+      "id": "ogre_stronghold",
+      "name": "Ogre Stronghold",
+      "description": "A fortified stronghold defended by ogres and their allies.",
+      "tier": 2,
+      "requiredLevel": 19,
+      "requiredDungeonId": "dark_catacombs",
+      "monsterPools": [
+        {
+          "monsterId": "ogre",
+          "weight": 50,
+          "minLevel": 19,
+          "maxLevel": 23
+        },
+        {
+          "monsterId": "troll",
+          "weight": 30,
+          "minLevel": 20,
+          "maxLevel": 24
+        },
+        {
+          "monsterId": "orc_warrior",
+          "weight": 20,
+          "minLevel": 19,
+          "maxLevel": 23
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.5,
+        "goldBonus": 1.45,
+        "itemDropRate": 1.2
+      }
+    },
+    "old_cemetery": {
+      "id": "old_cemetery",
+      "name": "Old Cemetery",
+      "description": "An ancient graveyard where the dead stir at night.",
+      "tier": 1,
+      "requiredLevel": 5,
+      "requiredDungeonId": "bandit_camp",
+      "monsterPools": [
+        {
+          "monsterId": "skeleton",
+          "weight": 50,
+          "minLevel": 5,
+          "maxLevel": 8
+        },
+        {
+          "monsterId": "zombie",
+          "weight": 40,
+          "minLevel": 5,
+          "maxLevel": 8
+        },
+        {
+          "monsterId": "ghost",
+          "weight": 10,
+          "minLevel": 6,
+          "maxLevel": 9
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.25,
+        "goldBonus": 1.2
+      }
+    },
     "orc_encampment": {
       "id": "orc_encampment",
       "name": "Orc Encampment",
@@ -134,6 +1040,494 @@
       "rewards": {
         "experienceBonus": 1.2,
         "goldBonus": 1.1
+      }
+    },
+    "shadow_realm": {
+      "id": "shadow_realm",
+      "name": "Shadow Realm",
+      "description": "A twisted dimension where shadows come to life.",
+      "tier": 3,
+      "requiredLevel": 29,
+      "requiredDungeonId": "dragon_lair",
+      "monsterPools": [
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 60,
+          "minLevel": 29,
+          "maxLevel": 33
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 30,
+          "minLevel": 30,
+          "maxLevel": 34
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 10,
+          "minLevel": 31,
+          "maxLevel": 35
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 100,
+          "minLevel": 34,
+          "maxLevel": 38
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.75,
+        "goldBonus": 1.7,
+        "itemDropRate": 1.5
+      }
+    },
+    "skeleton_crypt": {
+      "id": "skeleton_crypt",
+      "name": "Skeleton Crypt",
+      "description": "An underground crypt filled with animated skeletons.",
+      "tier": 2,
+      "requiredLevel": 8,
+      "requiredDungeonId": "old_cemetery",
+      "monsterPools": [
+        {
+          "monsterId": "skeleton",
+          "weight": 70,
+          "minLevel": 8,
+          "maxLevel": 11
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 30,
+          "minLevel": 9,
+          "maxLevel": 12
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "dark_mage",
+          "weight": 100,
+          "minLevel": 12,
+          "maxLevel": 15
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.3,
+        "goldBonus": 1.25,
+        "itemDropRate": 1.2
+      }
+    },
+    "spider_nest": {
+      "id": "spider_nest",
+      "name": "Spider Nest",
+      "description": "A web-filled nest crawling with dangerous spiders.",
+      "tier": 1,
+      "requiredLevel": 3,
+      "requiredDungeonId": "goblin_cave",
+      "monsterPools": [
+        {
+          "monsterId": "spider",
+          "weight": 80,
+          "minLevel": 3,
+          "maxLevel": 5
+        },
+        {
+          "monsterId": "goblin",
+          "weight": 20,
+          "minLevel": 3,
+          "maxLevel": 5
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.15,
+        "goldBonus": 1.1
+      }
+    },
+    "storm_peak": {
+      "id": "storm_peak",
+      "name": "Storm Peak",
+      "description": "A mountain peak constantly lashed by storms, home to dragons and giants.",
+      "tier": 3,
+      "requiredLevel": 71,
+      "requiredDungeonId": "eternal_library",
+      "monsterPools": [
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 50,
+          "minLevel": 71,
+          "maxLevel": 76
+        },
+        {
+          "monsterId": "giant",
+          "weight": 35,
+          "minLevel": 72,
+          "maxLevel": 77
+        },
+        {
+          "monsterId": "minotaur",
+          "weight": 15,
+          "minLevel": 73,
+          "maxLevel": 78
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "dragon_whelp",
+          "weight": 100,
+          "minLevel": 76,
+          "maxLevel": 81
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.5,
+        "goldBonus": 2.45,
+        "itemDropRate": 2.3
+      }
+    },
+    "titan_arena": {
+      "id": "titan_arena",
+      "name": "Titan Arena",
+      "description": "An ancient arena where titans test their strength.",
+      "tier": 3,
+      "requiredLevel": 65,
+      "requiredDungeonId": "chaos_realm",
+      "monsterPools": [
+        {
+          "monsterId": "giant",
+          "weight": 60,
+          "minLevel": 65,
+          "maxLevel": 70
+        },
+        {
+          "monsterId": "minotaur",
+          "weight": 25,
+          "minLevel": 66,
+          "maxLevel": 71
+        },
+        {
+          "monsterId": "ogre",
+          "weight": 15,
+          "minLevel": 67,
+          "maxLevel": 72
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "giant",
+          "weight": 100,
+          "minLevel": 70,
+          "maxLevel": 75
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.4,
+        "goldBonus": 2.35,
+        "itemDropRate": 2.2
+      }
+    },
+    "troll_cave": {
+      "id": "troll_cave",
+      "name": "Troll Cave",
+      "description": "A dark cave inhabited by powerful trolls.",
+      "tier": 2,
+      "requiredLevel": 11,
+      "requiredDungeonId": "haunted_forest",
+      "monsterPools": [
+        {
+          "monsterId": "troll",
+          "weight": 60,
+          "minLevel": 11,
+          "maxLevel": 14
+        },
+        {
+          "monsterId": "orc_warrior",
+          "weight": 30,
+          "minLevel": 12,
+          "maxLevel": 15
+        },
+        {
+          "monsterId": "ogre",
+          "weight": 10,
+          "minLevel": 13,
+          "maxLevel": 16
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.35,
+        "goldBonus": 1.3,
+        "itemDropRate": 1.15
+      }
+    },
+    "undead_citadel": {
+      "id": "undead_citadel",
+      "name": "Undead Citadel",
+      "description": "A massive fortress controlled by legions of the undead.",
+      "tier": 3,
+      "requiredLevel": 55,
+      "requiredDungeonId": "dragon_roost",
+      "monsterPools": [
+        {
+          "monsterId": "lich",
+          "weight": 45,
+          "minLevel": 55,
+          "maxLevel": 60
+        },
+        {
+          "monsterId": "vampire",
+          "weight": 35,
+          "minLevel": 56,
+          "maxLevel": 61
+        },
+        {
+          "monsterId": "zombie",
+          "weight": 20,
+          "minLevel": 57,
+          "maxLevel": 62
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 60,
+          "maxLevel": 65
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.2,
+        "goldBonus": 2.15,
+        "itemDropRate": 2.0
+      }
+    },
+    "underworld_gate": {
+      "id": "underworld_gate",
+      "name": "Underworld Gate",
+      "description": "A gateway to the underworld, guarded by the dead and damned.",
+      "tier": 3,
+      "requiredLevel": 74,
+      "requiredDungeonId": "storm_peak",
+      "monsterPools": [
+        {
+          "monsterId": "lich",
+          "weight": 45,
+          "minLevel": 74,
+          "maxLevel": 79
+        },
+        {
+          "monsterId": "vampire",
+          "weight": 35,
+          "minLevel": 75,
+          "maxLevel": 80
+        },
+        {
+          "monsterId": "balrog",
+          "weight": 20,
+          "minLevel": 76,
+          "maxLevel": 81
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "lich",
+          "weight": 100,
+          "minLevel": 79,
+          "maxLevel": 84
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.55,
+        "goldBonus": 2.5,
+        "itemDropRate": 2.35
+      }
+    },
+    "vampire_coven": {
+      "id": "vampire_coven",
+      "name": "Vampire Coven",
+      "description": "A hidden lair where vampires gather to plot in darkness.",
+      "tier": 3,
+      "requiredLevel": 25,
+      "requiredDungeonId": "minotaur_labyrinth",
+      "monsterPools": [
+        {
+          "monsterId": "vampire",
+          "weight": 60,
+          "minLevel": 25,
+          "maxLevel": 29
+        },
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 30,
+          "minLevel": 26,
+          "maxLevel": 30
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 10,
+          "minLevel": 25,
+          "maxLevel": 29
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "vampire",
+          "weight": 100,
+          "minLevel": 30,
+          "maxLevel": 34
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.65,
+        "goldBonus": 1.6,
+        "itemDropRate": 1.45
+      }
+    },
+    "void_nexus": {
+      "id": "void_nexus",
+      "name": "Void Nexus",
+      "description": "A convergence point of dark energies where reality tears apart.",
+      "tier": 3,
+      "requiredLevel": 60,
+      "requiredDungeonId": "infernal_plains",
+      "monsterPools": [
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 50,
+          "minLevel": 60,
+          "maxLevel": 65
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 35,
+          "minLevel": 61,
+          "maxLevel": 66
+        },
+        {
+          "monsterId": "dark_mage",
+          "weight": 15,
+          "minLevel": 62,
+          "maxLevel": 67
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "shadow_stalker",
+          "weight": 100,
+          "minLevel": 65,
+          "maxLevel": 70
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.3,
+        "goldBonus": 2.25,
+        "itemDropRate": 2.1
+      }
+    },
+    "wolf_den": {
+      "id": "wolf_den",
+      "name": "Wolf Den",
+      "description": "A den of wild wolves protecting their territory.",
+      "tier": 1,
+      "requiredLevel": 7,
+      "requiredDungeonId": "orc_encampment",
+      "monsterPools": [
+        {
+          "monsterId": "wolf",
+          "weight": 80,
+          "minLevel": 7,
+          "maxLevel": 10
+        },
+        {
+          "monsterId": "bandit",
+          "weight": 20,
+          "minLevel": 7,
+          "maxLevel": 10
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.2,
+        "goldBonus": 1.15
+      }
+    },
+    "world_ender_chamber": {
+      "id": "world_ender_chamber",
+      "name": "World Ender Chamber",
+      "description": "The final chamber where the world-ending threat awaits. Only the strongest can survive.",
+      "tier": 4,
+      "requiredLevel": 85,
+      "requiredDungeonId": "forsaken_cathedral",
+      "guaranteedBossChest": true,
+      "monsterPools": [
+        {
+          "monsterId": "balrog",
+          "weight": 40,
+          "minLevel": 85,
+          "maxLevel": 90
+        },
+        {
+          "monsterId": "lich",
+          "weight": 35,
+          "minLevel": 86,
+          "maxLevel": 91
+        },
+        {
+          "monsterId": "giant",
+          "weight": 25,
+          "minLevel": 87,
+          "maxLevel": 92
+        }
+      ],
+      "bossPool": [
+        {
+          "monsterId": "balrog",
+          "weight": 50,
+          "minLevel": 90,
+          "maxLevel": 95
+        },
+        {
+          "monsterId": "lich",
+          "weight": 50,
+          "minLevel": 90,
+          "maxLevel": 95
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 2.75,
+        "goldBonus": 2.7,
+        "itemDropRate": 2.6
+      }
+    },
+    "zombie_graveyard": {
+      "id": "zombie_graveyard",
+      "name": "Zombie Graveyard",
+      "description": "A cursed graveyard where the dead rise in greater numbers.",
+      "tier": 2,
+      "requiredLevel": 14,
+      "requiredDungeonId": "skeleton_crypt",
+      "monsterPools": [
+        {
+          "monsterId": "zombie",
+          "weight": 60,
+          "minLevel": 14,
+          "maxLevel": 18
+        },
+        {
+          "monsterId": "ghost",
+          "weight": 30,
+          "minLevel": 15,
+          "maxLevel": 19
+        },
+        {
+          "monsterId": "wraith",
+          "weight": 10,
+          "minLevel": 16,
+          "maxLevel": 20
+        }
+      ],
+      "rewards": {
+        "experienceBonus": 1.4,
+        "goldBonus": 1.35,
+        "itemDropRate": 1.2
       }
     }
   }

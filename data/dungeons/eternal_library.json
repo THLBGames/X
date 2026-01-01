@@ -1,0 +1,41 @@
+{
+    "id": "eternal_library",
+    "name": "Eternal Library",
+    "description": "A vast library guarded by ancient magical constructs and liches.",
+    "tier": 3,
+    "requiredLevel": 68,
+    "requiredDungeonId": "titan_arena",
+    "monsterPools": [
+      {
+        "monsterId": "lich",
+        "weight": 55,
+        "minLevel": 68,
+        "maxLevel": 73
+      },
+      {
+        "monsterId": "dark_mage",
+        "weight": 30,
+        "minLevel": 69,
+        "maxLevel": 74
+      },
+      {
+        "monsterId": "wraith",
+        "weight": 15,
+        "minLevel": 70,
+        "maxLevel": 75
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "lich",
+        "weight": 100,
+        "minLevel": 73,
+        "maxLevel": 78
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 2.45,
+      "goldBonus": 2.4,
+      "itemDropRate": 2.25
+    }
+  }

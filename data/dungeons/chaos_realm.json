@@ -1,0 +1,53 @@
+{
+    "id": "chaos_realm",
+    "name": "Chaos Realm",
+    "description": "A realm of pure chaos where all manner of creatures converge.",
+    "tier": 3,
+    "requiredLevel": 63,
+    "requiredDungeonId": "void_nexus",
+    "monsterPools": [
+      {
+        "monsterId": "balrog",
+        "weight": 30,
+        "minLevel": 63,
+        "maxLevel": 68
+      },
+      {
+        "monsterId": "lich",
+        "weight": 30,
+        "minLevel": 64,
+        "maxLevel": 69
+      },
+      {
+        "monsterId": "giant",
+        "weight": 25,
+        "minLevel": 65,
+        "maxLevel": 70
+      },
+      {
+        "monsterId": "dragon_whelp",
+        "weight": 15,
+        "minLevel": 66,
+        "maxLevel": 71
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "balrog",
+        "weight": 50,
+        "minLevel": 68,
+        "maxLevel": 73
+      },
+      {
+        "monsterId": "lich",
+        "weight": 50,
+        "minLevel": 68,
+        "maxLevel": 73
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 2.35,
+      "goldBonus": 2.3,
+      "itemDropRate": 2.15
+    }
+  }

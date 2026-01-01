@@ -1,0 +1,41 @@
+{
+    "id": "celestial_sanctum",
+    "name": "Celestial Sanctum",
+    "description": "A sacred place where celestial and infernal forces clash.",
+    "tier": 4,
+    "requiredLevel": 77,
+    "requiredDungeonId": "underworld_gate",
+    "monsterPools": [
+      {
+        "monsterId": "giant",
+        "weight": 40,
+        "minLevel": 77,
+        "maxLevel": 82
+      },
+      {
+        "monsterId": "dragon_whelp",
+        "weight": 35,
+        "minLevel": 78,
+        "maxLevel": 83
+      },
+      {
+        "monsterId": "lich",
+        "weight": 25,
+        "minLevel": 79,
+        "maxLevel": 84
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "giant",
+        "weight": 100,
+        "minLevel": 82,
+        "maxLevel": 87
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 2.6,
+      "goldBonus": 2.55,
+      "itemDropRate": 2.4
+    }
+  }

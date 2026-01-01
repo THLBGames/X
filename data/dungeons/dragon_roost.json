@@ -1,0 +1,41 @@
+{
+    "id": "dragon_roost",
+    "name": "Dragon Roost",
+    "description": "A mountain peak where dragons nest and guard their hoards.",
+    "tier": 3,
+    "requiredLevel": 52,
+    "requiredDungeonId": "abyssal_chasm",
+    "monsterPools": [
+      {
+        "monsterId": "dragon_whelp",
+        "weight": 70,
+        "minLevel": 52,
+        "maxLevel": 57
+      },
+      {
+        "monsterId": "giant",
+        "weight": 20,
+        "minLevel": 53,
+        "maxLevel": 58
+      },
+      {
+        "monsterId": "minotaur",
+        "weight": 10,
+        "minLevel": 54,
+        "maxLevel": 59
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "dragon_whelp",
+        "weight": 100,
+        "minLevel": 57,
+        "maxLevel": 62
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 2.15,
+      "goldBonus": 2.1,
+      "itemDropRate": 1.95
+    }
+  }

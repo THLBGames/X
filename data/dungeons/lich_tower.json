@@ -1,0 +1,41 @@
+{
+    "id": "lich_tower",
+    "name": "Lich Tower",
+    "description": "A towering structure ruled by an ancient lich.",
+    "tier": 3,
+    "requiredLevel": 33,
+    "requiredDungeonId": "demon_forge",
+    "monsterPools": [
+      {
+        "monsterId": "lich",
+        "weight": 50,
+        "minLevel": 33,
+        "maxLevel": 37
+      },
+      {
+        "monsterId": "skeleton",
+        "weight": 30,
+        "minLevel": 34,
+        "maxLevel": 38
+      },
+      {
+        "monsterId": "dark_mage",
+        "weight": 20,
+        "minLevel": 35,
+        "maxLevel": 39
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "lich",
+        "weight": 100,
+        "minLevel": 38,
+        "maxLevel": 42
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 1.85,
+      "goldBonus": 1.8,
+      "itemDropRate": 1.65
+    }
+  }

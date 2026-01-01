@@ -1,0 +1,41 @@
+{
+    "id": "demon_forge",
+    "name": "Demon Forge",
+    "description": "An infernal forge where demons craft weapons of destruction.",
+    "tier": 3,
+    "requiredLevel": 31,
+    "requiredDungeonId": "shadow_realm",
+    "monsterPools": [
+      {
+        "monsterId": "imp",
+        "weight": 50,
+        "minLevel": 31,
+        "maxLevel": 35
+      },
+      {
+        "monsterId": "balrog",
+        "weight": 40,
+        "minLevel": 32,
+        "maxLevel": 36
+      },
+      {
+        "monsterId": "dark_mage",
+        "weight": 10,
+        "minLevel": 33,
+        "maxLevel": 37
+      }
+    ],
+    "bossPool": [
+      {
+        "monsterId": "balrog",
+        "weight": 100,
+        "minLevel": 36,
+        "maxLevel": 40
+      }
+    ],
+    "rewards": {
+      "experienceBonus": 1.8,
+      "goldBonus": 1.75,
+      "itemDropRate": 1.6
+    }
+  }
