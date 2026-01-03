@@ -196,9 +196,9 @@ export class DungeonManager {
     }
 
     // Check prerequisite dungeon
-    if (dungeon.requiredDungeonId && !completedDungeons.includes(dungeon.requiredDungeonId)) {
-      return false;
-    }
+    //if (dungeon.requiredDungeonId && !completedDungeons.includes(dungeon.requiredDungeonId)) {
+    //  return false;
+    //}
 
     // Check unlock conditions
     if (dungeon.unlockConditions) {

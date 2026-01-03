@@ -414,17 +414,10 @@ export function useGameLoop() {
 
       // Only update monsters if we have a current state with monsters
       if (currentState && currentState.monsters && currentState.monsters.length > 0) {
-        // Update monster states - match by index since we spawn them in order
-        const updatedMonsters = currentState.monsters.map((monsterState, index) => {
-          // Find corresponding monster participant by matching the original monster ID
-          // Monster IDs in engine are formatted as "monsterId_index"
-          const monsterParticipant = monsters.find((m) => {
-            const parts = m.id.split('_');
-            const baseId = parts.slice(0, -1).join('_');
-            return (
-              baseId === monsterState.monster.id || m.id === `${monsterState.monster.id}_${index}`
-            );
-          });
+        // Update monster states - match by participantId for exact 1:1 mapping
+        const updatedMonsters = currentState.monsters.map((monsterState) => {
+          // Find corresponding monster participant by exact participantId match
+          const monsterParticipant = monsters.find((m) => m.id === monsterState.participantId);
           if (monsterParticipant && monsterParticipant.isAlive) {
             return {
               ...monsterState,

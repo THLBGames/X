@@ -189,7 +189,7 @@ export default function CombatArena({
 
           return (
             <div
-              key={`monster-${index}-${monsterState.monster.id}`}
+              key={`monster-${monsterState.participantId}`}
               className={`combat-participant monster-area ${isCurrentMonster ? 'active-turn' : ''} ${monsterState.monster.isBoss ? 'boss-monster' : ''}`}
               ref={index === 0 ? monsterRef : undefined}
             >

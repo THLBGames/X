@@ -952,11 +952,30 @@ export const useGameState = create<GameState>((set, get) => ({
     // Debug: Log character's active mercenaries
     console.log('Character activeMercenaries:', character.activeMercenaries);
 
-    const monsterStates = monsters.map((monster) => ({
-      monster,
-      currentHealth: monster.stats.health || monster.stats.maxHealth,
-      maxHealth: monster.stats.maxHealth || monster.stats.health,
-    }));
+    // Get combat engine to retrieve participant IDs for monsters
+    const combatEngine = CombatManager.getCurrentCombat();
+    const monsterParticipants = combatEngine ? combatEngine.getMonsters() : [];
+
+    // Create monster states with participant IDs
+    const monsterStates = monsters.map((monster, index) => {
+      // Find the corresponding participant by matching the monster ID pattern
+      // Participant IDs are formatted as "monsterId_index" (e.g., "goblin_0", "goblin_1")
+      const participantId = `${monster.id}_${index}`;
+      const participant = monsterParticipants.find((p) => p.id === participantId);
+      
+      // Use participant's current health if available, otherwise use monster's max health
+      const currentHealth = participant
+        ? participant.currentHealth
+        : monster.stats.health || monster.stats.maxHealth;
+      const maxHealth = monster.stats.maxHealth || monster.stats.health;
+
+      return {
+        monster,
+        participantId,
+        currentHealth,
+        maxHealth,
+      };
+    });
     // Create player party member from character
     const playerPartyMember: ActivePlayerPartyMember = {
       id: 'player',

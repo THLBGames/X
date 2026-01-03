@@ -550,6 +550,7 @@ export interface CombatRewards {
 
 export interface ActiveMonsterState {
   monster: Monster;
+  participantId: string; // Unique participant ID from CombatEngine (e.g., "goblin_0", "goblin_1")
   currentHealth: number;
   maxHealth: number;
 }
