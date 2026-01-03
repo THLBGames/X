@@ -14,7 +14,7 @@ export default function CharacterCreation() {
   const [isCreating, setIsCreating] = useState(false);
 
   const setCharacter = useGameState((state) => state.setCharacter);
-  const setDungeonProgress = useGameState((state) => state.setDungeonProgress);
+  //const setDungeonProgress = useGameState((state) => state.setDungeonProgress);
   const unlockDungeon = useGameState((state) => state.unlockDungeon);
   const inventory = useGameState((state) => state.inventory);
   const settings = useGameState((state) => state.settings);
