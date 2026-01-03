@@ -114,7 +114,8 @@ export class CombatEngine {
     }
 
     const actor = this.participants[this.currentTurnIndex];
-    if (!actor.isAlive) {
+    // Allow dead players to use consumables to revive themselves
+    if (!actor.isAlive && !(actor.isPlayer && queuedConsumableId)) {
       this.nextTurn();
       return null;
     }
@@ -123,15 +124,23 @@ export class CombatEngine {
 
     if (actor.isPlayer) {
       // Player action (can be consumable, skill, or attack)
-      // Consumables take priority over skills
+      // Consumables take priority over skills - allow even when dead
       if (queuedConsumableId) {
         const consumableAction = this.executeConsumableAction(actor, queuedConsumableId);
         if (consumableAction) {
           action = consumableAction;
+        } else if (!actor.isAlive) {
+          // Dead player can't do anything else, skip turn
+          this.nextTurn();
+          return null;
         } else {
           // Consumable failed, try skill or attack
           action = this.executePlayerAction(actor, queuedSkillId);
         }
+      } else if (!actor.isAlive) {
+        // Dead player with no consumable queued, skip turn
+        this.nextTurn();
+        return null;
       } else {
         action = this.executePlayerAction(actor, queuedSkillId);
       }
@@ -236,7 +245,7 @@ export class CombatEngine {
             } else if (targetType === 'self' || targetType === 'all_allies') {
               const targets =
                 targetType === 'all_allies'
-                  ? this.participants.filter((p) => p.isPlayer && p.isAlive)
+                  ? this.participants.filter((p) => p.isPlayer) // Allow healing dead allies
                   : [actor];
 
               if (skillEffect.heal) {
@@ -249,6 +258,10 @@ export class CombatEngine {
                       target.currentHealth + heal,
                       target.stats.maxHealth
                     );
+                    // Revive player if they were dead and now have health
+                    if (target.currentHealth > 0) {
+                      target.isAlive = true;
+                    }
                     totalHeal += heal;
                   }
                 }
@@ -259,9 +272,9 @@ export class CombatEngine {
                 action.targetId = actor.id;
               }
             } else if (targetType === 'ally') {
-              // Find first alive ally (mercenary)
+              // Find first ally (mercenary), including dead ones for healing
               const ally = this.participants.find(
-                (p) => p.isPlayer && p.id !== 'player' && p.isAlive
+                (p) => p.isPlayer && p.id !== 'player'
               );
               if (!ally) {
                 // No valid ally, fall back to basic attack
@@ -271,6 +284,10 @@ export class CombatEngine {
               if (skillEffect.heal) {
                 const heal = skillEffect.heal;
                 ally.currentHealth = Math.min(ally.currentHealth + heal, ally.stats.maxHealth);
+                // Revive ally if they were dead and now have health
+                if (ally.currentHealth > 0) {
+                  ally.isAlive = true;
+                }
                 action.heal = heal;
                 action.targetId = ally.id;
               } else {
@@ -343,6 +360,10 @@ export class CombatEngine {
     if (effect.type === ConsumableEffectType.HEAL && effect.amount) {
       const heal = effect.amount;
       actor.currentHealth = Math.min(actor.currentHealth + heal, actor.stats.maxHealth);
+      // Revive player if they were dead and now have health
+      if (actor.currentHealth > 0) {
+        actor.isAlive = true;
+      }
       action.heal = heal;
       action.targetId = actor.id;
       audioManager.playSound('/audio/sfx/heal.mp3', 0.6);

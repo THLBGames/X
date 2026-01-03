@@ -149,14 +149,14 @@ export default function CombatArena({
                 max={partyMember.maxHealth}
                 label="HP"
                 barColor={isPlayer ? '#4a9eff' : '#4ecdc4'}
-                height={12}
+                height={16}
               />
               <HealthBar
                 current={partyMember.currentMana}
                 max={partyMember.maxMana}
                 label="MP"
                 barColor="#9b59b6"
-                height={12}
+                height={16}
               />
             </div>
           );
@@ -210,7 +210,7 @@ export default function CombatArena({
                 max={monsterState.maxHealth}
                 label="HP"
                 barColor={monsterState.monster.isBoss ? '#ff4444' : '#ff6b6b'}
-                height={12}
+                height={16}
               />
             </div>
           );
