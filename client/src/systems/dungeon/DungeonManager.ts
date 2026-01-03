@@ -23,8 +23,26 @@ export class DungeonManager {
       return [];
     }
 
-    // Spawn 1-5 monsters
-    const monsterCount = 1 + Math.floor(Math.random() * 5);
+    // Spawn monsters based on character level
+    // For players under level 20, reduce chance of spawning more than 3 enemies
+    let monsterCount: number;
+    if (characterLevel < 20) {
+      // Weighted distribution: Higher chance for 1-3, lower chance for 4-5
+      const rand = Math.random();
+      if (rand < 0.5) {
+        // 50% chance: 1-2 monsters
+        monsterCount = 1 + Math.floor(Math.random() * 2);
+      } else if (rand < 0.85) {
+        // 35% chance: 3 monsters
+        monsterCount = 3;
+      } else {
+        // 15% chance: 4-5 monsters
+        monsterCount = 4 + Math.floor(Math.random() * 2);
+      }
+    } else {
+      // Level 20+: Equal chance for 1-5 monsters (original behavior)
+      monsterCount = 1 + Math.floor(Math.random() * 5);
+    }
     const monsters: Monster[] = [];
 
     for (let i = 0; i < monsterCount; i++) {

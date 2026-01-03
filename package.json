@@ -9,8 +9,8 @@
     "shared"
   ],
   "scripts": {
-    "dev": "npm run combine-data && npm run copy-data && npm run dev --workspace=client",
-    "build": "npm run build --workspace=shared && npm run combine-data && npm run copy-data && npm run build --workspace=client",
+    "dev": "npm run combine-data && npm run dev --workspace=client",
+    "build": "npm run build --workspace=shared && npm run combine-data && npm run build --workspace=client",
     "build:server": "npm run build --workspace=server",
     "combine-data": "python scripts/combine_data.py",
     "copy-data": "node scripts/copy-data.js",
@@ -26,4 +26,3 @@
     "npm": ">=9.0.0"
   }
 }
-

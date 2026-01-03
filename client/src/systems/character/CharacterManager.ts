@@ -8,6 +8,7 @@ import type {
 import { getDataLoader } from '@/data';
 import { calculateExperienceForLevel } from '@/utils/experience';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
+import { gameEventEmitter } from '../events/GameEventEmitter';
 
 export class CharacterManager {
   /**
@@ -195,21 +196,56 @@ export class CharacterManager {
     let leveledUp = false;
     let levelsGained = 0;
     let remainingExp = experience;
+    const initialLevel = character.level;
+
+    console.log(`[CharacterManager] addExperience called:`, {
+      currentLevel: initialLevel,
+      currentExp: character.experience,
+      expToNext: character.experienceToNext,
+      experienceToAdd: experience,
+    });
 
     while (remainingExp > 0) {
       const expNeeded = newCharacter.experienceToNext - newCharacter.experience;
+      console.log(`[CharacterManager] Level up check:`, {
+        remainingExp,
+        expNeeded,
+        currentExp: newCharacter.experience,
+        expToNext: newCharacter.experienceToNext,
+        willLevelUp: remainingExp >= expNeeded,
+      });
+
       if (remainingExp >= expNeeded) {
         // Level up
         remainingExp -= expNeeded;
+        const oldLevel = newCharacter.level;
         newCharacter = this.levelUp(newCharacter);
         leveledUp = true;
         levelsGained++;
+        
+        console.log(`[CharacterManager] Leveled up from ${oldLevel} to ${newCharacter.level}`);
+        
+        // Emit level_up event for each level gained
+        const levelUpEvent = {
+          type: 'level_up' as const,
+          newLevel: newCharacter.level,
+        };
+        console.log(`[CharacterManager] Emitting level_up event:`, levelUpEvent);
+        gameEventEmitter.emit(levelUpEvent);
       } else {
         // Add remaining experience
         newCharacter.experience += remainingExp;
         remainingExp = 0;
+        console.log(`[CharacterManager] Added experience, no level up. New exp: ${newCharacter.experience}/${newCharacter.experienceToNext}`);
       }
     }
+
+    console.log(`[CharacterManager] addExperience result:`, {
+      leveledUp,
+      levelsGained,
+      finalLevel: newCharacter.level,
+      finalExp: newCharacter.experience,
+    });
 
     return { character: newCharacter, leveledUp, levelsGained };
   }

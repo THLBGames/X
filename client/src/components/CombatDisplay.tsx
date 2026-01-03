@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useGameState } from '../systems';
 // import { getDataLoader } from '../data';
 import { audioManager } from '../systems/audio/AudioManager';
+import { gameEventEmitter, type GameEvent } from '../systems/events/GameEventEmitter';
 import CombatArena from './CombatArena';
 import CombatSkillBar from './CombatSkillBar';
 import ConsumableBar from './ConsumableBar';
@@ -29,49 +30,72 @@ export default function CombatDisplay() {
     totalGold: 0,
   });
   const [levelUpMessage, setLevelUpMessage] = useState<string | null>(null);
-  const [_combatResult, _setCombatResult] = useState<'victory' | 'defeat' | null>(null);
   const previousLevelRef = useRef(character?.level || 1);
 
   // Listen for combat stats updates
   useEffect(() => {
-    const handleStatsUpdate = (event: CustomEvent) => {
-      setCombatStats(event.detail);
+    const handleStatsUpdate = (event: Event) => {
+      const customEvent = event as CustomEvent<CombatStats>;
+      setCombatStats(customEvent.detail);
     };
 
-    window.addEventListener('combatStatsUpdate' as any, handleStatsUpdate);
+    window.addEventListener('combatStatsUpdate', handleStatsUpdate);
     return () => {
-      window.removeEventListener('combatStatsUpdate' as any, handleStatsUpdate);
+      window.removeEventListener('combatStatsUpdate', handleStatsUpdate);
     };
   }, []);
 
-  // Watch for level ups
+  // Listen to level_up events from the game event system
   useEffect(() => {
-    if (character && character.level > previousLevelRef.current) {
-      const message = `Level Up! You are now level ${character.level}!`;
+    const handleLevelUp = (event: GameEvent) => {
+      if (event.type !== 'level_up') return;
+
+      const newLevel = event.newLevel;
+      const message = `Level Up! You are now level ${newLevel}!`;
       setLevelUpMessage(message);
-      previousLevelRef.current = character.level;
+      previousLevelRef.current = newLevel;
 
       // Play level up sound
       audioManager.playSound('/audio/sfx/level_up.mp3', 0.8);
 
       // Show notification if enabled
       if (settings.showNotifications && typeof window !== 'undefined') {
-        const event = new CustomEvent('showNotification', {
+        const notificationEvent = new CustomEvent('showNotification', {
           detail: {
             message,
             type: 'level-up',
             duration: 5000,
           },
         });
-        window.dispatchEvent(event);
+        window.dispatchEvent(notificationEvent);
       }
 
       // Clear message after 5 seconds
       setTimeout(() => {
         setLevelUpMessage(null);
       }, 5000);
+    };
+
+    // Subscribe to level_up events
+    const unsubscribe = gameEventEmitter.on(handleLevelUp);
+
+    return () => {
+      unsubscribe();
+    };
+  }, [settings.showNotifications]);
+
+  // Also watch state changes as a fallback (in case event is missed or character is loaded)
+  useEffect(() => {
+    if (character && character.level > previousLevelRef.current) {
+      // Only show UI if we haven't already handled this level via event
+      // This prevents duplicate notifications
+      if (previousLevelRef.current < character.level) {
+        previousLevelRef.current = character.level;
+        // Note: We don't show notification here to avoid duplicates
+        // The event listener above handles the UI updates
+      }
     }
-  }, [character?.level, settings.showNotifications]);
+  }, [character]);
 
   useEffect(() => {
     if (!isCombatActive) {

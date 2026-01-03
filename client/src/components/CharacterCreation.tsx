@@ -15,6 +15,7 @@ export default function CharacterCreation() {
 
   const setCharacter = useGameState((state) => state.setCharacter);
   const setDungeonProgress = useGameState((state) => state.setDungeonProgress);
+  const unlockDungeon = useGameState((state) => state.unlockDungeon);
   const inventory = useGameState((state) => state.inventory);
   const settings = useGameState((state) => state.settings);
 
@@ -64,19 +65,17 @@ export default function CharacterCreation() {
       // Set character in game state
       setCharacter(character);
 
-      // Unlock first dungeon
+      // Unlock beginner dungeon (forest_clearing) for level 1 characters
       const dataLoader = getDataLoader();
+      const { DungeonManager } = await import('../systems/dungeon');
       const allDungeons = dataLoader.getAllDungeons();
-      if (allDungeons.length > 0) {
-        const firstDungeon = allDungeons[0];
-        setDungeonProgress([
-          {
-            dungeonId: firstDungeon.id,
-            completed: false,
-            timesCompleted: 0,
-            unlocked: true,
-          },
-        ]);
+      const completedDungeonIds: string[] = []; // New character has no completed dungeons
+      
+      // Find and unlock all dungeons that should be unlocked at level 1
+      for (const dungeon of allDungeons) {
+        if (DungeonManager.isDungeonUnlocked(dungeon, character.level, completedDungeonIds)) {
+          unlockDungeon(dungeon.id);
+        }
       }
 
       // Create initial save

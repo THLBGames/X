@@ -420,15 +420,29 @@ export const useGameState = create<GameState>((set, get) => ({
 
   unlockDungeon: (dungeonId) =>
     set((state) => {
-      if (!state.dungeonProgress.some((dp) => dp.dungeonId === dungeonId)) {
+      const existingIndex = state.dungeonProgress.findIndex((dp) => dp.dungeonId === dungeonId);
+      if (existingIndex === -1) {
+        // Add new dungeon progress entry
+        const newProgress = [
+          ...state.dungeonProgress,
+          { dungeonId, completed: false, timesCompleted: 0, unlocked: true },
+        ];
+        console.log(`[GameState] unlockDungeon: Added new entry for ${dungeonId}, total entries: ${newProgress.length}`);
         return {
-          dungeonProgress: [
-            ...state.dungeonProgress,
-            { dungeonId, completed: false, timesCompleted: 0, unlocked: true },
-          ],
+          dungeonProgress: newProgress,
+        };
+      } else {
+        // Update existing entry to mark as unlocked
+        const updatedProgress = [...state.dungeonProgress];
+        updatedProgress[existingIndex] = {
+          ...updatedProgress[existingIndex],
+          unlocked: true,
+        };
+        console.log(`[GameState] unlockDungeon: Updated existing entry for ${dungeonId}, unlocked: true`);
+        return {
+          dungeonProgress: updatedProgress,
         };
       }
-      return state;
     }),
 
   completeDungeon: (dungeonId, time) =>

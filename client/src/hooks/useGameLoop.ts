@@ -27,6 +27,7 @@ export function useGameLoop() {
   // const setInventory = useGameState((state) => state.setInventory);
   const addItem = useGameState((state) => state.addItem);
   const setCombatActive = useGameState((state) => state.setCombatActive);
+  const stopCombat = useGameState((state) => state.stopCombat);
   const startCombat = useGameState((state) => state.startCombat);
   const startCombatWithMonsters = useGameState((state) => state.startCombatWithMonsters);
   // const combatRoundNumber = useGameState((state) => state.combatRoundNumber);
@@ -474,7 +475,8 @@ export function useGameLoop() {
     if (combatLog) {
       if (combatLog.result === 'defeat') {
         // Stop combat immediately to prevent any new combat from starting
-        setCombatActive(false);
+        // Use stopCombat() which clears activeAction to prevent auto-restart
+        stopCombat();
         CombatManager.endCombat();
         endCombat();
 
@@ -558,6 +560,50 @@ export function useGameLoop() {
         if (!dungeon) {
           console.warn('No dungeon found for currentDungeonId:', state.currentDungeonId);
           return;
+        }
+
+        // Check if we just completed a boss round (rounds 10, 20, 30, etc.)
+        const currentRoundNumber = state.combatRoundNumber || 0;
+        const justCompletedBossRound = currentRoundNumber > 0 && currentRoundNumber % 10 === 0;
+        
+        // Mark dungeon as completed when boss is defeated
+        if (justCompletedBossRound && combatLog.result === 'victory' && state.currentDungeonId) {
+          const completeDungeon = useGameState.getState().completeDungeon;
+          completeDungeon(state.currentDungeonId);
+          console.log(`[useGameLoop] Marked dungeon ${state.currentDungeonId} as completed after boss defeat (round ${currentRoundNumber})`);
+          
+          // After completing a dungeon, check if new dungeons should unlock
+          // Use setTimeout to ensure state is updated first
+          setTimeout(() => {
+            const updatedState = useGameState.getState();
+            const character = updatedState.character;
+            if (character) {
+              const dataLoader = getDataLoader();
+              const allDungeons = dataLoader.getAllDungeons();
+              const completedDungeonIds = updatedState.dungeonProgress
+                .filter((dp) => dp.completed)
+                .map((dp) => dp.dungeonId);
+              
+              const unlockDungeon = updatedState.unlockDungeon;
+              let unlockedCount = 0;
+              for (const dungeon of allDungeons) {
+                const existingProgress = updatedState.dungeonProgress.find((dp) => dp.dungeonId === dungeon.id);
+                if (existingProgress?.unlocked) {
+                  continue;
+                }
+                
+                if (DungeonManager.isDungeonUnlocked(dungeon, character.level, completedDungeonIds)) {
+                  unlockDungeon(dungeon.id);
+                  unlockedCount++;
+                  console.log(`[useGameLoop] Unlocked dungeon ${dungeon.name} (${dungeon.id}) after completing prerequisite`);
+                }
+              }
+              
+              if (unlockedCount > 0) {
+                console.log(`[useGameLoop] Unlocked ${unlockedCount} new dungeon(s) after completing ${state.currentDungeonId}`);
+              }
+            }
+          }, 0);
         }
 
         // Add experience
