@@ -16,7 +16,7 @@ import { UI_MESSAGES } from '../constants/ui';
 import './InventoryPanel.css';
 
 export default function InventoryPanel() {
-  const { t } = useTranslation('ui');
+  const { t } = useTranslation(['ui', 'common']);
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
@@ -309,7 +309,7 @@ export default function InventoryPanel() {
                 <TooltipWrapper
                   content={
                     itemData
-                      ? `${dataLoader.getTranslatedName(itemData)}\n${dataLoader.getTranslatedDescription(itemData) || t('inventory.noDescription')}\n${itemData.type ? `${t('common.itemType.type')}: ${t(`common.itemType.${itemData.type}`, { ns: 'common' })}` : ''}${itemData.rarity ? `\n${t('common.rarity.rarity')}: ${t(`common.rarity.${itemData.rarity}`, { ns: 'common' })}` : ''}`
+                      ? `${dataLoader.getTranslatedName(itemData)}\n${dataLoader.getTranslatedDescription(itemData) || t('inventory.noDescription')}\n${itemData.type ? `${t('itemType.type', { ns: 'common' })}: ${t(`itemType.${itemData.type}`, { ns: 'common' })}` : ''}${itemData.rarity ? `\n${t('rarity.rarity', { ns: 'common' })}: ${t(`rarity.${itemData.rarity}`, { ns: 'common' })}` : ''}`
                       : item.itemId
                   }
                 >

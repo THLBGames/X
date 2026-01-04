@@ -31,7 +31,6 @@ export default function AutoSkillConfigModal({
   onClose,
   onSave,
 }: AutoSkillConfigModalProps) {
-  const { t } = useTranslation('ui');
   const [enabled, setEnabled] = useState(currentSetting.enabled);
   const [condition, setCondition] = useState<AutoSkillSetting['condition']>(
     currentSetting.condition

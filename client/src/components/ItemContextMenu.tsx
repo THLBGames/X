@@ -126,7 +126,7 @@ export default function ItemContextMenu({
     if (item.equipmentSlot) {
       if (isEquipped && equippedSlot) {
         actions.push({
-          label: 'Unequip',
+          label: t('itemContextMenu.unequip'),
           action: () => {
             onUnequip?.(equippedSlot);
             onClose();
@@ -134,7 +134,7 @@ export default function ItemContextMenu({
         });
       } else {
         actions.push({
-          label: 'Equip',
+          label: t('itemContextMenu.equip'),
           action: () => {
             onEquip?.(item.id);
             onClose();
@@ -146,7 +146,7 @@ export default function ItemContextMenu({
     // Consumable items
     if (item.type === (ItemType.CONSUMABLE as string) && item.consumableEffect) {
       actions.push({
-        label: 'Use',
+        label: t('itemContextMenu.use'),
         action: () => {
           onUse?.(item.id);
           onClose();
@@ -157,7 +157,7 @@ export default function ItemContextMenu({
       // Exclude: experience, offlineTime, and custom effects (like treasure chests)
       if (VALID_COMBAT_CONSUMABLE_EFFECTS.includes(item.consumableEffect.type as ConsumableEffectType)) {
         actions.push({
-          label: 'Equip to Consumable Bar',
+          label: t('itemContextMenu.equipToConsumableBar'),
           action: () => {
             onEquipToConsumableBar?.(item.id);
             onClose();
@@ -170,11 +170,12 @@ export default function ItemContextMenu({
     // Check if item can actually be sold (has value, not gold, in inventory)
     if (!isEquipped && inventory && ShopManager.canSell(inventory, item.id)) {
       actions.push({
-        label: 'Sell',
+        label: t('itemContextMenu.sell'),
         action: () => {
           const shouldConfirm = settings?.confirmItemSell === true;
+          const itemName = dataLoader.getTranslatedName(item);
 
-          if (!shouldConfirm || confirm(`Are you sure you want to sell ${item.name}?`)) {
+          if (!shouldConfirm || confirm(t('itemContextMenu.confirmSell', { itemName }))) {
             onSell?.(item.id);
           }
           onClose();
@@ -184,7 +185,7 @@ export default function ItemContextMenu({
 
     // View details for all items
     actions.push({
-      label: 'View Details',
+      label: t('itemContextMenu.viewDetails'),
       action: () => {
         onViewDetails?.(item.id);
         onClose();
@@ -194,11 +195,12 @@ export default function ItemContextMenu({
     // Drop option (dangerous action)
     if (!isEquipped) {
       actions.push({
-        label: 'Drop',
+        label: t('itemContextMenu.drop'),
         action: () => {
           const shouldConfirm = settings?.confirmItemDrop !== false; // Default to true
+          const itemName = dataLoader.getTranslatedName(item);
 
-          if (!shouldConfirm || confirm(`Are you sure you want to drop ${item.name}?`)) {
+          if (!shouldConfirm || confirm(t('itemContextMenu.confirmDrop', { itemName }))) {
             onDrop?.(item.id);
           }
           onClose();
