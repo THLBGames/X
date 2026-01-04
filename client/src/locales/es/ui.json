@@ -24,7 +24,8 @@
     "idleMessage": "Idle - Select a dungeon to begin combat",
     "idleHint": "Choose a dungeon from the list below and click \"Start Combat\"",
     "emptySlot": "Empty Slot",
-    "you": "You"
+    "you": "You",
+    "roundDelay": "Preparando siguiente ronda..."
   },
   "dungeon": {
     "selectDungeon": "Select Dungeon",

@@ -38,10 +38,12 @@ export function useGameLoop() {
   const queueSkill = useGameState((state) => state.queueSkill);
   const queueConsumable = useGameState((state) => state.queueConsumable);
   const removeItem = useGameState((state) => state.removeItem);
+  const setRoundDelay = useGameState((state) => state.setRoundDelay);
 
   const combatCountRef = useRef(0);
   const lastSaveTimeRef = useRef(Date.now());
   const intervalRef = useRef<number | null>(null);
+  const waitingForInputRef = useRef(false);
 
   // Resume combat if there's an active combat action after offline progress
   // This runs when activeAction changes to a combat action (e.g., after offline progress is processed)
@@ -234,18 +236,49 @@ export function useGameLoop() {
       }
     }
 
+    // Check current actor to determine if we should wait for player input
+    const currentTurnActor = combatEngine.getCurrentActor();
+    const isPlayerTurn = currentTurnActor?.isPlayer === true;
+    const isAutoCombat = state.settings.autoCombat ?? true;
+    const hasQueuedSkill = !!state.queuedSkillId;
+    const hasQueuedConsumable = !!state.queuedConsumableId;
+    
+    // Check if player is alive (dead players can only use consumables)
+    const currentPlayer = combatEngine.getPlayer();
+    const isPlayerAlive = currentPlayer?.isAlive ?? true;
+
+    // In manual mode, wait for player input if it's their turn and nothing is queued
+    // BUT: Don't wait if player is dead (unless they have a consumable queued)
+    // Dead players without consumables should skip their turn automatically
+    if (!isAutoCombat && isPlayerTurn && !hasQueuedSkill && !hasQueuedConsumable) {
+      // If player is dead, don't wait - proceed to skip their turn
+      if (!isPlayerAlive) {
+        // Player is dead and has no consumable - let the turn execute to skip
+        // The CombatEngine will handle skipping dead players
+        waitingForInputRef.current = false;
+      } else {
+        // Player is alive - wait for input
+        waitingForInputRef.current = true;
+        return;
+      }
+    } else {
+      // Not waiting for input
+      waitingForInputRef.current = false;
+    }
+
     // Check for auto-consumable usage first (consumables take priority)
+    // Only auto-select if auto-combat is enabled
     let queuedConsumableId = state.queuedConsumableId;
-    if (!queuedConsumableId && state.character) {
-      const player = combatEngine.getPlayer();
-      if (player) {
+    if (!queuedConsumableId && state.character && isAutoCombat) {
+      const playerForAuto = combatEngine.getPlayer();
+      if (playerForAuto) {
         const autoConsumableId = AutoConsumableManager.selectAutoConsumable(
           state.character,
           state.inventory,
-          player.currentHealth,
-          player.stats.maxHealth,
-          player.currentMana,
-          player.stats.maxMana
+          playerForAuto.currentHealth,
+          playerForAuto.stats.maxHealth,
+          playerForAuto.currentMana,
+          playerForAuto.stats.maxMana
         );
 
         if (autoConsumableId) {
@@ -256,8 +289,9 @@ export function useGameLoop() {
     }
 
     // Check for auto-skill usage if no manual skill is queued and no consumable is queued
+    // Only auto-select if auto-combat is enabled
     let queuedSkillId = state.queuedSkillId;
-    if (!queuedSkillId && !queuedConsumableId && state.character) {
+    if (!queuedSkillId && !queuedConsumableId && state.character && isAutoCombat) {
       const player = combatEngine.getPlayer();
       const monsters = combatEngine.getMonsters();
       const firstAliveMonster = monsters.find((m) => m.isAlive);
@@ -280,13 +314,17 @@ export function useGameLoop() {
       }
     }
 
-    // Clear queues after getting the actions (or use the queued ones)
+    // Store queued actions before clearing (we'll clear after execution)
     const consumableToUse = queuedConsumableId;
     const skillToUse = queuedSkillId;
+
+    // Execute the turn
+    const combatLog = combatEngine.executeTurn(skillToUse, consumableToUse);
+    
+    // Clear queues after execution (executeTurn handles turn execution or skipping appropriately)
+    // We always clear here because if we returned early above, we wouldn't reach this point
     queueConsumable(null); // Clear queue
     queueSkill(null); // Clear queue
-
-    const combatLog = combatEngine.executeTurn(skillToUse, consumableToUse);
 
     // If consumable was used, remove it from inventory
     if (consumableToUse) {
@@ -801,8 +839,39 @@ export function useGameLoop() {
           updatedState.character &&
           updatedState.currentDungeonId
         ) {
+          // Get round delay from config (can be modified by upgrades later)
+          const dataLoader = getDataLoader();
+          const config = dataLoader.getConfig();
+          const roundDelay = config.combat.roundDelay ?? 2000; // Default 2 seconds
+          
+          // TODO: Check for upgrades that modify roundDelay here
+          // For now, use the base config value
+          // Example: const upgradeModifier = UpgradeManager.getRoundDelayModifier(updatedState.character);
+          // const finalRoundDelay = Math.max(0, roundDelay - upgradeModifier);
+
+          // Set delay flag to show loading indicator
+          setRoundDelay(true);
+
+          // Wait for the round delay before starting the next round
+          await new Promise((resolve) => setTimeout(resolve, roundDelay));
+
+          // Clear delay flag
+          setRoundDelay(false);
+
+          // Check again if combat is still active after delay (player might have stopped)
+          const stateAfterDelay = useGameState.getState();
+          if (
+            !stateAfterDelay.isCombatActive ||
+            !stateAfterDelay.character ||
+            !stateAfterDelay.currentDungeonId
+          ) {
+            // Combat was stopped during delay - clear delay flag
+            setRoundDelay(false);
+            return;
+          }
+
           // Increment round number
-          const newRoundNumber = (updatedState.combatRoundNumber || 0) + 1;
+          const newRoundNumber = (stateAfterDelay.combatRoundNumber || 0) + 1;
           setCombatRoundNumber(newRoundNumber);
 
           // Determine if this is a boss round (every 10 rounds)
@@ -811,29 +880,29 @@ export function useGameLoop() {
           // Spawn new monsters for the next round
           const newMonsters = DungeonManager.spawnMonsterWave(
             dungeon,
-            updatedState.character.level,
+            stateAfterDelay.character.level,
             isBossRound
           );
 
           if (newMonsters.length > 0) {
             // Get current player health/mana from previous combat state to preserve between rounds
-            const previousCombatState = updatedState.currentCombatState;
+            const previousCombatState = stateAfterDelay.currentCombatState;
             const currentPlayerHealth =
               previousCombatState?.playerParty?.[0]?.currentHealth ??
-              updatedState.character.combatStats.health;
+              stateAfterDelay.character.combatStats.health;
             const currentPlayerMana =
               previousCombatState?.playerParty?.[0]?.currentMana ??
-              updatedState.character.combatStats.mana;
+              stateAfterDelay.character.combatStats.mana;
 
             // Start new combat with new monsters
             const newCombatEngine = CombatManager.startCombat(
-              updatedState.character,
+              stateAfterDelay.character,
               newMonsters,
-              updatedState.settings.autoCombat,
-              updatedState.currentDungeonId || undefined,
+              stateAfterDelay.settings.autoCombat,
+              stateAfterDelay.currentDungeonId || undefined,
               currentPlayerHealth,
               currentPlayerMana,
-              updatedState.inventory
+              stateAfterDelay.inventory
             );
 
             // Initialize combat state for new round
@@ -874,6 +943,44 @@ export function useGameLoop() {
     await startCombatTurn();
   }, [startCombatTurn]);
 
+  // Watch for queued skills/consumables in manual mode to trigger turn execution
+  const queuedSkillId = useGameState((state) => state.queuedSkillId);
+  const queuedConsumableId = useGameState((state) => state.queuedConsumableId);
+  const processingTurnRef = useRef(false);
+
+  useEffect(() => {
+    if (!isCombatActive || !character || !currentDungeonId) {
+      return;
+    }
+
+    // In manual mode, trigger turn execution when skill/consumable is queued
+    if (!settings.autoCombat && (queuedSkillId || queuedConsumableId) && !processingTurnRef.current) {
+      const combatEngine = CombatManager.getCurrentCombat();
+      if (combatEngine) {
+        const currentActor = combatEngine.getCurrentActor();
+        // Only trigger if it's the player's turn
+        if (currentActor?.isPlayer === true) {
+          processingTurnRef.current = true;
+          // Small delay to ensure state is updated
+          const timeoutId = setTimeout(async () => {
+            try {
+              await startCombatTurn();
+            } finally {
+              // Always reset the ref, even if startCombatTurn returns early or throws
+              processingTurnRef.current = false;
+            }
+          }, 0);
+          
+          // Cleanup function to reset ref if component unmounts or effect re-runs
+          return () => {
+            clearTimeout(timeoutId);
+            processingTurnRef.current = false;
+          };
+        }
+      }
+    }
+  }, [queuedSkillId, queuedConsumableId, isCombatActive, character, currentDungeonId, settings.autoCombat, startCombatTurn]);
+
   useEffect(() => {
     if (!isCombatActive || !character || !currentDungeonId) {
       if (intervalRef.current !== null) {
@@ -892,8 +999,12 @@ export function useGameLoop() {
     startCombatTurn();
 
     // Set up interval for subsequent turns
+    // Skip interval execution if we're waiting for player input in manual mode
     intervalRef.current = window.setInterval(() => {
-      startCombatTurn();
+      // Don't execute if we're waiting for player input in manual mode
+      if (!waitingForInputRef.current) {
+        startCombatTurn();
+      }
     }, turnDelayMs);
 
     return () => {

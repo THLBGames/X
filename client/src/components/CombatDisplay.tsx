@@ -22,6 +22,7 @@ export default function CombatDisplay() {
   // const currentDungeonId = useGameState((state) => state.currentDungeonId);
   const stopCombat = useGameState((state) => state.stopCombat);
   const currentCombatState = useGameState((state) => state.currentCombatState);
+  const isRoundDelay = useGameState((state) => state.isRoundDelay);
   const queueSkill = useGameState((state) => state.queueSkill);
   const queueConsumable = useGameState((state) => state.queueConsumable);
   const settings = useGameState((state) => state.settings);
@@ -136,7 +137,12 @@ export default function CombatDisplay() {
 
       {isCombatActive ? (
         <div className="combat-active">
-          {currentCombatState ? (
+          {isRoundDelay ? (
+            <div className="round-delay-indicator">
+              <div className="loading-spinner"></div>
+              <div className="delay-message">{t('combat.roundDelay', { defaultValue: 'Preparing next round...' })}</div>
+            </div>
+          ) : currentCombatState ? (
             <>
               <CombatArena combatState={currentCombatState} />
 
@@ -163,7 +169,8 @@ export default function CombatDisplay() {
                 </div>
               )}
             </>
-          ) : (
+          ) : null}
+          {!isRoundDelay && !currentCombatState && (
             <div className="combat-loading">{t('combat.initializing')}</div>
           )}
         </div>

@@ -633,6 +633,7 @@ export interface GameConfig {
     defenseReductionFormula: string;
     criticalDamageMultiplier: number;
     turnTime: number; // Time per turn in milliseconds
+    roundDelay?: number; // Delay between combat rounds in milliseconds (default: 2000)
   };
   economy: {
     itemValueMultiplier: number;

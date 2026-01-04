@@ -56,6 +56,7 @@ interface GameState {
   combatRoundNumber: number;
   activeAction: ActiveAction;
   maxOfflineHours: number;
+  isRoundDelay: boolean;
 
   // Actions - Character
   setCharacter: (character: Character) => void;
@@ -129,6 +130,7 @@ interface GameState {
   setCombatRoundNumber: (round: number) => void;
   setActiveAction: (action: ActiveAction) => void;
   setMaxOfflineHours: (hours: number) => void;
+  setRoundDelay: (isDelaying: boolean) => void;
   updateAutoSkillSetting: (skillId: string, setting: AutoSkillSetting) => void;
   removeAutoSkillSetting: (skillId: string) => void;
   updateAutoConsumableSetting: (itemId: string, setting: AutoConsumableSetting) => void;
@@ -155,9 +157,10 @@ export const useGameState = create<GameState>((set, get) => ({
   currentCombatState: null,
   queuedSkillId: null,
   queuedConsumableId: null,
-  combatRoundNumber: 0,
-  activeAction: null,
-  maxOfflineHours: DEFAULT_MAX_OFFLINE_HOURS,
+    combatRoundNumber: 0,
+    activeAction: null,
+    maxOfflineHours: DEFAULT_MAX_OFFLINE_HOURS,
+    isRoundDelay: false,
 
   // Character actions
   setCharacter: (character) =>
@@ -925,6 +928,7 @@ export const useGameState = create<GameState>((set, get) => ({
     set((state) => ({
       isCombatActive: active,
       combatRoundNumber: active ? state.combatRoundNumber : 0, // Reset rounds when stopping
+      isRoundDelay: false, // Clear delay flag when stopping combat
     })),
 
   setCurrentDungeon: (dungeonId) => set({ currentDungeonId: dungeonId }),
@@ -1116,6 +1120,8 @@ export const useGameState = create<GameState>((set, get) => ({
   setActiveAction: (action) => set({ activeAction: action }),
 
   setMaxOfflineHours: (hours) => set({ maxOfflineHours: Math.max(DEFAULT_MAX_OFFLINE_HOURS, hours) }),
+
+  setRoundDelay: (isDelaying) => set({ isRoundDelay: isDelaying }),
 
   updateAutoSkillSetting: (skillId, setting) =>
     set((state) => {

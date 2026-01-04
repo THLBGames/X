@@ -761,6 +761,7 @@ export class DataLoader {
         defenseReductionFormula: 'damage * (1 - defense / (defense + 100))',
         criticalDamageMultiplier: 1.5,
         turnTime: 1000,
+        roundDelay: 2000, // Default 2 second delay between rounds
       },
       economy: {
         itemValueMultiplier: 1.0,
