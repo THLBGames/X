@@ -41,6 +41,8 @@ div.skill-tree-modal .modal-content {
   flex-direction: column;
   gap: 16px;
   max-width: 100% !important;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1a1a1a;
 }
 
 .skill-tree-controls {

@@ -6,6 +6,8 @@
   flex: 0 0 auto;
   overflow-y: auto;
   min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1a1a1a;
 }
 
 .inventory-panel h2 {

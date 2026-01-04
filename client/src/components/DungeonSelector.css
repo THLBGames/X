@@ -30,6 +30,8 @@
   flex: 1;
   overflow-y: auto;
   margin-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1a1a1a;
 }
 
 .dungeon-item {
