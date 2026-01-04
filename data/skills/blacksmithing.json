@@ -40,6 +40,10 @@
         {
           "itemId": "leather",
           "quantity": 3
+        },
+        {
+          "itemId": "goblin_bone",
+          "quantity": 2
         }
       ],
       "result": {
@@ -65,6 +69,10 @@
         {
           "itemId": "silver_ore",
           "quantity": 2
+        },
+        {
+          "itemId": "orc_tooth",
+          "quantity": 3
         }
       ],
       "result": {

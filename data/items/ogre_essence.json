@@ -1,0 +1,13 @@
+{
+  "id": "ogre_essence",
+  "name": "Ogre Essence",
+  "description": "Magical essence extracted from an ogre.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.ogre_essence.name",
+  "descriptionKey": "item.ogre_essence.description"
+}
+

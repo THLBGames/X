@@ -31,6 +31,11 @@
     {
       "itemId": "ancient_tome",
       "chance": 0.4
+    },
+    {
+      "itemId": "lich_soul_fragment",
+      "chance": 0.3,
+      "quantity": 1
     }
   ],
   "experienceReward": 300,

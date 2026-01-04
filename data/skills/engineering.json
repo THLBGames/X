@@ -32,6 +32,12 @@
       "recipeId": "mechanical_device",
       "name": "Mechanical Device",
       "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "blacksmithing",
+          "level": 30
+        }
+      ],
       "ingredients": [
         {
           "itemId": "steel",

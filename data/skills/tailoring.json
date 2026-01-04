@@ -44,6 +44,10 @@
         {
           "itemId": "gem_common",
           "quantity": 1
+        },
+        {
+          "itemId": "bone_fragment",
+          "quantity": 3
         }
       ],
       "result": {
@@ -68,6 +72,10 @@
         },
         {
           "itemId": "gem_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "dark_crystal",
           "quantity": 2
         }
       ],

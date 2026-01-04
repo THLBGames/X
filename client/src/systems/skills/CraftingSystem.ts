@@ -1,6 +1,7 @@
 import type { Character, Recipe, Inventory } from '@idle-rpg/shared';
 import { IdleSkillSystem } from './IdleSkillSystem';
 import { InventoryManager } from '../inventory';
+import { getDataLoader } from '@/data';
 
 export interface CraftingResult {
   success: boolean;
@@ -29,6 +30,20 @@ export class CraftingSystem {
         experience: 0,
         reason: `Requires skill level ${recipe.level}`,
       };
+    }
+
+    // Check skill prerequisites
+    if (recipe.skillPrerequisites) {
+      for (const prereq of recipe.skillPrerequisites) {
+        const prereqLevel = IdleSkillSystem.getSkillLevel(character, prereq.skillId);
+        if (prereqLevel < prereq.level) {
+          return {
+            success: false,
+            experience: 0,
+            reason: `Requires ${prereq.skillId} level ${prereq.level}`,
+          };
+        }
+      }
     }
 
     // Check if player has all ingredients

@@ -31,6 +31,11 @@
     {
       "itemId": "mana_potion_medium",
       "chance": 0.4
+    },
+    {
+      "itemId": "dark_crystal",
+      "chance": 0.4,
+      "quantity": 1
     }
   ],
   "experienceReward": 125,

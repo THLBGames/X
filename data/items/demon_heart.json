@@ -1,0 +1,13 @@
+{
+  "id": "demon_heart",
+  "name": "Demon Heart",
+  "description": "The still-beating heart of a powerful demon, pulsing with dark energy.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 500,
+  "nameKey": "item.demon_heart.name",
+  "descriptionKey": "item.demon_heart.description"
+}
+

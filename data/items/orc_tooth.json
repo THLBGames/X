@@ -1,0 +1,13 @@
+{
+  "id": "orc_tooth",
+  "name": "Orc Tooth",
+  "description": "A sharp tooth from an orc warrior.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8,
+  "nameKey": "item.orc_tooth.name",
+  "descriptionKey": "item.orc_tooth.description"
+}
+

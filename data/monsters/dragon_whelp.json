@@ -31,6 +31,11 @@
     {
       "itemId": "dragon_blood",
       "chance": 0.3
+    },
+    {
+      "itemId": "dragon_scale",
+      "chance": 0.5,
+      "quantity": 1
     }
   ],
   "experienceReward": 200,

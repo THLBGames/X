@@ -1,0 +1,13 @@
+{
+  "id": "giant_scale",
+  "name": "Giant Scale",
+  "description": "A massive scale from a giant, extremely durable.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50,
+  "nameKey": "item.giant_scale.name",
+  "descriptionKey": "item.giant_scale.description"
+}
+

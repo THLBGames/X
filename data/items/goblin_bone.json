@@ -1,0 +1,13 @@
+{
+  "id": "goblin_bone",
+  "name": "Goblin Bone",
+  "description": "A bone from a goblin, used in basic crafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.goblin_bone.name",
+  "descriptionKey": "item.goblin_bone.description"
+}
+

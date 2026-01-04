@@ -27,6 +27,11 @@
     {
       "itemId": "ogre_club",
       "chance": 0.2
+    },
+    {
+      "itemId": "ogre_essence",
+      "chance": 0.4,
+      "quantity": 1
     }
   ],
   "experienceReward": 110,

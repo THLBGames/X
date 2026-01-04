@@ -1,0 +1,13 @@
+{
+  "id": "troll_hide",
+  "name": "Troll Hide",
+  "description": "Tough hide from a troll, excellent for armor crafting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.troll_hide.name",
+  "descriptionKey": "item.troll_hide.description"
+}
+

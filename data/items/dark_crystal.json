@@ -1,0 +1,13 @@
+{
+  "id": "dark_crystal",
+  "name": "Dark Crystal",
+  "description": "A crystal imbued with dark magic, used in powerful enchantments.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 60,
+  "nameKey": "item.dark_crystal.name",
+  "descriptionKey": "item.dark_crystal.description"
+}
+

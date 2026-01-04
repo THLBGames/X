@@ -27,6 +27,11 @@
     {
       "itemId": "troll_blood",
       "chance": 0.5
+    },
+    {
+      "itemId": "troll_hide",
+      "chance": 0.6,
+      "quantity": 1
     }
   ],
   "experienceReward": 80,

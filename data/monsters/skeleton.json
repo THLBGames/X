@@ -27,6 +27,11 @@
     {
       "itemId": "bone_fragment",
       "chance": 0.3
+    },
+    {
+      "itemId": "bone_fragment",
+      "chance": 0.4,
+      "quantity": 1
     }
   ],
   "experienceReward": 20,

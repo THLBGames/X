@@ -347,6 +347,10 @@ export interface Recipe {
   };
   experienceGain: number;
   timeRequired?: number; // Milliseconds required to craft
+  skillPrerequisites?: Array<{
+    skillId: string;
+    level: number;
+  }>; // Additional skills required (beyond the primary skill)
 }
 
 export interface RecipeIngredient {
@@ -598,10 +602,16 @@ export interface Quest {
     itemId?: string; // For item_collection quests
     quantity: number; // Required quantity
   };
+  questPrerequisites?: string[]; // Quest IDs that must be completed first
   rewards?: {
     experience?: number;
     gold?: number;
     items?: Array<{ itemId: string; quantity: number }>;
+  };
+  unlocks?: {
+    skills?: string[]; // Skill IDs to unlock
+    recipes?: Array<{ skillId: string; recipeId: string }>; // Recipes to unlock
+    resourceNodes?: Array<{ skillId: string; nodeId: string }>; // Gathering nodes to unlock
   };
 }
 

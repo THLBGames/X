@@ -57,6 +57,12 @@
       "recipeId": "greater_enchant",
       "name": "Greater Enchantment",
       "level": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "runecrafting",
+          "level": 40
+        }
+      ],
       "ingredients": [
         {
           "itemId": "greater_essence",

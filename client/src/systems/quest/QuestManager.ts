@@ -1,5 +1,6 @@
-import type { Character, QuestProgress } from '@idle-rpg/shared';
+import type { Character, QuestProgress, Quest } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
+import { SkillManager } from '../skills/SkillManager';
 
 export class QuestManager {
   /**
@@ -144,6 +145,11 @@ export class QuestManager {
 
     const currentProgress = questProgress[progressIndex];
     
+    // Don't process unlocks if already completed
+    if (currentProgress.completed) {
+      return character;
+    }
+    
     // Mark as completed
     const updatedProgress: QuestProgress = {
       ...currentProgress,
@@ -153,10 +159,51 @@ export class QuestManager {
     const newQuestProgress = [...questProgress];
     newQuestProgress[progressIndex] = updatedProgress;
 
-    return {
+    let updatedCharacter: Character = {
       ...character,
       questProgress: newQuestProgress,
     };
+
+    // Process unlocks
+    if (quest.unlocks) {
+      updatedCharacter = this.processUnlocks(updatedCharacter, quest);
+    }
+
+    return updatedCharacter;
+  }
+
+  /**
+   * Process quest unlocks (skills, recipes, resource nodes)
+   */
+  private static processUnlocks(character: Character, quest: Quest): Character {
+    let updatedCharacter = character;
+    const dataLoader = getDataLoader();
+
+    // Unlock skills (add to learnedSkills without cost)
+    if (quest.unlocks?.skills) {
+      const learnedSkills = [...(updatedCharacter.learnedSkills || [])];
+      
+      for (const skillId of quest.unlocks.skills) {
+        // Check if skill is already learned
+        const isLearned = SkillManager.isSkillLearned(character, skillId);
+        if (!isLearned) {
+          // Add skill to learnedSkills for free (no cost)
+          learnedSkills.push({ skillId, level: 1 });
+        }
+      }
+      
+      updatedCharacter = {
+        ...updatedCharacter,
+        learnedSkills,
+      };
+    }
+
+    // Note: Recipe and resource node unlocks would require adding
+    // character.unlockedRecipes and character.unlockedResourceNodes properties
+    // For now, recipe/node unlocks can be handled by unlocking the skill itself
+    // or by modifying recipe/node availability checks in the UI
+
+    return updatedCharacter;
   }
 
   /**

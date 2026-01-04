@@ -27,6 +27,11 @@
     {
       "itemId": "giant_stone",
       "chance": 0.7
+    },
+    {
+      "itemId": "giant_scale",
+      "chance": 0.5,
+      "quantity": 1
     }
   ],
   "experienceReward": 400,

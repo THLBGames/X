@@ -27,6 +27,11 @@
     {
       "itemId": "minotaur_horn",
       "chance": 0.5
+    },
+    {
+      "itemId": "minotaur_horn",
+      "chance": 0.6,
+      "quantity": 1
     }
   ],
   "experienceReward": 160,

@@ -1,6 +1,28 @@
 {
   "versions": [
     {
+      "version": "0.0.5",
+      "date": "2026-01-04",
+      "categories": {
+        "added": [
+          "Dungeon materials system - monsters now drop crafting materials (bones, hides, scales, essences)",
+          "Quest unlock system - quests can now unlock skills and recipes upon completion",
+          "Skill prerequisites for recipes - advanced recipes now require multiple skills",
+          "New quests: Apprentice Blacksmith, Herbal Remedy, Tailor's Apprentice, and Dragon Slayer",
+          "Cross-skill recipe requirements - engineering and enchanting recipes now require multiple skills"
+        ],
+        "changed": [
+          "Blacksmithing recipes updated to require dungeon materials (goblin bones, orc teeth, troll hides)",
+          "Tailoring recipes updated to use dungeon materials (bone fragments, dark crystals)",
+          "Leatherworking recipes enhanced with monster hides from combat",
+          "Advanced crafting recipes now require skill prerequisites (e.g., engineering needs blacksmithing)",
+          "Quest system enhanced with unlock mechanics for skills and recipes"
+        ],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
       "version": "0.0.4",
       "date": "2026-01-03",
       "categories": {

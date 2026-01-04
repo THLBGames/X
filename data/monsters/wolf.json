@@ -27,6 +27,11 @@
     {
       "itemId": "wolf_pelt",
       "chance": 0.4
+    },
+    {
+      "itemId": "animal_hide",
+      "chance": 0.5,
+      "quantity": 1
     }
   ],
   "experienceReward": 22,
