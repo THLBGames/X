@@ -14,7 +14,9 @@
       "rewards": {
         "experience": 1000,
         "gold": 500
-      }
+      },
+      "nameKey": "quest.berserker_quest.name",
+      "descriptionKey": "quest.berserker_quest.description"
     },
     "guardian_quest": {
       "id": "guardian_quest",
@@ -28,7 +30,9 @@
       "rewards": {
         "experience": 1000,
         "gold": 500
-      }
+      },
+      "nameKey": "quest.guardian_quest.name",
+      "descriptionKey": "quest.guardian_quest.description"
     },
     "necromancer_quest": {
       "id": "necromancer_quest",
@@ -42,7 +46,9 @@
       "rewards": {
         "experience": 1000,
         "gold": 500
-      }
+      },
+      "nameKey": "quest.necromancer_quest.name",
+      "descriptionKey": "quest.necromancer_quest.description"
     },
     "ranger_quest": {
       "id": "ranger_quest",
@@ -56,7 +62,9 @@
       "rewards": {
         "experience": 1000,
         "gold": 500
-      }
+      },
+      "nameKey": "quest.ranger_quest.name",
+      "descriptionKey": "quest.ranger_quest.description"
     },
     "swashbuckler_quest": {
       "id": "swashbuckler_quest",
@@ -70,7 +78,9 @@
       "rewards": {
         "experience": 1000,
         "gold": 500
-      }
+      },
+      "nameKey": "quest.swashbuckler_quest.name",
+      "descriptionKey": "quest.swashbuckler_quest.description"
     },
     "wizard_quest": {
       "id": "wizard_quest",
@@ -84,7 +94,9 @@
       "rewards": {
         "experience": 1000,
         "gold": 500
-      }
+      },
+      "nameKey": "quest.wizard_quest.name",
+      "descriptionKey": "quest.wizard_quest.description"
     }
   }
 }

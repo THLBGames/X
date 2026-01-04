@@ -14,6 +14,21 @@ import i18n from '../i18n/config';
 
 type DataCache<T> = Map<string, T>;
 
+export interface PatchNoteVersion {
+  version: string;
+  date: string;
+  categories: {
+    added?: string[];
+    changed?: string[];
+    fixed?: string[];
+    removed?: string[];
+  };
+}
+
+export interface PatchNotes {
+  versions: PatchNoteVersion[];
+}
+
 export class DataLoader {
   private static instance: DataLoader;
   private classesCache: DataCache<CharacterClass> = new Map();
@@ -26,6 +41,7 @@ export class DataLoader {
   private upgradesCache: DataCache<SkillUpgrade> = new Map();
   private achievementsCache: DataCache<Achievement> = new Map();
   private configCache: GameConfig | null = null;
+  private patchNotesCache: PatchNotes | null = null;
   private loaded = false;
 
   private constructor() {}
@@ -55,6 +71,7 @@ export class DataLoader {
       this.loadUpgrades(),
       this.loadAchievements(),
       this.loadConfig(),
+      this.loadPatchNotes(),
     ]);
 
     this.loaded = true;
@@ -340,6 +357,26 @@ export class DataLoader {
       console.warn('Failed to load game config, using defaults:', error);
       this.configCache = this.getDefaultConfig();
     }
+  }
+
+  private async loadPatchNotes(): Promise<void> {
+    try {
+      const data = await this.loadJsonFile<PatchNotes>('/data/config/patch_notes.json');
+      if (data && data.versions && Array.isArray(data.versions)) {
+        this.patchNotesCache = data;
+        console.log(`Loaded ${data.versions.length} patch note versions`);
+      } else {
+        console.warn('Failed to load patch notes - invalid format');
+        this.patchNotesCache = { versions: [] };
+      }
+    } catch (error) {
+      console.warn('Failed to load patch notes:', error);
+      this.patchNotesCache = { versions: [] };
+    }
+  }
+
+  getPatchNotes(): PatchNotes | null {
+    return this.patchNotesCache;
   }
 
   // Helper method to load a JSON file
@@ -746,6 +783,7 @@ export class DataLoader {
     this.dungeonsCache.clear();
     this.questsCache.clear();
     this.configCache = null;
+    this.patchNotesCache = null;
     this.loaded = false;
   }
 }

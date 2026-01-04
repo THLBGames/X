@@ -1,0 +1,92 @@
+{
+  "versions": [
+    {
+      "version": "0.0.4",
+      "date": "2024-12-15",
+      "categories": {
+        "added": [
+          "Patch notes system - view version history in-game",
+          "Subclass system - unlock at level 50 with quest completion",
+          "Auto-consumable configuration for combat",
+          "Improved skill tree UI with filtering and search"
+        ],
+        "changed": [
+          "Refined combat speed controls",
+          "Updated inventory tooltips and item descriptions",
+          "Improved offline progress calculation accuracy"
+        ],
+        "fixed": [
+          "Fixed achievement tracking persistence issues",
+          "Resolved skill bar slot management bugs",
+          "Fixed consumable bar equip/unequip behavior"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "version": "0.0.3",
+      "date": "2024-11-20",
+      "categories": {
+        "added": [
+          "Auto-skill configuration system",
+          "Statistics and achievements panel",
+          "Quest system with progress tracking",
+          "Mercenary rental system",
+          "Upgrade shop with permanent and consumable upgrades"
+        ],
+        "changed": [
+          "Improved combat display and damage numbers",
+          "Enhanced character sheet layout",
+          "Better dungeon selection UI"
+        ],
+        "fixed": [
+          "Fixed class change stat calculation errors",
+          "Resolved inventory item quantity display issues",
+          "Fixed save/load data corruption edge cases"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "version": "0.0.2",
+      "date": "2024-10-10",
+      "categories": {
+        "added": [
+          "Equipment system with multiple slots",
+          "Skill system with idle progression",
+          "Shop panel for buying items",
+          "Settings panel with audio, combat, and UI options",
+          "Offline progress calculation"
+        ],
+        "changed": [
+          "Improved combat flow and turn-based mechanics",
+          "Enhanced character creation UI",
+          "Better dungeon monster variety"
+        ],
+        "fixed": [
+          "Fixed combat state persistence bugs",
+          "Resolved inventory drag-and-drop issues",
+          "Fixed skill point calculation errors"
+        ],
+        "removed": []
+      }
+    },
+    {
+      "version": "0.0.1",
+      "date": "2024-09-01",
+      "categories": {
+        "added": [
+          "Initial prototype release",
+          "Character creation with 10 base classes",
+          "Basic combat system with dungeons and monsters",
+          "Inventory management system",
+          "Basic dungeon progression",
+          "Save/load functionality with IndexedDB"
+        ],
+        "changed": [],
+        "fixed": [],
+        "removed": []
+      }
+    }
+  ]
+}

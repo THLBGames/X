@@ -314,6 +314,17 @@
       "en": "English",
       "es": "Español"
     }
+  },
+  "patchNotes": {
+    "title": "Patch Notes",
+    "version": "Version {{version}}",
+    "date": "Released: {{date}}",
+    "added": "Added",
+    "changed": "Changed",
+    "fixed": "Fixed",
+    "removed": "Removed",
+    "noNotes": "No patch notes available",
+    "close": "Close"
   }
 }
 

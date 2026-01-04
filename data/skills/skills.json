@@ -22,7 +22,9 @@
       "target": "self",
       "effect": {
         "buffId": "adrenaline_rush"
-      }
+      },
+      "nameKey": "skill.adrenaline_rush.name",
+      "descriptionKey": "skill.adrenaline_rush.description"
     },
     "alchemy": {
       "id": "alchemy",
@@ -148,7 +150,9 @@
             "magicAttack": 25
           }
         }
-      ]
+      ],
+      "nameKey": "skill.alchemy.name",
+      "descriptionKey": "skill.alchemy.description"
     },
     "ambush": {
       "id": "ambush",
@@ -176,7 +180,9 @@
             "multiplier": 2.5
           }
         }
-      }
+      },
+      "nameKey": "skill.ambush.name",
+      "descriptionKey": "skill.ambush.description"
     },
     "arcane_explosion": {
       "id": "arcane_explosion",
@@ -201,10 +207,12 @@
           "base": 45,
           "scaling": {
             "stat": "intelligence",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         }
-      }
+      },
+      "nameKey": "skill.arcane_explosion.name",
+      "descriptionKey": "skill.arcane_explosion.description"
     },
     "arcane_missile": {
       "id": "arcane_missile",
@@ -232,7 +240,9 @@
             "multiplier": 1.5
           }
         }
-      }
+      },
+      "nameKey": "skill.arcane_missile.name",
+      "descriptionKey": "skill.arcane_missile.description"
     },
     "arcane_power": {
       "id": "arcane_power",
@@ -254,7 +264,9 @@
       "target": "self",
       "effect": {
         "buffId": "arcane_power"
-      }
+      },
+      "nameKey": "skill.arcane_power.name",
+      "descriptionKey": "skill.arcane_power.description"
     },
     "archaeology": {
       "id": "archaeology",
@@ -275,7 +287,7 @@
           "resources": [
             {
               "itemId": "ancient_shard",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -296,7 +308,7 @@
           "resources": [
             {
               "itemId": "ancient_relic",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -322,7 +334,7 @@
           "resources": [
             {
               "itemId": "ancient_artifact",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -353,7 +365,7 @@
           "resources": [
             {
               "itemId": "ancient_treasure",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -392,7 +404,9 @@
             "itemFindRate": 0.15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.archaeology.name",
+      "descriptionKey": "skill.archaeology.description"
     },
     "armor_break": {
       "id": "armor_break",
@@ -421,7 +435,9 @@
           }
         },
         "debuffId": "armor_broken"
-      }
+      },
+      "nameKey": "skill.armor_break.name",
+      "descriptionKey": "skill.armor_break.description"
     },
     "assassinate": {
       "id": "assassinate",
@@ -450,7 +466,9 @@
             "multiplier": 3.5
           }
         }
-      }
+      },
+      "nameKey": "skill.assassinate.name",
+      "descriptionKey": "skill.assassinate.description"
     },
     "backstab": {
       "id": "backstab",
@@ -474,7 +492,9 @@
             "multiplier": 2.5
           }
         }
-      }
+      },
+      "nameKey": "skill.backstab.name",
+      "descriptionKey": "skill.backstab.description"
     },
     "basic_attack": {
       "id": "basic_attack",
@@ -491,10 +511,12 @@
           "base": 20,
           "scaling": {
             "stat": "strength",
-            "multiplier": 1.0
+            "multiplier": 1
           }
         }
-      }
+      },
+      "nameKey": "skill.basic_attack.name",
+      "descriptionKey": "skill.basic_attack.description"
     },
     "battle_cry": {
       "id": "battle_cry",
@@ -513,7 +535,9 @@
       "target": "self",
       "effect": {
         "buffId": "battle_cry"
-      }
+      },
+      "nameKey": "skill.battle_cry.name",
+      "descriptionKey": "skill.battle_cry.description"
     },
     "berserker_rage": {
       "id": "berserker_rage",
@@ -535,7 +559,9 @@
       "target": "self",
       "effect": {
         "buffId": "berserker_rage"
-      }
+      },
+      "nameKey": "skill.berserker_rage.name",
+      "descriptionKey": "skill.berserker_rage.description"
     },
     "blacksmithing": {
       "id": "blacksmithing",
@@ -657,7 +683,9 @@
             "defense": 15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.blacksmithing.name",
+      "descriptionKey": "skill.blacksmithing.description"
     },
     "blade_flurry": {
       "id": "blade_flurry",
@@ -685,7 +713,9 @@
             "multiplier": 1.8
           }
         }
-      }
+      },
+      "nameKey": "skill.blade_flurry.name",
+      "descriptionKey": "skill.blade_flurry.description"
     },
     "blink": {
       "id": "blink",
@@ -704,7 +734,9 @@
       "target": "self",
       "effect": {
         "buffId": "blink"
-      }
+      },
+      "nameKey": "skill.blink.name",
+      "descriptionKey": "skill.blink.description"
     },
     "block": {
       "id": "block",
@@ -723,7 +755,9 @@
       "target": "self",
       "effect": {
         "buffId": "blocking"
-      }
+      },
+      "nameKey": "skill.block.name",
+      "descriptionKey": "skill.block.description"
     },
     "bloodlust": {
       "id": "bloodlust",
@@ -742,7 +776,9 @@
       ],
       "passiveBonus": {
         "special": "bloodlust"
-      }
+      },
+      "nameKey": "skill.bloodlust.name",
+      "descriptionKey": "skill.bloodlust.description"
     },
     "chain_lightning": {
       "id": "chain_lightning",
@@ -770,7 +806,9 @@
             "multiplier": 2.2
           }
         }
-      }
+      },
+      "nameKey": "skill.chain_lightning.name",
+      "descriptionKey": "skill.chain_lightning.description"
     },
     "charge": {
       "id": "charge",
@@ -796,7 +834,9 @@
           }
         },
         "debuffId": "stunned"
-      }
+      },
+      "nameKey": "skill.charge.name",
+      "descriptionKey": "skill.charge.description"
     },
     "cleave": {
       "id": "cleave",
@@ -820,7 +860,9 @@
             "multiplier": 1.5
           }
         }
-      }
+      },
+      "nameKey": "skill.cleave.name",
+      "descriptionKey": "skill.cleave.description"
     },
     "cloak_of_shadows": {
       "id": "cloak_of_shadows",
@@ -842,7 +884,9 @@
       "target": "self",
       "effect": {
         "buffId": "cloak_of_shadows"
-      }
+      },
+      "nameKey": "skill.cloak_of_shadows.name",
+      "descriptionKey": "skill.cloak_of_shadows.description"
     },
     "combustion": {
       "id": "combustion",
@@ -861,7 +905,9 @@
       ],
       "passiveBonus": {
         "special": "combustion"
-      }
+      },
+      "nameKey": "skill.combustion.name",
+      "descriptionKey": "skill.combustion.description"
     },
     "cooking": {
       "id": "cooking",
@@ -983,7 +1029,9 @@
             "goldGeneration": 0.15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.cooking.name",
+      "descriptionKey": "skill.cooking.description"
     },
     "counterattack": {
       "id": "counterattack",
@@ -1000,7 +1048,9 @@
       },
       "passiveBonus": {
         "special": "counterattack"
-      }
+      },
+      "nameKey": "skill.counterattack.name",
+      "descriptionKey": "skill.counterattack.description"
     },
     "cripple": {
       "id": "cripple",
@@ -1019,7 +1069,9 @@
       "target": "enemy",
       "effect": {
         "debuffId": "crippled"
-      }
+      },
+      "nameKey": "skill.cripple.name",
+      "descriptionKey": "skill.cripple.description"
     },
     "crippling_poison": {
       "id": "crippling_poison",
@@ -1041,7 +1093,9 @@
       "target": "self",
       "effect": {
         "buffId": "crippling_poison_weapon"
-      }
+      },
+      "nameKey": "skill.crippling_poison.name",
+      "descriptionKey": "skill.crippling_poison.description"
     },
     "critical_mastery": {
       "id": "critical_mastery",
@@ -1058,7 +1112,9 @@
           "criticalChance": 2,
           "criticalDamage": 0.2
         }
-      }
+      },
+      "nameKey": "skill.critical_mastery.name",
+      "descriptionKey": "skill.critical_mastery.description"
     },
     "deadly_poison": {
       "id": "deadly_poison",
@@ -1080,7 +1136,9 @@
       "target": "self",
       "effect": {
         "buffId": "deadly_poison_weapon"
-      }
+      },
+      "nameKey": "skill.deadly_poison.name",
+      "descriptionKey": "skill.deadly_poison.description"
     },
     "death_mark": {
       "id": "death_mark",
@@ -1099,7 +1157,9 @@
       ],
       "passiveBonus": {
         "special": "death_mark"
-      }
+      },
+      "nameKey": "skill.death_mark.name",
+      "descriptionKey": "skill.death_mark.description"
     },
     "defensive_stance": {
       "id": "defensive_stance",
@@ -1118,7 +1178,9 @@
       "target": "self",
       "effect": {
         "buffId": "defensive_stance"
-      }
+      },
+      "nameKey": "skill.defensive_stance.name",
+      "descriptionKey": "skill.defensive_stance.description"
     },
     "demoralize": {
       "id": "demoralize",
@@ -1140,7 +1202,9 @@
       "target": "all_enemies",
       "effect": {
         "debuffId": "demoralized"
-      }
+      },
+      "nameKey": "skill.demoralize.name",
+      "descriptionKey": "skill.demoralize.description"
     },
     "devastate": {
       "id": "devastate",
@@ -1169,7 +1233,9 @@
           }
         },
         "debuffId": "armor_reduction"
-      }
+      },
+      "nameKey": "skill.devastate.name",
+      "descriptionKey": "skill.devastate.description"
     },
     "dispel_magic": {
       "id": "dispel_magic",
@@ -1188,7 +1254,9 @@
       "target": "enemy",
       "effect": {
         "special": "dispel_magic"
-      }
+      },
+      "nameKey": "skill.dispel_magic.name",
+      "descriptionKey": "skill.dispel_magic.description"
     },
     "divination": {
       "id": "divination",
@@ -1209,7 +1277,7 @@
           "resources": [
             {
               "itemId": "energy_wisp",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 3
             },
@@ -1230,7 +1298,7 @@
           "resources": [
             {
               "itemId": "essence_crystal",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -1256,7 +1324,7 @@
           "resources": [
             {
               "itemId": "mana_crystal",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -1287,7 +1355,7 @@
           "resources": [
             {
               "itemId": "void_essence",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -1326,7 +1394,9 @@
             "magicAttack": 20
           }
         }
-      ]
+      ],
+      "nameKey": "skill.divination.name",
+      "descriptionKey": "skill.divination.description"
     },
     "dodge": {
       "id": "dodge",
@@ -1344,7 +1414,9 @@
         "combatStatBonus": {
           "speed": 5
         }
-      }
+      },
+      "nameKey": "skill.dodge.name",
+      "descriptionKey": "skill.dodge.description"
     },
     "dual_wield": {
       "id": "dual_wield",
@@ -1362,7 +1434,9 @@
         "combatStatBonus": {
           "attack": 10
         }
-      }
+      },
+      "nameKey": "skill.dual_wield.name",
+      "descriptionKey": "skill.dual_wield.description"
     },
     "enchanting": {
       "id": "enchanting",
@@ -1492,7 +1566,9 @@
             "magicDefense": 25
           }
         }
-      ]
+      ],
+      "nameKey": "skill.enchanting.name",
+      "descriptionKey": "skill.enchanting.description"
     },
     "engineering": {
       "id": "engineering",
@@ -1597,7 +1673,9 @@
             "intelligence": 15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.engineering.name",
+      "descriptionKey": "skill.engineering.description"
     },
     "evasion": {
       "id": "evasion",
@@ -1616,7 +1694,9 @@
       "target": "self",
       "effect": {
         "buffId": "evasion"
-      }
+      },
+      "nameKey": "skill.evasion.name",
+      "descriptionKey": "skill.evasion.description"
     },
     "execute": {
       "id": "execute",
@@ -1644,7 +1724,9 @@
             "multiplier": 2.5
           }
         }
-      }
+      },
+      "nameKey": "skill.execute.name",
+      "descriptionKey": "skill.execute.description"
     },
     "expose_armor": {
       "id": "expose_armor",
@@ -1666,11 +1748,13 @@
           "base": 25,
           "scaling": {
             "stat": "dexterity",
-            "multiplier": 1.0
+            "multiplier": 1
           }
         },
         "debuffId": "armor_exposed"
-      }
+      },
+      "nameKey": "skill.expose_armor.name",
+      "descriptionKey": "skill.expose_armor.description"
     },
     "fan_of_knives": {
       "id": "fan_of_knives",
@@ -1695,7 +1779,9 @@
             "multiplier": 1.5
           }
         }
-      }
+      },
+      "nameKey": "skill.fan_of_knives.name",
+      "descriptionKey": "skill.fan_of_knives.description"
     },
     "farming": {
       "id": "farming",
@@ -1716,7 +1802,7 @@
           "resources": [
             {
               "itemId": "wheat",
-              "chance": 1.0,
+              "chance": 1,
               "min": 3,
               "max": 6
             },
@@ -1737,7 +1823,7 @@
           "resources": [
             {
               "itemId": "vegetable",
-              "chance": 1.0,
+              "chance": 1,
               "min": 2,
               "max": 4
             },
@@ -1758,7 +1844,7 @@
           "resources": [
             {
               "itemId": "common_herb",
-              "chance": 1.0,
+              "chance": 1,
               "min": 2,
               "max": 4
             },
@@ -1815,7 +1901,9 @@
             "health": 200
           }
         }
-      ]
+      ],
+      "nameKey": "skill.farming.name",
+      "descriptionKey": "skill.farming.description"
     },
     "fire_armor": {
       "id": "fire_armor",
@@ -1834,7 +1922,9 @@
       "target": "self",
       "effect": {
         "buffId": "fire_armor"
-      }
+      },
+      "nameKey": "skill.fire_armor.name",
+      "descriptionKey": "skill.fire_armor.description"
     },
     "fire_nova": {
       "id": "fire_nova",
@@ -1863,7 +1953,9 @@
           }
         },
         "debuffId": "burning"
-      }
+      },
+      "nameKey": "skill.fire_nova.name",
+      "descriptionKey": "skill.fire_nova.description"
     },
     "fireball": {
       "id": "fireball",
@@ -1884,10 +1976,12 @@
           "base": 40,
           "scaling": {
             "stat": "intelligence",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         }
-      }
+      },
+      "nameKey": "skill.fireball.name",
+      "descriptionKey": "skill.fireball.description"
     },
     "first_aid": {
       "id": "first_aid",
@@ -1907,7 +2001,9 @@
             "multiplier": 1.5
           }
         }
-      }
+      },
+      "nameKey": "skill.first_aid.name",
+      "descriptionKey": "skill.first_aid.description"
     },
     "fishing": {
       "id": "fishing",
@@ -1928,7 +2024,7 @@
           "resources": [
             {
               "itemId": "small_fish",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -1949,7 +2045,7 @@
           "resources": [
             {
               "itemId": "medium_fish",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -1970,7 +2066,7 @@
           "resources": [
             {
               "itemId": "large_fish",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -1996,7 +2092,7 @@
           "resources": [
             {
               "itemId": "rare_fish",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -2022,7 +2118,7 @@
           "resources": [
             {
               "itemId": "legendary_fish",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -2060,7 +2156,9 @@
             "health": 100
           }
         }
-      ]
+      ],
+      "nameKey": "skill.fishing.name",
+      "descriptionKey": "skill.fishing.description"
     },
     "foraging": {
       "id": "foraging",
@@ -2081,7 +2179,7 @@
           "resources": [
             {
               "itemId": "berry",
-              "chance": 1.0,
+              "chance": 1,
               "min": 2,
               "max": 4
             },
@@ -2102,7 +2200,7 @@
           "resources": [
             {
               "itemId": "fruit",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 3
             },
@@ -2123,7 +2221,7 @@
           "resources": [
             {
               "itemId": "mushroom",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2149,7 +2247,7 @@
           "resources": [
             {
               "itemId": "exotic_fruit",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2187,7 +2285,9 @@
             "goldGeneration": 0.1
           }
         }
-      ]
+      ],
+      "nameKey": "skill.foraging.name",
+      "descriptionKey": "skill.foraging.description"
     },
     "frost_armor": {
       "id": "frost_armor",
@@ -2209,7 +2309,9 @@
       "target": "self",
       "effect": {
         "buffId": "frost_armor"
-      }
+      },
+      "nameKey": "skill.frost_armor.name",
+      "descriptionKey": "skill.frost_armor.description"
     },
     "frost_bolt": {
       "id": "frost_bolt",
@@ -2235,7 +2337,9 @@
           }
         },
         "debuffId": "slow"
-      }
+      },
+      "nameKey": "skill.frost_bolt.name",
+      "descriptionKey": "skill.frost_bolt.description"
     },
     "frost_nova": {
       "id": "frost_nova",
@@ -2264,7 +2368,9 @@
           }
         },
         "debuffId": "frozen"
-      }
+      },
+      "nameKey": "skill.frost_nova.name",
+      "descriptionKey": "skill.frost_nova.description"
     },
     "frostbite": {
       "id": "frostbite",
@@ -2293,7 +2399,9 @@
           }
         },
         "debuffId": "frostbite"
-      }
+      },
+      "nameKey": "skill.frostbite.name",
+      "descriptionKey": "skill.frostbite.description"
     },
     "fury": {
       "id": "fury",
@@ -2315,7 +2423,9 @@
       "target": "self",
       "effect": {
         "buffId": "fury"
-      }
+      },
+      "nameKey": "skill.fury.name",
+      "descriptionKey": "skill.fury.description"
     },
     "garrote": {
       "id": "garrote",
@@ -2340,11 +2450,13 @@
           "base": 50,
           "scaling": {
             "stat": "dexterity",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         },
         "debuffId": "silenced"
-      }
+      },
+      "nameKey": "skill.garrote.name",
+      "descriptionKey": "skill.garrote.description"
     },
     "herbalism": {
       "id": "herbalism",
@@ -2365,7 +2477,7 @@
           "resources": [
             {
               "itemId": "common_herb",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 3
             },
@@ -2386,7 +2498,7 @@
           "resources": [
             {
               "itemId": "uncommon_herb",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2407,7 +2519,7 @@
           "resources": [
             {
               "itemId": "rare_herb",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2433,7 +2545,7 @@
           "resources": [
             {
               "itemId": "epic_herb",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -2459,7 +2571,7 @@
           "resources": [
             {
               "itemId": "legendary_herb",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -2497,7 +2609,9 @@
             "mana": 60
           }
         }
-      ]
+      ],
+      "nameKey": "skill.herbalism.name",
+      "descriptionKey": "skill.herbalism.description"
     },
     "heroic_leap": {
       "id": "heroic_leap",
@@ -2522,7 +2636,9 @@
             "multiplier": 1.8
           }
         }
-      }
+      },
+      "nameKey": "skill.heroic_leap.name",
+      "descriptionKey": "skill.heroic_leap.description"
     },
     "hunting": {
       "id": "hunting",
@@ -2543,7 +2659,7 @@
           "resources": [
             {
               "itemId": "raw_meat",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2564,7 +2680,7 @@
           "resources": [
             {
               "itemId": "raw_meat_quality",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2590,7 +2706,7 @@
           "resources": [
             {
               "itemId": "raw_meat_premium",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -2621,7 +2737,7 @@
           "resources": [
             {
               "itemId": "raw_meat_exotic",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -2665,7 +2781,9 @@
             "attack": 15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.hunting.name",
+      "descriptionKey": "skill.hunting.description"
     },
     "ice_lance": {
       "id": "ice_lance",
@@ -2690,11 +2808,13 @@
           "base": 45,
           "scaling": {
             "stat": "intelligence",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         },
         "debuffId": "slowed"
-      }
+      },
+      "nameKey": "skill.ice_lance.name",
+      "descriptionKey": "skill.ice_lance.description"
     },
     "intimidate": {
       "id": "intimidate",
@@ -2716,7 +2836,9 @@
       "target": "all_enemies",
       "effect": {
         "debuffId": "intimidated"
-      }
+      },
+      "nameKey": "skill.intimidate.name",
+      "descriptionKey": "skill.intimidate.description"
     },
     "item_mastery": {
       "id": "item_mastery",
@@ -2727,7 +2849,9 @@
       "unlockLevel": 3,
       "passiveBonus": {
         "special": "item_mastery"
-      }
+      },
+      "nameKey": "skill.item_mastery.name",
+      "descriptionKey": "skill.item_mastery.description"
     },
     "jewelcrafting": {
       "id": "jewelcrafting",
@@ -2832,7 +2956,9 @@
             "luck": 15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.jewelcrafting.name",
+      "descriptionKey": "skill.jewelcrafting.description"
     },
     "kidney_shot": {
       "id": "kidney_shot",
@@ -2858,7 +2984,9 @@
           }
         },
         "debuffId": "stunned"
-      }
+      },
+      "nameKey": "skill.kidney_shot.name",
+      "descriptionKey": "skill.kidney_shot.description"
     },
     "last_stand": {
       "id": "last_stand",
@@ -2878,7 +3006,9 @@
       ],
       "passiveBonus": {
         "special": "last_stand"
-      }
+      },
+      "nameKey": "skill.last_stand.name",
+      "descriptionKey": "skill.last_stand.description"
     },
     "leatherworking": {
       "id": "leatherworking",
@@ -2979,7 +3109,9 @@
             "dexterity": 10
           }
         }
-      ]
+      ],
+      "nameKey": "skill.leatherworking.name",
+      "descriptionKey": "skill.leatherworking.description"
     },
     "lethal_injection": {
       "id": "lethal_injection",
@@ -3008,7 +3140,9 @@
           }
         },
         "debuffId": "lethal_poison"
-      }
+      },
+      "nameKey": "skill.lethal_injection.name",
+      "descriptionKey": "skill.lethal_injection.description"
     },
     "lightning_armor": {
       "id": "lightning_armor",
@@ -3027,7 +3161,9 @@
       "target": "self",
       "effect": {
         "buffId": "lightning_armor"
-      }
+      },
+      "nameKey": "skill.lightning_armor.name",
+      "descriptionKey": "skill.lightning_armor.description"
     },
     "lightning_bolt": {
       "id": "lightning_bolt",
@@ -3055,7 +3191,9 @@
             "multiplier": 2.2
           }
         }
-      }
+      },
+      "nameKey": "skill.lightning_bolt.name",
+      "descriptionKey": "skill.lightning_bolt.description"
     },
     "lucky_strike": {
       "id": "lucky_strike",
@@ -3071,7 +3209,9 @@
         "combatStatBonus": {
           "criticalChance": 1
         }
-      }
+      },
+      "nameKey": "skill.lucky_strike.name",
+      "descriptionKey": "skill.lucky_strike.description"
     },
     "mage_intellect": {
       "id": "mage_intellect",
@@ -3091,7 +3231,9 @@
         "combatStatBonus": {
           "magicAttack": 8
         }
-      }
+      },
+      "nameKey": "skill.mage_intellect.name",
+      "descriptionKey": "skill.mage_intellect.description"
     },
     "magic_missile": {
       "id": "magic_missile",
@@ -3119,7 +3261,9 @@
             "multiplier": 1.8
           }
         }
-      }
+      },
+      "nameKey": "skill.magic_missile.name",
+      "descriptionKey": "skill.magic_missile.description"
     },
     "mana_burn": {
       "id": "mana_burn",
@@ -3145,7 +3289,9 @@
           }
         },
         "debuffId": "mana_burned"
-      }
+      },
+      "nameKey": "skill.mana_burn.name",
+      "descriptionKey": "skill.mana_burn.description"
     },
     "mana_shield": {
       "id": "mana_shield",
@@ -3164,7 +3310,9 @@
       "target": "self",
       "effect": {
         "buffId": "mana_shield"
-      }
+      },
+      "nameKey": "skill.mana_shield.name",
+      "descriptionKey": "skill.mana_shield.description"
     },
     "mana_surge": {
       "id": "mana_surge",
@@ -3186,10 +3334,12 @@
           "base": 100,
           "scaling": {
             "stat": "wisdom",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         }
-      }
+      },
+      "nameKey": "skill.mana_surge.name",
+      "descriptionKey": "skill.mana_surge.description"
     },
     "marked_for_death": {
       "id": "marked_for_death",
@@ -3208,7 +3358,9 @@
       "target": "enemy",
       "effect": {
         "debuffId": "marked_for_death"
-      }
+      },
+      "nameKey": "skill.marked_for_death.name",
+      "descriptionKey": "skill.marked_for_death.description"
     },
     "meteor": {
       "id": "meteor",
@@ -3236,7 +3388,9 @@
             "multiplier": 3.5
           }
         }
-      }
+      },
+      "nameKey": "skill.meteor.name",
+      "descriptionKey": "skill.meteor.description"
     },
     "mining": {
       "id": "mining",
@@ -3257,7 +3411,7 @@
           "resources": [
             {
               "itemId": "copper_ore",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 3
             },
@@ -3278,7 +3432,7 @@
           "resources": [
             {
               "itemId": "iron_ore",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -3299,7 +3453,7 @@
           "resources": [
             {
               "itemId": "silver_ore",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -3320,7 +3474,7 @@
           "resources": [
             {
               "itemId": "gold_ore",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -3346,7 +3500,7 @@
           "resources": [
             {
               "itemId": "mithril_ore",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -3372,7 +3526,7 @@
           "resources": [
             {
               "itemId": "adamantite_ore",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -3409,7 +3563,9 @@
             "itemFindRate": 0.1
           }
         }
-      ]
+      ],
+      "nameKey": "skill.mining.name",
+      "descriptionKey": "skill.mining.description"
     },
     "mortal_strike": {
       "id": "mortal_strike",
@@ -3438,7 +3594,9 @@
           }
         },
         "debuffId": "mortal_wound"
-      }
+      },
+      "nameKey": "skill.mortal_strike.name",
+      "descriptionKey": "skill.mortal_strike.description"
     },
     "overpower": {
       "id": "overpower",
@@ -3463,10 +3621,12 @@
           "base": 60,
           "scaling": {
             "stat": "strength",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         }
-      }
+      },
+      "nameKey": "skill.overpower.name",
+      "descriptionKey": "skill.overpower.description"
     },
     "parry": {
       "id": "parry",
@@ -3485,7 +3645,9 @@
         "combatStatBonus": {
           "defense": 5
         }
-      }
+      },
+      "nameKey": "skill.parry.name",
+      "descriptionKey": "skill.parry.description"
     },
     "poison_blade": {
       "id": "poison_blade",
@@ -3507,7 +3669,9 @@
       "target": "self",
       "effect": {
         "buffId": "poison_blade"
-      }
+      },
+      "nameKey": "skill.poison_blade.name",
+      "descriptionKey": "skill.poison_blade.description"
     },
     "poison_strike": {
       "id": "poison_strike",
@@ -3533,7 +3697,9 @@
           }
         },
         "debuffId": "poison"
-      }
+      },
+      "nameKey": "skill.poison_strike.name",
+      "descriptionKey": "skill.poison_strike.description"
     },
     "polymorph": {
       "id": "polymorph",
@@ -3552,7 +3718,9 @@
       "target": "enemy",
       "effect": {
         "debuffId": "polymorphed"
-      }
+      },
+      "nameKey": "skill.polymorph.name",
+      "descriptionKey": "skill.polymorph.description"
     },
     "potion_use": {
       "id": "potion_use",
@@ -3563,7 +3731,9 @@
       "unlockLevel": 1,
       "passiveBonus": {
         "special": "potion_mastery"
-      }
+      },
+      "nameKey": "skill.potion_use.name",
+      "descriptionKey": "skill.potion_use.description"
     },
     "power_strike": {
       "id": "power_strike",
@@ -3588,10 +3758,12 @@
           "base": 50,
           "scaling": {
             "stat": "strength",
-            "multiplier": 2.0
+            "multiplier": 2
           }
         }
-      }
+      },
+      "nameKey": "skill.power_strike.name",
+      "descriptionKey": "skill.power_strike.description"
     },
     "quarrying": {
       "id": "quarrying",
@@ -3612,7 +3784,7 @@
           "resources": [
             {
               "itemId": "limestone",
-              "chance": 1.0,
+              "chance": 1,
               "min": 2,
               "max": 4
             },
@@ -3633,7 +3805,7 @@
           "resources": [
             {
               "itemId": "granite",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 3
             },
@@ -3654,7 +3826,7 @@
           "resources": [
             {
               "itemId": "marble",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -3680,7 +3852,7 @@
           "resources": [
             {
               "itemId": "obsidian",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -3718,7 +3890,9 @@
             "goldGeneration": 0.1
           }
         }
-      ]
+      ],
+      "nameKey": "skill.quarrying.name",
+      "descriptionKey": "skill.quarrying.description"
     },
     "quick_strike": {
       "id": "quick_strike",
@@ -3743,7 +3917,9 @@
             "multiplier": 1.2
           }
         }
-      }
+      },
+      "nameKey": "skill.quick_strike.name",
+      "descriptionKey": "skill.quick_strike.description"
     },
     "rally": {
       "id": "rally",
@@ -3768,10 +3944,12 @@
           "base": 200,
           "scaling": {
             "stat": "vitality",
-            "multiplier": 3.0
+            "multiplier": 3
           }
         }
-      }
+      },
+      "nameKey": "skill.rally.name",
+      "descriptionKey": "skill.rally.description"
     },
     "reckless_strike": {
       "id": "reckless_strike",
@@ -3800,7 +3978,9 @@
           }
         },
         "debuffId": "vulnerable"
-      }
+      },
+      "nameKey": "skill.reckless_strike.name",
+      "descriptionKey": "skill.reckless_strike.description"
     },
     "rend": {
       "id": "rend",
@@ -3826,7 +4006,9 @@
           }
         },
         "debuffId": "bleeding"
-      }
+      },
+      "nameKey": "skill.rend.name",
+      "descriptionKey": "skill.rend.description"
     },
     "rogue_agility": {
       "id": "rogue_agility",
@@ -3846,7 +4028,9 @@
         "combatStatBonus": {
           "speed": 5
         }
-      }
+      },
+      "nameKey": "skill.rogue_agility.name",
+      "descriptionKey": "skill.rogue_agility.description"
     },
     "runecrafting": {
       "id": "runecrafting",
@@ -3951,7 +4135,9 @@
             "magicDefense": 35
           }
         }
-      ]
+      ],
+      "nameKey": "skill.runecrafting.name",
+      "descriptionKey": "skill.runecrafting.description"
     },
     "rupture": {
       "id": "rupture",
@@ -3980,7 +4166,9 @@
           }
         },
         "debuffId": "rupture"
-      }
+      },
+      "nameKey": "skill.rupture.name",
+      "descriptionKey": "skill.rupture.description"
     },
     "scorch": {
       "id": "scorch",
@@ -4006,7 +4194,9 @@
           }
         },
         "debuffId": "fire_vulnerability"
-      }
+      },
+      "nameKey": "skill.scorch.name",
+      "descriptionKey": "skill.scorch.description"
     },
     "second_wind": {
       "id": "second_wind",
@@ -4025,7 +4215,9 @@
       ],
       "passiveBonus": {
         "special": "second_wind"
-      }
+      },
+      "nameKey": "skill.second_wind.name",
+      "descriptionKey": "skill.second_wind.description"
     },
     "shadow_clone": {
       "id": "shadow_clone",
@@ -4047,7 +4239,9 @@
       "target": "self",
       "effect": {
         "buffId": "shadow_clone"
-      }
+      },
+      "nameKey": "skill.shadow_clone.name",
+      "descriptionKey": "skill.shadow_clone.description"
     },
     "shadow_dance": {
       "id": "shadow_dance",
@@ -4069,7 +4263,9 @@
       "target": "self",
       "effect": {
         "buffId": "shadow_dance"
-      }
+      },
+      "nameKey": "skill.shadow_dance.name",
+      "descriptionKey": "skill.shadow_dance.description"
     },
     "shadow_step": {
       "id": "shadow_step",
@@ -4097,7 +4293,9 @@
             "multiplier": 2.8
           }
         }
-      }
+      },
+      "nameKey": "skill.shadow_step.name",
+      "descriptionKey": "skill.shadow_step.description"
     },
     "shadow_strike": {
       "id": "shadow_strike",
@@ -4125,7 +4323,9 @@
             "multiplier": 2.2
           }
         }
-      }
+      },
+      "nameKey": "skill.shadow_strike.name",
+      "descriptionKey": "skill.shadow_strike.description"
     },
     "shield_bash": {
       "id": "shield_bash",
@@ -4147,11 +4347,13 @@
           "base": 20,
           "scaling": {
             "stat": "strength",
-            "multiplier": 1.0
+            "multiplier": 1
           }
         },
         "debuffId": "stun"
-      }
+      },
+      "nameKey": "skill.shield_bash.name",
+      "descriptionKey": "skill.shield_bash.description"
     },
     "shield_wall": {
       "id": "shield_wall",
@@ -4173,7 +4375,9 @@
       "target": "self",
       "effect": {
         "buffId": "shield_wall"
-      }
+      },
+      "nameKey": "skill.shield_wall.name",
+      "descriptionKey": "skill.shield_wall.description"
     },
     "slice_and_dice": {
       "id": "slice_and_dice",
@@ -4192,7 +4396,9 @@
       "target": "self",
       "effect": {
         "buffId": "slice_and_dice"
-      }
+      },
+      "nameKey": "skill.slice_and_dice.name",
+      "descriptionKey": "skill.slice_and_dice.description"
     },
     "slow_time": {
       "id": "slow_time",
@@ -4211,7 +4417,9 @@
       "target": "all_enemies",
       "effect": {
         "debuffId": "time_slowed"
-      }
+      },
+      "nameKey": "skill.slow_time.name",
+      "descriptionKey": "skill.slow_time.description"
     },
     "smoke_bomb": {
       "id": "smoke_bomb",
@@ -4230,7 +4438,9 @@
       "target": "all_enemies",
       "effect": {
         "debuffId": "blinded"
-      }
+      },
+      "nameKey": "skill.smoke_bomb.name",
+      "descriptionKey": "skill.smoke_bomb.description"
     },
     "sneak_attack": {
       "id": "sneak_attack",
@@ -4248,7 +4458,9 @@
           "criticalChance": 3,
           "criticalDamage": 0.1
         }
-      }
+      },
+      "nameKey": "skill.sneak_attack.name",
+      "descriptionKey": "skill.sneak_attack.description"
     },
     "spell_power": {
       "id": "spell_power",
@@ -4269,7 +4481,9 @@
         "combatStatBonus": {
           "magicAttack": 5
         }
-      }
+      },
+      "nameKey": "skill.spell_power.name",
+      "descriptionKey": "skill.spell_power.description"
     },
     "spell_steal": {
       "id": "spell_steal",
@@ -4288,7 +4502,9 @@
       "target": "enemy",
       "effect": {
         "special": "spell_steal"
-      }
+      },
+      "nameKey": "skill.spell_steal.name",
+      "descriptionKey": "skill.spell_steal.description"
     },
     "stealth": {
       "id": "stealth",
@@ -4307,7 +4523,9 @@
       "target": "self",
       "effect": {
         "buffId": "stealth"
-      }
+      },
+      "nameKey": "skill.stealth.name",
+      "descriptionKey": "skill.stealth.description"
     },
     "sunder": {
       "id": "sunder",
@@ -4329,11 +4547,13 @@
           "base": 25,
           "scaling": {
             "stat": "strength",
-            "multiplier": 1.0
+            "multiplier": 1
           }
         },
         "debuffId": "sundered"
-      }
+      },
+      "nameKey": "skill.sunder.name",
+      "descriptionKey": "skill.sunder.description"
     },
     "tailoring": {
       "id": "tailoring",
@@ -4438,7 +4658,9 @@
             "mana": 150
           }
         }
-      ]
+      ],
+      "nameKey": "skill.tailoring.name",
+      "descriptionKey": "skill.tailoring.description"
     },
     "taunt": {
       "id": "taunt",
@@ -4457,7 +4679,9 @@
       "target": "all_enemies",
       "effect": {
         "debuffId": "taunted"
-      }
+      },
+      "nameKey": "skill.taunt.name",
+      "descriptionKey": "skill.taunt.description"
     },
     "teleport": {
       "id": "teleport",
@@ -4479,7 +4703,9 @@
       "target": "self",
       "effect": {
         "buffId": "teleport"
-      }
+      },
+      "nameKey": "skill.teleport.name",
+      "descriptionKey": "skill.teleport.description"
     },
     "thieving": {
       "id": "thieving",
@@ -4500,7 +4726,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 5,
               "max": 15
             },
@@ -4521,7 +4747,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 25,
               "max": 60
             },
@@ -4547,7 +4773,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 80,
               "max": 150
             },
@@ -4573,7 +4799,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 200,
               "max": 400
             },
@@ -4612,7 +4838,9 @@
             "dexterity": 10
           }
         }
-      ]
+      ],
+      "nameKey": "skill.thieving.name",
+      "descriptionKey": "skill.thieving.description"
     },
     "thunder_clap": {
       "id": "thunder_clap",
@@ -4638,7 +4866,9 @@
           }
         },
         "debuffId": "slowed"
-      }
+      },
+      "nameKey": "skill.thunder_clap.name",
+      "descriptionKey": "skill.thunder_clap.description"
     },
     "trapping": {
       "id": "trapping",
@@ -4659,7 +4889,7 @@
           "resources": [
             {
               "itemId": "trapped_animal",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -4680,7 +4910,7 @@
           "resources": [
             {
               "itemId": "trapped_animal_quality",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -4706,7 +4936,7 @@
           "resources": [
             {
               "itemId": "trapped_monster",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -4750,7 +4980,9 @@
             "luck": 6
           }
         }
-      ]
+      ],
+      "nameKey": "skill.trapping.name",
+      "descriptionKey": "skill.trapping.description"
     },
     "treasure_hunting": {
       "id": "treasure_hunting",
@@ -4771,7 +5003,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 10,
               "max": 30
             },
@@ -4792,7 +5024,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 50,
               "max": 100
             },
@@ -4818,7 +5050,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 150,
               "max": 300
             },
@@ -4849,7 +5081,7 @@
           "resources": [
             {
               "itemId": "gold",
-              "chance": 1.0,
+              "chance": 1,
               "min": 500,
               "max": 1000
             },
@@ -4893,7 +5125,9 @@
             "itemFindRate": 0.2
           }
         }
-      ]
+      ],
+      "nameKey": "skill.treasure_hunting.name",
+      "descriptionKey": "skill.treasure_hunting.description"
     },
     "vanish": {
       "id": "vanish",
@@ -4915,7 +5149,9 @@
       "target": "self",
       "effect": {
         "buffId": "vanish"
-      }
+      },
+      "nameKey": "skill.vanish.name",
+      "descriptionKey": "skill.vanish.description"
     },
     "vendetta": {
       "id": "vendetta",
@@ -4937,7 +5173,9 @@
       "target": "enemy",
       "effect": {
         "debuffId": "vendetta"
-      }
+      },
+      "nameKey": "skill.vendetta.name",
+      "descriptionKey": "skill.vendetta.description"
     },
     "victory_rush": {
       "id": "victory_rush",
@@ -4953,7 +5191,9 @@
       "unlockLevel": 18,
       "passiveBonus": {
         "special": "victory_rush"
-      }
+      },
+      "nameKey": "skill.victory_rush.name",
+      "descriptionKey": "skill.victory_rush.description"
     },
     "war_cry": {
       "id": "war_cry",
@@ -4975,7 +5215,9 @@
       "target": "all_allies",
       "effect": {
         "buffId": "war_cry"
-      }
+      },
+      "nameKey": "skill.war_cry.name",
+      "descriptionKey": "skill.war_cry.description"
     },
     "warrior_strength": {
       "id": "warrior_strength",
@@ -4995,7 +5237,9 @@
         "combatStatBonus": {
           "attack": 5
         }
-      }
+      },
+      "nameKey": "skill.warrior_strength.name",
+      "descriptionKey": "skill.warrior_strength.description"
     },
     "whirlwind": {
       "id": "whirlwind",
@@ -5023,7 +5267,9 @@
             "multiplier": 1.8
           }
         }
-      }
+      },
+      "nameKey": "skill.whirlwind.name",
+      "descriptionKey": "skill.whirlwind.description"
     },
     "woodcutting": {
       "id": "woodcutting",
@@ -5044,7 +5290,7 @@
           "resources": [
             {
               "itemId": "oak_log",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 3
             },
@@ -5065,7 +5311,7 @@
           "resources": [
             {
               "itemId": "maple_log",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -5091,7 +5337,7 @@
           "resources": [
             {
               "itemId": "yew_log",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 2
             },
@@ -5117,7 +5363,7 @@
           "resources": [
             {
               "itemId": "magic_log",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -5143,7 +5389,7 @@
           "resources": [
             {
               "itemId": "elder_log",
-              "chance": 1.0,
+              "chance": 1,
               "min": 1,
               "max": 1
             },
@@ -5179,7 +5425,9 @@
             "goldGeneration": 0.15
           }
         }
-      ]
+      ],
+      "nameKey": "skill.woodcutting.name",
+      "descriptionKey": "skill.woodcutting.description"
     }
   }
 }

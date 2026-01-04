@@ -15,6 +15,7 @@ import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
 import SettingsPanel from './SettingsPanel';
+import PatchNotesModal from './PatchNotesModal';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
@@ -26,6 +27,7 @@ export default function GameView() {
     'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics'
   >('character');
   const [showSettings, setShowSettings] = useState(false);
+  const [showPatchNotes, setShowPatchNotes] = useState(false);
 
   // Initialize game loop
   useGameLoop();
@@ -62,6 +64,9 @@ export default function GameView() {
     <div className={`game-view ${activeRightPanel === 'skills' ? 'skills-active' : ''}`}>
       <div className="game-header">
         <h2 className="game-title-header">Tales of Heroes, Legends & Beasts</h2>
+        <button className="patch-notes-button" onClick={() => setShowPatchNotes(true)}>
+          Patch Notes
+        </button>
       </div>
       <div className="game-view-center">
         {activeRightPanel === 'skills' ? (
@@ -153,6 +158,7 @@ export default function GameView() {
         </div>
       </div>
       <SettingsPanel isOpen={showSettings} onClose={() => setShowSettings(false)} />
+      <PatchNotesModal isOpen={showPatchNotes} onClose={() => setShowPatchNotes(false)} />
     </div>
   );
 }

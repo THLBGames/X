@@ -15,7 +15,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.alchemy_boost_consumable.name",
+      "descriptionKey": "upgrade.alchemy_boost_consumable.description"
     },
     "alchemy_upgrade_I": {
       "id": "alchemy_upgrade_I",
@@ -32,7 +34,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.alchemy_upgrade_I.name",
+      "descriptionKey": "upgrade.alchemy_upgrade_I.description"
     },
     "alchemy_upgrade_II": {
       "id": "alchemy_upgrade_II",
@@ -51,7 +55,9 @@
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.alchemy_upgrade_II.name",
+      "descriptionKey": "upgrade.alchemy_upgrade_II.description"
     },
     "alchemy_upgrade_III": {
       "id": "alchemy_upgrade_III",
@@ -70,7 +76,9 @@
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.alchemy_upgrade_III.name",
+      "descriptionKey": "upgrade.alchemy_upgrade_III.description"
     },
     "alchemy_upgrade_IV": {
       "id": "alchemy_upgrade_IV",
@@ -89,7 +97,9 @@
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.alchemy_upgrade_IV.name",
+      "descriptionKey": "upgrade.alchemy_upgrade_IV.description"
     },
     "alchemy_upgrade_V": {
       "id": "alchemy_upgrade_V",
@@ -108,7 +118,9 @@
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.alchemy_upgrade_V.name",
+      "descriptionKey": "upgrade.alchemy_upgrade_V.description"
     },
     "archaeology_boost_consumable": {
       "id": "archaeology_boost_consumable",
@@ -123,7 +135,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.archaeology_boost_consumable.name",
+      "descriptionKey": "upgrade.archaeology_boost_consumable.description"
     },
     "archaeology_upgrade_I": {
       "id": "archaeology_upgrade_I",
@@ -140,7 +154,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.archaeology_upgrade_I.name",
+      "descriptionKey": "upgrade.archaeology_upgrade_I.description"
     },
     "archaeology_upgrade_II": {
       "id": "archaeology_upgrade_II",
@@ -159,7 +175,9 @@
       },
       "requirements": {
         "previousTierId": "archaeology_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.archaeology_upgrade_II.name",
+      "descriptionKey": "upgrade.archaeology_upgrade_II.description"
     },
     "archaeology_upgrade_III": {
       "id": "archaeology_upgrade_III",
@@ -178,7 +196,9 @@
       },
       "requirements": {
         "previousTierId": "archaeology_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.archaeology_upgrade_III.name",
+      "descriptionKey": "upgrade.archaeology_upgrade_III.description"
     },
     "archaeology_upgrade_IV": {
       "id": "archaeology_upgrade_IV",
@@ -197,7 +217,9 @@
       },
       "requirements": {
         "previousTierId": "archaeology_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.archaeology_upgrade_IV.name",
+      "descriptionKey": "upgrade.archaeology_upgrade_IV.description"
     },
     "archaeology_upgrade_V": {
       "id": "archaeology_upgrade_V",
@@ -216,7 +238,9 @@
       },
       "requirements": {
         "previousTierId": "archaeology_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.archaeology_upgrade_V.name",
+      "descriptionKey": "upgrade.archaeology_upgrade_V.description"
     },
     "blacksmithing_boost_consumable": {
       "id": "blacksmithing_boost_consumable",
@@ -231,7 +255,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.blacksmithing_boost_consumable.name",
+      "descriptionKey": "upgrade.blacksmithing_boost_consumable.description"
     },
     "blacksmithing_upgrade_I": {
       "id": "blacksmithing_upgrade_I",
@@ -248,7 +274,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.blacksmithing_upgrade_I.name",
+      "descriptionKey": "upgrade.blacksmithing_upgrade_I.description"
     },
     "blacksmithing_upgrade_II": {
       "id": "blacksmithing_upgrade_II",
@@ -267,7 +295,9 @@
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.blacksmithing_upgrade_II.name",
+      "descriptionKey": "upgrade.blacksmithing_upgrade_II.description"
     },
     "blacksmithing_upgrade_III": {
       "id": "blacksmithing_upgrade_III",
@@ -286,7 +316,9 @@
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.blacksmithing_upgrade_III.name",
+      "descriptionKey": "upgrade.blacksmithing_upgrade_III.description"
     },
     "blacksmithing_upgrade_IV": {
       "id": "blacksmithing_upgrade_IV",
@@ -305,7 +337,9 @@
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.blacksmithing_upgrade_IV.name",
+      "descriptionKey": "upgrade.blacksmithing_upgrade_IV.description"
     },
     "blacksmithing_upgrade_V": {
       "id": "blacksmithing_upgrade_V",
@@ -324,7 +358,9 @@
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.blacksmithing_upgrade_V.name",
+      "descriptionKey": "upgrade.blacksmithing_upgrade_V.description"
     },
     "cooking_boost_consumable": {
       "id": "cooking_boost_consumable",
@@ -339,7 +375,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.cooking_boost_consumable.name",
+      "descriptionKey": "upgrade.cooking_boost_consumable.description"
     },
     "cooking_upgrade_I": {
       "id": "cooking_upgrade_I",
@@ -356,7 +394,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.cooking_upgrade_I.name",
+      "descriptionKey": "upgrade.cooking_upgrade_I.description"
     },
     "cooking_upgrade_II": {
       "id": "cooking_upgrade_II",
@@ -375,7 +415,9 @@
       },
       "requirements": {
         "previousTierId": "cooking_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.cooking_upgrade_II.name",
+      "descriptionKey": "upgrade.cooking_upgrade_II.description"
     },
     "cooking_upgrade_III": {
       "id": "cooking_upgrade_III",
@@ -394,7 +436,9 @@
       },
       "requirements": {
         "previousTierId": "cooking_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.cooking_upgrade_III.name",
+      "descriptionKey": "upgrade.cooking_upgrade_III.description"
     },
     "cooking_upgrade_IV": {
       "id": "cooking_upgrade_IV",
@@ -413,7 +457,9 @@
       },
       "requirements": {
         "previousTierId": "cooking_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.cooking_upgrade_IV.name",
+      "descriptionKey": "upgrade.cooking_upgrade_IV.description"
     },
     "cooking_upgrade_V": {
       "id": "cooking_upgrade_V",
@@ -432,7 +478,9 @@
       },
       "requirements": {
         "previousTierId": "cooking_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.cooking_upgrade_V.name",
+      "descriptionKey": "upgrade.cooking_upgrade_V.description"
     },
     "divination_boost_consumable": {
       "id": "divination_boost_consumable",
@@ -447,7 +495,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.divination_boost_consumable.name",
+      "descriptionKey": "upgrade.divination_boost_consumable.description"
     },
     "divination_upgrade_I": {
       "id": "divination_upgrade_I",
@@ -464,7 +514,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.divination_upgrade_I.name",
+      "descriptionKey": "upgrade.divination_upgrade_I.description"
     },
     "divination_upgrade_II": {
       "id": "divination_upgrade_II",
@@ -483,7 +535,9 @@
       },
       "requirements": {
         "previousTierId": "divination_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.divination_upgrade_II.name",
+      "descriptionKey": "upgrade.divination_upgrade_II.description"
     },
     "divination_upgrade_III": {
       "id": "divination_upgrade_III",
@@ -502,7 +556,9 @@
       },
       "requirements": {
         "previousTierId": "divination_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.divination_upgrade_III.name",
+      "descriptionKey": "upgrade.divination_upgrade_III.description"
     },
     "divination_upgrade_IV": {
       "id": "divination_upgrade_IV",
@@ -521,7 +577,9 @@
       },
       "requirements": {
         "previousTierId": "divination_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.divination_upgrade_IV.name",
+      "descriptionKey": "upgrade.divination_upgrade_IV.description"
     },
     "divination_upgrade_V": {
       "id": "divination_upgrade_V",
@@ -540,7 +598,9 @@
       },
       "requirements": {
         "previousTierId": "divination_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.divination_upgrade_V.name",
+      "descriptionKey": "upgrade.divination_upgrade_V.description"
     },
     "enchanting_boost_consumable": {
       "id": "enchanting_boost_consumable",
@@ -555,7 +615,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.enchanting_boost_consumable.name",
+      "descriptionKey": "upgrade.enchanting_boost_consumable.description"
     },
     "enchanting_upgrade_I": {
       "id": "enchanting_upgrade_I",
@@ -572,7 +634,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.enchanting_upgrade_I.name",
+      "descriptionKey": "upgrade.enchanting_upgrade_I.description"
     },
     "enchanting_upgrade_II": {
       "id": "enchanting_upgrade_II",
@@ -591,7 +655,9 @@
       },
       "requirements": {
         "previousTierId": "enchanting_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.enchanting_upgrade_II.name",
+      "descriptionKey": "upgrade.enchanting_upgrade_II.description"
     },
     "enchanting_upgrade_III": {
       "id": "enchanting_upgrade_III",
@@ -610,7 +676,9 @@
       },
       "requirements": {
         "previousTierId": "enchanting_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.enchanting_upgrade_III.name",
+      "descriptionKey": "upgrade.enchanting_upgrade_III.description"
     },
     "enchanting_upgrade_IV": {
       "id": "enchanting_upgrade_IV",
@@ -629,7 +697,9 @@
       },
       "requirements": {
         "previousTierId": "enchanting_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.enchanting_upgrade_IV.name",
+      "descriptionKey": "upgrade.enchanting_upgrade_IV.description"
     },
     "enchanting_upgrade_V": {
       "id": "enchanting_upgrade_V",
@@ -648,7 +718,9 @@
       },
       "requirements": {
         "previousTierId": "enchanting_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.enchanting_upgrade_V.name",
+      "descriptionKey": "upgrade.enchanting_upgrade_V.description"
     },
     "engineering_boost_consumable": {
       "id": "engineering_boost_consumable",
@@ -663,7 +735,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.engineering_boost_consumable.name",
+      "descriptionKey": "upgrade.engineering_boost_consumable.description"
     },
     "engineering_upgrade_I": {
       "id": "engineering_upgrade_I",
@@ -680,7 +754,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.engineering_upgrade_I.name",
+      "descriptionKey": "upgrade.engineering_upgrade_I.description"
     },
     "engineering_upgrade_II": {
       "id": "engineering_upgrade_II",
@@ -699,7 +775,9 @@
       },
       "requirements": {
         "previousTierId": "engineering_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.engineering_upgrade_II.name",
+      "descriptionKey": "upgrade.engineering_upgrade_II.description"
     },
     "engineering_upgrade_III": {
       "id": "engineering_upgrade_III",
@@ -718,7 +796,9 @@
       },
       "requirements": {
         "previousTierId": "engineering_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.engineering_upgrade_III.name",
+      "descriptionKey": "upgrade.engineering_upgrade_III.description"
     },
     "engineering_upgrade_IV": {
       "id": "engineering_upgrade_IV",
@@ -737,7 +817,9 @@
       },
       "requirements": {
         "previousTierId": "engineering_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.engineering_upgrade_IV.name",
+      "descriptionKey": "upgrade.engineering_upgrade_IV.description"
     },
     "engineering_upgrade_V": {
       "id": "engineering_upgrade_V",
@@ -756,7 +838,9 @@
       },
       "requirements": {
         "previousTierId": "engineering_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.engineering_upgrade_V.name",
+      "descriptionKey": "upgrade.engineering_upgrade_V.description"
     },
     "farming_boost_consumable": {
       "id": "farming_boost_consumable",
@@ -771,7 +855,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.farming_boost_consumable.name",
+      "descriptionKey": "upgrade.farming_boost_consumable.description"
     },
     "farming_upgrade_I": {
       "id": "farming_upgrade_I",
@@ -788,7 +874,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.farming_upgrade_I.name",
+      "descriptionKey": "upgrade.farming_upgrade_I.description"
     },
     "farming_upgrade_II": {
       "id": "farming_upgrade_II",
@@ -807,7 +895,9 @@
       },
       "requirements": {
         "previousTierId": "farming_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.farming_upgrade_II.name",
+      "descriptionKey": "upgrade.farming_upgrade_II.description"
     },
     "farming_upgrade_III": {
       "id": "farming_upgrade_III",
@@ -826,7 +916,9 @@
       },
       "requirements": {
         "previousTierId": "farming_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.farming_upgrade_III.name",
+      "descriptionKey": "upgrade.farming_upgrade_III.description"
     },
     "farming_upgrade_IV": {
       "id": "farming_upgrade_IV",
@@ -845,7 +937,9 @@
       },
       "requirements": {
         "previousTierId": "farming_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.farming_upgrade_IV.name",
+      "descriptionKey": "upgrade.farming_upgrade_IV.description"
     },
     "farming_upgrade_V": {
       "id": "farming_upgrade_V",
@@ -864,7 +958,9 @@
       },
       "requirements": {
         "previousTierId": "farming_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.farming_upgrade_V.name",
+      "descriptionKey": "upgrade.farming_upgrade_V.description"
     },
     "fishing_boost_consumable": {
       "id": "fishing_boost_consumable",
@@ -879,7 +975,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.fishing_boost_consumable.name",
+      "descriptionKey": "upgrade.fishing_boost_consumable.description"
     },
     "fishing_upgrade_I": {
       "id": "fishing_upgrade_I",
@@ -896,7 +994,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.fishing_upgrade_I.name",
+      "descriptionKey": "upgrade.fishing_upgrade_I.description"
     },
     "fishing_upgrade_II": {
       "id": "fishing_upgrade_II",
@@ -915,7 +1015,9 @@
       },
       "requirements": {
         "previousTierId": "fishing_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.fishing_upgrade_II.name",
+      "descriptionKey": "upgrade.fishing_upgrade_II.description"
     },
     "fishing_upgrade_III": {
       "id": "fishing_upgrade_III",
@@ -934,7 +1036,9 @@
       },
       "requirements": {
         "previousTierId": "fishing_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.fishing_upgrade_III.name",
+      "descriptionKey": "upgrade.fishing_upgrade_III.description"
     },
     "fishing_upgrade_IV": {
       "id": "fishing_upgrade_IV",
@@ -953,7 +1057,9 @@
       },
       "requirements": {
         "previousTierId": "fishing_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.fishing_upgrade_IV.name",
+      "descriptionKey": "upgrade.fishing_upgrade_IV.description"
     },
     "fishing_upgrade_V": {
       "id": "fishing_upgrade_V",
@@ -972,7 +1078,9 @@
       },
       "requirements": {
         "previousTierId": "fishing_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.fishing_upgrade_V.name",
+      "descriptionKey": "upgrade.fishing_upgrade_V.description"
     },
     "foraging_boost_consumable": {
       "id": "foraging_boost_consumable",
@@ -987,7 +1095,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.foraging_boost_consumable.name",
+      "descriptionKey": "upgrade.foraging_boost_consumable.description"
     },
     "foraging_upgrade_I": {
       "id": "foraging_upgrade_I",
@@ -1004,7 +1114,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.foraging_upgrade_I.name",
+      "descriptionKey": "upgrade.foraging_upgrade_I.description"
     },
     "foraging_upgrade_II": {
       "id": "foraging_upgrade_II",
@@ -1023,7 +1135,9 @@
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.foraging_upgrade_II.name",
+      "descriptionKey": "upgrade.foraging_upgrade_II.description"
     },
     "foraging_upgrade_III": {
       "id": "foraging_upgrade_III",
@@ -1042,7 +1156,9 @@
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.foraging_upgrade_III.name",
+      "descriptionKey": "upgrade.foraging_upgrade_III.description"
     },
     "foraging_upgrade_IV": {
       "id": "foraging_upgrade_IV",
@@ -1061,7 +1177,9 @@
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.foraging_upgrade_IV.name",
+      "descriptionKey": "upgrade.foraging_upgrade_IV.description"
     },
     "foraging_upgrade_V": {
       "id": "foraging_upgrade_V",
@@ -1080,7 +1198,9 @@
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.foraging_upgrade_V.name",
+      "descriptionKey": "upgrade.foraging_upgrade_V.description"
     },
     "gathering_boost_consumable": {
       "id": "gathering_boost_consumable",
@@ -1095,7 +1215,9 @@
         "experienceMultiplier": 1.15
       },
       "actionDuration": 75,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.gathering_boost_consumable.name",
+      "descriptionKey": "upgrade.gathering_boost_consumable.description"
     },
     "gathering_upgrade_I": {
       "id": "gathering_upgrade_I",
@@ -1112,7 +1234,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.gathering_upgrade_I.name",
+      "descriptionKey": "upgrade.gathering_upgrade_I.description"
     },
     "gathering_upgrade_II": {
       "id": "gathering_upgrade_II",
@@ -1131,7 +1255,9 @@
       },
       "requirements": {
         "previousTierId": "gathering_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.gathering_upgrade_II.name",
+      "descriptionKey": "upgrade.gathering_upgrade_II.description"
     },
     "gathering_upgrade_III": {
       "id": "gathering_upgrade_III",
@@ -1150,7 +1276,9 @@
       },
       "requirements": {
         "previousTierId": "gathering_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.gathering_upgrade_III.name",
+      "descriptionKey": "upgrade.gathering_upgrade_III.description"
     },
     "gathering_upgrade_IV": {
       "id": "gathering_upgrade_IV",
@@ -1169,7 +1297,9 @@
       },
       "requirements": {
         "previousTierId": "gathering_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.gathering_upgrade_IV.name",
+      "descriptionKey": "upgrade.gathering_upgrade_IV.description"
     },
     "gathering_upgrade_V": {
       "id": "gathering_upgrade_V",
@@ -1188,7 +1318,9 @@
       },
       "requirements": {
         "previousTierId": "gathering_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.gathering_upgrade_V.name",
+      "descriptionKey": "upgrade.gathering_upgrade_V.description"
     },
     "herbalism_boost_consumable": {
       "id": "herbalism_boost_consumable",
@@ -1203,7 +1335,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.herbalism_boost_consumable.name",
+      "descriptionKey": "upgrade.herbalism_boost_consumable.description"
     },
     "herbalism_upgrade_I": {
       "id": "herbalism_upgrade_I",
@@ -1220,7 +1354,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.herbalism_upgrade_I.name",
+      "descriptionKey": "upgrade.herbalism_upgrade_I.description"
     },
     "herbalism_upgrade_II": {
       "id": "herbalism_upgrade_II",
@@ -1239,7 +1375,9 @@
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.herbalism_upgrade_II.name",
+      "descriptionKey": "upgrade.herbalism_upgrade_II.description"
     },
     "herbalism_upgrade_III": {
       "id": "herbalism_upgrade_III",
@@ -1258,7 +1396,9 @@
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.herbalism_upgrade_III.name",
+      "descriptionKey": "upgrade.herbalism_upgrade_III.description"
     },
     "herbalism_upgrade_IV": {
       "id": "herbalism_upgrade_IV",
@@ -1277,7 +1417,9 @@
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.herbalism_upgrade_IV.name",
+      "descriptionKey": "upgrade.herbalism_upgrade_IV.description"
     },
     "herbalism_upgrade_V": {
       "id": "herbalism_upgrade_V",
@@ -1296,7 +1438,9 @@
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.herbalism_upgrade_V.name",
+      "descriptionKey": "upgrade.herbalism_upgrade_V.description"
     },
     "hunting_boost_consumable": {
       "id": "hunting_boost_consumable",
@@ -1311,7 +1455,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.hunting_boost_consumable.name",
+      "descriptionKey": "upgrade.hunting_boost_consumable.description"
     },
     "hunting_upgrade_I": {
       "id": "hunting_upgrade_I",
@@ -1328,7 +1474,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.hunting_upgrade_I.name",
+      "descriptionKey": "upgrade.hunting_upgrade_I.description"
     },
     "hunting_upgrade_II": {
       "id": "hunting_upgrade_II",
@@ -1347,7 +1495,9 @@
       },
       "requirements": {
         "previousTierId": "hunting_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.hunting_upgrade_II.name",
+      "descriptionKey": "upgrade.hunting_upgrade_II.description"
     },
     "hunting_upgrade_III": {
       "id": "hunting_upgrade_III",
@@ -1366,7 +1516,9 @@
       },
       "requirements": {
         "previousTierId": "hunting_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.hunting_upgrade_III.name",
+      "descriptionKey": "upgrade.hunting_upgrade_III.description"
     },
     "hunting_upgrade_IV": {
       "id": "hunting_upgrade_IV",
@@ -1385,7 +1537,9 @@
       },
       "requirements": {
         "previousTierId": "hunting_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.hunting_upgrade_IV.name",
+      "descriptionKey": "upgrade.hunting_upgrade_IV.description"
     },
     "hunting_upgrade_V": {
       "id": "hunting_upgrade_V",
@@ -1404,7 +1558,9 @@
       },
       "requirements": {
         "previousTierId": "hunting_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.hunting_upgrade_V.name",
+      "descriptionKey": "upgrade.hunting_upgrade_V.description"
     },
     "hybrid_boost_consumable": {
       "id": "hybrid_boost_consumable",
@@ -1419,7 +1575,9 @@
         "experienceMultiplier": 1.15
       },
       "actionDuration": 75,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.hybrid_boost_consumable.name",
+      "descriptionKey": "upgrade.hybrid_boost_consumable.description"
     },
     "hybrid_upgrade_I": {
       "id": "hybrid_upgrade_I",
@@ -1436,7 +1594,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.hybrid_upgrade_I.name",
+      "descriptionKey": "upgrade.hybrid_upgrade_I.description"
     },
     "hybrid_upgrade_II": {
       "id": "hybrid_upgrade_II",
@@ -1455,7 +1615,9 @@
       },
       "requirements": {
         "previousTierId": "hybrid_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.hybrid_upgrade_II.name",
+      "descriptionKey": "upgrade.hybrid_upgrade_II.description"
     },
     "hybrid_upgrade_III": {
       "id": "hybrid_upgrade_III",
@@ -1474,7 +1636,9 @@
       },
       "requirements": {
         "previousTierId": "hybrid_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.hybrid_upgrade_III.name",
+      "descriptionKey": "upgrade.hybrid_upgrade_III.description"
     },
     "hybrid_upgrade_IV": {
       "id": "hybrid_upgrade_IV",
@@ -1493,7 +1657,9 @@
       },
       "requirements": {
         "previousTierId": "hybrid_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.hybrid_upgrade_IV.name",
+      "descriptionKey": "upgrade.hybrid_upgrade_IV.description"
     },
     "hybrid_upgrade_V": {
       "id": "hybrid_upgrade_V",
@@ -1512,7 +1678,9 @@
       },
       "requirements": {
         "previousTierId": "hybrid_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.hybrid_upgrade_V.name",
+      "descriptionKey": "upgrade.hybrid_upgrade_V.description"
     },
     "jewelcrafting_boost_consumable": {
       "id": "jewelcrafting_boost_consumable",
@@ -1527,7 +1695,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.jewelcrafting_boost_consumable.name",
+      "descriptionKey": "upgrade.jewelcrafting_boost_consumable.description"
     },
     "jewelcrafting_upgrade_I": {
       "id": "jewelcrafting_upgrade_I",
@@ -1544,7 +1714,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.jewelcrafting_upgrade_I.name",
+      "descriptionKey": "upgrade.jewelcrafting_upgrade_I.description"
     },
     "jewelcrafting_upgrade_II": {
       "id": "jewelcrafting_upgrade_II",
@@ -1563,7 +1735,9 @@
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.jewelcrafting_upgrade_II.name",
+      "descriptionKey": "upgrade.jewelcrafting_upgrade_II.description"
     },
     "jewelcrafting_upgrade_III": {
       "id": "jewelcrafting_upgrade_III",
@@ -1582,7 +1756,9 @@
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.jewelcrafting_upgrade_III.name",
+      "descriptionKey": "upgrade.jewelcrafting_upgrade_III.description"
     },
     "jewelcrafting_upgrade_IV": {
       "id": "jewelcrafting_upgrade_IV",
@@ -1601,7 +1777,9 @@
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.jewelcrafting_upgrade_IV.name",
+      "descriptionKey": "upgrade.jewelcrafting_upgrade_IV.description"
     },
     "jewelcrafting_upgrade_V": {
       "id": "jewelcrafting_upgrade_V",
@@ -1620,7 +1798,9 @@
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.jewelcrafting_upgrade_V.name",
+      "descriptionKey": "upgrade.jewelcrafting_upgrade_V.description"
     },
     "leatherworking_boost_consumable": {
       "id": "leatherworking_boost_consumable",
@@ -1635,7 +1815,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.leatherworking_boost_consumable.name",
+      "descriptionKey": "upgrade.leatherworking_boost_consumable.description"
     },
     "leatherworking_upgrade_I": {
       "id": "leatherworking_upgrade_I",
@@ -1652,7 +1834,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.leatherworking_upgrade_I.name",
+      "descriptionKey": "upgrade.leatherworking_upgrade_I.description"
     },
     "leatherworking_upgrade_II": {
       "id": "leatherworking_upgrade_II",
@@ -1671,7 +1855,9 @@
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.leatherworking_upgrade_II.name",
+      "descriptionKey": "upgrade.leatherworking_upgrade_II.description"
     },
     "leatherworking_upgrade_III": {
       "id": "leatherworking_upgrade_III",
@@ -1690,7 +1876,9 @@
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.leatherworking_upgrade_III.name",
+      "descriptionKey": "upgrade.leatherworking_upgrade_III.description"
     },
     "leatherworking_upgrade_IV": {
       "id": "leatherworking_upgrade_IV",
@@ -1709,7 +1897,9 @@
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.leatherworking_upgrade_IV.name",
+      "descriptionKey": "upgrade.leatherworking_upgrade_IV.description"
     },
     "leatherworking_upgrade_V": {
       "id": "leatherworking_upgrade_V",
@@ -1728,7 +1918,9 @@
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.leatherworking_upgrade_V.name",
+      "descriptionKey": "upgrade.leatherworking_upgrade_V.description"
     },
     "mining_boost_consumable": {
       "id": "mining_boost_consumable",
@@ -1743,7 +1935,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.mining_boost_consumable.name",
+      "descriptionKey": "upgrade.mining_boost_consumable.description"
     },
     "mining_upgrade_I": {
       "id": "mining_upgrade_I",
@@ -1760,7 +1954,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.mining_upgrade_I.name",
+      "descriptionKey": "upgrade.mining_upgrade_I.description"
     },
     "mining_upgrade_II": {
       "id": "mining_upgrade_II",
@@ -1779,7 +1975,9 @@
       },
       "requirements": {
         "previousTierId": "mining_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.mining_upgrade_II.name",
+      "descriptionKey": "upgrade.mining_upgrade_II.description"
     },
     "mining_upgrade_III": {
       "id": "mining_upgrade_III",
@@ -1798,7 +1996,9 @@
       },
       "requirements": {
         "previousTierId": "mining_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.mining_upgrade_III.name",
+      "descriptionKey": "upgrade.mining_upgrade_III.description"
     },
     "mining_upgrade_IV": {
       "id": "mining_upgrade_IV",
@@ -1817,7 +2017,9 @@
       },
       "requirements": {
         "previousTierId": "mining_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.mining_upgrade_IV.name",
+      "descriptionKey": "upgrade.mining_upgrade_IV.description"
     },
     "mining_upgrade_V": {
       "id": "mining_upgrade_V",
@@ -1836,7 +2038,9 @@
       },
       "requirements": {
         "previousTierId": "mining_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.mining_upgrade_V.name",
+      "descriptionKey": "upgrade.mining_upgrade_V.description"
     },
     "production_boost_consumable": {
       "id": "production_boost_consumable",
@@ -1851,7 +2055,9 @@
         "experienceMultiplier": 1.15
       },
       "actionDuration": 75,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.production_boost_consumable.name",
+      "descriptionKey": "upgrade.production_boost_consumable.description"
     },
     "production_upgrade_I": {
       "id": "production_upgrade_I",
@@ -1868,7 +2074,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.production_upgrade_I.name",
+      "descriptionKey": "upgrade.production_upgrade_I.description"
     },
     "production_upgrade_II": {
       "id": "production_upgrade_II",
@@ -1887,7 +2095,9 @@
       },
       "requirements": {
         "previousTierId": "production_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.production_upgrade_II.name",
+      "descriptionKey": "upgrade.production_upgrade_II.description"
     },
     "production_upgrade_III": {
       "id": "production_upgrade_III",
@@ -1906,7 +2116,9 @@
       },
       "requirements": {
         "previousTierId": "production_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.production_upgrade_III.name",
+      "descriptionKey": "upgrade.production_upgrade_III.description"
     },
     "production_upgrade_IV": {
       "id": "production_upgrade_IV",
@@ -1925,7 +2137,9 @@
       },
       "requirements": {
         "previousTierId": "production_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.production_upgrade_IV.name",
+      "descriptionKey": "upgrade.production_upgrade_IV.description"
     },
     "production_upgrade_V": {
       "id": "production_upgrade_V",
@@ -1944,7 +2158,9 @@
       },
       "requirements": {
         "previousTierId": "production_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.production_upgrade_V.name",
+      "descriptionKey": "upgrade.production_upgrade_V.description"
     },
     "quarrying_boost_consumable": {
       "id": "quarrying_boost_consumable",
@@ -1959,7 +2175,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.quarrying_boost_consumable.name",
+      "descriptionKey": "upgrade.quarrying_boost_consumable.description"
     },
     "quarrying_upgrade_I": {
       "id": "quarrying_upgrade_I",
@@ -1976,7 +2194,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.quarrying_upgrade_I.name",
+      "descriptionKey": "upgrade.quarrying_upgrade_I.description"
     },
     "quarrying_upgrade_II": {
       "id": "quarrying_upgrade_II",
@@ -1995,7 +2215,9 @@
       },
       "requirements": {
         "previousTierId": "quarrying_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.quarrying_upgrade_II.name",
+      "descriptionKey": "upgrade.quarrying_upgrade_II.description"
     },
     "quarrying_upgrade_III": {
       "id": "quarrying_upgrade_III",
@@ -2014,7 +2236,9 @@
       },
       "requirements": {
         "previousTierId": "quarrying_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.quarrying_upgrade_III.name",
+      "descriptionKey": "upgrade.quarrying_upgrade_III.description"
     },
     "quarrying_upgrade_IV": {
       "id": "quarrying_upgrade_IV",
@@ -2033,7 +2257,9 @@
       },
       "requirements": {
         "previousTierId": "quarrying_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.quarrying_upgrade_IV.name",
+      "descriptionKey": "upgrade.quarrying_upgrade_IV.description"
     },
     "quarrying_upgrade_V": {
       "id": "quarrying_upgrade_V",
@@ -2052,7 +2278,9 @@
       },
       "requirements": {
         "previousTierId": "quarrying_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.quarrying_upgrade_V.name",
+      "descriptionKey": "upgrade.quarrying_upgrade_V.description"
     },
     "runecrafting_boost_consumable": {
       "id": "runecrafting_boost_consumable",
@@ -2067,7 +2295,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.runecrafting_boost_consumable.name",
+      "descriptionKey": "upgrade.runecrafting_boost_consumable.description"
     },
     "runecrafting_upgrade_I": {
       "id": "runecrafting_upgrade_I",
@@ -2084,7 +2314,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.runecrafting_upgrade_I.name",
+      "descriptionKey": "upgrade.runecrafting_upgrade_I.description"
     },
     "runecrafting_upgrade_II": {
       "id": "runecrafting_upgrade_II",
@@ -2103,7 +2335,9 @@
       },
       "requirements": {
         "previousTierId": "runecrafting_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.runecrafting_upgrade_II.name",
+      "descriptionKey": "upgrade.runecrafting_upgrade_II.description"
     },
     "runecrafting_upgrade_III": {
       "id": "runecrafting_upgrade_III",
@@ -2122,7 +2356,9 @@
       },
       "requirements": {
         "previousTierId": "runecrafting_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.runecrafting_upgrade_III.name",
+      "descriptionKey": "upgrade.runecrafting_upgrade_III.description"
     },
     "runecrafting_upgrade_IV": {
       "id": "runecrafting_upgrade_IV",
@@ -2141,7 +2377,9 @@
       },
       "requirements": {
         "previousTierId": "runecrafting_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.runecrafting_upgrade_IV.name",
+      "descriptionKey": "upgrade.runecrafting_upgrade_IV.description"
     },
     "runecrafting_upgrade_V": {
       "id": "runecrafting_upgrade_V",
@@ -2160,7 +2398,9 @@
       },
       "requirements": {
         "previousTierId": "runecrafting_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.runecrafting_upgrade_V.name",
+      "descriptionKey": "upgrade.runecrafting_upgrade_V.description"
     },
     "tailoring_boost_consumable": {
       "id": "tailoring_boost_consumable",
@@ -2175,7 +2415,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.tailoring_boost_consumable.name",
+      "descriptionKey": "upgrade.tailoring_boost_consumable.description"
     },
     "tailoring_upgrade_I": {
       "id": "tailoring_upgrade_I",
@@ -2192,7 +2434,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.tailoring_upgrade_I.name",
+      "descriptionKey": "upgrade.tailoring_upgrade_I.description"
     },
     "tailoring_upgrade_II": {
       "id": "tailoring_upgrade_II",
@@ -2211,7 +2455,9 @@
       },
       "requirements": {
         "previousTierId": "tailoring_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.tailoring_upgrade_II.name",
+      "descriptionKey": "upgrade.tailoring_upgrade_II.description"
     },
     "tailoring_upgrade_III": {
       "id": "tailoring_upgrade_III",
@@ -2230,7 +2476,9 @@
       },
       "requirements": {
         "previousTierId": "tailoring_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.tailoring_upgrade_III.name",
+      "descriptionKey": "upgrade.tailoring_upgrade_III.description"
     },
     "tailoring_upgrade_IV": {
       "id": "tailoring_upgrade_IV",
@@ -2249,7 +2497,9 @@
       },
       "requirements": {
         "previousTierId": "tailoring_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.tailoring_upgrade_IV.name",
+      "descriptionKey": "upgrade.tailoring_upgrade_IV.description"
     },
     "tailoring_upgrade_V": {
       "id": "tailoring_upgrade_V",
@@ -2268,7 +2518,9 @@
       },
       "requirements": {
         "previousTierId": "tailoring_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.tailoring_upgrade_V.name",
+      "descriptionKey": "upgrade.tailoring_upgrade_V.description"
     },
     "thieving_boost_consumable": {
       "id": "thieving_boost_consumable",
@@ -2283,7 +2535,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.thieving_boost_consumable.name",
+      "descriptionKey": "upgrade.thieving_boost_consumable.description"
     },
     "thieving_upgrade_I": {
       "id": "thieving_upgrade_I",
@@ -2300,7 +2554,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.thieving_upgrade_I.name",
+      "descriptionKey": "upgrade.thieving_upgrade_I.description"
     },
     "thieving_upgrade_II": {
       "id": "thieving_upgrade_II",
@@ -2319,7 +2575,9 @@
       },
       "requirements": {
         "previousTierId": "thieving_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.thieving_upgrade_II.name",
+      "descriptionKey": "upgrade.thieving_upgrade_II.description"
     },
     "thieving_upgrade_III": {
       "id": "thieving_upgrade_III",
@@ -2338,7 +2596,9 @@
       },
       "requirements": {
         "previousTierId": "thieving_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.thieving_upgrade_III.name",
+      "descriptionKey": "upgrade.thieving_upgrade_III.description"
     },
     "thieving_upgrade_IV": {
       "id": "thieving_upgrade_IV",
@@ -2357,7 +2617,9 @@
       },
       "requirements": {
         "previousTierId": "thieving_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.thieving_upgrade_IV.name",
+      "descriptionKey": "upgrade.thieving_upgrade_IV.description"
     },
     "thieving_upgrade_V": {
       "id": "thieving_upgrade_V",
@@ -2376,7 +2638,9 @@
       },
       "requirements": {
         "previousTierId": "thieving_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.thieving_upgrade_V.name",
+      "descriptionKey": "upgrade.thieving_upgrade_V.description"
     },
     "trapping_boost_consumable": {
       "id": "trapping_boost_consumable",
@@ -2391,7 +2655,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.trapping_boost_consumable.name",
+      "descriptionKey": "upgrade.trapping_boost_consumable.description"
     },
     "trapping_upgrade_I": {
       "id": "trapping_upgrade_I",
@@ -2408,7 +2674,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.trapping_upgrade_I.name",
+      "descriptionKey": "upgrade.trapping_upgrade_I.description"
     },
     "trapping_upgrade_II": {
       "id": "trapping_upgrade_II",
@@ -2427,7 +2695,9 @@
       },
       "requirements": {
         "previousTierId": "trapping_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.trapping_upgrade_II.name",
+      "descriptionKey": "upgrade.trapping_upgrade_II.description"
     },
     "trapping_upgrade_III": {
       "id": "trapping_upgrade_III",
@@ -2446,7 +2716,9 @@
       },
       "requirements": {
         "previousTierId": "trapping_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.trapping_upgrade_III.name",
+      "descriptionKey": "upgrade.trapping_upgrade_III.description"
     },
     "trapping_upgrade_IV": {
       "id": "trapping_upgrade_IV",
@@ -2465,7 +2737,9 @@
       },
       "requirements": {
         "previousTierId": "trapping_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.trapping_upgrade_IV.name",
+      "descriptionKey": "upgrade.trapping_upgrade_IV.description"
     },
     "trapping_upgrade_V": {
       "id": "trapping_upgrade_V",
@@ -2484,7 +2758,9 @@
       },
       "requirements": {
         "previousTierId": "trapping_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.trapping_upgrade_V.name",
+      "descriptionKey": "upgrade.trapping_upgrade_V.description"
     },
     "treasure_hunting_boost_consumable": {
       "id": "treasure_hunting_boost_consumable",
@@ -2499,7 +2775,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.treasure_hunting_boost_consumable.name",
+      "descriptionKey": "upgrade.treasure_hunting_boost_consumable.description"
     },
     "treasure_hunting_upgrade_I": {
       "id": "treasure_hunting_upgrade_I",
@@ -2516,7 +2794,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.treasure_hunting_upgrade_I.name",
+      "descriptionKey": "upgrade.treasure_hunting_upgrade_I.description"
     },
     "treasure_hunting_upgrade_II": {
       "id": "treasure_hunting_upgrade_II",
@@ -2535,7 +2815,9 @@
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.treasure_hunting_upgrade_II.name",
+      "descriptionKey": "upgrade.treasure_hunting_upgrade_II.description"
     },
     "treasure_hunting_upgrade_III": {
       "id": "treasure_hunting_upgrade_III",
@@ -2554,7 +2836,9 @@
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.treasure_hunting_upgrade_III.name",
+      "descriptionKey": "upgrade.treasure_hunting_upgrade_III.description"
     },
     "treasure_hunting_upgrade_IV": {
       "id": "treasure_hunting_upgrade_IV",
@@ -2573,7 +2857,9 @@
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.treasure_hunting_upgrade_IV.name",
+      "descriptionKey": "upgrade.treasure_hunting_upgrade_IV.description"
     },
     "treasure_hunting_upgrade_V": {
       "id": "treasure_hunting_upgrade_V",
@@ -2592,7 +2878,9 @@
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.treasure_hunting_upgrade_V.name",
+      "descriptionKey": "upgrade.treasure_hunting_upgrade_V.description"
     },
     "woodcutting_boost_consumable": {
       "id": "woodcutting_boost_consumable",
@@ -2607,7 +2895,9 @@
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.woodcutting_boost_consumable.name",
+      "descriptionKey": "upgrade.woodcutting_boost_consumable.description"
     },
     "woodcutting_upgrade_I": {
       "id": "woodcutting_upgrade_I",
@@ -2624,7 +2914,9 @@
         "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
-      "requirements": {}
+      "requirements": {},
+      "nameKey": "upgrade.woodcutting_upgrade_I.name",
+      "descriptionKey": "upgrade.woodcutting_upgrade_I.description"
     },
     "woodcutting_upgrade_II": {
       "id": "woodcutting_upgrade_II",
@@ -2643,7 +2935,9 @@
       },
       "requirements": {
         "previousTierId": "woodcutting_upgrade_I"
-      }
+      },
+      "nameKey": "upgrade.woodcutting_upgrade_II.name",
+      "descriptionKey": "upgrade.woodcutting_upgrade_II.description"
     },
     "woodcutting_upgrade_III": {
       "id": "woodcutting_upgrade_III",
@@ -2662,7 +2956,9 @@
       },
       "requirements": {
         "previousTierId": "woodcutting_upgrade_II"
-      }
+      },
+      "nameKey": "upgrade.woodcutting_upgrade_III.name",
+      "descriptionKey": "upgrade.woodcutting_upgrade_III.description"
     },
     "woodcutting_upgrade_IV": {
       "id": "woodcutting_upgrade_IV",
@@ -2681,7 +2977,9 @@
       },
       "requirements": {
         "previousTierId": "woodcutting_upgrade_III"
-      }
+      },
+      "nameKey": "upgrade.woodcutting_upgrade_IV.name",
+      "descriptionKey": "upgrade.woodcutting_upgrade_IV.description"
     },
     "woodcutting_upgrade_V": {
       "id": "woodcutting_upgrade_V",
@@ -2700,7 +2998,9 @@
       },
       "requirements": {
         "previousTierId": "woodcutting_upgrade_IV"
-      }
+      },
+      "nameKey": "upgrade.woodcutting_upgrade_V.name",
+      "descriptionKey": "upgrade.woodcutting_upgrade_V.description"
     }
   }
 }

@@ -13,7 +13,9 @@
         "experienceMultiplier": 1.4,
         "speedMultiplier": 0.8,
         "yieldMultiplier": 1.1
-      }
+      },
+      "nameKey": "mercenary.crafting_mercenary.name",
+      "descriptionKey": "mercenary.crafting_mercenary.description"
     },
     "foraging_mercenary": {
       "id": "foraging_mercenary",
@@ -26,7 +28,9 @@
         "experienceMultiplier": 1.3,
         "speedMultiplier": 0.9,
         "yieldMultiplier": 1.15
-      }
+      },
+      "nameKey": "mercenary.foraging_mercenary.name",
+      "descriptionKey": "mercenary.foraging_mercenary.description"
     },
     "mage_mercenary": {
       "id": "mage_mercenary",
@@ -47,7 +51,9 @@
         "speed": 14,
         "criticalChance": 8,
         "criticalDamage": 1.8
-      }
+      },
+      "nameKey": "mercenary.mage_mercenary.name",
+      "descriptionKey": "mercenary.mage_mercenary.description"
     },
     "mining_mercenary": {
       "id": "mining_mercenary",
@@ -60,7 +66,9 @@
         "experienceMultiplier": 1.25,
         "speedMultiplier": 0.85,
         "yieldMultiplier": 1.2
-      }
+      },
+      "nameKey": "mercenary.mining_mercenary.name",
+      "descriptionKey": "mercenary.mining_mercenary.description"
     },
     "rogue_mercenary": {
       "id": "rogue_mercenary",
@@ -80,8 +88,10 @@
         "magicDefense": 8,
         "speed": 18,
         "criticalChance": 15,
-        "criticalDamage": 2.0
-      }
+        "criticalDamage": 2
+      },
+      "nameKey": "mercenary.rogue_mercenary.name",
+      "descriptionKey": "mercenary.rogue_mercenary.description"
     },
     "warrior_mercenary": {
       "id": "warrior_mercenary",
@@ -102,7 +112,9 @@
         "speed": 12,
         "criticalChance": 5,
         "criticalDamage": 1.5
-      }
+      },
+      "nameKey": "mercenary.warrior_mercenary.name",
+      "descriptionKey": "mercenary.warrior_mercenary.description"
     }
   }
 }

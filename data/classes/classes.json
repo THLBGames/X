@@ -75,7 +75,9 @@
           "heavy",
           "medium"
         ]
-      }
+      },
+      "nameKey": "class.berserker.name",
+      "descriptionKey": "class.berserker.description"
     },
     "guardian": {
       "id": "guardian",
@@ -95,7 +97,7 @@
       },
       "statGrowth": {
         "strength": 2.5,
-        "dexterity": 1.0,
+        "dexterity": 1,
         "intelligence": 0.6,
         "vitality": 4.2,
         "wisdom": 1.8,
@@ -146,7 +148,9 @@
         "armorTypes": [
           "heavy"
         ]
-      }
+      },
+      "nameKey": "class.guardian.name",
+      "descriptionKey": "class.guardian.description"
     },
     "mage": {
       "id": "mage",
@@ -214,7 +218,9 @@
           "light",
           "cloth"
         ]
-      }
+      },
+      "nameKey": "class.mage.name",
+      "descriptionKey": "class.mage.description"
     },
     "necromancer": {
       "id": "necromancer",
@@ -234,11 +240,11 @@
       },
       "statGrowth": {
         "strength": 0.8,
-        "dexterity": 1.0,
+        "dexterity": 1,
         "intelligence": 3.8,
         "vitality": 2.5,
         "wisdom": 3.2,
-        "luck": 1.0
+        "luck": 1
       },
       "availableSkills": [
         "basic_attack",
@@ -295,7 +301,9 @@
           "cloth",
           "light"
         ]
-      }
+      },
+      "nameKey": "class.necromancer.name",
+      "descriptionKey": "class.necromancer.description"
     },
     "ranger": {
       "id": "ranger",
@@ -316,10 +324,10 @@
       "statGrowth": {
         "strength": 1.2,
         "dexterity": 4.5,
-        "intelligence": 1.0,
+        "intelligence": 1,
         "vitality": 1.5,
         "wisdom": 2.8,
-        "luck": 2.0
+        "luck": 2
       },
       "availableSkills": [
         "basic_attack",
@@ -382,7 +390,9 @@
           "light",
           "medium"
         ]
-      }
+      },
+      "nameKey": "class.ranger.name",
+      "descriptionKey": "class.ranger.description"
     },
     "rogue": {
       "id": "rogue",
@@ -457,7 +467,9 @@
           "light",
           "medium"
         ]
-      }
+      },
+      "nameKey": "class.rogue.name",
+      "descriptionKey": "class.rogue.description"
     },
     "swashbuckler": {
       "id": "swashbuckler",
@@ -476,11 +488,11 @@
         "luck": 13
       },
       "statGrowth": {
-        "strength": 2.0,
+        "strength": 2,
         "dexterity": 5.2,
         "intelligence": 1.2,
         "vitality": 1.2,
-        "wisdom": 1.0,
+        "wisdom": 1,
         "luck": 2.8
       },
       "availableSkills": [
@@ -541,7 +553,9 @@
         "armorTypes": [
           "light"
         ]
-      }
+      },
+      "nameKey": "class.swashbuckler.name",
+      "descriptionKey": "class.swashbuckler.description"
     },
     "warrior": {
       "id": "warrior",
@@ -616,7 +630,9 @@
           "heavy",
           "medium"
         ]
-      }
+      },
+      "nameKey": "class.warrior.name",
+      "descriptionKey": "class.warrior.description"
     },
     "wizard": {
       "id": "wizard",
@@ -696,7 +712,9 @@
           "cloth",
           "light"
         ]
-      }
+      },
+      "nameKey": "class.wizard.name",
+      "descriptionKey": "class.wizard.description"
     }
   }
 }

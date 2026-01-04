@@ -24,7 +24,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 200,
           "max": 300
         },
@@ -41,7 +41,9 @@
       "goldReward": {
         "min": 200,
         "max": 300
-      }
+      },
+      "nameKey": "monster.balrog.name",
+      "descriptionKey": "monster.balrog.description"
     },
     "bandit": {
       "id": "bandit",
@@ -65,7 +67,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 20,
           "max": 35
         },
@@ -78,7 +80,9 @@
       "goldReward": {
         "min": 20,
         "max": 35
-      }
+      },
+      "nameKey": "monster.bandit.name",
+      "descriptionKey": "monster.bandit.description"
     },
     "dark_mage": {
       "id": "dark_mage",
@@ -102,7 +106,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 55,
           "max": 90
         },
@@ -119,7 +123,9 @@
       "goldReward": {
         "min": 55,
         "max": 90
-      }
+      },
+      "nameKey": "monster.dark_mage.name",
+      "descriptionKey": "monster.dark_mage.description"
     },
     "dragon_whelp": {
       "id": "dragon_whelp",
@@ -138,12 +144,12 @@
         "magicDefense": 30,
         "speed": 12,
         "criticalChance": 10,
-        "criticalDamage": 2.0
+        "criticalDamage": 2
       },
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 100,
           "max": 150
         },
@@ -160,7 +166,9 @@
       "goldReward": {
         "min": 100,
         "max": 150
-      }
+      },
+      "nameKey": "monster.dragon_whelp.name",
+      "descriptionKey": "monster.dragon_whelp.description"
     },
     "ghost": {
       "id": "ghost",
@@ -184,7 +192,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 28,
           "max": 45
         },
@@ -197,7 +205,9 @@
       "goldReward": {
         "min": 28,
         "max": 45
-      }
+      },
+      "nameKey": "monster.ghost.name",
+      "descriptionKey": "monster.ghost.description"
     },
     "giant": {
       "id": "giant",
@@ -221,7 +231,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 180,
           "max": 250
         },
@@ -234,7 +244,9 @@
       "goldReward": {
         "min": 180,
         "max": 250
-      }
+      },
+      "nameKey": "monster.giant.name",
+      "descriptionKey": "monster.giant.description"
     },
     "goblin": {
       "id": "goblin",
@@ -258,7 +270,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 5,
           "max": 10
         },
@@ -271,7 +283,9 @@
       "goldReward": {
         "min": 5,
         "max": 10
-      }
+      },
+      "nameKey": "monster.goblin.name",
+      "descriptionKey": "monster.goblin.description"
     },
     "goblin_shaman": {
       "id": "goblin_shaman",
@@ -295,7 +309,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 25,
           "max": 40
         },
@@ -308,7 +322,9 @@
       "goldReward": {
         "min": 25,
         "max": 40
-      }
+      },
+      "nameKey": "monster.goblin_shaman.name",
+      "descriptionKey": "monster.goblin_shaman.description"
     },
     "imp": {
       "id": "imp",
@@ -332,7 +348,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 22,
           "max": 38
         },
@@ -345,7 +361,9 @@
       "goldReward": {
         "min": 22,
         "max": 38
-      }
+      },
+      "nameKey": "monster.imp.name",
+      "descriptionKey": "monster.imp.description"
     },
     "lich": {
       "id": "lich",
@@ -369,7 +387,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 150,
           "max": 220
         },
@@ -386,7 +404,9 @@
       "goldReward": {
         "min": 150,
         "max": 220
-      }
+      },
+      "nameKey": "monster.lich.name",
+      "descriptionKey": "monster.lich.description"
     },
     "minotaur": {
       "id": "minotaur",
@@ -410,7 +430,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 75,
           "max": 120
         },
@@ -423,7 +443,9 @@
       "goldReward": {
         "min": 75,
         "max": 120
-      }
+      },
+      "nameKey": "monster.minotaur.name",
+      "descriptionKey": "monster.minotaur.description"
     },
     "ogre": {
       "id": "ogre",
@@ -447,7 +469,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 50,
           "max": 80
         },
@@ -460,7 +482,9 @@
       "goldReward": {
         "min": 50,
         "max": 80
-      }
+      },
+      "nameKey": "monster.ogre.name",
+      "descriptionKey": "monster.ogre.description"
     },
     "orc": {
       "id": "orc",
@@ -484,7 +508,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 15,
           "max": 25
         },
@@ -497,7 +521,9 @@
       "goldReward": {
         "min": 15,
         "max": 25
-      }
+      },
+      "nameKey": "monster.orc.name",
+      "descriptionKey": "monster.orc.description"
     },
     "orc_warrior": {
       "id": "orc_warrior",
@@ -521,7 +547,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 45,
           "max": 70
         },
@@ -534,7 +560,9 @@
       "goldReward": {
         "min": 45,
         "max": 70
-      }
+      },
+      "nameKey": "monster.orc_warrior.name",
+      "descriptionKey": "monster.orc_warrior.description"
     },
     "shadow_stalker": {
       "id": "shadow_stalker",
@@ -558,7 +586,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 60,
           "max": 100
         },
@@ -571,7 +599,9 @@
       "goldReward": {
         "min": 60,
         "max": 100
-      }
+      },
+      "nameKey": "monster.shadow_stalker.name",
+      "descriptionKey": "monster.shadow_stalker.description"
     },
     "skeleton": {
       "id": "skeleton",
@@ -595,7 +625,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 8,
           "max": 15
         },
@@ -608,7 +638,9 @@
       "goldReward": {
         "min": 8,
         "max": 15
-      }
+      },
+      "nameKey": "monster.skeleton.name",
+      "descriptionKey": "monster.skeleton.description"
     },
     "spider": {
       "id": "spider",
@@ -632,7 +664,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 18,
           "max": 28
         },
@@ -649,7 +681,9 @@
       "goldReward": {
         "min": 18,
         "max": 28
-      }
+      },
+      "nameKey": "monster.spider.name",
+      "descriptionKey": "monster.spider.description"
     },
     "troll": {
       "id": "troll",
@@ -673,7 +707,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 40,
           "max": 60
         },
@@ -686,7 +720,9 @@
       "goldReward": {
         "min": 40,
         "max": 60
-      }
+      },
+      "nameKey": "monster.troll.name",
+      "descriptionKey": "monster.troll.description"
     },
     "vampire": {
       "id": "vampire",
@@ -705,12 +741,12 @@
         "magicDefense": 28,
         "speed": 20,
         "criticalChance": 15,
-        "criticalDamage": 2.0
+        "criticalDamage": 2
       },
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 120,
           "max": 180
         },
@@ -727,7 +763,9 @@
       "goldReward": {
         "min": 120,
         "max": 180
-      }
+      },
+      "nameKey": "monster.vampire.name",
+      "descriptionKey": "monster.vampire.description"
     },
     "wolf": {
       "id": "wolf",
@@ -746,12 +784,12 @@
         "magicDefense": 2,
         "speed": 18,
         "criticalChance": 8,
-        "criticalDamage": 2.0
+        "criticalDamage": 2
       },
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 10,
           "max": 18
         },
@@ -764,7 +802,9 @@
       "goldReward": {
         "min": 10,
         "max": 18
-      }
+      },
+      "nameKey": "monster.wolf.name",
+      "descriptionKey": "monster.wolf.description"
     },
     "wraith": {
       "id": "wraith",
@@ -788,7 +828,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 30,
           "max": 50
         },
@@ -801,7 +841,9 @@
       "goldReward": {
         "min": 30,
         "max": 50
-      }
+      },
+      "nameKey": "monster.wraith.name",
+      "descriptionKey": "monster.wraith.description"
     },
     "zombie": {
       "id": "zombie",
@@ -825,7 +867,7 @@
       "lootTable": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 12,
           "max": 20
         },
@@ -838,7 +880,9 @@
       "goldReward": {
         "min": 12,
         "max": 20
-      }
+      },
+      "nameKey": "monster.zombie.name",
+      "descriptionKey": "monster.zombie.description"
     }
   }
 }

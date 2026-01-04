@@ -41,7 +41,9 @@
         "experienceBonus": 2.1,
         "goldBonus": 2.05,
         "itemDropRate": 1.9
-      }
+      },
+      "nameKey": "dungeon.abyssal_chasm.name",
+      "descriptionKey": "dungeon.abyssal_chasm.description"
     },
     "ancient_ruins": {
       "id": "ancient_ruins",
@@ -82,7 +84,9 @@
         "experienceBonus": 1.9,
         "goldBonus": 1.85,
         "itemDropRate": 1.7
-      }
+      },
+      "nameKey": "dungeon.ancient_ruins.name",
+      "descriptionKey": "dungeon.ancient_ruins.description"
     },
     "balrog_pit": {
       "id": "balrog_pit",
@@ -120,10 +124,12 @@
         }
       ],
       "rewards": {
-        "experienceBonus": 2.0,
+        "experienceBonus": 2,
         "goldBonus": 1.95,
         "itemDropRate": 1.8
-      }
+      },
+      "nameKey": "dungeon.balrog_pit.name",
+      "descriptionKey": "dungeon.balrog_pit.description"
     },
     "bandit_camp": {
       "id": "bandit_camp",
@@ -149,7 +155,9 @@
       "rewards": {
         "experienceBonus": 1.2,
         "goldBonus": 1.15
-      }
+      },
+      "nameKey": "dungeon.bandit_camp.name",
+      "descriptionKey": "dungeon.bandit_camp.description"
     },
     "celestial_sanctum": {
       "id": "celestial_sanctum",
@@ -190,7 +198,9 @@
         "experienceBonus": 2.6,
         "goldBonus": 2.55,
         "itemDropRate": 2.4
-      }
+      },
+      "nameKey": "dungeon.celestial_sanctum.name",
+      "descriptionKey": "dungeon.celestial_sanctum.description"
     },
     "chaos_realm": {
       "id": "chaos_realm",
@@ -243,7 +253,9 @@
         "experienceBonus": 2.35,
         "goldBonus": 2.3,
         "itemDropRate": 2.15
-      }
+      },
+      "nameKey": "dungeon.chaos_realm.name",
+      "descriptionKey": "dungeon.chaos_realm.description"
     },
     "cursed_castle": {
       "id": "cursed_castle",
@@ -282,9 +294,11 @@
       ],
       "rewards": {
         "experienceBonus": 2.05,
-        "goldBonus": 2.0,
+        "goldBonus": 2,
         "itemDropRate": 1.85
-      }
+      },
+      "nameKey": "dungeon.cursed_castle.name",
+      "descriptionKey": "dungeon.cursed_castle.description"
     },
     "dark_catacombs": {
       "id": "dark_catacombs",
@@ -325,7 +339,9 @@
         "experienceBonus": 1.45,
         "goldBonus": 1.4,
         "itemDropRate": 1.25
-      }
+      },
+      "nameKey": "dungeon.dark_catacombs.name",
+      "descriptionKey": "dungeon.dark_catacombs.description"
     },
     "demon_forge": {
       "id": "demon_forge",
@@ -366,7 +382,9 @@
         "experienceBonus": 1.8,
         "goldBonus": 1.75,
         "itemDropRate": 1.6
-      }
+      },
+      "nameKey": "dungeon.demon_forge.name",
+      "descriptionKey": "dungeon.demon_forge.description"
     },
     "dragon_lair": {
       "id": "dragon_lair",
@@ -396,10 +414,12 @@
         }
       ],
       "rewards": {
-        "experienceBonus": 2.0,
+        "experienceBonus": 2,
         "goldBonus": 1.8,
         "itemDropRate": 1.5
-      }
+      },
+      "nameKey": "dungeon.dragon_lair.name",
+      "descriptionKey": "dungeon.dragon_lair.description"
     },
     "dragon_roost": {
       "id": "dragon_roost",
@@ -440,7 +460,9 @@
         "experienceBonus": 2.15,
         "goldBonus": 2.1,
         "itemDropRate": 1.95
-      }
+      },
+      "nameKey": "dungeon.dragon_roost.name",
+      "descriptionKey": "dungeon.dragon_roost.description"
     },
     "dread_fortress": {
       "id": "dread_fortress",
@@ -481,7 +503,9 @@
         "experienceBonus": 2.65,
         "goldBonus": 2.6,
         "itemDropRate": 2.45
-      }
+      },
+      "nameKey": "dungeon.dread_fortress.name",
+      "descriptionKey": "dungeon.dread_fortress.description"
     },
     "eternal_library": {
       "id": "eternal_library",
@@ -522,7 +546,9 @@
         "experienceBonus": 2.45,
         "goldBonus": 2.4,
         "itemDropRate": 2.25
-      }
+      },
+      "nameKey": "dungeon.eternal_library.name",
+      "descriptionKey": "dungeon.eternal_library.description"
     },
     "forest_clearing": {
       "id": "forest_clearing",
@@ -551,9 +577,11 @@
         }
       ],
       "rewards": {
-        "experienceBonus": 1.0,
-        "goldBonus": 1.0
-      }
+        "experienceBonus": 1,
+        "goldBonus": 1
+      },
+      "nameKey": "dungeon.forest_clearing.name",
+      "descriptionKey": "dungeon.forest_clearing.description"
     },
     "forsaken_cathedral": {
       "id": "forsaken_cathedral",
@@ -594,7 +622,9 @@
         "experienceBonus": 2.7,
         "goldBonus": 2.65,
         "itemDropRate": 2.5
-      }
+      },
+      "nameKey": "dungeon.forsaken_cathedral.name",
+      "descriptionKey": "dungeon.forsaken_cathedral.description"
     },
     "ghost_manor": {
       "id": "ghost_manor",
@@ -635,7 +665,9 @@
         "experienceBonus": 1.55,
         "goldBonus": 1.5,
         "itemDropRate": 1.3
-      }
+      },
+      "nameKey": "dungeon.ghost_manor.name",
+      "descriptionKey": "dungeon.ghost_manor.description"
     },
     "giant_kingdom": {
       "id": "giant_kingdom",
@@ -676,7 +708,9 @@
         "experienceBonus": 1.95,
         "goldBonus": 1.9,
         "itemDropRate": 1.75
-      }
+      },
+      "nameKey": "dungeon.giant_kingdom.name",
+      "descriptionKey": "dungeon.giant_kingdom.description"
     },
     "goblin_cave": {
       "id": "goblin_cave",
@@ -702,7 +736,9 @@
       "rewards": {
         "experienceBonus": 1.1,
         "goldBonus": 1.05
-      }
+      },
+      "nameKey": "dungeon.goblin_cave.name",
+      "descriptionKey": "dungeon.goblin_cave.description"
     },
     "godslayer_throne": {
       "id": "godslayer_throne",
@@ -762,7 +798,9 @@
         "experienceBonus": 2.8,
         "goldBonus": 2.75,
         "itemDropRate": 2.7
-      }
+      },
+      "nameKey": "dungeon.godslayer_throne.name",
+      "descriptionKey": "dungeon.godslayer_throne.description"
     },
     "haunted_forest": {
       "id": "haunted_forest",
@@ -800,7 +838,9 @@
       "rewards": {
         "experienceBonus": 1.5,
         "goldBonus": 1.3
-      }
+      },
+      "nameKey": "dungeon.haunted_forest.name",
+      "descriptionKey": "dungeon.haunted_forest.description"
     },
     "imp_infestation": {
       "id": "imp_infestation",
@@ -826,7 +866,9 @@
       "rewards": {
         "experienceBonus": 1.25,
         "goldBonus": 1.2
-      }
+      },
+      "nameKey": "dungeon.imp_infestation.name",
+      "descriptionKey": "dungeon.imp_infestation.description"
     },
     "infernal_plains": {
       "id": "infernal_plains",
@@ -867,7 +909,9 @@
         "experienceBonus": 2.25,
         "goldBonus": 2.2,
         "itemDropRate": 2.05
-      }
+      },
+      "nameKey": "dungeon.infernal_plains.name",
+      "descriptionKey": "dungeon.infernal_plains.description"
     },
     "lich_tower": {
       "id": "lich_tower",
@@ -908,7 +952,9 @@
         "experienceBonus": 1.85,
         "goldBonus": 1.8,
         "itemDropRate": 1.65
-      }
+      },
+      "nameKey": "dungeon.lich_tower.name",
+      "descriptionKey": "dungeon.lich_tower.description"
     },
     "minotaur_labyrinth": {
       "id": "minotaur_labyrinth",
@@ -943,7 +989,9 @@
         "experienceBonus": 1.6,
         "goldBonus": 1.55,
         "itemDropRate": 1.4
-      }
+      },
+      "nameKey": "dungeon.minotaur_labyrinth.name",
+      "descriptionKey": "dungeon.minotaur_labyrinth.description"
     },
     "ogre_stronghold": {
       "id": "ogre_stronghold",
@@ -976,7 +1024,9 @@
         "experienceBonus": 1.5,
         "goldBonus": 1.45,
         "itemDropRate": 1.2
-      }
+      },
+      "nameKey": "dungeon.ogre_stronghold.name",
+      "descriptionKey": "dungeon.ogre_stronghold.description"
     },
     "old_cemetery": {
       "id": "old_cemetery",
@@ -1008,7 +1058,9 @@
       "rewards": {
         "experienceBonus": 1.25,
         "goldBonus": 1.2
-      }
+      },
+      "nameKey": "dungeon.old_cemetery.name",
+      "descriptionKey": "dungeon.old_cemetery.description"
     },
     "orc_encampment": {
       "id": "orc_encampment",
@@ -1040,7 +1092,9 @@
       "rewards": {
         "experienceBonus": 1.2,
         "goldBonus": 1.1
-      }
+      },
+      "nameKey": "dungeon.orc_encampment.name",
+      "descriptionKey": "dungeon.orc_encampment.description"
     },
     "shadow_realm": {
       "id": "shadow_realm",
@@ -1081,7 +1135,9 @@
         "experienceBonus": 1.75,
         "goldBonus": 1.7,
         "itemDropRate": 1.5
-      }
+      },
+      "nameKey": "dungeon.shadow_realm.name",
+      "descriptionKey": "dungeon.shadow_realm.description"
     },
     "skeleton_crypt": {
       "id": "skeleton_crypt",
@@ -1116,7 +1172,9 @@
         "experienceBonus": 1.3,
         "goldBonus": 1.25,
         "itemDropRate": 1.2
-      }
+      },
+      "nameKey": "dungeon.skeleton_crypt.name",
+      "descriptionKey": "dungeon.skeleton_crypt.description"
     },
     "spider_nest": {
       "id": "spider_nest",
@@ -1142,7 +1200,9 @@
       "rewards": {
         "experienceBonus": 1.15,
         "goldBonus": 1.1
-      }
+      },
+      "nameKey": "dungeon.spider_nest.name",
+      "descriptionKey": "dungeon.spider_nest.description"
     },
     "storm_peak": {
       "id": "storm_peak",
@@ -1183,7 +1243,9 @@
         "experienceBonus": 2.5,
         "goldBonus": 2.45,
         "itemDropRate": 2.3
-      }
+      },
+      "nameKey": "dungeon.storm_peak.name",
+      "descriptionKey": "dungeon.storm_peak.description"
     },
     "titan_arena": {
       "id": "titan_arena",
@@ -1224,7 +1286,9 @@
         "experienceBonus": 2.4,
         "goldBonus": 2.35,
         "itemDropRate": 2.2
-      }
+      },
+      "nameKey": "dungeon.titan_arena.name",
+      "descriptionKey": "dungeon.titan_arena.description"
     },
     "troll_cave": {
       "id": "troll_cave",
@@ -1257,7 +1321,9 @@
         "experienceBonus": 1.35,
         "goldBonus": 1.3,
         "itemDropRate": 1.15
-      }
+      },
+      "nameKey": "dungeon.troll_cave.name",
+      "descriptionKey": "dungeon.troll_cave.description"
     },
     "undead_citadel": {
       "id": "undead_citadel",
@@ -1297,8 +1363,10 @@
       "rewards": {
         "experienceBonus": 2.2,
         "goldBonus": 2.15,
-        "itemDropRate": 2.0
-      }
+        "itemDropRate": 2
+      },
+      "nameKey": "dungeon.undead_citadel.name",
+      "descriptionKey": "dungeon.undead_citadel.description"
     },
     "underworld_gate": {
       "id": "underworld_gate",
@@ -1339,7 +1407,9 @@
         "experienceBonus": 2.55,
         "goldBonus": 2.5,
         "itemDropRate": 2.35
-      }
+      },
+      "nameKey": "dungeon.underworld_gate.name",
+      "descriptionKey": "dungeon.underworld_gate.description"
     },
     "vampire_coven": {
       "id": "vampire_coven",
@@ -1380,7 +1450,9 @@
         "experienceBonus": 1.65,
         "goldBonus": 1.6,
         "itemDropRate": 1.45
-      }
+      },
+      "nameKey": "dungeon.vampire_coven.name",
+      "descriptionKey": "dungeon.vampire_coven.description"
     },
     "void_nexus": {
       "id": "void_nexus",
@@ -1421,7 +1493,9 @@
         "experienceBonus": 2.3,
         "goldBonus": 2.25,
         "itemDropRate": 2.1
-      }
+      },
+      "nameKey": "dungeon.void_nexus.name",
+      "descriptionKey": "dungeon.void_nexus.description"
     },
     "wolf_den": {
       "id": "wolf_den",
@@ -1447,7 +1521,9 @@
       "rewards": {
         "experienceBonus": 1.2,
         "goldBonus": 1.15
-      }
+      },
+      "nameKey": "dungeon.wolf_den.name",
+      "descriptionKey": "dungeon.wolf_den.description"
     },
     "world_ender_chamber": {
       "id": "world_ender_chamber",
@@ -1495,7 +1571,9 @@
         "experienceBonus": 2.75,
         "goldBonus": 2.7,
         "itemDropRate": 2.6
-      }
+      },
+      "nameKey": "dungeon.world_ender_chamber.name",
+      "descriptionKey": "dungeon.world_ender_chamber.description"
     },
     "zombie_graveyard": {
       "id": "zombie_graveyard",
@@ -1528,7 +1606,9 @@
         "experienceBonus": 1.4,
         "goldBonus": 1.35,
         "itemDropRate": 1.2
-      }
+      },
+      "nameKey": "dungeon.zombie_graveyard.name",
+      "descriptionKey": "dungeon.zombie_graveyard.description"
     }
   }
 }

@@ -23,7 +23,9 @@
       },
       "combatStatBonuses": {
         "defense": 52
-      }
+      },
+      "nameKey": "item.adamantite_armor.name",
+      "descriptionKey": "item.adamantite_armor.description"
     },
     "adamantite_axe": {
       "id": "adamantite_axe",
@@ -46,7 +48,9 @@
       },
       "combatStatBonuses": {
         "attack": 71
-      }
+      },
+      "nameKey": "item.adamantite_axe.name",
+      "descriptionKey": "item.adamantite_axe.description"
     },
     "adamantite_boots": {
       "id": "adamantite_boots",
@@ -68,7 +72,9 @@
       },
       "combatStatBonuses": {
         "defense": 32
-      }
+      },
+      "nameKey": "item.adamantite_boots.name",
+      "descriptionKey": "item.adamantite_boots.description"
     },
     "adamantite_gauntlets": {
       "id": "adamantite_gauntlets",
@@ -92,7 +98,9 @@
       "combatStatBonuses": {
         "defense": 26,
         "attack": 13
-      }
+      },
+      "nameKey": "item.adamantite_gauntlets.name",
+      "descriptionKey": "item.adamantite_gauntlets.description"
     },
     "adamantite_helmet": {
       "id": "adamantite_helmet",
@@ -115,7 +123,9 @@
       },
       "combatStatBonuses": {
         "defense": 39
-      }
+      },
+      "nameKey": "item.adamantite_helmet.name",
+      "descriptionKey": "item.adamantite_helmet.description"
     },
     "adamantite_ingot": {
       "id": "adamantite_ingot",
@@ -125,7 +135,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 800
+      "value": 800,
+      "nameKey": "item.adamantite_ingot.name",
+      "descriptionKey": "item.adamantite_ingot.description"
     },
     "adamantite_leggings": {
       "id": "adamantite_leggings",
@@ -148,7 +160,9 @@
       },
       "combatStatBonuses": {
         "defense": 32
-      }
+      },
+      "nameKey": "item.adamantite_leggings.name",
+      "descriptionKey": "item.adamantite_leggings.description"
     },
     "adamantite_mace": {
       "id": "adamantite_mace",
@@ -171,7 +185,9 @@
       },
       "combatStatBonuses": {
         "attack": 58
-      }
+      },
+      "nameKey": "item.adamantite_mace.name",
+      "descriptionKey": "item.adamantite_mace.description"
     },
     "adamantite_ore": {
       "id": "adamantite_ore",
@@ -181,7 +197,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.adamantite_ore.name",
+      "descriptionKey": "item.adamantite_ore.description"
     },
     "adamantite_spear": {
       "id": "adamantite_spear",
@@ -204,7 +222,9 @@
       },
       "combatStatBonuses": {
         "attack": 65
-      }
+      },
+      "nameKey": "item.adamantite_spear.name",
+      "descriptionKey": "item.adamantite_spear.description"
     },
     "adamantite_sword": {
       "id": "adamantite_sword",
@@ -227,7 +247,9 @@
       },
       "combatStatBonuses": {
         "attack": 65
-      }
+      },
+      "nameKey": "item.adamantite_sword.name",
+      "descriptionKey": "item.adamantite_sword.description"
     },
     "advanced_gadget": {
       "id": "advanced_gadget",
@@ -237,7 +259,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 99,
-      "value": 1000
+      "value": 1000,
+      "nameKey": "item.advanced_gadget.name",
+      "descriptionKey": "item.advanced_gadget.description"
     },
     "air_core": {
       "id": "air_core",
@@ -247,7 +271,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 187
+      "value": 187,
+      "nameKey": "item.air_core.name",
+      "descriptionKey": "item.air_core.description"
     },
     "amulet_tier1_1": {
       "id": "amulet_tier1_1",
@@ -267,7 +293,9 @@
       "combatStatBonuses": {
         "magicAttack": 5,
         "mana": 20
-      }
+      },
+      "nameKey": "item.amulet_tier1_1.name",
+      "descriptionKey": "item.amulet_tier1_1.description"
     },
     "amulet_tier1_2": {
       "id": "amulet_tier1_2",
@@ -287,7 +315,9 @@
       },
       "combatStatBonuses": {
         "defense": 2
-      }
+      },
+      "nameKey": "item.amulet_tier1_2.name",
+      "descriptionKey": "item.amulet_tier1_2.description"
     },
     "amulet_tier1_3": {
       "id": "amulet_tier1_3",
@@ -306,7 +336,9 @@
       },
       "combatStatBonuses": {
         "attack": 4
-      }
+      },
+      "nameKey": "item.amulet_tier1_3.name",
+      "descriptionKey": "item.amulet_tier1_3.description"
     },
     "amulet_tier2_1": {
       "id": "amulet_tier2_1",
@@ -326,7 +358,9 @@
       "combatStatBonuses": {
         "magicAttack": 7,
         "mana": 30
-      }
+      },
+      "nameKey": "item.amulet_tier2_1.name",
+      "descriptionKey": "item.amulet_tier2_1.description"
     },
     "amulet_tier2_2": {
       "id": "amulet_tier2_2",
@@ -346,7 +380,9 @@
       },
       "combatStatBonuses": {
         "defense": 3
-      }
+      },
+      "nameKey": "item.amulet_tier2_2.name",
+      "descriptionKey": "item.amulet_tier2_2.description"
     },
     "amulet_tier2_3": {
       "id": "amulet_tier2_3",
@@ -365,7 +401,9 @@
       },
       "combatStatBonuses": {
         "attack": 6
-      }
+      },
+      "nameKey": "item.amulet_tier2_3.name",
+      "descriptionKey": "item.amulet_tier2_3.description"
     },
     "amulet_tier3_1": {
       "id": "amulet_tier3_1",
@@ -385,7 +423,9 @@
       "combatStatBonuses": {
         "magicAttack": 12,
         "mana": 50
-      }
+      },
+      "nameKey": "item.amulet_tier3_1.name",
+      "descriptionKey": "item.amulet_tier3_1.description"
     },
     "amulet_tier3_2": {
       "id": "amulet_tier3_2",
@@ -405,7 +445,9 @@
       },
       "combatStatBonuses": {
         "defense": 5
-      }
+      },
+      "nameKey": "item.amulet_tier3_2.name",
+      "descriptionKey": "item.amulet_tier3_2.description"
     },
     "amulet_tier3_3": {
       "id": "amulet_tier3_3",
@@ -424,7 +466,9 @@
       },
       "combatStatBonuses": {
         "attack": 10
-      }
+      },
+      "nameKey": "item.amulet_tier3_3.name",
+      "descriptionKey": "item.amulet_tier3_3.description"
     },
     "amulet_tier4_1": {
       "id": "amulet_tier4_1",
@@ -444,7 +488,9 @@
       "combatStatBonuses": {
         "magicAttack": 20,
         "mana": 80
-      }
+      },
+      "nameKey": "item.amulet_tier4_1.name",
+      "descriptionKey": "item.amulet_tier4_1.description"
     },
     "amulet_tier4_2": {
       "id": "amulet_tier4_2",
@@ -464,7 +510,9 @@
       },
       "combatStatBonuses": {
         "defense": 8
-      }
+      },
+      "nameKey": "item.amulet_tier4_2.name",
+      "descriptionKey": "item.amulet_tier4_2.description"
     },
     "amulet_tier4_3": {
       "id": "amulet_tier4_3",
@@ -483,7 +531,9 @@
       },
       "combatStatBonuses": {
         "attack": 16
-      }
+      },
+      "nameKey": "item.amulet_tier4_3.name",
+      "descriptionKey": "item.amulet_tier4_3.description"
     },
     "amulet_tier5_1": {
       "id": "amulet_tier5_1",
@@ -503,7 +553,9 @@
       "combatStatBonuses": {
         "magicAttack": 32,
         "mana": 130
-      }
+      },
+      "nameKey": "item.amulet_tier5_1.name",
+      "descriptionKey": "item.amulet_tier5_1.description"
     },
     "amulet_tier5_2": {
       "id": "amulet_tier5_2",
@@ -523,7 +575,9 @@
       },
       "combatStatBonuses": {
         "defense": 13
-      }
+      },
+      "nameKey": "item.amulet_tier5_2.name",
+      "descriptionKey": "item.amulet_tier5_2.description"
     },
     "amulet_tier5_3": {
       "id": "amulet_tier5_3",
@@ -542,7 +596,9 @@
       },
       "combatStatBonuses": {
         "attack": 26
-      }
+      },
+      "nameKey": "item.amulet_tier5_3.name",
+      "descriptionKey": "item.amulet_tier5_3.description"
     },
     "amulet_tier6_1": {
       "id": "amulet_tier6_1",
@@ -562,7 +618,9 @@
       "combatStatBonuses": {
         "magicAttack": 50,
         "mana": 200
-      }
+      },
+      "nameKey": "item.amulet_tier6_1.name",
+      "descriptionKey": "item.amulet_tier6_1.description"
     },
     "amulet_tier6_2": {
       "id": "amulet_tier6_2",
@@ -582,7 +640,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.amulet_tier6_2.name",
+      "descriptionKey": "item.amulet_tier6_2.description"
     },
     "amulet_tier6_3": {
       "id": "amulet_tier6_3",
@@ -601,7 +661,9 @@
       },
       "combatStatBonuses": {
         "attack": 40
-      }
+      },
+      "nameKey": "item.amulet_tier6_3.name",
+      "descriptionKey": "item.amulet_tier6_3.description"
     },
     "ancient_artifact": {
       "id": "ancient_artifact",
@@ -611,7 +673,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 2000
+      "value": 2000,
+      "nameKey": "item.ancient_artifact.name",
+      "descriptionKey": "item.ancient_artifact.description"
     },
     "ancient_coin": {
       "id": "ancient_coin",
@@ -621,7 +685,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 100
+      "value": 100,
+      "nameKey": "item.ancient_coin.name",
+      "descriptionKey": "item.ancient_coin.description"
     },
     "ancient_gem": {
       "id": "ancient_gem",
@@ -631,7 +697,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.ancient_gem.name",
+      "descriptionKey": "item.ancient_gem.description"
     },
     "ancient_relic": {
       "id": "ancient_relic",
@@ -641,7 +709,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 400
+      "value": 400,
+      "nameKey": "item.ancient_relic.name",
+      "descriptionKey": "item.ancient_relic.description"
     },
     "ancient_scroll": {
       "id": "ancient_scroll",
@@ -651,7 +721,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.ancient_scroll.name",
+      "descriptionKey": "item.ancient_scroll.description"
     },
     "ancient_shard": {
       "id": "ancient_shard",
@@ -661,7 +733,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 10
+      "value": 10,
+      "nameKey": "item.ancient_shard.name",
+      "descriptionKey": "item.ancient_shard.description"
     },
     "ancient_tome": {
       "id": "ancient_tome",
@@ -685,7 +759,9 @@
       "combatStatBonuses": {
         "magicAttack": 65,
         "mana": 260
-      }
+      },
+      "nameKey": "item.ancient_tome.name",
+      "descriptionKey": "item.ancient_tome.description"
     },
     "ancient_treasure": {
       "id": "ancient_treasure",
@@ -695,7 +771,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 3000
+      "value": 3000,
+      "nameKey": "item.ancient_treasure.name",
+      "descriptionKey": "item.ancient_treasure.description"
     },
     "angel_feather": {
       "id": "angel_feather",
@@ -705,7 +783,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 900
+      "value": 900,
+      "nameKey": "item.angel_feather.name",
+      "descriptionKey": "item.angel_feather.description"
     },
     "animal_bone": {
       "id": "animal_bone",
@@ -715,7 +795,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.animal_bone.name",
+      "descriptionKey": "item.animal_bone.description"
     },
     "animal_claw": {
       "id": "animal_claw",
@@ -725,7 +807,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 60
+      "value": 60,
+      "nameKey": "item.animal_claw.name",
+      "descriptionKey": "item.animal_claw.description"
     },
     "animal_fang": {
       "id": "animal_fang",
@@ -735,7 +819,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 15
+      "value": 15,
+      "nameKey": "item.animal_fang.name",
+      "descriptionKey": "item.animal_fang.description"
     },
     "animal_hide": {
       "id": "animal_hide",
@@ -745,7 +831,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 3
+      "value": 3,
+      "nameKey": "item.animal_hide.name",
+      "descriptionKey": "item.animal_hide.description"
     },
     "animal_hide_quality": {
       "id": "animal_hide_quality",
@@ -755,7 +843,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 12
+      "value": 12,
+      "nameKey": "item.animal_hide_quality.name",
+      "descriptionKey": "item.animal_hide_quality.description"
     },
     "animal_hide_rare": {
       "id": "animal_hide_rare",
@@ -765,7 +855,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 50
+      "value": 50,
+      "nameKey": "item.animal_hide_rare.name",
+      "descriptionKey": "item.animal_hide_rare.description"
     },
     "animal_meat": {
       "id": "animal_meat",
@@ -775,7 +867,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 3
+      "value": 3,
+      "nameKey": "item.animal_meat.name",
+      "descriptionKey": "item.animal_meat.description"
     },
     "animal_pelt": {
       "id": "animal_pelt",
@@ -785,7 +879,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 4
+      "value": 4,
+      "nameKey": "item.animal_pelt.name",
+      "descriptionKey": "item.animal_pelt.description"
     },
     "apple": {
       "id": "apple",
@@ -799,7 +895,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 30
-      }
+      },
+      "nameKey": "item.apple.name",
+      "descriptionKey": "item.apple.description"
     },
     "apprentice_boots": {
       "id": "apprentice_boots",
@@ -822,7 +920,9 @@
       "combatStatBonuses": {
         "defense": 6,
         "speed": 7
-      }
+      },
+      "nameKey": "item.apprentice_boots.name",
+      "descriptionKey": "item.apprentice_boots.description"
     },
     "apprentice_gloves": {
       "id": "apprentice_gloves",
@@ -845,7 +945,9 @@
       "combatStatBonuses": {
         "magicDefense": 4,
         "mana": 15
-      }
+      },
+      "nameKey": "item.apprentice_gloves.name",
+      "descriptionKey": "item.apprentice_gloves.description"
     },
     "apprentice_gloves_rogue": {
       "id": "apprentice_gloves_rogue",
@@ -868,7 +970,9 @@
       "combatStatBonuses": {
         "defense": 4,
         "speed": 3
-      }
+      },
+      "nameKey": "item.apprentice_gloves_rogue.name",
+      "descriptionKey": "item.apprentice_gloves_rogue.description"
     },
     "apprentice_hood": {
       "id": "apprentice_hood",
@@ -891,7 +995,9 @@
       "combatStatBonuses": {
         "magicDefense": 7,
         "mana": 22
-      }
+      },
+      "nameKey": "item.apprentice_hood.name",
+      "descriptionKey": "item.apprentice_hood.description"
     },
     "apprentice_leather_top": {
       "id": "apprentice_leather_top",
@@ -915,7 +1021,9 @@
       "combatStatBonuses": {
         "defense": 7,
         "speed": 4
-      }
+      },
+      "nameKey": "item.apprentice_leather_top.name",
+      "descriptionKey": "item.apprentice_leather_top.description"
     },
     "apprentice_mask": {
       "id": "apprentice_mask",
@@ -938,7 +1046,9 @@
       "combatStatBonuses": {
         "defense": 4,
         "speed": 3
-      }
+      },
+      "nameKey": "item.apprentice_mask.name",
+      "descriptionKey": "item.apprentice_mask.description"
     },
     "apprentice_robes": {
       "id": "apprentice_robes",
@@ -962,7 +1072,9 @@
       "combatStatBonuses": {
         "magicDefense": 9,
         "mana": 37
-      }
+      },
+      "nameKey": "item.apprentice_robes.name",
+      "descriptionKey": "item.apprentice_robes.description"
     },
     "apprentice_robes_top": {
       "id": "apprentice_robes_top",
@@ -986,7 +1098,9 @@
       "combatStatBonuses": {
         "magicDefense": 9,
         "mana": 37
-      }
+      },
+      "nameKey": "item.apprentice_robes_top.name",
+      "descriptionKey": "item.apprentice_robes_top.description"
     },
     "apprentice_slippers": {
       "id": "apprentice_slippers",
@@ -1009,7 +1123,9 @@
       "combatStatBonuses": {
         "magicDefense": 6,
         "mana": 15
-      }
+      },
+      "nameKey": "item.apprentice_slippers.name",
+      "descriptionKey": "item.apprentice_slippers.description"
     },
     "apprentice_staff": {
       "id": "apprentice_staff",
@@ -1033,7 +1149,9 @@
       "combatStatBonuses": {
         "magicAttack": 15,
         "mana": 50
-      }
+      },
+      "nameKey": "item.apprentice_staff.name",
+      "descriptionKey": "item.apprentice_staff.description"
     },
     "apprentice_wand": {
       "id": "apprentice_wand",
@@ -1057,7 +1175,9 @@
       "combatStatBonuses": {
         "magicAttack": 12,
         "mana": 45
-      }
+      },
+      "nameKey": "item.apprentice_wand.name",
+      "descriptionKey": "item.apprentice_wand.description"
     },
     "arcane_boots": {
       "id": "arcane_boots",
@@ -1081,7 +1201,9 @@
       "combatStatBonuses": {
         "magicDefense": 18,
         "mana": 70
-      }
+      },
+      "nameKey": "item.arcane_boots.name",
+      "descriptionKey": "item.arcane_boots.description"
     },
     "arcane_gloves": {
       "id": "arcane_gloves",
@@ -1106,7 +1228,9 @@
         "magicDefense": 16,
         "magicAttack": 8,
         "mana": 65
-      }
+      },
+      "nameKey": "item.arcane_gloves.name",
+      "descriptionKey": "item.arcane_gloves.description"
     },
     "arcane_hood": {
       "id": "arcane_hood",
@@ -1130,7 +1254,9 @@
       "combatStatBonuses": {
         "magicDefense": 20,
         "mana": 80
-      }
+      },
+      "nameKey": "item.arcane_hood.name",
+      "descriptionKey": "item.arcane_hood.description"
     },
     "arcane_orb": {
       "id": "arcane_orb",
@@ -1154,7 +1280,9 @@
       "combatStatBonuses": {
         "magicAttack": 25,
         "mana": 100
-      }
+      },
+      "nameKey": "item.arcane_orb.name",
+      "descriptionKey": "item.arcane_orb.description"
     },
     "arcane_slippers": {
       "id": "arcane_slippers",
@@ -1177,7 +1305,9 @@
       "combatStatBonuses": {
         "magicDefense": 10,
         "mana": 25
-      }
+      },
+      "nameKey": "item.arcane_slippers.name",
+      "descriptionKey": "item.arcane_slippers.description"
     },
     "arcane_staff": {
       "id": "arcane_staff",
@@ -1201,7 +1331,9 @@
       "combatStatBonuses": {
         "magicAttack": 30,
         "mana": 100
-      }
+      },
+      "nameKey": "item.arcane_staff.name",
+      "descriptionKey": "item.arcane_staff.description"
     },
     "arcane_wand": {
       "id": "arcane_wand",
@@ -1225,7 +1357,9 @@
       "combatStatBonuses": {
         "magicAttack": 20,
         "mana": 75
-      }
+      },
+      "nameKey": "item.arcane_wand.name",
+      "descriptionKey": "item.arcane_wand.description"
     },
     "arcane_wisp": {
       "id": "arcane_wisp",
@@ -1235,7 +1369,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 80
+      "value": 80,
+      "nameKey": "item.arcane_wisp.name",
+      "descriptionKey": "item.arcane_wisp.description"
     },
     "assassin_blade": {
       "id": "assassin_blade",
@@ -1260,7 +1396,9 @@
         "attack": 25,
         "speed": 15,
         "criticalChance": 8
-      }
+      },
+      "nameKey": "item.assassin_blade.name",
+      "descriptionKey": "item.assassin_blade.description"
     },
     "assassin_gloves": {
       "id": "assassin_gloves",
@@ -1283,7 +1421,9 @@
       "combatStatBonuses": {
         "defense": 7,
         "speed": 5
-      }
+      },
+      "nameKey": "item.assassin_gloves.name",
+      "descriptionKey": "item.assassin_gloves.description"
     },
     "balrog_horn": {
       "id": "balrog_horn",
@@ -1293,7 +1433,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 600
+      "value": 600,
+      "nameKey": "item.balrog_horn.name",
+      "descriptionKey": "item.balrog_horn.description"
     },
     "basic_boots": {
       "id": "basic_boots",
@@ -1313,7 +1455,9 @@
       "combatStatBonuses": {
         "defense": 3,
         "speed": 2
-      }
+      },
+      "nameKey": "item.basic_boots.name",
+      "descriptionKey": "item.basic_boots.description"
     },
     "basic_bow": {
       "id": "basic_bow",
@@ -1338,7 +1482,9 @@
         "attack": 7,
         "speed": 5,
         "criticalChance": 2
-      }
+      },
+      "nameKey": "item.basic_bow.name",
+      "descriptionKey": "item.basic_bow.description"
     },
     "basic_dagger": {
       "id": "basic_dagger",
@@ -1361,7 +1507,9 @@
       "combatStatBonuses": {
         "attack": 6,
         "speed": 5
-      }
+      },
+      "nameKey": "item.basic_dagger.name",
+      "descriptionKey": "item.basic_dagger.description"
     },
     "basic_gloves": {
       "id": "basic_gloves",
@@ -1380,7 +1528,9 @@
       },
       "combatStatBonuses": {
         "defense": 2
-      }
+      },
+      "nameKey": "item.basic_gloves.name",
+      "descriptionKey": "item.basic_gloves.description"
     },
     "basic_helmet": {
       "id": "basic_helmet",
@@ -1399,7 +1549,9 @@
       },
       "combatStatBonuses": {
         "defense": 4
-      }
+      },
+      "nameKey": "item.basic_helmet.name",
+      "descriptionKey": "item.basic_helmet.description"
     },
     "basic_pants": {
       "id": "basic_pants",
@@ -1418,7 +1570,9 @@
       },
       "combatStatBonuses": {
         "defense": 3
-      }
+      },
+      "nameKey": "item.basic_pants.name",
+      "descriptionKey": "item.basic_pants.description"
     },
     "basic_staff": {
       "id": "basic_staff",
@@ -1441,7 +1595,9 @@
       "combatStatBonuses": {
         "magicAttack": 6,
         "mana": 20
-      }
+      },
+      "nameKey": "item.basic_staff.name",
+      "descriptionKey": "item.basic_staff.description"
     },
     "basic_wand": {
       "id": "basic_wand",
@@ -1465,7 +1621,9 @@
       "combatStatBonuses": {
         "magicAttack": 8,
         "mana": 30
-      }
+      },
+      "nameKey": "item.basic_wand.name",
+      "descriptionKey": "item.basic_wand.description"
     },
     "berry": {
       "id": "berry",
@@ -1475,7 +1633,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.berry.name",
+      "descriptionKey": "item.berry.description"
     },
     "berry_seed": {
       "id": "berry_seed",
@@ -1485,7 +1645,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.berry_seed.name",
+      "descriptionKey": "item.berry_seed.description"
     },
     "blessed_water": {
       "id": "blessed_water",
@@ -1495,7 +1657,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 100
+      "value": 100,
+      "nameKey": "item.blessed_water.name",
+      "descriptionKey": "item.blessed_water.description"
     },
     "blessing_scroll": {
       "id": "blessing_scroll",
@@ -1509,7 +1673,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 50
-      }
+      },
+      "nameKey": "item.blessing_scroll.name",
+      "descriptionKey": "item.blessing_scroll.description"
     },
     "blood_crystal": {
       "id": "blood_crystal",
@@ -1519,7 +1685,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.blood_crystal.name",
+      "descriptionKey": "item.blood_crystal.description"
     },
     "bone_fragment": {
       "id": "bone_fragment",
@@ -1529,7 +1697,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.bone_fragment.name",
+      "descriptionKey": "item.bone_fragment.description"
     },
     "bone_meal": {
       "id": "bone_meal",
@@ -1539,7 +1709,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.bone_meal.name",
+      "descriptionKey": "item.bone_meal.description"
     },
     "bread": {
       "id": "bread",
@@ -1553,7 +1725,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 25
-      }
+      },
+      "nameKey": "item.bread.name",
+      "descriptionKey": "item.bread.description"
     },
     "bread_roll": {
       "id": "bread_roll",
@@ -1567,7 +1741,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 35
-      }
+      },
+      "nameKey": "item.bread_roll.name",
+      "descriptionKey": "item.bread_roll.description"
     },
     "bronze_axe": {
       "id": "bronze_axe",
@@ -1590,7 +1766,9 @@
       },
       "combatStatBonuses": {
         "attack": 11
-      }
+      },
+      "nameKey": "item.bronze_axe.name",
+      "descriptionKey": "item.bronze_axe.description"
     },
     "bronze_boots": {
       "id": "bronze_boots",
@@ -1612,7 +1790,9 @@
       },
       "combatStatBonuses": {
         "defense": 5
-      }
+      },
+      "nameKey": "item.bronze_boots.name",
+      "descriptionKey": "item.bronze_boots.description"
     },
     "bronze_gauntlets": {
       "id": "bronze_gauntlets",
@@ -1636,7 +1816,9 @@
       "combatStatBonuses": {
         "defense": 4,
         "attack": 2
-      }
+      },
+      "nameKey": "item.bronze_gauntlets.name",
+      "descriptionKey": "item.bronze_gauntlets.description"
     },
     "bronze_helmet": {
       "id": "bronze_helmet",
@@ -1659,7 +1841,9 @@
       },
       "combatStatBonuses": {
         "defense": 6
-      }
+      },
+      "nameKey": "item.bronze_helmet.name",
+      "descriptionKey": "item.bronze_helmet.description"
     },
     "bronze_leggings": {
       "id": "bronze_leggings",
@@ -1682,7 +1866,9 @@
       },
       "combatStatBonuses": {
         "defense": 5
-      }
+      },
+      "nameKey": "item.bronze_leggings.name",
+      "descriptionKey": "item.bronze_leggings.description"
     },
     "bronze_mace": {
       "id": "bronze_mace",
@@ -1705,7 +1891,9 @@
       },
       "combatStatBonuses": {
         "attack": 9
-      }
+      },
+      "nameKey": "item.bronze_mace.name",
+      "descriptionKey": "item.bronze_mace.description"
     },
     "bronze_spear": {
       "id": "bronze_spear",
@@ -1728,7 +1916,9 @@
       },
       "combatStatBonuses": {
         "attack": 10
-      }
+      },
+      "nameKey": "item.bronze_spear.name",
+      "descriptionKey": "item.bronze_spear.description"
     },
     "bronze_sword": {
       "id": "bronze_sword",
@@ -1751,7 +1941,9 @@
       },
       "combatStatBonuses": {
         "attack": 10
-      }
+      },
+      "nameKey": "item.bronze_sword.name",
+      "descriptionKey": "item.bronze_sword.description"
     },
     "chain": {
       "id": "chain",
@@ -1761,7 +1953,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 12
+      "value": 12,
+      "nameKey": "item.chain.name",
+      "descriptionKey": "item.chain.description"
     },
     "chaos_shard": {
       "id": "chaos_shard",
@@ -1771,7 +1965,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1800
+      "value": 1800,
+      "nameKey": "item.chaos_shard.name",
+      "descriptionKey": "item.chaos_shard.description"
     },
     "cheese": {
       "id": "cheese",
@@ -1785,7 +1981,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 40
-      }
+      },
+      "nameKey": "item.cheese.name",
+      "descriptionKey": "item.cheese.description"
     },
     "cloth": {
       "id": "cloth",
@@ -1795,7 +1993,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 3
+      "value": 3,
+      "nameKey": "item.cloth.name",
+      "descriptionKey": "item.cloth.description"
     },
     "cloth_robe": {
       "id": "cloth_robe",
@@ -1818,7 +2018,9 @@
       "combatStatBonuses": {
         "magicDefense": 6,
         "mana": 20
-      }
+      },
+      "nameKey": "item.cloth_robe.name",
+      "descriptionKey": "item.cloth_robe.description"
     },
     "coal": {
       "id": "coal",
@@ -1828,7 +2030,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.coal.name",
+      "descriptionKey": "item.coal.description"
     },
     "common_herb": {
       "id": "common_herb",
@@ -1838,7 +2042,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.common_herb.name",
+      "descriptionKey": "item.common_herb.description"
     },
     "common_item": {
       "id": "common_item",
@@ -1848,7 +2054,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.common_item.name",
+      "descriptionKey": "item.common_item.description"
     },
     "common_trinket": {
       "id": "common_trinket",
@@ -1858,7 +2066,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.common_trinket.name",
+      "descriptionKey": "item.common_trinket.description"
     },
     "compost": {
       "id": "compost",
@@ -1868,7 +2078,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.compost.name",
+      "descriptionKey": "item.compost.description"
     },
     "copper_axe": {
       "id": "copper_axe",
@@ -1891,7 +2103,9 @@
       },
       "combatStatBonuses": {
         "attack": 11
-      }
+      },
+      "nameKey": "item.copper_axe.name",
+      "descriptionKey": "item.copper_axe.description"
     },
     "copper_mace": {
       "id": "copper_mace",
@@ -1914,7 +2128,9 @@
       },
       "combatStatBonuses": {
         "attack": 9
-      }
+      },
+      "nameKey": "item.copper_mace.name",
+      "descriptionKey": "item.copper_mace.description"
     },
     "copper_ore": {
       "id": "copper_ore",
@@ -1924,7 +2140,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.copper_ore.name",
+      "descriptionKey": "item.copper_ore.description"
     },
     "copper_ring": {
       "id": "copper_ring",
@@ -1943,7 +2161,9 @@
       },
       "combatStatBonuses": {
         "attack": 2
-      }
+      },
+      "nameKey": "item.copper_ring.name",
+      "descriptionKey": "item.copper_ring.description"
     },
     "copper_spear": {
       "id": "copper_spear",
@@ -1966,7 +2186,9 @@
       },
       "combatStatBonuses": {
         "attack": 10
-      }
+      },
+      "nameKey": "item.copper_spear.name",
+      "descriptionKey": "item.copper_spear.description"
     },
     "copper_sword": {
       "id": "copper_sword",
@@ -1988,7 +2210,9 @@
       },
       "combatStatBonuses": {
         "attack": 5
-      }
+      },
+      "nameKey": "item.copper_sword.name",
+      "descriptionKey": "item.copper_sword.description"
     },
     "crystal_shard": {
       "id": "crystal_shard",
@@ -1998,7 +2222,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 15
+      "value": 15,
+      "nameKey": "item.crystal_shard.name",
+      "descriptionKey": "item.crystal_shard.description"
     },
     "curse_removal_scroll": {
       "id": "curse_removal_scroll",
@@ -2012,7 +2238,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 1
-      }
+      },
+      "nameKey": "item.curse_removal_scroll.name",
+      "descriptionKey": "item.curse_removal_scroll.description"
     },
     "cursed_water": {
       "id": "cursed_water",
@@ -2022,7 +2250,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.cursed_water.name",
+      "descriptionKey": "item.cursed_water.description"
     },
     "dark_gem": {
       "id": "dark_gem",
@@ -2032,7 +2262,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.dark_gem.name",
+      "descriptionKey": "item.dark_gem.description"
     },
     "dark_relic": {
       "id": "dark_relic",
@@ -2042,7 +2274,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 650
+      "value": 650,
+      "nameKey": "item.dark_relic.name",
+      "descriptionKey": "item.dark_relic.description"
     },
     "defense_potion": {
       "id": "defense_potion",
@@ -2056,7 +2290,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 50
-      }
+      },
+      "nameKey": "item.defense_potion.name",
+      "descriptionKey": "item.defense_potion.description"
     },
     "demon_essence": {
       "id": "demon_essence",
@@ -2066,7 +2302,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 800
+      "value": 800,
+      "nameKey": "item.demon_essence.name",
+      "descriptionKey": "item.demon_essence.description"
     },
     "dexterity_ring_t1": {
       "id": "dexterity_ring_t1",
@@ -2086,7 +2324,9 @@
       "combatStatBonuses": {
         "speed": 3,
         "criticalChance": 1
-      }
+      },
+      "nameKey": "item.dexterity_ring_t1.name",
+      "descriptionKey": "item.dexterity_ring_t1.description"
     },
     "dexterity_ring_t2": {
       "id": "dexterity_ring_t2",
@@ -2106,7 +2346,9 @@
       "combatStatBonuses": {
         "speed": 4,
         "criticalChance": 1
-      }
+      },
+      "nameKey": "item.dexterity_ring_t2.name",
+      "descriptionKey": "item.dexterity_ring_t2.description"
     },
     "dexterity_ring_t3": {
       "id": "dexterity_ring_t3",
@@ -2126,7 +2368,9 @@
       "combatStatBonuses": {
         "speed": 12,
         "criticalChance": 4
-      }
+      },
+      "nameKey": "item.dexterity_ring_t3.name",
+      "descriptionKey": "item.dexterity_ring_t3.description"
     },
     "divine_boots": {
       "id": "divine_boots",
@@ -2151,7 +2395,9 @@
         "magicDefense": 45,
         "magicAttack": 25,
         "mana": 180
-      }
+      },
+      "nameKey": "item.divine_boots.name",
+      "descriptionKey": "item.divine_boots.description"
     },
     "divine_crown": {
       "id": "divine_crown",
@@ -2177,7 +2423,9 @@
         "magicDefense": 50,
         "magicAttack": 35,
         "mana": 200
-      }
+      },
+      "nameKey": "item.divine_crown.name",
+      "descriptionKey": "item.divine_crown.description"
     },
     "divine_gloves": {
       "id": "divine_gloves",
@@ -2202,7 +2450,9 @@
         "magicDefense": 42,
         "magicAttack": 28,
         "mana": 160
-      }
+      },
+      "nameKey": "item.divine_gloves.name",
+      "descriptionKey": "item.divine_gloves.description"
     },
     "divine_hood": {
       "id": "divine_hood",
@@ -2225,7 +2475,9 @@
       "combatStatBonuses": {
         "magicDefense": 50,
         "mana": 150
-      }
+      },
+      "nameKey": "item.divine_hood.name",
+      "descriptionKey": "item.divine_hood.description"
     },
     "divine_meal": {
       "id": "divine_meal",
@@ -2239,7 +2491,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 600
-      }
+      },
+      "nameKey": "item.divine_meal.name",
+      "descriptionKey": "item.divine_meal.description"
     },
     "divine_orb": {
       "id": "divine_orb",
@@ -2263,7 +2517,9 @@
       "combatStatBonuses": {
         "magicAttack": 100,
         "mana": 400
-      }
+      },
+      "nameKey": "item.divine_orb.name",
+      "descriptionKey": "item.divine_orb.description"
     },
     "divine_robes": {
       "id": "divine_robes",
@@ -2287,7 +2543,9 @@
       "combatStatBonuses": {
         "magicDefense": 60,
         "mana": 250
-      }
+      },
+      "nameKey": "item.divine_robes.name",
+      "descriptionKey": "item.divine_robes.description"
     },
     "divine_robes_bottom": {
       "id": "divine_robes_bottom",
@@ -2312,7 +2570,9 @@
         "magicDefense": 48,
         "magicAttack": 22,
         "mana": 175
-      }
+      },
+      "nameKey": "item.divine_robes_bottom.name",
+      "descriptionKey": "item.divine_robes_bottom.description"
     },
     "dragon_blood": {
       "id": "dragon_blood",
@@ -2322,7 +2582,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.dragon_blood.name",
+      "descriptionKey": "item.dragon_blood.description"
     },
     "dragon_bone": {
       "id": "dragon_bone",
@@ -2332,7 +2594,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1500
+      "value": 1500,
+      "nameKey": "item.dragon_bone.name",
+      "descriptionKey": "item.dragon_bone.description"
     },
     "dragon_scale": {
       "id": "dragon_scale",
@@ -2342,7 +2606,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 2000
+      "value": 2000,
+      "nameKey": "item.dragon_scale.name",
+      "descriptionKey": "item.dragon_scale.description"
     },
     "dragonbone_armor": {
       "id": "dragonbone_armor",
@@ -2365,7 +2631,9 @@
       },
       "combatStatBonuses": {
         "defense": 80
-      }
+      },
+      "nameKey": "item.dragonbone_armor.name",
+      "descriptionKey": "item.dragonbone_armor.description"
     },
     "dragonbone_axe": {
       "id": "dragonbone_axe",
@@ -2388,7 +2656,9 @@
       },
       "combatStatBonuses": {
         "attack": 110
-      }
+      },
+      "nameKey": "item.dragonbone_axe.name",
+      "descriptionKey": "item.dragonbone_axe.description"
     },
     "dragonbone_bow": {
       "id": "dragonbone_bow",
@@ -2413,7 +2683,9 @@
         "attack": 70,
         "speed": 50,
         "criticalChance": 20
-      }
+      },
+      "nameKey": "item.dragonbone_bow.name",
+      "descriptionKey": "item.dragonbone_bow.description"
     },
     "dragonbone_dagger": {
       "id": "dragonbone_dagger",
@@ -2438,7 +2710,9 @@
         "attack": 60,
         "speed": 50,
         "criticalChance": 20
-      }
+      },
+      "nameKey": "item.dragonbone_dagger.name",
+      "descriptionKey": "item.dragonbone_dagger.description"
     },
     "dragonbone_mace": {
       "id": "dragonbone_mace",
@@ -2461,7 +2735,9 @@
       },
       "combatStatBonuses": {
         "attack": 90
-      }
+      },
+      "nameKey": "item.dragonbone_mace.name",
+      "descriptionKey": "item.dragonbone_mace.description"
     },
     "dragonbone_shield": {
       "id": "dragonbone_shield",
@@ -2483,7 +2759,9 @@
       },
       "combatStatBonuses": {
         "defense": 80
-      }
+      },
+      "nameKey": "item.dragonbone_shield.name",
+      "descriptionKey": "item.dragonbone_shield.description"
     },
     "dragonbone_spear": {
       "id": "dragonbone_spear",
@@ -2506,7 +2784,9 @@
       },
       "combatStatBonuses": {
         "attack": 100
-      }
+      },
+      "nameKey": "item.dragonbone_spear.name",
+      "descriptionKey": "item.dragonbone_spear.description"
     },
     "dragonbone_sword": {
       "id": "dragonbone_sword",
@@ -2531,7 +2811,9 @@
         "attack": 80,
         "criticalChance": 10,
         "criticalDamage": 0.2
-      }
+      },
+      "nameKey": "item.dragonbone_sword.name",
+      "descriptionKey": "item.dragonbone_sword.description"
     },
     "dragonhide_armor": {
       "id": "dragonhide_armor",
@@ -2555,7 +2837,9 @@
       "combatStatBonuses": {
         "defense": 50,
         "speed": 30
-      }
+      },
+      "nameKey": "item.dragonhide_armor.name",
+      "descriptionKey": "item.dragonhide_armor.description"
     },
     "dwarven_ale": {
       "id": "dwarven_ale",
@@ -2569,7 +2853,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 100
-      }
+      },
+      "nameKey": "item.dwarven_ale.name",
+      "descriptionKey": "item.dwarven_ale.description"
     },
     "earth_core": {
       "id": "earth_core",
@@ -2579,7 +2865,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 195
+      "value": 195,
+      "nameKey": "item.earth_core.name",
+      "descriptionKey": "item.earth_core.description"
     },
     "ectoplasm": {
       "id": "ectoplasm",
@@ -2589,7 +2877,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.ectoplasm.name",
+      "descriptionKey": "item.ectoplasm.description"
     },
     "elder_essence": {
       "id": "elder_essence",
@@ -2599,7 +2889,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 600
+      "value": 600,
+      "nameKey": "item.elder_essence.name",
+      "descriptionKey": "item.elder_essence.description"
     },
     "elder_log": {
       "id": "elder_log",
@@ -2609,7 +2901,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.elder_log.name",
+      "descriptionKey": "item.elder_log.description"
     },
     "elder_staff": {
       "id": "elder_staff",
@@ -2633,7 +2927,9 @@
       "combatStatBonuses": {
         "magicAttack": 52,
         "mana": 195
-      }
+      },
+      "nameKey": "item.elder_staff.name",
+      "descriptionKey": "item.elder_staff.description"
     },
     "elder_wand": {
       "id": "elder_wand",
@@ -2657,7 +2953,9 @@
       "combatStatBonuses": {
         "magicAttack": 52,
         "mana": 195
-      }
+      },
+      "nameKey": "item.elder_wand.name",
+      "descriptionKey": "item.elder_wand.description"
     },
     "elemental_core": {
       "id": "elemental_core",
@@ -2667,7 +2965,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 400
+      "value": 400,
+      "nameKey": "item.elemental_core.name",
+      "descriptionKey": "item.elemental_core.description"
     },
     "elixir_power": {
       "id": "elixir_power",
@@ -2682,7 +2982,9 @@
         "type": "buff",
         "buffId": "power_boost",
         "duration": 600
-      }
+      },
+      "nameKey": "item.elixir_power.name",
+      "descriptionKey": "item.elixir_power.description"
     },
     "elven_bread": {
       "id": "elven_bread",
@@ -2696,7 +2998,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 300
-      }
+      },
+      "nameKey": "item.elven_bread.name",
+      "descriptionKey": "item.elven_bread.description"
     },
     "emerald_ring": {
       "id": "emerald_ring",
@@ -2710,7 +3014,9 @@
       "consumableEffect": {
         "type": "ring1",
         "amount": "dexterity"
-      }
+      },
+      "nameKey": "item.emerald_ring.name",
+      "descriptionKey": "item.emerald_ring.description"
     },
     "enchanted_cloth": {
       "id": "enchanted_cloth",
@@ -2720,7 +3026,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 70
+      "value": 70,
+      "nameKey": "item.enchanted_cloth.name",
+      "descriptionKey": "item.enchanted_cloth.description"
     },
     "enchanted_gloves": {
       "id": "enchanted_gloves",
@@ -2743,7 +3051,9 @@
       "combatStatBonuses": {
         "magicDefense": 7,
         "mana": 25
-      }
+      },
+      "nameKey": "item.enchanted_gloves.name",
+      "descriptionKey": "item.enchanted_gloves.description"
     },
     "enchanted_hood": {
       "id": "enchanted_hood",
@@ -2766,7 +3076,9 @@
       "combatStatBonuses": {
         "magicDefense": 12,
         "mana": 37
-      }
+      },
+      "nameKey": "item.enchanted_hood.name",
+      "descriptionKey": "item.enchanted_hood.description"
     },
     "enchanted_item_greater": {
       "id": "enchanted_item_greater",
@@ -2776,7 +3088,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 99,
-      "value": 800
+      "value": 800,
+      "nameKey": "item.enchanted_item_greater.name",
+      "descriptionKey": "item.enchanted_item_greater.description"
     },
     "enchanted_item_minor": {
       "id": "enchanted_item_minor",
@@ -2786,7 +3100,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 99,
-      "value": 60
+      "value": 60,
+      "nameKey": "item.enchanted_item_minor.name",
+      "descriptionKey": "item.enchanted_item_minor.description"
     },
     "enchanted_item_moderate": {
       "id": "enchanted_item_moderate",
@@ -2796,7 +3112,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 99,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.enchanted_item_moderate.name",
+      "descriptionKey": "item.enchanted_item_moderate.description"
     },
     "enchanted_item_supreme": {
       "id": "enchanted_item_supreme",
@@ -2806,7 +3124,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 99,
-      "value": 3000
+      "value": 3000,
+      "nameKey": "item.enchanted_item_supreme.name",
+      "descriptionKey": "item.enchanted_item_supreme.description"
     },
     "enchanted_robes_bottom": {
       "id": "enchanted_robes_bottom",
@@ -2830,7 +3150,9 @@
       "combatStatBonuses": {
         "magicDefense": 18,
         "mana": 75
-      }
+      },
+      "nameKey": "item.enchanted_robes_bottom.name",
+      "descriptionKey": "item.enchanted_robes_bottom.description"
     },
     "enchanted_staff": {
       "id": "enchanted_staff",
@@ -2854,7 +3176,9 @@
       "combatStatBonuses": {
         "magicAttack": 32,
         "mana": 120
-      }
+      },
+      "nameKey": "item.enchanted_staff.name",
+      "descriptionKey": "item.enchanted_staff.description"
     },
     "enchanted_thread": {
       "id": "enchanted_thread",
@@ -2864,7 +3188,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 50
+      "value": 50,
+      "nameKey": "item.enchanted_thread.name",
+      "descriptionKey": "item.enchanted_thread.description"
     },
     "energy_wisp": {
       "id": "energy_wisp",
@@ -2874,7 +3200,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.energy_wisp.name",
+      "descriptionKey": "item.energy_wisp.description"
     },
     "epic_amulet_4_0": {
       "id": "epic_amulet_4_0",
@@ -2894,7 +3222,9 @@
       "combatStatBonuses": {
         "magicAttack": 32,
         "mana": 130
-      }
+      },
+      "nameKey": "item.epic_amulet_4_0.name",
+      "descriptionKey": "item.epic_amulet_4_0.description"
     },
     "epic_amulet_4_1": {
       "id": "epic_amulet_4_1",
@@ -2914,7 +3244,9 @@
       },
       "combatStatBonuses": {
         "defense": 13
-      }
+      },
+      "nameKey": "item.epic_amulet_4_1.name",
+      "descriptionKey": "item.epic_amulet_4_1.description"
     },
     "epic_amulet_4_2": {
       "id": "epic_amulet_4_2",
@@ -2933,7 +3265,9 @@
       },
       "combatStatBonuses": {
         "attack": 26
-      }
+      },
+      "nameKey": "item.epic_amulet_4_2.name",
+      "descriptionKey": "item.epic_amulet_4_2.description"
     },
     "epic_amulet_4_3": {
       "id": "epic_amulet_4_3",
@@ -2953,7 +3287,9 @@
       "combatStatBonuses": {
         "speed": 19,
         "criticalChance": 6
-      }
+      },
+      "nameKey": "item.epic_amulet_4_3.name",
+      "descriptionKey": "item.epic_amulet_4_3.description"
     },
     "epic_amulet_4_4": {
       "id": "epic_amulet_4_4",
@@ -2973,7 +3309,9 @@
       },
       "combatStatBonuses": {
         "defense": 13
-      }
+      },
+      "nameKey": "item.epic_amulet_4_4.name",
+      "descriptionKey": "item.epic_amulet_4_4.description"
     },
     "epic_herb": {
       "id": "epic_herb",
@@ -2983,7 +3321,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 100
+      "value": 100,
+      "nameKey": "item.epic_herb.name",
+      "descriptionKey": "item.epic_herb.description"
     },
     "epic_item": {
       "id": "epic_item",
@@ -2993,7 +3333,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 300
+      "value": 300,
+      "nameKey": "item.epic_item.name",
+      "descriptionKey": "item.epic_item.description"
     },
     "epic_ring_4_0": {
       "id": "epic_ring_4_0",
@@ -3012,7 +3354,9 @@
       },
       "combatStatBonuses": {
         "attack": 26
-      }
+      },
+      "nameKey": "item.epic_ring_4_0.name",
+      "descriptionKey": "item.epic_ring_4_0.description"
     },
     "epic_ring_4_1": {
       "id": "epic_ring_4_1",
@@ -3032,7 +3376,9 @@
       "combatStatBonuses": {
         "magicAttack": 32,
         "mana": 130
-      }
+      },
+      "nameKey": "item.epic_ring_4_1.name",
+      "descriptionKey": "item.epic_ring_4_1.description"
     },
     "epic_ring_4_2": {
       "id": "epic_ring_4_2",
@@ -3052,7 +3398,9 @@
       "combatStatBonuses": {
         "speed": 19,
         "criticalChance": 6
-      }
+      },
+      "nameKey": "item.epic_ring_4_2.name",
+      "descriptionKey": "item.epic_ring_4_2.description"
     },
     "epic_ring_4_3": {
       "id": "epic_ring_4_3",
@@ -3072,7 +3420,9 @@
       },
       "combatStatBonuses": {
         "defense": 13
-      }
+      },
+      "nameKey": "item.epic_ring_4_3.name",
+      "descriptionKey": "item.epic_ring_4_3.description"
     },
     "epic_ring_4_4": {
       "id": "epic_ring_4_4",
@@ -3092,7 +3442,9 @@
       },
       "combatStatBonuses": {
         "defense": 13
-      }
+      },
+      "nameKey": "item.epic_ring_4_4.name",
+      "descriptionKey": "item.epic_ring_4_4.description"
     },
     "essence_crystal": {
       "id": "essence_crystal",
@@ -3102,7 +3454,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 60
+      "value": 60,
+      "nameKey": "item.essence_crystal.name",
+      "descriptionKey": "item.essence_crystal.description"
     },
     "essence_of_death": {
       "id": "essence_of_death",
@@ -3112,7 +3466,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 30
+      "value": 30,
+      "nameKey": "item.essence_of_death.name",
+      "descriptionKey": "item.essence_of_death.description"
     },
     "exotic_fruit": {
       "id": "exotic_fruit",
@@ -3122,7 +3478,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 50
+      "value": 50,
+      "nameKey": "item.exotic_fruit.name",
+      "descriptionKey": "item.exotic_fruit.description"
     },
     "experience_potion_epic": {
       "id": "experience_potion_epic",
@@ -3136,7 +3494,9 @@
       "consumableEffect": {
         "type": "experience",
         "amount": 10000
-      }
+      },
+      "nameKey": "item.experience_potion_epic.name",
+      "descriptionKey": "item.experience_potion_epic.description"
     },
     "experience_potion_large": {
       "id": "experience_potion_large",
@@ -3150,7 +3510,9 @@
       "consumableEffect": {
         "type": "experience",
         "amount": 2000
-      }
+      },
+      "nameKey": "item.experience_potion_large.name",
+      "descriptionKey": "item.experience_potion_large.description"
     },
     "experience_potion_medium": {
       "id": "experience_potion_medium",
@@ -3164,7 +3526,9 @@
       "consumableEffect": {
         "type": "experience",
         "amount": 500
-      }
+      },
+      "nameKey": "item.experience_potion_medium.name",
+      "descriptionKey": "item.experience_potion_medium.description"
     },
     "experience_potion_small": {
       "id": "experience_potion_small",
@@ -3178,7 +3542,9 @@
       "consumableEffect": {
         "type": "experience",
         "amount": 100
-      }
+      },
+      "nameKey": "item.experience_potion_small.name",
+      "descriptionKey": "item.experience_potion_small.description"
     },
     "fertilizer": {
       "id": "fertilizer",
@@ -3188,7 +3554,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.fertilizer.name",
+      "descriptionKey": "item.fertilizer.description"
     },
     "fill_amulet_t1": {
       "id": "fill_amulet_t1",
@@ -3208,7 +3576,9 @@
       },
       "combatStatBonuses": {
         "defense": 2
-      }
+      },
+      "nameKey": "item.fill_amulet_t1.name",
+      "descriptionKey": "item.fill_amulet_t1.description"
     },
     "fill_amulet_t2": {
       "id": "fill_amulet_t2",
@@ -3228,7 +3598,9 @@
       },
       "combatStatBonuses": {
         "defense": 3
-      }
+      },
+      "nameKey": "item.fill_amulet_t2.name",
+      "descriptionKey": "item.fill_amulet_t2.description"
     },
     "fill_amulet_t3": {
       "id": "fill_amulet_t3",
@@ -3248,7 +3620,9 @@
       },
       "combatStatBonuses": {
         "defense": 5
-      }
+      },
+      "nameKey": "item.fill_amulet_t3.name",
+      "descriptionKey": "item.fill_amulet_t3.description"
     },
     "fill_amulet_t4": {
       "id": "fill_amulet_t4",
@@ -3268,7 +3642,9 @@
       },
       "combatStatBonuses": {
         "defense": 8
-      }
+      },
+      "nameKey": "item.fill_amulet_t4.name",
+      "descriptionKey": "item.fill_amulet_t4.description"
     },
     "fill_ring1_t1": {
       "id": "fill_ring1_t1",
@@ -3288,7 +3664,9 @@
       },
       "combatStatBonuses": {
         "defense": 2
-      }
+      },
+      "nameKey": "item.fill_ring1_t1.name",
+      "descriptionKey": "item.fill_ring1_t1.description"
     },
     "fill_ring1_t2": {
       "id": "fill_ring1_t2",
@@ -3308,7 +3686,9 @@
       },
       "combatStatBonuses": {
         "defense": 3
-      }
+      },
+      "nameKey": "item.fill_ring1_t2.name",
+      "descriptionKey": "item.fill_ring1_t2.description"
     },
     "fill_ring1_t3": {
       "id": "fill_ring1_t3",
@@ -3328,7 +3708,9 @@
       },
       "combatStatBonuses": {
         "defense": 5
-      }
+      },
+      "nameKey": "item.fill_ring1_t3.name",
+      "descriptionKey": "item.fill_ring1_t3.description"
     },
     "fill_ring1_t4": {
       "id": "fill_ring1_t4",
@@ -3348,7 +3730,9 @@
       },
       "combatStatBonuses": {
         "defense": 8
-      }
+      },
+      "nameKey": "item.fill_ring1_t4.name",
+      "descriptionKey": "item.fill_ring1_t4.description"
     },
     "fire_core": {
       "id": "fire_core",
@@ -3358,7 +3742,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 190
+      "value": 190,
+      "nameKey": "item.fire_core.name",
+      "descriptionKey": "item.fire_core.description"
     },
     "fish_bone": {
       "id": "fish_bone",
@@ -3368,7 +3754,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.fish_bone.name",
+      "descriptionKey": "item.fish_bone.description"
     },
     "fish_stew": {
       "id": "fish_stew",
@@ -3382,7 +3770,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 125
-      }
+      },
+      "nameKey": "item.fish_stew.name",
+      "descriptionKey": "item.fish_stew.description"
     },
     "fruit": {
       "id": "fruit",
@@ -3392,7 +3782,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.fruit.name",
+      "descriptionKey": "item.fruit.description"
     },
     "gears": {
       "id": "gears",
@@ -3402,7 +3794,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 15
+      "value": 15,
+      "nameKey": "item.gears.name",
+      "descriptionKey": "item.gears.description"
     },
     "gem_common": {
       "id": "gem_common",
@@ -3412,7 +3806,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 10
+      "value": 10,
+      "nameKey": "item.gem_common.name",
+      "descriptionKey": "item.gem_common.description"
     },
     "gem_epic": {
       "id": "gem_epic",
@@ -3422,7 +3818,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 300
+      "value": 300,
+      "nameKey": "item.gem_epic.name",
+      "descriptionKey": "item.gem_epic.description"
     },
     "gem_legendary": {
       "id": "gem_legendary",
@@ -3432,7 +3830,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1200
+      "value": 1200,
+      "nameKey": "item.gem_legendary.name",
+      "descriptionKey": "item.gem_legendary.description"
     },
     "gem_rare": {
       "id": "gem_rare",
@@ -3442,7 +3842,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 75
+      "value": 75,
+      "nameKey": "item.gem_rare.name",
+      "descriptionKey": "item.gem_rare.description"
     },
     "giant_stone": {
       "id": "giant_stone",
@@ -3452,7 +3854,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 100
+      "value": 100,
+      "nameKey": "item.giant_stone.name",
+      "descriptionKey": "item.giant_stone.description"
     },
     "gold": {
       "id": "gold",
@@ -3462,7 +3866,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.gold.name",
+      "descriptionKey": "item.gold.description"
     },
     "gold_ingot": {
       "id": "gold_ingot",
@@ -3472,7 +3878,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 60
+      "value": 60,
+      "nameKey": "item.gold_ingot.name",
+      "descriptionKey": "item.gold_ingot.description"
     },
     "gold_jewelry_set": {
       "id": "gold_jewelry_set",
@@ -3495,7 +3903,9 @@
         "magicAttack": 25,
         "magicDefense": 15,
         "mana": 100
-      }
+      },
+      "nameKey": "item.gold_jewelry_set.name",
+      "descriptionKey": "item.gold_jewelry_set.description"
     },
     "gold_ore": {
       "id": "gold_ore",
@@ -3505,7 +3915,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 50
+      "value": 50,
+      "nameKey": "item.gold_ore.name",
+      "descriptionKey": "item.gold_ore.description"
     },
     "grand_feast": {
       "id": "grand_feast",
@@ -3519,7 +3931,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 500
-      }
+      },
+      "nameKey": "item.grand_feast.name",
+      "descriptionKey": "item.grand_feast.description"
     },
     "granite": {
       "id": "granite",
@@ -3529,7 +3943,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 10
+      "value": 10,
+      "nameKey": "item.granite.name",
+      "descriptionKey": "item.granite.description"
     },
     "greater_essence": {
       "id": "greater_essence",
@@ -3539,7 +3955,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.greater_essence.name",
+      "descriptionKey": "item.greater_essence.description"
     },
     "greater_healing_potion": {
       "id": "greater_healing_potion",
@@ -3553,7 +3971,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 300
-      }
+      },
+      "nameKey": "item.greater_healing_potion.name",
+      "descriptionKey": "item.greater_healing_potion.description"
     },
     "greater_mana_potion": {
       "id": "greater_mana_potion",
@@ -3567,7 +3987,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 350
-      }
+      },
+      "nameKey": "item.greater_mana_potion.name",
+      "descriptionKey": "item.greater_mana_potion.description"
     },
     "greater_rune": {
       "id": "greater_rune",
@@ -3577,7 +3999,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 99,
-      "value": 400
+      "value": 400,
+      "nameKey": "item.greater_rune.name",
+      "descriptionKey": "item.greater_rune.description"
     },
     "health_food": {
       "id": "health_food",
@@ -3591,7 +4015,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 50
-      }
+      },
+      "nameKey": "item.health_food.name",
+      "descriptionKey": "item.health_food.description"
     },
     "health_potion_epic": {
       "id": "health_potion_epic",
@@ -3605,7 +4031,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 400
-      }
+      },
+      "nameKey": "item.health_potion_epic.name",
+      "descriptionKey": "item.health_potion_epic.description"
     },
     "health_potion_large": {
       "id": "health_potion_large",
@@ -3619,7 +4047,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 300
-      }
+      },
+      "nameKey": "item.health_potion_large.name",
+      "descriptionKey": "item.health_potion_large.description"
     },
     "health_potion_legendary": {
       "id": "health_potion_legendary",
@@ -3633,7 +4063,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 1000
-      }
+      },
+      "nameKey": "item.health_potion_legendary.name",
+      "descriptionKey": "item.health_potion_legendary.description"
     },
     "health_potion_medium": {
       "id": "health_potion_medium",
@@ -3647,7 +4079,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 150
-      }
+      },
+      "nameKey": "item.health_potion_medium.name",
+      "descriptionKey": "item.health_potion_medium.description"
     },
     "health_potion_small": {
       "id": "health_potion_small",
@@ -3661,7 +4095,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 50
-      }
+      },
+      "nameKey": "item.health_potion_small.name",
+      "descriptionKey": "item.health_potion_small.description"
     },
     "herb_essence": {
       "id": "herb_essence",
@@ -3671,7 +4107,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 30
+      "value": 30,
+      "nameKey": "item.herb_essence.name",
+      "descriptionKey": "item.herb_essence.description"
     },
     "herb_essence_rare": {
       "id": "herb_essence_rare",
@@ -3681,7 +4119,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.herb_essence_rare.name",
+      "descriptionKey": "item.herb_essence_rare.description"
     },
     "herb_seed": {
       "id": "herb_seed",
@@ -3691,7 +4131,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.herb_seed.name",
+      "descriptionKey": "item.herb_seed.description"
     },
     "holy_relic": {
       "id": "holy_relic",
@@ -3701,7 +4143,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 600
+      "value": 600,
+      "nameKey": "item.holy_relic.name",
+      "descriptionKey": "item.holy_relic.description"
     },
     "identification_scroll": {
       "id": "identification_scroll",
@@ -3715,7 +4159,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 1
-      }
+      },
+      "nameKey": "item.identification_scroll.name",
+      "descriptionKey": "item.identification_scroll.description"
     },
     "imp_essence": {
       "id": "imp_essence",
@@ -3725,7 +4171,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 12
+      "value": 12,
+      "nameKey": "item.imp_essence.name",
+      "descriptionKey": "item.imp_essence.description"
     },
     "intelligence_ring_t1": {
       "id": "intelligence_ring_t1",
@@ -3745,7 +4193,9 @@
       "combatStatBonuses": {
         "magicAttack": 5,
         "mana": 20
-      }
+      },
+      "nameKey": "item.intelligence_ring_t1.name",
+      "descriptionKey": "item.intelligence_ring_t1.description"
     },
     "intelligence_ring_t2": {
       "id": "intelligence_ring_t2",
@@ -3765,7 +4215,9 @@
       "combatStatBonuses": {
         "magicAttack": 7,
         "mana": 30
-      }
+      },
+      "nameKey": "item.intelligence_ring_t2.name",
+      "descriptionKey": "item.intelligence_ring_t2.description"
     },
     "intelligence_ring_t3": {
       "id": "intelligence_ring_t3",
@@ -3785,7 +4237,9 @@
       "combatStatBonuses": {
         "magicAttack": 20,
         "mana": 80
-      }
+      },
+      "nameKey": "item.intelligence_ring_t3.name",
+      "descriptionKey": "item.intelligence_ring_t3.description"
     },
     "iron_armor": {
       "id": "iron_armor",
@@ -3807,7 +4261,9 @@
       },
       "combatStatBonuses": {
         "defense": 12
-      }
+      },
+      "nameKey": "item.iron_armor.name",
+      "descriptionKey": "item.iron_armor.description"
     },
     "iron_axe": {
       "id": "iron_axe",
@@ -3830,7 +4286,9 @@
       },
       "combatStatBonuses": {
         "attack": 16
-      }
+      },
+      "nameKey": "item.iron_axe.name",
+      "descriptionKey": "item.iron_axe.description"
     },
     "iron_boots": {
       "id": "iron_boots",
@@ -3852,7 +4310,9 @@
       },
       "combatStatBonuses": {
         "defense": 10
-      }
+      },
+      "nameKey": "item.iron_boots.name",
+      "descriptionKey": "item.iron_boots.description"
     },
     "iron_bow": {
       "id": "iron_bow",
@@ -3877,7 +4337,9 @@
         "attack": 10,
         "speed": 7,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.iron_bow.name",
+      "descriptionKey": "item.iron_bow.description"
     },
     "iron_dagger": {
       "id": "iron_dagger",
@@ -3902,7 +4364,9 @@
         "attack": 9,
         "speed": 7,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.iron_dagger.name",
+      "descriptionKey": "item.iron_dagger.description"
     },
     "iron_gauntlets": {
       "id": "iron_gauntlets",
@@ -3926,7 +4390,9 @@
       "combatStatBonuses": {
         "defense": 9,
         "attack": 3
-      }
+      },
+      "nameKey": "item.iron_gauntlets.name",
+      "descriptionKey": "item.iron_gauntlets.description"
     },
     "iron_helmet": {
       "id": "iron_helmet",
@@ -3949,7 +4415,9 @@
       },
       "combatStatBonuses": {
         "defense": 12
-      }
+      },
+      "nameKey": "item.iron_helmet.name",
+      "descriptionKey": "item.iron_helmet.description"
     },
     "iron_ingot": {
       "id": "iron_ingot",
@@ -3959,7 +4427,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.iron_ingot.name",
+      "descriptionKey": "item.iron_ingot.description"
     },
     "iron_leggings": {
       "id": "iron_leggings",
@@ -3982,7 +4452,9 @@
       },
       "combatStatBonuses": {
         "defense": 11
-      }
+      },
+      "nameKey": "item.iron_leggings.name",
+      "descriptionKey": "item.iron_leggings.description"
     },
     "iron_mace": {
       "id": "iron_mace",
@@ -4005,7 +4477,9 @@
       },
       "combatStatBonuses": {
         "attack": 13
-      }
+      },
+      "nameKey": "item.iron_mace.name",
+      "descriptionKey": "item.iron_mace.description"
     },
     "iron_ore": {
       "id": "iron_ore",
@@ -4015,7 +4489,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.iron_ore.name",
+      "descriptionKey": "item.iron_ore.description"
     },
     "iron_shield": {
       "id": "iron_shield",
@@ -4034,7 +4510,9 @@
       },
       "combatStatBonuses": {
         "defense": 15
-      }
+      },
+      "nameKey": "item.iron_shield.name",
+      "descriptionKey": "item.iron_shield.description"
     },
     "iron_short_sword": {
       "id": "iron_short_sword",
@@ -4059,7 +4537,9 @@
         "attack": 12,
         "speed": 7,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.iron_short_sword.name",
+      "descriptionKey": "item.iron_short_sword.description"
     },
     "iron_spear": {
       "id": "iron_spear",
@@ -4082,7 +4562,9 @@
       },
       "combatStatBonuses": {
         "attack": 15
-      }
+      },
+      "nameKey": "item.iron_spear.name",
+      "descriptionKey": "item.iron_spear.description"
     },
     "iron_sword": {
       "id": "iron_sword",
@@ -4104,7 +4586,9 @@
       },
       "combatStatBonuses": {
         "attack": 10
-      }
+      },
+      "nameKey": "item.iron_sword.name",
+      "descriptionKey": "item.iron_sword.description"
     },
     "jewelry": {
       "id": "jewelry",
@@ -4114,7 +4598,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.jewelry.name",
+      "descriptionKey": "item.jewelry.description"
     },
     "large_fish": {
       "id": "large_fish",
@@ -4124,7 +4610,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 30
+      "value": 30,
+      "nameKey": "item.large_fish.name",
+      "descriptionKey": "item.large_fish.description"
     },
     "leather": {
       "id": "leather",
@@ -4134,7 +4622,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.leather.name",
+      "descriptionKey": "item.leather.description"
     },
     "leather_armor": {
       "id": "leather_armor",
@@ -4156,7 +4646,9 @@
       },
       "combatStatBonuses": {
         "defense": 8
-      }
+      },
+      "nameKey": "item.leather_armor.name",
+      "descriptionKey": "item.leather_armor.description"
     },
     "leather_boots": {
       "id": "leather_boots",
@@ -4179,7 +4671,9 @@
       "combatStatBonuses": {
         "defense": 4,
         "speed": 5
-      }
+      },
+      "nameKey": "item.leather_boots.name",
+      "descriptionKey": "item.leather_boots.description"
     },
     "leather_cap": {
       "id": "leather_cap",
@@ -4202,7 +4696,9 @@
       "combatStatBonuses": {
         "defense": 3,
         "speed": 2
-      }
+      },
+      "nameKey": "item.leather_cap.name",
+      "descriptionKey": "item.leather_cap.description"
     },
     "leather_gloves": {
       "id": "leather_gloves",
@@ -4225,7 +4721,9 @@
       "combatStatBonuses": {
         "defense": 3,
         "speed": 2
-      }
+      },
+      "nameKey": "item.leather_gloves.name",
+      "descriptionKey": "item.leather_gloves.description"
     },
     "leather_pants": {
       "id": "leather_pants",
@@ -4248,7 +4746,9 @@
       "combatStatBonuses": {
         "defense": 4,
         "speed": 3
-      }
+      },
+      "nameKey": "item.leather_pants.name",
+      "descriptionKey": "item.leather_pants.description"
     },
     "leather_scraps": {
       "id": "leather_scraps",
@@ -4258,7 +4758,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 3
+      "value": 3,
+      "nameKey": "item.leather_scraps.name",
+      "descriptionKey": "item.leather_scraps.description"
     },
     "legendary_amulet_0": {
       "id": "legendary_amulet_0",
@@ -4278,7 +4780,9 @@
       "combatStatBonuses": {
         "magicAttack": 50,
         "mana": 200
-      }
+      },
+      "nameKey": "item.legendary_amulet_0.name",
+      "descriptionKey": "item.legendary_amulet_0.description"
     },
     "legendary_amulet_1": {
       "id": "legendary_amulet_1",
@@ -4298,7 +4802,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.legendary_amulet_1.name",
+      "descriptionKey": "item.legendary_amulet_1.description"
     },
     "legendary_amulet_2": {
       "id": "legendary_amulet_2",
@@ -4317,7 +4823,9 @@
       },
       "combatStatBonuses": {
         "attack": 40
-      }
+      },
+      "nameKey": "item.legendary_amulet_2.name",
+      "descriptionKey": "item.legendary_amulet_2.description"
     },
     "legendary_amulet_3": {
       "id": "legendary_amulet_3",
@@ -4337,7 +4845,9 @@
       "combatStatBonuses": {
         "speed": 30,
         "criticalChance": 10
-      }
+      },
+      "nameKey": "item.legendary_amulet_3.name",
+      "descriptionKey": "item.legendary_amulet_3.description"
     },
     "legendary_amulet_4": {
       "id": "legendary_amulet_4",
@@ -4357,7 +4867,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.legendary_amulet_4.name",
+      "descriptionKey": "item.legendary_amulet_4.description"
     },
     "legendary_fish": {
       "id": "legendary_fish",
@@ -4367,7 +4879,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.legendary_fish.name",
+      "descriptionKey": "item.legendary_fish.description"
     },
     "legendary_herb": {
       "id": "legendary_herb",
@@ -4377,7 +4891,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 400
+      "value": 400,
+      "nameKey": "item.legendary_herb.name",
+      "descriptionKey": "item.legendary_herb.description"
     },
     "legendary_ring_0": {
       "id": "legendary_ring_0",
@@ -4396,7 +4912,9 @@
       },
       "combatStatBonuses": {
         "attack": 40
-      }
+      },
+      "nameKey": "item.legendary_ring_0.name",
+      "descriptionKey": "item.legendary_ring_0.description"
     },
     "legendary_ring_1": {
       "id": "legendary_ring_1",
@@ -4416,7 +4934,9 @@
       "combatStatBonuses": {
         "magicAttack": 50,
         "mana": 200
-      }
+      },
+      "nameKey": "item.legendary_ring_1.name",
+      "descriptionKey": "item.legendary_ring_1.description"
     },
     "legendary_ring_2": {
       "id": "legendary_ring_2",
@@ -4436,7 +4956,9 @@
       "combatStatBonuses": {
         "speed": 30,
         "criticalChance": 10
-      }
+      },
+      "nameKey": "item.legendary_ring_2.name",
+      "descriptionKey": "item.legendary_ring_2.description"
     },
     "legendary_ring_3": {
       "id": "legendary_ring_3",
@@ -4456,7 +4978,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.legendary_ring_3.name",
+      "descriptionKey": "item.legendary_ring_3.description"
     },
     "legendary_ring_4": {
       "id": "legendary_ring_4",
@@ -4476,7 +5000,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.legendary_ring_4.name",
+      "descriptionKey": "item.legendary_ring_4.description"
     },
     "legendary_trinket": {
       "id": "legendary_trinket",
@@ -4486,7 +5012,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1500
+      "value": 1500,
+      "nameKey": "item.legendary_trinket.name",
+      "descriptionKey": "item.legendary_trinket.description"
     },
     "lich_phylactery": {
       "id": "lich_phylactery",
@@ -4496,7 +5024,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.lich_phylactery.name",
+      "descriptionKey": "item.lich_phylactery.description"
     },
     "light_essence": {
       "id": "light_essence",
@@ -4506,7 +5036,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.light_essence.name",
+      "descriptionKey": "item.light_essence.description"
     },
     "limestone": {
       "id": "limestone",
@@ -4516,7 +5048,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.limestone.name",
+      "descriptionKey": "item.limestone.description"
     },
     "luck_potion": {
       "id": "luck_potion",
@@ -4530,7 +5064,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 20
-      }
+      },
+      "nameKey": "item.luck_potion.name",
+      "descriptionKey": "item.luck_potion.description"
     },
     "mage_gloves": {
       "id": "mage_gloves",
@@ -4553,7 +5089,9 @@
       "combatStatBonuses": {
         "magicDefense": 3,
         "mana": 10
-      }
+      },
+      "nameKey": "item.mage_gloves.name",
+      "descriptionKey": "item.mage_gloves.description"
     },
     "mage_hood": {
       "id": "mage_hood",
@@ -4576,7 +5114,9 @@
       "combatStatBonuses": {
         "magicDefense": 5,
         "mana": 15
-      }
+      },
+      "nameKey": "item.mage_hood.name",
+      "descriptionKey": "item.mage_hood.description"
     },
     "mage_orb": {
       "id": "mage_orb",
@@ -4600,7 +5140,9 @@
       "combatStatBonuses": {
         "magicAttack": 20,
         "mana": 80
-      }
+      },
+      "nameKey": "item.mage_orb.name",
+      "descriptionKey": "item.mage_orb.description"
     },
     "mage_robes": {
       "id": "mage_robes",
@@ -4625,7 +5167,9 @@
         "magicDefense": 40,
         "magicAttack": 25,
         "mana": 150
-      }
+      },
+      "nameKey": "item.mage_robes.name",
+      "descriptionKey": "item.mage_robes.description"
     },
     "mage_robes_bottom": {
       "id": "mage_robes_bottom",
@@ -4648,7 +5192,9 @@
       "combatStatBonuses": {
         "magicDefense": 4,
         "mana": 12
-      }
+      },
+      "nameKey": "item.mage_robes_bottom.name",
+      "descriptionKey": "item.mage_robes_bottom.description"
     },
     "mage_slippers": {
       "id": "mage_slippers",
@@ -4671,7 +5217,9 @@
       "combatStatBonuses": {
         "magicDefense": 4,
         "mana": 10
-      }
+      },
+      "nameKey": "item.mage_slippers.name",
+      "descriptionKey": "item.mage_slippers.description"
     },
     "mage_tome": {
       "id": "mage_tome",
@@ -4695,7 +5243,9 @@
       "combatStatBonuses": {
         "magicAttack": 15,
         "mana": 60
-      }
+      },
+      "nameKey": "item.mage_tome.name",
+      "descriptionKey": "item.mage_tome.description"
     },
     "magic_amulet_t1": {
       "id": "magic_amulet_t1",
@@ -4715,7 +5265,9 @@
       "combatStatBonuses": {
         "magicAttack": 5,
         "mana": 20
-      }
+      },
+      "nameKey": "item.magic_amulet_t1.name",
+      "descriptionKey": "item.magic_amulet_t1.description"
     },
     "magic_amulet_t2": {
       "id": "magic_amulet_t2",
@@ -4735,7 +5287,9 @@
       "combatStatBonuses": {
         "magicAttack": 7,
         "mana": 30
-      }
+      },
+      "nameKey": "item.magic_amulet_t2.name",
+      "descriptionKey": "item.magic_amulet_t2.description"
     },
     "magic_amulet_t3": {
       "id": "magic_amulet_t3",
@@ -4755,7 +5309,9 @@
       "combatStatBonuses": {
         "magicAttack": 20,
         "mana": 80
-      }
+      },
+      "nameKey": "item.magic_amulet_t3.name",
+      "descriptionKey": "item.magic_amulet_t3.description"
     },
     "magic_cake": {
       "id": "magic_cake",
@@ -4769,7 +5325,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 800
-      }
+      },
+      "nameKey": "item.magic_cake.name",
+      "descriptionKey": "item.magic_cake.description"
     },
     "magic_essence": {
       "id": "magic_essence",
@@ -4779,7 +5337,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 180
+      "value": 180,
+      "nameKey": "item.magic_essence.name",
+      "descriptionKey": "item.magic_essence.description"
     },
     "magic_fruit": {
       "id": "magic_fruit",
@@ -4793,7 +5353,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 250
-      }
+      },
+      "nameKey": "item.magic_fruit.name",
+      "descriptionKey": "item.magic_fruit.description"
     },
     "magic_log": {
       "id": "magic_log",
@@ -4803,7 +5365,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 120
+      "value": 120,
+      "nameKey": "item.magic_log.name",
+      "descriptionKey": "item.magic_log.description"
     },
     "mana_crystal": {
       "id": "mana_crystal",
@@ -4813,7 +5377,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 250
+      "value": 250,
+      "nameKey": "item.mana_crystal.name",
+      "descriptionKey": "item.mana_crystal.description"
     },
     "mana_potion_epic": {
       "id": "mana_potion_epic",
@@ -4827,7 +5393,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 500
-      }
+      },
+      "nameKey": "item.mana_potion_epic.name",
+      "descriptionKey": "item.mana_potion_epic.description"
     },
     "mana_potion_large": {
       "id": "mana_potion_large",
@@ -4841,7 +5409,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 200
-      }
+      },
+      "nameKey": "item.mana_potion_large.name",
+      "descriptionKey": "item.mana_potion_large.description"
     },
     "mana_potion_legendary": {
       "id": "mana_potion_legendary",
@@ -4855,7 +5425,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 1500
-      }
+      },
+      "nameKey": "item.mana_potion_legendary.name",
+      "descriptionKey": "item.mana_potion_legendary.description"
     },
     "mana_potion_medium": {
       "id": "mana_potion_medium",
@@ -4869,7 +5441,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 100
-      }
+      },
+      "nameKey": "item.mana_potion_medium.name",
+      "descriptionKey": "item.mana_potion_medium.description"
     },
     "mana_potion_small": {
       "id": "mana_potion_small",
@@ -4883,7 +5457,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 30
-      }
+      },
+      "nameKey": "item.mana_potion_small.name",
+      "descriptionKey": "item.mana_potion_small.description"
     },
     "maple_log": {
       "id": "maple_log",
@@ -4893,7 +5469,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.maple_log.name",
+      "descriptionKey": "item.maple_log.description"
     },
     "maple_sap": {
       "id": "maple_sap",
@@ -4903,7 +5481,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.maple_sap.name",
+      "descriptionKey": "item.maple_sap.description"
     },
     "marble": {
       "id": "marble",
@@ -4913,7 +5493,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 40
+      "value": 40,
+      "nameKey": "item.marble.name",
+      "descriptionKey": "item.marble.description"
     },
     "mechanical_device": {
       "id": "mechanical_device",
@@ -4923,7 +5505,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 99,
-      "value": 300
+      "value": 300,
+      "nameKey": "item.mechanical_device.name",
+      "descriptionKey": "item.mechanical_device.description"
     },
     "medium_fish": {
       "id": "medium_fish",
@@ -4933,7 +5517,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.medium_fish.name",
+      "descriptionKey": "item.medium_fish.description"
     },
     "metal_ring": {
       "id": "metal_ring",
@@ -4943,7 +5529,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.metal_ring.name",
+      "descriptionKey": "item.metal_ring.description"
     },
     "minor_essence": {
       "id": "minor_essence",
@@ -4953,7 +5541,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.minor_essence.name",
+      "descriptionKey": "item.minor_essence.description"
     },
     "minor_healing_potion": {
       "id": "minor_healing_potion",
@@ -4967,7 +5557,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 20
-      }
+      },
+      "nameKey": "item.minor_healing_potion.name",
+      "descriptionKey": "item.minor_healing_potion.description"
     },
     "minor_mana_potion": {
       "id": "minor_mana_potion",
@@ -4981,7 +5573,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 30
-      }
+      },
+      "nameKey": "item.minor_mana_potion.name",
+      "descriptionKey": "item.minor_mana_potion.description"
     },
     "minor_rune": {
       "id": "minor_rune",
@@ -4991,7 +5585,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 99,
-      "value": 50
+      "value": 50,
+      "nameKey": "item.minor_rune.name",
+      "descriptionKey": "item.minor_rune.description"
     },
     "minotaur_horn": {
       "id": "minotaur_horn",
@@ -5001,7 +5597,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 180
+      "value": 180,
+      "nameKey": "item.minotaur_horn.name",
+      "descriptionKey": "item.minotaur_horn.description"
     },
     "mithril_axe": {
       "id": "mithril_axe",
@@ -5024,7 +5622,9 @@
       },
       "combatStatBonuses": {
         "attack": 44
-      }
+      },
+      "nameKey": "item.mithril_axe.name",
+      "descriptionKey": "item.mithril_axe.description"
     },
     "mithril_boots": {
       "id": "mithril_boots",
@@ -5048,7 +5648,9 @@
       "combatStatBonuses": {
         "defense": 40,
         "magicDefense": 15
-      }
+      },
+      "nameKey": "item.mithril_boots.name",
+      "descriptionKey": "item.mithril_boots.description"
     },
     "mithril_bow": {
       "id": "mithril_bow",
@@ -5073,7 +5675,9 @@
         "attack": 28,
         "speed": 20,
         "criticalChance": 8
-      }
+      },
+      "nameKey": "item.mithril_bow.name",
+      "descriptionKey": "item.mithril_bow.description"
     },
     "mithril_dagger": {
       "id": "mithril_dagger",
@@ -5098,7 +5702,9 @@
         "attack": 24,
         "speed": 20,
         "criticalChance": 8
-      }
+      },
+      "nameKey": "item.mithril_dagger.name",
+      "descriptionKey": "item.mithril_dagger.description"
     },
     "mithril_gauntlets": {
       "id": "mithril_gauntlets",
@@ -5123,7 +5729,9 @@
         "defense": 38,
         "attack": 12,
         "magicDefense": 15
-      }
+      },
+      "nameKey": "item.mithril_gauntlets.name",
+      "descriptionKey": "item.mithril_gauntlets.description"
     },
     "mithril_gear": {
       "id": "mithril_gear",
@@ -5144,7 +5752,9 @@
       "combatStatBonuses": {
         "defense": 35,
         "magicDefense": 20
-      }
+      },
+      "nameKey": "item.mithril_gear.name",
+      "descriptionKey": "item.mithril_gear.description"
     },
     "mithril_helmet": {
       "id": "mithril_helmet",
@@ -5168,7 +5778,9 @@
       "combatStatBonuses": {
         "defense": 45,
         "magicDefense": 20
-      }
+      },
+      "nameKey": "item.mithril_helmet.name",
+      "descriptionKey": "item.mithril_helmet.description"
     },
     "mithril_ingot": {
       "id": "mithril_ingot",
@@ -5178,7 +5790,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.mithril_ingot.name",
+      "descriptionKey": "item.mithril_ingot.description"
     },
     "mithril_leggings": {
       "id": "mithril_leggings",
@@ -5202,7 +5816,9 @@
       "combatStatBonuses": {
         "defense": 42,
         "magicDefense": 18
-      }
+      },
+      "nameKey": "item.mithril_leggings.name",
+      "descriptionKey": "item.mithril_leggings.description"
     },
     "mithril_mace": {
       "id": "mithril_mace",
@@ -5225,7 +5841,9 @@
       },
       "combatStatBonuses": {
         "attack": 36
-      }
+      },
+      "nameKey": "item.mithril_mace.name",
+      "descriptionKey": "item.mithril_mace.description"
     },
     "mithril_ore": {
       "id": "mithril_ore",
@@ -5235,7 +5853,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.mithril_ore.name",
+      "descriptionKey": "item.mithril_ore.description"
     },
     "mithril_shield": {
       "id": "mithril_shield",
@@ -5257,7 +5877,9 @@
       },
       "combatStatBonuses": {
         "defense": 32
-      }
+      },
+      "nameKey": "item.mithril_shield.name",
+      "descriptionKey": "item.mithril_shield.description"
     },
     "mithril_short_sword": {
       "id": "mithril_short_sword",
@@ -5282,7 +5904,9 @@
         "attack": 32,
         "speed": 20,
         "criticalChance": 8
-      }
+      },
+      "nameKey": "item.mithril_short_sword.name",
+      "descriptionKey": "item.mithril_short_sword.description"
     },
     "mithril_spear": {
       "id": "mithril_spear",
@@ -5305,7 +5929,9 @@
       },
       "combatStatBonuses": {
         "attack": 40
-      }
+      },
+      "nameKey": "item.mithril_spear.name",
+      "descriptionKey": "item.mithril_spear.description"
     },
     "mithril_sword": {
       "id": "mithril_sword",
@@ -5329,7 +5955,9 @@
       "combatStatBonuses": {
         "attack": 45,
         "criticalChance": 5
-      }
+      },
+      "nameKey": "item.mithril_sword.name",
+      "descriptionKey": "item.mithril_sword.description"
     },
     "moderate_essence": {
       "id": "moderate_essence",
@@ -5339,7 +5967,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.moderate_essence.name",
+      "descriptionKey": "item.moderate_essence.description"
     },
     "monster_bone": {
       "id": "monster_bone",
@@ -5349,7 +5979,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 40
+      "value": 40,
+      "nameKey": "item.monster_bone.name",
+      "descriptionKey": "item.monster_bone.description"
     },
     "monster_essence": {
       "id": "monster_essence",
@@ -5359,7 +5991,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 250
+      "value": 250,
+      "nameKey": "item.monster_essence.name",
+      "descriptionKey": "item.monster_essence.description"
     },
     "monster_hide_armor": {
       "id": "monster_hide_armor",
@@ -5383,7 +6017,9 @@
       "combatStatBonuses": {
         "defense": 35,
         "speed": 15
-      }
+      },
+      "nameKey": "item.monster_hide_armor.name",
+      "descriptionKey": "item.monster_hide_armor.description"
     },
     "monster_pelt": {
       "id": "monster_pelt",
@@ -5393,7 +6029,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.monster_pelt.name",
+      "descriptionKey": "item.monster_pelt.description"
     },
     "mushroom": {
       "id": "mushroom",
@@ -5403,7 +6041,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.mushroom.name",
+      "descriptionKey": "item.mushroom.description"
     },
     "mushroom_spore": {
       "id": "mushroom_spore",
@@ -5413,7 +6053,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.mushroom_spore.name",
+      "descriptionKey": "item.mushroom_spore.description"
     },
     "mutton": {
       "id": "mutton",
@@ -5427,7 +6069,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 100
-      }
+      },
+      "nameKey": "item.mutton.name",
+      "descriptionKey": "item.mutton.description"
     },
     "mythic_staff": {
       "id": "mythic_staff",
@@ -5452,7 +6096,9 @@
         "magicAttack": 100,
         "mana": 300,
         "magicDefense": 40
-      }
+      },
+      "nameKey": "item.mythic_staff.name",
+      "descriptionKey": "item.mythic_staff.description"
     },
     "mythic_wand": {
       "id": "mythic_wand",
@@ -5476,7 +6122,9 @@
       "combatStatBonuses": {
         "magicAttack": 80,
         "mana": 300
-      }
+      },
+      "nameKey": "item.mythic_wand.name",
+      "descriptionKey": "item.mythic_wand.description"
     },
     "nature_core": {
       "id": "nature_core",
@@ -5486,7 +6134,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 180
+      "value": 180,
+      "nameKey": "item.nature_core.name",
+      "descriptionKey": "item.nature_core.description"
     },
     "oak_log": {
       "id": "oak_log",
@@ -5496,7 +6146,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.oak_log.name",
+      "descriptionKey": "item.oak_log.description"
     },
     "obsidian": {
       "id": "obsidian",
@@ -5506,7 +6158,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.obsidian.name",
+      "descriptionKey": "item.obsidian.description"
     },
     "offline_time_upgrade_24h": {
       "id": "offline_time_upgrade_24h",
@@ -5520,7 +6174,9 @@
       "consumableEffect": {
         "type": "offlineTime",
         "offlineTimeHours": 24
-      }
+      },
+      "nameKey": "item.offline_time_upgrade_24h.name",
+      "descriptionKey": "item.offline_time_upgrade_24h.description"
     },
     "offline_time_upgrade_8h": {
       "id": "offline_time_upgrade_8h",
@@ -5534,7 +6190,9 @@
       "consumableEffect": {
         "type": "offlineTime",
         "offlineTimeHours": 8
-      }
+      },
+      "nameKey": "item.offline_time_upgrade_8h.name",
+      "descriptionKey": "item.offline_time_upgrade_8h.description"
     },
     "ogre_club": {
       "id": "ogre_club",
@@ -5553,7 +6211,9 @@
       },
       "requirements": {
         "level": 9
-      }
+      },
+      "nameKey": "item.ogre_club.name",
+      "descriptionKey": "item.ogre_club.description"
     },
     "order_shard": {
       "id": "order_shard",
@@ -5563,7 +6223,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1800
+      "value": 1800,
+      "nameKey": "item.order_shard.name",
+      "descriptionKey": "item.order_shard.description"
     },
     "pearl": {
       "id": "pearl",
@@ -5573,7 +6235,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.pearl.name",
+      "descriptionKey": "item.pearl.description"
     },
     "pearl_rare": {
       "id": "pearl_rare",
@@ -5583,7 +6247,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 300
+      "value": 300,
+      "nameKey": "item.pearl_rare.name",
+      "descriptionKey": "item.pearl_rare.description"
     },
     "phantom_boots": {
       "id": "phantom_boots",
@@ -5608,7 +6274,9 @@
         "defense": 28,
         "speed": 35,
         "criticalChance": 8
-      }
+      },
+      "nameKey": "item.phantom_boots.name",
+      "descriptionKey": "item.phantom_boots.description"
     },
     "phantom_gloves": {
       "id": "phantom_gloves",
@@ -5633,7 +6301,9 @@
         "defense": 22,
         "speed": 28,
         "criticalChance": 7
-      }
+      },
+      "nameKey": "item.phantom_gloves.name",
+      "descriptionKey": "item.phantom_gloves.description"
     },
     "phantom_mask": {
       "id": "phantom_mask",
@@ -5656,7 +6326,9 @@
       "combatStatBonuses": {
         "defense": 30,
         "speed": 20
-      }
+      },
+      "nameKey": "item.phantom_mask.name",
+      "descriptionKey": "item.phantom_mask.description"
     },
     "phantom_pants": {
       "id": "phantom_pants",
@@ -5681,7 +6353,9 @@
         "defense": 25,
         "speed": 32,
         "criticalChance": 6
-      }
+      },
+      "nameKey": "item.phantom_pants.name",
+      "descriptionKey": "item.phantom_pants.description"
     },
     "phoenix_ash": {
       "id": "phoenix_ash",
@@ -5691,7 +6365,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 2500
+      "value": 2500,
+      "nameKey": "item.phoenix_ash.name",
+      "descriptionKey": "item.phoenix_ash.description"
     },
     "phoenix_staff": {
       "id": "phoenix_staff",
@@ -5715,7 +6391,9 @@
       "combatStatBonuses": {
         "magicAttack": 52,
         "mana": 195
-      }
+      },
+      "nameKey": "item.phoenix_staff.name",
+      "descriptionKey": "item.phoenix_staff.description"
     },
     "poison_gland": {
       "id": "poison_gland",
@@ -5725,7 +6403,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.poison_gland.name",
+      "descriptionKey": "item.poison_gland.description"
     },
     "polished_stone": {
       "id": "polished_stone",
@@ -5735,7 +6415,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 15
+      "value": 15,
+      "nameKey": "item.polished_stone.name",
+      "descriptionKey": "item.polished_stone.description"
     },
     "potion_meal": {
       "id": "potion_meal",
@@ -5749,7 +6431,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 200
-      }
+      },
+      "nameKey": "item.potion_meal.name",
+      "descriptionKey": "item.potion_meal.description"
     },
     "precious_metal": {
       "id": "precious_metal",
@@ -5759,7 +6443,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.precious_metal.name",
+      "descriptionKey": "item.precious_metal.description"
     },
     "precision_gear": {
       "id": "precision_gear",
@@ -5769,7 +6455,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 180
+      "value": 180,
+      "nameKey": "item.precision_gear.name",
+      "descriptionKey": "item.precision_gear.description"
     },
     "primal_essence": {
       "id": "primal_essence",
@@ -5779,7 +6467,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 2000
+      "value": 2000,
+      "nameKey": "item.primal_essence.name",
+      "descriptionKey": "item.primal_essence.description"
     },
     "quality_meal": {
       "id": "quality_meal",
@@ -5793,7 +6483,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 150
-      }
+      },
+      "nameKey": "item.quality_meal.name",
+      "descriptionKey": "item.quality_meal.description"
     },
     "quest_item_01": {
       "id": "quest_item_01",
@@ -5802,7 +6494,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 10
+      "value": 10,
+      "nameKey": "item.quest_item_01.name",
+      "descriptionKey": "item.quest_item_01.description"
     },
     "quest_item_02": {
       "id": "quest_item_02",
@@ -5811,7 +6505,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.quest_item_02.name",
+      "descriptionKey": "item.quest_item_02.description"
     },
     "quest_item_03": {
       "id": "quest_item_03",
@@ -5820,7 +6516,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 30
+      "value": 30,
+      "nameKey": "item.quest_item_03.name",
+      "descriptionKey": "item.quest_item_03.description"
     },
     "quest_item_04": {
       "id": "quest_item_04",
@@ -5829,7 +6527,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 40
+      "value": 40,
+      "nameKey": "item.quest_item_04.name",
+      "descriptionKey": "item.quest_item_04.description"
     },
     "quest_item_05": {
       "id": "quest_item_05",
@@ -5838,7 +6538,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 50
+      "value": 50,
+      "nameKey": "item.quest_item_05.name",
+      "descriptionKey": "item.quest_item_05.description"
     },
     "quest_item_06": {
       "id": "quest_item_06",
@@ -5847,7 +6549,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 60
+      "value": 60,
+      "nameKey": "item.quest_item_06.name",
+      "descriptionKey": "item.quest_item_06.description"
     },
     "quest_item_07": {
       "id": "quest_item_07",
@@ -5856,7 +6560,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 70
+      "value": 70,
+      "nameKey": "item.quest_item_07.name",
+      "descriptionKey": "item.quest_item_07.description"
     },
     "quest_item_08": {
       "id": "quest_item_08",
@@ -5865,7 +6571,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 80
+      "value": 80,
+      "nameKey": "item.quest_item_08.name",
+      "descriptionKey": "item.quest_item_08.description"
     },
     "quest_item_09": {
       "id": "quest_item_09",
@@ -5874,7 +6582,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 90
+      "value": 90,
+      "nameKey": "item.quest_item_09.name",
+      "descriptionKey": "item.quest_item_09.description"
     },
     "quest_item_10": {
       "id": "quest_item_10",
@@ -5883,7 +6593,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 100
+      "value": 100,
+      "nameKey": "item.quest_item_10.name",
+      "descriptionKey": "item.quest_item_10.description"
     },
     "quest_item_11": {
       "id": "quest_item_11",
@@ -5892,7 +6604,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 110
+      "value": 110,
+      "nameKey": "item.quest_item_11.name",
+      "descriptionKey": "item.quest_item_11.description"
     },
     "quest_item_12": {
       "id": "quest_item_12",
@@ -5901,7 +6615,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 120
+      "value": 120,
+      "nameKey": "item.quest_item_12.name",
+      "descriptionKey": "item.quest_item_12.description"
     },
     "quest_item_13": {
       "id": "quest_item_13",
@@ -5910,7 +6626,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 130
+      "value": 130,
+      "nameKey": "item.quest_item_13.name",
+      "descriptionKey": "item.quest_item_13.description"
     },
     "quest_item_14": {
       "id": "quest_item_14",
@@ -5919,7 +6637,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 140
+      "value": 140,
+      "nameKey": "item.quest_item_14.name",
+      "descriptionKey": "item.quest_item_14.description"
     },
     "quest_item_15": {
       "id": "quest_item_15",
@@ -5928,7 +6648,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.quest_item_15.name",
+      "descriptionKey": "item.quest_item_15.description"
     },
     "quest_item_16": {
       "id": "quest_item_16",
@@ -5937,7 +6659,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 160
+      "value": 160,
+      "nameKey": "item.quest_item_16.name",
+      "descriptionKey": "item.quest_item_16.description"
     },
     "quest_item_17": {
       "id": "quest_item_17",
@@ -5946,7 +6670,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 170
+      "value": 170,
+      "nameKey": "item.quest_item_17.name",
+      "descriptionKey": "item.quest_item_17.description"
     },
     "quest_item_18": {
       "id": "quest_item_18",
@@ -5955,7 +6681,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 180
+      "value": 180,
+      "nameKey": "item.quest_item_18.name",
+      "descriptionKey": "item.quest_item_18.description"
     },
     "quest_item_19": {
       "id": "quest_item_19",
@@ -5964,7 +6692,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 190
+      "value": 190,
+      "nameKey": "item.quest_item_19.name",
+      "descriptionKey": "item.quest_item_19.description"
     },
     "quest_item_20": {
       "id": "quest_item_20",
@@ -5973,7 +6703,9 @@
       "type": "quest",
       "rarity": "common",
       "stackable": false,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.quest_item_20.name",
+      "descriptionKey": "item.quest_item_20.description"
     },
     "quest_item_21": {
       "id": "quest_item_21",
@@ -5982,7 +6714,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 210
+      "value": 210,
+      "nameKey": "item.quest_item_21.name",
+      "descriptionKey": "item.quest_item_21.description"
     },
     "quest_item_22": {
       "id": "quest_item_22",
@@ -5991,7 +6725,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 220
+      "value": 220,
+      "nameKey": "item.quest_item_22.name",
+      "descriptionKey": "item.quest_item_22.description"
     },
     "quest_item_23": {
       "id": "quest_item_23",
@@ -6000,7 +6736,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 230
+      "value": 230,
+      "nameKey": "item.quest_item_23.name",
+      "descriptionKey": "item.quest_item_23.description"
     },
     "quest_item_24": {
       "id": "quest_item_24",
@@ -6009,7 +6747,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 240
+      "value": 240,
+      "nameKey": "item.quest_item_24.name",
+      "descriptionKey": "item.quest_item_24.description"
     },
     "quest_item_25": {
       "id": "quest_item_25",
@@ -6018,7 +6758,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 250
+      "value": 250,
+      "nameKey": "item.quest_item_25.name",
+      "descriptionKey": "item.quest_item_25.description"
     },
     "quest_item_26": {
       "id": "quest_item_26",
@@ -6027,7 +6769,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 260
+      "value": 260,
+      "nameKey": "item.quest_item_26.name",
+      "descriptionKey": "item.quest_item_26.description"
     },
     "quest_item_27": {
       "id": "quest_item_27",
@@ -6036,7 +6780,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 270
+      "value": 270,
+      "nameKey": "item.quest_item_27.name",
+      "descriptionKey": "item.quest_item_27.description"
     },
     "quest_item_28": {
       "id": "quest_item_28",
@@ -6045,7 +6791,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 280
+      "value": 280,
+      "nameKey": "item.quest_item_28.name",
+      "descriptionKey": "item.quest_item_28.description"
     },
     "quest_item_29": {
       "id": "quest_item_29",
@@ -6054,7 +6802,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 290
+      "value": 290,
+      "nameKey": "item.quest_item_29.name",
+      "descriptionKey": "item.quest_item_29.description"
     },
     "quest_item_30": {
       "id": "quest_item_30",
@@ -6063,7 +6813,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 300
+      "value": 300,
+      "nameKey": "item.quest_item_30.name",
+      "descriptionKey": "item.quest_item_30.description"
     },
     "quest_item_31": {
       "id": "quest_item_31",
@@ -6072,7 +6824,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 310
+      "value": 310,
+      "nameKey": "item.quest_item_31.name",
+      "descriptionKey": "item.quest_item_31.description"
     },
     "quest_item_32": {
       "id": "quest_item_32",
@@ -6081,7 +6835,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 320
+      "value": 320,
+      "nameKey": "item.quest_item_32.name",
+      "descriptionKey": "item.quest_item_32.description"
     },
     "quest_item_33": {
       "id": "quest_item_33",
@@ -6090,7 +6846,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 330
+      "value": 330,
+      "nameKey": "item.quest_item_33.name",
+      "descriptionKey": "item.quest_item_33.description"
     },
     "quest_item_34": {
       "id": "quest_item_34",
@@ -6099,7 +6857,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 340
+      "value": 340,
+      "nameKey": "item.quest_item_34.name",
+      "descriptionKey": "item.quest_item_34.description"
     },
     "quest_item_35": {
       "id": "quest_item_35",
@@ -6108,7 +6868,9 @@
       "type": "quest",
       "rarity": "uncommon",
       "stackable": false,
-      "value": 350
+      "value": 350,
+      "nameKey": "item.quest_item_35.name",
+      "descriptionKey": "item.quest_item_35.description"
     },
     "quest_item_36": {
       "id": "quest_item_36",
@@ -6117,7 +6879,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 360
+      "value": 360,
+      "nameKey": "item.quest_item_36.name",
+      "descriptionKey": "item.quest_item_36.description"
     },
     "quest_item_37": {
       "id": "quest_item_37",
@@ -6126,7 +6890,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 370
+      "value": 370,
+      "nameKey": "item.quest_item_37.name",
+      "descriptionKey": "item.quest_item_37.description"
     },
     "quest_item_38": {
       "id": "quest_item_38",
@@ -6135,7 +6901,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 380
+      "value": 380,
+      "nameKey": "item.quest_item_38.name",
+      "descriptionKey": "item.quest_item_38.description"
     },
     "quest_item_39": {
       "id": "quest_item_39",
@@ -6144,7 +6912,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 390
+      "value": 390,
+      "nameKey": "item.quest_item_39.name",
+      "descriptionKey": "item.quest_item_39.description"
     },
     "quest_item_40": {
       "id": "quest_item_40",
@@ -6153,7 +6923,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 400
+      "value": 400,
+      "nameKey": "item.quest_item_40.name",
+      "descriptionKey": "item.quest_item_40.description"
     },
     "quest_item_41": {
       "id": "quest_item_41",
@@ -6162,7 +6934,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 410
+      "value": 410,
+      "nameKey": "item.quest_item_41.name",
+      "descriptionKey": "item.quest_item_41.description"
     },
     "quest_item_42": {
       "id": "quest_item_42",
@@ -6171,7 +6945,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 420
+      "value": 420,
+      "nameKey": "item.quest_item_42.name",
+      "descriptionKey": "item.quest_item_42.description"
     },
     "quest_item_43": {
       "id": "quest_item_43",
@@ -6180,7 +6956,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 430
+      "value": 430,
+      "nameKey": "item.quest_item_43.name",
+      "descriptionKey": "item.quest_item_43.description"
     },
     "quest_item_44": {
       "id": "quest_item_44",
@@ -6189,7 +6967,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 440
+      "value": 440,
+      "nameKey": "item.quest_item_44.name",
+      "descriptionKey": "item.quest_item_44.description"
     },
     "quest_item_45": {
       "id": "quest_item_45",
@@ -6198,7 +6978,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 450
+      "value": 450,
+      "nameKey": "item.quest_item_45.name",
+      "descriptionKey": "item.quest_item_45.description"
     },
     "quest_item_46": {
       "id": "quest_item_46",
@@ -6207,7 +6989,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 460
+      "value": 460,
+      "nameKey": "item.quest_item_46.name",
+      "descriptionKey": "item.quest_item_46.description"
     },
     "quest_item_47": {
       "id": "quest_item_47",
@@ -6216,7 +7000,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 470
+      "value": 470,
+      "nameKey": "item.quest_item_47.name",
+      "descriptionKey": "item.quest_item_47.description"
     },
     "quest_item_48": {
       "id": "quest_item_48",
@@ -6225,7 +7011,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 480
+      "value": 480,
+      "nameKey": "item.quest_item_48.name",
+      "descriptionKey": "item.quest_item_48.description"
     },
     "quest_item_49": {
       "id": "quest_item_49",
@@ -6234,7 +7022,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 490
+      "value": 490,
+      "nameKey": "item.quest_item_49.name",
+      "descriptionKey": "item.quest_item_49.description"
     },
     "quest_item_50": {
       "id": "quest_item_50",
@@ -6243,7 +7033,9 @@
       "type": "quest",
       "rarity": "rare",
       "stackable": false,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.quest_item_50.name",
+      "descriptionKey": "item.quest_item_50.description"
     },
     "rare_berry": {
       "id": "rare_berry",
@@ -6253,7 +7045,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 30
+      "value": 30,
+      "nameKey": "item.rare_berry.name",
+      "descriptionKey": "item.rare_berry.description"
     },
     "rare_fish": {
       "id": "rare_fish",
@@ -6263,7 +7057,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 120
+      "value": 120,
+      "nameKey": "item.rare_fish.name",
+      "descriptionKey": "item.rare_fish.description"
     },
     "rare_herb": {
       "id": "rare_herb",
@@ -6273,7 +7069,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.rare_herb.name",
+      "descriptionKey": "item.rare_herb.description"
     },
     "rare_item": {
       "id": "rare_item",
@@ -6283,7 +7081,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 80
+      "value": 80,
+      "nameKey": "item.rare_item.name",
+      "descriptionKey": "item.rare_item.description"
     },
     "rare_trinket": {
       "id": "rare_trinket",
@@ -6293,7 +7093,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 80
+      "value": 80,
+      "nameKey": "item.rare_trinket.name",
+      "descriptionKey": "item.rare_trinket.description"
     },
     "raw_meat": {
       "id": "raw_meat",
@@ -6303,7 +7105,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 3
+      "value": 3,
+      "nameKey": "item.raw_meat.name",
+      "descriptionKey": "item.raw_meat.description"
     },
     "raw_meat_exotic": {
       "id": "raw_meat_exotic",
@@ -6313,7 +7117,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 200
+      "value": 200,
+      "nameKey": "item.raw_meat_exotic.name",
+      "descriptionKey": "item.raw_meat_exotic.description"
     },
     "raw_meat_premium": {
       "id": "raw_meat_premium",
@@ -6323,7 +7129,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 45
+      "value": 45,
+      "nameKey": "item.raw_meat_premium.name",
+      "descriptionKey": "item.raw_meat_premium.description"
     },
     "raw_meat_quality": {
       "id": "raw_meat_quality",
@@ -6333,7 +7141,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 12
+      "value": 12,
+      "nameKey": "item.raw_meat_quality.name",
+      "descriptionKey": "item.raw_meat_quality.description"
     },
     "reinforced_leather_armor": {
       "id": "reinforced_leather_armor",
@@ -6356,7 +7166,9 @@
       },
       "combatStatBonuses": {
         "defense": 18
-      }
+      },
+      "nameKey": "item.reinforced_leather_armor.name",
+      "descriptionKey": "item.reinforced_leather_armor.description"
     },
     "reinforced_leather_pants": {
       "id": "reinforced_leather_pants",
@@ -6380,7 +7192,9 @@
       "combatStatBonuses": {
         "defense": 14,
         "speed": 10
-      }
+      },
+      "nameKey": "item.reinforced_leather_pants.name",
+      "descriptionKey": "item.reinforced_leather_pants.description"
     },
     "rejuvenation_potion": {
       "id": "rejuvenation_potion",
@@ -6394,7 +7208,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 200
-      }
+      },
+      "nameKey": "item.rejuvenation_potion.name",
+      "descriptionKey": "item.rejuvenation_potion.description"
     },
     "ring_tier1_1": {
       "id": "ring_tier1_1",
@@ -6413,7 +7229,9 @@
       },
       "combatStatBonuses": {
         "attack": 4
-      }
+      },
+      "nameKey": "item.ring_tier1_1.name",
+      "descriptionKey": "item.ring_tier1_1.description"
     },
     "ring_tier1_2": {
       "id": "ring_tier1_2",
@@ -6433,7 +7251,9 @@
       "combatStatBonuses": {
         "magicAttack": 5,
         "mana": 20
-      }
+      },
+      "nameKey": "item.ring_tier1_2.name",
+      "descriptionKey": "item.ring_tier1_2.description"
     },
     "ring_tier1_3": {
       "id": "ring_tier1_3",
@@ -6453,7 +7273,9 @@
       "combatStatBonuses": {
         "speed": 3,
         "criticalChance": 1
-      }
+      },
+      "nameKey": "item.ring_tier1_3.name",
+      "descriptionKey": "item.ring_tier1_3.description"
     },
     "ring_tier2_1": {
       "id": "ring_tier2_1",
@@ -6472,7 +7294,9 @@
       },
       "combatStatBonuses": {
         "attack": 6
-      }
+      },
+      "nameKey": "item.ring_tier2_1.name",
+      "descriptionKey": "item.ring_tier2_1.description"
     },
     "ring_tier2_2": {
       "id": "ring_tier2_2",
@@ -6492,7 +7316,9 @@
       "combatStatBonuses": {
         "magicAttack": 7,
         "mana": 30
-      }
+      },
+      "nameKey": "item.ring_tier2_2.name",
+      "descriptionKey": "item.ring_tier2_2.description"
     },
     "ring_tier2_3": {
       "id": "ring_tier2_3",
@@ -6512,7 +7338,9 @@
       "combatStatBonuses": {
         "speed": 4,
         "criticalChance": 1
-      }
+      },
+      "nameKey": "item.ring_tier2_3.name",
+      "descriptionKey": "item.ring_tier2_3.description"
     },
     "ring_tier3_1": {
       "id": "ring_tier3_1",
@@ -6531,7 +7359,9 @@
       },
       "combatStatBonuses": {
         "attack": 10
-      }
+      },
+      "nameKey": "item.ring_tier3_1.name",
+      "descriptionKey": "item.ring_tier3_1.description"
     },
     "ring_tier3_2": {
       "id": "ring_tier3_2",
@@ -6551,7 +7381,9 @@
       "combatStatBonuses": {
         "magicAttack": 12,
         "mana": 50
-      }
+      },
+      "nameKey": "item.ring_tier3_2.name",
+      "descriptionKey": "item.ring_tier3_2.description"
     },
     "ring_tier3_3": {
       "id": "ring_tier3_3",
@@ -6571,7 +7403,9 @@
       "combatStatBonuses": {
         "speed": 7,
         "criticalChance": 2
-      }
+      },
+      "nameKey": "item.ring_tier3_3.name",
+      "descriptionKey": "item.ring_tier3_3.description"
     },
     "ring_tier4_1": {
       "id": "ring_tier4_1",
@@ -6590,7 +7424,9 @@
       },
       "combatStatBonuses": {
         "attack": 16
-      }
+      },
+      "nameKey": "item.ring_tier4_1.name",
+      "descriptionKey": "item.ring_tier4_1.description"
     },
     "ring_tier4_2": {
       "id": "ring_tier4_2",
@@ -6610,7 +7446,9 @@
       "combatStatBonuses": {
         "magicAttack": 20,
         "mana": 80
-      }
+      },
+      "nameKey": "item.ring_tier4_2.name",
+      "descriptionKey": "item.ring_tier4_2.description"
     },
     "ring_tier4_3": {
       "id": "ring_tier4_3",
@@ -6630,7 +7468,9 @@
       "combatStatBonuses": {
         "speed": 12,
         "criticalChance": 4
-      }
+      },
+      "nameKey": "item.ring_tier4_3.name",
+      "descriptionKey": "item.ring_tier4_3.description"
     },
     "ring_tier5_1": {
       "id": "ring_tier5_1",
@@ -6649,7 +7489,9 @@
       },
       "combatStatBonuses": {
         "attack": 26
-      }
+      },
+      "nameKey": "item.ring_tier5_1.name",
+      "descriptionKey": "item.ring_tier5_1.description"
     },
     "ring_tier5_2": {
       "id": "ring_tier5_2",
@@ -6669,7 +7511,9 @@
       "combatStatBonuses": {
         "magicAttack": 32,
         "mana": 130
-      }
+      },
+      "nameKey": "item.ring_tier5_2.name",
+      "descriptionKey": "item.ring_tier5_2.description"
     },
     "ring_tier5_3": {
       "id": "ring_tier5_3",
@@ -6689,7 +7533,9 @@
       "combatStatBonuses": {
         "speed": 19,
         "criticalChance": 6
-      }
+      },
+      "nameKey": "item.ring_tier5_3.name",
+      "descriptionKey": "item.ring_tier5_3.description"
     },
     "ring_tier6_1": {
       "id": "ring_tier6_1",
@@ -6708,7 +7554,9 @@
       },
       "combatStatBonuses": {
         "attack": 40
-      }
+      },
+      "nameKey": "item.ring_tier6_1.name",
+      "descriptionKey": "item.ring_tier6_1.description"
     },
     "ring_tier6_2": {
       "id": "ring_tier6_2",
@@ -6728,7 +7576,9 @@
       "combatStatBonuses": {
         "magicAttack": 50,
         "mana": 200
-      }
+      },
+      "nameKey": "item.ring_tier6_2.name",
+      "descriptionKey": "item.ring_tier6_2.description"
     },
     "ring_tier6_3": {
       "id": "ring_tier6_3",
@@ -6748,7 +7598,9 @@
       "combatStatBonuses": {
         "speed": 30,
         "criticalChance": 10
-      }
+      },
+      "nameKey": "item.ring_tier6_3.name",
+      "descriptionKey": "item.ring_tier6_3.description"
     },
     "roasted_meat": {
       "id": "roasted_meat",
@@ -6762,7 +7614,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 75
-      }
+      },
+      "nameKey": "item.roasted_meat.name",
+      "descriptionKey": "item.roasted_meat.description"
     },
     "rotten_flesh": {
       "id": "rotten_flesh",
@@ -6772,7 +7626,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.rotten_flesh.name",
+      "descriptionKey": "item.rotten_flesh.description"
     },
     "rough_stone": {
       "id": "rough_stone",
@@ -6782,7 +7638,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.rough_stone.name",
+      "descriptionKey": "item.rough_stone.description"
     },
     "royal_seal": {
       "id": "royal_seal",
@@ -6792,7 +7650,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 2000
+      "value": 2000,
+      "nameKey": "item.royal_seal.name",
+      "descriptionKey": "item.royal_seal.description"
     },
     "ruby_ring": {
       "id": "ruby_ring",
@@ -6806,7 +7666,9 @@
       "consumableEffect": {
         "type": "ring1",
         "amount": "strength"
-      }
+      },
+      "nameKey": "item.ruby_ring.name",
+      "descriptionKey": "item.ruby_ring.description"
     },
     "rune_stone": {
       "id": "rune_stone",
@@ -6816,7 +7678,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.rune_stone.name",
+      "descriptionKey": "item.rune_stone.description"
     },
     "rune_stone_quality": {
       "id": "rune_stone_quality",
@@ -6826,7 +7690,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 60
+      "value": 60,
+      "nameKey": "item.rune_stone_quality.name",
+      "descriptionKey": "item.rune_stone_quality.description"
     },
     "rune_stone_rare": {
       "id": "rune_stone_rare",
@@ -6836,7 +7702,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 250
+      "value": 250,
+      "nameKey": "item.rune_stone_rare.name",
+      "descriptionKey": "item.rune_stone_rare.description"
     },
     "sapphire_amulet": {
       "id": "sapphire_amulet",
@@ -6850,7 +7718,9 @@
       "consumableEffect": {
         "type": "amulet",
         "amount": "intelligence"
-      }
+      },
+      "nameKey": "item.sapphire_amulet.name",
+      "descriptionKey": "item.sapphire_amulet.description"
     },
     "scroll_of_healing": {
       "id": "scroll_of_healing",
@@ -6864,7 +7734,9 @@
       "consumableEffect": {
         "type": "heal",
         "amount": 300
-      }
+      },
+      "nameKey": "item.scroll_of_healing.name",
+      "descriptionKey": "item.scroll_of_healing.description"
     },
     "scroll_of_intelligence": {
       "id": "scroll_of_intelligence",
@@ -6878,7 +7750,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 5
-      }
+      },
+      "nameKey": "item.scroll_of_intelligence.name",
+      "descriptionKey": "item.scroll_of_intelligence.description"
     },
     "scroll_of_mana": {
       "id": "scroll_of_mana",
@@ -6892,7 +7766,9 @@
       "consumableEffect": {
         "type": "mana",
         "amount": 200
-      }
+      },
+      "nameKey": "item.scroll_of_mana.name",
+      "descriptionKey": "item.scroll_of_mana.description"
     },
     "scroll_of_protection": {
       "id": "scroll_of_protection",
@@ -6906,7 +7782,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 15
-      }
+      },
+      "nameKey": "item.scroll_of_protection.name",
+      "descriptionKey": "item.scroll_of_protection.description"
     },
     "scroll_of_speed": {
       "id": "scroll_of_speed",
@@ -6920,7 +7798,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 10
-      }
+      },
+      "nameKey": "item.scroll_of_speed.name",
+      "descriptionKey": "item.scroll_of_speed.description"
     },
     "scroll_of_strength": {
       "id": "scroll_of_strength",
@@ -6934,7 +7814,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 5
-      }
+      },
+      "nameKey": "item.scroll_of_strength.name",
+      "descriptionKey": "item.scroll_of_strength.description"
     },
     "shadow_blade": {
       "id": "shadow_blade",
@@ -6960,7 +7842,9 @@
         "speed": 30,
         "criticalChance": 15,
         "criticalDamage": 0.25
-      }
+      },
+      "nameKey": "item.shadow_blade.name",
+      "descriptionKey": "item.shadow_blade.description"
     },
     "shadow_boots": {
       "id": "shadow_boots",
@@ -6985,7 +7869,9 @@
         "defense": 12,
         "speed": 18,
         "criticalChance": 2
-      }
+      },
+      "nameKey": "item.shadow_boots.name",
+      "descriptionKey": "item.shadow_boots.description"
     },
     "shadow_essence": {
       "id": "shadow_essence",
@@ -6995,7 +7881,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 450
+      "value": 450,
+      "nameKey": "item.shadow_essence.name",
+      "descriptionKey": "item.shadow_essence.description"
     },
     "shadow_gloves": {
       "id": "shadow_gloves",
@@ -7020,7 +7908,9 @@
         "defense": 10,
         "speed": 10,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.shadow_gloves.name",
+      "descriptionKey": "item.shadow_gloves.description"
     },
     "shadow_mask": {
       "id": "shadow_mask",
@@ -7045,7 +7935,9 @@
         "defense": 15,
         "speed": 12,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.shadow_mask.name",
+      "descriptionKey": "item.shadow_mask.description"
     },
     "shadow_slippers": {
       "id": "shadow_slippers",
@@ -7068,7 +7960,9 @@
       "combatStatBonuses": {
         "defense": 10,
         "speed": 12
-      }
+      },
+      "nameKey": "item.shadow_slippers.name",
+      "descriptionKey": "item.shadow_slippers.description"
     },
     "short_sword": {
       "id": "short_sword",
@@ -7093,7 +7987,9 @@
         "attack": 8,
         "speed": 5,
         "criticalChance": 2
-      }
+      },
+      "nameKey": "item.short_sword.name",
+      "descriptionKey": "item.short_sword.description"
     },
     "silk": {
       "id": "silk",
@@ -7103,7 +7999,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 15
+      "value": 15,
+      "nameKey": "item.silk.name",
+      "descriptionKey": "item.silk.description"
     },
     "silk_armor": {
       "id": "silk_armor",
@@ -7128,7 +8026,9 @@
       "combatStatBonuses": {
         "magicDefense": 15,
         "mana": 50
-      }
+      },
+      "nameKey": "item.silk_armor.name",
+      "descriptionKey": "item.silk_armor.description"
     },
     "silver_bow": {
       "id": "silver_bow",
@@ -7153,7 +8053,9 @@
         "attack": 17,
         "speed": 12,
         "criticalChance": 5
-      }
+      },
+      "nameKey": "item.silver_bow.name",
+      "descriptionKey": "item.silver_bow.description"
     },
     "silver_dagger": {
       "id": "silver_dagger",
@@ -7178,7 +8080,9 @@
         "attack": 9,
         "speed": 7,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.silver_dagger.name",
+      "descriptionKey": "item.silver_dagger.description"
     },
     "silver_ingot": {
       "id": "silver_ingot",
@@ -7188,7 +8092,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.silver_ingot.name",
+      "descriptionKey": "item.silver_ingot.description"
     },
     "silver_necklace": {
       "id": "silver_necklace",
@@ -7209,7 +8115,9 @@
       "combatStatBonuses": {
         "magicAttack": 12,
         "mana": 40
-      }
+      },
+      "nameKey": "item.silver_necklace.name",
+      "descriptionKey": "item.silver_necklace.description"
     },
     "silver_ore": {
       "id": "silver_ore",
@@ -7219,7 +8127,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 15
+      "value": 15,
+      "nameKey": "item.silver_ore.name",
+      "descriptionKey": "item.silver_ore.description"
     },
     "simple_tool": {
       "id": "simple_tool",
@@ -7229,7 +8139,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 99,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.simple_tool.name",
+      "descriptionKey": "item.simple_tool.description"
     },
     "small_fish": {
       "id": "small_fish",
@@ -7239,7 +8151,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.small_fish.name",
+      "descriptionKey": "item.small_fish.description"
     },
     "soul_gem": {
       "id": "soul_gem",
@@ -7249,7 +8163,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 500
+      "value": 500,
+      "nameKey": "item.soul_gem.name",
+      "descriptionKey": "item.soul_gem.description"
     },
     "speed_potion": {
       "id": "speed_potion",
@@ -7263,7 +8179,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 30
-      }
+      },
+      "nameKey": "item.speed_potion.name",
+      "descriptionKey": "item.speed_potion.description"
     },
     "spider_silk": {
       "id": "spider_silk",
@@ -7273,7 +8191,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 10
+      "value": 10,
+      "nameKey": "item.spider_silk.name",
+      "descriptionKey": "item.spider_silk.description"
     },
     "spirit_essence": {
       "id": "spirit_essence",
@@ -7283,7 +8203,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 80
+      "value": 80,
+      "nameKey": "item.spirit_essence.name",
+      "descriptionKey": "item.spirit_essence.description"
     },
     "spring": {
       "id": "spring",
@@ -7293,7 +8215,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 12
+      "value": 12,
+      "nameKey": "item.spring.name",
+      "descriptionKey": "item.spring.description"
     },
     "steel": {
       "id": "steel",
@@ -7303,7 +8227,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.steel.name",
+      "descriptionKey": "item.steel.description"
     },
     "steel_armor": {
       "id": "steel_armor",
@@ -7326,7 +8252,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.steel_armor.name",
+      "descriptionKey": "item.steel_armor.description"
     },
     "steel_axe": {
       "id": "steel_axe",
@@ -7349,7 +8277,9 @@
       },
       "combatStatBonuses": {
         "attack": 27
-      }
+      },
+      "nameKey": "item.steel_axe.name",
+      "descriptionKey": "item.steel_axe.description"
     },
     "steel_boots": {
       "id": "steel_boots",
@@ -7371,7 +8301,9 @@
       },
       "combatStatBonuses": {
         "defense": 18
-      }
+      },
+      "nameKey": "item.steel_boots.name",
+      "descriptionKey": "item.steel_boots.description"
     },
     "steel_bow": {
       "id": "steel_bow",
@@ -7396,7 +8328,9 @@
         "attack": 17,
         "speed": 12,
         "criticalChance": 5
-      }
+      },
+      "nameKey": "item.steel_bow.name",
+      "descriptionKey": "item.steel_bow.description"
     },
     "steel_dagger": {
       "id": "steel_dagger",
@@ -7421,7 +8355,9 @@
         "attack": 15,
         "speed": 12,
         "criticalChance": 5
-      }
+      },
+      "nameKey": "item.steel_dagger.name",
+      "descriptionKey": "item.steel_dagger.description"
     },
     "steel_gauntlets": {
       "id": "steel_gauntlets",
@@ -7445,7 +8381,9 @@
       "combatStatBonuses": {
         "defense": 16,
         "attack": 5
-      }
+      },
+      "nameKey": "item.steel_gauntlets.name",
+      "descriptionKey": "item.steel_gauntlets.description"
     },
     "steel_helmet": {
       "id": "steel_helmet",
@@ -7468,7 +8406,9 @@
       },
       "combatStatBonuses": {
         "defense": 22
-      }
+      },
+      "nameKey": "item.steel_helmet.name",
+      "descriptionKey": "item.steel_helmet.description"
     },
     "steel_ingot": {
       "id": "steel_ingot",
@@ -7478,7 +8418,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.steel_ingot.name",
+      "descriptionKey": "item.steel_ingot.description"
     },
     "steel_leather_armor": {
       "id": "steel_leather_armor",
@@ -7502,7 +8444,9 @@
       "combatStatBonuses": {
         "defense": 12,
         "speed": 7
-      }
+      },
+      "nameKey": "item.steel_leather_armor.name",
+      "descriptionKey": "item.steel_leather_armor.description"
     },
     "steel_leggings": {
       "id": "steel_leggings",
@@ -7525,7 +8469,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.steel_leggings.name",
+      "descriptionKey": "item.steel_leggings.description"
     },
     "steel_mace": {
       "id": "steel_mace",
@@ -7548,7 +8494,9 @@
       },
       "combatStatBonuses": {
         "attack": 22
-      }
+      },
+      "nameKey": "item.steel_mace.name",
+      "descriptionKey": "item.steel_mace.description"
     },
     "steel_mask": {
       "id": "steel_mask",
@@ -7571,7 +8519,9 @@
       "combatStatBonuses": {
         "defense": 7,
         "speed": 5
-      }
+      },
+      "nameKey": "item.steel_mask.name",
+      "descriptionKey": "item.steel_mask.description"
     },
     "steel_shield": {
       "id": "steel_shield",
@@ -7593,7 +8543,9 @@
       },
       "combatStatBonuses": {
         "defense": 20
-      }
+      },
+      "nameKey": "item.steel_shield.name",
+      "descriptionKey": "item.steel_shield.description"
     },
     "steel_short_sword": {
       "id": "steel_short_sword",
@@ -7618,7 +8570,9 @@
         "attack": 20,
         "speed": 12,
         "criticalChance": 5
-      }
+      },
+      "nameKey": "item.steel_short_sword.name",
+      "descriptionKey": "item.steel_short_sword.description"
     },
     "steel_spear": {
       "id": "steel_spear",
@@ -7641,7 +8595,9 @@
       },
       "combatStatBonuses": {
         "attack": 25
-      }
+      },
+      "nameKey": "item.steel_spear.name",
+      "descriptionKey": "item.steel_spear.description"
     },
     "steel_sword": {
       "id": "steel_sword",
@@ -7663,7 +8619,9 @@
       },
       "combatStatBonuses": {
         "attack": 18
-      }
+      },
+      "nameKey": "item.steel_sword.name",
+      "descriptionKey": "item.steel_sword.description"
     },
     "steel_weapon": {
       "id": "steel_weapon",
@@ -7683,7 +8641,9 @@
       },
       "combatStatBonuses": {
         "attack": 18
-      }
+      },
+      "nameKey": "item.steel_weapon.name",
+      "descriptionKey": "item.steel_weapon.description"
     },
     "stone": {
       "id": "stone",
@@ -7693,7 +8653,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.stone.name",
+      "descriptionKey": "item.stone.description"
     },
     "strength_potion": {
       "id": "strength_potion",
@@ -7708,7 +8670,9 @@
         "type": "buff",
         "buffId": "strength_boost",
         "duration": 300
-      }
+      },
+      "nameKey": "item.strength_potion.name",
+      "descriptionKey": "item.strength_potion.description"
     },
     "strength_ring_t1": {
       "id": "strength_ring_t1",
@@ -7727,7 +8691,9 @@
       },
       "combatStatBonuses": {
         "attack": 4
-      }
+      },
+      "nameKey": "item.strength_ring_t1.name",
+      "descriptionKey": "item.strength_ring_t1.description"
     },
     "strength_ring_t2": {
       "id": "strength_ring_t2",
@@ -7746,7 +8712,9 @@
       },
       "combatStatBonuses": {
         "attack": 6
-      }
+      },
+      "nameKey": "item.strength_ring_t2.name",
+      "descriptionKey": "item.strength_ring_t2.description"
     },
     "strength_ring_t3": {
       "id": "strength_ring_t3",
@@ -7765,7 +8733,9 @@
       },
       "combatStatBonuses": {
         "attack": 16
-      }
+      },
+      "nameKey": "item.strength_ring_t3.name",
+      "descriptionKey": "item.strength_ring_t3.description"
     },
     "supreme_essence": {
       "id": "supreme_essence",
@@ -7775,7 +8745,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 800
+      "value": 800,
+      "nameKey": "item.supreme_essence.name",
+      "descriptionKey": "item.supreme_essence.description"
     },
     "supreme_rune": {
       "id": "supreme_rune",
@@ -7785,7 +8757,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 99,
-      "value": 2000
+      "value": 2000,
+      "nameKey": "item.supreme_rune.name",
+      "descriptionKey": "item.supreme_rune.description"
     },
     "teleport_scroll": {
       "id": "teleport_scroll",
@@ -7799,7 +8773,9 @@
       "consumableEffect": {
         "type": "buff",
         "amount": 1
-      }
+      },
+      "nameKey": "item.teleport_scroll.name",
+      "descriptionKey": "item.teleport_scroll.description"
     },
     "thread": {
       "id": "thread",
@@ -7809,7 +8785,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.thread.name",
+      "descriptionKey": "item.thread.description"
     },
     "thread_quality": {
       "id": "thread_quality",
@@ -7819,7 +8797,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 10
+      "value": 10,
+      "nameKey": "item.thread_quality.name",
+      "descriptionKey": "item.thread_quality.description"
     },
     "trade_good": {
       "id": "trade_good",
@@ -7829,7 +8809,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.trade_good.name",
+      "descriptionKey": "item.trade_good.description"
     },
     "trapped_animal": {
       "id": "trapped_animal",
@@ -7839,7 +8821,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 5
+      "value": 5,
+      "nameKey": "item.trapped_animal.name",
+      "descriptionKey": "item.trapped_animal.description"
     },
     "trapped_animal_quality": {
       "id": "trapped_animal_quality",
@@ -7849,7 +8833,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.trapped_animal_quality.name",
+      "descriptionKey": "item.trapped_animal_quality.description"
     },
     "trapped_monster": {
       "id": "trapped_monster",
@@ -7859,7 +8845,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 300
+      "value": 300,
+      "nameKey": "item.trapped_monster.name",
+      "descriptionKey": "item.trapped_monster.description"
     },
     "treasure_chest": {
       "id": "treasure_chest",
@@ -7873,7 +8861,9 @@
       "consumableEffect": {
         "type": "custom",
         "description": "Opens the chest to reveal random loot"
-      }
+      },
+      "nameKey": "item.treasure_chest.name",
+      "descriptionKey": "item.treasure_chest.description"
     },
     "tree_bark": {
       "id": "tree_bark",
@@ -7883,7 +8873,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.tree_bark.name",
+      "descriptionKey": "item.tree_bark.description"
     },
     "troll_blood": {
       "id": "troll_blood",
@@ -7893,7 +8885,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 25
+      "value": 25,
+      "nameKey": "item.troll_blood.name",
+      "descriptionKey": "item.troll_blood.description"
     },
     "uncommon_herb": {
       "id": "uncommon_herb",
@@ -7903,7 +8897,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.uncommon_herb.name",
+      "descriptionKey": "item.uncommon_herb.description"
     },
     "uncommon_item": {
       "id": "uncommon_item",
@@ -7913,7 +8909,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.uncommon_item.name",
+      "descriptionKey": "item.uncommon_item.description"
     },
     "uncommon_trinket": {
       "id": "uncommon_trinket",
@@ -7923,7 +8921,9 @@
       "rarity": "uncommon",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.uncommon_trinket.name",
+      "descriptionKey": "item.uncommon_trinket.description"
     },
     "unicorn_horn": {
       "id": "unicorn_horn",
@@ -7933,7 +8933,9 @@
       "rarity": "epic",
       "stackable": true,
       "maxStack": 999,
-      "value": 1000
+      "value": 1000,
+      "nameKey": "item.unicorn_horn.name",
+      "descriptionKey": "item.unicorn_horn.description"
     },
     "vampire_fang": {
       "id": "vampire_fang",
@@ -7943,7 +8945,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 150
+      "value": 150,
+      "nameKey": "item.vampire_fang.name",
+      "descriptionKey": "item.vampire_fang.description"
     },
     "vegetable": {
       "id": "vegetable",
@@ -7953,7 +8957,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 2
+      "value": 2,
+      "nameKey": "item.vegetable.name",
+      "descriptionKey": "item.vegetable.description"
     },
     "venom_blade": {
       "id": "venom_blade",
@@ -7978,7 +8984,9 @@
         "attack": 15,
         "speed": 12,
         "criticalChance": 5
-      }
+      },
+      "nameKey": "item.venom_blade.name",
+      "descriptionKey": "item.venom_blade.description"
     },
     "venom_dagger": {
       "id": "venom_dagger",
@@ -8003,7 +9011,9 @@
         "attack": 9,
         "speed": 7,
         "criticalChance": 3
-      }
+      },
+      "nameKey": "item.venom_dagger.name",
+      "descriptionKey": "item.venom_dagger.description"
     },
     "vitality_amulet_t1": {
       "id": "vitality_amulet_t1",
@@ -8023,7 +9033,9 @@
       },
       "combatStatBonuses": {
         "defense": 2
-      }
+      },
+      "nameKey": "item.vitality_amulet_t1.name",
+      "descriptionKey": "item.vitality_amulet_t1.description"
     },
     "vitality_amulet_t2": {
       "id": "vitality_amulet_t2",
@@ -8043,7 +9055,9 @@
       },
       "combatStatBonuses": {
         "defense": 3
-      }
+      },
+      "nameKey": "item.vitality_amulet_t2.name",
+      "descriptionKey": "item.vitality_amulet_t2.description"
     },
     "vitality_amulet_t3": {
       "id": "vitality_amulet_t3",
@@ -8063,7 +9077,9 @@
       },
       "combatStatBonuses": {
         "defense": 8
-      }
+      },
+      "nameKey": "item.vitality_amulet_t3.name",
+      "descriptionKey": "item.vitality_amulet_t3.description"
     },
     "void_essence": {
       "id": "void_essence",
@@ -8073,7 +9089,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1000
+      "value": 1000,
+      "nameKey": "item.void_essence.name",
+      "descriptionKey": "item.void_essence.description"
     },
     "void_shard": {
       "id": "void_shard",
@@ -8083,7 +9101,9 @@
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 1500
+      "value": 1500,
+      "nameKey": "item.void_shard.name",
+      "descriptionKey": "item.void_shard.description"
     },
     "volcanic_stone": {
       "id": "volcanic_stone",
@@ -8093,7 +9113,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 70
+      "value": 70,
+      "nameKey": "item.volcanic_stone.name",
+      "descriptionKey": "item.volcanic_stone.description"
     },
     "water": {
       "id": "water",
@@ -8103,7 +9125,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.water.name",
+      "descriptionKey": "item.water.description"
     },
     "water_core": {
       "id": "water_core",
@@ -8113,7 +9137,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 185
+      "value": 185,
+      "nameKey": "item.water_core.name",
+      "descriptionKey": "item.water_core.description"
     },
     "wheat": {
       "id": "wheat",
@@ -8123,7 +9149,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.wheat.name",
+      "descriptionKey": "item.wheat.description"
     },
     "wheat_seed": {
       "id": "wheat_seed",
@@ -8133,7 +9161,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.wheat_seed.name",
+      "descriptionKey": "item.wheat_seed.description"
     },
     "wolf_pelt": {
       "id": "wolf_pelt",
@@ -8143,7 +9173,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 8
+      "value": 8,
+      "nameKey": "item.wolf_pelt.name",
+      "descriptionKey": "item.wolf_pelt.description"
     },
     "wood": {
       "id": "wood",
@@ -8153,7 +9185,9 @@
       "rarity": "common",
       "stackable": true,
       "maxStack": 999,
-      "value": 1
+      "value": 1,
+      "nameKey": "item.wood.name",
+      "descriptionKey": "item.wood.description"
     },
     "wooden_shield": {
       "id": "wooden_shield",
@@ -8172,7 +9206,9 @@
       },
       "combatStatBonuses": {
         "defense": 5
-      }
+      },
+      "nameKey": "item.wooden_shield.name",
+      "descriptionKey": "item.wooden_shield.description"
     },
     "yew_berry": {
       "id": "yew_berry",
@@ -8182,7 +9218,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 20
+      "value": 20,
+      "nameKey": "item.yew_berry.name",
+      "descriptionKey": "item.yew_berry.description"
     },
     "yew_log": {
       "id": "yew_log",
@@ -8192,7 +9230,9 @@
       "rarity": "rare",
       "stackable": true,
       "maxStack": 999,
-      "value": 30
+      "value": 30,
+      "nameKey": "item.yew_log.name",
+      "descriptionKey": "item.yew_log.description"
     }
   }
 }
