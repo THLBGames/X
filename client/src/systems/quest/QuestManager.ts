@@ -177,7 +177,6 @@ export class QuestManager {
    */
   private static processUnlocks(character: Character, quest: Quest): Character {
     let updatedCharacter = character;
-    const dataLoader = getDataLoader();
 
     // Unlock skills (add to learnedSkills without cost)
     if (quest.unlocks?.skills) {

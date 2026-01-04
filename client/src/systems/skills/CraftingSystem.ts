@@ -1,7 +1,6 @@
 import type { Character, Recipe, Inventory } from '@idle-rpg/shared';
 import { IdleSkillSystem } from './IdleSkillSystem';
 import { InventoryManager } from '../inventory';
-import { getDataLoader } from '@/data';
 
 export interface CraftingResult {
   success: boolean;
