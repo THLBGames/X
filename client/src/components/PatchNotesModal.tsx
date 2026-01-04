@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { getDataLoader } from '../data';
-import type { PatchNotes, PatchNoteVersion } from '../data/DataLoader';
+import type { PatchNoteVersion } from '../data/DataLoader';
 import './PatchNotesModal.css';
 
 interface PatchNotesModalProps {
