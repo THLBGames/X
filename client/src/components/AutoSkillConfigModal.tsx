@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import type { AutoSkillSetting } from '@idle-rpg/shared';
 import {
   AutoCondition,
