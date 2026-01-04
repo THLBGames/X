@@ -12,6 +12,8 @@
           "Cross-skill recipe requirements - engineering and enchanting recipes now require multiple skills"
         ],
         "changed": [
+          "Improved the design of skill detail view",
+          "Improved the design of skills panel",
           "Blacksmithing recipes updated to require dungeon materials (goblin bones, orc teeth, troll hides)",
           "Tailoring recipes updated to use dungeon materials (bone fragments, dark crystals)",
           "Leatherworking recipes enhanced with monster hides from combat",
