@@ -3,6 +3,9 @@ import { initReactI18next } from 'react-i18next';
 import gameDataEn from '../locales/en/gameData.json';
 import uiEn from '../locales/en/ui.json';
 import commonEn from '../locales/en/common.json';
+import gameDataEs from '../locales/es/gameData.json';
+import uiEs from '../locales/es/ui.json';
+import commonEs from '../locales/es/common.json';
 
 i18next
   .use(initReactI18next)
@@ -12,6 +15,11 @@ i18next
         gameData: gameDataEn,
         ui: uiEn,
         common: commonEn,
+      },
+      es: {
+        gameData: gameDataEs,
+        ui: uiEs,
+        common: commonEs,
       },
     },
     lng: 'en', // Default language

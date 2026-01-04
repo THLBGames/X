@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import type { GameSettings } from '@idle-rpg/shared';
+import { SUPPORTED_LANGUAGES } from '../constants/languages';
 import './SettingsPanel.css';
 
 interface SettingsPanelProps {
@@ -9,6 +11,7 @@ interface SettingsPanelProps {
 }
 
 export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
+  const { t } = useTranslation('ui');
   const settings = useGameState((state) => state.settings);
   const updateSettings = useGameState((state) => state.updateSettings);
 
@@ -47,6 +50,7 @@ export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
       confirmItemSell: false,
       showNotifications: true,
       autoSaveInterval: 30,
+      language: 'en',
     };
     setLocalSettings(defaultSettings);
     updateSettings(defaultSettings);
@@ -305,6 +309,26 @@ export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
                     />
                     <span className="toggle-slider"></span>
                   </label>
+                </div>
+              </div>
+
+              <div className="setting-item">
+                <div className="setting-label">
+                  <label>{t('settings.language')}</label>
+                  <span className="setting-description">{t('settings.languageDescription')}</span>
+                </div>
+                <div className="setting-control">
+                  <select
+                    value={localSettings.language ?? 'en'}
+                    onChange={(e) => handleSettingChange('language', e.target.value)}
+                    className="language-select"
+                  >
+                    {SUPPORTED_LANGUAGES.map((lang) => (
+                      <option key={lang.code} value={lang.code}>
+                        {t(lang.nameKey, { defaultValue: lang.name })}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
             </div>

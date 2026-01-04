@@ -1,0 +1,44 @@
+{
+  "stats": {
+    "strength": "Strength",
+    "dexterity": "Dexterity",
+    "intelligence": "Intelligence",
+    "vitality": "Vitality",
+    "wisdom": "Wisdom",
+    "luck": "Luck"
+  },
+  "itemType": {
+    "type": "Type",
+    "weapon": "Weapon",
+    "armor": "Armor",
+    "accessory": "Accessory",
+    "consumable": "Consumable",
+    "material": "Material",
+    "quest": "Quest"
+  },
+  "rarity": {
+    "rarity": "Rarity",
+    "common": "Common",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary",
+    "mythic": "Mythic"
+  },
+  "skillType": {
+    "active": "Active",
+    "passive": "Passive"
+  },
+  "combatStats": {
+    "health": "Health",
+    "mana": "Mana",
+    "attack": "Attack",
+    "defense": "Defense",
+    "magicAttack": "Magic Attack",
+    "magicDefense": "Magic Defense",
+    "speed": "Speed",
+    "criticalChance": "Critical Chance",
+    "criticalDamage": "Critical Damage"
+  }
+}
+
