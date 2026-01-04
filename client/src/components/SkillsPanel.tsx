@@ -13,15 +13,10 @@ export default function SkillsPanel() {
   const [displaySkillId, setDisplaySkillId] = useState<string | null>(null);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({
-    idle: true,
     gathering: true,
     production: true,
     hybrid: true,
   });
-
-  if (!character) {
-    return null;
-  }
 
   const dataLoader = getDataLoader();
   const allSkills = dataLoader.getAllSkills();
@@ -36,25 +31,11 @@ export default function SkillsPanel() {
     );
 
     return {
-      idle: {
-        gathering: idleSkills.filter((s) => s.category === 'gathering'),
-        production: idleSkills.filter((s) => s.category === 'production'),
-        hybrid: idleSkills.filter((s) => s.category === 'hybrid'),
-      },
+      gathering: idleSkills.filter((s) => s.category === 'gathering'),
+      production: idleSkills.filter((s) => s.category === 'production'),
+      hybrid: idleSkills.filter((s) => s.category === 'hybrid'),
     };
   }, [allSkills]);
-
-  const getSkillLevel = (skillId: string): number => {
-    // All skills in this panel are idle skills
-    return IdleSkillSystem.getSkillLevel(character, skillId);
-  };
-
-  const toggleCategory = (categoryKey: string) => {
-    setExpandedCategories((prev) => ({
-      ...prev,
-      [categoryKey]: !prev[categoryKey],
-    }));
-  };
 
   // Auto-select skill if there's an active action
   useEffect(() => {
@@ -78,6 +59,22 @@ export default function SkillsPanel() {
       }
     }
   }, [selectedSkillId, displaySkillId]);
+
+  if (!character) {
+    return null;
+  }
+
+  const getSkillLevel = (skillId: string): number => {
+    // All skills in this panel are idle skills
+    return IdleSkillSystem.getSkillLevel(character, skillId);
+  };
+
+  const toggleCategory = (categoryKey: string) => {
+    setExpandedCategories((prev) => ({
+      ...prev,
+      [categoryKey]: !prev[categoryKey],
+    }));
+  };
 
   const renderSkillItem = (skill: Skill) => {
     const level = getSkillLevel(skill.id);
@@ -139,16 +136,9 @@ export default function SkillsPanel() {
         </div>
 
         <div className="skills-sidebar-content">
-          {/* Idle Skills Section */}
-          <div className="skills-main-category">
-            {expandedCategories.idle && (
-              <div className="skills-subcategories">
-                {renderCategorySection('Gathering', 'gathering', skillCategories.idle.gathering)}
-                {renderCategorySection('Production', 'production', skillCategories.idle.production)}
-                {renderCategorySection('Hybrid', 'hybrid', skillCategories.idle.hybrid)}
-              </div>
-            )}
-          </div>
+          {renderCategorySection('Gathering', 'gathering', skillCategories.gathering)}
+          {renderCategorySection('Production', 'production', skillCategories.production)}
+          {renderCategorySection('Hybrid', 'hybrid', skillCategories.hybrid)}
         </div>
       </div>
 

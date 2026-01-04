@@ -8,7 +8,8 @@
     "baseDamageFormula": "attack * (1 - defense / (defense + 100))",
     "defenseReductionFormula": "damage * (1 - defense / (defense + 100))",
     "criticalDamageMultiplier": 1.5,
-    "turnTime": 1000
+    "turnTime": 1000,
+    "roundDelay": 2000
   },
   "economy": {
     "itemValueMultiplier": 1.0,

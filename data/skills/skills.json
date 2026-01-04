@@ -605,6 +605,10 @@
             {
               "itemId": "leather",
               "quantity": 3
+            },
+            {
+              "itemId": "goblin_bone",
+              "quantity": 2
             }
           ],
           "result": {
@@ -630,6 +634,10 @@
             {
               "itemId": "silver_ore",
               "quantity": 2
+            },
+            {
+              "itemId": "orc_tooth",
+              "quantity": 3
             }
           ],
           "result": {
@@ -1497,6 +1505,12 @@
           "recipeId": "greater_enchant",
           "name": "Greater Enchantment",
           "level": 60,
+          "skillPrerequisites": [
+            {
+              "skillId": "runecrafting",
+              "level": 40
+            }
+          ],
           "ingredients": [
             {
               "itemId": "greater_essence",
@@ -1604,6 +1618,12 @@
           "recipeId": "mechanical_device",
           "name": "Mechanical Device",
           "level": 40,
+          "skillPrerequisites": [
+            {
+              "skillId": "blacksmithing",
+              "level": 30
+            }
+          ],
           "ingredients": [
             {
               "itemId": "steel",
@@ -3052,6 +3072,10 @@
             {
               "itemId": "metal_ring",
               "quantity": 4
+            },
+            {
+              "itemId": "wolf_pelt",
+              "quantity": 3
             }
           ],
           "result": {
@@ -3077,6 +3101,10 @@
             {
               "itemId": "enchanted_thread",
               "quantity": 3
+            },
+            {
+              "itemId": "troll_hide",
+              "quantity": 4
             }
           ],
           "result": {
@@ -4601,6 +4629,10 @@
             {
               "itemId": "gem_common",
               "quantity": 1
+            },
+            {
+              "itemId": "bone_fragment",
+              "quantity": 3
             }
           ],
           "result": {
@@ -4625,6 +4657,10 @@
             },
             {
               "itemId": "gem_rare",
+              "quantity": 2
+            },
+            {
+              "itemId": "dark_crystal",
               "quantity": 2
             }
           ],

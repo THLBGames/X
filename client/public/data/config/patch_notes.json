@@ -1,8 +1,30 @@
 {
   "versions": [
     {
+      "version": "0.0.5",
+      "date": "2026-01-04",
+      "categories": {
+        "added": [
+          "Dungeon materials system - monsters now drop crafting materials (bones, hides, scales, essences)",
+          "Quest unlock system - quests can now unlock skills and recipes upon completion",
+          "Skill prerequisites for recipes - advanced recipes now require multiple skills",
+          "New quests: Apprentice Blacksmith, Herbal Remedy, Tailor's Apprentice, and Dragon Slayer",
+          "Cross-skill recipe requirements - engineering and enchanting recipes now require multiple skills"
+        ],
+        "changed": [
+          "Blacksmithing recipes updated to require dungeon materials (goblin bones, orc teeth, troll hides)",
+          "Tailoring recipes updated to use dungeon materials (bone fragments, dark crystals)",
+          "Leatherworking recipes enhanced with monster hides from combat",
+          "Advanced crafting recipes now require skill prerequisites (e.g., engineering needs blacksmithing)",
+          "Quest system enhanced with unlock mechanics for skills and recipes"
+        ],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
       "version": "0.0.4",
-      "date": "2024-12-15",
+      "date": "2026-01-03",
       "categories": {
         "added": [
           "Patch notes system - view version history in-game",
@@ -25,7 +47,7 @@
     },
     {
       "version": "0.0.3",
-      "date": "2024-11-20",
+      "date": "2026-01-01",
       "categories": {
         "added": [
           "Auto-skill configuration system",
@@ -49,7 +71,7 @@
     },
     {
       "version": "0.0.2",
-      "date": "2024-10-10",
+      "date": "2025-12-30",
       "categories": {
         "added": [
           "Equipment system with multiple slots",
@@ -73,7 +95,7 @@
     },
     {
       "version": "0.0.1",
-      "date": "2024-09-01",
+      "date": "2025-12-28",
       "categories": {
         "added": [
           "Initial prototype release",

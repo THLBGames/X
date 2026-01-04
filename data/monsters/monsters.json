@@ -117,6 +117,11 @@
         {
           "itemId": "mana_potion_medium",
           "chance": 0.4
+        },
+        {
+          "itemId": "dark_crystal",
+          "chance": 0.4,
+          "quantity": 1
         }
       ],
       "experienceReward": 125,
@@ -160,6 +165,11 @@
         {
           "itemId": "dragon_blood",
           "chance": 0.3
+        },
+        {
+          "itemId": "dragon_scale",
+          "chance": 0.5,
+          "quantity": 1
         }
       ],
       "experienceReward": 200,
@@ -238,6 +248,11 @@
         {
           "itemId": "giant_stone",
           "chance": 0.7
+        },
+        {
+          "itemId": "giant_scale",
+          "chance": 0.5,
+          "quantity": 1
         }
       ],
       "experienceReward": 400,
@@ -277,6 +292,11 @@
         {
           "itemId": "health_potion_small",
           "chance": 0.1
+        },
+        {
+          "itemId": "goblin_bone",
+          "chance": 0.6,
+          "quantity": 1
         }
       ],
       "experienceReward": 10,
@@ -398,6 +418,11 @@
         {
           "itemId": "ancient_tome",
           "chance": 0.4
+        },
+        {
+          "itemId": "lich_soul_fragment",
+          "chance": 0.3,
+          "quantity": 1
         }
       ],
       "experienceReward": 300,
@@ -437,6 +462,11 @@
         {
           "itemId": "minotaur_horn",
           "chance": 0.5
+        },
+        {
+          "itemId": "minotaur_horn",
+          "chance": 0.6,
+          "quantity": 1
         }
       ],
       "experienceReward": 160,
@@ -476,6 +506,11 @@
         {
           "itemId": "ogre_club",
           "chance": 0.2
+        },
+        {
+          "itemId": "ogre_essence",
+          "chance": 0.4,
+          "quantity": 1
         }
       ],
       "experienceReward": 110,
@@ -515,6 +550,11 @@
         {
           "itemId": "health_potion_small",
           "chance": 0.2
+        },
+        {
+          "itemId": "orc_tooth",
+          "chance": 0.5,
+          "quantity": 1
         }
       ],
       "experienceReward": 30,
@@ -632,6 +672,11 @@
         {
           "itemId": "bone_fragment",
           "chance": 0.3
+        },
+        {
+          "itemId": "bone_fragment",
+          "chance": 0.4,
+          "quantity": 1
         }
       ],
       "experienceReward": 20,
@@ -714,6 +759,11 @@
         {
           "itemId": "troll_blood",
           "chance": 0.5
+        },
+        {
+          "itemId": "troll_hide",
+          "chance": 0.6,
+          "quantity": 1
         }
       ],
       "experienceReward": 80,
@@ -796,6 +846,11 @@
         {
           "itemId": "wolf_pelt",
           "chance": 0.4
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.5,
+          "quantity": 1
         }
       ],
       "experienceReward": 22,

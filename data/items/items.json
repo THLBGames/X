@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_items": 520,
+  "total_items": 528,
   "items": {
     "adamantite_armor": {
       "id": "adamantite_armor",
@@ -2254,6 +2254,18 @@
       "nameKey": "item.cursed_water.name",
       "descriptionKey": "item.cursed_water.description"
     },
+    "dark_crystal": {
+      "id": "dark_crystal",
+      "name": "Dark Crystal",
+      "description": "A crystal imbued with dark magic, used in powerful enchantments.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 60,
+      "nameKey": "item.dark_crystal.name",
+      "descriptionKey": "item.dark_crystal.description"
+    },
     "dark_gem": {
       "id": "dark_gem",
       "name": "Dark Gem",
@@ -2305,6 +2317,18 @@
       "value": 800,
       "nameKey": "item.demon_essence.name",
       "descriptionKey": "item.demon_essence.description"
+    },
+    "demon_heart": {
+      "id": "demon_heart",
+      "name": "Demon Heart",
+      "description": "The still-beating heart of a powerful demon, pulsing with dark energy.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.demon_heart.name",
+      "descriptionKey": "item.demon_heart.description"
     },
     "dexterity_ring_t1": {
       "id": "dexterity_ring_t1",
@@ -3846,6 +3870,18 @@
       "nameKey": "item.gem_rare.name",
       "descriptionKey": "item.gem_rare.description"
     },
+    "giant_scale": {
+      "id": "giant_scale",
+      "name": "Giant Scale",
+      "description": "A massive scale from a giant, extremely durable.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.giant_scale.name",
+      "descriptionKey": "item.giant_scale.description"
+    },
     "giant_stone": {
       "id": "giant_stone",
       "name": "Giant Stone",
@@ -3857,6 +3893,18 @@
       "value": 100,
       "nameKey": "item.giant_stone.name",
       "descriptionKey": "item.giant_stone.description"
+    },
+    "goblin_bone": {
+      "id": "goblin_bone",
+      "name": "Goblin Bone",
+      "description": "A bone from a goblin, used in basic crafting.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.goblin_bone.name",
+      "descriptionKey": "item.goblin_bone.description"
     },
     "gold": {
       "id": "gold",
@@ -5027,6 +5075,18 @@
       "value": 500,
       "nameKey": "item.lich_phylactery.name",
       "descriptionKey": "item.lich_phylactery.description"
+    },
+    "lich_soul_fragment": {
+      "id": "lich_soul_fragment",
+      "name": "Lich Soul Fragment",
+      "description": "A fragment of a lich's soul, required for legendary enchantments.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.lich_soul_fragment.name",
+      "descriptionKey": "item.lich_soul_fragment.description"
     },
     "light_essence": {
       "id": "light_essence",
@@ -6214,6 +6274,30 @@
       },
       "nameKey": "item.ogre_club.name",
       "descriptionKey": "item.ogre_club.description"
+    },
+    "ogre_essence": {
+      "id": "ogre_essence",
+      "name": "Ogre Essence",
+      "description": "Magical essence extracted from an ogre.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.ogre_essence.name",
+      "descriptionKey": "item.ogre_essence.description"
+    },
+    "orc_tooth": {
+      "id": "orc_tooth",
+      "name": "Orc Tooth",
+      "description": "A sharp tooth from an orc warrior.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 8,
+      "nameKey": "item.orc_tooth.name",
+      "descriptionKey": "item.orc_tooth.description"
     },
     "order_shard": {
       "id": "order_shard",
@@ -8888,6 +8972,18 @@
       "value": 25,
       "nameKey": "item.troll_blood.name",
       "descriptionKey": "item.troll_blood.description"
+    },
+    "troll_hide": {
+      "id": "troll_hide",
+      "name": "Troll Hide",
+      "description": "Tough hide from a troll, excellent for armor crafting.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.troll_hide.name",
+      "descriptionKey": "item.troll_hide.description"
     },
     "uncommon_herb": {
       "id": "uncommon_herb",

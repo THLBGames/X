@@ -1,189 +1,340 @@
+/* Main Container */
 .skill-detail-view {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
+/* Header Section */
 .skill-detail-header {
+  margin-bottom: 4px;
+}
+
+.skill-detail-title-section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.1) 0%, rgba(78, 205, 196, 0.05) 100%);
+  border: 2px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.skill-detail-header h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.skill-level-display {
-  font-size: 0.95rem;
-  color: #4a9eff;
-  font-weight: bold;
-}
-
-.skill-description {
-  color: #aaa;
-  line-height: 1.4;
-  margin-bottom: 8px;
-  font-size: 0.85rem;
-}
-
-.skill-experience {
-  background: #333;
-  padding: 8px;
-  border-radius: 4px;
-}
-
-.exp-info {
-  margin-bottom: 6px;
-  font-size: 0.8rem;
-  color: #ccc;
-}
-
-.exp-bar {
-  width: 100%;
-  height: 16px;
-  background: #1a1a1a;
-  border: 1px solid #444;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.exp-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #4a9eff, #0066cc);
-  transition: width 0.3s ease;
-}
-
-.resource-nodes-section,
-.recipes-section,
-.passive-bonuses-section {
-  background: #333;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.resource-nodes-section h4,
-.recipes-section h4,
-.passive-bonuses-section h4 {
-  margin: 0 0 8px 0;
-  font-size: 0.95rem;
+.skill-detail-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.nodes-list,
-.recipes-list,
-.bonuses-list {
+.skill-detail-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-detail-title h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.skill-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.skill-type-badge {
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.3) 0%, rgba(74, 158, 255, 0.2) 100%);
+  color: #4a9eff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(74, 158, 255, 0.4);
+  text-transform: capitalize;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skill-level-badge {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(78, 205, 196, 0.2) 100%);
+  color: #4ecdc4;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(78, 205, 196, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Description */
+.skill-detail-description {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+  border: 2px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skill-detail-description p {
+  margin: 0;
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Section Styling */
+.skill-detail-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skill-detail-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #444;
+  padding-bottom: 12px;
+}
+
+/* Experience Section */
+.skill-exp-info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
 }
 
-.node-item,
-.recipe-item,
-.bonus-item {
-  background: #2a2a2a;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #444;
-  transition: all 0.3s ease;
+.skill-exp-text {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.node-item.active {
+.skill-exp-bar {
+  width: 100%;
+  height: 20px;
+  background: #1a1a1a;
+  border: 2px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.skill-exp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff 0%, #0066cc 50%, #4ecdc4 100%);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
+}
+
+/* Resource Nodes & Recipes Lists */
+.resource-nodes-list,
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-node-item,
+.recipe-item {
+  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.resource-node-item:hover,
+.recipe-item:hover {
+  border-color: #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.resource-node-item.active {
   border-color: #4a9eff;
-  box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
-  animation: pulse-border 2s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.15) 0%, rgba(74, 158, 255, 0.05) 100%);
+  box-shadow: 
+    0 0 16px rgba(74, 158, 255, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-@keyframes pulse-border {
+@keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+    box-shadow: 
+      0 0 16px rgba(74, 158, 255, 0.4),
+      0 4px 8px rgba(0, 0, 0, 0.3);
   }
   50% {
-    box-shadow: 0 0 20px rgba(74, 158, 255, 0.6);
+    box-shadow: 
+      0 0 24px rgba(74, 158, 255, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.3);
   }
 }
 
-.node-item.locked {
+.resource-node-item.locked {
   opacity: 0.6;
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+  border-color: #333;
+  cursor: not-allowed;
 }
 
-.locked-message {
-  color: #888;
-  font-size: 0.85rem;
-}
-
-.no-nodes-message {
-  color: #888;
-  font-style: italic;
-  padding: 20px;
-  text-align: center;
-}
-
-.node-header,
+.resource-node-header,
 .recipe-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.node-name,
+.resource-node-name,
 .recipe-name {
-  font-weight: bold;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.node-level,
+.resource-node-level,
 .recipe-level {
-  color: #888;
-  font-size: 0.8rem;
+  color: #4ecdc4;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(78, 205, 196, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(78, 205, 196, 0.3);
 }
 
-.node-info {
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-bottom: 6px;
+.training-status-badge {
+  background: linear-gradient(135deg, #4a9eff 0%, #0066cc 100%);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(74, 158, 255, 0.5);
+  animation: pulse-text 2s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Training Progress */
+.training-progress-indicator {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 8px;
+  border: 2px solid #4a9eff;
+  box-shadow: 0 0 12px rgba(74, 158, 255, 0.3);
+}
+
+.training-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.training-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff 0%, #0066cc 50%, #4ecdc4 100%);
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(74, 158, 255, 0.6);
+}
+
+.training-timer {
+  font-size: 0.9rem;
+  color: #4a9eff;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(74, 158, 255, 0.5);
+}
+
+/* Resource Node Info */
+.resource-node-info {
+  margin-bottom: 12px;
 }
 
 .resource-node-stats {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 8px;
-  font-size: 0.75rem;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
   color: #ccc;
 }
 
+.resource-node-stats span {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
 .resource-node-drops {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid #444;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid #444;
 }
 
 .resource-drops-label {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #aaa;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .resource-drops-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .resource-drop-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  color: #ddd;
+  gap: 12px;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 1px solid #333;
 }
 
 .drop-item-name {
@@ -194,218 +345,436 @@
 
 .drop-quantity {
   color: #4a9eff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .drop-chance {
   color: #888;
   font-style: italic;
-}
-
-.training-status-badge {
-  background: #4a9eff;
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  animation: pulse-text 2s ease-in-out infinite;
-}
-
-@keyframes pulse-text {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.training-progress-indicator {
-  margin-bottom: 10px;
-  padding: 8px;
-  background: #1a1a1a;
-  border-radius: 4px;
-  border: 1px solid #4a9eff;
-}
-
-.training-progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #2a2a2a;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.training-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #4a9eff, #0066cc);
-  transition: width 0.1s linear;
-  border-radius: 4px;
-}
-
-.training-timer {
-  font-size: 0.8rem;
-  color: #4a9eff;
-  font-weight: 600;
-  text-align: center;
-}
-
-.recipe-ingredients {
-  font-size: 0.8rem;
-  color: #ccc;
-  margin-bottom: 6px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.ingredient-item {
-  background: #333;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-size: 0.75rem;
-}
-
-.ingredient-item.missing {
-  background: #3a1a1a;
-  color: #ff6666;
-}
-
-.recipe-result {
-  font-size: 0.8rem;
-  color: #4a9eff;
-  margin-bottom: 6px;
-}
-
-.node-action-button,
-.recipe-craft-button {
-  width: 100%;
-  padding: 6px;
-  background: #4a9eff;
-  border: none;
-  border-radius: 3px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.node-action-button:hover,
-.recipe-craft-button:hover:not(:disabled) {
-  background: #5aaeff;
-  transform: translateY(-1px);
-}
-
-.node-action-button.active {
-  background: #ff4444;
-}
-
-.node-action-button.active:hover {
-  background: #ff6666;
-}
-
-.recipe-craft-button:disabled,
-.node-action-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  background: #555;
-}
-
-.bonus-item {
-  font-size: 0.9rem;
-  color: #ccc;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.bonus-level {
-  font-weight: bold;
-  color: #4a9eff;
-  font-size: 0.95rem;
-}
-
-.bonus-effects {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-left: 8px;
-}
-
-.bonus-effect {
-  color: #aaa;
   font-size: 0.85rem;
 }
 
-/* Tablet and below */
+.locked-message {
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+/* Recipe Styling */
+.recipe-ingredients {
+  margin-bottom: 12px;
+}
+
+.recipe-ingredients > span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ingredient-item {
+  background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #ccc;
+  border: 1px solid #444;
+  font-weight: 500;
+}
+
+.ingredient-item.missing {
+  background: linear-gradient(135deg, rgba(255, 102, 102, 0.2) 0%, rgba(255, 68, 68, 0.1) 100%);
+  color: #ff6666;
+  border-color: rgba(255, 102, 102, 0.4);
+}
+
+.recipe-results {
+  margin-bottom: 12px;
+}
+
+.recipe-results > span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-item {
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.2) 0%, rgba(74, 158, 255, 0.1) 100%);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #4a9eff;
+  font-weight: 600;
+  border: 1px solid rgba(74, 158, 255, 0.3);
+}
+
+/* Buttons */
+.resource-node-button,
+.recipe-craft-button,
+.skill-action-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #4a9eff 0%, #0066cc 100%);
+  border: 2px solid #4a9eff;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 8px rgba(74, 158, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resource-node-button:hover:not(:disabled),
+.recipe-craft-button:hover:not(:disabled),
+.skill-action-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5aaeff 0%, #0077dd 100%);
+  border-color: #5aaeff;
+  box-shadow: 0 6px 12px rgba(74, 158, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.resource-node-button:active:not(:disabled),
+.recipe-craft-button:active:not(:disabled),
+.skill-action-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(74, 158, 255, 0.3);
+}
+
+.resource-node-button.stop {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  border-color: #ff4444;
+  box-shadow: 0 4px 8px rgba(255, 68, 68, 0.3);
+}
+
+.resource-node-button.stop:hover {
+  background: linear-gradient(135deg, #ff6666 0%, #dd2222 100%);
+  border-color: #ff6666;
+  box-shadow: 0 6px 12px rgba(255, 68, 68, 0.4);
+}
+
+.recipe-craft-button:disabled,
+.resource-node-button:disabled,
+.skill-action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #555;
+  border-color: #555;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Skill Info Grid (Combat Skills) */
+.skill-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.skill-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.skill-info-label {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-info-value {
+  font-size: 1.1rem;
+  color: #4a9eff;
+  font-weight: 700;
+}
+
+/* Effect Info */
+.skill-effect-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.effect-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.effect-label {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.effect-value {
+  font-size: 1rem;
+  color: #4ecdc4;
+  font-weight: 700;
+}
+
+/* Bonus Lists */
+.skill-bonus-list,
+.prerequisites-list,
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bonus-item,
+.prerequisite-item,
+.requirement-item {
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 1px solid #444;
+  color: #ccc;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Passive Bonuses */
+.passive-bonuses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.passive-bonus-item {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.passive-bonus-level {
+  font-weight: 700;
+  color: #4ecdc4;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  text-shadow: 0 0 8px rgba(78, 205, 196, 0.5);
+}
+
+.passive-bonus-effects {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 2px solid #444;
+}
+
+.passive-bonus-effects .bonus-item {
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Actions Section */
+.skill-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-max-level {
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(78, 205, 196, 0.1) 100%);
+  border: 2px solid #4ecdc4;
+  border-radius: 8px;
+  color: #4ecdc4;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 0 12px rgba(78, 205, 196, 0.3);
+}
+
+.skill-learn-reason {
+  padding: 12px;
+  background: rgba(255, 165, 0, 0.1);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 6px;
+  color: #ffa500;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skill-detail-title-section {
+    padding: 16px;
+  }
+
+  .skill-detail-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+  }
+
+  .skill-detail-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .skill-detail-section {
+    padding: 16px;
+  }
+}
+
 @media (max-width: 768px) {
+  .skill-detail-view {
+    gap: 16px;
+  }
+
+  .skill-detail-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .skill-detail-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+  }
+
+  .skill-detail-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .skill-detail-section {
+    padding: 16px;
+  }
+
+  .skill-detail-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .resource-node-item,
+  .recipe-item {
+    padding: 14px;
+  }
+
+  .skill-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
   .skill-detail-view {
     gap: 12px;
   }
 
-  .skill-detail-header {
+  .skill-detail-title-section {
+    padding: 12px;
+  }
+
+  .skill-detail-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+
+  .skill-detail-title h2 {
+    font-size: 1.3rem;
+  }
+
+  .skill-detail-meta {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
 
-  .skill-detail-header h3 {
-    font-size: 1.3rem;
-  }
-
-  .resource-nodes-section,
-  .recipes-section,
-  .passive-bonuses-section {
+  .skill-detail-description {
     padding: 12px;
   }
-}
 
-/* Mobile phones */
-@media (max-width: 480px) {
-  .skill-detail-view {
-    gap: 10px;
-  }
-
-  .skill-detail-header h3 {
-    font-size: 1.1rem;
-  }
-
-  .skill-level-display {
-    font-size: 1rem;
-  }
-
-  .skill-description {
+  .skill-detail-description p {
     font-size: 0.9rem;
   }
 
-  .resource-nodes-section,
-  .recipes-section,
-  .passive-bonuses-section {
-    padding: 10px;
+  .skill-detail-section {
+    padding: 12px;
   }
 
-  .resource-nodes-section h4,
-  .recipes-section h4,
-  .passive-bonuses-section h4 {
+  .skill-detail-section h3 {
+    font-size: 1.1rem;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .resource-node-item,
+  .recipe-item {
+    padding: 12px;
+  }
+
+  .resource-node-name,
+  .recipe-name {
     font-size: 1rem;
   }
 
-  .node-item,
-  .recipe-item,
-  .bonus-item {
+  .resource-node-button,
+  .recipe-craft-button,
+  .skill-action-button {
+    padding: 14px;
+    font-size: 0.9rem;
+    min-height: 44px; /* Touch target */
+  }
+
+  .resource-node-stats {
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+
+  .training-timer {
+    font-size: 0.85rem;
+  }
+
+  .skill-info-item {
     padding: 10px;
   }
 
-  .node-name,
-  .recipe-name {
-    font-size: 0.95rem;
+  .skill-info-value {
+    font-size: 1rem;
   }
 
-  .recipe-ingredients {
-    font-size: 0.85rem;
+  .effect-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
-
