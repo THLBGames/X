@@ -183,7 +183,7 @@ export default function ShopPanel() {
                   className={`category-button ${selectedCategory === cat ? 'active' : ''}`}
                   onClick={() => setSelectedCategory(cat)}
                 >
-                  {cat === 'all' ? t('shop.all') : t(`common.itemType.${cat}`, { ns: 'common' })}
+                  {cat === 'all' ? t('shop.all') : t(`itemType.${cat}`, { ns: 'common' })}
                 </button>
               ))}
             </div>
@@ -202,7 +202,7 @@ export default function ShopPanel() {
                   <div key={item.id} className="shop-item-card">
                     <div className="item-header">
                       <div className="item-name">{dataLoader.getTranslatedName(item)}</div>
-                      <div className={`item-rarity rarity-${item.rarity}`}>{t(`common.rarity.${item.rarity}`, { ns: 'common' })}</div>
+                      <div className={`item-rarity rarity-${item.rarity}`}>{t(`rarity.${item.rarity}`, { ns: 'common' })}</div>
                     </div>
                     <div className="item-description">{dataLoader.getTranslatedDescription(item)}</div>
                     {item.requirements && (

@@ -117,19 +117,19 @@ export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassCh
                   )}
                   <div className="class-option-stats">
                     <div className="stat-compact">
-                      <span>{t('common.stats.strength', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
+                      <span>{t('stats.strength', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.strength}</span>
                     </div>
                     <div className="stat-compact">
-                      <span>{t('common.stats.dexterity', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
+                      <span>{t('stats.dexterity', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.dexterity}</span>
                     </div>
                     <div className="stat-compact">
-                      <span>{t('common.stats.intelligence', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
+                      <span>{t('stats.intelligence', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.intelligence}</span>
                     </div>
                     <div className="stat-compact">
-                      <span>{t('common.stats.vitality', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
+                      <span>{t('stats.vitality', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.vitality}</span>
                     </div>
                   </div>

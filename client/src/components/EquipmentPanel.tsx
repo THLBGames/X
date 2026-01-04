@@ -211,7 +211,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
                 <div className="slot-label">{label}</div>
                 {equippedItem ? (
                   <TooltipWrapper
-                    content={`${dataLoader.getTranslatedName(equippedItem)}\n${dataLoader.getTranslatedDescription(equippedItem) || t('inventory.noDescription')}\n${equippedItem.type ? `${t('common.itemType.type', { ns: 'common' })}: ${t(`common.itemType.${equippedItem.type}`, { ns: 'common' })}` : ''}${equippedItem.rarity ? `\n${t('common.rarity.rarity', { ns: 'common' })}: ${t(`common.rarity.${equippedItem.rarity}`, { ns: 'common' })}` : ''}`}
+                    content={`${dataLoader.getTranslatedName(equippedItem)}\n${dataLoader.getTranslatedDescription(equippedItem) || t('inventory.noDescription')}\n${equippedItem.type ? `${t('itemType.type', { ns: 'common' })}: ${t(`itemType.${equippedItem.type}`, { ns: 'common' })}` : ''}${equippedItem.rarity ? `\n${t('rarity.rarity', { ns: 'common' })}: ${t(`rarity.${equippedItem.rarity}`, { ns: 'common' })}` : ''}`}
                   >
                     <div
                       className="equipped-item"
@@ -220,7 +220,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
                       <div className="item-name">{dataLoader.getTranslatedName(equippedItem)}</div>
                       {equippedItem.rarity && (
                         <div className={`item-rarity ${equippedItem.rarity}`}>
-                          {t(`common.rarity.${equippedItem.rarity}`, { ns: 'common' })}
+                          {t(`rarity.${equippedItem.rarity}`, { ns: 'common' })}
                         </div>
                       )}
                     </div>

@@ -153,12 +153,12 @@ export default function CharacterCreation() {
                 <div className="comparison-table">
                   <div className="comparison-header">
                     <div className="comparison-class-col">{t('character.class')}</div>
-                    <div className="comparison-stat-col">{t('common.stats.strength', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
-                    <div className="comparison-stat-col">{t('common.stats.dexterity', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
-                    <div className="comparison-stat-col">{t('common.stats.intelligence', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
-                    <div className="comparison-stat-col">{t('common.stats.vitality', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
-                    <div className="comparison-stat-col">{t('common.stats.wisdom', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
-                    <div className="comparison-stat-col">{t('common.stats.luck', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('stats.strength', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('stats.dexterity', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('stats.intelligence', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('stats.vitality', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('stats.wisdom', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('stats.luck', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
                   </div>
                   {classes.map((characterClass) => (
                     <div
@@ -205,32 +205,32 @@ export default function CharacterCreation() {
                     <p className="class-description">{dataLoader.getTranslatedDescription(characterClass)}</p>
                     <div className="class-stats-preview">
                       <div className="stat-preview">
-                        <span>{t('common.stats.strength', { ns: 'common' })}:</span>
+                        <span>{t('stats.strength', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.strength}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.strength}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>{t('common.stats.dexterity', { ns: 'common' })}:</span>
+                        <span>{t('stats.dexterity', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.dexterity}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.dexterity}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>{t('common.stats.intelligence', { ns: 'common' })}:</span>
+                        <span>{t('stats.intelligence', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.intelligence}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.intelligence}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>{t('common.stats.vitality', { ns: 'common' })}:</span>
+                        <span>{t('stats.vitality', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.vitality}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.vitality}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>{t('common.stats.wisdom', { ns: 'common' })}:</span>
+                        <span>{t('stats.wisdom', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.wisdom}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.wisdom}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>{t('common.stats.luck', { ns: 'common' })}:</span>
+                        <span>{t('stats.luck', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.luck}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.luck}/lvl)</span>
                       </div>

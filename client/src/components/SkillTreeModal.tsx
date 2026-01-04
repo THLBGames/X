@@ -188,7 +188,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                                 {t('character.level')} {level}/{skill.maxLevel}
                               </div>
                             )}
-                            <div className="skill-type-badge">{t(`common.skillType.${skill.type}`, { ns: 'common' })}</div>
+                            <div className="skill-type-badge">{t(`skillType.${skill.type}`, { ns: 'common' })}</div>
                           </div>
                           <div className="skill-description">{skillDesc}</div>
                           <div className="skill-info">
@@ -201,7 +201,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                               </span>
                             )}
                             {skill.manaCost !== undefined && (
-                              <span className="skill-info-item">{t('common.combatStats.mana', { ns: 'common' })}: {skill.manaCost}</span>
+                              <span className="skill-info-item">{t('combatStats.mana', { ns: 'common' })}: {skill.manaCost}</span>
                             )}
                             {skill.cooldown !== undefined && (
                               <span className="skill-info-item">{t('skill.cooldown')}: {skill.cooldown}s</span>

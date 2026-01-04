@@ -96,50 +96,50 @@ export default function CharacterPanel() {
         <div className="character-stats">
           <h3>{t('character.stats')}</h3>
           <div className="stat-row">
-            <span>{t('common.stats.strength', { ns: 'common' })}:</span>
+            <span>{t('stats.strength', { ns: 'common' })}:</span>
             <span>{character.currentStats.strength}</span>
           </div>
           <div className="stat-row">
-            <span>{t('common.stats.dexterity', { ns: 'common' })}:</span>
+            <span>{t('stats.dexterity', { ns: 'common' })}:</span>
             <span>{character.currentStats.dexterity}</span>
           </div>
           <div className="stat-row">
-            <span>{t('common.stats.intelligence', { ns: 'common' })}:</span>
+            <span>{t('stats.intelligence', { ns: 'common' })}:</span>
             <span>{character.currentStats.intelligence}</span>
           </div>
           <div className="stat-row">
-            <span>{t('common.stats.vitality', { ns: 'common' })}:</span>
+            <span>{t('stats.vitality', { ns: 'common' })}:</span>
             <span>{character.currentStats.vitality}</span>
           </div>
           <div className="stat-row">
-            <span>{t('common.stats.wisdom', { ns: 'common' })}:</span>
+            <span>{t('stats.wisdom', { ns: 'common' })}:</span>
             <span>{character.currentStats.wisdom}</span>
           </div>
           <div className="stat-row">
-            <span>{t('common.stats.luck', { ns: 'common' })}:</span>
+            <span>{t('stats.luck', { ns: 'common' })}:</span>
             <span>{character.currentStats.luck}</span>
           </div>
         </div>
         <div className="character-combat-stats">
           <h3>{t('character.combatStats')}</h3>
           <div className="stat-row">
-            <span>{t('common.combatStats.health', { ns: 'common' })}:</span>
+            <span>{t('combatStats.health', { ns: 'common' })}:</span>
             <span>
               {character.combatStats.health} / {character.combatStats.maxHealth}
             </span>
           </div>
           <div className="stat-row">
-            <span>{t('common.combatStats.mana', { ns: 'common' })}:</span>
+            <span>{t('combatStats.mana', { ns: 'common' })}:</span>
             <span>
               {character.combatStats.mana} / {character.combatStats.maxMana}
             </span>
           </div>
           <div className="stat-row">
-            <span>{t('common.combatStats.attack', { ns: 'common' })}:</span>
+            <span>{t('combatStats.attack', { ns: 'common' })}:</span>
             <span>{character.combatStats.attack}</span>
           </div>
           <div className="stat-row">
-            <span>{t('common.combatStats.defense', { ns: 'common' })}:</span>
+            <span>{t('combatStats.defense', { ns: 'common' })}:</span>
             <span>{character.combatStats.defense}</span>
           </div>
         </div>

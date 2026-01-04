@@ -70,7 +70,7 @@ export default function SellItemModal({
         <div className="modal-content">
           <div className="item-info">
             <div className="item-name">{dataLoader.getTranslatedName(item)}</div>
-            <div className={`item-rarity rarity-${item.rarity}`}>{t(`common.rarity.${item.rarity}`, { ns: 'common' })}</div>
+            <div className={`item-rarity rarity-${item.rarity}`}>{t(`rarity.${item.rarity}`, { ns: 'common' })}</div>
             <div className="item-description">{dataLoader.getTranslatedDescription(item)}</div>
           </div>
 

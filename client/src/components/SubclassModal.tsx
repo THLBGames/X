@@ -127,7 +127,7 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
                         .filter(([_, value]) => value > 2)
                         .map(([stat, value]) => (
                           <span key={stat} className="stat-growth-item">
-                            {t(`common.stats.${stat}`, { ns: 'common' })}: +{value.toFixed(1)}
+                            {t(`stats.${stat}`, { ns: 'common' })}: +{value.toFixed(1)}
                           </span>
                         ))}
                     </div>
