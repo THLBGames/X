@@ -17,7 +17,7 @@
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 5,
           "max": 15
         },
@@ -38,7 +38,7 @@
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 25,
           "max": 60
         },
@@ -58,13 +58,13 @@
       "level": 50,
       "nodeId": "noble",
       "name": "Noble",
-      "successRate": 0.70,
+      "successRate": 0.7,
       "experienceGain": 125,
       "timeRequired": 6000,
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 80,
           "max": 150
         },
@@ -90,7 +90,7 @@
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 200,
           "max": 400
         },
@@ -129,6 +129,7 @@
         "dexterity": 10
       }
     }
-  ]
+  ],
+  "nameKey": "skill.thieving.name",
+  "descriptionKey": "skill.thieving.description"
 }
-

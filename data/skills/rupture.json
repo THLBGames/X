@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 18,
-  "prerequisites": ["shadow_strike"],
+  "prerequisites": [
+    "shadow_strike"
+  ],
   "manaCost": 30,
   "cooldown": 10,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "rupture"
-  }
+  },
+  "nameKey": "skill.rupture.name",
+  "descriptionKey": "skill.rupture.description"
 }
-

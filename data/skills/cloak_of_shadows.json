@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 22,
-  "prerequisites": ["vanish"],
+  "prerequisites": [
+    "vanish"
+  ],
   "manaCost": 45,
   "cooldown": 45,
   "target": "self",
   "effect": {
     "buffId": "cloak_of_shadows"
-  }
+  },
+  "nameKey": "skill.cloak_of_shadows.name",
+  "descriptionKey": "skill.cloak_of_shadows.description"
 }
-

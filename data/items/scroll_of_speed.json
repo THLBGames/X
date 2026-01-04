@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "buff",
     "amount": 10
-  }
+  },
+  "nameKey": "item.scroll_of_speed.name",
+  "descriptionKey": "item.scroll_of_speed.description"
 }

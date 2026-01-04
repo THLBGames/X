@@ -6,5 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 185
+  "value": 185,
+  "nameKey": "item.water_core.name",
+  "descriptionKey": "item.water_core.description"
 }

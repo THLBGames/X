@@ -8,7 +8,9 @@
   "value": 50,
   "requirements": {
     "level": 1,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -16,6 +18,7 @@
   },
   "combatStatBonuses": {
     "attack": 5
-  }
+  },
+  "nameKey": "item.copper_sword.name",
+  "descriptionKey": "item.copper_sword.description"
 }
-

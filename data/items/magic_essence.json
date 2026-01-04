@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 180
+  "value": 180,
+  "nameKey": "item.magic_essence.name",
+  "descriptionKey": "item.magic_essence.description"
 }
-

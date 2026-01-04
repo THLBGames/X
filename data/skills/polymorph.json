@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 20,
   "manaCost": 50,
@@ -13,6 +15,7 @@
   "target": "enemy",
   "effect": {
     "debuffId": "polymorphed"
-  }
+  },
+  "nameKey": "skill.polymorph.name",
+  "descriptionKey": "skill.polymorph.description"
 }
-

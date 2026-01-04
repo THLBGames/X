@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "defense": 26,
     "attack": 13
-  }
+  },
+  "nameKey": "item.adamantite_gauntlets.name",
+  "descriptionKey": "item.adamantite_gauntlets.description"
 }

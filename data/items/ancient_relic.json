@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 400
+  "value": 400,
+  "nameKey": "item.ancient_relic.name",
+  "descriptionKey": "item.ancient_relic.description"
 }
-

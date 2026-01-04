@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 52,
     "mana": 195
-  }
+  },
+  "nameKey": "item.elder_wand.name",
+  "descriptionKey": "item.elder_wand.description"
 }

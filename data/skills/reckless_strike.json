@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 17,
-  "prerequisites": ["overpower"],
+  "prerequisites": [
+    "overpower"
+  ],
   "manaCost": 40,
   "cooldown": 12,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "vulnerable"
-  }
+  },
+  "nameKey": "skill.reckless_strike.name",
+  "descriptionKey": "skill.reckless_strike.description"
 }
-

@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "magicAttack": 12,
     "mana": 50
-  }
+  },
+  "nameKey": "item.amulet_tier3_1.name",
+  "descriptionKey": "item.amulet_tier3_1.description"
 }

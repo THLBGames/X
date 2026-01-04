@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 21,
   "manaCost": 30,
@@ -13,6 +15,7 @@
   "target": "enemy",
   "effect": {
     "debuffId": "marked_for_death"
-  }
+  },
+  "nameKey": "skill.marked_for_death.name",
+  "descriptionKey": "skill.marked_for_death.description"
 }
-

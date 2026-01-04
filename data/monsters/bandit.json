@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 20,
       "max": 35
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 20,
     "max": 35
-  }
+  },
+  "nameKey": "monster.bandit.name",
+  "descriptionKey": "monster.bandit.description"
 }
-

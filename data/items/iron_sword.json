@@ -8,7 +8,9 @@
   "value": 80,
   "requirements": {
     "level": 10,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -16,6 +18,7 @@
   },
   "combatStatBonuses": {
     "attack": 10
-  }
+  },
+  "nameKey": "item.iron_sword.name",
+  "descriptionKey": "item.iron_sword.description"
 }
-

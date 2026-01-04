@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "quarrying_upgrade_IV"
-  }
+  },
+  "nameKey": "upgrade.quarrying_upgrade_V.name",
+  "descriptionKey": "upgrade.quarrying_upgrade_V.description"
 }

@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 32
-  }
+  },
+  "nameKey": "item.adamantite_leggings.name",
+  "descriptionKey": "item.adamantite_leggings.description"
 }

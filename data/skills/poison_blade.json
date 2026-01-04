@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 5,
-  "prerequisites": ["poison_strike"],
+  "prerequisites": [
+    "poison_strike"
+  ],
   "manaCost": 20,
   "cooldown": 0,
   "target": "self",
   "effect": {
     "buffId": "poison_blade"
-  }
+  },
+  "nameKey": "skill.poison_blade.name",
+  "descriptionKey": "skill.poison_blade.description"
 }
-

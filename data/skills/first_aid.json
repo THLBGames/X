@@ -16,6 +16,7 @@
         "multiplier": 1.5
       }
     }
-  }
+  },
+  "nameKey": "skill.first_aid.name",
+  "descriptionKey": "skill.first_aid.description"
 }
-

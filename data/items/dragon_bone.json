@@ -6,5 +6,7 @@
   "rarity": "legendary",
   "stackable": true,
   "maxStack": 999,
-  "value": 1500
+  "value": 1500,
+  "nameKey": "item.dragon_bone.name",
+  "descriptionKey": "item.dragon_bone.description"
 }

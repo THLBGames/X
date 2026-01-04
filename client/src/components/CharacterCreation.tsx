@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { CharacterManager } from '../systems/character';
@@ -7,6 +8,7 @@ import type { CharacterClass } from '@idle-rpg/shared';
 import './CharacterCreation.css';
 
 export default function CharacterCreation() {
+  const { t } = useTranslation(['ui', 'common']);
   const [classes, setClasses] = useState<CharacterClass[]>([]);
   const [selectedClassId, setSelectedClassId] = useState<string | null>(null);
   const [characterName, setCharacterName] = useState('');
@@ -36,23 +38,23 @@ export default function CharacterCreation() {
 
     // Validation
     if (!selectedClassId) {
-      setError('Please select a character class');
+      setError(t('validation.selectClass'));
       return;
     }
 
     const trimmedName = characterName.trim();
     if (!trimmedName) {
-      setError('Please enter a character name');
+      setError(t('validation.enterCharacterName'));
       return;
     }
 
     if (trimmedName.length < 2) {
-      setError('Character name must be at least 2 characters');
+      setError(t('validation.characterNameMinLength'));
       return;
     }
 
     if (trimmedName.length > 20) {
-      setError('Character name must be 20 characters or less');
+      setError(t('validation.characterNameMaxLength'));
       return;
     }
 
@@ -102,6 +104,7 @@ export default function CharacterCreation() {
 
   const selectedClass = classes.find((c) => c.id === selectedClassId);
   const [showComparison, setShowComparison] = useState(false);
+  const dataLoader = getDataLoader();
 
   return (
     <div className="character-creation">
@@ -109,18 +112,18 @@ export default function CharacterCreation() {
         <div className="game-branding">
           <h2 className="game-title-branding">Tales of Heroes, Legends & Beasts</h2>
         </div>
-        <h1>Create Your Character</h1>
+        <h1>{t('character.createCharacter')}</h1>
         
         <div className="character-creation-form">
           {/* Character Name Input */}
           <div className="form-group">
-            <label htmlFor="character-name">Character Name</label>
+            <label htmlFor="character-name">{t('character.characterName')}</label>
             <input
               id="character-name"
               type="text"
               value={characterName}
               onChange={(e) => setCharacterName(e.target.value)}
-              placeholder="Enter your character's name"
+              placeholder={t('character.enterCharacterName')}
               maxLength={20}
               disabled={isCreating}
               onKeyDown={(e) => {
@@ -134,14 +137,14 @@ export default function CharacterCreation() {
           {/* Class Selection */}
           <div className="form-group">
             <div className="class-selection-header">
-              <label>Select Class</label>
+              <label>{t('character.selectClass')}</label>
               {classes.length > 1 && (
                 <button
                   className="comparison-toggle"
                   onClick={() => setShowComparison(!showComparison)}
                   type="button"
                 >
-                  {showComparison ? 'Hide Comparison' : 'Compare Classes'}
+                  {showComparison ? t('character.hideComparison') : t('character.compareClasses')}
                 </button>
               )}
             </div>
@@ -149,13 +152,13 @@ export default function CharacterCreation() {
               <div className="class-comparison-view">
                 <div className="comparison-table">
                   <div className="comparison-header">
-                    <div className="comparison-class-col">Class</div>
-                    <div className="comparison-stat-col">STR</div>
-                    <div className="comparison-stat-col">DEX</div>
-                    <div className="comparison-stat-col">INT</div>
-                    <div className="comparison-stat-col">VIT</div>
-                    <div className="comparison-stat-col">WIS</div>
-                    <div className="comparison-stat-col">LCK</div>
+                    <div className="comparison-class-col">{t('character.class')}</div>
+                    <div className="comparison-stat-col">{t('common.stats.strength', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('common.stats.dexterity', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('common.stats.intelligence', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('common.stats.vitality', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('common.stats.wisdom', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
+                    <div className="comparison-stat-col">{t('common.stats.luck', { ns: 'common' }).substring(0, 3).toUpperCase()}</div>
                   </div>
                   {classes.map((characterClass) => (
                     <div
@@ -164,7 +167,7 @@ export default function CharacterCreation() {
                       onClick={() => !isCreating && setSelectedClassId(characterClass.id)}
                     >
                       <div className="comparison-class-col">
-                        <div className="class-name-compact">{characterClass.name}</div>
+                        <div className="class-name-compact">{dataLoader.getTranslatedName(characterClass)}</div>
                       </div>
                       <div className="comparison-stat-col">{characterClass.baseStats.strength}</div>
                       <div className="comparison-stat-col">{characterClass.baseStats.dexterity}</div>
@@ -194,54 +197,54 @@ export default function CharacterCreation() {
                     aria-label={`Select ${characterClass.name} class`}
                   >
                     <div className="class-card-header">
-                      <h3 className="class-name">{characterClass.name}</h3>
+                      <h3 className="class-name">{dataLoader.getTranslatedName(characterClass)}</h3>
                       {selectedClassId === characterClass.id && (
                         <div className="selected-indicator">✓</div>
                       )}
                     </div>
-                    <p className="class-description">{characterClass.description}</p>
+                    <p className="class-description">{dataLoader.getTranslatedDescription(characterClass)}</p>
                     <div className="class-stats-preview">
                       <div className="stat-preview">
-                        <span>Strength:</span>
+                        <span>{t('common.stats.strength', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.strength}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.strength}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>Dexterity:</span>
+                        <span>{t('common.stats.dexterity', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.dexterity}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.dexterity}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>Intelligence:</span>
+                        <span>{t('common.stats.intelligence', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.intelligence}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.intelligence}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>Vitality:</span>
+                        <span>{t('common.stats.vitality', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.vitality}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.vitality}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>Wisdom:</span>
+                        <span>{t('common.stats.wisdom', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.wisdom}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.wisdom}/lvl)</span>
                       </div>
                       <div className="stat-preview">
-                        <span>Luck:</span>
+                        <span>{t('common.stats.luck', { ns: 'common' })}:</span>
                         <span className="stat-value">{characterClass.baseStats.luck}</span>
                         <span className="stat-growth">(+{characterClass.statGrowth.luck}/lvl)</span>
                       </div>
                     </div>
                     <div className="class-meta">
                       <div className="meta-item">
-                        <span className="meta-label">Skills:</span>
+                        <span className="meta-label">{t('character.skills')}:</span>
                         <span className="meta-value">{characterClass.availableSkills.length}</span>
                       </div>
                       {characterClass.equipmentRestrictions && (
                         <div className="meta-item">
-                          <span className="meta-label">Weapons:</span>
+                          <span className="meta-label">{t('character.weapons')}:</span>
                           <span className="meta-value">
-                            {characterClass.equipmentRestrictions.weaponTypes?.join(', ') || 'All'}
+                            {characterClass.equipmentRestrictions.weaponTypes?.join(', ') || t('character.all')}
                           </span>
                         </div>
                       )}
@@ -255,8 +258,8 @@ export default function CharacterCreation() {
           {/* Selected Class Summary */}
           {selectedClass && (
             <div className="selected-class-summary">
-              <h3>Selected: {selectedClass.name}</h3>
-              <p>{selectedClass.description}</p>
+              <h3>{t('character.selected')}: {dataLoader.getTranslatedName(selectedClass)}</h3>
+              <p>{dataLoader.getTranslatedDescription(selectedClass)}</p>
             </div>
           )}
 
@@ -269,7 +272,7 @@ export default function CharacterCreation() {
             onClick={handleCreateCharacter}
             disabled={isCreating || !selectedClassId || !characterName.trim()}
           >
-            {isCreating ? 'Creating...' : 'Create Character'}
+            {isCreating ? t('character.creating') : t('character.createButton')}
           </button>
         </div>
       </div>

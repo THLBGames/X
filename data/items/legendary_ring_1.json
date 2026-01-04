@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "magicAttack": 50,
     "mana": 200
-  }
+  },
+  "nameKey": "item.legendary_ring_1.name",
+  "descriptionKey": "item.legendary_ring_1.description"
 }

@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 12
+  "value": 12,
+  "nameKey": "item.raw_meat_quality.name",
+  "descriptionKey": "item.raw_meat_quality.description"
 }
-

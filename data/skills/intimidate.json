@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 7,
-  "prerequisites": ["taunt"],
+  "prerequisites": [
+    "taunt"
+  ],
   "manaCost": 20,
   "cooldown": 15,
   "target": "all_enemies",
   "effect": {
     "debuffId": "intimidated"
-  }
+  },
+  "nameKey": "skill.intimidate.name",
+  "descriptionKey": "skill.intimidate.description"
 }
-

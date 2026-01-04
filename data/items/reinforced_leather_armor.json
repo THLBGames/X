@@ -8,7 +8,9 @@
   "value": 250,
   "requirements": {
     "level": 25,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "chest",
   "statBonuses": {
@@ -17,6 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 18
-  }
+  },
+  "nameKey": "item.reinforced_leather_armor.name",
+  "descriptionKey": "item.reinforced_leather_armor.description"
 }
-

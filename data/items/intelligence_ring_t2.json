@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "magicAttack": 7,
     "mana": 30
-  }
+  },
+  "nameKey": "item.intelligence_ring_t2.name",
+  "descriptionKey": "item.intelligence_ring_t2.description"
 }

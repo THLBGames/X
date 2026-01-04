@@ -5,12 +5,17 @@
   "type": "passive",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 26,
-  "prerequisites": ["fire_nova"],
+  "prerequisites": [
+    "fire_nova"
+  ],
   "passiveBonus": {
     "special": "combustion"
-  }
+  },
+  "nameKey": "skill.combustion.name",
+  "descriptionKey": "skill.combustion.description"
 }
-

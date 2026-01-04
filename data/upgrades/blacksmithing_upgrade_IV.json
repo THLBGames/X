@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "blacksmithing_upgrade_III"
-  }
+  },
+  "nameKey": "upgrade.blacksmithing_upgrade_IV.name",
+  "descriptionKey": "upgrade.blacksmithing_upgrade_IV.description"
 }

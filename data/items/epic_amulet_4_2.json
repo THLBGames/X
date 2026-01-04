@@ -15,5 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 26
-  }
+  },
+  "nameKey": "item.epic_amulet_4_2.name",
+  "descriptionKey": "item.epic_amulet_4_2.description"
 }

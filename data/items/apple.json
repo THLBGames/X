@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 30
-  }
+  },
+  "nameKey": "item.apple.name",
+  "descriptionKey": "item.apple.description"
 }

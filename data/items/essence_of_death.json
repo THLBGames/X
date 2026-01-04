@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 30
+  "value": 30,
+  "nameKey": "item.essence_of_death.name",
+  "descriptionKey": "item.essence_of_death.description"
 }
-

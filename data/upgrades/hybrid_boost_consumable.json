@@ -11,5 +11,7 @@
     "experienceMultiplier": 1.15
   },
   "actionDuration": 75,
-  "requirements": {}
+  "requirements": {},
+  "nameKey": "upgrade.hybrid_boost_consumable.name",
+  "descriptionKey": "upgrade.hybrid_boost_consumable.description"
 }

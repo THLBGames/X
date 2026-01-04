@@ -11,13 +11,13 @@
       "level": 1,
       "nodeId": "small_cache",
       "name": "Small Treasure Cache",
-      "successRate": 0.80,
+      "successRate": 0.8,
       "experienceGain": 25,
       "timeRequired": 8000,
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 10,
           "max": 30
         },
@@ -38,7 +38,7 @@
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 50,
           "max": 100
         },
@@ -64,7 +64,7 @@
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 150,
           "max": 300
         },
@@ -89,13 +89,13 @@
       "level": 90,
       "nodeId": "legendary_trove",
       "name": "Legendary Treasure Trove",
-      "successRate": 0.60,
+      "successRate": 0.6,
       "experienceGain": 450,
       "timeRequired": 15000,
       "resources": [
         {
           "itemId": "gold",
-          "chance": 1.0,
+          "chance": 1,
           "min": 500,
           "max": 1000
         },
@@ -139,6 +139,7 @@
         "itemFindRate": 0.2
       }
     }
-  ]
+  ],
+  "nameKey": "skill.treasure_hunting.name",
+  "descriptionKey": "skill.treasure_hunting.description"
 }
-

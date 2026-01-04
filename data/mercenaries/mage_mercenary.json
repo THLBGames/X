@@ -17,6 +17,7 @@
     "speed": 14,
     "criticalChance": 8,
     "criticalDamage": 1.8
-  }
+  },
+  "nameKey": "mercenary.mage_mercenary.name",
+  "descriptionKey": "mercenary.mage_mercenary.description"
 }
-

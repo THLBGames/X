@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 99,
-  "value": 400
+  "value": 400,
+  "nameKey": "item.greater_rune.name",
+  "descriptionKey": "item.greater_rune.description"
 }
-

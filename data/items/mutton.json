@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 100
-  }
+  },
+  "nameKey": "item.mutton.name",
+  "descriptionKey": "item.mutton.description"
 }

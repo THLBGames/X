@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "enchanting_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.enchanting_upgrade_III.name",
+  "descriptionKey": "upgrade.enchanting_upgrade_III.description"
 }

@@ -8,7 +8,9 @@
   "value": 460,
   "requirements": {
     "level": 36,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "magicDefense": 16,
     "magicAttack": 8,
     "mana": 65
-  }
+  },
+  "nameKey": "item.arcane_gloves.name",
+  "descriptionKey": "item.arcane_gloves.description"
 }
-

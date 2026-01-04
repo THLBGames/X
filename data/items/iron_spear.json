@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 15
-  }
+  },
+  "nameKey": "item.iron_spear.name",
+  "descriptionKey": "item.iron_spear.description"
 }

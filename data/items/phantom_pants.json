@@ -8,7 +8,9 @@
   "value": 5900,
   "requirements": {
     "level": 87,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "legs",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 25,
     "speed": 32,
     "criticalChance": 6
-  }
+  },
+  "nameKey": "item.phantom_pants.name",
+  "descriptionKey": "item.phantom_pants.description"
 }
-

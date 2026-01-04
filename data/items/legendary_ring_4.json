@@ -16,5 +16,7 @@
   },
   "combatStatBonuses": {
     "defense": 20
-  }
+  },
+  "nameKey": "item.legendary_ring_4.name",
+  "descriptionKey": "item.legendary_ring_4.description"
 }

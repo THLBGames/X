@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 12,
     "mana": 37
-  }
+  },
+  "nameKey": "item.enchanted_hood.name",
+  "descriptionKey": "item.enchanted_hood.description"
 }

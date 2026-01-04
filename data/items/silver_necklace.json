@@ -17,6 +17,7 @@
   "combatStatBonuses": {
     "magicAttack": 12,
     "mana": 40
-  }
+  },
+  "nameKey": "item.silver_necklace.name",
+  "descriptionKey": "item.silver_necklace.description"
 }
-

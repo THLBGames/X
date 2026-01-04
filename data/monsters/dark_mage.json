@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 55,
       "max": 90
     },
@@ -37,6 +37,7 @@
   "goldReward": {
     "min": 55,
     "max": 90
-  }
+  },
+  "nameKey": "monster.dark_mage.name",
+  "descriptionKey": "monster.dark_mage.description"
 }
-

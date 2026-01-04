@@ -15,5 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 4
-  }
+  },
+  "nameKey": "item.amulet_tier1_3.name",
+  "descriptionKey": "item.amulet_tier1_3.description"
 }

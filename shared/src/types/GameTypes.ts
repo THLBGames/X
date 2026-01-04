@@ -694,6 +694,9 @@ export interface GameSettings {
   confirmItemSell?: boolean;
   showNotifications?: boolean;
   autoSaveInterval?: number; // in seconds (0 = disabled)
+
+  // Localization
+  language?: string; // Language code (e.g., 'en', 'es', 'fr'), defaults to 'en'
 }
 
 // All types are already exported with their definitions above

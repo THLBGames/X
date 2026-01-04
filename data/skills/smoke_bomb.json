@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 10,
   "manaCost": 30,
@@ -13,6 +15,7 @@
   "target": "all_enemies",
   "effect": {
     "debuffId": "blinded"
-  }
+  },
+  "nameKey": "skill.smoke_bomb.name",
+  "descriptionKey": "skill.smoke_bomb.description"
 }
-

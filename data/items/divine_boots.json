@@ -8,7 +8,9 @@
   "value": 6000,
   "requirements": {
     "level": 90,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "boots",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "magicDefense": 45,
     "magicAttack": 25,
     "mana": 180
-  }
+  },
+  "nameKey": "item.divine_boots.name",
+  "descriptionKey": "item.divine_boots.description"
 }
-

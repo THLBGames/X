@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 5
+  "value": 5,
+  "nameKey": "item.iron_ore.name",
+  "descriptionKey": "item.iron_ore.description"
 }
-

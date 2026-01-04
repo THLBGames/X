@@ -6,5 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 900
+  "value": 900,
+  "nameKey": "item.angel_feather.name",
+  "descriptionKey": "item.angel_feather.description"
 }

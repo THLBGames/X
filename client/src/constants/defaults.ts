@@ -32,6 +32,7 @@ export const DEFAULT_SETTINGS = {
   confirmItemSell: false,
   showNotifications: true,
   autoSaveInterval: DEFAULT_AUTO_SAVE_INTERVAL,
+  language: 'en',
 } as const;
 
 /**

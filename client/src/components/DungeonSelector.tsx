@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { DungeonManager } from '../systems/dungeon';
@@ -6,12 +7,14 @@ import type { Dungeon } from '@idle-rpg/shared';
 import './DungeonSelector.css';
 
 export default function DungeonSelector() {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const dungeonProgress = useGameState((state) => state.dungeonProgress);
   const currentDungeonId = useGameState((state) => state.currentDungeonId);
   const setCurrentDungeon = useGameState((state) => state.setCurrentDungeon);
   const startCombat = useGameState((state) => state.startCombat);
   const unlockDungeon = useGameState((state) => state.unlockDungeon);
+  const dataLoader = getDataLoader();
 
   const [selectedDungeonId, setSelectedDungeonId] = useState<string | null>(currentDungeonId);
   const lastSyncedLevelRef = useRef<number>(0);
@@ -88,7 +91,7 @@ export default function DungeonSelector() {
         startCombat(selectedDungeonId);
       } catch (error) {
         console.error('Failed to start combat:', error);
-        alert('Failed to start combat. Please try again.');
+        alert(t('combat.failedToStart'));
       }
     }
   };
@@ -110,7 +113,6 @@ export default function DungeonSelector() {
     return null;
   }
 
-  const dataLoader = getDataLoader();
   const allDungeons = dataLoader.getAllDungeons();
 
   // Sort dungeons by requiredLevel (lowest first)
@@ -122,9 +124,9 @@ export default function DungeonSelector() {
 
   return (
     <div className="dungeon-selector">
-      <h2>Select Dungeon</h2>
+      <h2>{t('dungeon.selectDungeon')}</h2>
       {sortedDungeons.length === 0 ? (
-        <div className="no-dungeons">No dungeons available</div>
+        <div className="no-dungeons">{t('dungeon.noDungeonsAvailable')}</div>
       ) : (
         <>
           <div className="dungeon-list">
@@ -140,21 +142,21 @@ export default function DungeonSelector() {
                   onClick={() => unlocked && handleDungeonSelect(dungeon.id)}
                 >
                   <div className="dungeon-header">
-                    <div className="dungeon-name">{dungeon.name}</div>
-                    {!unlocked && <div className="dungeon-locked-badge">Locked</div>}
+                    <div className="dungeon-name">{dataLoader.getTranslatedName(dungeon)}</div>
+                    {!unlocked && <div className="dungeon-locked-badge">{t('dungeon.locked')}</div>}
                   </div>
                   <div className="dungeon-info">
-                    <div className="dungeon-tier">Tier {dungeon.tier}</div>
+                    <div className="dungeon-tier">{t('dungeon.tier')} {dungeon.tier}</div>
                     {dungeon.requiredLevel && (
-                      <div className="dungeon-requirement">Level {dungeon.requiredLevel}+</div>
+                      <div className="dungeon-requirement">{t('character.level')} {dungeon.requiredLevel}+</div>
                     )}
                   </div>
-                  <div className="dungeon-description">{dungeon.description}</div>
+                  <div className="dungeon-description">{dataLoader.getTranslatedDescription(dungeon)}</div>
                   {progress && progress.completed && (
                     <div className="dungeon-stats">
-                      Completed {progress.timesCompleted} time
+                      {t('dungeon.completed')} {progress.timesCompleted} {t('dungeon.time')}
                       {progress.timesCompleted !== 1 ? 's' : ''}
-                      {progress.bestTime && <div>Best Time: {progress.bestTime.toFixed(1)}s</div>}
+                      {progress.bestTime && <div>{t('dungeon.bestTime')}: {progress.bestTime.toFixed(1)}s</div>}
                     </div>
                   )}
                 </div>
@@ -164,7 +166,7 @@ export default function DungeonSelector() {
           {selectedDungeonId &&
             isDungeonUnlocked(sortedDungeons.find((d) => d.id === selectedDungeonId)!) && (
               <button className="start-combat-button" onClick={handleStartCombat}>
-                Start Combat
+                {t('combat.startCombat')}
               </button>
             )}
         </>

@@ -6,12 +6,15 @@
   "maxLevel": 5,
   "unlockLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "passiveBonus": {
     "combatStatBonus": {
       "speed": 5
     }
-  }
+  },
+  "nameKey": "skill.dodge.name",
+  "descriptionKey": "skill.dodge.description"
 }
-

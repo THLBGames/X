@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { ClassChangeManager } from '../systems/character/ClassChangeManager';
@@ -13,9 +14,11 @@ interface ClassChangeModalProps {
 }
 
 export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassChangeModalProps) {
+  const { t } = useTranslation(['ui', 'common']);
   const character = useGameState((state) => state.character);
   const [selectedClassId, setSelectedClassId] = useState<string | null>(null);
   const [classes, setClasses] = useState<CharacterClass[]>([]);
+  const dataLoader = getDataLoader();
 
   useEffect(() => {
     if (isOpen && character) {
@@ -31,7 +34,6 @@ export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassCh
     return null;
   }
 
-  const dataLoader = getDataLoader();
   const selectedClass = classes.find((c) => c.id === selectedClassId);
   const currentClass = classes.find((c) => c.id === character.classId);
 
@@ -55,7 +57,7 @@ export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassCh
     <div className="modal-overlay" onClick={onClose}>
       <div className="class-change-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Change Class</h2>
+          <h2>{t('buttons.changeClass')}</h2>
           <button className="modal-close" onClick={onClose}>
             ×
           </button>
@@ -63,8 +65,8 @@ export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassCh
 
         <div className="modal-content">
           <div className="current-class-info">
-            <div className="current-class-label">Current Class:</div>
-            <div className="current-class-name">{currentClass?.name || character.classId}</div>
+            <div className="current-class-label">{t('classChange.currentClass')}:</div>
+            <div className="current-class-name">{currentClass ? dataLoader.getTranslatedName(currentClass) : character.classId}</div>
           </div>
 
           <div className="class-selection-grid">
@@ -91,43 +93,43 @@ export default function ClassChangeModal({ isOpen, onClose, onConfirm }: ClassCh
                   onClick={() => !isCurrent && canChangeTo && setSelectedClassId(characterClass.id)}
                 >
                   <div className="class-option-header">
-                    <h3>{characterClass.name}</h3>
-                    {isCurrent && <span className="current-badge">Current</span>}
+                    <h3>{dataLoader.getTranslatedName(characterClass)}</h3>
+                    {isCurrent && <span className="current-badge">{t('classChange.current')}</span>}
                     {!canChangeTo && !levelMet && (
-                      <span className="locked-badge">Lv. {unlockLevel}</span>
+                      <span className="locked-badge">{t('character.level')} {unlockLevel}</span>
                     )}
                     {!canChangeTo && levelMet && !questCompleted && quest && (
-                      <span className="locked-badge">Quest Required</span>
+                      <span className="locked-badge">{t('classChange.questRequired')}</span>
                     )}
                   </div>
-                  <p className="class-option-description">{characterClass.description}</p>
+                  <p className="class-option-description">{dataLoader.getTranslatedDescription(characterClass)}</p>
                   {quest && (
                     <div className="class-quest-info">
-                      <div className="quest-label">Required Quest:</div>
-                      <div className="quest-name">{quest.name}</div>
+                      <div className="quest-label">{t('classChange.requiredQuest')}:</div>
+                      <div className="quest-name">{dataLoader.getTranslatedName(quest)}</div>
                       {questProgress && !questCompleted && (
                         <div className="quest-progress">
-                          Progress: {questProgress.progress} / {questProgress.required}
+                          {t('quest.progress')}: {questProgress.progress} / {questProgress.required}
                         </div>
                       )}
-                      {questCompleted && <div className="quest-completed">✓ Quest Completed</div>}
+                      {questCompleted && <div className="quest-completed">✓ {t('quest.questCompleted')}</div>}
                     </div>
                   )}
                   <div className="class-option-stats">
                     <div className="stat-compact">
-                      <span>STR</span>
+                      <span>{t('common.stats.strength', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.strength}</span>
                     </div>
                     <div className="stat-compact">
-                      <span>DEX</span>
+                      <span>{t('common.stats.dexterity', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.dexterity}</span>
                     </div>
                     <div className="stat-compact">
-                      <span>INT</span>
+                      <span>{t('common.stats.intelligence', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.intelligence}</span>
                     </div>
                     <div className="stat-compact">
-                      <span>VIT</span>
+                      <span>{t('common.stats.vitality', { ns: 'common' }).substring(0, 3).toUpperCase()}</span>
                       <span>{characterClass.baseStats.vitality}</span>
                     </div>
                   </div>

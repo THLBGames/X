@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 110
-  }
+  },
+  "nameKey": "item.dragonbone_axe.name",
+  "descriptionKey": "item.dragonbone_axe.description"
 }

@@ -5,12 +5,17 @@
   "type": "passive",
   "maxLevel": 3,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 8,
-  "prerequisites": ["defensive_stance"],
+  "prerequisites": [
+    "defensive_stance"
+  ],
   "passiveBonus": {
     "special": "second_wind"
-  }
+  },
+  "nameKey": "skill.second_wind.name",
+  "descriptionKey": "skill.second_wind.description"
 }
-

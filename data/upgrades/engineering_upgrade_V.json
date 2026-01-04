@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "engineering_upgrade_IV"
-  }
+  },
+  "nameKey": "upgrade.engineering_upgrade_V.name",
+  "descriptionKey": "upgrade.engineering_upgrade_V.description"
 }

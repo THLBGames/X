@@ -17,7 +17,7 @@
       "resources": [
         {
           "itemId": "wheat",
-          "chance": 1.0,
+          "chance": 1,
           "min": 3,
           "max": 6
         },
@@ -38,7 +38,7 @@
       "resources": [
         {
           "itemId": "vegetable",
-          "chance": 1.0,
+          "chance": 1,
           "min": 2,
           "max": 4
         },
@@ -59,7 +59,7 @@
       "resources": [
         {
           "itemId": "common_herb",
-          "chance": 1.0,
+          "chance": 1,
           "min": 2,
           "max": 4
         },
@@ -116,6 +116,7 @@
         "health": 200
       }
     }
-  ]
+  ],
+  "nameKey": "skill.farming.name",
+  "descriptionKey": "skill.farming.description"
 }
-

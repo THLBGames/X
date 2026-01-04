@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "farming_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.farming_upgrade_III.name",
+  "descriptionKey": "upgrade.farming_upgrade_III.description"
 }

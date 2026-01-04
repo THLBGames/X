@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 75
-  }
+  },
+  "nameKey": "item.roasted_meat.name",
+  "descriptionKey": "item.roasted_meat.description"
 }

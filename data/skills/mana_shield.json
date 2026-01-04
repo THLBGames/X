@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["mage"],
+    "class": [
+      "mage"
+    ],
     "level": 8
   },
   "manaCost": 30,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "mana_shield"
-  }
+  },
+  "nameKey": "skill.mana_shield.name",
+  "descriptionKey": "skill.mana_shield.description"
 }
-

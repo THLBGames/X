@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 9,
   "manaCost": 35,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "fire_armor"
-  }
+  },
+  "nameKey": "skill.fire_armor.name",
+  "descriptionKey": "skill.fire_armor.description"
 }
-

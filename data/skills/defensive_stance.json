@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 3,
   "manaCost": 20,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "defensive_stance"
-  }
+  },
+  "nameKey": "skill.defensive_stance.name",
+  "descriptionKey": "skill.defensive_stance.description"
 }
-

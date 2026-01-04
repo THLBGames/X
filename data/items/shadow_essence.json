@@ -6,5 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 450
+  "value": 450,
+  "nameKey": "item.shadow_essence.name",
+  "descriptionKey": "item.shadow_essence.description"
 }

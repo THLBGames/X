@@ -6,12 +6,16 @@
   "maxLevel": 5,
   "unlockLevel": 4,
   "requirements": {
-    "class": ["warrior", "rogue"]
+    "class": [
+      "warrior",
+      "rogue"
+    ]
   },
   "passiveBonus": {
     "combatStatBonus": {
       "defense": 5
     }
-  }
+  },
+  "nameKey": "skill.parry.name",
+  "descriptionKey": "skill.parry.description"
 }
-

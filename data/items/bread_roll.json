@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 35
-  }
+  },
+  "nameKey": "item.bread_roll.name",
+  "descriptionKey": "item.bread_roll.description"
 }

@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 18,
-  "prerequisites": ["arcane_missile"],
+  "prerequisites": [
+    "arcane_missile"
+  ],
   "manaCost": 35,
   "cooldown": 5,
   "target": "all_enemies",
@@ -17,9 +21,10 @@
       "base": 45,
       "scaling": {
         "stat": "intelligence",
-        "multiplier": 2.0
+        "multiplier": 2
       }
     }
-  }
+  },
+  "nameKey": "skill.arcane_explosion.name",
+  "descriptionKey": "skill.arcane_explosion.description"
 }
-

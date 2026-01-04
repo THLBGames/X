@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 14,
-  "prerequisites": ["crippling_poison"],
+  "prerequisites": [
+    "crippling_poison"
+  ],
   "manaCost": 30,
   "cooldown": 0,
   "target": "self",
   "effect": {
     "buffId": "deadly_poison_weapon"
-  }
+  },
+  "nameKey": "skill.deadly_poison.name",
+  "descriptionKey": "skill.deadly_poison.description"
 }
-

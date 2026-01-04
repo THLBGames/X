@@ -6,6 +6,7 @@
   "rarity": "legendary",
   "stackable": true,
   "maxStack": 999,
-  "value": 1500
+  "value": 1500,
+  "nameKey": "item.legendary_trinket.name",
+  "descriptionKey": "item.legendary_trinket.description"
 }
-

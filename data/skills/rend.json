@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 9,
   "manaCost": 20,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "bleeding"
-  }
+  },
+  "nameKey": "skill.rend.name",
+  "descriptionKey": "skill.rend.description"
 }
-

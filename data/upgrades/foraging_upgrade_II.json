@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "foraging_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.foraging_upgrade_II.name",
+  "descriptionKey": "upgrade.foraging_upgrade_II.description"
 }

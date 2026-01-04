@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 11
-  }
+  },
+  "nameKey": "item.copper_axe.name",
+  "descriptionKey": "item.copper_axe.description"
 }

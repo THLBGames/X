@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "speed": 30,
     "criticalChance": 10
-  }
+  },
+  "nameKey": "item.legendary_ring_2.name",
+  "descriptionKey": "item.legendary_ring_2.description"
 }

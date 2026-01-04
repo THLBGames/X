@@ -10,6 +10,7 @@
   "rewards": {
     "experience": 1000,
     "gold": 500
-  }
+  },
+  "nameKey": "quest.necromancer_quest.name",
+  "descriptionKey": "quest.necromancer_quest.description"
 }
-

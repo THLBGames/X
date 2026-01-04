@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "ring1",
     "amount": "strength"
-  }
+  },
+  "nameKey": "item.ruby_ring.name",
+  "descriptionKey": "item.ruby_ring.description"
 }

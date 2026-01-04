@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 50
+  "value": 50,
+  "nameKey": "item.exotic_fruit.name",
+  "descriptionKey": "item.exotic_fruit.description"
 }
-

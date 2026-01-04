@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 40
-  }
+  },
+  "nameKey": "item.mithril_spear.name",
+  "descriptionKey": "item.mithril_spear.description"
 }

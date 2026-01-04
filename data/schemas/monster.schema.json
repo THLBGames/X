@@ -5,7 +5,9 @@
   "properties": {
     "id": { "type": "string" },
     "name": { "type": "string" },
+    "nameKey": { "type": "string", "description": "Translation key for name (format: monster.{id}.name)" },
     "description": { "type": "string" },
+    "descriptionKey": { "type": "string", "description": "Translation key for description (format: monster.{id}.description)" },
     "tier": { "type": "number" },
     "level": { "type": "number" },
     "stats": {

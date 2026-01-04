@@ -1,26 +1,28 @@
 {
-    "id": "imp_infestation",
-    "name": "Imp Infestation",
-    "description": "A portal rift has opened, allowing imps to swarm into the world.",
-    "tier": 1,
-    "requiredLevel": 12,
-    "requiredDungeonId": "troll_cave",
-    "monsterPools": [
-      {
-        "monsterId": "imp",
-        "weight": 85,
-        "minLevel": 12,
-        "maxLevel": 16
-      },
-      {
-        "monsterId": "goblin_shaman",
-        "weight": 15,
-        "minLevel": 13,
-        "maxLevel": 17
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 1.25,
-      "goldBonus": 1.2
+  "id": "imp_infestation",
+  "name": "Imp Infestation",
+  "description": "A portal rift has opened, allowing imps to swarm into the world.",
+  "tier": 1,
+  "requiredLevel": 12,
+  "requiredDungeonId": "troll_cave",
+  "monsterPools": [
+    {
+      "monsterId": "imp",
+      "weight": 85,
+      "minLevel": 12,
+      "maxLevel": 16
+    },
+    {
+      "monsterId": "goblin_shaman",
+      "weight": 15,
+      "minLevel": 13,
+      "maxLevel": 17
     }
-  }
+  ],
+  "rewards": {
+    "experienceBonus": 1.25,
+    "goldBonus": 1.2
+  },
+  "nameKey": "dungeon.imp_infestation.name",
+  "descriptionKey": "dungeon.imp_infestation.description"
+}

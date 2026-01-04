@@ -15,6 +15,7 @@
   },
   "combatStatBonuses": {
     "defense": 4
-  }
+  },
+  "nameKey": "item.basic_helmet.name",
+  "descriptionKey": "item.basic_helmet.description"
 }
-

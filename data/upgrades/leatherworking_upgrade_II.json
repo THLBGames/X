@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "leatherworking_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.leatherworking_upgrade_II.name",
+  "descriptionKey": "upgrade.leatherworking_upgrade_II.description"
 }

@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "ring1",
     "amount": "dexterity"
-  }
+  },
+  "nameKey": "item.emerald_ring.name",
+  "descriptionKey": "item.emerald_ring.description"
 }

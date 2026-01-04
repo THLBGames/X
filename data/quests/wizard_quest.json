@@ -10,6 +10,7 @@
   "rewards": {
     "experience": 1000,
     "gold": 500
-  }
+  },
+  "nameKey": "quest.wizard_quest.name",
+  "descriptionKey": "quest.wizard_quest.description"
 }
-

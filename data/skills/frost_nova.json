@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 14,
-  "prerequisites": ["ice_lance"],
+  "prerequisites": [
+    "ice_lance"
+  ],
   "manaCost": 45,
   "cooldown": 12,
   "target": "all_enemies",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "frozen"
-  }
+  },
+  "nameKey": "skill.frost_nova.name",
+  "descriptionKey": "skill.frost_nova.description"
 }
-

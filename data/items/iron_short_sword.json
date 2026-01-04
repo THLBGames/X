@@ -21,5 +21,7 @@
     "attack": 12,
     "speed": 7,
     "criticalChance": 3
-  }
+  },
+  "nameKey": "item.iron_short_sword.name",
+  "descriptionKey": "item.iron_short_sword.description"
 }

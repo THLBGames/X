@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 12,
-  "prerequisites": ["lightning_bolt"],
+  "prerequisites": [
+    "lightning_bolt"
+  ],
   "manaCost": 40,
   "cooldown": 6,
   "target": "all_enemies",
@@ -20,6 +24,7 @@
         "multiplier": 2.2
       }
     }
-  }
+  },
+  "nameKey": "skill.chain_lightning.name",
+  "descriptionKey": "skill.chain_lightning.description"
 }
-

@@ -15,12 +15,12 @@
     "magicDefense": 30,
     "speed": 12,
     "criticalChance": 10,
-    "criticalDamage": 2.0
+    "criticalDamage": 2
   },
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 100,
       "max": 150
     },
@@ -37,6 +37,7 @@
   "goldReward": {
     "min": 100,
     "max": 150
-  }
+  },
+  "nameKey": "monster.dragon_whelp.name",
+  "descriptionKey": "monster.dragon_whelp.description"
 }
-

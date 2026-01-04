@@ -5,7 +5,9 @@
   "type": "passive",
   "maxLevel": 10,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "passiveBonus": {
     "statBonus": {
@@ -14,6 +16,7 @@
     "combatStatBonus": {
       "attack": 5
     }
-  }
+  },
+  "nameKey": "skill.warrior_strength.name",
+  "descriptionKey": "skill.warrior_strength.description"
 }
-

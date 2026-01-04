@@ -26,9 +26,10 @@
     }
   ],
   "rewards": {
-    "experienceBonus": 2.0,
+    "experienceBonus": 2,
     "goldBonus": 1.8,
     "itemDropRate": 1.5
-  }
+  },
+  "nameKey": "dungeon.dragon_lair.name",
+  "descriptionKey": "dungeon.dragon_lair.description"
 }
-

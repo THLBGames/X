@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "buff",
     "amount": 1
-  }
+  },
+  "nameKey": "item.teleport_scroll.name",
+  "descriptionKey": "item.teleport_scroll.description"
 }

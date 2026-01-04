@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "treasure_hunting_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.treasure_hunting_upgrade_III.name",
+  "descriptionKey": "upgrade.treasure_hunting_upgrade_III.description"
 }

@@ -16,5 +16,7 @@
   },
   "combatStatBonuses": {
     "defense": 8
-  }
+  },
+  "nameKey": "item.fill_ring1_t4.name",
+  "descriptionKey": "item.fill_ring1_t4.description"
 }

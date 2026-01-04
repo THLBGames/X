@@ -15,5 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 40
-  }
+  },
+  "nameKey": "item.ring_tier6_1.name",
+  "descriptionKey": "item.ring_tier6_1.description"
 }

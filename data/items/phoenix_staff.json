@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 52,
     "mana": 195
-  }
+  },
+  "nameKey": "item.phoenix_staff.name",
+  "descriptionKey": "item.phoenix_staff.description"
 }

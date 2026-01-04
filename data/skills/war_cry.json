@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 13,
-  "prerequisites": ["battle_cry"],
+  "prerequisites": [
+    "battle_cry"
+  ],
   "manaCost": 30,
   "cooldown": 25,
   "target": "all_allies",
   "effect": {
     "buffId": "war_cry"
-  }
+  },
+  "nameKey": "skill.war_cry.name",
+  "descriptionKey": "skill.war_cry.description"
 }
-

@@ -8,7 +8,9 @@
   "value": 5000,
   "requirements": {
     "level": 90,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "attack": 80,
     "criticalChance": 10,
     "criticalDamage": 0.2
-  }
+  },
+  "nameKey": "item.dragonbone_sword.name",
+  "descriptionKey": "item.dragonbone_sword.description"
 }
-

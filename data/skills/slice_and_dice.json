@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 19,
   "manaCost": 40,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "slice_and_dice"
-  }
+  },
+  "nameKey": "skill.slice_and_dice.name",
+  "descriptionKey": "skill.slice_and_dice.description"
 }
-

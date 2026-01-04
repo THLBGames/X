@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 4,
-  "prerequisites": ["arcane_missile"],
+  "prerequisites": [
+    "arcane_missile"
+  ],
   "manaCost": 18,
   "cooldown": 2,
   "target": "enemy",
@@ -20,6 +24,7 @@
         "multiplier": 1.8
       }
     }
-  }
+  },
+  "nameKey": "skill.magic_missile.name",
+  "descriptionKey": "skill.magic_missile.description"
 }
-

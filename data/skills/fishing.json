@@ -11,13 +11,13 @@
       "level": 1,
       "nodeId": "small_fish",
       "name": "Small Fish School",
-      "successRate": 0.90,
+      "successRate": 0.9,
       "experienceGain": 8,
       "timeRequired": 4000,
       "resources": [
         {
           "itemId": "small_fish",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -38,7 +38,7 @@
       "resources": [
         {
           "itemId": "medium_fish",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -53,13 +53,13 @@
       "level": 40,
       "nodeId": "large_fish",
       "name": "Large Fish School",
-      "successRate": 0.80,
+      "successRate": 0.8,
       "experienceGain": 75,
       "timeRequired": 6000,
       "resources": [
         {
           "itemId": "large_fish",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 1
         },
@@ -85,7 +85,7 @@
       "resources": [
         {
           "itemId": "rare_fish",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 1
         },
@@ -111,7 +111,7 @@
       "resources": [
         {
           "itemId": "legendary_fish",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 1
         },
@@ -149,6 +149,7 @@
         "health": 100
       }
     }
-  ]
+  ],
+  "nameKey": "skill.fishing.name",
+  "descriptionKey": "skill.fishing.description"
 }
-

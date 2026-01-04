@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 20
+  "value": 20,
+  "nameKey": "item.moderate_essence.name",
+  "descriptionKey": "item.moderate_essence.description"
 }
-

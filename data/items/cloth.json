@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 3
+  "value": 3,
+  "nameKey": "item.cloth.name",
+  "descriptionKey": "item.cloth.description"
 }
-

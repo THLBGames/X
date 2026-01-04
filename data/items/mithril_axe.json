@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 44
-  }
+  },
+  "nameKey": "item.mithril_axe.name",
+  "descriptionKey": "item.mithril_axe.description"
 }

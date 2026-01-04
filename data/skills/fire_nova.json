@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 16,
-  "prerequisites": ["fireball"],
+  "prerequisites": [
+    "fireball"
+  ],
   "manaCost": 50,
   "cooldown": 10,
   "target": "all_enemies",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "burning"
-  }
+  },
+  "nameKey": "skill.fire_nova.name",
+  "descriptionKey": "skill.fire_nova.description"
 }
-

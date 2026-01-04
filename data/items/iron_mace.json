@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 13
-  }
+  },
+  "nameKey": "item.iron_mace.name",
+  "descriptionKey": "item.iron_mace.description"
 }

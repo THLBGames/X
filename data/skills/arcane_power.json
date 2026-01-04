@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 28,
-  "prerequisites": ["arcane_explosion"],
+  "prerequisites": [
+    "arcane_explosion"
+  ],
   "manaCost": 70,
   "cooldown": 60,
   "target": "self",
   "effect": {
     "buffId": "arcane_power"
-  }
+  },
+  "nameKey": "skill.arcane_power.name",
+  "descriptionKey": "skill.arcane_power.description"
 }
-

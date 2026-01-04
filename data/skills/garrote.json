@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 16,
-  "prerequisites": ["backstab"],
+  "prerequisites": [
+    "backstab"
+  ],
   "manaCost": 35,
   "cooldown": 12,
   "target": "enemy",
@@ -17,10 +21,11 @@
       "base": 50,
       "scaling": {
         "stat": "dexterity",
-        "multiplier": 2.0
+        "multiplier": 2
       }
     },
     "debuffId": "silenced"
-  }
+  },
+  "nameKey": "skill.garrote.name",
+  "descriptionKey": "skill.garrote.description"
 }
-

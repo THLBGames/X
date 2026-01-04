@@ -16,6 +16,7 @@
   "combatStatBonuses": {
     "defense": 3,
     "speed": 2
-  }
+  },
+  "nameKey": "item.basic_boots.name",
+  "descriptionKey": "item.basic_boots.description"
 }
-

@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 20
-  }
+  },
+  "nameKey": "item.minor_healing_potion.name",
+  "descriptionKey": "item.minor_healing_potion.description"
 }

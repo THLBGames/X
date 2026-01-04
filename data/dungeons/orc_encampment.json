@@ -28,6 +28,7 @@
   "rewards": {
     "experienceBonus": 1.2,
     "goldBonus": 1.1
-  }
+  },
+  "nameKey": "dungeon.orc_encampment.name",
+  "descriptionKey": "dungeon.orc_encampment.description"
 }
-

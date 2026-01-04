@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicDefense": 9,
     "mana": 37
-  }
+  },
+  "nameKey": "item.apprentice_robes.name",
+  "descriptionKey": "item.apprentice_robes.description"
 }

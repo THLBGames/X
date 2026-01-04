@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "mana",
     "amount": 100
-  }
+  },
+  "nameKey": "item.dwarven_ale.name",
+  "descriptionKey": "item.dwarven_ale.description"
 }

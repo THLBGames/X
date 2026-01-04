@@ -1,26 +1,28 @@
 {
-    "id": "bandit_camp",
-    "name": "Bandit Camp",
-    "description": "A camp of bandits preying on travelers.",
-    "tier": 1,
-    "requiredLevel": 4,
-    "requiredDungeonId": "spider_nest",
-    "monsterPools": [
-      {
-        "monsterId": "bandit",
-        "weight": 75,
-        "minLevel": 4,
-        "maxLevel": 6
-      },
-      {
-        "monsterId": "orc",
-        "weight": 25,
-        "minLevel": 4,
-        "maxLevel": 7
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 1.2,
-      "goldBonus": 1.15
+  "id": "bandit_camp",
+  "name": "Bandit Camp",
+  "description": "A camp of bandits preying on travelers.",
+  "tier": 1,
+  "requiredLevel": 4,
+  "requiredDungeonId": "spider_nest",
+  "monsterPools": [
+    {
+      "monsterId": "bandit",
+      "weight": 75,
+      "minLevel": 4,
+      "maxLevel": 6
+    },
+    {
+      "monsterId": "orc",
+      "weight": 25,
+      "minLevel": 4,
+      "maxLevel": 7
     }
-  }
+  ],
+  "rewards": {
+    "experienceBonus": 1.2,
+    "goldBonus": 1.15
+  },
+  "nameKey": "dungeon.bandit_camp.name",
+  "descriptionKey": "dungeon.bandit_camp.description"
+}

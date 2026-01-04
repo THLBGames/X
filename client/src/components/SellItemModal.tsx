@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ShopManager } from '../systems/shop';
 import { InventoryManager } from '../systems/inventory';
-// import { getDataLoader } from '../data';
+import { getDataLoader } from '../data';
 import type { Item, Inventory } from '@idle-rpg/shared';
 import './SellItemModal.css';
 
@@ -18,8 +19,9 @@ export default function SellItemModal({
   onClose,
   onSell,
 }: SellItemModalProps) {
+  const { t } = useTranslation('ui');
+  const dataLoader = getDataLoader();
   const [quantity, setQuantity] = useState(1);
-  // const dataLoader = getDataLoader();
 
   // Get available quantity of this item
   const availableQuantity = InventoryManager.getItemQuantity(inventory, item.id);
@@ -59,7 +61,7 @@ export default function SellItemModal({
     <div className="modal-overlay" onClick={onClose}>
       <div className="sell-item-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Sell Item</h2>
+          <h2>{t('sellItem.title')}</h2>
           <button className="modal-close" onClick={onClose}>
             ×
           </button>
@@ -67,14 +69,14 @@ export default function SellItemModal({
 
         <div className="modal-content">
           <div className="item-info">
-            <div className="item-name">{item.name}</div>
-            <div className={`item-rarity rarity-${item.rarity}`}>{item.rarity}</div>
-            <div className="item-description">{item.description}</div>
+            <div className="item-name">{dataLoader.getTranslatedName(item)}</div>
+            <div className={`item-rarity rarity-${item.rarity}`}>{t(`common.rarity.${item.rarity}`, { ns: 'common' })}</div>
+            <div className="item-description">{dataLoader.getTranslatedDescription(item)}</div>
           </div>
 
           <div className="quantity-section">
             <div className="quantity-label">
-              Quantity: <span className="available-quantity">({availableQuantity} available)</span>
+              {t('sellItem.quantity')}: <span className="available-quantity">({availableQuantity} {t('sellItem.available')})</span>
             </div>
             {item.stackable && availableQuantity > 1 ? (
               <div className="quantity-selector">
@@ -107,7 +109,7 @@ export default function SellItemModal({
                 </button>
                 {availableQuantity > 1 && (
                   <button className="qty-max-button" onClick={handleMaxSell}>
-                    Max
+                    {t('sellItem.max')}
                   </button>
                 )}
               </div>
@@ -117,24 +119,24 @@ export default function SellItemModal({
           </div>
 
           <div className="sell-price-section">
-            <div className="price-label">Sell Price:</div>
-            <div className="price-value">{sellPrice} gold</div>
+            <div className="price-label">{t('sellItem.sellPrice')}:</div>
+            <div className="price-value">{sellPrice} {t('character.gold')}</div>
             <div className="price-per-item">
-              ({ShopManager.calculateSellPrice(item)} gold per item)
+              ({ShopManager.calculateSellPrice(item)} {t('character.gold')} {t('sellItem.perItem')})
             </div>
           </div>
         </div>
 
         <div className="modal-footer">
           <button className="cancel-button" onClick={onClose}>
-            Cancel
+            {t('buttons.cancel')}
           </button>
           <button
             className="sell-button"
             onClick={handleSell}
             disabled={!canSell}
           >
-            Sell {quantity > 1 && `(${quantity})`}
+            {t('sellItem.sell')} {quantity > 1 && `(${quantity})`}
           </button>
         </div>
       </div>

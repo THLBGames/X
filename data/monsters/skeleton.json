@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 8,
       "max": 15
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 8,
     "max": 15
-  }
+  },
+  "nameKey": "monster.skeleton.name",
+  "descriptionKey": "monster.skeleton.description"
 }
-

@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 250
+  "value": 250,
+  "nameKey": "item.rune_stone_rare.name",
+  "descriptionKey": "item.rune_stone_rare.description"
 }
-

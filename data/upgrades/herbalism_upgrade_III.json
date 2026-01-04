@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "herbalism_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.herbalism_upgrade_III.name",
+  "descriptionKey": "upgrade.herbalism_upgrade_III.description"
 }

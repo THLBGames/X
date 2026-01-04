@@ -8,7 +8,9 @@
   "value": 50,
   "requirements": {
     "level": 1,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "helmet",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 5,
     "mana": 15
-  }
+  },
+  "nameKey": "item.mage_hood.name",
+  "descriptionKey": "item.mage_hood.description"
 }
-

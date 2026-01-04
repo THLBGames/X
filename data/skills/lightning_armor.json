@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 10,
   "manaCost": 32,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "lightning_armor"
-  }
+  },
+  "nameKey": "skill.lightning_armor.name",
+  "descriptionKey": "skill.lightning_armor.description"
 }
-

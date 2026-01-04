@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 // import { getDataLoader } from '../data';
 import { audioManager } from '../systems/audio/AudioManager';
@@ -15,6 +16,7 @@ interface CombatStats {
 }
 
 export default function CombatDisplay() {
+  const { t } = useTranslation('ui');
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const character = useGameState((state) => state.character);
   // const currentDungeonId = useGameState((state) => state.currentDungeonId);
@@ -51,7 +53,7 @@ export default function CombatDisplay() {
       if (event.type !== 'level_up') return;
 
       const newLevel = event.newLevel;
-      const message = `Level Up! You are now level ${newLevel}!`;
+      const message = t('combat.levelUp', { level: newLevel });
       setLevelUpMessage(message);
       previousLevelRef.current = newLevel;
 
@@ -124,10 +126,10 @@ export default function CombatDisplay() {
   return (
     <div className="combat-display">
       <div className="combat-header">
-        <h2>Combat</h2>
+        <h2>{t('character.combat')}</h2>
         {isCombatActive && (
           <button className="stop-combat-button" onClick={stopCombat}>
-            Stop Combat
+            {t('combat.stopCombat')}
           </button>
         )}
       </div>
@@ -143,18 +145,18 @@ export default function CombatDisplay() {
 
               {combatStats.combatsCompleted > 0 && (
                 <div className="combat-stats">
-                  <h3>Session Statistics</h3>
+                  <h3>{t('combat.sessionStatistics')}</h3>
                   <div className="stats-grid">
                     <div className="stat-item">
-                      <div className="stat-label">Combats</div>
+                      <div className="stat-label">{t('combat.combats')}</div>
                       <div className="stat-value">{combatStats.combatsCompleted}</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-label">Experience</div>
+                      <div className="stat-label">{t('character.experience')}</div>
                       <div className="stat-value">+{combatStats.totalExperience}</div>
                     </div>
                     <div className="stat-item">
-                      <div className="stat-label">Gold</div>
+                      <div className="stat-label">{t('character.gold')}</div>
                       <div className="stat-value">+{combatStats.totalGold}</div>
                     </div>
                   </div>
@@ -162,16 +164,16 @@ export default function CombatDisplay() {
               )}
             </>
           ) : (
-            <div className="combat-loading">Initializing combat...</div>
+            <div className="combat-loading">{t('combat.initializing')}</div>
           )}
         </div>
       ) : (
         <div className="combat-idle">
           <div className="idle-message">
             <div className="idle-icon">⚔️</div>
-            <div>Idle - Select a dungeon to begin combat</div>
+            <div>{t('combat.idleMessage')}</div>
             <div className="idle-hint">
-              Choose a dungeon from the list below and click "Start Combat"
+              {t('combat.idleHint')}
             </div>
           </div>
         </div>

@@ -8,7 +8,9 @@
   "value": 400,
   "requirements": {
     "level": 29,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -18,6 +20,7 @@
   "combatStatBonuses": {
     "defense": 16,
     "attack": 5
-  }
+  },
+  "nameKey": "item.steel_gauntlets.name",
+  "descriptionKey": "item.steel_gauntlets.description"
 }
-

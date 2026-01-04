@@ -25,8 +25,9 @@
     }
   ],
   "rewards": {
-    "experienceBonus": 1.0,
-    "goldBonus": 1.0
-  }
+    "experienceBonus": 1,
+    "goldBonus": 1
+  },
+  "nameKey": "dungeon.forest_clearing.name",
+  "descriptionKey": "dungeon.forest_clearing.description"
 }
-

@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "defense": 12,
     "speed": 7
-  }
+  },
+  "nameKey": "item.steel_leather_armor.name",
+  "descriptionKey": "item.steel_leather_armor.description"
 }

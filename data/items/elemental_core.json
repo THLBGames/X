@@ -6,5 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 400
+  "value": 400,
+  "nameKey": "item.elemental_core.name",
+  "descriptionKey": "item.elemental_core.description"
 }

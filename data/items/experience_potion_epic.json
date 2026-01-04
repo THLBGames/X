@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "experience",
     "amount": 10000
-  }
+  },
+  "nameKey": "item.experience_potion_epic.name",
+  "descriptionKey": "item.experience_potion_epic.description"
 }

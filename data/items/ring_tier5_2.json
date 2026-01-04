@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "magicAttack": 32,
     "mana": 130
-  }
+  },
+  "nameKey": "item.ring_tier5_2.name",
+  "descriptionKey": "item.ring_tier5_2.description"
 }

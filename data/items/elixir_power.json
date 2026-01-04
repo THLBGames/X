@@ -11,6 +11,7 @@
     "type": "buff",
     "buffId": "power_boost",
     "duration": 600
-  }
+  },
+  "nameKey": "item.elixir_power.name",
+  "descriptionKey": "item.elixir_power.description"
 }
-

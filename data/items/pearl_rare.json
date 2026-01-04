@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 300
+  "value": 300,
+  "nameKey": "item.pearl_rare.name",
+  "descriptionKey": "item.pearl_rare.description"
 }
-

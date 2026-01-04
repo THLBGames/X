@@ -16,7 +16,8 @@
     "magicDefense": 8,
     "speed": 18,
     "criticalChance": 15,
-    "criticalDamage": 2.0
-  }
+    "criticalDamage": 2
+  },
+  "nameKey": "mercenary.rogue_mercenary.name",
+  "descriptionKey": "mercenary.rogue_mercenary.description"
 }
-

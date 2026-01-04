@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 5,
   "manaCost": 20,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "blink"
-  }
+  },
+  "nameKey": "skill.blink.name",
+  "descriptionKey": "skill.blink.description"
 }
-

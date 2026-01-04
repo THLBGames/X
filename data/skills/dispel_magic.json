@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 23,
   "manaCost": 25,
@@ -13,6 +15,7 @@
   "target": "enemy",
   "effect": {
     "special": "dispel_magic"
-  }
+  },
+  "nameKey": "skill.dispel_magic.name",
+  "descriptionKey": "skill.dispel_magic.description"
 }
-

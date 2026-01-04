@@ -15,6 +15,7 @@
   },
   "combatStatBonuses": {
     "defense": 15
-  }
+  },
+  "nameKey": "item.iron_shield.name",
+  "descriptionKey": "item.iron_shield.description"
 }
-

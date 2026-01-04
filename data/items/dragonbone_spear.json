@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 100
-  }
+  },
+  "nameKey": "item.dragonbone_spear.name",
+  "descriptionKey": "item.dragonbone_spear.description"
 }

@@ -5,12 +5,18 @@
   "type": "passive",
   "maxLevel": 3,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 30,
-  "prerequisites": ["shield_wall", "second_wind"],
+  "prerequisites": [
+    "shield_wall",
+    "second_wind"
+  ],
   "passiveBonus": {
     "special": "last_stand"
-  }
+  },
+  "nameKey": "skill.last_stand.name",
+  "descriptionKey": "skill.last_stand.description"
 }
-

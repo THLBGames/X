@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "gathering_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.gathering_upgrade_II.name",
+  "descriptionKey": "upgrade.gathering_upgrade_II.description"
 }

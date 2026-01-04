@@ -8,7 +8,9 @@
   "value": 40,
   "requirements": {
     "level": 1,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "helmet",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "defense": 3,
     "speed": 2
-  }
+  },
+  "nameKey": "item.leather_cap.name",
+  "descriptionKey": "item.leather_cap.description"
 }
-

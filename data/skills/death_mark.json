@@ -5,12 +5,17 @@
   "type": "passive",
   "maxLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 30,
-  "prerequisites": ["vendetta"],
+  "prerequisites": [
+    "vendetta"
+  ],
   "passiveBonus": {
     "special": "death_mark"
-  }
+  },
+  "nameKey": "skill.death_mark.name",
+  "descriptionKey": "skill.death_mark.description"
 }
-

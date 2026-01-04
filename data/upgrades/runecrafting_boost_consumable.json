@@ -11,5 +11,7 @@
     "experienceMultiplier": 1.2
   },
   "actionDuration": 50,
-  "requirements": {}
+  "requirements": {},
+  "nameKey": "upgrade.runecrafting_boost_consumable.name",
+  "descriptionKey": "upgrade.runecrafting_boost_consumable.description"
 }

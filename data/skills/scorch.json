@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 6,
   "manaCost": 15,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "fire_vulnerability"
-  }
+  },
+  "nameKey": "skill.scorch.name",
+  "descriptionKey": "skill.scorch.description"
 }
-

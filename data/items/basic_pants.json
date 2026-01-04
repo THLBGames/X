@@ -15,6 +15,7 @@
   },
   "combatStatBonuses": {
     "defense": 3
-  }
+  },
+  "nameKey": "item.basic_pants.name",
+  "descriptionKey": "item.basic_pants.description"
 }
-

@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "defense": 6,
     "speed": 7
-  }
+  },
+  "nameKey": "item.apprentice_boots.name",
+  "descriptionKey": "item.apprentice_boots.description"
 }

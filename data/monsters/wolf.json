@@ -15,12 +15,12 @@
     "magicDefense": 2,
     "speed": 18,
     "criticalChance": 8,
-    "criticalDamage": 2.0
+    "criticalDamage": 2
   },
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 10,
       "max": 18
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 10,
     "max": 18
-  }
+  },
+  "nameKey": "monster.wolf.name",
+  "descriptionKey": "monster.wolf.description"
 }
-

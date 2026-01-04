@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 23,
-  "prerequisites": ["devastate"],
+  "prerequisites": [
+    "devastate"
+  ],
   "manaCost": 30,
   "cooldown": 20,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "armor_broken"
-  }
+  },
+  "nameKey": "skill.armor_break.name",
+  "descriptionKey": "skill.armor_break.description"
 }
-

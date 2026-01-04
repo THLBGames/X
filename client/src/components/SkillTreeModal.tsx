@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { SkillManager } from '../systems/skills/SkillManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
@@ -14,6 +15,7 @@ interface SkillTreeModalProps {
 }
 
 export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps) {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const setCharacter = useGameState((state) => state.setCharacter);
   const updateSkillBar = useGameState((state) => state.updateSkillBar);
@@ -28,7 +30,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
   }
 
   const skillTree = SkillManager.getSkillTree(character);
-  // const dataLoader = getDataLoader();
+  const dataLoader = getDataLoader();
 
   // Filter skills
   let filteredSkills = skillTree;
@@ -42,11 +44,11 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
 
   // Search filter
   if (searchTerm) {
-    filteredSkills = filteredSkills.filter(
-      (s) =>
-        s.skill.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        s.skill.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    filteredSkills = filteredSkills.filter((s) => {
+      const skillName = dataLoader.getTranslatedName(s.skill).toLowerCase();
+      const skillDesc = dataLoader.getTranslatedDescription(s.skill).toLowerCase();
+      return skillName.includes(searchTerm.toLowerCase()) || skillDesc.includes(searchTerm.toLowerCase());
+    });
   }
 
   const handleLearnSkill = (skillId: string) => {
@@ -87,8 +89,8 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
     <div className="modal-overlay" onClick={onClose}>
       <div className="skill-tree-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Skill Tree</h2>
-          <div className="skill-points-display">Skill Points: {character.skillPoints}</div>
+          <h2>{t('skillTree.title')}</h2>
+          <div className="skill-points-display">{t('character.skillPoints')}: {character.skillPoints}</div>
           <button className="modal-close" onClick={onClose}>
             ×
           </button>
@@ -99,13 +101,13 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
             className={activeTab === 'skills' ? 'active' : ''}
             onClick={() => setActiveTab('skills')}
           >
-            Skills
+            {t('skillTree.skills')}
           </button>
           <button
             className={activeTab === 'auto-config' ? 'active' : ''}
             onClick={() => setActiveTab('auto-config')}
           >
-            Auto-Config
+            {t('skillTree.autoConfig')}
           </button>
         </div>
 
@@ -118,30 +120,30 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                     className={filter === 'all' ? 'active' : ''}
                     onClick={() => setFilter('all')}
                   >
-                    All
+                    {t('skillTree.all')}
                   </button>
                   <button
                     className={filter === 'available' ? 'active' : ''}
                     onClick={() => setFilter('available')}
                   >
-                    Available
+                    {t('skillTree.available')}
                   </button>
                   <button
                     className={filter === 'learned' ? 'active' : ''}
                     onClick={() => setFilter('learned')}
                   >
-                    Learned
+                    {t('skillTree.learned')}
                   </button>
                   <button
                     className={filter === 'locked' ? 'active' : ''}
                     onClick={() => setFilter('locked')}
                   >
-                    Locked
+                    {t('skillTree.locked')}
                   </button>
                 </div>
                 <input
                   type="text"
-                  placeholder="Search skills..."
+                  placeholder={t('skillTree.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="skill-search"
@@ -151,11 +153,11 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
               <div className="skill-list">
                 {filteredSkills.length === 0 ? (
                   <div className="no-skills">
-                    <div>No skills found</div>
+                    <div>{t('skillTree.noSkillsFound')}</div>
                     <div className="no-skills-hint">
                       {skillTree.length === 0
-                        ? 'Skills may still be loading or your class has no skills assigned.'
-                        : 'Try adjusting your filters or search terms.'}
+                        ? t('skillTree.noSkillsHint')
+                        : t('skillTree.adjustFiltersHint')}
                     </div>
                   </div>
                 ) : (
@@ -164,6 +166,8 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                     const isMaxLevel = level >= skill.maxLevel;
                     const cost = skill.unlockCost || 1;
                     const requiredLevel = skill.unlockLevel || skill.requirements?.level;
+                    const skillName = dataLoader.getTranslatedName(skill);
+                    const skillDesc = dataLoader.getTranslatedDescription(skill);
 
                     return (
                       <div
@@ -174,43 +178,43 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                           className="skill-icon"
                           style={{ backgroundColor: getSkillTypeColor(skill.type) }}
                         >
-                          {skill.name.charAt(0)}
+                          {skillName.charAt(0)}
                         </div>
                         <div className="skill-details">
                           <div className="skill-header">
-                            <div className="skill-name">{skill.name}</div>
+                            <div className="skill-name">{skillName}</div>
                             {isLearned && (
                               <div className="skill-level-badge">
-                                Level {level}/{skill.maxLevel}
+                                {t('character.level')} {level}/{skill.maxLevel}
                               </div>
                             )}
-                            <div className="skill-type-badge">{skill.type}</div>
+                            <div className="skill-type-badge">{t(`common.skillType.${skill.type}`, { ns: 'common' })}</div>
                           </div>
-                          <div className="skill-description">{skill.description}</div>
+                          <div className="skill-description">{skillDesc}</div>
                           <div className="skill-info">
                             {requiredLevel && (
-                              <span className="skill-requirement">Level {requiredLevel}</span>
+                              <span className="skill-requirement">{t('character.level')} {requiredLevel}</span>
                             )}
                             {skill.prerequisites && skill.prerequisites.length > 0 && (
                               <span className="skill-requirement">
-                                Requires: {skill.prerequisites.join(', ')}
+                                {t('skillTree.requires')}: {skill.prerequisites.join(', ')}
                               </span>
                             )}
                             {skill.manaCost !== undefined && (
-                              <span className="skill-info-item">Mana: {skill.manaCost}</span>
+                              <span className="skill-info-item">{t('common.combatStats.mana', { ns: 'common' })}: {skill.manaCost}</span>
                             )}
                             {skill.cooldown !== undefined && (
-                              <span className="skill-info-item">Cooldown: {skill.cooldown}s</span>
+                              <span className="skill-info-item">{t('skill.cooldown')}: {skill.cooldown}s</span>
                             )}
                           </div>
                           {!prerequisitesMet && (
-                            <div className="skill-warning">Prerequisites not met</div>
+                            <div className="skill-warning">{t('skillTree.prerequisitesNotMet')}</div>
                           )}
                           {reason && !canLearn && <div className="skill-error">{reason}</div>}
                         </div>
                         <div className="skill-actions">
                           {isMaxLevel ? (
-                            <div className="skill-maxed">MAX</div>
+                            <div className="skill-maxed">{t('skillTree.max')}</div>
                           ) : isLearned ? (
                             <button
                               className="skill-upgrade-button"
@@ -218,7 +222,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                               disabled={!canLearn}
                               title={reason}
                             >
-                              Upgrade ({cost} SP)
+                              {t('skillTree.upgrade')} ({cost} {t('skillTree.skillPoints')})
                             </button>
                           ) : (
                             <button
@@ -227,7 +231,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                               disabled={!canLearn}
                               title={reason}
                             >
-                              Learn ({cost} SP)
+                              {t('skillTree.learn')} ({cost} {t('skillTree.skillPoints')})
                             </button>
                           )}
                           {isLearned && skill.type === 'active' && !skill.category && (
@@ -236,11 +240,11 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                               onClick={() => handleAddToSkillBar(skill.id)}
                               title={
                                 (character.skillBar || []).includes(skill.id)
-                                  ? 'Remove from skill bar'
-                                  : 'Add to skill bar'
+                                  ? t('skillTree.removeFromBar')
+                                  : t('skillTree.addToBar')
                               }
                             >
-                              {(character.skillBar || []).includes(skill.id) ? '✓ Bar' : '+ Bar'}
+                              {(character.skillBar || []).includes(skill.id) ? `✓ ${t('skillTree.bar')}` : `+ ${t('skillTree.bar')}`}
                             </button>
                           )}
                         </div>
@@ -253,54 +257,53 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
           ) : (
             <div className="auto-config-tab">
               <div className="auto-config-header">
-                <h3>Auto-Skill Configuration</h3>
+                <h3>{t('autoConfig.autoSkillConfigTitle')}</h3>
                 <p className="auto-config-description">
-                  Configure automatic skill usage for skills in your skill bar. Skills can be set to
-                  use automatically based on combat conditions.
+                  {t('autoConfig.description')}
                 </p>
               </div>
               <div className="auto-config-skill-list">
                 {character.skillBar && character.skillBar.length > 0 ? (
                   character.skillBar.map((skillId) => {
-                    const skill = getDataLoader().getSkill(skillId);
+                    const skill = dataLoader.getSkill(skillId);
                     if (!skill) return null;
                     const autoSetting = AutoSkillManager.getAutoSkillSetting(character, skillId);
                     const hasAutoUse = autoSetting.enabled && autoSetting.condition !== 'never';
 
                     const getConditionDescription = (): string => {
                       if (!autoSetting.enabled || autoSetting.condition === 'never') {
-                        return 'Manual use only';
+                        return t('tooltips.manualUseOnly');
                       }
                       switch (autoSetting.condition) {
                         case 'always':
-                          return 'Always use when available';
+                          return t('tooltips.autoAlwaysAvailable');
                         case 'player_health_below':
-                          return `Use when player health < ${autoSetting.threshold}%`;
+                          return t('tooltips.autoPlayerHealthBelow', { threshold: autoSetting.threshold });
                         case 'player_health_above':
-                          return `Use when player health > ${autoSetting.threshold}%`;
+                          return t('tooltips.autoPlayerHealthAbove', { threshold: autoSetting.threshold });
                         case 'player_mana_above':
-                          return `Use when player mana > ${autoSetting.threshold}%`;
+                          return t('tooltips.autoPlayerManaAbove', { threshold: autoSetting.threshold });
                         case 'enemy_health_below':
-                          return `Use when enemy health < ${autoSetting.threshold}%`;
+                          return t('tooltips.autoEnemyHealthBelow', { threshold: autoSetting.threshold });
                         case 'enemy_health_above':
-                          return `Use when enemy health > ${autoSetting.threshold}%`;
+                          return t('tooltips.autoEnemyHealthAbove', { threshold: autoSetting.threshold });
                         default:
-                          return 'Manual use only';
+                          return t('tooltips.manualUseOnly');
                       }
                     };
 
                     return (
                       <div key={skillId} className="auto-config-skill-item">
                         <div className="auto-config-skill-info">
-                          <div className="auto-config-skill-name">{skill.name}</div>
-                          <div className="auto-config-skill-description">{skill.description}</div>
+                          <div className="auto-config-skill-name">{dataLoader.getTranslatedName(skill)}</div>
+                          <div className="auto-config-skill-description">{dataLoader.getTranslatedDescription(skill)}</div>
                           <div className="auto-config-skill-condition">
                             {hasAutoUse ? (
                               <span className="auto-config-active">
-                                Active: {getConditionDescription()}
+                                {t('autoConfig.active')}: {getConditionDescription()}
                               </span>
                             ) : (
-                              <span className="auto-config-inactive">Manual use only</span>
+                              <span className="auto-config-inactive">{t('tooltips.manualUseOnly')}</span>
                             )}
                           </div>
                         </div>
@@ -308,16 +311,16 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                           className="auto-config-edit-button"
                           onClick={() => setConfigSkillId(skillId)}
                         >
-                          Configure
+                          {t('autoConfig.configure')}
                         </button>
                       </div>
                     );
                   })
                 ) : (
                   <div className="auto-config-empty">
-                    <p>No skills in skill bar.</p>
+                    <p>{t('autoConfig.noSkillsInBar')}</p>
                     <p className="auto-config-hint">
-                      Add skills to your skill bar from the Skills tab to configure auto-use.
+                      {t('autoConfig.addSkillsHint')}
                     </p>
                   </div>
                 )}

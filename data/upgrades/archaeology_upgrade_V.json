@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "archaeology_upgrade_IV"
-  }
+  },
+  "nameKey": "upgrade.archaeology_upgrade_V.name",
+  "descriptionKey": "upgrade.archaeology_upgrade_V.description"
 }

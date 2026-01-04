@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 11,
   "manaCost": 30,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "mana_burned"
-  }
+  },
+  "nameKey": "skill.mana_burn.name",
+  "descriptionKey": "skill.mana_burn.description"
 }
-

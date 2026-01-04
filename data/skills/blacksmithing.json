@@ -118,6 +118,7 @@
         "defense": 15
       }
     }
-  ]
+  ],
+  "nameKey": "skill.blacksmithing.name",
+  "descriptionKey": "skill.blacksmithing.description"
 }
-

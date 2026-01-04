@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "alchemy_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.alchemy_upgrade_II.name",
+  "descriptionKey": "upgrade.alchemy_upgrade_II.description"
 }

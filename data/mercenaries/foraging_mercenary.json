@@ -9,6 +9,7 @@
     "experienceMultiplier": 1.3,
     "speedMultiplier": 0.9,
     "yieldMultiplier": 1.15
-  }
+  },
+  "nameKey": "mercenary.foraging_mercenary.name",
+  "descriptionKey": "mercenary.foraging_mercenary.description"
 }
-

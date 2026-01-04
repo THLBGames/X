@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "defense": 10,
     "speed": 12
-  }
+  },
+  "nameKey": "item.shadow_slippers.name",
+  "descriptionKey": "item.shadow_slippers.description"
 }

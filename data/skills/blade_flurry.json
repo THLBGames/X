@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 13,
-  "prerequisites": ["dual_wield"],
+  "prerequisites": [
+    "dual_wield"
+  ],
   "manaCost": 35,
   "cooldown": 8,
   "target": "all_enemies",
@@ -20,6 +24,7 @@
         "multiplier": 1.8
       }
     }
-  }
+  },
+  "nameKey": "skill.blade_flurry.name",
+  "descriptionKey": "skill.blade_flurry.description"
 }
-

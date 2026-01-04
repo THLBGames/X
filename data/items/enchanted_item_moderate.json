@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 99,
-  "value": 200
+  "value": 200,
+  "nameKey": "item.enchanted_item_moderate.name",
+  "descriptionKey": "item.enchanted_item_moderate.description"
 }
-

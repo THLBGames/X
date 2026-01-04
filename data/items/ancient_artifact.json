@@ -6,6 +6,7 @@
   "rarity": "legendary",
   "stackable": true,
   "maxStack": 999,
-  "value": 2000
+  "value": 2000,
+  "nameKey": "item.ancient_artifact.name",
+  "descriptionKey": "item.ancient_artifact.description"
 }
-

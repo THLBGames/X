@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 15,
   "manaCost": 25,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "stunned"
-  }
+  },
+  "nameKey": "skill.kidney_shot.name",
+  "descriptionKey": "skill.kidney_shot.description"
 }
-

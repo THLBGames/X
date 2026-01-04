@@ -15,12 +15,12 @@
     "magicDefense": 28,
     "speed": 20,
     "criticalChance": 15,
-    "criticalDamage": 2.0
+    "criticalDamage": 2
   },
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 120,
       "max": 180
     },
@@ -37,6 +37,7 @@
   "goldReward": {
     "min": 120,
     "max": 180
-  }
+  },
+  "nameKey": "monster.vampire.name",
+  "descriptionKey": "monster.vampire.description"
 }
-

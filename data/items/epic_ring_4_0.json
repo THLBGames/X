@@ -15,5 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 26
-  }
+  },
+  "nameKey": "item.epic_ring_4_0.name",
+  "descriptionKey": "item.epic_ring_4_0.description"
 }

@@ -12,6 +12,7 @@
     "combatStatBonus": {
       "criticalChance": 1
     }
-  }
+  },
+  "nameKey": "skill.lucky_strike.name",
+  "descriptionKey": "skill.lucky_strike.description"
 }
-

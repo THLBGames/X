@@ -15,6 +15,7 @@
   },
   "requirements": {
     "level": 9
-  }
+  },
+  "nameKey": "item.ogre_club.name",
+  "descriptionKey": "item.ogre_club.description"
 }
-

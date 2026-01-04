@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 180,
       "max": 250
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 180,
     "max": 250
-  }
+  },
+  "nameKey": "monster.giant.name",
+  "descriptionKey": "monster.giant.description"
 }
-

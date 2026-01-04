@@ -8,7 +8,9 @@
   "value": 45,
   "requirements": {
     "level": 1,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "boots",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 4,
     "mana": 10
-  }
+  },
+  "nameKey": "item.mage_slippers.name",
+  "descriptionKey": "item.mage_slippers.description"
 }
-

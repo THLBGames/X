@@ -6,5 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 195
+  "value": 195,
+  "nameKey": "item.earth_core.name",
+  "descriptionKey": "item.earth_core.description"
 }

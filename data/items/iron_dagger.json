@@ -21,5 +21,7 @@
     "attack": 9,
     "speed": 7,
     "criticalChance": 3
-  }
+  },
+  "nameKey": "item.iron_dagger.name",
+  "descriptionKey": "item.iron_dagger.description"
 }

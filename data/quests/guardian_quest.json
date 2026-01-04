@@ -10,6 +10,7 @@
   "rewards": {
     "experience": 1000,
     "gold": 500
-  }
+  },
+  "nameKey": "quest.guardian_quest.name",
+  "descriptionKey": "quest.guardian_quest.description"
 }
-

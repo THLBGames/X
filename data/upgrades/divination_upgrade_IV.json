@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "divination_upgrade_III"
-  }
+  },
+  "nameKey": "upgrade.divination_upgrade_IV.name",
+  "descriptionKey": "upgrade.divination_upgrade_IV.description"
 }

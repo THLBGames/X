@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 250
-  }
+  },
+  "nameKey": "item.magic_fruit.name",
+  "descriptionKey": "item.magic_fruit.description"
 }

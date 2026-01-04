@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { QuestManager } from '../systems/quest/QuestManager';
@@ -6,6 +7,7 @@ import type { Quest, QuestProgress } from '@idle-rpg/shared';
 import './QuestPanel.css';
 
 export default function QuestPanel() {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const setCharacter = useGameState((state) => state.setCharacter);
   const [showCompleted, setShowCompleted] = useState(false);
@@ -55,25 +57,28 @@ export default function QuestPanel() {
   const getQuestRequirementText = (quest: Quest): string => {
     if (quest.type === 'dungeon_completion' && quest.requirements.dungeonId) {
       const dungeon = dataLoader.getDungeon(quest.requirements.dungeonId);
-      return `Complete: ${dungeon?.name || quest.requirements.dungeonId}`;
+      const dungeonName = dungeon ? dataLoader.getTranslatedName(dungeon) : quest.requirements.dungeonId;
+      return `${t('quest.complete')}: ${dungeonName}`;
     } else if (quest.type === 'monster_kills' && quest.requirements.monsterId) {
       const monster = dataLoader.getMonster(quest.requirements.monsterId);
-      return `Kill: ${monster?.name || quest.requirements.monsterId}`;
+      const monsterName = monster ? dataLoader.getTranslatedName(monster) : quest.requirements.monsterId;
+      return `${t('quest.kill')}: ${monsterName}`;
     } else if (quest.type === 'item_collection' && quest.requirements.itemId) {
       const item = dataLoader.getItem(quest.requirements.itemId);
-      return `Collect: ${item?.name || quest.requirements.itemId}`;
+      const itemName = item ? dataLoader.getTranslatedName(item) : quest.requirements.itemId;
+      return `${t('quest.collect')}: ${itemName}`;
     }
-    return 'Unknown requirement';
+    return t('quest.unknownRequirement');
   };
 
   const getQuestTypeLabel = (type: string): string => {
     switch (type) {
       case 'dungeon_completion':
-        return 'Dungeon';
+        return t('quest.dungeon');
       case 'monster_kills':
-        return 'Hunt';
+        return t('quest.hunt');
       case 'item_collection':
-        return 'Gather';
+        return t('quest.gather');
       default:
         return type;
     }
@@ -81,13 +86,13 @@ export default function QuestPanel() {
 
   return (
     <div className="quest-panel">
-      <h2>Quests</h2>
+      <h2>{t('quest.title')}</h2>
 
       {/* Active Quests Section */}
       <div className="quest-section">
-        <h3 className="quest-section-title">Active Quests</h3>
+        <h3 className="quest-section-title">{t('quest.activeQuests')}</h3>
         {activeQuests.length === 0 ? (
-          <div className="no-quests">No active quests</div>
+          <div className="no-quests">{t('quest.noActiveQuests')}</div>
         ) : (
           <div className="quest-list">
             {activeQuests.map(({ quest, progress }) => {
@@ -96,12 +101,12 @@ export default function QuestPanel() {
               return (
                 <div key={quest.id} className="quest-card active">
                   <div className="quest-header">
-                    <div className="quest-name">{quest.name}</div>
+                    <div className="quest-name">{dataLoader.getTranslatedName(quest)}</div>
                     <div className={`quest-type-badge ${quest.type}`}>
                       {getQuestTypeLabel(quest.type)}
                     </div>
                   </div>
-                  <div className="quest-description">{quest.description}</div>
+                  <div className="quest-description">{dataLoader.getTranslatedDescription(quest)}</div>
                   <div className="quest-requirement">
                     {getQuestRequirementText(quest)}
                   </div>
@@ -118,20 +123,24 @@ export default function QuestPanel() {
                   </div>
                   {quest.rewards && (
                     <div className="quest-rewards">
-                      <div className="rewards-label">Rewards:</div>
+                      <div className="rewards-label">{t('quest.rewards')}:</div>
                       <div className="rewards-list">
                         {quest.rewards.experience && (
-                          <span className="reward-item">+{quest.rewards.experience} XP</span>
+                          <span className="reward-item">+{quest.rewards.experience} {t('quest.xp')}</span>
                         )}
                         {quest.rewards.gold && (
-                          <span className="reward-item">+{quest.rewards.gold} Gold</span>
+                          <span className="reward-item">+{quest.rewards.gold} {t('character.gold')}</span>
                         )}
                         {quest.rewards.items &&
-                          quest.rewards.items.map((item, idx) => (
-                            <span key={idx} className="reward-item">
-                              {item.quantity}x {dataLoader.getItem(item.itemId)?.name || item.itemId}
-                            </span>
-                          ))}
+                          quest.rewards.items.map((item, idx) => {
+                            const itemData = dataLoader.getItem(item.itemId);
+                            const itemName = itemData ? dataLoader.getTranslatedName(itemData) : item.itemId;
+                            return (
+                              <span key={idx} className="reward-item">
+                                {item.quantity}x {itemName}
+                              </span>
+                            );
+                          })}
                       </div>
                     </div>
                   )}
@@ -150,7 +159,7 @@ export default function QuestPanel() {
             onClick={() => setShowCompleted(!showCompleted)}
           >
             <span className="toggle-icon">{showCompleted ? '▼' : '▶'}</span>
-            <h3 className="quest-section-title">Completed Quests ({completedQuests.length})</h3>
+            <h3 className="quest-section-title">{t('quest.completedQuests')} ({completedQuests.length})</h3>
           </button>
           {showCompleted && (
             <div className="quest-list">
@@ -158,30 +167,34 @@ export default function QuestPanel() {
                 <div key={quest.id} className="quest-card completed">
                   <div className="quest-header">
                     <div className="quest-name">
-                      <span className="completed-checkmark">✓</span> {quest.name}
+                      <span className="completed-checkmark">✓</span> {dataLoader.getTranslatedName(quest)}
                     </div>
                     <div className={`quest-type-badge ${quest.type} completed`}>
                       {getQuestTypeLabel(quest.type)}
                     </div>
                   </div>
-                  <div className="quest-description">{quest.description}</div>
-                  <div className="quest-completion-status">Completed</div>
+                  <div className="quest-description">{dataLoader.getTranslatedDescription(quest)}</div>
+                  <div className="quest-completion-status">{t('quest.completed')}</div>
                   {quest.rewards && (
                     <div className="quest-rewards">
-                      <div className="rewards-label">Rewards Received:</div>
+                      <div className="rewards-label">{t('quest.rewardsReceived')}:</div>
                       <div className="rewards-list">
                         {quest.rewards.experience && (
-                          <span className="reward-item">+{quest.rewards.experience} XP</span>
+                          <span className="reward-item">+{quest.rewards.experience} {t('quest.xp')}</span>
                         )}
                         {quest.rewards.gold && (
-                          <span className="reward-item">+{quest.rewards.gold} Gold</span>
+                          <span className="reward-item">+{quest.rewards.gold} {t('character.gold')}</span>
                         )}
                         {quest.rewards.items &&
-                          quest.rewards.items.map((item, idx) => (
-                            <span key={idx} className="reward-item">
-                              {item.quantity}x {dataLoader.getItem(item.itemId)?.name || item.itemId}
-                            </span>
-                          ))}
+                          quest.rewards.items.map((item, idx) => {
+                            const itemData = dataLoader.getItem(item.itemId);
+                            const itemName = itemData ? dataLoader.getTranslatedName(itemData) : item.itemId;
+                            return (
+                              <span key={idx} className="reward-item">
+                                {item.quantity}x {itemName}
+                              </span>
+                            );
+                          })}
                       </div>
                     </div>
                   )}

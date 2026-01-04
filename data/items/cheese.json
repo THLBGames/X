@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 40
-  }
+  },
+  "nameKey": "item.cheese.name",
+  "descriptionKey": "item.cheese.description"
 }

@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "woodcutting_upgrade_III"
-  }
+  },
+  "nameKey": "upgrade.woodcutting_upgrade_IV.name",
+  "descriptionKey": "upgrade.woodcutting_upgrade_IV.description"
 }

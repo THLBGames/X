@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "jewelcrafting_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.jewelcrafting_upgrade_III.name",
+  "descriptionKey": "upgrade.jewelcrafting_upgrade_III.description"
 }

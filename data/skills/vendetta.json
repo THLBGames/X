@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 27,
-  "prerequisites": ["marked_for_death"],
+  "prerequisites": [
+    "marked_for_death"
+  ],
   "manaCost": 50,
   "cooldown": 45,
   "target": "enemy",
   "effect": {
     "debuffId": "vendetta"
-  }
+  },
+  "nameKey": "skill.vendetta.name",
+  "descriptionKey": "skill.vendetta.description"
 }
-

@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 4,
   "manaCost": 30,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "stealth"
-  }
+  },
+  "nameKey": "skill.stealth.name",
+  "descriptionKey": "skill.stealth.description"
 }
-

@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 300
+  "value": 300,
+  "nameKey": "item.trapped_monster.name",
+  "descriptionKey": "item.trapped_monster.description"
 }
-

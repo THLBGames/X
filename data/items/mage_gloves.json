@@ -8,7 +8,9 @@
   "value": 32,
   "requirements": {
     "level": 1,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 3,
     "mana": 10
-  }
+  },
+  "nameKey": "item.mage_gloves.name",
+  "descriptionKey": "item.mage_gloves.description"
 }
-

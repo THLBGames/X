@@ -8,7 +8,9 @@
   "value": 1450,
   "requirements": {
     "level": 66,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 38,
     "attack": 12,
     "magicDefense": 15
-  }
+  },
+  "nameKey": "item.mithril_gauntlets.name",
+  "descriptionKey": "item.mithril_gauntlets.description"
 }
-

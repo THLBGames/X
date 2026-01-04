@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 25,
-  "prerequisites": ["second_wind"],
+  "prerequisites": [
+    "second_wind"
+  ],
   "manaCost": 50,
   "cooldown": 60,
   "target": "self",
@@ -17,9 +21,10 @@
       "base": 200,
       "scaling": {
         "stat": "vitality",
-        "multiplier": 3.0
+        "multiplier": 3
       }
     }
-  }
+  },
+  "nameKey": "skill.rally.name",
+  "descriptionKey": "skill.rally.description"
 }
-

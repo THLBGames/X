@@ -11,9 +11,17 @@
       "type": "string",
       "description": "Display name of the class"
     },
+    "nameKey": {
+      "type": "string",
+      "description": "Translation key for name (format: class.{id}.name)"
+    },
     "description": {
       "type": "string",
       "description": "Description of the class"
+    },
+    "descriptionKey": {
+      "type": "string",
+      "description": "Translation key for description (format: class.{id}.description)"
     },
     "baseStats": {
       "type": "object",

@@ -7,6 +7,7 @@
   "unlockLevel": 1,
   "passiveBonus": {
     "special": "potion_mastery"
-  }
+  },
+  "nameKey": "skill.potion_use.name",
+  "descriptionKey": "skill.potion_use.description"
 }
-

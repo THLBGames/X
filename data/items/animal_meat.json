@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 3
+  "value": 3,
+  "nameKey": "item.animal_meat.name",
+  "descriptionKey": "item.animal_meat.description"
 }
-

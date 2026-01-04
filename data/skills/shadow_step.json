@@ -4,9 +4,13 @@
   "description": "Teleport behind your enemy and strike.",
   "type": "active",
   "maxLevel": 3,
-  "prerequisites": ["backstab"],
+  "prerequisites": [
+    "backstab"
+  ],
   "requirements": {
-    "class": ["rogue"],
+    "class": [
+      "rogue"
+    ],
     "level": 12
   },
   "manaCost": 30,
@@ -20,6 +24,7 @@
         "multiplier": 2.8
       }
     }
-  }
+  },
+  "nameKey": "skill.shadow_step.name",
+  "descriptionKey": "skill.shadow_step.description"
 }
-

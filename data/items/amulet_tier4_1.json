@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "magicAttack": 20,
     "mana": 80
-  }
+  },
+  "nameKey": "item.amulet_tier4_1.name",
+  "descriptionKey": "item.amulet_tier4_1.description"
 }

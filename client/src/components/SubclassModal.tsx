@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { SubclassManager } from '../systems/character/SubclassManager';
@@ -12,10 +13,12 @@ interface SubclassModalProps {
 }
 
 export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
+  const { t } = useTranslation(['ui', 'common']);
   const character = useGameState((state) => state.character);
   const setCharacter = useGameState((state) => state.setCharacter);
   const [subclasses, setSubclasses] = useState<CharacterClass[]>([]);
   const [selectedSubclassId, setSelectedSubclassId] = useState<string | null>(null);
+  const dataLoader = getDataLoader();
 
   useEffect(() => {
     if (isOpen && character) {
@@ -29,7 +32,6 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
     return null;
   }
 
-  const dataLoader = getDataLoader();
   const baseClass = dataLoader.getClass(character.classId);
   const currentSubclass = character.subclassId ? dataLoader.getSubclass(character.subclassId) : null;
 
@@ -41,7 +43,7 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
       setCharacter(updatedCharacter);
       onClose();
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Failed to change subclass');
+      alert(error instanceof Error ? error.message : t('subclass.failedToChange'));
     }
   };
 
@@ -53,7 +55,7 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="subclass-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Select Subclass</h2>
+          <h2>{t('buttons.selectSubclass')}</h2>
           <button className="modal-close" onClick={onClose}>
             ×
           </button>
@@ -61,19 +63,19 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
 
         <div className="modal-content">
           <div className="current-class-info">
-            <div className="current-class-label">Base Class:</div>
-            <div className="current-class-name">{baseClass?.name || character.classId}</div>
+            <div className="current-class-label">{t('subclass.baseClass')}:</div>
+            <div className="current-class-name">{baseClass ? dataLoader.getTranslatedName(baseClass) : character.classId}</div>
             {currentSubclass && (
               <>
-                <div className="current-class-label" style={{ marginTop: '8px' }}>Current Subclass:</div>
-                <div className="current-subclass-name">{currentSubclass.name}</div>
+                <div className="current-class-label" style={{ marginTop: '8px' }}>{t('subclass.currentSubclass')}:</div>
+                <div className="current-subclass-name">{dataLoader.getTranslatedName(currentSubclass)}</div>
               </>
             )}
           </div>
 
           <div className="subclass-info">
-            <p>Subclasses unlock at level 50 and require completing a specific quest.</p>
-            <p>You can switch between unlocked subclasses freely.</p>
+            <p>{t('subclass.unlockInfo')}</p>
+            <p>{t('subclass.switchInfo')}</p>
           </div>
 
           <div className="subclass-selection-grid">
@@ -94,38 +96,38 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
                   onClick={() => canSelect && setSelectedSubclassId(isSelected ? null : subclass.id)}
                 >
                   <div className="subclass-header">
-                    <div className="subclass-name">{subclass.name}</div>
-                    {isCurrent && <div className="current-badge">Current</div>}
+                    <div className="subclass-name">{dataLoader.getTranslatedName(subclass)}</div>
+                    {isCurrent && <div className="current-badge">{t('subclass.current')}</div>}
                     {!canSelect && !levelMet && (
-                      <div className="locked-badge">Lv. {unlockLevel}</div>
+                      <div className="locked-badge">{t('character.level')} {unlockLevel}</div>
                     )}
                     {!canSelect && levelMet && !questCompleted && quest && (
-                      <div className="locked-badge">Quest Required</div>
+                      <div className="locked-badge">{t('subclass.questRequired')}</div>
                     )}
                   </div>
-                  <div className="subclass-description">{subclass.description}</div>
+                  <div className="subclass-description">{dataLoader.getTranslatedDescription(subclass)}</div>
                   {quest && (
                     <div className="subclass-quest-info">
-                      <div className="quest-label">Required Quest:</div>
-                      <div className="quest-name">{quest.name}</div>
+                      <div className="quest-label">{t('subclass.requiredQuest')}:</div>
+                      <div className="quest-name">{dataLoader.getTranslatedName(quest)}</div>
                       {questProgress && !questCompleted && (
                         <div className="quest-progress">
-                          Progress: {questProgress.progress} / {questProgress.required}
+                          {t('quest.progress')}: {questProgress.progress} / {questProgress.required}
                         </div>
                       )}
                       {questCompleted && (
-                        <div className="quest-completed">✓ Quest Completed</div>
+                        <div className="quest-completed">✓ {t('quest.questCompleted')}</div>
                       )}
                     </div>
                   )}
                   <div className="subclass-stats">
-                    <div className="stat-label">Stat Growth Focus:</div>
+                    <div className="stat-label">{t('subclass.statGrowthFocus')}:</div>
                     <div className="stat-growth-preview">
                       {Object.entries(subclass.statGrowth)
                         .filter(([_, value]) => value > 2)
                         .map(([stat, value]) => (
                           <span key={stat} className="stat-growth-item">
-                            {stat.charAt(0).toUpperCase() + stat.slice(1)}: +{value.toFixed(1)}
+                            {t(`common.stats.${stat}`, { ns: 'common' })}: +{value.toFixed(1)}
                           </span>
                         ))}
                     </div>
@@ -137,21 +139,21 @@ export default function SubclassModal({ isOpen, onClose }: SubclassModalProps) {
 
           {subclasses.length === 0 && (
             <div className="no-subclasses">
-              No subclasses available for {baseClass?.name || character.classId}
+              {t('subclass.noSubclassesAvailable')} {baseClass ? dataLoader.getTranslatedName(baseClass) : character.classId}
             </div>
           )}
         </div>
 
         <div className="modal-footer">
           <button className="button-cancel" onClick={onClose}>
-            Cancel
+            {t('buttons.cancel')}
           </button>
           <button
             className="button-confirm"
             onClick={handleConfirm}
             disabled={selectedSubclassId === (character.subclassId || null)}
           >
-            {selectedSubclassId === null ? 'Remove Subclass' : 'Change Subclass'}
+            {selectedSubclassId === null ? t('subclass.removeSubclass') : t('buttons.changeSubclass')}
           </button>
         </div>
       </div>

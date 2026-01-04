@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 25,
     "mana": 100
-  }
+  },
+  "nameKey": "item.arcane_orb.name",
+  "descriptionKey": "item.arcane_orb.description"
 }

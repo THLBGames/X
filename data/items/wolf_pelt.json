@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 8
+  "value": 8,
+  "nameKey": "item.wolf_pelt.name",
+  "descriptionKey": "item.wolf_pelt.description"
 }
-

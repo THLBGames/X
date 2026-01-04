@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 80
+  "value": 80,
+  "nameKey": "item.rare_trinket.name",
+  "descriptionKey": "item.rare_trinket.description"
 }
-

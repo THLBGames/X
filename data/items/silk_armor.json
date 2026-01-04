@@ -8,7 +8,10 @@
   "value": 200,
   "requirements": {
     "level": 25,
-    "class": ["mage", "rogue"]
+    "class": [
+      "mage",
+      "rogue"
+    ]
   },
   "equipmentSlot": "chest",
   "statBonuses": {
@@ -18,6 +21,7 @@
   "combatStatBonuses": {
     "magicDefense": 15,
     "mana": 50
-  }
+  },
+  "nameKey": "item.silk_armor.name",
+  "descriptionKey": "item.silk_armor.description"
 }
-

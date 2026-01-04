@@ -15,6 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 2
-  }
+  },
+  "nameKey": "item.copper_ring.name",
+  "descriptionKey": "item.copper_ring.description"
 }
-

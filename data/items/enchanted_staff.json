@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 32,
     "mana": 120
-  }
+  },
+  "nameKey": "item.enchanted_staff.name",
+  "descriptionKey": "item.enchanted_staff.description"
 }

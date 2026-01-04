@@ -1,41 +1,43 @@
 {
-    "id": "underworld_gate",
-    "name": "Underworld Gate",
-    "description": "A gateway to the underworld, guarded by the dead and damned.",
-    "tier": 3,
-    "requiredLevel": 74,
-    "requiredDungeonId": "storm_peak",
-    "monsterPools": [
-      {
-        "monsterId": "lich",
-        "weight": 45,
-        "minLevel": 74,
-        "maxLevel": 79
-      },
-      {
-        "monsterId": "vampire",
-        "weight": 35,
-        "minLevel": 75,
-        "maxLevel": 80
-      },
-      {
-        "monsterId": "balrog",
-        "weight": 20,
-        "minLevel": 76,
-        "maxLevel": 81
-      }
-    ],
-    "bossPool": [
-      {
-        "monsterId": "lich",
-        "weight": 100,
-        "minLevel": 79,
-        "maxLevel": 84
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 2.55,
-      "goldBonus": 2.5,
-      "itemDropRate": 2.35
+  "id": "underworld_gate",
+  "name": "Underworld Gate",
+  "description": "A gateway to the underworld, guarded by the dead and damned.",
+  "tier": 3,
+  "requiredLevel": 74,
+  "requiredDungeonId": "storm_peak",
+  "monsterPools": [
+    {
+      "monsterId": "lich",
+      "weight": 45,
+      "minLevel": 74,
+      "maxLevel": 79
+    },
+    {
+      "monsterId": "vampire",
+      "weight": 35,
+      "minLevel": 75,
+      "maxLevel": 80
+    },
+    {
+      "monsterId": "balrog",
+      "weight": 20,
+      "minLevel": 76,
+      "maxLevel": 81
     }
-  }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "lich",
+      "weight": 100,
+      "minLevel": 79,
+      "maxLevel": 84
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.55,
+    "goldBonus": 2.5,
+    "itemDropRate": 2.35
+  },
+  "nameKey": "dungeon.underworld_gate.name",
+  "descriptionKey": "dungeon.underworld_gate.description"
+}

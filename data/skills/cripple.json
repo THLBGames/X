@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 24,
   "manaCost": 25,
@@ -13,6 +15,7 @@
   "target": "enemy",
   "effect": {
     "debuffId": "crippled"
-  }
+  },
+  "nameKey": "skill.cripple.name",
+  "descriptionKey": "skill.cripple.description"
 }
-

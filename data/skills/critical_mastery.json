@@ -5,12 +5,15 @@
   "type": "passive",
   "maxLevel": 5,
   "unlockLevel": 10,
-  "prerequisites": ["lucky_strike"],
+  "prerequisites": [
+    "lucky_strike"
+  ],
   "passiveBonus": {
     "combatStatBonus": {
       "criticalChance": 2,
       "criticalDamage": 0.2
     }
-  }
+  },
+  "nameKey": "skill.critical_mastery.name",
+  "descriptionKey": "skill.critical_mastery.description"
 }
-

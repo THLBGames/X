@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "tailoring_upgrade_III"
-  }
+  },
+  "nameKey": "upgrade.tailoring_upgrade_IV.name",
+  "descriptionKey": "upgrade.tailoring_upgrade_IV.description"
 }

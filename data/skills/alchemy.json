@@ -122,6 +122,7 @@
         "magicAttack": 25
       }
     }
-  ]
+  ],
+  "nameKey": "skill.alchemy.name",
+  "descriptionKey": "skill.alchemy.description"
 }
-

@@ -5,7 +5,9 @@
   "properties": {
     "id": { "type": "string" },
     "name": { "type": "string" },
+    "nameKey": { "type": "string", "description": "Translation key for name (format: item.{id}.name)" },
     "description": { "type": "string" },
+    "descriptionKey": { "type": "string", "description": "Translation key for description (format: item.{id}.description)" },
     "type": {
       "enum": ["weapon", "armor", "accessory", "consumable", "material", "quest"]
     },

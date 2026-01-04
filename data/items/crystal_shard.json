@@ -6,5 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 15
+  "value": 15,
+  "nameKey": "item.crystal_shard.name",
+  "descriptionKey": "item.crystal_shard.description"
 }

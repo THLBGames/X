@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { AutoConsumableManager } from '../systems/combat/AutoConsumableManager';
@@ -14,6 +15,7 @@ interface ConsumableBarProps {
 }
 
 export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const currentCombatState = useGameState((state) => state.currentCombatState);
@@ -36,7 +38,7 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
 
   return (
     <div className="consumable-bar">
-      <div className="consumable-bar-label">{UI_LABELS.CONSUMABLES}</div>
+      <div className="consumable-bar-label">{UI_LABELS.CONSUMABLES()}</div>
       <div className="consumable-bar-slots">
         {consumableSlots.map((itemId, index) => {
           if (!itemId) {
@@ -67,10 +69,10 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
 
           const getConditionTooltip = (setting: AutoConsumableSetting): string => {
             if (!setting.enabled || setting.condition === AutoCondition.NEVER) {
-              return UI_TOOLTIPS.MANUAL_USE_ONLY;
+              return UI_TOOLTIPS.MANUAL_USE_ONLY();
             }
             if (setting.condition === AutoCondition.ALWAYS) {
-              return UI_TOOLTIPS.AUTO_ALWAYS_AVAILABLE;
+              return UI_TOOLTIPS.AUTO_ALWAYS_AVAILABLE();
             }
             if (setting.threshold !== undefined) {
               switch (setting.condition) {
@@ -83,10 +85,10 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
                 case AutoCondition.PLAYER_MANA_ABOVE:
                   return UI_TOOLTIPS.AUTO_PLAYER_MANA_ABOVE(setting.threshold);
                 default:
-                  return UI_TOOLTIPS.MANUAL_USE_ONLY;
+                  return UI_TOOLTIPS.MANUAL_USE_ONLY();
               }
             }
-            return CONSUMABLE_CONDITION_DESCRIPTIONS[setting.condition] || UI_TOOLTIPS.MANUAL_USE_ONLY;
+            return CONSUMABLE_CONDITION_DESCRIPTIONS[setting.condition] || UI_TOOLTIPS.MANUAL_USE_ONLY();
           };
 
           const getEffectDescription = (): string => {
@@ -94,13 +96,13 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
             if (!effect) return '';
             switch (effect.type as ConsumableEffectType) {
               case ConsumableEffectTypeEnum.HEAL:
-                return `Heals ${effect.amount || 0} HP`;
+                return t('consumables.heals', { amount: effect.amount || 0 });
               case ConsumableEffectTypeEnum.MANA:
-                return `Restores ${effect.amount || 0} MP`;
+                return t('consumables.restores', { amount: effect.amount || 0 });
               case ConsumableEffectTypeEnum.BUFF:
-                return `Applies buff: ${effect.buffId || 'Unknown'}`;
+                return t('consumables.appliesBuff', { buffId: effect.buffId || t('consumables.unknown') });
               case ConsumableEffectTypeEnum.EXPERIENCE:
-                return `Grants ${effect.amount || 0} XP`;
+                return t('consumables.grants', { amount: effect.amount || 0 });
               default:
                 return '';
             }
@@ -109,7 +111,7 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
           return (
             <TooltipWrapper
               key={index}
-              content={`${item.name}\n${item.description}\n${getEffectDescription()}\n\n${getConditionTooltip(autoSetting)}`}
+              content={`${dataLoader.getTranslatedName(item)}\n${dataLoader.getTranslatedDescription(item)}\n${getEffectDescription()}\n\n${getConditionTooltip(autoSetting)}`}
             >
               <div
                 className={`consumable-slot ${!canUse ? 'disabled' : ''} ${!hasItem ? 'no-item' : ''}`}
@@ -123,12 +125,12 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
                     }
                   }}
                   disabled={!canUse}
-                  title={`${item.name} - ${getEffectDescription()}`}
+                  title={`${dataLoader.getTranslatedName(item)} - ${getEffectDescription()}`}
                 >
                   <div className="consumable-icon">
                     {item.consumableEffect?.type === 'heal' ? '❤️' : item.consumableEffect?.type === 'mana' ? '💙' : '⚗️'}
                   </div>
-                  <div className="consumable-name">{item.name}</div>
+                  <div className="consumable-name">{dataLoader.getTranslatedName(item)}</div>
                   {quantity > 0 && (
                     <div className="consumable-quantity">x{quantity}</div>
                   )}
@@ -152,7 +154,7 @@ export default function ConsumableBar({ onConsumableUse }: ConsumableBarProps) {
                     e.stopPropagation();
                     setConfigItemId(itemId);
                   }}
-                  title={UI_TOOLTIPS.CONFIGURE_AUTO_CONSUMABLE}
+                  title={UI_TOOLTIPS.CONFIGURE_AUTO_CONSUMABLE()}
                 >
                   ⚙
                 </button>

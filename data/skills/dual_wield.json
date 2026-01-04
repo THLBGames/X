@@ -5,13 +5,16 @@
   "type": "passive",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"],
+    "class": [
+      "rogue"
+    ],
     "level": 8
   },
   "passiveBonus": {
     "combatStatBonus": {
       "attack": 10
     }
-  }
+  },
+  "nameKey": "skill.dual_wield.name",
+  "descriptionKey": "skill.dual_wield.description"
 }
-

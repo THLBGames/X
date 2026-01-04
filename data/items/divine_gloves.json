@@ -8,7 +8,9 @@
   "value": 6100,
   "requirements": {
     "level": 89,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "magicDefense": 42,
     "magicAttack": 28,
     "mana": 160
-  }
+  },
+  "nameKey": "item.divine_gloves.name",
+  "descriptionKey": "item.divine_gloves.description"
 }
-

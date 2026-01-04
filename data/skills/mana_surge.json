@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 13,
   "manaCost": 0,
@@ -16,9 +18,10 @@
       "base": 100,
       "scaling": {
         "stat": "wisdom",
-        "multiplier": 2.0
+        "multiplier": 2
       }
     }
-  }
+  },
+  "nameKey": "skill.mana_surge.name",
+  "descriptionKey": "skill.mana_surge.description"
 }
-

@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 90
-  }
+  },
+  "nameKey": "item.dragonbone_mace.name",
+  "descriptionKey": "item.dragonbone_mace.description"
 }

@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "manaCost": 20,
   "cooldown": 2,
@@ -15,9 +17,10 @@
       "base": 40,
       "scaling": {
         "stat": "intelligence",
-        "multiplier": 2.0
+        "multiplier": 2
       }
     }
-  }
+  },
+  "nameKey": "skill.fireball.name",
+  "descriptionKey": "skill.fireball.description"
 }
-

@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 10,
     "mana": 25
-  }
+  },
+  "nameKey": "item.arcane_slippers.name",
+  "descriptionKey": "item.arcane_slippers.description"
 }

@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 65
-  }
+  },
+  "nameKey": "item.adamantite_spear.name",
+  "descriptionKey": "item.adamantite_spear.description"
 }

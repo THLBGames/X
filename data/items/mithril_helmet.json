@@ -8,7 +8,9 @@
   "value": 1600,
   "requirements": {
     "level": 68,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "helmet",
   "statBonuses": {
@@ -18,6 +20,7 @@
   "combatStatBonuses": {
     "defense": 45,
     "magicDefense": 20
-  }
+  },
+  "nameKey": "item.mithril_helmet.name",
+  "descriptionKey": "item.mithril_helmet.description"
 }
-

@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 18,
       "max": 28
     },
@@ -37,6 +37,7 @@
   "goldReward": {
     "min": 18,
     "max": 28
-  }
+  },
+  "nameKey": "monster.spider.name",
+  "descriptionKey": "monster.spider.description"
 }
-

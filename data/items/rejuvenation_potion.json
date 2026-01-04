@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 200
-  }
+  },
+  "nameKey": "item.rejuvenation_potion.name",
+  "descriptionKey": "item.rejuvenation_potion.description"
 }

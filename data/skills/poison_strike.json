@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"],
+    "class": [
+      "rogue"
+    ],
     "level": 5
   },
   "manaCost": 18,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "poison"
-  }
+  },
+  "nameKey": "skill.poison_strike.name",
+  "descriptionKey": "skill.poison_strike.description"
 }
-

@@ -6,5 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 20
+  "value": 20,
+  "nameKey": "item.silver_ingot.name",
+  "descriptionKey": "item.silver_ingot.description"
 }

@@ -18,5 +18,7 @@
   },
   "combatStatBonuses": {
     "defense": 80
-  }
+  },
+  "nameKey": "item.dragonbone_shield.name",
+  "descriptionKey": "item.dragonbone_shield.description"
 }

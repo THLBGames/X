@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 10
-  }
+  },
+  "nameKey": "item.bronze_spear.name",
+  "descriptionKey": "item.bronze_spear.description"
 }

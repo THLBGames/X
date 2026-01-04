@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 10
-  }
+  },
+  "nameKey": "item.copper_spear.name",
+  "descriptionKey": "item.copper_spear.description"
 }

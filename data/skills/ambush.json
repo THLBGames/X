@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 6,
-  "prerequisites": ["stealth"],
+  "prerequisites": [
+    "stealth"
+  ],
   "manaCost": 25,
   "cooldown": 0,
   "target": "enemy",
@@ -20,6 +24,7 @@
         "multiplier": 2.5
       }
     }
-  }
+  },
+  "nameKey": "skill.ambush.name",
+  "descriptionKey": "skill.ambush.description"
 }
-

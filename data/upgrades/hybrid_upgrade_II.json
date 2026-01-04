@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "hybrid_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.hybrid_upgrade_II.name",
+  "descriptionKey": "upgrade.hybrid_upgrade_II.description"
 }

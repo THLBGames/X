@@ -6,5 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 190
+  "value": 190,
+  "nameKey": "item.fire_core.name",
+  "descriptionKey": "item.fire_core.description"
 }

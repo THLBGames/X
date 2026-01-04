@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 200
+  "value": 200,
+  "nameKey": "item.precious_metal.name",
+  "descriptionKey": "item.precious_metal.description"
 }
-

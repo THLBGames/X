@@ -8,7 +8,9 @@
   "value": 5800,
   "requirements": {
     "level": 88,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "boots",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 28,
     "speed": 35,
     "criticalChance": 8
-  }
+  },
+  "nameKey": "item.phantom_boots.name",
+  "descriptionKey": "item.phantom_boots.description"
 }
-

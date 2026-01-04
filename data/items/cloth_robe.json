@@ -8,7 +8,9 @@
   "value": 40,
   "requirements": {
     "level": 1,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "chest",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 6,
     "mana": 20
-  }
+  },
+  "nameKey": "item.cloth_robe.name",
+  "descriptionKey": "item.cloth_robe.description"
 }
-

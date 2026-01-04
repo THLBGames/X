@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "speed": 4,
     "criticalChance": 1
-  }
+  },
+  "nameKey": "item.dexterity_ring_t2.name",
+  "descriptionKey": "item.dexterity_ring_t2.description"
 }

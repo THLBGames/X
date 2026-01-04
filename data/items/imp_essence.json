@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 12
+  "value": 12,
+  "nameKey": "item.imp_essence.name",
+  "descriptionKey": "item.imp_essence.description"
 }
-

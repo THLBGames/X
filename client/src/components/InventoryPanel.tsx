@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { CharacterManager } from '../systems/character/CharacterManager';
 import { InventoryManager } from '../systems/inventory';
@@ -15,6 +16,7 @@ import { UI_MESSAGES } from '../constants/ui';
 import './InventoryPanel.css';
 
 export default function InventoryPanel() {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
@@ -223,7 +225,9 @@ export default function InventoryPanel() {
     // For now, just show an alert with item details
     const item = dataLoader.getItem(itemId);
     if (item) {
-      alert(`${item.name}\n\n${item.description}`);
+      const itemName = dataLoader.getTranslatedName(item);
+      const itemDesc = dataLoader.getTranslatedDescription(item);
+      alert(`${itemName}\n\n${itemDesc}`);
     }
   };
 
@@ -250,25 +254,27 @@ export default function InventoryPanel() {
     if (currentConsumableBar.includes(itemId)) {
       // Remove from bar
       updateConsumableBar(currentConsumableBar.filter((id) => id !== itemId));
-      showNotification(UI_MESSAGES.ITEM_REMOVED_FROM_CONSUMABLE_BAR(item.name), 'info', 3000);
+      const itemName = dataLoader.getTranslatedName(item);
+      showNotification(UI_MESSAGES.ITEM_REMOVED_FROM_CONSUMABLE_BAR(itemName), 'info', 3000);
     } else if (currentConsumableBar.length >= MAX_CONSUMABLE_BAR_SLOTS) {
       alert(UI_MESSAGES.CONSUMABLE_BAR_FULL(MAX_CONSUMABLE_BAR_SLOTS));
     } else {
       // Add to bar
       updateConsumableBar([...currentConsumableBar, itemId]);
-      showNotification(UI_MESSAGES.ITEM_ADDED_TO_CONSUMABLE_BAR(item.name), 'success', 3000);
+      const itemName = dataLoader.getTranslatedName(item);
+      showNotification(UI_MESSAGES.ITEM_ADDED_TO_CONSUMABLE_BAR(itemName), 'success', 3000);
     }
   };
 
   return (
     <div className="inventory-panel">
-      <h2>Inventory</h2>
+      <h2>{t('inventory.title')}</h2>
       <div className="inventory-slots">
-        Slots: {inventory.items.length} / {inventory.maxSlots}
+        {t('inventory.slots')}: {inventory.items.length} / {inventory.maxSlots}
       </div>
       <div className="inventory-items">
         {inventory.items.length === 0 ? (
-          <div className="no-items">Inventory is empty</div>
+          <div className="no-items">{t('inventory.empty')}</div>
         ) : (
           inventory.items.map((item, index) => {
             const itemData = dataLoader.getItem(item.itemId);
@@ -303,11 +309,11 @@ export default function InventoryPanel() {
                 <TooltipWrapper
                   content={
                     itemData
-                      ? `${itemData.name}\n${itemData.description || 'No description'}\n${itemData.type ? `Type: ${itemData.type}` : ''}${itemData.rarity ? `\nRarity: ${itemData.rarity}` : ''}`
+                      ? `${dataLoader.getTranslatedName(itemData)}\n${dataLoader.getTranslatedDescription(itemData) || t('inventory.noDescription')}\n${itemData.type ? `${t('common.itemType.type')}: ${t(`common.itemType.${itemData.type}`, { ns: 'common' })}` : ''}${itemData.rarity ? `\n${t('common.rarity.rarity')}: ${t(`common.rarity.${itemData.rarity}`, { ns: 'common' })}` : ''}`
                       : item.itemId
                   }
                 >
-                  <div className="item-name">{itemData?.name || item.itemId}</div>
+                  <div className="item-name">{itemData ? dataLoader.getTranslatedName(itemData) : item.itemId}</div>
                 </TooltipWrapper>
                 <div className="item-quantity">x{item.quantity}</div>
                 {itemData?.rarity && (

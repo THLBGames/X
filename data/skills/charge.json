@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 4,
   "manaCost": 15,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "stunned"
-  }
+  },
+  "nameKey": "skill.charge.name",
+  "descriptionKey": "skill.charge.description"
 }
-

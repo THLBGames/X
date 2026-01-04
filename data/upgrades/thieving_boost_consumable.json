@@ -11,5 +11,7 @@
     "experienceMultiplier": 1.2
   },
   "actionDuration": 50,
-  "requirements": {}
+  "requirements": {},
+  "nameKey": "upgrade.thieving_boost_consumable.name",
+  "descriptionKey": "upgrade.thieving_boost_consumable.description"
 }

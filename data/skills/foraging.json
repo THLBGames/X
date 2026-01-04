@@ -17,7 +17,7 @@
       "resources": [
         {
           "itemId": "berry",
-          "chance": 1.0,
+          "chance": 1,
           "min": 2,
           "max": 4
         },
@@ -32,13 +32,13 @@
       "level": 15,
       "nodeId": "fruit_tree",
       "name": "Fruit Tree",
-      "successRate": 0.90,
+      "successRate": 0.9,
       "experienceGain": 22,
       "timeRequired": 3500,
       "resources": [
         {
           "itemId": "fruit",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 3
         },
@@ -59,7 +59,7 @@
       "resources": [
         {
           "itemId": "mushroom",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -85,7 +85,7 @@
       "resources": [
         {
           "itemId": "exotic_fruit",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -123,6 +123,7 @@
         "goldGeneration": 0.1
       }
     }
-  ]
+  ],
+  "nameKey": "skill.foraging.name",
+  "descriptionKey": "skill.foraging.description"
 }
-

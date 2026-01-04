@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 99,
-  "value": 300
+  "value": 300,
+  "nameKey": "item.mechanical_device.name",
+  "descriptionKey": "item.mechanical_device.description"
 }
-

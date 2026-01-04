@@ -15,5 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 6
-  }
+  },
+  "nameKey": "item.strength_ring_t2.name",
+  "descriptionKey": "item.strength_ring_t2.description"
 }

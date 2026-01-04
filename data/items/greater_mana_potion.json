@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "mana",
     "amount": 350
-  }
+  },
+  "nameKey": "item.greater_mana_potion.name",
+  "descriptionKey": "item.greater_mana_potion.description"
 }

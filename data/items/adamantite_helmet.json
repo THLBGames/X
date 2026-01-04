@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 39
-  }
+  },
+  "nameKey": "item.adamantite_helmet.name",
+  "descriptionKey": "item.adamantite_helmet.description"
 }

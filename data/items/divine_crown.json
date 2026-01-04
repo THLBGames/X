@@ -8,7 +8,9 @@
   "value": 6500,
   "requirements": {
     "level": 92,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "helmet",
   "statBonuses": {
@@ -20,6 +22,7 @@
     "magicDefense": 50,
     "magicAttack": 35,
     "mana": 200
-  }
+  },
+  "nameKey": "item.divine_crown.name",
+  "descriptionKey": "item.divine_crown.description"
 }
-

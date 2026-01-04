@@ -1,6 +1,8 @@
 import { useRef, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { useDamageNumbers } from '../hooks/useDamageNumbers';
+import { getDataLoader } from '../data';
 import { MAX_PLAYER_PARTY_SLOTS } from '@idle-rpg/shared';
 import HealthBar from './HealthBar';
 import DamageNumber from './DamageNumber';
@@ -19,7 +21,9 @@ export default function CombatArena({
   showResult,
   onResultComplete,
 }: CombatArenaProps) {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
+  const dataLoader = getDataLoader();
   const arenaRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<HTMLDivElement>(null);
   const monsterRef = useRef<HTMLDivElement>(null);
@@ -80,7 +84,7 @@ export default function CombatArena({
     playerParty = [
       {
         id: 'player',
-        name: character?.name || 'You',
+        name: character?.name || t('combat.you'),
         isSummoned: false,
         currentHealth: combatState.playerHealth,
         maxHealth: combatState.playerMaxHealth,
@@ -116,7 +120,7 @@ export default function CombatArena({
             return (
               <div key={`empty-slot-${index}`} className="combat-participant empty-slot">
                 <div className="participant-name" style={{ color: '#555', fontStyle: 'italic' }}>
-                  Empty Slot
+                  {t('combat.emptySlot')}
                 </div>
               </div>
             );
@@ -175,7 +179,7 @@ export default function CombatArena({
             return (
               <div key={`empty-monster-slot-${index}`} className="combat-participant empty-slot">
                 <div className="participant-name" style={{ color: '#555', fontStyle: 'italic' }}>
-                  Empty Slot
+                  {t('combat.emptySlot')}
                 </div>
               </div>
             );
@@ -199,7 +203,7 @@ export default function CombatArena({
                 </div>
                 <div className="participant-info">
                   <div className="participant-name">
-                    {monsterState.monster.name}
+                    {dataLoader.getTranslatedName(monsterState.monster)}
                     {monsterState.monster.isBoss && ' [BOSS]'}
                   </div>
                   <div className="participant-level">Lv. {monsterState.monster.level}</div>

@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 125
-  }
+  },
+  "nameKey": "item.fish_stew.name",
+  "descriptionKey": "item.fish_stew.description"
 }

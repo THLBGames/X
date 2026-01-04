@@ -21,5 +21,7 @@
     "attack": 28,
     "speed": 20,
     "criticalChance": 8
-  }
+  },
+  "nameKey": "item.mithril_bow.name",
+  "descriptionKey": "item.mithril_bow.description"
 }

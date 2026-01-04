@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 24,
   "manaCost": 40,
@@ -13,6 +15,7 @@
   "target": "enemy",
   "effect": {
     "special": "spell_steal"
-  }
+  },
+  "nameKey": "skill.spell_steal.name",
+  "descriptionKey": "skill.spell_steal.description"
 }
-

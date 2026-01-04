@@ -6,13 +6,16 @@
   "maxLevel": 5,
   "unlockLevel": 2,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "manaCost": 10,
   "cooldown": 5,
   "target": "self",
   "effect": {
     "buffId": "blocking"
-  }
+  },
+  "nameKey": "skill.block.name",
+  "descriptionKey": "skill.block.description"
 }
-

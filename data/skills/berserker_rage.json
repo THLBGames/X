@@ -4,9 +4,13 @@
   "description": "Enter a rage that increases your attack damage.",
   "type": "active",
   "maxLevel": 3,
-  "prerequisites": ["power_strike"],
+  "prerequisites": [
+    "power_strike"
+  ],
   "requirements": {
-    "class": ["warrior"],
+    "class": [
+      "warrior"
+    ],
     "level": 15
   },
   "manaCost": 40,
@@ -14,6 +18,7 @@
   "target": "self",
   "effect": {
     "buffId": "berserker_rage"
-  }
+  },
+  "nameKey": "skill.berserker_rage.name",
+  "descriptionKey": "skill.berserker_rage.description"
 }
-

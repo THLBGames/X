@@ -11,6 +11,7 @@
     "type": "buff",
     "buffId": "strength_boost",
     "duration": 300
-  }
+  },
+  "nameKey": "item.strength_potion.name",
+  "descriptionKey": "item.strength_potion.description"
 }
-

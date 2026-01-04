@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 12,
       "max": 20
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 12,
     "max": 20
-  }
+  },
+  "nameKey": "monster.zombie.name",
+  "descriptionKey": "monster.zombie.description"
 }
-

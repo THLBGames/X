@@ -13,9 +13,10 @@
       "base": 20,
       "scaling": {
         "stat": "strength",
-        "multiplier": 1.0
+        "multiplier": 1
       }
     }
-  }
+  },
+  "nameKey": "skill.basic_attack.name",
+  "descriptionKey": "skill.basic_attack.description"
 }
-

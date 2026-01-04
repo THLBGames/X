@@ -16,5 +16,7 @@
   },
   "combatStatBonuses": {
     "defense": 2
-  }
+  },
+  "nameKey": "item.vitality_amulet_t1.name",
+  "descriptionKey": "item.vitality_amulet_t1.description"
 }

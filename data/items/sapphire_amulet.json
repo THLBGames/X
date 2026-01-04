@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "amulet",
     "amount": "intelligence"
-  }
+  },
+  "nameKey": "item.sapphire_amulet.name",
+  "descriptionKey": "item.sapphire_amulet.description"
 }

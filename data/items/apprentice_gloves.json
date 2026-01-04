@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 4,
     "mana": 15
-  }
+  },
+  "nameKey": "item.apprentice_gloves.name",
+  "descriptionKey": "item.apprentice_gloves.description"
 }

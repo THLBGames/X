@@ -5,11 +5,14 @@
   "type": "passive",
   "maxLevel": 3,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 18,
   "passiveBonus": {
     "special": "victory_rush"
-  }
+  },
+  "nameKey": "skill.victory_rush.name",
+  "descriptionKey": "skill.victory_rush.description"
 }
-

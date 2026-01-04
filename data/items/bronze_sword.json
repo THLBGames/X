@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 10
-  }
+  },
+  "nameKey": "item.bronze_sword.name",
+  "descriptionKey": "item.bronze_sword.description"
 }

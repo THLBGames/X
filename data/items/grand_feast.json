@@ -10,6 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 500
-  }
+  },
+  "nameKey": "item.grand_feast.name",
+  "descriptionKey": "item.grand_feast.description"
 }
-

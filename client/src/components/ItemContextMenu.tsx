@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Item, Inventory, ConsumableEffectType } from '@idle-rpg/shared';
 import { VALID_COMBAT_CONSUMABLE_EFFECTS, ItemType } from '@idle-rpg/shared';
 import { ShopManager } from '../systems/shop';
+import { getDataLoader } from '../data';
 import { useGameState } from '../systems';
 import './ItemContextMenu.css';
 
@@ -44,6 +46,8 @@ export default function ItemContextMenu({
   onViewDetails,
   onEquipToConsumableBar,
 }: ItemContextMenuProps) {
+  const { t } = useTranslation('ui');
+  const dataLoader = getDataLoader();
   const menuRef = useRef<HTMLDivElement>(null);
   const settings = useGameState((state) => state.settings);
 
@@ -227,7 +231,7 @@ export default function ItemContextMenu({
         e.stopPropagation();
       }}
     >
-      <div className="context-menu-item-name">{item.name}</div>
+      <div className="context-menu-item-name">{dataLoader.getTranslatedName(item)}</div>
       <div className="context-menu-divider" />
       {actions.map((action, index) => (
         <button

@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 11,
   "manaCost": 30,
@@ -19,6 +21,7 @@
         "multiplier": 1.5
       }
     }
-  }
+  },
+  "nameKey": "skill.fan_of_knives.name",
+  "descriptionKey": "skill.fan_of_knives.description"
 }
-

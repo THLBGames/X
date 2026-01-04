@@ -6,5 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 8
+  "value": 8,
+  "nameKey": "item.iron_ingot.name",
+  "descriptionKey": "item.iron_ingot.description"
 }

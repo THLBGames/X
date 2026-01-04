@@ -16,5 +16,7 @@
   },
   "combatStatBonuses": {
     "defense": 13
-  }
+  },
+  "nameKey": "item.epic_amulet_4_4.name",
+  "descriptionKey": "item.epic_amulet_4_4.description"
 }

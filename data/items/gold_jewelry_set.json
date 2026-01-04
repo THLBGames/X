@@ -19,6 +19,7 @@
     "magicAttack": 25,
     "magicDefense": 15,
     "mana": 100
-  }
+  },
+  "nameKey": "item.gold_jewelry_set.name",
+  "descriptionKey": "item.gold_jewelry_set.description"
 }
-

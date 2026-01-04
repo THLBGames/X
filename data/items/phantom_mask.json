@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "defense": 30,
     "speed": 20
-  }
+  },
+  "nameKey": "item.phantom_mask.name",
+  "descriptionKey": "item.phantom_mask.description"
 }

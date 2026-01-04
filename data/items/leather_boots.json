@@ -8,7 +8,9 @@
   "value": 38,
   "requirements": {
     "level": 1,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "boots",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "defense": 4,
     "speed": 5
-  }
+  },
+  "nameKey": "item.leather_boots.name",
+  "descriptionKey": "item.leather_boots.description"
 }
-

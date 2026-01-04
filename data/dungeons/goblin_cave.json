@@ -1,26 +1,28 @@
 {
-    "id": "goblin_cave",
-    "name": "Goblin Cave",
-    "description": "A dark cave infested with goblins and their shaman leaders.",
-    "tier": 1,
-    "requiredLevel": 2,
-    "requiredDungeonId": "forest_clearing",
-    "monsterPools": [
-      {
-        "monsterId": "goblin",
-        "weight": 70,
-        "minLevel": 2,
-        "maxLevel": 4
-      },
-      {
-        "monsterId": "goblin_shaman",
-        "weight": 30,
-        "minLevel": 2,
-        "maxLevel": 5
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 1.1,
-      "goldBonus": 1.05
+  "id": "goblin_cave",
+  "name": "Goblin Cave",
+  "description": "A dark cave infested with goblins and their shaman leaders.",
+  "tier": 1,
+  "requiredLevel": 2,
+  "requiredDungeonId": "forest_clearing",
+  "monsterPools": [
+    {
+      "monsterId": "goblin",
+      "weight": 70,
+      "minLevel": 2,
+      "maxLevel": 4
+    },
+    {
+      "monsterId": "goblin_shaman",
+      "weight": 30,
+      "minLevel": 2,
+      "maxLevel": 5
     }
-  }
+  ],
+  "rewards": {
+    "experienceBonus": 1.1,
+    "goldBonus": 1.05
+  },
+  "nameKey": "dungeon.goblin_cave.name",
+  "descriptionKey": "dungeon.goblin_cave.description"
+}

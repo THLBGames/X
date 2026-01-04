@@ -1,41 +1,43 @@
 {
-    "id": "undead_citadel",
-    "name": "Undead Citadel",
-    "description": "A massive fortress controlled by legions of the undead.",
-    "tier": 3,
-    "requiredLevel": 55,
-    "requiredDungeonId": "dragon_roost",
-    "monsterPools": [
-      {
-        "monsterId": "lich",
-        "weight": 45,
-        "minLevel": 55,
-        "maxLevel": 60
-      },
-      {
-        "monsterId": "vampire",
-        "weight": 35,
-        "minLevel": 56,
-        "maxLevel": 61
-      },
-      {
-        "monsterId": "zombie",
-        "weight": 20,
-        "minLevel": 57,
-        "maxLevel": 62
-      }
-    ],
-    "bossPool": [
-      {
-        "monsterId": "lich",
-        "weight": 100,
-        "minLevel": 60,
-        "maxLevel": 65
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 2.2,
-      "goldBonus": 2.15,
-      "itemDropRate": 2.0
+  "id": "undead_citadel",
+  "name": "Undead Citadel",
+  "description": "A massive fortress controlled by legions of the undead.",
+  "tier": 3,
+  "requiredLevel": 55,
+  "requiredDungeonId": "dragon_roost",
+  "monsterPools": [
+    {
+      "monsterId": "lich",
+      "weight": 45,
+      "minLevel": 55,
+      "maxLevel": 60
+    },
+    {
+      "monsterId": "vampire",
+      "weight": 35,
+      "minLevel": 56,
+      "maxLevel": 61
+    },
+    {
+      "monsterId": "zombie",
+      "weight": 20,
+      "minLevel": 57,
+      "maxLevel": 62
     }
-  }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "lich",
+      "weight": 100,
+      "minLevel": 60,
+      "maxLevel": 65
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 2.2,
+    "goldBonus": 2.15,
+    "itemDropRate": 2
+  },
+  "nameKey": "dungeon.undead_citadel.name",
+  "descriptionKey": "dungeon.undead_citadel.description"
+}

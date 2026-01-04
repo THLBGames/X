@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"],
+    "class": [
+      "mage"
+    ],
     "level": 5
   },
   "manaCost": 18,
@@ -20,6 +22,7 @@
       }
     },
     "debuffId": "slow"
-  }
+  },
+  "nameKey": "skill.frost_bolt.name",
+  "descriptionKey": "skill.frost_bolt.description"
 }
-

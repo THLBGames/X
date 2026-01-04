@@ -101,6 +101,7 @@
         "magicDefense": 35
       }
     }
-  ]
+  ],
+  "nameKey": "skill.runecrafting.name",
+  "descriptionKey": "skill.runecrafting.description"
 }
-

@@ -21,5 +21,7 @@
     "attack": 15,
     "speed": 12,
     "criticalChance": 5
-  }
+  },
+  "nameKey": "item.steel_dagger.name",
+  "descriptionKey": "item.steel_dagger.description"
 }

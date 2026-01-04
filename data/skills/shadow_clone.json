@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 26,
-  "prerequisites": ["shadow_step"],
+  "prerequisites": [
+    "shadow_step"
+  ],
   "manaCost": 55,
   "cooldown": 40,
   "target": "self",
   "effect": {
     "buffId": "shadow_clone"
-  }
+  },
+  "nameKey": "skill.shadow_clone.name",
+  "descriptionKey": "skill.shadow_clone.description"
 }
-

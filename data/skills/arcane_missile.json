@@ -4,9 +4,13 @@
   "description": "Launch multiple arcane missiles at your target.",
   "type": "active",
   "maxLevel": 5,
-  "prerequisites": ["lightning_bolt"],
+  "prerequisites": [
+    "lightning_bolt"
+  ],
   "requirements": {
-    "class": ["mage"],
+    "class": [
+      "mage"
+    ],
     "level": 15
   },
   "manaCost": 35,
@@ -20,6 +24,7 @@
         "multiplier": 1.5
       }
     }
-  }
+  },
+  "nameKey": "skill.arcane_missile.name",
+  "descriptionKey": "skill.arcane_missile.description"
 }
-

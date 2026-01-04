@@ -21,5 +21,7 @@
     "attack": 60,
     "speed": 50,
     "criticalChance": 20
-  }
+  },
+  "nameKey": "item.dragonbone_dagger.name",
+  "descriptionKey": "item.dragonbone_dagger.description"
 }

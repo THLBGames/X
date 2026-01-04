@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 5
+  "value": 5,
+  "nameKey": "item.maple_sap.name",
+  "descriptionKey": "item.maple_sap.description"
 }
-

@@ -8,7 +8,9 @@
   "value": 150,
   "requirements": {
     "level": 17,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "legs",
   "statBonuses": {
@@ -17,6 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 11
-  }
+  },
+  "nameKey": "item.iron_leggings.name",
+  "descriptionKey": "item.iron_leggings.description"
 }
-

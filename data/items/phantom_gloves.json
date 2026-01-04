@@ -8,7 +8,9 @@
   "value": 5850,
   "requirements": {
     "level": 86,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 22,
     "speed": 28,
     "criticalChance": 7
-  }
+  },
+  "nameKey": "item.phantom_gloves.name",
+  "descriptionKey": "item.phantom_gloves.description"
 }
-

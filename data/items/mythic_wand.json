@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 80,
     "mana": 300
-  }
+  },
+  "nameKey": "item.mythic_wand.name",
+  "descriptionKey": "item.mythic_wand.description"
 }

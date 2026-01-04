@@ -853,10 +853,20 @@ export const useGameState = create<GameState>((set, get) => ({
     }),
 
   // Settings actions
-  updateSettings: (updates) =>
-    set((state) => ({
-      settings: { ...state.settings, ...updates },
-    })),
+  updateSettings: (updates) => {
+    set((state) => {
+      const newSettings = { ...state.settings, ...updates };
+      
+      // Update i18n language if language setting changed
+      if (updates.language && updates.language !== state.settings.language) {
+        import('../i18n/config').then(({ default: i18n }) => {
+          i18n.changeLanguage(updates.language);
+        });
+      }
+      
+      return { settings: newSettings };
+    });
+  },
 
   // Game state actions
   initialize: (saveData) => {
@@ -868,6 +878,13 @@ export const useGameState = create<GameState>((set, get) => ({
       const dungeonId =
         saveData.currentDungeonId ||
         (saveData.activeAction?.type === 'combat' ? saveData.activeAction.dungeonId : null);
+
+      // Set language from save data if available
+      if (saveData.settings?.language) {
+        import('../i18n/config').then(({ default: i18n }) => {
+          i18n.changeLanguage(saveData.settings.language);
+        });
+      }
 
       set({
         character: {

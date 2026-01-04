@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 71
-  }
+  },
+  "nameKey": "item.adamantite_axe.name",
+  "descriptionKey": "item.adamantite_axe.description"
 }

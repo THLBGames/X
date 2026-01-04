@@ -1,41 +1,43 @@
 {
-    "id": "vampire_coven",
-    "name": "Vampire Coven",
-    "description": "A hidden lair where vampires gather to plot in darkness.",
-    "tier": 3,
-    "requiredLevel": 25,
-    "requiredDungeonId": "minotaur_labyrinth",
-    "monsterPools": [
-      {
-        "monsterId": "vampire",
-        "weight": 60,
-        "minLevel": 25,
-        "maxLevel": 29
-      },
-      {
-        "monsterId": "shadow_stalker",
-        "weight": 30,
-        "minLevel": 26,
-        "maxLevel": 30
-      },
-      {
-        "monsterId": "wraith",
-        "weight": 10,
-        "minLevel": 25,
-        "maxLevel": 29
-      }
-    ],
-    "bossPool": [
-      {
-        "monsterId": "vampire",
-        "weight": 100,
-        "minLevel": 30,
-        "maxLevel": 34
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 1.65,
-      "goldBonus": 1.6,
-      "itemDropRate": 1.45
+  "id": "vampire_coven",
+  "name": "Vampire Coven",
+  "description": "A hidden lair where vampires gather to plot in darkness.",
+  "tier": 3,
+  "requiredLevel": 25,
+  "requiredDungeonId": "minotaur_labyrinth",
+  "monsterPools": [
+    {
+      "monsterId": "vampire",
+      "weight": 60,
+      "minLevel": 25,
+      "maxLevel": 29
+    },
+    {
+      "monsterId": "shadow_stalker",
+      "weight": 30,
+      "minLevel": 26,
+      "maxLevel": 30
+    },
+    {
+      "monsterId": "wraith",
+      "weight": 10,
+      "minLevel": 25,
+      "maxLevel": 29
     }
-  }
+  ],
+  "bossPool": [
+    {
+      "monsterId": "vampire",
+      "weight": 100,
+      "minLevel": 30,
+      "maxLevel": 34
+    }
+  ],
+  "rewards": {
+    "experienceBonus": 1.65,
+    "goldBonus": 1.6,
+    "itemDropRate": 1.45
+  },
+  "nameKey": "dungeon.vampire_coven.name",
+  "descriptionKey": "dungeon.vampire_coven.description"
+}

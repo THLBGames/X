@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "thieving_upgrade_IV"
-  }
+  },
+  "nameKey": "upgrade.thieving_upgrade_V.name",
+  "descriptionKey": "upgrade.thieving_upgrade_V.description"
 }

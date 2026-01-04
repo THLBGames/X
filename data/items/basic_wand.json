@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 8,
     "mana": 30
-  }
+  },
+  "nameKey": "item.basic_wand.name",
+  "descriptionKey": "item.basic_wand.description"
 }

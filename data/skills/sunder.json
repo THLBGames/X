@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 8,
   "manaCost": 15,
@@ -16,10 +18,11 @@
       "base": 25,
       "scaling": {
         "stat": "strength",
-        "multiplier": 1.0
+        "multiplier": 1
       }
     },
     "debuffId": "sundered"
-  }
+  },
+  "nameKey": "skill.sunder.name",
+  "descriptionKey": "skill.sunder.description"
 }
-

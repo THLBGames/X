@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { CharacterManager } from '../systems/character/CharacterManager';
 import { InventoryManager } from '../systems/inventory';
@@ -16,6 +17,7 @@ interface EquipmentPanelProps {
 }
 
 export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentPanelProps) {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
@@ -41,16 +43,16 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
     label: string;
     icon?: string;
   }> = [
-    { slot: EquipmentSlot.HELMET, label: 'Head', icon: '⛑️' },
-    { slot: EquipmentSlot.WEAPON, label: 'Weapon', icon: '⚔️' },
-    { slot: EquipmentSlot.OFFHAND, label: 'Offhand', icon: '🛡️' },
-    { slot: EquipmentSlot.CHEST, label: 'Chest', icon: '🦺' },
-    { slot: EquipmentSlot.GLOVES, label: 'Gloves', icon: '🧤' },
-    { slot: EquipmentSlot.LEGS, label: 'Pants', icon: '👖' },
-    { slot: EquipmentSlot.BOOTS, label: 'Boots', icon: '👢' },
-    { slot: EquipmentSlot.RING1, label: 'Ring 1', icon: '💍' },
-    { slot: EquipmentSlot.RING2, label: 'Ring 2', icon: '💍' },
-    { slot: EquipmentSlot.AMULET, label: 'Amulet', icon: '📿' },
+    { slot: EquipmentSlot.HELMET, label: t('equipment.head'), icon: '⛑️' },
+    { slot: EquipmentSlot.WEAPON, label: t('equipment.weapon'), icon: '⚔️' },
+    { slot: EquipmentSlot.OFFHAND, label: t('equipment.offhand'), icon: '🛡️' },
+    { slot: EquipmentSlot.CHEST, label: t('equipment.chest'), icon: '🦺' },
+    { slot: EquipmentSlot.GLOVES, label: t('equipment.gloves'), icon: '🧤' },
+    { slot: EquipmentSlot.LEGS, label: t('equipment.pants'), icon: '👖' },
+    { slot: EquipmentSlot.BOOTS, label: t('equipment.boots'), icon: '👢' },
+    { slot: EquipmentSlot.RING1, label: t('equipment.ring1'), icon: '💍' },
+    { slot: EquipmentSlot.RING2, label: t('equipment.ring2'), icon: '💍' },
+    { slot: EquipmentSlot.AMULET, label: t('equipment.amulet'), icon: '📿' },
   ];
 
   const handleSlotClick = (slot: EquipmentSlot) => {
@@ -83,7 +85,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
       setSelectedSlot(null);
     } catch (error) {
       console.error('Failed to unequip item:', error);
-      alert(error instanceof Error ? error.message : 'Failed to unequip item');
+      alert(error instanceof Error ? error.message : t('equipment.failedToUnequip'));
     }
   };
 
@@ -121,7 +123,9 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
   const handleViewDetails = (itemId: string) => {
     const item = dataLoader.getItem(itemId);
     if (item) {
-      alert(`${item.name}\n\n${item.description}`);
+      const itemName = dataLoader.getTranslatedName(item);
+      const itemDesc = dataLoader.getTranslatedDescription(item);
+      alert(`${itemName}\n\n${itemDesc}`);
     }
   };
 
@@ -129,7 +133,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
     try {
       const item = dataLoader.getItem(itemId);
       if (!item || item.equipmentSlot !== slot) {
-        alert('Item cannot be equipped to this slot');
+        alert(t('equipment.cannotEquipToSlot'));
         return;
       }
 
@@ -158,7 +162,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
       setSelectedSlot(null);
     } catch (error) {
       console.error('Failed to equip item:', error);
-      alert(error instanceof Error ? error.message : 'Failed to equip item');
+      alert(error instanceof Error ? error.message : t('inventory.failedToEquip'));
     }
   };
 
@@ -180,7 +184,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
 
   return (
     <div className="equipment-panel">
-      <h3>Equipment</h3>
+      <h3>{t('equipment.title')}</h3>
       <div className="equipment-slots">
         {slotConfig.map(({ slot, label, icon }) => {
           const equippedItem = getEquippedItem(slot);
@@ -207,23 +211,23 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
                 <div className="slot-label">{label}</div>
                 {equippedItem ? (
                   <TooltipWrapper
-                    content={`${equippedItem.name}\n${equippedItem.description || 'No description'}\n${equippedItem.type ? `Type: ${equippedItem.type}` : ''}${equippedItem.rarity ? `\nRarity: ${equippedItem.rarity}` : ''}`}
+                    content={`${dataLoader.getTranslatedName(equippedItem)}\n${dataLoader.getTranslatedDescription(equippedItem) || t('inventory.noDescription')}\n${equippedItem.type ? `${t('common.itemType.type', { ns: 'common' })}: ${t(`common.itemType.${equippedItem.type}`, { ns: 'common' })}` : ''}${equippedItem.rarity ? `\n${t('common.rarity.rarity', { ns: 'common' })}: ${t(`common.rarity.${equippedItem.rarity}`, { ns: 'common' })}` : ''}`}
                   >
                     <div
                       className="equipped-item"
                       onContextMenu={(e) => handleContextMenu(e, equippedItem, slot)}
                     >
-                      <div className="item-name">{equippedItem.name}</div>
+                      <div className="item-name">{dataLoader.getTranslatedName(equippedItem)}</div>
                       {equippedItem.rarity && (
                         <div className={`item-rarity ${equippedItem.rarity}`}>
-                          {equippedItem.rarity}
+                          {t(`common.rarity.${equippedItem.rarity}`, { ns: 'common' })}
                         </div>
                       )}
                     </div>
                   </TooltipWrapper>
                 ) : (
-                  <TooltipWrapper content={`${label} slot - Drag an item here to equip`}>
-                    <div className="empty-slot">Empty</div>
+                  <TooltipWrapper content={`${label} ${t('equipment.slot')} - ${t('equipment.dragToEquip')}`}>
+                    <div className="empty-slot">{t('equipment.empty')}</div>
                   </TooltipWrapper>
                 )}
               </div>
@@ -231,11 +235,11 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
                 <div className="slot-actions">
                   {equippedItem ? (
                     <button className="unequip-button" onClick={() => handleUnequip(slot)}>
-                      Unequip
+                      {t('equipment.unequip')}
                     </button>
                   ) : (
                     <div className="available-items">
-                      <div className="available-items-header">Available Items:</div>
+                      <div className="available-items-header">{t('equipment.availableItems')}:</div>
                       {getAvailableItemsForSlot(slot).length > 0 ? (
                         getAvailableItemsForSlot(slot).map((item) => {
                           const inventoryItem = inventory.items.find(
@@ -247,7 +251,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
                               className="available-item"
                               onClick={() => handleEquipItem(item.id, slot)}
                             >
-                              <div className="item-name">{item.name}</div>
+                              <div className="item-name">{dataLoader.getTranslatedName(item)}</div>
                               {inventoryItem && inventoryItem.quantity > 1 && (
                                 <div className="item-quantity">x{inventoryItem.quantity}</div>
                               )}
@@ -255,7 +259,7 @@ export default function EquipmentPanel({ onItemClick: _onItemClick }: EquipmentP
                           );
                         })
                       ) : (
-                        <div className="no-items-message">No items available</div>
+                        <div className="no-items-message">{t('equipment.noItemsAvailable')}</div>
                       )}
                     </div>
                   )}

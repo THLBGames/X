@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 1
+  "value": 1,
+  "nameKey": "item.tree_bark.name",
+  "descriptionKey": "item.tree_bark.description"
 }
-

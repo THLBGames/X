@@ -10,6 +10,7 @@ import type {
   SkillUpgrade,
   Achievement,
 } from '@idle-rpg/shared';
+import i18n from '../i18n/config';
 
 type DataCache<T> = Map<string, T>;
 
@@ -555,6 +556,38 @@ export class DataLoader {
       return this.getDefaultConfig();
     }
     return this.configCache;
+  }
+
+  /**
+   * Get translated name for an entity
+   * Falls back to the original name if translation is not available
+   */
+  getTranslatedName(entity: { name: string; nameKey?: string }): string {
+    if (entity.nameKey) {
+      const translated = i18n.t(entity.nameKey, { ns: 'gameData' });
+      // If translation returns the key itself, fall back to name
+      if (translated === entity.nameKey) {
+        return entity.name;
+      }
+      return translated;
+    }
+    return entity.name;
+  }
+
+  /**
+   * Get translated description for an entity
+   * Falls back to the original description if translation is not available
+   */
+  getTranslatedDescription(entity: { description: string; descriptionKey?: string }): string {
+    if (entity.descriptionKey) {
+      const translated = i18n.t(entity.descriptionKey, { ns: 'gameData' });
+      // If translation returns the key itself, fall back to description
+      if (translated === entity.descriptionKey) {
+        return entity.description;
+      }
+      return translated;
+    }
+    return entity.description;
   }
 
   // Validation methods (basic validation)

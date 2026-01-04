@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 20
+  "value": 20,
+  "nameKey": "item.yew_berry.name",
+  "descriptionKey": "item.yew_berry.description"
 }
-

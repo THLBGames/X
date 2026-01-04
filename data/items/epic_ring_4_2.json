@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "speed": 19,
     "criticalChance": 6
-  }
+  },
+  "nameKey": "item.epic_ring_4_2.name",
+  "descriptionKey": "item.epic_ring_4_2.description"
 }

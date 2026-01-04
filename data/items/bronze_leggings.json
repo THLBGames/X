@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 5
-  }
+  },
+  "nameKey": "item.bronze_leggings.name",
+  "descriptionKey": "item.bronze_leggings.description"
 }

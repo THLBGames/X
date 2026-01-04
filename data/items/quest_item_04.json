@@ -5,5 +5,7 @@
   "type": "quest",
   "rarity": "common",
   "stackable": false,
-  "value": 40
+  "value": 40,
+  "nameKey": "item.quest_item_04.name",
+  "descriptionKey": "item.quest_item_04.description"
 }

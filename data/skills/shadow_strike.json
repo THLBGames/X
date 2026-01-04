@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 9,
-  "prerequisites": ["backstab"],
+  "prerequisites": [
+    "backstab"
+  ],
   "manaCost": 30,
   "cooldown": 6,
   "target": "enemy",
@@ -20,6 +24,7 @@
         "multiplier": 2.2
       }
     }
-  }
+  },
+  "nameKey": "skill.shadow_strike.name",
+  "descriptionKey": "skill.shadow_strike.description"
 }
-

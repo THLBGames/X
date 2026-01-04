@@ -11,5 +11,7 @@
     "experienceMultiplier": 1.2
   },
   "actionDuration": 50,
-  "requirements": {}
+  "requirements": {},
+  "nameKey": "upgrade.hunting_boost_consumable.name",
+  "descriptionKey": "upgrade.hunting_boost_consumable.description"
 }

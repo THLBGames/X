@@ -126,6 +126,7 @@
         "magicDefense": 25
       }
     }
-  ]
+  ],
+  "nameKey": "skill.enchanting.name",
+  "descriptionKey": "skill.enchanting.description"
 }
-

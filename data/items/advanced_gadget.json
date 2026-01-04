@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 99,
-  "value": 1000
+  "value": 1000,
+  "nameKey": "item.advanced_gadget.name",
+  "descriptionKey": "item.advanced_gadget.description"
 }
-

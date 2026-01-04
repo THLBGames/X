@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "defense": 4,
     "attack": 2
-  }
+  },
+  "nameKey": "item.bronze_gauntlets.name",
+  "descriptionKey": "item.bronze_gauntlets.description"
 }

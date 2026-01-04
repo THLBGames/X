@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 19,
-  "prerequisites": ["bloodlust"],
+  "prerequisites": [
+    "bloodlust"
+  ],
   "manaCost": 45,
   "cooldown": 40,
   "target": "self",
   "effect": {
     "buffId": "fury"
-  }
+  },
+  "nameKey": "skill.fury.name",
+  "descriptionKey": "skill.fury.description"
 }
-

@@ -21,5 +21,7 @@
     "attack": 32,
     "speed": 20,
     "criticalChance": 8
-  }
+  },
+  "nameKey": "item.mithril_short_sword.name",
+  "descriptionKey": "item.mithril_short_sword.description"
 }

@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 12,
-  "prerequisites": ["stealth"],
+  "prerequisites": [
+    "stealth"
+  ],
   "manaCost": 40,
   "cooldown": 60,
   "target": "self",
   "effect": {
     "buffId": "vanish"
-  }
+  },
+  "nameKey": "skill.vanish.name",
+  "descriptionKey": "skill.vanish.description"
 }
-

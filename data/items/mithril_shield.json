@@ -18,5 +18,7 @@
   },
   "combatStatBonuses": {
     "defense": 32
-  }
+  },
+  "nameKey": "item.mithril_shield.name",
+  "descriptionKey": "item.mithril_shield.description"
 }

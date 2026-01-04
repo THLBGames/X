@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "buff",
     "amount": 1
-  }
+  },
+  "nameKey": "item.identification_scroll.name",
+  "descriptionKey": "item.identification_scroll.description"
 }

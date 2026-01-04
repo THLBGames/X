@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 25,
-  "prerequisites": ["slice_and_dice"],
+  "prerequisites": [
+    "slice_and_dice"
+  ],
   "manaCost": 60,
   "cooldown": 90,
   "target": "self",
   "effect": {
     "buffId": "adrenaline_rush"
-  }
+  },
+  "nameKey": "skill.adrenaline_rush.name",
+  "descriptionKey": "skill.adrenaline_rush.description"
 }
-

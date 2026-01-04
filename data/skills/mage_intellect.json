@@ -5,7 +5,9 @@
   "type": "passive",
   "maxLevel": 10,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "passiveBonus": {
     "statBonus": {
@@ -14,6 +16,7 @@
     "combatStatBonus": {
       "magicAttack": 8
     }
-  }
+  },
+  "nameKey": "skill.mage_intellect.name",
+  "descriptionKey": "skill.mage_intellect.description"
 }
-

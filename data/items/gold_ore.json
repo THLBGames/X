@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 50
+  "value": 50,
+  "nameKey": "item.gold_ore.name",
+  "descriptionKey": "item.gold_ore.description"
 }
-

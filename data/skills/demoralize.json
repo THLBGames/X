@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 21,
-  "prerequisites": ["intimidate"],
+  "prerequisites": [
+    "intimidate"
+  ],
   "manaCost": 25,
   "cooldown": 18,
   "target": "all_enemies",
   "effect": {
     "debuffId": "demoralized"
-  }
+  },
+  "nameKey": "skill.demoralize.name",
+  "descriptionKey": "skill.demoralize.description"
 }
-

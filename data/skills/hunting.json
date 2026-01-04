@@ -17,7 +17,7 @@
       "resources": [
         {
           "itemId": "raw_meat",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -38,7 +38,7 @@
       "resources": [
         {
           "itemId": "raw_meat_quality",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -64,7 +64,7 @@
       "resources": [
         {
           "itemId": "raw_meat_premium",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -89,13 +89,13 @@
       "level": 75,
       "nodeId": "rare_game",
       "name": "Rare Game Trail",
-      "successRate": 0.70,
+      "successRate": 0.7,
       "experienceGain": 250,
       "timeRequired": 8000,
       "resources": [
         {
           "itemId": "raw_meat_exotic",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 1
         },
@@ -139,6 +139,7 @@
         "attack": 15
       }
     }
-  ]
+  ],
+  "nameKey": "skill.hunting.name",
+  "descriptionKey": "skill.hunting.description"
 }
-

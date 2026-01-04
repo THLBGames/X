@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 22,
   "manaCost": 60,
@@ -13,6 +15,7 @@
   "target": "all_enemies",
   "effect": {
     "debuffId": "time_slowed"
-  }
+  },
+  "nameKey": "skill.slow_time.name",
+  "descriptionKey": "skill.slow_time.description"
 }
-

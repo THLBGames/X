@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "mining_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.mining_upgrade_II.name",
+  "descriptionKey": "upgrade.mining_upgrade_II.description"
 }

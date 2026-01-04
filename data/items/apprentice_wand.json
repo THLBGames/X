@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 12,
     "mana": 45
-  }
+  },
+  "nameKey": "item.apprentice_wand.name",
+  "descriptionKey": "item.apprentice_wand.description"
 }

@@ -8,7 +8,9 @@
   "value": 38,
   "requirements": {
     "level": 1,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "legs",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 4,
     "mana": 12
-  }
+  },
+  "nameKey": "item.mage_robes_bottom.name",
+  "descriptionKey": "item.mage_robes_bottom.description"
 }
-

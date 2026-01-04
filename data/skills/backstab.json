@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "manaCost": 15,
   "cooldown": 4,
@@ -18,6 +20,7 @@
         "multiplier": 2.5
       }
     }
-  }
+  },
+  "nameKey": "skill.backstab.name",
+  "descriptionKey": "skill.backstab.description"
 }
-

@@ -8,7 +8,9 @@
   "value": 700,
   "requirements": {
     "level": 45,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "attack": 25,
     "speed": 15,
     "criticalChance": 8
-  }
+  },
+  "nameKey": "item.assassin_blade.name",
+  "descriptionKey": "item.assassin_blade.description"
 }
-

@@ -17,6 +17,7 @@
   "combatStatBonuses": {
     "defense": 35,
     "magicDefense": 20
-  }
+  },
+  "nameKey": "item.mithril_gear.name",
+  "descriptionKey": "item.mithril_gear.description"
 }
-

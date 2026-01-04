@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 7,
     "mana": 22
-  }
+  },
+  "nameKey": "item.apprentice_hood.name",
+  "descriptionKey": "item.apprentice_hood.description"
 }

@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 100,
     "mana": 400
-  }
+  },
+  "nameKey": "item.divine_orb.name",
+  "descriptionKey": "item.divine_orb.description"
 }

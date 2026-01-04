@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "cooking_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.cooking_upgrade_III.name",
+  "descriptionKey": "upgrade.cooking_upgrade_III.description"
 }

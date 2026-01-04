@@ -6,10 +6,14 @@
   "maxLevel": 5,
   "unlockLevel": 6,
   "requirements": {
-    "class": ["warrior", "rogue"]
+    "class": [
+      "warrior",
+      "rogue"
+    ]
   },
   "passiveBonus": {
     "special": "counterattack"
-  }
+  },
+  "nameKey": "skill.counterattack.name",
+  "descriptionKey": "skill.counterattack.description"
 }
-

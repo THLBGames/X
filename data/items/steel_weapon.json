@@ -16,6 +16,7 @@
   },
   "combatStatBonuses": {
     "attack": 18
-  }
+  },
+  "nameKey": "item.steel_weapon.name",
+  "descriptionKey": "item.steel_weapon.description"
 }
-

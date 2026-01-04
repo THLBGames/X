@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "defense": 7,
     "speed": 5
-  }
+  },
+  "nameKey": "item.assassin_gloves.name",
+  "descriptionKey": "item.assassin_gloves.description"
 }

@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 11
-  }
+  },
+  "nameKey": "item.bronze_axe.name",
+  "descriptionKey": "item.bronze_axe.description"
 }

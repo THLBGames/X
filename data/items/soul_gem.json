@@ -6,5 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 500
+  "value": 500,
+  "nameKey": "item.soul_gem.name",
+  "descriptionKey": "item.soul_gem.description"
 }

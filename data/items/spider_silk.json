@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 10
+  "value": 10,
+  "nameKey": "item.spider_silk.name",
+  "descriptionKey": "item.spider_silk.description"
 }
-

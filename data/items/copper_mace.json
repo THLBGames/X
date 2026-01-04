@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 9
-  }
+  },
+  "nameKey": "item.copper_mace.name",
+  "descriptionKey": "item.copper_mace.description"
 }

@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 29,
-  "prerequisites": ["deadly_poison"],
+  "prerequisites": [
+    "deadly_poison"
+  ],
   "manaCost": 45,
   "cooldown": 25,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "lethal_poison"
-  }
+  },
+  "nameKey": "skill.lethal_injection.name",
+  "descriptionKey": "skill.lethal_injection.description"
 }
-

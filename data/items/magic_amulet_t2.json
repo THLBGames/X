@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "magicAttack": 7,
     "mana": 30
-  }
+  },
+  "nameKey": "item.magic_amulet_t2.name",
+  "descriptionKey": "item.magic_amulet_t2.description"
 }

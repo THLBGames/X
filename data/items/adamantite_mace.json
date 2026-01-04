@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 58
-  }
+  },
+  "nameKey": "item.adamantite_mace.name",
+  "descriptionKey": "item.adamantite_mace.description"
 }

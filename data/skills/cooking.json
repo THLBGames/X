@@ -118,6 +118,7 @@
         "goldGeneration": 0.15
       }
     }
-  ]
+  ],
+  "nameKey": "skill.cooking.name",
+  "descriptionKey": "skill.cooking.description"
 }
-

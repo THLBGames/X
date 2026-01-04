@@ -4,9 +4,13 @@
   "description": "Strike your enemy with lightning.",
   "type": "active",
   "maxLevel": 5,
-  "prerequisites": ["fireball"],
+  "prerequisites": [
+    "fireball"
+  ],
   "requirements": {
-    "class": ["mage"],
+    "class": [
+      "mage"
+    ],
     "level": 10
   },
   "manaCost": 25,
@@ -20,6 +24,7 @@
         "multiplier": 2.2
       }
     }
-  }
+  },
+  "nameKey": "skill.lightning_bolt.name",
+  "descriptionKey": "skill.lightning_bolt.description"
 }
-

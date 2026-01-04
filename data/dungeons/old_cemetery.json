@@ -1,32 +1,34 @@
 {
-    "id": "old_cemetery",
-    "name": "Old Cemetery",
-    "description": "An ancient graveyard where the dead stir at night.",
-    "tier": 1,
-    "requiredLevel": 5,
-    "requiredDungeonId": "bandit_camp",
-    "monsterPools": [
-      {
-        "monsterId": "skeleton",
-        "weight": 50,
-        "minLevel": 5,
-        "maxLevel": 8
-      },
-      {
-        "monsterId": "zombie",
-        "weight": 40,
-        "minLevel": 5,
-        "maxLevel": 8
-      },
-      {
-        "monsterId": "ghost",
-        "weight": 10,
-        "minLevel": 6,
-        "maxLevel": 9
-      }
-    ],
-    "rewards": {
-      "experienceBonus": 1.25,
-      "goldBonus": 1.2
+  "id": "old_cemetery",
+  "name": "Old Cemetery",
+  "description": "An ancient graveyard where the dead stir at night.",
+  "tier": 1,
+  "requiredLevel": 5,
+  "requiredDungeonId": "bandit_camp",
+  "monsterPools": [
+    {
+      "monsterId": "skeleton",
+      "weight": 50,
+      "minLevel": 5,
+      "maxLevel": 8
+    },
+    {
+      "monsterId": "zombie",
+      "weight": 40,
+      "minLevel": 5,
+      "maxLevel": 8
+    },
+    {
+      "monsterId": "ghost",
+      "weight": 10,
+      "minLevel": 6,
+      "maxLevel": 9
     }
-  }
+  ],
+  "rewards": {
+    "experienceBonus": 1.25,
+    "goldBonus": 1.2
+  },
+  "nameKey": "dungeon.old_cemetery.name",
+  "descriptionKey": "dungeon.old_cemetery.description"
+}

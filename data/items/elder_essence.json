@@ -6,6 +6,7 @@
   "rarity": "legendary",
   "stackable": true,
   "maxStack": 999,
-  "value": 600
+  "value": 600,
+  "nameKey": "item.elder_essence.name",
+  "descriptionKey": "item.elder_essence.description"
 }
-

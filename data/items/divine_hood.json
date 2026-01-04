@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 50,
     "mana": 150
-  }
+  },
+  "nameKey": "item.divine_hood.name",
+  "descriptionKey": "item.divine_hood.description"
 }

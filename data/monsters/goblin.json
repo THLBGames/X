@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 5,
       "max": 10
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 5,
     "max": 10
-  }
+  },
+  "nameKey": "monster.goblin.name",
+  "descriptionKey": "monster.goblin.description"
 }
-

@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 6,
     "mana": 15
-  }
+  },
+  "nameKey": "item.apprentice_slippers.name",
+  "descriptionKey": "item.apprentice_slippers.description"
 }

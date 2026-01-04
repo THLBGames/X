@@ -17,7 +17,7 @@
       "resources": [
         {
           "itemId": "copper_ore",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 3
         },
@@ -32,13 +32,13 @@
       "level": 15,
       "nodeId": "iron_ore",
       "name": "Iron Ore Vein",
-      "successRate": 0.90,
+      "successRate": 0.9,
       "experienceGain": 25,
       "timeRequired": 4000,
       "resources": [
         {
           "itemId": "iron_ore",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -59,7 +59,7 @@
       "resources": [
         {
           "itemId": "silver_ore",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -74,13 +74,13 @@
       "level": 50,
       "nodeId": "gold_ore",
       "name": "Gold Ore Vein",
-      "successRate": 0.80,
+      "successRate": 0.8,
       "experienceGain": 100,
       "timeRequired": 6000,
       "resources": [
         {
           "itemId": "gold_ore",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -106,7 +106,7 @@
       "resources": [
         {
           "itemId": "mithril_ore",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 2
         },
@@ -126,13 +126,13 @@
       "level": 90,
       "nodeId": "adamantite_ore",
       "name": "Adamantite Ore Vein",
-      "successRate": 0.70,
+      "successRate": 0.7,
       "experienceGain": 400,
       "timeRequired": 8000,
       "resources": [
         {
           "itemId": "adamantite_ore",
-          "chance": 1.0,
+          "chance": 1,
           "min": 1,
           "max": 1
         },
@@ -169,6 +169,7 @@
         "itemFindRate": 0.1
       }
     }
-  ]
+  ],
+  "nameKey": "skill.mining.name",
+  "descriptionKey": "skill.mining.description"
 }
-

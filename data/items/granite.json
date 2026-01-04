@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 10
+  "value": 10,
+  "nameKey": "item.granite.name",
+  "descriptionKey": "item.granite.description"
 }
-

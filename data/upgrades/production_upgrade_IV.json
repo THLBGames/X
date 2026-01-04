@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "production_upgrade_III"
-  }
+  },
+  "nameKey": "upgrade.production_upgrade_IV.name",
+  "descriptionKey": "upgrade.production_upgrade_IV.description"
 }

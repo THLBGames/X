@@ -18,5 +18,7 @@
   },
   "combatStatBonuses": {
     "defense": 20
-  }
+  },
+  "nameKey": "item.steel_shield.name",
+  "descriptionKey": "item.steel_shield.description"
 }

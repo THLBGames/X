@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 6
-  }
+  },
+  "nameKey": "item.bronze_helmet.name",
+  "descriptionKey": "item.bronze_helmet.description"
 }

@@ -21,5 +21,7 @@
     "attack": 24,
     "speed": 20,
     "criticalChance": 8
-  }
+  },
+  "nameKey": "item.mithril_dagger.name",
+  "descriptionKey": "item.mithril_dagger.description"
 }

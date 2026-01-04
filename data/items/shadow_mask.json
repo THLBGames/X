@@ -8,7 +8,9 @@
   "value": 520,
   "requirements": {
     "level": 36,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "helmet",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 15,
     "speed": 12,
     "criticalChance": 3
-  }
+  },
+  "nameKey": "item.shadow_mask.name",
+  "descriptionKey": "item.shadow_mask.description"
 }
-

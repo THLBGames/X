@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 99,
-  "value": 25
+  "value": 25,
+  "nameKey": "item.simple_tool.name",
+  "descriptionKey": "item.simple_tool.description"
 }
-

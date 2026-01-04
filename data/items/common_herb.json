@@ -6,6 +6,7 @@
   "rarity": "common",
   "stackable": true,
   "maxStack": 999,
-  "value": 2
+  "value": 2,
+  "nameKey": "item.common_herb.name",
+  "descriptionKey": "item.common_herb.description"
 }
-

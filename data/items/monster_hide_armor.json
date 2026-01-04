@@ -8,7 +8,9 @@
   "value": 1400,
   "requirements": {
     "level": 60,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "chest",
   "statBonuses": {
@@ -18,6 +20,7 @@
   "combatStatBonuses": {
     "defense": 35,
     "speed": 15
-  }
+  },
+  "nameKey": "item.monster_hide_armor.name",
+  "descriptionKey": "item.monster_hide_armor.description"
 }
-

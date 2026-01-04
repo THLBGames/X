@@ -8,7 +8,9 @@
   "value": 6200,
   "requirements": {
     "level": 91,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "legs",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "magicDefense": 48,
     "magicAttack": 22,
     "mana": 175
-  }
+  },
+  "nameKey": "item.divine_robes_bottom.name",
+  "descriptionKey": "item.divine_robes_bottom.description"
 }
-

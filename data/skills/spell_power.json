@@ -5,14 +5,19 @@
   "type": "passive",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 17,
-  "prerequisites": ["mage_intellect"],
+  "prerequisites": [
+    "mage_intellect"
+  ],
   "passiveBonus": {
     "combatStatBonus": {
       "magicAttack": 5
     }
-  }
+  },
+  "nameKey": "skill.spell_power.name",
+  "descriptionKey": "skill.spell_power.description"
 }
-

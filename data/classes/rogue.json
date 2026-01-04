@@ -62,8 +62,16 @@
     "death_mark"
   ],
   "equipmentRestrictions": {
-    "weaponTypes": ["dagger", "sword", "bow"],
-    "armorTypes": ["light", "medium"]
-  }
+    "weaponTypes": [
+      "dagger",
+      "sword",
+      "bow"
+    ],
+    "armorTypes": [
+      "light",
+      "medium"
+    ]
+  },
+  "nameKey": "class.rogue.name",
+  "descriptionKey": "class.rogue.description"
 }
-

@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "hunting_upgrade_IV"
-  }
+  },
+  "nameKey": "upgrade.hunting_upgrade_V.name",
+  "descriptionKey": "upgrade.hunting_upgrade_V.description"
 }

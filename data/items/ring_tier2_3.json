@@ -16,5 +16,7 @@
   "combatStatBonuses": {
     "speed": 4,
     "criticalChance": 1
-  }
+  },
+  "nameKey": "item.ring_tier2_3.name",
+  "descriptionKey": "item.ring_tier2_3.description"
 }

@@ -101,6 +101,7 @@
         "luck": 15
       }
     }
-  ]
+  ],
+  "nameKey": "skill.jewelcrafting.name",
+  "descriptionKey": "skill.jewelcrafting.description"
 }
-

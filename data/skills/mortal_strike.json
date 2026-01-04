@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 15,
-  "prerequisites": ["execute"],
+  "prerequisites": [
+    "execute"
+  ],
   "manaCost": 35,
   "cooldown": 8,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "mortal_wound"
-  }
+  },
+  "nameKey": "skill.mortal_strike.name",
+  "descriptionKey": "skill.mortal_strike.description"
 }
-

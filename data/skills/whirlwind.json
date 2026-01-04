@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 5,
-  "prerequisites": ["cleave"],
+  "prerequisites": [
+    "cleave"
+  ],
   "manaCost": 25,
   "cooldown": 4,
   "target": "all_enemies",
@@ -20,6 +24,7 @@
         "multiplier": 1.8
       }
     }
-  }
+  },
+  "nameKey": "skill.whirlwind.name",
+  "descriptionKey": "skill.whirlwind.description"
 }
-

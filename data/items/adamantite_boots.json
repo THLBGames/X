@@ -18,5 +18,7 @@
   },
   "combatStatBonuses": {
     "defense": 32
-  }
+  },
+  "nameKey": "item.adamantite_boots.name",
+  "descriptionKey": "item.adamantite_boots.description"
 }

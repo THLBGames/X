@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 15,
     "mana": 60
-  }
+  },
+  "nameKey": "item.mage_tome.name",
+  "descriptionKey": "item.mage_tome.description"
 }

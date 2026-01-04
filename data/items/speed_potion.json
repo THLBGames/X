@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "buff",
     "amount": 30
-  }
+  },
+  "nameKey": "item.speed_potion.name",
+  "descriptionKey": "item.speed_potion.description"
 }

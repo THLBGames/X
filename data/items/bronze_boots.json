@@ -18,5 +18,7 @@
   },
   "combatStatBonuses": {
     "defense": 5
-  }
+  },
+  "nameKey": "item.bronze_boots.name",
+  "descriptionKey": "item.bronze_boots.description"
 }

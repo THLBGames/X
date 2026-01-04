@@ -8,7 +8,9 @@
   "value": 200,
   "requirements": {
     "level": 20,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -18,6 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 15,
     "mana": 50
-  }
+  },
+  "nameKey": "item.apprentice_staff.name",
+  "descriptionKey": "item.apprentice_staff.description"
 }
-

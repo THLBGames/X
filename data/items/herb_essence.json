@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 30
+  "value": 30,
+  "nameKey": "item.herb_essence.name",
+  "descriptionKey": "item.herb_essence.description"
 }
-

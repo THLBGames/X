@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "defense": 4,
     "speed": 3
-  }
+  },
+  "nameKey": "item.apprentice_mask.name",
+  "descriptionKey": "item.apprentice_mask.description"
 }

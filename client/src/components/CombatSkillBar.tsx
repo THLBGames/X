@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
@@ -16,6 +17,7 @@ interface CombatSkillBarProps {
 }
 
 export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const currentCombatState = useGameState((state) => state.currentCombatState);
   const isCombatActive = useGameState((state) => state.isCombatActive);
@@ -67,9 +69,9 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
       <>
         <div className="combat-skill-bar empty">
           <div className="skill-bar-message">
-            <div className="skill-bar-message-text">No skills assigned to skill bar.</div>
+            <div className="skill-bar-message-text">{t('inventory.noSkillsAssigned')}</div>
             <button className="skill-bar-open-tree-button" onClick={() => setShowSkillTree(true)}>
-              Open Skill Tree
+              {t('buttons.viewSkills')}
             </button>
           </div>
         </div>
@@ -121,10 +123,10 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
 
           const getConditionTooltip = (setting: AutoSkillSetting): string => {
             if (!setting.enabled || setting.condition === AutoCondition.NEVER) {
-              return UI_TOOLTIPS.MANUAL_USE_ONLY;
+              return UI_TOOLTIPS.MANUAL_USE_ONLY();
             }
             if (setting.condition === AutoCondition.ALWAYS) {
-              return UI_TOOLTIPS.AUTO_ALWAYS_AVAILABLE;
+              return UI_TOOLTIPS.AUTO_ALWAYS_AVAILABLE();
             }
             if (setting.threshold !== undefined) {
               switch (setting.condition) {
@@ -139,10 +141,10 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
                 case AutoCondition.ENEMY_HEALTH_ABOVE:
                   return UI_TOOLTIPS.AUTO_ENEMY_HEALTH_ABOVE(setting.threshold);
                 default:
-                  return UI_TOOLTIPS.MANUAL_USE_ONLY;
+                  return UI_TOOLTIPS.MANUAL_USE_ONLY();
               }
             }
-            return SKILL_CONDITION_DESCRIPTIONS[setting.condition] || UI_TOOLTIPS.MANUAL_USE_ONLY;
+            return SKILL_CONDITION_DESCRIPTIONS[setting.condition] || UI_TOOLTIPS.MANUAL_USE_ONLY();
           };
 
           return (
@@ -181,7 +183,7 @@ export default function CombatSkillBar({ onSkillUse }: CombatSkillBarProps) {
                     e.stopPropagation();
                     setConfigSkillId(skillId);
                   }}
-                  title="Configure auto-skill settings"
+                  title={t('tooltips.configureAutoSkill')}
                 >
                   ⚙
                 </button>

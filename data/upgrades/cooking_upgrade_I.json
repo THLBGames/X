@@ -13,5 +13,7 @@
     "yieldMultiplier": 1.05,
     "successRateBonus": 0.05
   },
-  "requirements": {}
+  "requirements": {},
+  "nameKey": "upgrade.cooking_upgrade_I.name",
+  "descriptionKey": "upgrade.cooking_upgrade_I.description"
 }

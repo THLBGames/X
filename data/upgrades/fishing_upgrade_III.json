@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "fishing_upgrade_II"
-  }
+  },
+  "nameKey": "upgrade.fishing_upgrade_III.name",
+  "descriptionKey": "upgrade.fishing_upgrade_III.description"
 }

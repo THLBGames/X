@@ -8,7 +8,9 @@
   "value": 440,
   "requirements": {
     "level": 32,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "gloves",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 10,
     "speed": 10,
     "criticalChance": 3
-  }
+  },
+  "nameKey": "item.shadow_gloves.name",
+  "descriptionKey": "item.shadow_gloves.description"
 }
-

@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 75
+  "value": 75,
+  "nameKey": "item.gem_rare.name",
+  "descriptionKey": "item.gem_rare.description"
 }
-

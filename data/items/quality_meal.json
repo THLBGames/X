@@ -10,6 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 150
-  }
+  },
+  "nameKey": "item.quality_meal.name",
+  "descriptionKey": "item.quality_meal.description"
 }
-

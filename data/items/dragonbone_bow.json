@@ -21,5 +21,7 @@
     "attack": 70,
     "speed": 50,
     "criticalChance": 20
-  }
+  },
+  "nameKey": "item.dragonbone_bow.name",
+  "descriptionKey": "item.dragonbone_bow.description"
 }

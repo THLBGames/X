@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "heal",
     "amount": 800
-  }
+  },
+  "nameKey": "item.magic_cake.name",
+  "descriptionKey": "item.magic_cake.description"
 }

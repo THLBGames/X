@@ -6,7 +6,9 @@
   "maxLevel": 5,
   "unlockLevel": 2,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "manaCost": 10,
   "cooldown": 2,
@@ -19,6 +21,7 @@
         "multiplier": 1.2
       }
     }
-  }
+  },
+  "nameKey": "skill.quick_strike.name",
+  "descriptionKey": "skill.quick_strike.description"
 }
-

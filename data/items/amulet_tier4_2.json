@@ -16,5 +16,7 @@
   },
   "combatStatBonuses": {
     "defense": 8
-  }
+  },
+  "nameKey": "item.amulet_tier4_2.name",
+  "descriptionKey": "item.amulet_tier4_2.description"
 }

@@ -10,6 +10,7 @@
   "consumableEffect": {
     "type": "custom",
     "description": "Opens the chest to reveal random loot"
-  }
+  },
+  "nameKey": "item.treasure_chest.name",
+  "descriptionKey": "item.treasure_chest.description"
 }
-

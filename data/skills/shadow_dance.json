@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 28,
-  "prerequisites": ["cloak_of_shadows"],
+  "prerequisites": [
+    "cloak_of_shadows"
+  ],
   "manaCost": 70,
   "cooldown": 60,
   "target": "self",
   "effect": {
     "buffId": "shadow_dance"
-  }
+  },
+  "nameKey": "skill.shadow_dance.name",
+  "descriptionKey": "skill.shadow_dance.description"
 }
-

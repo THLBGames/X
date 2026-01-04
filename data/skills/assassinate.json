@@ -5,10 +5,15 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 20,
-  "prerequisites": ["shadow_strike", "sneak_attack"],
+  "prerequisites": [
+    "shadow_strike",
+    "sneak_attack"
+  ],
   "manaCost": 50,
   "cooldown": 15,
   "target": "enemy",
@@ -20,6 +25,7 @@
         "multiplier": 3.5
       }
     }
-  }
+  },
+  "nameKey": "skill.assassinate.name",
+  "descriptionKey": "skill.assassinate.description"
 }
-

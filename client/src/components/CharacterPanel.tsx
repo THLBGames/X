@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { InventoryManager } from '../systems/inventory';
 import { ClassChangeManager } from '../systems/character/ClassChangeManager';
@@ -9,6 +10,7 @@ import SubclassModal from './SubclassModal';
 import './CharacterSheet.css';
 
 export default function CharacterPanel() {
+  const { t } = useTranslation(['ui', 'common']);
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
@@ -31,10 +33,12 @@ export default function CharacterPanel() {
 
     if (activeAction.type === 'combat') {
       const dungeon = dataLoader.getDungeon(activeAction.dungeonId);
-      return `Combat: ${dungeon?.name || activeAction.dungeonId}`;
+      const dungeonName = dungeon ? dataLoader.getTranslatedName(dungeon) : activeAction.dungeonId;
+      return `${t('character.combat')}: ${dungeonName}`;
     } else if (activeAction.type === 'skill') {
       const skill = dataLoader.getSkill(activeAction.skillId);
-      return `Training: ${skill?.name || activeAction.skillId}`;
+      const skillName = skill ? dataLoader.getTranslatedName(skill) : activeAction.skillId;
+      return `${t('character.training')}: ${skillName}`;
     }
     return null;
   };
@@ -55,93 +59,93 @@ export default function CharacterPanel() {
         alert(result.message);
       }
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Failed to change class');
+      alert(error instanceof Error ? error.message : t('character.failedToChangeClass'));
     }
   };
 
   return (
     <>
       <div className="character-sheet">
-        <h2>Character</h2>
+        <h2>{t('character.character')}</h2>
         <div className="character-info">
           <div className="character-name">{character.name}</div>
-          <div className="character-level">Level {character.level}</div>
+          <div className="character-level">{t('character.level')} {character.level}</div>
           <div className="character-class">
-            Class: {character.classId}
+            {t('character.class')}: {character.classId}
             {character.subclassId && (
               <>
                 <br />
-                <span className="character-subclass">Subclass: {character.subclassId}</span>
+                <span className="character-subclass">{t('character.subclass')}: {character.subclassId}</span>
               </>
             )}
           </div>
-          <div className="character-gold">Gold: {gold.toLocaleString()}</div>
-          <div className="character-offline-hours">Max Offline Time: {maxOfflineHours} hours</div>
+          <div className="character-gold">{t('character.gold')}: {gold.toLocaleString()}</div>
+          <div className="character-offline-hours">{t('character.maxOfflineTime')}: {maxOfflineHours} {t('character.hours')}</div>
           {activeAction && (
             <div className="character-active-action">{getActiveActionDisplay()}</div>
           )}
           <button className="change-class-button" onClick={() => setShowClassChange(true)}>
-            Change Class
+            {t('buttons.changeClass')}
           </button>
           {character.level >= 50 && (
             <button className="change-subclass-button" onClick={() => setShowSubclass(true)}>
-              {character.subclassId ? 'Change Subclass' : 'Select Subclass'}
+              {character.subclassId ? t('buttons.changeSubclass') : t('buttons.selectSubclass')}
             </button>
           )}
         </div>
         <div className="character-stats">
-          <h3>Stats</h3>
+          <h3>{t('character.stats')}</h3>
           <div className="stat-row">
-            <span>Strength:</span>
+            <span>{t('common.stats.strength', { ns: 'common' })}:</span>
             <span>{character.currentStats.strength}</span>
           </div>
           <div className="stat-row">
-            <span>Dexterity:</span>
+            <span>{t('common.stats.dexterity', { ns: 'common' })}:</span>
             <span>{character.currentStats.dexterity}</span>
           </div>
           <div className="stat-row">
-            <span>Intelligence:</span>
+            <span>{t('common.stats.intelligence', { ns: 'common' })}:</span>
             <span>{character.currentStats.intelligence}</span>
           </div>
           <div className="stat-row">
-            <span>Vitality:</span>
+            <span>{t('common.stats.vitality', { ns: 'common' })}:</span>
             <span>{character.currentStats.vitality}</span>
           </div>
           <div className="stat-row">
-            <span>Wisdom:</span>
+            <span>{t('common.stats.wisdom', { ns: 'common' })}:</span>
             <span>{character.currentStats.wisdom}</span>
           </div>
           <div className="stat-row">
-            <span>Luck:</span>
+            <span>{t('common.stats.luck', { ns: 'common' })}:</span>
             <span>{character.currentStats.luck}</span>
           </div>
         </div>
         <div className="character-combat-stats">
-          <h3>Combat Stats</h3>
+          <h3>{t('character.combatStats')}</h3>
           <div className="stat-row">
-            <span>Health:</span>
+            <span>{t('common.combatStats.health', { ns: 'common' })}:</span>
             <span>
               {character.combatStats.health} / {character.combatStats.maxHealth}
             </span>
           </div>
           <div className="stat-row">
-            <span>Mana:</span>
+            <span>{t('common.combatStats.mana', { ns: 'common' })}:</span>
             <span>
               {character.combatStats.mana} / {character.combatStats.maxMana}
             </span>
           </div>
           <div className="stat-row">
-            <span>Attack:</span>
+            <span>{t('common.combatStats.attack', { ns: 'common' })}:</span>
             <span>{character.combatStats.attack}</span>
           </div>
           <div className="stat-row">
-            <span>Defense:</span>
+            <span>{t('common.combatStats.defense', { ns: 'common' })}:</span>
             <span>{character.combatStats.defense}</span>
           </div>
         </div>
         <div className="character-experience">
           <div className="exp-bar-label">
-            Experience: {character.experience} / {character.experienceToNext}
+            {t('character.experience')}: {character.experience} / {character.experienceToNext}
           </div>
           <div className="exp-bar">
             <div
@@ -153,9 +157,9 @@ export default function CharacterPanel() {
           </div>
         </div>
         <div className="character-skill-points">
-          Skill Points: {character.skillPoints}
+          {t('character.skillPoints')}: {character.skillPoints}
           <button className="open-skill-tree-button" onClick={() => setShowSkillTree(true)}>
-            Open Skill Tree
+            {t('character.openSkillTree')}
           </button>
         </div>
       </div>

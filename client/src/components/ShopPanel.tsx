@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { ShopManager } from '../systems/shop';
@@ -9,9 +10,11 @@ import type { Item } from '@idle-rpg/shared';
 import './ShopPanel.css';
 
 export default function ShopPanel() {
+  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setInventory = useGameState((state) => state.setInventory);
+  const dataLoader = getDataLoader();
 
   const [activeTab, setActiveTab] = useState<'buy' | 'sell' | 'mercenaries' | 'upgrades'>('buy');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -40,11 +43,11 @@ export default function ShopPanel() {
     // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      items = items.filter(
-        (item) =>
-          item.name.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query)
-      );
+      items = items.filter((item) => {
+        const itemName = dataLoader.getTranslatedName(item).toLowerCase();
+        const itemDesc = dataLoader.getTranslatedDescription(item).toLowerCase();
+        return itemName.includes(query) || itemDesc.includes(query);
+      });
     }
 
     // Filter by requirements if character exists
@@ -52,12 +55,12 @@ export default function ShopPanel() {
       items = items.filter((item) => ShopManager.meetsRequirements(item, character));
     }
 
-    return items.sort((a, b) => a.name.localeCompare(b.name));
+    return items.sort((a, b) => dataLoader.getTranslatedName(a).localeCompare(dataLoader.getTranslatedName(b)));
   }, [selectedCategory, searchQuery, character]);
 
   const sellableItems = useMemo(() => {
     return ShopManager.getSellableItems(inventory).sort((a, b) =>
-      a.item.name.localeCompare(b.item.name)
+      dataLoader.getTranslatedName(a.item).localeCompare(dataLoader.getTranslatedName(b.item))
     );
   }, [inventory]);
 
@@ -130,9 +133,9 @@ export default function ShopPanel() {
   return (
     <div className="shop-panel">
       <div className="shop-header">
-        <h2>Shop</h2>
+        <h2>{t('shop.title')}</h2>
         <div className="shop-gold">
-          Gold: <span className="gold-amount">{gold.toLocaleString()}</span>
+          {t('character.gold')}: <span className="gold-amount">{gold.toLocaleString()}</span>
         </div>
       </div>
 
@@ -141,25 +144,25 @@ export default function ShopPanel() {
           className={`shop-tab ${activeTab === 'buy' ? 'active' : ''}`}
           onClick={() => setActiveTab('buy')}
         >
-          Buy
+          {t('shop.buy')}
         </button>
         <button
           className={`shop-tab ${activeTab === 'sell' ? 'active' : ''}`}
           onClick={() => setActiveTab('sell')}
         >
-          Sell
+          {t('shop.sell')}
         </button>
         <button
           className={`shop-tab ${activeTab === 'mercenaries' ? 'active' : ''}`}
           onClick={() => setActiveTab('mercenaries')}
         >
-          Mercenaries
+          {t('shop.mercenaries')}
         </button>
         <button
           className={`shop-tab ${activeTab === 'upgrades' ? 'active' : ''}`}
           onClick={() => setActiveTab('upgrades')}
         >
-          Upgrades
+          {t('shop.upgrades')}
         </button>
       </div>
 
@@ -168,7 +171,7 @@ export default function ShopPanel() {
           <div className="shop-filters">
             <input
               type="text"
-              placeholder="Search items..."
+              placeholder={t('shop.searchItems')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="shop-search"
@@ -180,7 +183,7 @@ export default function ShopPanel() {
                   className={`category-button ${selectedCategory === cat ? 'active' : ''}`}
                   onClick={() => setSelectedCategory(cat)}
                 >
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                  {cat === 'all' ? t('shop.all') : t(`common.itemType.${cat}`, { ns: 'common' })}
                 </button>
               ))}
             </div>
@@ -188,7 +191,7 @@ export default function ShopPanel() {
 
           <div className="shop-items-grid">
             {availableItems.length === 0 ? (
-              <div className="no-items">No items available</div>
+              <div className="no-items">{t('shop.noItemsAvailable')}</div>
             ) : (
               availableItems.map((item) => {
                 const quantity = buyQuantity[item.id] || 1;
@@ -198,14 +201,14 @@ export default function ShopPanel() {
                 return (
                   <div key={item.id} className="shop-item-card">
                     <div className="item-header">
-                      <div className="item-name">{item.name}</div>
-                      <div className={`item-rarity rarity-${item.rarity}`}>{item.rarity}</div>
+                      <div className="item-name">{dataLoader.getTranslatedName(item)}</div>
+                      <div className={`item-rarity rarity-${item.rarity}`}>{t(`common.rarity.${item.rarity}`, { ns: 'common' })}</div>
                     </div>
-                    <div className="item-description">{item.description}</div>
+                    <div className="item-description">{dataLoader.getTranslatedDescription(item)}</div>
                     {item.requirements && (
                       <div className="item-requirements">
                         {item.requirements.level && (
-                          <span className="requirement">Lv. {item.requirements.level}+</span>
+                          <span className="requirement">{t('character.level')} {item.requirements.level}+</span>
                         )}
                         {item.requirements.class && (
                           <span className="requirement">
@@ -215,9 +218,9 @@ export default function ShopPanel() {
                       </div>
                     )}
                     <div className="item-price">
-                      <div className="price-label">Price:</div>
+                      <div className="price-label">{t('shop.price')}:</div>
                       <div className={`price-value ${!affordable ? 'insufficient' : ''}`}>
-                        {price} gold
+                        {price} {t('character.gold')}
                       </div>
                     </div>
                     {item.stackable && (
@@ -242,7 +245,7 @@ export default function ShopPanel() {
                       onClick={() => handleBuy(item)}
                       disabled={!affordable}
                     >
-                      Buy {quantity > 1 && `(${quantity})`}
+                      {t('shop.buy')} {quantity > 1 && `(${quantity})`}
                     </button>
                   </div>
                 );
@@ -256,7 +259,7 @@ export default function ShopPanel() {
         <div className="shop-sell">
           <div className="sellable-items-list">
             {sellableItems.length === 0 ? (
-              <div className="no-items">No items to sell</div>
+              <div className="no-items">{t('shop.noItemsToSell')}</div>
             ) : (
               sellableItems.map(({ item, quantity: availableQty }) => {
                 const sellQty = sellQuantity[item.id] || 1;
@@ -265,13 +268,13 @@ export default function ShopPanel() {
                 return (
                   <div key={item.id} className="sell-item-card">
                     <div className="item-header">
-                      <div className="item-name">{item.name}</div>
+                      <div className="item-name">{dataLoader.getTranslatedName(item)}</div>
                       <div className="item-stock">x{availableQty}</div>
                     </div>
-                    <div className="item-description">{item.description}</div>
+                    <div className="item-description">{dataLoader.getTranslatedDescription(item)}</div>
                     <div className="item-sell-price">
-                      <div className="price-label">Sell for:</div>
-                      <div className="price-value">{price} gold</div>
+                      <div className="price-label">{t('shop.sellFor')}:</div>
+                      <div className="price-value">{price} {t('character.gold')}</div>
                     </div>
                     {item.stackable && availableQty > 1 && (
                       <div className="quantity-selector">
@@ -294,7 +297,7 @@ export default function ShopPanel() {
                       className="sell-button"
                       onClick={() => handleSell(item, availableQty)}
                     >
-                      Sell {sellQty > 1 && `(${sellQty})`}
+                      {t('shop.sell')} {sellQty > 1 && `(${sellQty})`}
                     </button>
                   </div>
                 );

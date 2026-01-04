@@ -19,5 +19,7 @@
   "combatStatBonuses": {
     "magicDefense": 7,
     "mana": 25
-  }
+  },
+  "nameKey": "item.enchanted_gloves.name",
+  "descriptionKey": "item.enchanted_gloves.description"
 }

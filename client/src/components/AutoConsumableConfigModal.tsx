@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { AutoConsumableSetting } from '@idle-rpg/shared';
 import {
   AutoCondition,
@@ -31,6 +32,7 @@ export default function AutoConsumableConfigModal({
   onClose,
   onSave,
 }: AutoConsumableConfigModalProps) {
+  const { t } = useTranslation('ui');
   const [enabled, setEnabled] = useState(currentSetting.enabled);
   const [condition, setCondition] = useState<AutoConsumableSetting['condition']>(
     currentSetting.condition
@@ -69,7 +71,7 @@ export default function AutoConsumableConfigModal({
     const priorityNum = parseInt(priority, 10);
 
     if (needsThreshold && (thresholdNum === undefined || thresholdNum < THRESHOLD_MIN || thresholdNum > THRESHOLD_MAX)) {
-      alert(UI_MESSAGES.THRESHOLD_RANGE_ERROR);
+      alert(UI_MESSAGES.THRESHOLD_RANGE_ERROR());
       return;
     }
 
@@ -98,7 +100,7 @@ export default function AutoConsumableConfigModal({
     <div className="auto-consumable-config-overlay" onClick={onClose}>
       <div className="auto-consumable-config-modal" onClick={(e) => e.stopPropagation()}>
         <div className="auto-consumable-config-header">
-          <h3>{UI_LABELS.AUTO_CONSUMABLE_CONFIG_TITLE}</h3>
+          <h3>{UI_LABELS.AUTO_CONSUMABLE_CONFIG_TITLE()}</h3>
           <button className="auto-consumable-config-close" onClick={onClose}>
             ×
           </button>
@@ -106,14 +108,14 @@ export default function AutoConsumableConfigModal({
 
         {item && (
           <div className="auto-consumable-config-item-info">
-            <div className="auto-consumable-config-item-name">{item.name}</div>
-            <div className="auto-consumable-config-item-description">{item.description}</div>
+            <div className="auto-consumable-config-item-name">{dataLoader.getTranslatedName(item)}</div>
+            <div className="auto-consumable-config-item-description">{dataLoader.getTranslatedDescription(item)}</div>
             {item.consumableEffect && (
               <div className="auto-consumable-config-item-effect">
-                {item.consumableEffect.type === ConsumableEffectType.HEAL && `Heals ${item.consumableEffect.amount || 0} HP`}
-                {item.consumableEffect.type === ConsumableEffectType.MANA && `Restores ${item.consumableEffect.amount || 0} MP`}
-                {item.consumableEffect.type === ConsumableEffectType.BUFF && `Applies buff: ${item.consumableEffect.buffId || 'Unknown'}`}
-                {item.consumableEffect.type === ConsumableEffectType.EXPERIENCE && `Grants ${item.consumableEffect.amount || 0} XP`}
+                {item.consumableEffect.type === ConsumableEffectType.HEAL && t('consumables.heals', { amount: item.consumableEffect.amount || 0 })}
+                {item.consumableEffect.type === ConsumableEffectType.MANA && t('consumables.restores', { amount: item.consumableEffect.amount || 0 })}
+                {item.consumableEffect.type === ConsumableEffectType.BUFF && t('consumables.appliesBuff', { buffId: item.consumableEffect.buffId || t('consumables.unknown') })}
+                {item.consumableEffect.type === ConsumableEffectType.EXPERIENCE && t('consumables.grants', { amount: item.consumableEffect.amount || 0 })}
               </div>
             )}
           </div>
@@ -127,24 +129,24 @@ export default function AutoConsumableConfigModal({
                 checked={enabled}
                 onChange={(e) => setEnabled(e.target.checked)}
               />
-              <span>{UI_LABELS.ENABLE_AUTOMATIC_USE}</span>
+              <span>{UI_LABELS.ENABLE_AUTOMATIC_USE()}</span>
             </label>
           </div>
 
           <div className="auto-consumable-config-field">
             <label>
-              {UI_LABELS.CONDITION}
+              {UI_LABELS.CONDITION()}
               <select
                 value={condition}
                 onChange={(e) => setCondition(e.target.value as AutoConsumableSetting['condition'])}
                 disabled={!enabled}
               >
-                <option value={AutoCondition.NEVER}>{UI_LABELS.NEVER_MANUAL_ONLY}</option>
-                <option value={AutoCondition.ALWAYS}>{UI_LABELS.ALWAYS_WHEN_AVAILABLE}</option>
-                <option value={AutoCondition.PLAYER_HEALTH_BELOW}>{UI_LABELS.PLAYER_HEALTH_BELOW}</option>
-                <option value={AutoCondition.PLAYER_HEALTH_ABOVE}>{UI_LABELS.PLAYER_HEALTH_ABOVE}</option>
-                <option value={AutoCondition.PLAYER_MANA_BELOW}>{UI_LABELS.PLAYER_MANA_BELOW}</option>
-                <option value={AutoCondition.PLAYER_MANA_ABOVE}>{UI_LABELS.PLAYER_MANA_ABOVE}</option>
+                <option value={AutoCondition.NEVER}>{UI_LABELS.NEVER_MANUAL_ONLY()}</option>
+                <option value={AutoCondition.ALWAYS}>{UI_LABELS.ALWAYS_WHEN_AVAILABLE()}</option>
+                <option value={AutoCondition.PLAYER_HEALTH_BELOW}>{UI_LABELS.PLAYER_HEALTH_BELOW()}</option>
+                <option value={AutoCondition.PLAYER_HEALTH_ABOVE}>{UI_LABELS.PLAYER_HEALTH_ABOVE()}</option>
+                <option value={AutoCondition.PLAYER_MANA_BELOW}>{UI_LABELS.PLAYER_MANA_BELOW()}</option>
+                <option value={AutoCondition.PLAYER_MANA_ABOVE}>{UI_LABELS.PLAYER_MANA_ABOVE()}</option>
               </select>
             </label>
             <div className="auto-consumable-config-hint">{getConditionDescription(condition)}</div>
@@ -153,7 +155,7 @@ export default function AutoConsumableConfigModal({
           {needsThreshold && (
             <div className="auto-consumable-config-field">
               <label>
-                {UI_LABELS.THRESHOLD_PERCENT}
+                {UI_LABELS.THRESHOLD_PERCENT()}
                 <input
                   type="number"
                   min={THRESHOLD_MIN}
@@ -179,17 +181,17 @@ export default function AutoConsumableConfigModal({
               />
             </label>
             <div className="auto-consumable-config-hint">
-              {UI_LABELS.PRIORITY_HINT_CONSUMABLES}
+              {UI_LABELS.PRIORITY_HINT_CONSUMABLES()}
             </div>
           </div>
         </div>
 
         <div className="auto-consumable-config-actions">
           <button className="auto-consumable-config-cancel" onClick={onClose}>
-            {UI_LABELS.CANCEL}
+            {UI_LABELS.CANCEL()}
           </button>
           <button className="auto-consumable-config-save" onClick={handleSave}>
-            {UI_LABELS.SAVE}
+            {UI_LABELS.SAVE()}
           </button>
         </div>
       </div>

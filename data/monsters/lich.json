@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 150,
       "max": 220
     },
@@ -37,6 +37,7 @@
   "goldReward": {
     "min": 150,
     "max": 220
-  }
+  },
+  "nameKey": "monster.lich.name",
+  "descriptionKey": "monster.lich.description"
 }
-

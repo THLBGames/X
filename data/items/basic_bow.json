@@ -21,5 +21,7 @@
     "attack": 7,
     "speed": 5,
     "criticalChance": 2
-  }
+  },
+  "nameKey": "item.basic_bow.name",
+  "descriptionKey": "item.basic_bow.description"
 }

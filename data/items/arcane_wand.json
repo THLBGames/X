@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicAttack": 20,
     "mana": 75
-  }
+  },
+  "nameKey": "item.arcane_wand.name",
+  "descriptionKey": "item.arcane_wand.description"
 }

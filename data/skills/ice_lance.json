@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 8,
-  "prerequisites": ["frost_bolt"],
+  "prerequisites": [
+    "frost_bolt"
+  ],
   "manaCost": 25,
   "cooldown": 3,
   "target": "enemy",
@@ -17,10 +21,11 @@
       "base": 45,
       "scaling": {
         "stat": "intelligence",
-        "multiplier": 2.0
+        "multiplier": 2
       }
     },
     "debuffId": "slowed"
-  }
+  },
+  "nameKey": "skill.ice_lance.name",
+  "descriptionKey": "skill.ice_lance.description"
 }
-

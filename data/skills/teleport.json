@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 15,
-  "prerequisites": ["blink"],
+  "prerequisites": [
+    "blink"
+  ],
   "manaCost": 30,
   "cooldown": 20,
   "target": "self",
   "effect": {
     "buffId": "teleport"
-  }
+  },
+  "nameKey": "skill.teleport.name",
+  "descriptionKey": "skill.teleport.description"
 }
-

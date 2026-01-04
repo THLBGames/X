@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "runecrafting_upgrade_I"
-  }
+  },
+  "nameKey": "upgrade.runecrafting_upgrade_II.name",
+  "descriptionKey": "upgrade.runecrafting_upgrade_II.description"
 }

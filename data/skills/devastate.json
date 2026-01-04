@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 11,
-  "prerequisites": ["rend"],
+  "prerequisites": [
+    "rend"
+  ],
   "manaCost": 25,
   "cooldown": 8,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "armor_reduction"
-  }
+  },
+  "nameKey": "skill.devastate.name",
+  "descriptionKey": "skill.devastate.description"
 }
-

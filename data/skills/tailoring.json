@@ -101,6 +101,7 @@
         "mana": 150
       }
     }
-  ]
+  ],
+  "nameKey": "skill.tailoring.name",
+  "descriptionKey": "skill.tailoring.description"
 }
-

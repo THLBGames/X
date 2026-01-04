@@ -5,7 +5,9 @@
   "properties": {
     "id": { "type": "string" },
     "name": { "type": "string" },
+    "nameKey": { "type": "string", "description": "Translation key for name (format: dungeon.{id}.name)" },
     "description": { "type": "string" },
+    "descriptionKey": { "type": "string", "description": "Translation key for description (format: dungeon.{id}.description)" },
     "tier": { "type": "number" },
     "requiredLevel": { "type": "number" },
     "requiredDungeonId": { "type": "string" },

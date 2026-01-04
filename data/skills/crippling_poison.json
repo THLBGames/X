@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "unlockLevel": 7,
-  "prerequisites": ["poison_blade"],
+  "prerequisites": [
+    "poison_blade"
+  ],
   "manaCost": 25,
   "cooldown": 0,
   "target": "self",
   "effect": {
     "buffId": "crippling_poison_weapon"
-  }
+  },
+  "nameKey": "skill.crippling_poison.name",
+  "descriptionKey": "skill.crippling_poison.description"
 }
-

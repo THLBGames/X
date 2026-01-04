@@ -56,8 +56,15 @@
     "dispel_magic"
   ],
   "equipmentRestrictions": {
-    "weaponTypes": ["staff", "wand"],
-    "armorTypes": ["light", "cloth"]
-  }
+    "weaponTypes": [
+      "staff",
+      "wand"
+    ],
+    "armorTypes": [
+      "light",
+      "cloth"
+    ]
+  },
+  "nameKey": "class.mage.name",
+  "descriptionKey": "class.mage.description"
 }
-

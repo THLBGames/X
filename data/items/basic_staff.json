@@ -8,7 +8,9 @@
   "value": 60,
   "requirements": {
     "level": 1,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "magicAttack": 6,
     "mana": 20
-  }
+  },
+  "nameKey": "item.basic_staff.name",
+  "descriptionKey": "item.basic_staff.description"
 }
-

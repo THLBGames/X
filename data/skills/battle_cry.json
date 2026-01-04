@@ -5,7 +5,9 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 6,
   "manaCost": 25,
@@ -13,6 +15,7 @@
   "target": "self",
   "effect": {
     "buffId": "battle_cry"
-  }
+  },
+  "nameKey": "skill.battle_cry.name",
+  "descriptionKey": "skill.battle_cry.description"
 }
-

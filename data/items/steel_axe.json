@@ -19,5 +19,7 @@
   },
   "combatStatBonuses": {
     "attack": 27
-  }
+  },
+  "nameKey": "item.steel_axe.name",
+  "descriptionKey": "item.steel_axe.description"
 }

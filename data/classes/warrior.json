@@ -61,8 +61,17 @@
     "cripple"
   ],
   "equipmentRestrictions": {
-    "weaponTypes": ["sword", "axe", "mace", "spear"],
-    "armorTypes": ["heavy", "medium"]
-  }
+    "weaponTypes": [
+      "sword",
+      "axe",
+      "mace",
+      "spear"
+    ],
+    "armorTypes": [
+      "heavy",
+      "medium"
+    ]
+  },
+  "nameKey": "class.warrior.name",
+  "descriptionKey": "class.warrior.description"
 }
-

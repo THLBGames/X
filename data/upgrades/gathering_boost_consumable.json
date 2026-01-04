@@ -11,5 +11,7 @@
     "experienceMultiplier": 1.15
   },
   "actionDuration": 75,
-  "requirements": {}
+  "requirements": {},
+  "nameKey": "upgrade.gathering_boost_consumable.name",
+  "descriptionKey": "upgrade.gathering_boost_consumable.description"
 }

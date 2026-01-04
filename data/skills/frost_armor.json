@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 7,
-  "prerequisites": ["mana_shield"],
+  "prerequisites": [
+    "mana_shield"
+  ],
   "manaCost": 30,
   "cooldown": 0,
   "target": "self",
   "effect": {
     "buffId": "frost_armor"
-  }
+  },
+  "nameKey": "skill.frost_armor.name",
+  "descriptionKey": "skill.frost_armor.description"
 }
-

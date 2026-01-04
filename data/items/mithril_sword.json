@@ -8,7 +8,9 @@
   "value": 1500,
   "requirements": {
     "level": 65,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -18,6 +20,7 @@
   "combatStatBonuses": {
     "attack": 45,
     "criticalChance": 5
-  }
+  },
+  "nameKey": "item.mithril_sword.name",
+  "descriptionKey": "item.mithril_sword.description"
 }
-

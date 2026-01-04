@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "defense": 7,
     "speed": 4
-  }
+  },
+  "nameKey": "item.apprentice_leather_top.name",
+  "descriptionKey": "item.apprentice_leather_top.description"
 }

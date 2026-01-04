@@ -8,7 +8,9 @@
   "value": 50,
   "requirements": {
     "level": 1,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -17,6 +19,7 @@
   "combatStatBonuses": {
     "attack": 6,
     "speed": 5
-  }
+  },
+  "nameKey": "item.basic_dagger.name",
+  "descriptionKey": "item.basic_dagger.description"
 }
-

@@ -8,7 +8,9 @@
   "value": 160,
   "requirements": {
     "level": 18,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "helmet",
   "statBonuses": {
@@ -17,6 +19,7 @@
   },
   "combatStatBonuses": {
     "defense": 12
-  }
+  },
+  "nameKey": "item.iron_helmet.name",
+  "descriptionKey": "item.iron_helmet.description"
 }
-

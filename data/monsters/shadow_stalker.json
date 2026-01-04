@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 60,
       "max": 100
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 60,
     "max": 100
-  }
+  },
+  "nameKey": "monster.shadow_stalker.name",
+  "descriptionKey": "monster.shadow_stalker.description"
 }
-

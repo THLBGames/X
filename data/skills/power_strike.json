@@ -4,9 +4,13 @@
   "description": "A devastating melee attack with increased critical chance.",
   "type": "active",
   "maxLevel": 5,
-  "prerequisites": ["cleave"],
+  "prerequisites": [
+    "cleave"
+  ],
   "requirements": {
-    "class": ["warrior"],
+    "class": [
+      "warrior"
+    ],
     "level": 10
   },
   "manaCost": 25,
@@ -17,9 +21,10 @@
       "base": 50,
       "scaling": {
         "stat": "strength",
-        "multiplier": 2.0
+        "multiplier": 2
       }
     }
-  }
+  },
+  "nameKey": "skill.power_strike.name",
+  "descriptionKey": "skill.power_strike.description"
 }
-

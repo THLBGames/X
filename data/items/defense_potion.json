@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "buff",
     "amount": 50
-  }
+  },
+  "nameKey": "item.defense_potion.name",
+  "descriptionKey": "item.defense_potion.description"
 }

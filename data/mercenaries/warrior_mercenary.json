@@ -17,6 +17,7 @@
     "speed": 12,
     "criticalChance": 5,
     "criticalDamage": 1.5
-  }
+  },
+  "nameKey": "mercenary.warrior_mercenary.name",
+  "descriptionKey": "mercenary.warrior_mercenary.description"
 }
-

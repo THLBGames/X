@@ -8,7 +8,9 @@
   "value": 6000,
   "requirements": {
     "level": 90,
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "magicAttack": 100,
     "mana": 300,
     "magicDefense": 40
-  }
+  },
+  "nameKey": "item.mythic_staff.name",
+  "descriptionKey": "item.mythic_staff.description"
 }
-

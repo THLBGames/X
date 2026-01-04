@@ -9,6 +9,7 @@
     "experienceMultiplier": 1.25,
     "speedMultiplier": 0.85,
     "yieldMultiplier": 1.2
-  }
+  },
+  "nameKey": "mercenary.mining_mercenary.name",
+  "descriptionKey": "mercenary.mining_mercenary.description"
 }
-

@@ -8,7 +8,9 @@
   "value": 450,
   "requirements": {
     "level": 33,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "boots",
   "statBonuses": {
@@ -19,6 +21,7 @@
     "defense": 12,
     "speed": 18,
     "criticalChance": 2
-  }
+  },
+  "nameKey": "item.shadow_boots.name",
+  "descriptionKey": "item.shadow_boots.description"
 }
-

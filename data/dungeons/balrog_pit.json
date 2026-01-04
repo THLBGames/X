@@ -34,8 +34,10 @@
     }
   ],
   "rewards": {
-    "experienceBonus": 2.0,
+    "experienceBonus": 2,
     "goldBonus": 1.95,
     "itemDropRate": 1.8
-  }
+  },
+  "nameKey": "dungeon.balrog_pit.name",
+  "descriptionKey": "dungeon.balrog_pit.description"
 }

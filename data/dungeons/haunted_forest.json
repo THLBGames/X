@@ -34,6 +34,7 @@
   "rewards": {
     "experienceBonus": 1.5,
     "goldBonus": 1.3
-  }
+  },
+  "nameKey": "dungeon.haunted_forest.name",
+  "descriptionKey": "dungeon.haunted_forest.description"
 }
-

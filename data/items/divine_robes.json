@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "magicDefense": 60,
     "mana": 250
-  }
+  },
+  "nameKey": "item.divine_robes.name",
+  "descriptionKey": "item.divine_robes.description"
 }

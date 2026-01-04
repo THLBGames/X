@@ -20,5 +20,7 @@
   "combatStatBonuses": {
     "defense": 50,
     "speed": 30
-  }
+  },
+  "nameKey": "item.dragonhide_armor.name",
+  "descriptionKey": "item.dragonhide_armor.description"
 }

@@ -97,6 +97,7 @@
         "dexterity": 10
       }
     }
-  ]
+  ],
+  "nameKey": "skill.leatherworking.name",
+  "descriptionKey": "skill.leatherworking.description"
 }
-

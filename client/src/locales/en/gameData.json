@@ -1,0 +1,3527 @@
+{
+  "item": {
+    "adamantite_armor": {
+      "name": "Adamantite Armor",
+      "description": "Legendary armor forged from adamantite."
+    },
+    "adamantite_axe": {
+      "name": "Adamantite Axe",
+      "description": "A legendary axe forged from adamantite."
+    },
+    "adamantite_boots": {
+      "name": "Adamantite Boots",
+      "description": "Legendary boots forged from adamantite."
+    },
+    "adamantite_gauntlets": {
+      "name": "Adamantite Gauntlets",
+      "description": "Legendary gauntlets forged from adamantite."
+    },
+    "adamantite_helmet": {
+      "name": "Adamantite Helmet",
+      "description": "A legendary helmet forged from adamantite."
+    },
+    "adamantite_ingot": {
+      "name": "Adamantite Ingot",
+      "description": "Refined adamantite ingot for crafting."
+    },
+    "adamantite_leggings": {
+      "name": "Adamantite Leggings",
+      "description": "Legendary leggings forged from adamantite."
+    },
+    "adamantite_mace": {
+      "name": "Adamantite Mace",
+      "description": "A legendary mace forged from adamantite."
+    },
+    "adamantite_ore": {
+      "name": "Adamantite Ore",
+      "description": "An extremely rare and durable metal ore used for crafting legendary equipment."
+    },
+    "adamantite_spear": {
+      "name": "Adamantite Spear",
+      "description": "A legendary spear forged from adamantite."
+    },
+    "adamantite_sword": {
+      "name": "Adamantite Sword",
+      "description": "A legendary blade forged from adamantite."
+    },
+    "advanced_gadget": {
+      "name": "Advanced Gadget",
+      "description": "An advanced mechanical gadget with magical enhancements."
+    },
+    "air_core": {
+      "name": "Air Core",
+      "description": "The core of an air elemental."
+    },
+    "amulet_tier1_1": {
+      "name": "Amulet Tier 1 #1",
+      "description": "An amulet from tier 1."
+    },
+    "amulet_tier1_2": {
+      "name": "Amulet Tier 1 #2",
+      "description": "An amulet from tier 1."
+    },
+    "amulet_tier1_3": {
+      "name": "Amulet Tier 1 #3",
+      "description": "An amulet from tier 1."
+    },
+    "amulet_tier2_1": {
+      "name": "Amulet Tier 2 #1",
+      "description": "An amulet from tier 2."
+    },
+    "amulet_tier2_2": {
+      "name": "Amulet Tier 2 #2",
+      "description": "An amulet from tier 2."
+    },
+    "amulet_tier2_3": {
+      "name": "Amulet Tier 2 #3",
+      "description": "An amulet from tier 2."
+    },
+    "amulet_tier3_1": {
+      "name": "Amulet Tier 3 #1",
+      "description": "An amulet from tier 3."
+    },
+    "amulet_tier3_2": {
+      "name": "Amulet Tier 3 #2",
+      "description": "An amulet from tier 3."
+    },
+    "amulet_tier3_3": {
+      "name": "Amulet Tier 3 #3",
+      "description": "An amulet from tier 3."
+    },
+    "amulet_tier4_1": {
+      "name": "Amulet Tier 4 #1",
+      "description": "An amulet from tier 4."
+    },
+    "amulet_tier4_2": {
+      "name": "Amulet Tier 4 #2",
+      "description": "An amulet from tier 4."
+    },
+    "amulet_tier4_3": {
+      "name": "Amulet Tier 4 #3",
+      "description": "An amulet from tier 4."
+    },
+    "amulet_tier5_1": {
+      "name": "Amulet Tier 5 #1",
+      "description": "An amulet from tier 5."
+    },
+    "amulet_tier5_2": {
+      "name": "Amulet Tier 5 #2",
+      "description": "An amulet from tier 5."
+    },
+    "amulet_tier5_3": {
+      "name": "Amulet Tier 5 #3",
+      "description": "An amulet from tier 5."
+    },
+    "amulet_tier6_1": {
+      "name": "Amulet Tier 6 #1",
+      "description": "An amulet from tier 6."
+    },
+    "amulet_tier6_2": {
+      "name": "Amulet Tier 6 #2",
+      "description": "An amulet from tier 6."
+    },
+    "amulet_tier6_3": {
+      "name": "Amulet Tier 6 #3",
+      "description": "An amulet from tier 6."
+    },
+    "ancient_artifact": {
+      "name": "Ancient Artifact",
+      "description": "A powerful artifact from a lost civilization."
+    },
+    "ancient_coin": {
+      "name": "Ancient Coin",
+      "description": "A coin from a long-lost civilization."
+    },
+    "ancient_gem": {
+      "name": "Ancient Gem",
+      "description": "A gem from an ancient civilization, still pulsing with power."
+    },
+    "ancient_relic": {
+      "name": "Ancient Relic",
+      "description": "A preserved relic from ancient times."
+    },
+    "ancient_scroll": {
+      "name": "Ancient Scroll",
+      "description": "An ancient scroll with mysterious writings."
+    },
+    "ancient_shard": {
+      "name": "Ancient Shard",
+      "description": "A fragment from an ancient civilization."
+    },
+    "ancient_tome": {
+      "name": "Ancient Tome",
+      "description": "A legendary tome of ancient knowledge."
+    },
+    "ancient_treasure": {
+      "name": "Ancient Treasure",
+      "description": "A valuable treasure from ancient times."
+    },
+    "angel_feather": {
+      "name": "Angel Feather",
+      "description": "A feather from an angel."
+    },
+    "animal_bone": {
+      "name": "Animal Bone",
+      "description": "Bones from animals, used in various crafting recipes."
+    },
+    "animal_claw": {
+      "name": "Animal Claw",
+      "description": "Sharp claws from rare animals."
+    },
+    "animal_fang": {
+      "name": "Animal Fang",
+      "description": "Sharp fangs from dangerous animals."
+    },
+    "animal_hide": {
+      "name": "Animal Hide",
+      "description": "Basic hide from animals, used in leatherworking."
+    },
+    "animal_hide_quality": {
+      "name": "Quality Animal Hide",
+      "description": "High-quality hide from larger animals."
+    },
+    "animal_hide_rare": {
+      "name": "Rare Animal Hide",
+      "description": "Rare hide from exotic animals with exceptional quality."
+    },
+    "animal_meat": {
+      "name": "Animal Meat",
+      "description": "Meat from a trapped animal."
+    },
+    "animal_pelt": {
+      "name": "Animal Pelt",
+      "description": "A pelt from a trapped animal."
+    },
+    "apple": {
+      "name": "Apple",
+      "description": "A fresh apple that restores a small amount of health."
+    },
+    "apprentice_boots": {
+      "name": "Apprentice Boots",
+      "description": "Boots for apprentice rogues."
+    },
+    "apprentice_gloves": {
+      "name": "Apprentice Gloves",
+      "description": "Gloves for apprentice mages."
+    },
+    "apprentice_gloves_rogue": {
+      "name": "Apprentice Gloves",
+      "description": "Gloves for apprentice rogues."
+    },
+    "apprentice_hood": {
+      "name": "Apprentice Hood",
+      "description": "A hood for apprentice mages."
+    },
+    "apprentice_leather_top": {
+      "name": "Apprentice Leather Top",
+      "description": "The top portion of apprentice leather armor."
+    },
+    "apprentice_mask": {
+      "name": "Apprentice Mask",
+      "description": "A mask for apprentice rogues."
+    },
+    "apprentice_robes": {
+      "name": "Apprentice Robes",
+      "description": "Robes for apprentice mages."
+    },
+    "apprentice_robes_top": {
+      "name": "Apprentice Robe Top",
+      "description": "The top portion of apprentice robes."
+    },
+    "apprentice_slippers": {
+      "name": "Apprentice Slippers",
+      "description": "Slippers for apprentice mages."
+    },
+    "apprentice_staff": {
+      "name": "Apprentice Staff",
+      "description": "A staff used by apprentice mages."
+    },
+    "apprentice_wand": {
+      "name": "Apprentice Wand",
+      "description": "A wand used by apprentice mages."
+    },
+    "arcane_boots": {
+      "name": "Arcane Boots",
+      "description": "Boots enchanted with arcane power."
+    },
+    "arcane_gloves": {
+      "name": "Arcane Gloves",
+      "description": "Gloves infused with arcane power."
+    },
+    "arcane_hood": {
+      "name": "Arcane Hood",
+      "description": "A hood infused with arcane energy."
+    },
+    "arcane_orb": {
+      "name": "Arcane Orb",
+      "description": "An orb infused with arcane power."
+    },
+    "arcane_slippers": {
+      "name": "Arcane Slippers",
+      "description": "Slippers enchanted with arcane power."
+    },
+    "arcane_staff": {
+      "name": "Arcane Staff",
+      "description": "A staff imbued with arcane power."
+    },
+    "arcane_wand": {
+      "name": "Arcane Wand",
+      "description": "A wand imbued with arcane power."
+    },
+    "arcane_wisp": {
+      "name": "Arcane Wisp",
+      "description": "An advanced wisp of arcane energy."
+    },
+    "assassin_blade": {
+      "name": "Assassin Blade",
+      "description": "A deadly blade favored by assassins."
+    },
+    "assassin_gloves": {
+      "name": "Assassin Gloves",
+      "description": "Gloves favored by assassins."
+    },
+    "balrog_horn": {
+      "name": "Balrog Horn",
+      "description": "A horn from a powerful balrog demon."
+    },
+    "basic_boots": {
+      "name": "Basic Boots",
+      "description": "Simple boots for protection and mobility."
+    },
+    "basic_bow": {
+      "name": "Basic Bow",
+      "description": "A simple wooden bow."
+    },
+    "basic_dagger": {
+      "name": "Basic Dagger",
+      "description": "A simple dagger for stealthy attacks."
+    },
+    "basic_gloves": {
+      "name": "Basic Gloves",
+      "description": "Simple gloves for hand protection."
+    },
+    "basic_helmet": {
+      "name": "Basic Helmet",
+      "description": "A simple protective helmet."
+    },
+    "basic_pants": {
+      "name": "Basic Pants",
+      "description": "Simple pants for basic protection."
+    },
+    "basic_staff": {
+      "name": "Basic Staff",
+      "description": "A simple wooden staff for beginners."
+    },
+    "basic_wand": {
+      "name": "Basic Wand",
+      "description": "A simple wand for beginners."
+    },
+    "berry": {
+      "name": "Berry",
+      "description": "Sweet berries found while foraging."
+    },
+    "berry_seed": {
+      "name": "Berry Seed",
+      "description": "Seeds from berry bushes."
+    },
+    "blessed_water": {
+      "name": "Blessed Water",
+      "description": "Water blessed by the gods."
+    },
+    "blessing_scroll": {
+      "name": "Scroll of Blessing",
+      "description": "A scroll that provides temporary blessings."
+    },
+    "blood_crystal": {
+      "name": "Blood Crystal",
+      "description": "A crystal formed from crystallized blood."
+    },
+    "bone_fragment": {
+      "name": "Bone Fragment",
+      "description": "A fragment of bone from an undead creature."
+    },
+    "bone_meal": {
+      "name": "Bone Meal",
+      "description": "Ground bone used as fertilizer."
+    },
+    "bread": {
+      "name": "Bread",
+      "description": "A simple loaf of bread that restores a small amount of health."
+    },
+    "bread_roll": {
+      "name": "Bread Roll",
+      "description": "A small bread roll that restores health."
+    },
+    "bronze_axe": {
+      "name": "Bronze Axe",
+      "description": "A basic bronze axe."
+    },
+    "bronze_boots": {
+      "name": "Bronze Boots",
+      "description": "Basic bronze boots."
+    },
+    "bronze_gauntlets": {
+      "name": "Bronze Gauntlets",
+      "description": "Basic bronze gauntlets."
+    },
+    "bronze_helmet": {
+      "name": "Bronze Helmet",
+      "description": "A basic bronze helmet."
+    },
+    "bronze_leggings": {
+      "name": "Bronze Leggings",
+      "description": "Basic bronze leggings."
+    },
+    "bronze_mace": {
+      "name": "Bronze Mace",
+      "description": "A basic bronze mace."
+    },
+    "bronze_spear": {
+      "name": "Bronze Spear",
+      "description": "A basic bronze spear."
+    },
+    "bronze_sword": {
+      "name": "Bronze Sword",
+      "description": "A basic bronze blade."
+    },
+    "chain": {
+      "name": "Chain",
+      "description": "Metal chain links used in jewelry crafting."
+    },
+    "chaos_shard": {
+      "name": "Chaos Shard",
+      "description": "A shard of pure chaos."
+    },
+    "cheese": {
+      "name": "Cheese",
+      "description": "A block of cheese that restores health."
+    },
+    "cloth": {
+      "name": "Cloth",
+      "description": "Basic cloth material for tailoring."
+    },
+    "cloth_robe": {
+      "name": "Cloth Robe",
+      "description": "A simple robe made from cloth."
+    },
+    "coal": {
+      "name": "Coal",
+      "description": "Fuel used in smelting and blacksmithing."
+    },
+    "common_herb": {
+      "name": "Common Herb",
+      "description": "A basic herb used in alchemy and cooking."
+    },
+    "common_item": {
+      "name": "Common Item",
+      "description": "A common item used in enchanting."
+    },
+    "common_trinket": {
+      "name": "Common Trinket",
+      "description": "A simple decorative trinket."
+    },
+    "compost": {
+      "name": "Compost",
+      "description": "Organic compost for fertilizing crops."
+    },
+    "copper_axe": {
+      "name": "Copper Axe",
+      "description": "A basic axe forged from copper."
+    },
+    "copper_mace": {
+      "name": "Copper Mace",
+      "description": "A basic mace forged from copper."
+    },
+    "copper_ore": {
+      "name": "Copper Ore",
+      "description": "A basic metal ore used for crafting low-tier equipment."
+    },
+    "copper_ring": {
+      "name": "Copper Ring",
+      "description": "A simple ring made from copper."
+    },
+    "copper_spear": {
+      "name": "Copper Spear",
+      "description": "A basic spear forged from copper."
+    },
+    "copper_sword": {
+      "name": "Copper Sword",
+      "description": "A basic sword forged from copper."
+    },
+    "crystal_shard": {
+      "name": "Crystal Shard",
+      "description": "A shard of magical crystal."
+    },
+    "cursed_water": {
+      "name": "Cursed Water",
+      "description": "Water tainted by dark magic."
+    },
+    "curse_removal_scroll": {
+      "name": "Scroll of Curse Removal",
+      "description": "Removes negative effects."
+    },
+    "dark_gem": {
+      "name": "Dark Gem",
+      "description": "A gem infused with dark magic."
+    },
+    "dark_relic": {
+      "name": "Dark Relic",
+      "description": "A relic of dark power."
+    },
+    "defense_potion": {
+      "name": "Defense Potion",
+      "description": "Temporarily increases defense."
+    },
+    "demon_essence": {
+      "name": "Demon Essence",
+      "description": "Essence extracted from demons."
+    },
+    "dexterity_ring_t1": {
+      "name": "Ring of Agility",
+      "description": "A ring that enhances dexterity."
+    },
+    "dexterity_ring_t2": {
+      "name": "Ring of Swiftness",
+      "description": "A powerful ring of agility."
+    },
+    "dexterity_ring_t3": {
+      "name": "Ring of Shadows",
+      "description": "A legendary ring of agility."
+    },
+    "divine_boots": {
+      "name": "Divine Boots",
+      "description": "Boots blessed with divine power."
+    },
+    "divine_crown": {
+      "name": "Divine Crown",
+      "description": "A crown blessed with divine magic."
+    },
+    "divine_gloves": {
+      "name": "Divine Gloves",
+      "description": "Gloves blessed with divine power."
+    },
+    "divine_hood": {
+      "name": "Divine Hood",
+      "description": "A hood blessed with divine power."
+    },
+    "divine_meal": {
+      "name": "Divine Meal",
+      "description": "A meal blessed by the gods."
+    },
+    "divine_orb": {
+      "name": "Divine Orb",
+      "description": "An orb blessed with divine magic."
+    },
+    "divine_robes": {
+      "name": "Divine Robes",
+      "description": "Robes blessed with divine magic."
+    },
+    "divine_robes_bottom": {
+      "name": "Divine Robe Bottom",
+      "description": "The bottom portion of divine mage robes."
+    },
+    "dragonbone_armor": {
+      "name": "Dragonbone Armor",
+      "description": "Fearsome armor crafted from dragon bones."
+    },
+    "dragonbone_axe": {
+      "name": "Dragonbone Axe",
+      "description": "A fearsome axe crafted from dragon bones."
+    },
+    "dragonbone_bow": {
+      "name": "Dragonbone Bow",
+      "description": "A fearsome bow crafted from dragon bones."
+    },
+    "dragonbone_dagger": {
+      "name": "Dragonbone Dagger",
+      "description": "A deadly dagger crafted from dragon bone."
+    },
+    "dragonbone_mace": {
+      "name": "Dragonbone Mace",
+      "description": "A fearsome mace crafted from dragon bones."
+    },
+    "dragonbone_shield": {
+      "name": "Dragonbone Shield",
+      "description": "A fearsome shield crafted from dragon bones."
+    },
+    "dragonbone_spear": {
+      "name": "Dragonbone Spear",
+      "description": "A fearsome spear crafted from dragon bones."
+    },
+    "dragonbone_sword": {
+      "name": "Dragonbone Sword",
+      "description": "A fearsome blade crafted from dragon bones."
+    },
+    "dragonhide_armor": {
+      "name": "Dragonhide Armor",
+      "description": "Armor crafted from dragon hide."
+    },
+    "dragon_blood": {
+      "name": "Dragon Blood",
+      "description": "The blood of a dragon, highly valuable and magical."
+    },
+    "dragon_bone": {
+      "name": "Dragon Bone",
+      "description": "A bone from a dragon."
+    },
+    "dragon_scale": {
+      "name": "Dragon Scale",
+      "description": "A scale from a dragon."
+    },
+    "dwarven_ale": {
+      "name": "Dwarven Ale",
+      "description": "Strong ale that restores mana."
+    },
+    "earth_core": {
+      "name": "Earth Core",
+      "description": "The core of an earth elemental."
+    },
+    "ectoplasm": {
+      "name": "Ectoplasm",
+      "description": "A spectral substance left behind by ghosts."
+    },
+    "elder_essence": {
+      "name": "Elder Essence",
+      "description": "Essence from ancient elder trees."
+    },
+    "elder_log": {
+      "name": "Elder Log",
+      "description": "A legendary log from an ancient elder tree."
+    },
+    "elder_staff": {
+      "name": "Elder Staff",
+      "description": "A staff from an ancient elder tree."
+    },
+    "elder_wand": {
+      "name": "Elder Wand",
+      "description": "A wand crafted from elder wood."
+    },
+    "elemental_core": {
+      "name": "Elemental Core",
+      "description": "The core of an elemental being."
+    },
+    "elixir_power": {
+      "name": "Elixir of Power",
+      "description": "A powerful elixir that enhances combat abilities."
+    },
+    "elven_bread": {
+      "name": "Elven Bread",
+      "description": "Mystical bread from the elves."
+    },
+    "emerald_ring": {
+      "name": "Emerald Ring",
+      "description": "A ring with an emerald gem."
+    },
+    "enchanted_cloth": {
+      "name": "Enchanted Cloth",
+      "description": "Cloth infused with magical properties."
+    },
+    "enchanted_gloves": {
+      "name": "Enchanted Gloves",
+      "description": "Gloves with magical enchantments."
+    },
+    "enchanted_hood": {
+      "name": "Enchanted Hood",
+      "description": "A hood with magical enchantments."
+    },
+    "enchanted_item_greater": {
+      "name": "Greater Enchanted Item",
+      "description": "An item with powerful magical enchantments."
+    },
+    "enchanted_item_minor": {
+      "name": "Minor Enchanted Item",
+      "description": "An item with minor magical enchantments."
+    },
+    "enchanted_item_moderate": {
+      "name": "Moderate Enchanted Item",
+      "description": "An item with moderate magical enchantments."
+    },
+    "enchanted_item_supreme": {
+      "name": "Supreme Enchanted Item",
+      "description": "An item with supreme magical enchantments."
+    },
+    "enchanted_robes_bottom": {
+      "name": "Enchanted Robe Bottom",
+      "description": "The bottom portion of enchanted mage robes."
+    },
+    "enchanted_staff": {
+      "name": "Enchanted Staff",
+      "description": "A staff with powerful enchantments."
+    },
+    "enchanted_thread": {
+      "name": "Enchanted Thread",
+      "description": "Thread infused with magical energy."
+    },
+    "energy_wisp": {
+      "name": "Energy Wisp",
+      "description": "A small wisp of magical energy."
+    },
+    "epic_amulet_4_0": {
+      "name": "Epic Amulet #1",
+      "description": "A epic amulet."
+    },
+    "epic_amulet_4_1": {
+      "name": "Epic Amulet #2",
+      "description": "A epic amulet."
+    },
+    "epic_amulet_4_2": {
+      "name": "Epic Amulet #3",
+      "description": "A epic amulet."
+    },
+    "epic_amulet_4_3": {
+      "name": "Epic Amulet #4",
+      "description": "A epic amulet."
+    },
+    "epic_amulet_4_4": {
+      "name": "Epic Amulet #5",
+      "description": "A epic amulet."
+    },
+    "epic_herb": {
+      "name": "Epic Herb",
+      "description": "An extremely rare herb with powerful magical properties."
+    },
+    "epic_item": {
+      "name": "Epic Item",
+      "description": "An epic item used in enchanting."
+    },
+    "epic_ring_4_0": {
+      "name": "Epic Ring #1",
+      "description": "A epic ring."
+    },
+    "epic_ring_4_1": {
+      "name": "Epic Ring #2",
+      "description": "A epic ring."
+    },
+    "epic_ring_4_2": {
+      "name": "Epic Ring #3",
+      "description": "A epic ring."
+    },
+    "epic_ring_4_3": {
+      "name": "Epic Ring #4",
+      "description": "A epic ring."
+    },
+    "epic_ring_4_4": {
+      "name": "Epic Ring #5",
+      "description": "A epic ring."
+    },
+    "essence_crystal": {
+      "name": "Essence Crystal",
+      "description": "A crystalized form of magical essence."
+    },
+    "essence_of_death": {
+      "name": "Essence of Death",
+      "description": "A dark essence extracted from a wraith."
+    },
+    "exotic_fruit": {
+      "name": "Exotic Fruit",
+      "description": "Exotic fruit with enhanced properties."
+    },
+    "experience_potion_epic": {
+      "name": "Epic Experience Potion",
+      "description": "Grants an enormous amount of experience."
+    },
+    "experience_potion_large": {
+      "name": "Large Experience Potion",
+      "description": "Grants a large amount of experience."
+    },
+    "experience_potion_medium": {
+      "name": "Medium Experience Potion",
+      "description": "Grants a moderate amount of experience."
+    },
+    "experience_potion_small": {
+      "name": "Small Experience Potion",
+      "description": "Grants a small amount of experience."
+    },
+    "fertilizer": {
+      "name": "Fertilizer",
+      "description": "Enriched fertilizer for improving crop yields."
+    },
+    "fill_amulet_t1": {
+      "name": "Filler Amulet T1",
+      "description": "A filler amulet."
+    },
+    "fill_amulet_t2": {
+      "name": "Filler Amulet T2",
+      "description": "A filler amulet."
+    },
+    "fill_amulet_t3": {
+      "name": "Filler Amulet T3",
+      "description": "A filler amulet."
+    },
+    "fill_amulet_t4": {
+      "name": "Filler Amulet T4",
+      "description": "A filler amulet."
+    },
+    "fill_ring1_t1": {
+      "name": "Filler Ring1 T1",
+      "description": "A filler ring1."
+    },
+    "fill_ring1_t2": {
+      "name": "Filler Ring1 T2",
+      "description": "A filler ring1."
+    },
+    "fill_ring1_t3": {
+      "name": "Filler Ring1 T3",
+      "description": "A filler ring1."
+    },
+    "fill_ring1_t4": {
+      "name": "Filler Ring1 T4",
+      "description": "A filler ring1."
+    },
+    "fire_core": {
+      "name": "Fire Core",
+      "description": "The core of a fire elemental."
+    },
+    "fish_bone": {
+      "name": "Fish Bone",
+      "description": "Bones from fish, used in various recipes."
+    },
+    "fish_stew": {
+      "name": "Fish Stew",
+      "description": "A nutritious stew that restores health."
+    },
+    "fruit": {
+      "name": "Fruit",
+      "description": "Fresh fruit found while foraging."
+    },
+    "gears": {
+      "name": "Gears",
+      "description": "Mechanical gears for engineering projects."
+    },
+    "gem_common": {
+      "name": "Common Gem",
+      "description": "A basic gem used in jewelry crafting."
+    },
+    "gem_epic": {
+      "name": "Epic Gem",
+      "description": "A powerful gem used in high-tier jewelry crafting."
+    },
+    "gem_legendary": {
+      "name": "Legendary Gem",
+      "description": "A legendary gem with divine properties."
+    },
+    "gem_rare": {
+      "name": "Rare Gem",
+      "description": "A rare gem with enhanced properties for jewelry."
+    },
+    "giant_stone": {
+      "name": "Giant Stone",
+      "description": "A piece of living stone from a stone giant."
+    },
+    "gold": {
+      "name": "Gold",
+      "description": "Currency used for purchasing items."
+    },
+    "gold_ingot": {
+      "name": "Gold Ingot",
+      "description": "Refined gold ingot for crafting."
+    },
+    "gold_jewelry_set": {
+      "name": "Gold Jewelry Set",
+      "description": "A luxurious set of gold jewelry with precious gems."
+    },
+    "gold_ore": {
+      "name": "Gold Ore",
+      "description": "A valuable metal ore used for crafting high-quality jewelry and equipment."
+    },
+    "grand_feast": {
+      "name": "Grand Feast",
+      "description": "An extravagant feast that restores health and provides buffs."
+    },
+    "granite": {
+      "name": "Granite",
+      "description": "Durable granite stone for construction."
+    },
+    "greater_essence": {
+      "name": "Greater Essence",
+      "description": "A powerful concentration of magical essence."
+    },
+    "greater_healing_potion": {
+      "name": "Greater Healing Potion",
+      "description": "A powerful potion that restores health."
+    },
+    "greater_mana_potion": {
+      "name": "Greater Mana Potion",
+      "description": "A powerful potion that restores mana."
+    },
+    "greater_rune": {
+      "name": "Greater Rune",
+      "description": "A powerful rune with significant enchantments."
+    },
+    "health_food": {
+      "name": "Health Food",
+      "description": "A nutritious meal that restores health."
+    },
+    "health_potion_epic": {
+      "name": "Epic Health Potion",
+      "description": "Restores 400 health."
+    },
+    "health_potion_large": {
+      "name": "Large Health Potion",
+      "description": "Restores 300 health."
+    },
+    "health_potion_legendary": {
+      "name": "Legendary Health Potion",
+      "description": "Restores 1000 health."
+    },
+    "health_potion_medium": {
+      "name": "Medium Health Potion",
+      "description": "Restores 150 health."
+    },
+    "health_potion_small": {
+      "name": "Small Health Potion",
+      "description": "Restores 50 health."
+    },
+    "herb_essence": {
+      "name": "Herb Essence",
+      "description": "Concentrated essence extracted from rare herbs."
+    },
+    "herb_essence_rare": {
+      "name": "Rare Herb Essence",
+      "description": "Pure essence extracted from legendary herbs."
+    },
+    "herb_seed": {
+      "name": "Herb Seed",
+      "description": "A seed that can be planted to grow herbs."
+    },
+    "holy_relic": {
+      "name": "Holy Relic",
+      "description": "A relic of great holiness."
+    },
+    "identification_scroll": {
+      "name": "Scroll of Identification",
+      "description": "Identifies unknown items."
+    },
+    "imp_essence": {
+      "name": "Imp Essence",
+      "description": "The essence of a small demonic creature."
+    },
+    "intelligence_ring_t1": {
+      "name": "Ring of Intellect",
+      "description": "A ring that enhances magical power."
+    },
+    "intelligence_ring_t2": {
+      "name": "Ring of Wisdom",
+      "description": "A powerful ring of intellect."
+    },
+    "intelligence_ring_t3": {
+      "name": "Ring of Arcane",
+      "description": "A legendary ring of intellect."
+    },
+    "iron_armor": {
+      "name": "Iron Armor",
+      "description": "Sturdy armor forged from iron."
+    },
+    "iron_axe": {
+      "name": "Iron Axe",
+      "description": "A reliable iron axe."
+    },
+    "iron_boots": {
+      "name": "Iron Boots",
+      "description": "Heavy iron boots for warriors."
+    },
+    "iron_bow": {
+      "name": "Iron Bow",
+      "description": "A reliable iron-reinforced bow."
+    },
+    "iron_dagger": {
+      "name": "Iron Dagger",
+      "description": "A reliable iron dagger."
+    },
+    "iron_gauntlets": {
+      "name": "Iron Gauntlets",
+      "description": "Heavy iron gauntlets for warriors."
+    },
+    "iron_helmet": {
+      "name": "Iron Helmet",
+      "description": "A solid iron helmet."
+    },
+    "iron_ingot": {
+      "name": "Iron Ingot",
+      "description": "Refined iron ingot for crafting."
+    },
+    "iron_leggings": {
+      "name": "Iron Leggings",
+      "description": "Heavy iron leggings for warriors."
+    },
+    "iron_mace": {
+      "name": "Iron Mace",
+      "description": "A reliable iron mace."
+    },
+    "iron_ore": {
+      "name": "Iron Ore",
+      "description": "A common metal ore used for crafting equipment."
+    },
+    "iron_shield": {
+      "name": "Iron Shield",
+      "description": "A sturdy iron shield."
+    },
+    "iron_short_sword": {
+      "name": "Iron Short Sword",
+      "description": "A reliable iron short sword."
+    },
+    "iron_spear": {
+      "name": "Iron Spear",
+      "description": "A reliable iron spear."
+    },
+    "iron_sword": {
+      "name": "Iron Sword",
+      "description": "A reliable iron blade."
+    },
+    "jewelry": {
+      "name": "Jewelry",
+      "description": "Valuable jewelry piece."
+    },
+    "large_fish": {
+      "name": "Large Fish",
+      "description": "A large fish, valuable for cooking."
+    },
+    "leather": {
+      "name": "Leather",
+      "description": "Processed leather from animal hides."
+    },
+    "leather_armor": {
+      "name": "Leather Armor",
+      "description": "Light armor made from leather."
+    },
+    "leather_boots": {
+      "name": "Leather Boots",
+      "description": "Light boots for agile movement."
+    },
+    "leather_cap": {
+      "name": "Leather Cap",
+      "description": "A light leather cap for agile fighters."
+    },
+    "leather_gloves": {
+      "name": "Leather Gloves",
+      "description": "Light gloves for precise movements."
+    },
+    "leather_pants": {
+      "name": "Leather Pants",
+      "description": "Light leather pants for agile fighters."
+    },
+    "leather_scraps": {
+      "name": "Leather Scraps",
+      "description": "Scraps of leather from bandit armor."
+    },
+    "legendary_amulet_0": {
+      "name": "Legendary Amulet #1",
+      "description": "A legendary amulet."
+    },
+    "legendary_amulet_1": {
+      "name": "Legendary Amulet #2",
+      "description": "A legendary amulet."
+    },
+    "legendary_amulet_2": {
+      "name": "Legendary Amulet #3",
+      "description": "A legendary amulet."
+    },
+    "legendary_amulet_3": {
+      "name": "Legendary Amulet #4",
+      "description": "A legendary amulet."
+    },
+    "legendary_amulet_4": {
+      "name": "Legendary Amulet #5",
+      "description": "A legendary amulet."
+    },
+    "legendary_fish": {
+      "name": "Legendary Fish",
+      "description": "A legendary fish of immense value."
+    },
+    "legendary_herb": {
+      "name": "Legendary Herb",
+      "description": "A legendary herb with divine properties for master alchemy."
+    },
+    "legendary_ring_0": {
+      "name": "Legendary Ring #1",
+      "description": "A legendary ring."
+    },
+    "legendary_ring_1": {
+      "name": "Legendary Ring #2",
+      "description": "A legendary ring."
+    },
+    "legendary_ring_2": {
+      "name": "Legendary Ring #3",
+      "description": "A legendary ring."
+    },
+    "legendary_ring_3": {
+      "name": "Legendary Ring #4",
+      "description": "A legendary ring."
+    },
+    "legendary_ring_4": {
+      "name": "Legendary Ring #5",
+      "description": "A legendary ring."
+    },
+    "legendary_trinket": {
+      "name": "Legendary Trinket",
+      "description": "An extremely valuable legendary trinket."
+    },
+    "lich_phylactery": {
+      "name": "Lich Phylactery",
+      "description": "A fragment of a lich's phylactery, containing dark power."
+    },
+    "light_essence": {
+      "name": "Light Essence",
+      "description": "Essence of pure light."
+    },
+    "limestone": {
+      "name": "Limestone",
+      "description": "Basic limestone from quarries."
+    },
+    "luck_potion": {
+      "name": "Luck Potion",
+      "description": "Temporarily increases luck."
+    },
+    "mage_gloves": {
+      "name": "Mage Gloves",
+      "description": "Gloves that enhance magical focus."
+    },
+    "mage_hood": {
+      "name": "Mage Hood",
+      "description": "A hood that enhances magical focus."
+    },
+    "mage_orb": {
+      "name": "Mage Orb",
+      "description": "An orb that enhances magical power."
+    },
+    "mage_robes": {
+      "name": "Mage Robes",
+      "description": "Enchanted robes for powerful mages."
+    },
+    "mage_robes_bottom": {
+      "name": "Mage Robe Bottom",
+      "description": "The bottom portion of mage robes."
+    },
+    "mage_slippers": {
+      "name": "Mage Slippers",
+      "description": "Light slippers that enhance magical movement."
+    },
+    "mage_tome": {
+      "name": "Mage Tome",
+      "description": "A tome that enhances magical knowledge."
+    },
+    "magic_amulet_t1": {
+      "name": "Amulet of Magic",
+      "description": "An amulet that enhances magical abilities."
+    },
+    "magic_amulet_t2": {
+      "name": "Amulet of Sorcery",
+      "description": "A powerful amulet of magic."
+    },
+    "magic_amulet_t3": {
+      "name": "Amulet of Divinity",
+      "description": "A legendary amulet of magic."
+    },
+    "magic_cake": {
+      "name": "Magic Cake",
+      "description": "A cake imbued with magical properties."
+    },
+    "magic_essence": {
+      "name": "Magic Essence",
+      "description": "Pure magical essence used in advanced crafting."
+    },
+    "magic_fruit": {
+      "name": "Magic Fruit",
+      "description": "A fruit imbued with magical energy."
+    },
+    "magic_log": {
+      "name": "Magic Log",
+      "description": "A magical log infused with arcane energy."
+    },
+    "mana_crystal": {
+      "name": "Mana Crystal",
+      "description": "A crystal infused with pure mana energy."
+    },
+    "mana_potion_epic": {
+      "name": "Epic Mana Potion",
+      "description": "Restores 500 mana."
+    },
+    "mana_potion_large": {
+      "name": "Large Mana Potion",
+      "description": "Restores 200 mana."
+    },
+    "mana_potion_legendary": {
+      "name": "Legendary Mana Potion",
+      "description": "Restores 1500 mana."
+    },
+    "mana_potion_medium": {
+      "name": "Medium Mana Potion",
+      "description": "Restores 100 mana."
+    },
+    "mana_potion_small": {
+      "name": "Small Mana Potion",
+      "description": "Restores 30 mana."
+    },
+    "maple_log": {
+      "name": "Maple Log",
+      "description": "A high-quality log from a maple tree."
+    },
+    "maple_sap": {
+      "name": "Maple Sap",
+      "description": "Sweet sap from maple trees, used in various recipes."
+    },
+    "marble": {
+      "name": "Marble",
+      "description": "Elegant marble stone for fine crafting."
+    },
+    "mechanical_device": {
+      "name": "Mechanical Device",
+      "description": "A complex mechanical device."
+    },
+    "medium_fish": {
+      "name": "Medium Fish",
+      "description": "A medium-sized fish."
+    },
+    "metal_ring": {
+      "name": "Metal Ring",
+      "description": "A basic metal ring component."
+    },
+    "minor_essence": {
+      "name": "Minor Essence",
+      "description": "A small amount of magical essence."
+    },
+    "minor_healing_potion": {
+      "name": "Minor Healing Potion",
+      "description": "A weak potion that restores health."
+    },
+    "minor_mana_potion": {
+      "name": "Minor Mana Potion",
+      "description": "A weak potion that restores mana."
+    },
+    "minor_rune": {
+      "name": "Minor Rune",
+      "description": "A basic rune with minor enchantments."
+    },
+    "minotaur_horn": {
+      "name": "Minotaur Horn",
+      "description": "A powerful horn from a minotaur."
+    },
+    "mithril_axe": {
+      "name": "Mithril Axe",
+      "description": "A legendary axe forged from mithril."
+    },
+    "mithril_boots": {
+      "name": "Mithril Boots",
+      "description": "Legendary boots forged from mithril."
+    },
+    "mithril_bow": {
+      "name": "Mithril Bow",
+      "description": "A legendary bow forged from mithril."
+    },
+    "mithril_dagger": {
+      "name": "Mithril Dagger",
+      "description": "A legendary dagger forged from mithril."
+    },
+    "mithril_gauntlets": {
+      "name": "Mithril Gauntlets",
+      "description": "Legendary gauntlets forged from mithril."
+    },
+    "mithril_gear": {
+      "name": "Mithril Gear",
+      "description": "Equipment crafted from rare mithril."
+    },
+    "mithril_helmet": {
+      "name": "Mithril Helmet",
+      "description": "A legendary helmet forged from mithril."
+    },
+    "mithril_ingot": {
+      "name": "Mithril Ingot",
+      "description": "Refined mithril ingot for crafting."
+    },
+    "mithril_leggings": {
+      "name": "Mithril Leggings",
+      "description": "Legendary leggings forged from mithril."
+    },
+    "mithril_mace": {
+      "name": "Mithril Mace",
+      "description": "A legendary mace forged from mithril."
+    },
+    "mithril_ore": {
+      "name": "Mithril Ore",
+      "description": "A rare magical metal ore used for crafting powerful equipment."
+    },
+    "mithril_shield": {
+      "name": "Mithril Shield",
+      "description": "A legendary shield forged from mithril."
+    },
+    "mithril_short_sword": {
+      "name": "Mithril Short Sword",
+      "description": "A legendary short sword forged from mithril."
+    },
+    "mithril_spear": {
+      "name": "Mithril Spear",
+      "description": "A legendary spear forged from mithril."
+    },
+    "mithril_sword": {
+      "name": "Mithril Sword",
+      "description": "A legendary blade forged from mithril."
+    },
+    "moderate_essence": {
+      "name": "Moderate Essence",
+      "description": "A moderate amount of magical essence."
+    },
+    "monster_bone": {
+      "name": "Monster Bone",
+      "description": "Dense bones from powerful monsters."
+    },
+    "monster_essence": {
+      "name": "Monster Essence",
+      "description": "Essence extracted from trapped monsters."
+    },
+    "monster_hide_armor": {
+      "name": "Monster Hide Armor",
+      "description": "Armor crafted from tough monster hides."
+    },
+    "monster_pelt": {
+      "name": "Monster Pelt",
+      "description": "Tough pelt from dangerous monsters."
+    },
+    "mushroom": {
+      "name": "Mushroom",
+      "description": "Edible mushrooms found while foraging."
+    },
+    "mushroom_spore": {
+      "name": "Mushroom Spore",
+      "description": "Spores from mushrooms for cultivation."
+    },
+    "mutton": {
+      "name": "Mutton",
+      "description": "Cooked mutton that restores health."
+    },
+    "mythic_staff": {
+      "name": "Mythic Staff",
+      "description": "A legendary staff of immense magical power."
+    },
+    "mythic_wand": {
+      "name": "Mythic Wand",
+      "description": "A legendary wand of immense magical power."
+    },
+    "nature_core": {
+      "name": "Nature Core",
+      "description": "The core of a nature spirit."
+    },
+    "oak_log": {
+      "name": "Oak Log",
+      "description": "A sturdy log from an oak tree, used for crafting."
+    },
+    "obsidian": {
+      "name": "Obsidian",
+      "description": "Dark volcanic glass with magical properties."
+    },
+    "offline_time_upgrade_24h": {
+      "name": "Offline Time Upgrade (+24 Hours)",
+      "description": "Permanently increases your maximum offline progress time by 24 hours."
+    },
+    "offline_time_upgrade_8h": {
+      "name": "Offline Time Upgrade (+8 Hours)",
+      "description": "Permanently increases your maximum offline progress time by 8 hours."
+    },
+    "ogre_club": {
+      "name": "Ogre Club",
+      "description": "A crude but effective club used by ogres."
+    },
+    "order_shard": {
+      "name": "Order Shard",
+      "description": "A shard of pure order."
+    },
+    "pearl": {
+      "name": "Pearl",
+      "description": "A beautiful pearl found in shells."
+    },
+    "pearl_rare": {
+      "name": "Rare Pearl",
+      "description": "An extremely rare and valuable pearl."
+    },
+    "phantom_boots": {
+      "name": "Phantom Boots",
+      "description": "Boots that allow the wearer to move like a phantom."
+    },
+    "phantom_gloves": {
+      "name": "Phantom Gloves",
+      "description": "Gloves that allow phantom-like precision."
+    },
+    "phantom_mask": {
+      "name": "Phantom Mask",
+      "description": "A mask that conceals the wearer."
+    },
+    "phantom_pants": {
+      "name": "Phantom Pants",
+      "description": "Pants that allow the wearer to move like a phantom."
+    },
+    "phoenix_ash": {
+      "name": "Phoenix Ash",
+      "description": "Ash from a phoenix."
+    },
+    "phoenix_staff": {
+      "name": "Phoenix Staff",
+      "description": "A staff with a phoenix feather core."
+    },
+    "poison_gland": {
+      "name": "Poison Gland",
+      "description": "A venomous gland from a giant spider."
+    },
+    "polished_stone": {
+      "name": "Polished Stone",
+      "description": "Smooth polished stone for decorative work."
+    },
+    "potion_meal": {
+      "name": "Potion Meal",
+      "description": "A meal that restores both health and mana."
+    },
+    "precious_metal": {
+      "name": "Precious Metal",
+      "description": "Refined precious metal for high-tier jewelry."
+    },
+    "precision_gear": {
+      "name": "Precision Gear",
+      "description": "High-precision gear for advanced engineering."
+    },
+    "primal_essence": {
+      "name": "Primal Essence",
+      "description": "Essence from the beginning of time."
+    },
+    "quality_meal": {
+      "name": "Quality Meal",
+      "description": "A well-prepared meal that restores significant health."
+    },
+    "quest_item_01": {
+      "name": "Quest Item 1",
+      "description": "An item required for quest #1."
+    },
+    "quest_item_02": {
+      "name": "Quest Item 2",
+      "description": "An item required for quest #2."
+    },
+    "quest_item_03": {
+      "name": "Quest Item 3",
+      "description": "An item required for quest #3."
+    },
+    "quest_item_04": {
+      "name": "Quest Item 4",
+      "description": "An item required for quest #4."
+    },
+    "quest_item_05": {
+      "name": "Quest Item 5",
+      "description": "An item required for quest #5."
+    },
+    "quest_item_06": {
+      "name": "Quest Item 6",
+      "description": "An item required for quest #6."
+    },
+    "quest_item_07": {
+      "name": "Quest Item 7",
+      "description": "An item required for quest #7."
+    },
+    "quest_item_08": {
+      "name": "Quest Item 8",
+      "description": "An item required for quest #8."
+    },
+    "quest_item_09": {
+      "name": "Quest Item 9",
+      "description": "An item required for quest #9."
+    },
+    "quest_item_10": {
+      "name": "Quest Item 10",
+      "description": "An item required for quest #10."
+    },
+    "quest_item_11": {
+      "name": "Quest Item 11",
+      "description": "An item required for quest #11."
+    },
+    "quest_item_12": {
+      "name": "Quest Item 12",
+      "description": "An item required for quest #12."
+    },
+    "quest_item_13": {
+      "name": "Quest Item 13",
+      "description": "An item required for quest #13."
+    },
+    "quest_item_14": {
+      "name": "Quest Item 14",
+      "description": "An item required for quest #14."
+    },
+    "quest_item_15": {
+      "name": "Quest Item 15",
+      "description": "An item required for quest #15."
+    },
+    "quest_item_16": {
+      "name": "Quest Item 16",
+      "description": "An item required for quest #16."
+    },
+    "quest_item_17": {
+      "name": "Quest Item 17",
+      "description": "An item required for quest #17."
+    },
+    "quest_item_18": {
+      "name": "Quest Item 18",
+      "description": "An item required for quest #18."
+    },
+    "quest_item_19": {
+      "name": "Quest Item 19",
+      "description": "An item required for quest #19."
+    },
+    "quest_item_20": {
+      "name": "Quest Item 20",
+      "description": "An item required for quest #20."
+    },
+    "quest_item_21": {
+      "name": "Quest Item 21",
+      "description": "An item required for quest #21."
+    },
+    "quest_item_22": {
+      "name": "Quest Item 22",
+      "description": "An item required for quest #22."
+    },
+    "quest_item_23": {
+      "name": "Quest Item 23",
+      "description": "An item required for quest #23."
+    },
+    "quest_item_24": {
+      "name": "Quest Item 24",
+      "description": "An item required for quest #24."
+    },
+    "quest_item_25": {
+      "name": "Quest Item 25",
+      "description": "An item required for quest #25."
+    },
+    "quest_item_26": {
+      "name": "Quest Item 26",
+      "description": "An item required for quest #26."
+    },
+    "quest_item_27": {
+      "name": "Quest Item 27",
+      "description": "An item required for quest #27."
+    },
+    "quest_item_28": {
+      "name": "Quest Item 28",
+      "description": "An item required for quest #28."
+    },
+    "quest_item_29": {
+      "name": "Quest Item 29",
+      "description": "An item required for quest #29."
+    },
+    "quest_item_30": {
+      "name": "Quest Item 30",
+      "description": "An item required for quest #30."
+    },
+    "quest_item_31": {
+      "name": "Quest Item 31",
+      "description": "An item required for quest #31."
+    },
+    "quest_item_32": {
+      "name": "Quest Item 32",
+      "description": "An item required for quest #32."
+    },
+    "quest_item_33": {
+      "name": "Quest Item 33",
+      "description": "An item required for quest #33."
+    },
+    "quest_item_34": {
+      "name": "Quest Item 34",
+      "description": "An item required for quest #34."
+    },
+    "quest_item_35": {
+      "name": "Quest Item 35",
+      "description": "An item required for quest #35."
+    },
+    "quest_item_36": {
+      "name": "Quest Item 36",
+      "description": "An item required for quest #36."
+    },
+    "quest_item_37": {
+      "name": "Quest Item 37",
+      "description": "An item required for quest #37."
+    },
+    "quest_item_38": {
+      "name": "Quest Item 38",
+      "description": "An item required for quest #38."
+    },
+    "quest_item_39": {
+      "name": "Quest Item 39",
+      "description": "An item required for quest #39."
+    },
+    "quest_item_40": {
+      "name": "Quest Item 40",
+      "description": "An item required for quest #40."
+    },
+    "quest_item_41": {
+      "name": "Quest Item 41",
+      "description": "An item required for quest #41."
+    },
+    "quest_item_42": {
+      "name": "Quest Item 42",
+      "description": "An item required for quest #42."
+    },
+    "quest_item_43": {
+      "name": "Quest Item 43",
+      "description": "An item required for quest #43."
+    },
+    "quest_item_44": {
+      "name": "Quest Item 44",
+      "description": "An item required for quest #44."
+    },
+    "quest_item_45": {
+      "name": "Quest Item 45",
+      "description": "An item required for quest #45."
+    },
+    "quest_item_46": {
+      "name": "Quest Item 46",
+      "description": "An item required for quest #46."
+    },
+    "quest_item_47": {
+      "name": "Quest Item 47",
+      "description": "An item required for quest #47."
+    },
+    "quest_item_48": {
+      "name": "Quest Item 48",
+      "description": "An item required for quest #48."
+    },
+    "quest_item_49": {
+      "name": "Quest Item 49",
+      "description": "An item required for quest #49."
+    },
+    "quest_item_50": {
+      "name": "Quest Item 50",
+      "description": "An item required for quest #50."
+    },
+    "rare_berry": {
+      "name": "Rare Berry",
+      "description": "Rare berries with unique properties."
+    },
+    "rare_fish": {
+      "name": "Rare Fish",
+      "description": "A rare fish species."
+    },
+    "rare_herb": {
+      "name": "Rare Herb",
+      "description": "A rare herb with potent properties for advanced alchemy."
+    },
+    "rare_item": {
+      "name": "Rare Item",
+      "description": "A rare item used in enchanting."
+    },
+    "rare_trinket": {
+      "name": "Rare Trinket",
+      "description": "A valuable rare trinket."
+    },
+    "raw_meat": {
+      "name": "Raw Meat",
+      "description": "Raw meat from animals, can be cooked for food."
+    },
+    "raw_meat_exotic": {
+      "name": "Exotic Raw Meat",
+      "description": "Exotic meat from legendary creatures."
+    },
+    "raw_meat_premium": {
+      "name": "Premium Raw Meat",
+      "description": "Premium quality meat from rare animals."
+    },
+    "raw_meat_quality": {
+      "name": "Quality Raw Meat",
+      "description": "High-quality raw meat from larger animals."
+    },
+    "reinforced_leather_armor": {
+      "name": "Reinforced Leather Armor",
+      "description": "Sturdy leather armor with metal reinforcements."
+    },
+    "reinforced_leather_pants": {
+      "name": "Reinforced Leather Pants",
+      "description": "Sturdy leather pants with reinforcements."
+    },
+    "rejuvenation_potion": {
+      "name": "Rejuvenation Potion",
+      "description": "Restores both health and mana."
+    },
+    "ring_tier1_1": {
+      "name": "Ring Tier 1 #1",
+      "description": "A ring from tier 1."
+    },
+    "ring_tier1_2": {
+      "name": "Ring Tier 1 #2",
+      "description": "A ring from tier 1."
+    },
+    "ring_tier1_3": {
+      "name": "Ring Tier 1 #3",
+      "description": "A ring from tier 1."
+    },
+    "ring_tier2_1": {
+      "name": "Ring Tier 2 #1",
+      "description": "A ring from tier 2."
+    },
+    "ring_tier2_2": {
+      "name": "Ring Tier 2 #2",
+      "description": "A ring from tier 2."
+    },
+    "ring_tier2_3": {
+      "name": "Ring Tier 2 #3",
+      "description": "A ring from tier 2."
+    },
+    "ring_tier3_1": {
+      "name": "Ring Tier 3 #1",
+      "description": "A ring from tier 3."
+    },
+    "ring_tier3_2": {
+      "name": "Ring Tier 3 #2",
+      "description": "A ring from tier 3."
+    },
+    "ring_tier3_3": {
+      "name": "Ring Tier 3 #3",
+      "description": "A ring from tier 3."
+    },
+    "ring_tier4_1": {
+      "name": "Ring Tier 4 #1",
+      "description": "A ring from tier 4."
+    },
+    "ring_tier4_2": {
+      "name": "Ring Tier 4 #2",
+      "description": "A ring from tier 4."
+    },
+    "ring_tier4_3": {
+      "name": "Ring Tier 4 #3",
+      "description": "A ring from tier 4."
+    },
+    "ring_tier5_1": {
+      "name": "Ring Tier 5 #1",
+      "description": "A ring from tier 5."
+    },
+    "ring_tier5_2": {
+      "name": "Ring Tier 5 #2",
+      "description": "A ring from tier 5."
+    },
+    "ring_tier5_3": {
+      "name": "Ring Tier 5 #3",
+      "description": "A ring from tier 5."
+    },
+    "ring_tier6_1": {
+      "name": "Ring Tier 6 #1",
+      "description": "A ring from tier 6."
+    },
+    "ring_tier6_2": {
+      "name": "Ring Tier 6 #2",
+      "description": "A ring from tier 6."
+    },
+    "ring_tier6_3": {
+      "name": "Ring Tier 6 #3",
+      "description": "A ring from tier 6."
+    },
+    "roasted_meat": {
+      "name": "Roasted Meat",
+      "description": "A hearty meal that restores health."
+    },
+    "rotten_flesh": {
+      "name": "Rotten Flesh",
+      "description": "Decaying flesh from a zombie."
+    },
+    "rough_stone": {
+      "name": "Rough Stone",
+      "description": "Unprocessed stone from quarrying."
+    },
+    "royal_seal": {
+      "name": "Royal Seal",
+      "description": "An official seal from royalty."
+    },
+    "ruby_ring": {
+      "name": "Ruby Ring",
+      "description": "A ring with a ruby gem."
+    },
+    "rune_stone": {
+      "name": "Rune Stone",
+      "description": "A stone suitable for rune inscribing."
+    },
+    "rune_stone_quality": {
+      "name": "Quality Rune Stone",
+      "description": "A high-quality stone for advanced runes."
+    },
+    "rune_stone_rare": {
+      "name": "Rare Rune Stone",
+      "description": "An extremely rare stone for supreme runes."
+    },
+    "sapphire_amulet": {
+      "name": "Sapphire Amulet",
+      "description": "An amulet with a sapphire gem."
+    },
+    "scroll_of_healing": {
+      "name": "Scroll of Healing",
+      "description": "A scroll that restores health."
+    },
+    "scroll_of_intelligence": {
+      "name": "Scroll of Intelligence",
+      "description": "A scroll that temporarily increases intelligence."
+    },
+    "scroll_of_mana": {
+      "name": "Scroll of Mana",
+      "description": "A scroll that restores mana."
+    },
+    "scroll_of_protection": {
+      "name": "Scroll of Protection",
+      "description": "A scroll that temporarily increases defense."
+    },
+    "scroll_of_speed": {
+      "name": "Scroll of Speed",
+      "description": "A scroll that temporarily increases speed."
+    },
+    "scroll_of_strength": {
+      "name": "Scroll of Strength",
+      "description": "A scroll that temporarily increases strength."
+    },
+    "shadow_blade": {
+      "name": "Shadow Blade",
+      "description": "A blade that seems to phase between shadows."
+    },
+    "shadow_boots": {
+      "name": "Shadow Boots",
+      "description": "Boots that allow silent movement."
+    },
+    "shadow_essence": {
+      "name": "Shadow Essence",
+      "description": "Essence drawn from shadows."
+    },
+    "shadow_gloves": {
+      "name": "Shadow Gloves",
+      "description": "Gloves that enhance stealth and precision."
+    },
+    "shadow_mask": {
+      "name": "Shadow Mask",
+      "description": "A mask that conceals the wearer in shadows."
+    },
+    "shadow_slippers": {
+      "name": "Shadow Slippers",
+      "description": "Slippers that allow silent movement."
+    },
+    "short_sword": {
+      "name": "Short Sword",
+      "description": "A compact sword for quick strikes."
+    },
+    "silk": {
+      "name": "Silk",
+      "description": "Fine silk material for quality clothing."
+    },
+    "silk_armor": {
+      "name": "Silk Armor",
+      "description": "Light armor crafted from fine silk."
+    },
+    "silver_bow": {
+      "name": "Silver Bow",
+      "description": "A bow reinforced with silver."
+    },
+    "silver_dagger": {
+      "name": "Silver Dagger",
+      "description": "A dagger made from silver."
+    },
+    "silver_ingot": {
+      "name": "Silver Ingot",
+      "description": "Refined silver ingot for crafting."
+    },
+    "silver_necklace": {
+      "name": "Silver Necklace",
+      "description": "An elegant silver necklace with gemstones."
+    },
+    "silver_ore": {
+      "name": "Silver Ore",
+      "description": "A precious metal ore used for crafting quality equipment and jewelry."
+    },
+    "simple_tool": {
+      "name": "Simple Tool",
+      "description": "A basic tool for engineering projects."
+    },
+    "small_fish": {
+      "name": "Small Fish",
+      "description": "A small fish caught while fishing."
+    },
+    "soul_gem": {
+      "name": "Soul Gem",
+      "description": "A gem containing a captured soul."
+    },
+    "speed_potion": {
+      "name": "Speed Potion",
+      "description": "Temporarily increases speed."
+    },
+    "spider_silk": {
+      "name": "Spider Silk",
+      "description": "Strong silk threads from a giant spider."
+    },
+    "spirit_essence": {
+      "name": "Spirit Essence",
+      "description": "Essence from spiritual beings."
+    },
+    "spring": {
+      "name": "Spring",
+      "description": "A mechanical spring for devices."
+    },
+    "steel": {
+      "name": "Steel",
+      "description": "Refined iron used for crafting quality weapons and armor."
+    },
+    "steel_armor": {
+      "name": "Steel Armor",
+      "description": "Sturdy armor forged from steel."
+    },
+    "steel_axe": {
+      "name": "Steel Axe",
+      "description": "A well-forged steel axe."
+    },
+    "steel_boots": {
+      "name": "Steel Boots",
+      "description": "Sturdy steel boots."
+    },
+    "steel_bow": {
+      "name": "Steel Bow",
+      "description": "A well-crafted steel bow."
+    },
+    "steel_dagger": {
+      "name": "Steel Dagger",
+      "description": "A well-crafted steel dagger."
+    },
+    "steel_gauntlets": {
+      "name": "Steel Gauntlets",
+      "description": "Sturdy steel gauntlets."
+    },
+    "steel_helmet": {
+      "name": "Steel Helmet",
+      "description": "A well-crafted steel helmet."
+    },
+    "steel_ingot": {
+      "name": "Steel Ingot",
+      "description": "Refined steel ingot for crafting."
+    },
+    "steel_leather_armor": {
+      "name": "Steel Leather Armor",
+      "description": "Leather armor reinforced with steel."
+    },
+    "steel_leggings": {
+      "name": "Steel Leggings",
+      "description": "Sturdy steel leggings."
+    },
+    "steel_mace": {
+      "name": "Steel Mace",
+      "description": "A well-forged steel mace."
+    },
+    "steel_mask": {
+      "name": "Steel Mask",
+      "description": "A mask reinforced with steel."
+    },
+    "steel_shield": {
+      "name": "Steel Shield",
+      "description": "A sturdy steel shield."
+    },
+    "steel_short_sword": {
+      "name": "Steel Short Sword",
+      "description": "A well-crafted steel short sword."
+    },
+    "steel_spear": {
+      "name": "Steel Spear",
+      "description": "A well-forged steel spear."
+    },
+    "steel_sword": {
+      "name": "Steel Sword",
+      "description": "A well-forged steel blade."
+    },
+    "steel_weapon": {
+      "name": "Steel Weapon",
+      "description": "A well-crafted weapon made from steel."
+    },
+    "stone": {
+      "name": "Stone",
+      "description": "A basic stone material found while mining."
+    },
+    "strength_potion": {
+      "name": "Strength Potion",
+      "description": "A potion that temporarily increases strength."
+    },
+    "strength_ring_t1": {
+      "name": "Ring of Strength",
+      "description": "A ring that enhances physical power."
+    },
+    "strength_ring_t2": {
+      "name": "Ring of Might",
+      "description": "A powerful ring of strength."
+    },
+    "strength_ring_t3": {
+      "name": "Ring of Power",
+      "description": "A legendary ring of strength."
+    },
+    "supreme_essence": {
+      "name": "Supreme Essence",
+      "description": "The most powerful form of magical essence."
+    },
+    "supreme_rune": {
+      "name": "Supreme Rune",
+      "description": "A legendary rune with supreme magical power."
+    },
+    "teleport_scroll": {
+      "name": "Scroll of Teleportation",
+      "description": "Teleports the user to a saved location."
+    },
+    "thread": {
+      "name": "Thread",
+      "description": "Basic thread used in tailoring and leatherworking."
+    },
+    "thread_quality": {
+      "name": "Quality Thread",
+      "description": "High-quality thread for advanced crafting."
+    },
+    "trade_good": {
+      "name": "Trade Good",
+      "description": "A valuable trade commodity."
+    },
+    "trapped_animal": {
+      "name": "Trapped Animal",
+      "description": "An animal caught in a trap."
+    },
+    "trapped_animal_quality": {
+      "name": "Quality Trapped Animal",
+      "description": "A higher quality animal caught in a trap."
+    },
+    "trapped_monster": {
+      "name": "Trapped Monster",
+      "description": "A dangerous monster caught in a trap."
+    },
+    "treasure_chest": {
+      "name": "Treasure Chest",
+      "description": "A special chest that can be opened to reveal rare loot. Right-click to open."
+    },
+    "tree_bark": {
+      "name": "Tree Bark",
+      "description": "Bark stripped from trees, useful for crafting."
+    },
+    "troll_blood": {
+      "name": "Troll Blood",
+      "description": "The blood of a troll, known for its regenerative properties."
+    },
+    "uncommon_herb": {
+      "name": "Uncommon Herb",
+      "description": "A moderately rare herb with enhanced properties for alchemy."
+    },
+    "uncommon_item": {
+      "name": "Uncommon Item",
+      "description": "An uncommon item used in enchanting."
+    },
+    "uncommon_trinket": {
+      "name": "Uncommon Trinket",
+      "description": "A decorative trinket of moderate value."
+    },
+    "unicorn_horn": {
+      "name": "Unicorn Horn",
+      "description": "A horn from a unicorn."
+    },
+    "vampire_fang": {
+      "name": "Vampire Fang",
+      "description": "A fang from a vampire, still sharp and deadly."
+    },
+    "vegetable": {
+      "name": "Vegetable",
+      "description": "Fresh vegetables from farming."
+    },
+    "venom_blade": {
+      "name": "Venom Blade",
+      "description": "A blade coated with deadly venom."
+    },
+    "venom_dagger": {
+      "name": "Venom Dagger",
+      "description": "A dagger coated with deadly venom."
+    },
+    "vitality_amulet_t1": {
+      "name": "Amulet of Vitality",
+      "description": "An amulet that enhances health."
+    },
+    "vitality_amulet_t2": {
+      "name": "Amulet of Life",
+      "description": "A powerful amulet of vitality."
+    },
+    "vitality_amulet_t3": {
+      "name": "Amulet of Immortality",
+      "description": "A legendary amulet of vitality."
+    },
+    "void_essence": {
+      "name": "Void Essence",
+      "description": "Essence drawn from the void, containing immense power."
+    },
+    "void_shard": {
+      "name": "Void Shard",
+      "description": "A shard from the void."
+    },
+    "volcanic_stone": {
+      "name": "Volcanic Stone",
+      "description": "Stone forged in volcanic fire."
+    },
+    "water": {
+      "name": "Water",
+      "description": "Pure water used in alchemy and cooking."
+    },
+    "water_core": {
+      "name": "Water Core",
+      "description": "The core of a water elemental."
+    },
+    "wheat": {
+      "name": "Wheat",
+      "description": "Basic wheat grain for cooking."
+    },
+    "wheat_seed": {
+      "name": "Wheat Seed",
+      "description": "Seeds for planting wheat."
+    },
+    "wolf_pelt": {
+      "name": "Wolf Pelt",
+      "description": "The pelt of a dire wolf."
+    },
+    "wood": {
+      "name": "Wood",
+      "description": "Basic wood material for crafting."
+    },
+    "wooden_shield": {
+      "name": "Wooden Shield",
+      "description": "A basic wooden shield for defense."
+    },
+    "yew_berry": {
+      "name": "Yew Berry",
+      "description": "Rare berries from yew trees with unique properties."
+    },
+    "yew_log": {
+      "name": "Yew Log",
+      "description": "A rare log from a yew tree, used for advanced crafting."
+    }
+  },
+  "monster": {
+    "balrog": {
+      "name": "Balrog",
+      "description": "A demon of fire and shadow, one of the most powerful creatures."
+    },
+    "bandit": {
+      "name": "Bandit",
+      "description": "A human outlaw skilled with weapons."
+    },
+    "dark_mage": {
+      "name": "Dark Mage",
+      "description": "A human spellcaster corrupted by dark magic."
+    },
+    "dragon_whelp": {
+      "name": "Dragon Whelp",
+      "description": "A young dragon, already dangerous despite its age."
+    },
+    "ghost": {
+      "name": "Ghost",
+      "description": "A spectral entity that can phase through attacks."
+    },
+    "giant": {
+      "name": "Stone Giant",
+      "description": "A massive elemental creature made of living stone."
+    },
+    "goblin": {
+      "name": "Goblin",
+      "description": "A small, weak creature that poses little threat."
+    },
+    "goblin_shaman": {
+      "name": "Goblin Shaman",
+      "description": "A goblin spellcaster that uses dark magic."
+    },
+    "imp": {
+      "name": "Imp",
+      "description": "A small demonic creature with fire magic."
+    },
+    "lich": {
+      "name": "Lich",
+      "description": "A powerful undead spellcaster that commands dark magic."
+    },
+    "minotaur": {
+      "name": "Minotaur",
+      "description": "A powerful beast-man with incredible strength."
+    },
+    "ogre": {
+      "name": "Ogre",
+      "description": "A massive brute with devastating attacks."
+    },
+    "orc": {
+      "name": "Orc",
+      "description": "A brutish warrior with high strength but low intelligence."
+    },
+    "orc_warrior": {
+      "name": "Orc Warrior",
+      "description": "A heavily armored orc warrior trained for combat."
+    },
+    "shadow_stalker": {
+      "name": "Shadow Stalker",
+      "description": "A creature that exists between light and shadow."
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "description": "An undead warrior animated by dark magic."
+    },
+    "spider": {
+      "name": "Giant Spider",
+      "description": "A venomous arachnid that can poison its prey."
+    },
+    "troll": {
+      "name": "Troll",
+      "description": "A large, regenerating creature with immense strength."
+    },
+    "vampire": {
+      "name": "Vampire",
+      "description": "An undead creature that drains life from its victims."
+    },
+    "wolf": {
+      "name": "Dire Wolf",
+      "description": "A fierce predator with sharp claws and fangs."
+    },
+    "wraith": {
+      "name": "Wraith",
+      "description": "An ethereal undead spirit that drains life."
+    },
+    "zombie": {
+      "name": "Zombie",
+      "description": "A slow but resilient undead creature."
+    }
+  },
+  "skill": {
+    "adrenaline_rush": {
+      "name": "Adrenaline Rush",
+      "description": "Enter a state of heightened awareness, increasing all damage and speed."
+    },
+    "alchemy": {
+      "name": "Alchemy",
+      "description": "Create potions and magical compounds"
+    },
+    "ambush": {
+      "name": "Ambush",
+      "description": "Strike from stealth, dealing massive damage. Only usable while stealthed."
+    },
+    "arcane_explosion": {
+      "name": "Arcane Explosion",
+      "description": "Release a burst of arcane energy, damaging all nearby enemies."
+    },
+    "arcane_missile": {
+      "name": "Arcane Missile",
+      "description": "Launch multiple arcane missiles at your target."
+    },
+    "arcane_power": {
+      "name": "Arcane Power",
+      "description": "Enter a state of pure arcane power, dramatically increasing spell damage."
+    },
+    "archaeology": {
+      "name": "Archaeology",
+      "description": "Excavate ancient artifacts and relics from dig sites"
+    },
+    "armor_break": {
+      "name": "Armor Break",
+      "description": "Shatter enemy armor, reducing their defense permanently for the battle."
+    },
+    "assassinate": {
+      "name": "Assassinate",
+      "description": "Execute a powerful finishing move that deals massive damage to low-health enemies."
+    },
+    "backstab": {
+      "name": "Backstab",
+      "description": "Strike from behind for massive damage."
+    },
+    "basic_attack": {
+      "name": "Basic Attack",
+      "description": "A standard melee or ranged attack."
+    },
+    "battle_cry": {
+      "name": "Battle Cry",
+      "description": "Let out a mighty battle cry, increasing attack power for a short time."
+    },
+    "berserker_rage": {
+      "name": "Berserker Rage",
+      "description": "Enter a rage that increases your attack damage."
+    },
+    "blacksmithing": {
+      "name": "Blacksmithing",
+      "description": "Forge weapons and armor from metal"
+    },
+    "blade_flurry": {
+      "name": "Blade Flurry",
+      "description": "Strike all nearby enemies with rapid blade attacks."
+    },
+    "blink": {
+      "name": "Blink",
+      "description": "Instantly teleport a short distance, avoiding damage."
+    },
+    "block": {
+      "name": "Block",
+      "description": "Raise your shield or weapon to block incoming attacks."
+    },
+    "bloodlust": {
+      "name": "Bloodlust",
+      "description": "Each kill increases your attack speed and damage temporarily."
+    },
+    "chain_lightning": {
+      "name": "Chain Lightning",
+      "description": "Cast a bolt of lightning that jumps between multiple enemies."
+    },
+    "charge": {
+      "name": "Charge",
+      "description": "Rush towards an enemy, dealing damage and stunning them briefly."
+    },
+    "cleave": {
+      "name": "Cleave",
+      "description": "A powerful melee attack that strikes multiple enemies."
+    },
+    "cloak_of_shadows": {
+      "name": "Cloak of Shadows",
+      "description": "Become immune to magical effects for a short duration."
+    },
+    "combustion": {
+      "name": "Combustion",
+      "description": "Cause your fire spells to have a chance to explode for additional damage."
+    },
+    "cooking": {
+      "name": "Cooking",
+      "description": "Prepare food and consumables"
+    },
+    "counterattack": {
+      "name": "Counterattack",
+      "description": "When you successfully block or dodge, counterattack with increased damage."
+    },
+    "cripple": {
+      "name": "Cripple",
+      "description": "Cripple an enemy, significantly reducing their movement and attack speed."
+    },
+    "crippling_poison": {
+      "name": "Crippling Poison",
+      "description": "Apply a poison that slows enemies and reduces their attack speed."
+    },
+    "critical_mastery": {
+      "name": "Critical Mastery",
+      "description": "Increases critical strike damage and chance."
+    },
+    "deadly_poison": {
+      "name": "Deadly Poison",
+      "description": "Apply a lethal poison that deals heavy damage over time."
+    },
+    "death_mark": {
+      "name": "Death Mark",
+      "description": "Mark an enemy for death. When they die, you gain significant bonuses."
+    },
+    "defensive_stance": {
+      "name": "Defensive Stance",
+      "description": "Enter a defensive stance, increasing defense and reducing damage taken."
+    },
+    "demoralize": {
+      "name": "Demoralize",
+      "description": "Reduce enemy attack power and movement speed significantly."
+    },
+    "devastate": {
+      "name": "Devastate",
+      "description": "A crushing blow that reduces enemy armor."
+    },
+    "dispel_magic": {
+      "name": "Dispel Magic",
+      "description": "Remove all magical effects from a target."
+    },
+    "divination": {
+      "name": "Divination",
+      "description": "Gather energy and essence from the environment"
+    },
+    "dodge": {
+      "name": "Dodge",
+      "description": "Increase your chance to avoid attacks entirely."
+    },
+    "dual_wield": {
+      "name": "Dual Wield",
+      "description": "Master the art of wielding two weapons."
+    },
+    "enchanting": {
+      "name": "Enchanting",
+      "description": "Add magical properties to items"
+    },
+    "engineering": {
+      "name": "Engineering",
+      "description": "Build mechanical devices and gadgets"
+    },
+    "evasion": {
+      "name": "Evasion",
+      "description": "Dodge all incoming attacks for a short duration."
+    },
+    "execute": {
+      "name": "Execute",
+      "description": "Deal massive damage to an enemy with low health."
+    },
+    "expose_armor": {
+      "name": "Expose Armor",
+      "description": "Strike at weak points, reducing enemy armor."
+    },
+    "fan_of_knives": {
+      "name": "Fan of Knives",
+      "description": "Throw knives in all directions, hitting all nearby enemies."
+    },
+    "farming": {
+      "name": "Farming",
+      "description": "Grow crops and raise livestock"
+    },
+    "fireball": {
+      "name": "Fireball",
+      "description": "Hurl a ball of fire at your enemies."
+    },
+    "fire_armor": {
+      "name": "Fire Armor",
+      "description": "Surround yourself with flames, dealing damage to melee attackers."
+    },
+    "fire_nova": {
+      "name": "Fire Nova",
+      "description": "Create an explosion of fire that burns all nearby enemies."
+    },
+    "first_aid": {
+      "name": "First Aid",
+      "description": "Quickly bandage your wounds, restoring a moderate amount of health."
+    },
+    "fishing": {
+      "name": "Fishing",
+      "description": "Catch fish and aquatic resources from water"
+    },
+    "foraging": {
+      "name": "Foraging",
+      "description": "Find wild fruits, berries, and mushrooms"
+    },
+    "frostbite": {
+      "name": "Frostbite",
+      "description": "Cause enemies to suffer from frostbite, taking damage over time."
+    },
+    "frost_armor": {
+      "name": "Frost Armor",
+      "description": "Encase yourself in ice, increasing defense and slowing attackers."
+    },
+    "frost_bolt": {
+      "name": "Frost Bolt",
+      "description": "Launch a bolt of ice that slows the target."
+    },
+    "frost_nova": {
+      "name": "Frost Nova",
+      "description": "Create an explosion of ice that freezes all nearby enemies."
+    },
+    "fury": {
+      "name": "Fury",
+      "description": "Increases critical strike chance and damage for a short duration."
+    },
+    "garrote": {
+      "name": "Garrote",
+      "description": "Silently strangle an enemy from behind, dealing damage and silencing them."
+    },
+    "herbalism": {
+      "name": "Herbalism",
+      "description": "Gather herbs and plants for alchemy and cooking"
+    },
+    "heroic_leap": {
+      "name": "Heroic Leap",
+      "description": "Leap to a target location, dealing damage to enemies in the area."
+    },
+    "hunting": {
+      "name": "Hunting",
+      "description": "Track and hunt animals for resources"
+    },
+    "ice_lance": {
+      "name": "Ice Lance",
+      "description": "Hurl a sharp shard of ice that pierces through enemies."
+    },
+    "intimidate": {
+      "name": "Intimidate",
+      "description": "Intimidate enemies, reducing their attack power."
+    },
+    "item_mastery": {
+      "name": "Item Mastery",
+      "description": "Increases the effectiveness of all consumable items."
+    },
+    "jewelcrafting": {
+      "name": "Jewelcrafting",
+      "description": "Create jewelry and gems"
+    },
+    "kidney_shot": {
+      "name": "Kidney Shot",
+      "description": "Strike a vital point, stunning the enemy."
+    },
+    "last_stand": {
+      "name": "Last Stand",
+      "description": "When health drops below 20%, gain massive defense and health regeneration."
+    },
+    "leatherworking": {
+      "name": "Leatherworking",
+      "description": "Craft leather armor and bags"
+    },
+    "lethal_injection": {
+      "name": "Lethal Injection",
+      "description": "Inject a deadly poison that deals massive damage over time."
+    },
+    "lightning_armor": {
+      "name": "Lightning Armor",
+      "description": "Envelop yourself in lightning, shocking nearby enemies."
+    },
+    "lightning_bolt": {
+      "name": "Lightning Bolt",
+      "description": "Strike your enemy with lightning."
+    },
+    "lucky_strike": {
+      "name": "Lucky Strike",
+      "description": "Increases your luck, improving critical strike chance and item find rate."
+    },
+    "mage_intellect": {
+      "name": "Mage's Intellect",
+      "description": "Passively increases intelligence and magic power."
+    },
+    "magic_missile": {
+      "name": "Magic Missile",
+      "description": "Fire multiple homing missiles that never miss their target."
+    },
+    "mana_burn": {
+      "name": "Mana Burn",
+      "description": "Burn an enemy's mana, dealing damage based on their mana pool."
+    },
+    "mana_shield": {
+      "name": "Mana Shield",
+      "description": "Create a shield that absorbs damage using mana."
+    },
+    "mana_surge": {
+      "name": "Mana Surge",
+      "description": "Instantly restore a large amount of mana."
+    },
+    "marked_for_death": {
+      "name": "Marked for Death",
+      "description": "Mark an enemy, causing all attacks against them to deal bonus damage."
+    },
+    "meteor": {
+      "name": "Meteor",
+      "description": "Summon a massive meteor from the sky, dealing devastating damage to a large area."
+    },
+    "mining": {
+      "name": "Mining",
+      "description": "Extract ores and gems from stone deposits"
+    },
+    "mortal_strike": {
+      "name": "Mortal Strike",
+      "description": "A devastating strike that deals extra damage and reduces healing received."
+    },
+    "overpower": {
+      "name": "Overpower",
+      "description": "An unstoppable attack that ignores enemy defense."
+    },
+    "parry": {
+      "name": "Parry",
+      "description": "Deflect incoming attacks, reducing damage taken."
+    },
+    "poison_blade": {
+      "name": "Poison Blade",
+      "description": "Coat your weapon in poison, causing attacks to poison enemies."
+    },
+    "poison_strike": {
+      "name": "Poison Strike",
+      "description": "Attack with a poisoned blade that deals damage over time."
+    },
+    "polymorph": {
+      "name": "Polymorph",
+      "description": "Transform an enemy into a harmless creature, removing them from combat temporarily."
+    },
+    "potion_use": {
+      "name": "Potion Use",
+      "description": "Mastery of potions allows you to use them more effectively."
+    },
+    "power_strike": {
+      "name": "Power Strike",
+      "description": "A devastating melee attack with increased critical chance."
+    },
+    "quarrying": {
+      "name": "Quarrying",
+      "description": "Extract stone and construction materials"
+    },
+    "quick_strike": {
+      "name": "Quick Strike",
+      "description": "A fast attack that deals moderate damage."
+    },
+    "rally": {
+      "name": "Rally",
+      "description": "Instantly restore a large amount of health and remove negative effects."
+    },
+    "reckless_strike": {
+      "name": "Reckless Strike",
+      "description": "A powerful attack that deals high damage but leaves you vulnerable."
+    },
+    "rend": {
+      "name": "Rend",
+      "description": "Cause the enemy to bleed, taking damage over time."
+    },
+    "rogue_agility": {
+      "name": "Rogue's Agility",
+      "description": "Passively increases dexterity and speed."
+    },
+    "runecrafting": {
+      "name": "Runecrafting",
+      "description": "Inscribe runes on items to enhance their power"
+    },
+    "rupture": {
+      "name": "Rupture",
+      "description": "Tear open an enemy's wounds, causing them to bleed heavily."
+    },
+    "scorch": {
+      "name": "Scorch",
+      "description": "A quick fire spell that reduces enemy fire resistance."
+    },
+    "second_wind": {
+      "name": "Second Wind",
+      "description": "Recover health when your health drops below 30%."
+    },
+    "shadow_clone": {
+      "name": "Shadow Clone",
+      "description": "Create a shadowy clone that attacks alongside you."
+    },
+    "shadow_dance": {
+      "name": "Shadow Dance",
+      "description": "Enter a shadowy state allowing stealth abilities to be used without stealth."
+    },
+    "shadow_step": {
+      "name": "Shadow Step",
+      "description": "Teleport behind your enemy and strike."
+    },
+    "shadow_strike": {
+      "name": "Shadow Strike",
+      "description": "Strike from the shadows, dealing shadow damage that ignores armor."
+    },
+    "shield_bash": {
+      "name": "Shield Bash",
+      "description": "Bash your target with your shield, stunning them."
+    },
+    "shield_wall": {
+      "name": "Shield Wall",
+      "description": "Raise your shield, blocking all incoming damage for a short duration."
+    },
+    "slice_and_dice": {
+      "name": "Slice and Dice",
+      "description": "Increase your attack speed dramatically for a short duration."
+    },
+    "slow_time": {
+      "name": "Slow Time",
+      "description": "Slow down time in an area, reducing all enemies' speed."
+    },
+    "smoke_bomb": {
+      "name": "Smoke Bomb",
+      "description": "Throw a smoke bomb, blinding all enemies and allowing escape."
+    },
+    "sneak_attack": {
+      "name": "Sneak Attack",
+      "description": "Increase critical strike chance and damage."
+    },
+    "spell_power": {
+      "name": "Spell Power",
+      "description": "Passively increase all spell damage."
+    },
+    "spell_steal": {
+      "name": "Spell Steal",
+      "description": "Steal a beneficial buff from an enemy and apply it to yourself."
+    },
+    "stealth": {
+      "name": "Stealth",
+      "description": "Enter stealth mode, becoming invisible to enemies and increasing critical strike chance."
+    },
+    "sunder": {
+      "name": "Sunder",
+      "description": "Strike enemy armor, reducing their defense. Stacks up to 3 times."
+    },
+    "tailoring": {
+      "name": "Tailoring",
+      "description": "Craft cloth armor and accessories"
+    },
+    "taunt": {
+      "name": "Taunt",
+      "description": "Draw enemy attention to yourself."
+    },
+    "teleport": {
+      "name": "Teleport",
+      "description": "Teleport to a target location, leaving a magical mark."
+    },
+    "thieving": {
+      "name": "Thieving",
+      "description": "Pickpocket and steal from NPCs and targets"
+    },
+    "thunder_clap": {
+      "name": "Thunder Clap",
+      "description": "Strike the ground, dealing damage and slowing all nearby enemies."
+    },
+    "trapping": {
+      "name": "Trapping",
+      "description": "Set traps for animals and monsters"
+    },
+    "treasure_hunting": {
+      "name": "Treasure Hunting",
+      "description": "Discover buried treasures and loot"
+    },
+    "vanish": {
+      "name": "Vanish",
+      "description": "Instantly enter stealth and remove all negative effects."
+    },
+    "vendetta": {
+      "name": "Vendetta",
+      "description": "Mark an enemy for vengeance, dealing increased damage based on damage taken."
+    },
+    "victory_rush": {
+      "name": "Victory Rush",
+      "description": "After defeating an enemy, your next attack deals bonus damage and heals you."
+    },
+    "warrior_strength": {
+      "name": "Warrior's Strength",
+      "description": "Passively increases strength and attack power."
+    },
+    "war_cry": {
+      "name": "War Cry",
+      "description": "Increases all allies' attack power and reduces enemy morale."
+    },
+    "whirlwind": {
+      "name": "Whirlwind",
+      "description": "Spin in a circle, attacking all nearby enemies."
+    },
+    "woodcutting": {
+      "name": "Woodcutting",
+      "description": "Harvest wood and materials from trees"
+    }
+  },
+  "class": {
+    "berserker": {
+      "name": "Berserker",
+      "description": "A fierce warrior who trades defense for overwhelming offense, dealing massive damage while becoming more dangerous as health drops."
+    },
+    "guardian": {
+      "name": "Guardian",
+      "description": "A defensive warrior specializing in protection, shields, and tanking damage for allies."
+    },
+    "mage": {
+      "name": "Mage",
+      "description": "A master of arcane magic, specializing in devastating spell attacks."
+    },
+    "necromancer": {
+      "name": "Necromancer",
+      "description": "A dark mage who commands the forces of death, using curses, dark magic, and raising the undead."
+    },
+    "ranger": {
+      "name": "Ranger",
+      "description": "A wilderness expert who excels at ranged combat, tracking, and working with nature to defeat enemies from a distance."
+    },
+    "rogue": {
+      "name": "Rogue",
+      "description": "A nimble and stealthy fighter who relies on speed and critical strikes."
+    },
+    "swashbuckler": {
+      "name": "Swashbuckler",
+      "description": "A flamboyant duelist who combines speed, agility, and swordplay to overwhelm enemies with style and precision."
+    },
+    "warrior": {
+      "name": "Warrior",
+      "description": "A powerful melee fighter who excels in close combat with high strength and vitality."
+    },
+    "wizard": {
+      "name": "Wizard",
+      "description": "A master of pure arcane magic, focusing on powerful elemental spells and spellcasting prowess."
+    }
+  },
+  "dungeon": {
+    "abyssal_chasm": {
+      "name": "Abyssal Chasm",
+      "description": "A bottomless chasm from which demons and shadows emerge."
+    },
+    "ancient_ruins": {
+      "name": "Ancient Ruins",
+      "description": "Crumbling ruins of an ancient civilization, guarded by powerful guardians."
+    },
+    "balrog_pit": {
+      "name": "Balrog Pit",
+      "description": "A deep pit where balrogs are spawned from the depths of hell."
+    },
+    "bandit_camp": {
+      "name": "Bandit Camp",
+      "description": "A camp of bandits preying on travelers."
+    },
+    "celestial_sanctum": {
+      "name": "Celestial Sanctum",
+      "description": "A sacred place where celestial and infernal forces clash."
+    },
+    "chaos_realm": {
+      "name": "Chaos Realm",
+      "description": "A realm of pure chaos where all manner of creatures converge."
+    },
+    "cursed_castle": {
+      "name": "Cursed Castle",
+      "description": "A once-proud castle now cursed and filled with undead horrors."
+    },
+    "dark_catacombs": {
+      "name": "Dark Catacombs",
+      "description": "Endless underground tunnels filled with dark creatures."
+    },
+    "demon_forge": {
+      "name": "Demon Forge",
+      "description": "An infernal forge where demons craft weapons of destruction."
+    },
+    "dragon_lair": {
+      "name": "Dragon's Lair",
+      "description": "The lair of a powerful dragon."
+    },
+    "dragon_roost": {
+      "name": "Dragon Roost",
+      "description": "A mountain peak where dragons nest and guard their hoards."
+    },
+    "dread_fortress": {
+      "name": "Dread Fortress",
+      "description": "An impregnable fortress of darkness and despair."
+    },
+    "eternal_library": {
+      "name": "Eternal Library",
+      "description": "A vast library guarded by ancient magical constructs and liches."
+    },
+    "forest_clearing": {
+      "name": "Forest Clearing",
+      "description": "A peaceful clearing where weak monsters gather."
+    },
+    "forsaken_cathedral": {
+      "name": "Forsaken Cathedral",
+      "description": "A once-holy cathedral now defiled and filled with the worst abominations."
+    },
+    "ghost_manor": {
+      "name": "Ghost Manor",
+      "description": "An abandoned manor haunted by vengeful spirits."
+    },
+    "giant_kingdom": {
+      "name": "Giant Kingdom",
+      "description": "The realm of giants, where even the smallest threat is massive."
+    },
+    "goblin_cave": {
+      "name": "Goblin Cave",
+      "description": "A dark cave infested with goblins and their shaman leaders."
+    },
+    "godslayer_throne": {
+      "name": "Godslayer Throne",
+      "description": "The ultimate challenge. Face the greatest threats in existence at the throne of the godslayers."
+    },
+    "haunted_forest": {
+      "name": "Haunted Forest",
+      "description": "A dark forest filled with undead creatures."
+    },
+    "imp_infestation": {
+      "name": "Imp Infestation",
+      "description": "A portal rift has opened, allowing imps to swarm into the world."
+    },
+    "infernal_plains": {
+      "name": "Infernal Plains",
+      "description": "A scorched wasteland where demons roam freely."
+    },
+    "lich_tower": {
+      "name": "Lich Tower",
+      "description": "A towering structure ruled by an ancient lich."
+    },
+    "minotaur_labyrinth": {
+      "name": "Minotaur Labyrinth",
+      "description": "A twisting maze where minotaurs guard ancient treasures."
+    },
+    "ogre_stronghold": {
+      "name": "Ogre Stronghold",
+      "description": "A fortified stronghold defended by ogres and their allies."
+    },
+    "old_cemetery": {
+      "name": "Old Cemetery",
+      "description": "An ancient graveyard where the dead stir at night."
+    },
+    "orc_encampment": {
+      "name": "Orc Encampment",
+      "description": "An encampment of orc warriors."
+    },
+    "shadow_realm": {
+      "name": "Shadow Realm",
+      "description": "A twisted dimension where shadows come to life."
+    },
+    "skeleton_crypt": {
+      "name": "Skeleton Crypt",
+      "description": "An underground crypt filled with animated skeletons."
+    },
+    "spider_nest": {
+      "name": "Spider Nest",
+      "description": "A web-filled nest crawling with dangerous spiders."
+    },
+    "storm_peak": {
+      "name": "Storm Peak",
+      "description": "A mountain peak constantly lashed by storms, home to dragons and giants."
+    },
+    "titan_arena": {
+      "name": "Titan Arena",
+      "description": "An ancient arena where titans test their strength."
+    },
+    "troll_cave": {
+      "name": "Troll Cave",
+      "description": "A dark cave inhabited by powerful trolls."
+    },
+    "undead_citadel": {
+      "name": "Undead Citadel",
+      "description": "A massive fortress controlled by legions of the undead."
+    },
+    "underworld_gate": {
+      "name": "Underworld Gate",
+      "description": "A gateway to the underworld, guarded by the dead and damned."
+    },
+    "vampire_coven": {
+      "name": "Vampire Coven",
+      "description": "A hidden lair where vampires gather to plot in darkness."
+    },
+    "void_nexus": {
+      "name": "Void Nexus",
+      "description": "A convergence point of dark energies where reality tears apart."
+    },
+    "wolf_den": {
+      "name": "Wolf Den",
+      "description": "A den of wild wolves protecting their territory."
+    },
+    "world_ender_chamber": {
+      "name": "World Ender Chamber",
+      "description": "The final chamber where the world-ending threat awaits. Only the strongest can survive."
+    },
+    "zombie_graveyard": {
+      "name": "Zombie Graveyard",
+      "description": "A cursed graveyard where the dead rise in greater numbers."
+    }
+  },
+  "achievement": {},
+  "upgrade": {
+    "alchemy_boost_consumable": {
+      "name": "Alchemy Boost",
+      "description": "Temporarily increases alchemy speed by 30% for 50 actions"
+    },
+    "alchemy_upgrade_I": {
+      "name": "Alchemy Upgrade I",
+      "description": "Permanently increases alchemy XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "alchemy_upgrade_II": {
+      "name": "Alchemy Upgrade II",
+      "description": "Permanently increases alchemy XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "alchemy_upgrade_III": {
+      "name": "Alchemy Upgrade III",
+      "description": "Permanently increases alchemy XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "alchemy_upgrade_IV": {
+      "name": "Alchemy Upgrade IV",
+      "description": "Permanently increases alchemy XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "alchemy_upgrade_V": {
+      "name": "Alchemy Upgrade V",
+      "description": "Permanently increases alchemy XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "archaeology_boost_consumable": {
+      "name": "Archaeology Boost",
+      "description": "Temporarily increases archaeology speed by 30% for 50 actions"
+    },
+    "archaeology_upgrade_I": {
+      "name": "Archaeology Upgrade I",
+      "description": "Permanently increases archaeology XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "archaeology_upgrade_II": {
+      "name": "Archaeology Upgrade II",
+      "description": "Permanently increases archaeology XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "archaeology_upgrade_III": {
+      "name": "Archaeology Upgrade III",
+      "description": "Permanently increases archaeology XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "archaeology_upgrade_IV": {
+      "name": "Archaeology Upgrade IV",
+      "description": "Permanently increases archaeology XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "archaeology_upgrade_V": {
+      "name": "Archaeology Upgrade V",
+      "description": "Permanently increases archaeology XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "blacksmithing_boost_consumable": {
+      "name": "Blacksmithing Boost",
+      "description": "Temporarily increases blacksmithing speed by 30% for 50 actions"
+    },
+    "blacksmithing_upgrade_I": {
+      "name": "Blacksmithing Upgrade I",
+      "description": "Permanently increases blacksmithing XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "blacksmithing_upgrade_II": {
+      "name": "Blacksmithing Upgrade II",
+      "description": "Permanently increases blacksmithing XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "blacksmithing_upgrade_III": {
+      "name": "Blacksmithing Upgrade III",
+      "description": "Permanently increases blacksmithing XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "blacksmithing_upgrade_IV": {
+      "name": "Blacksmithing Upgrade IV",
+      "description": "Permanently increases blacksmithing XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "blacksmithing_upgrade_V": {
+      "name": "Blacksmithing Upgrade V",
+      "description": "Permanently increases blacksmithing XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "cooking_boost_consumable": {
+      "name": "Cooking Boost",
+      "description": "Temporarily increases cooking speed by 30% for 50 actions"
+    },
+    "cooking_upgrade_I": {
+      "name": "Cooking Upgrade I",
+      "description": "Permanently increases cooking XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "cooking_upgrade_II": {
+      "name": "Cooking Upgrade II",
+      "description": "Permanently increases cooking XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "cooking_upgrade_III": {
+      "name": "Cooking Upgrade III",
+      "description": "Permanently increases cooking XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "cooking_upgrade_IV": {
+      "name": "Cooking Upgrade IV",
+      "description": "Permanently increases cooking XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "cooking_upgrade_V": {
+      "name": "Cooking Upgrade V",
+      "description": "Permanently increases cooking XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "divination_boost_consumable": {
+      "name": "Divination Boost",
+      "description": "Temporarily increases divination speed by 30% for 50 actions"
+    },
+    "divination_upgrade_I": {
+      "name": "Divination Upgrade I",
+      "description": "Permanently increases divination XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "divination_upgrade_II": {
+      "name": "Divination Upgrade II",
+      "description": "Permanently increases divination XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "divination_upgrade_III": {
+      "name": "Divination Upgrade III",
+      "description": "Permanently increases divination XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "divination_upgrade_IV": {
+      "name": "Divination Upgrade IV",
+      "description": "Permanently increases divination XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "divination_upgrade_V": {
+      "name": "Divination Upgrade V",
+      "description": "Permanently increases divination XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "enchanting_boost_consumable": {
+      "name": "Enchanting Boost",
+      "description": "Temporarily increases enchanting speed by 30% for 50 actions"
+    },
+    "enchanting_upgrade_I": {
+      "name": "Enchanting Upgrade I",
+      "description": "Permanently increases enchanting XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "enchanting_upgrade_II": {
+      "name": "Enchanting Upgrade II",
+      "description": "Permanently increases enchanting XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "enchanting_upgrade_III": {
+      "name": "Enchanting Upgrade III",
+      "description": "Permanently increases enchanting XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "enchanting_upgrade_IV": {
+      "name": "Enchanting Upgrade IV",
+      "description": "Permanently increases enchanting XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "enchanting_upgrade_V": {
+      "name": "Enchanting Upgrade V",
+      "description": "Permanently increases enchanting XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "engineering_boost_consumable": {
+      "name": "Engineering Boost",
+      "description": "Temporarily increases engineering speed by 30% for 50 actions"
+    },
+    "engineering_upgrade_I": {
+      "name": "Engineering Upgrade I",
+      "description": "Permanently increases engineering XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "engineering_upgrade_II": {
+      "name": "Engineering Upgrade II",
+      "description": "Permanently increases engineering XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "engineering_upgrade_III": {
+      "name": "Engineering Upgrade III",
+      "description": "Permanently increases engineering XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "engineering_upgrade_IV": {
+      "name": "Engineering Upgrade IV",
+      "description": "Permanently increases engineering XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "engineering_upgrade_V": {
+      "name": "Engineering Upgrade V",
+      "description": "Permanently increases engineering XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "farming_boost_consumable": {
+      "name": "Farming Boost",
+      "description": "Temporarily increases farming speed by 30% for 50 actions"
+    },
+    "farming_upgrade_I": {
+      "name": "Farming Upgrade I",
+      "description": "Permanently increases farming XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "farming_upgrade_II": {
+      "name": "Farming Upgrade II",
+      "description": "Permanently increases farming XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "farming_upgrade_III": {
+      "name": "Farming Upgrade III",
+      "description": "Permanently increases farming XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "farming_upgrade_IV": {
+      "name": "Farming Upgrade IV",
+      "description": "Permanently increases farming XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "farming_upgrade_V": {
+      "name": "Farming Upgrade V",
+      "description": "Permanently increases farming XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "fishing_boost_consumable": {
+      "name": "Fishing Boost",
+      "description": "Temporarily increases fishing speed by 30% for 50 actions"
+    },
+    "fishing_upgrade_I": {
+      "name": "Fishing Upgrade I",
+      "description": "Permanently increases fishing XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "fishing_upgrade_II": {
+      "name": "Fishing Upgrade II",
+      "description": "Permanently increases fishing XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "fishing_upgrade_III": {
+      "name": "Fishing Upgrade III",
+      "description": "Permanently increases fishing XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "fishing_upgrade_IV": {
+      "name": "Fishing Upgrade IV",
+      "description": "Permanently increases fishing XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "fishing_upgrade_V": {
+      "name": "Fishing Upgrade V",
+      "description": "Permanently increases fishing XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "foraging_boost_consumable": {
+      "name": "Foraging Boost",
+      "description": "Temporarily increases foraging speed by 30% for 50 actions"
+    },
+    "foraging_upgrade_I": {
+      "name": "Foraging Upgrade I",
+      "description": "Permanently increases foraging XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "foraging_upgrade_II": {
+      "name": "Foraging Upgrade II",
+      "description": "Permanently increases foraging XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "foraging_upgrade_III": {
+      "name": "Foraging Upgrade III",
+      "description": "Permanently increases foraging XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "foraging_upgrade_IV": {
+      "name": "Foraging Upgrade IV",
+      "description": "Permanently increases foraging XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "foraging_upgrade_V": {
+      "name": "Foraging Upgrade V",
+      "description": "Permanently increases foraging XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "gathering_boost_consumable": {
+      "name": "Gathering Boost",
+      "description": "Temporarily increases all gathering skill speed by 25% for 75 actions"
+    },
+    "gathering_upgrade_I": {
+      "name": "Gathering Upgrade I",
+      "description": "Permanently increases all gathering skill XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "gathering_upgrade_II": {
+      "name": "Gathering Upgrade II",
+      "description": "Permanently increases all gathering skill XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "gathering_upgrade_III": {
+      "name": "Gathering Upgrade III",
+      "description": "Permanently increases all gathering skill XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "gathering_upgrade_IV": {
+      "name": "Gathering Upgrade IV",
+      "description": "Permanently increases all gathering skill XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "gathering_upgrade_V": {
+      "name": "Gathering Upgrade V",
+      "description": "Permanently increases all gathering skill XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "herbalism_boost_consumable": {
+      "name": "Herbalism Boost",
+      "description": "Temporarily increases herbalism speed by 30% for 50 actions"
+    },
+    "herbalism_upgrade_I": {
+      "name": "Herbalism Upgrade I",
+      "description": "Permanently increases herbalism XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "herbalism_upgrade_II": {
+      "name": "Herbalism Upgrade II",
+      "description": "Permanently increases herbalism XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "herbalism_upgrade_III": {
+      "name": "Herbalism Upgrade III",
+      "description": "Permanently increases herbalism XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "herbalism_upgrade_IV": {
+      "name": "Herbalism Upgrade IV",
+      "description": "Permanently increases herbalism XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "herbalism_upgrade_V": {
+      "name": "Herbalism Upgrade V",
+      "description": "Permanently increases herbalism XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "hunting_boost_consumable": {
+      "name": "Hunting Boost",
+      "description": "Temporarily increases hunting speed by 30% for 50 actions"
+    },
+    "hunting_upgrade_I": {
+      "name": "Hunting Upgrade I",
+      "description": "Permanently increases hunting XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "hunting_upgrade_II": {
+      "name": "Hunting Upgrade II",
+      "description": "Permanently increases hunting XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "hunting_upgrade_III": {
+      "name": "Hunting Upgrade III",
+      "description": "Permanently increases hunting XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "hunting_upgrade_IV": {
+      "name": "Hunting Upgrade IV",
+      "description": "Permanently increases hunting XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "hunting_upgrade_V": {
+      "name": "Hunting Upgrade V",
+      "description": "Permanently increases hunting XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "hybrid_boost_consumable": {
+      "name": "Hybrid Boost",
+      "description": "Temporarily increases all hybrid skill speed by 25% for 75 actions"
+    },
+    "hybrid_upgrade_I": {
+      "name": "Hybrid Upgrade I",
+      "description": "Permanently increases all hybrid skill XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "hybrid_upgrade_II": {
+      "name": "Hybrid Upgrade II",
+      "description": "Permanently increases all hybrid skill XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "hybrid_upgrade_III": {
+      "name": "Hybrid Upgrade III",
+      "description": "Permanently increases all hybrid skill XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "hybrid_upgrade_IV": {
+      "name": "Hybrid Upgrade IV",
+      "description": "Permanently increases all hybrid skill XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "hybrid_upgrade_V": {
+      "name": "Hybrid Upgrade V",
+      "description": "Permanently increases all hybrid skill XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "jewelcrafting_boost_consumable": {
+      "name": "Jewelcrafting Boost",
+      "description": "Temporarily increases jewelcrafting speed by 30% for 50 actions"
+    },
+    "jewelcrafting_upgrade_I": {
+      "name": "Jewelcrafting Upgrade I",
+      "description": "Permanently increases jewelcrafting XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "jewelcrafting_upgrade_II": {
+      "name": "Jewelcrafting Upgrade II",
+      "description": "Permanently increases jewelcrafting XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "jewelcrafting_upgrade_III": {
+      "name": "Jewelcrafting Upgrade III",
+      "description": "Permanently increases jewelcrafting XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "jewelcrafting_upgrade_IV": {
+      "name": "Jewelcrafting Upgrade IV",
+      "description": "Permanently increases jewelcrafting XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "jewelcrafting_upgrade_V": {
+      "name": "Jewelcrafting Upgrade V",
+      "description": "Permanently increases jewelcrafting XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "leatherworking_boost_consumable": {
+      "name": "Leatherworking Boost",
+      "description": "Temporarily increases leatherworking speed by 30% for 50 actions"
+    },
+    "leatherworking_upgrade_I": {
+      "name": "Leatherworking Upgrade I",
+      "description": "Permanently increases leatherworking XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "leatherworking_upgrade_II": {
+      "name": "Leatherworking Upgrade II",
+      "description": "Permanently increases leatherworking XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "leatherworking_upgrade_III": {
+      "name": "Leatherworking Upgrade III",
+      "description": "Permanently increases leatherworking XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "leatherworking_upgrade_IV": {
+      "name": "Leatherworking Upgrade IV",
+      "description": "Permanently increases leatherworking XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "leatherworking_upgrade_V": {
+      "name": "Leatherworking Upgrade V",
+      "description": "Permanently increases leatherworking XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "mining_boost_consumable": {
+      "name": "Mining Boost",
+      "description": "Temporarily increases mining speed by 30% for 50 actions"
+    },
+    "mining_upgrade_I": {
+      "name": "Mining Upgrade I",
+      "description": "Permanently increases mining XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "mining_upgrade_II": {
+      "name": "Mining Upgrade II",
+      "description": "Permanently increases mining XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "mining_upgrade_III": {
+      "name": "Mining Upgrade III",
+      "description": "Permanently increases mining XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "mining_upgrade_IV": {
+      "name": "Mining Upgrade IV",
+      "description": "Permanently increases mining XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "mining_upgrade_V": {
+      "name": "Mining Upgrade V",
+      "description": "Permanently increases mining XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "production_boost_consumable": {
+      "name": "Production Boost",
+      "description": "Temporarily increases all production skill speed by 25% for 75 actions"
+    },
+    "production_upgrade_I": {
+      "name": "Production Upgrade I",
+      "description": "Permanently increases all production skill XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "production_upgrade_II": {
+      "name": "Production Upgrade II",
+      "description": "Permanently increases all production skill XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "production_upgrade_III": {
+      "name": "Production Upgrade III",
+      "description": "Permanently increases all production skill XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "production_upgrade_IV": {
+      "name": "Production Upgrade IV",
+      "description": "Permanently increases all production skill XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "production_upgrade_V": {
+      "name": "Production Upgrade V",
+      "description": "Permanently increases all production skill XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "quarrying_boost_consumable": {
+      "name": "Quarrying Boost",
+      "description": "Temporarily increases quarrying speed by 30% for 50 actions"
+    },
+    "quarrying_upgrade_I": {
+      "name": "Quarrying Upgrade I",
+      "description": "Permanently increases quarrying XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "quarrying_upgrade_II": {
+      "name": "Quarrying Upgrade II",
+      "description": "Permanently increases quarrying XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "quarrying_upgrade_III": {
+      "name": "Quarrying Upgrade III",
+      "description": "Permanently increases quarrying XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "quarrying_upgrade_IV": {
+      "name": "Quarrying Upgrade IV",
+      "description": "Permanently increases quarrying XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "quarrying_upgrade_V": {
+      "name": "Quarrying Upgrade V",
+      "description": "Permanently increases quarrying XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "runecrafting_boost_consumable": {
+      "name": "Runecrafting Boost",
+      "description": "Temporarily increases runecrafting speed by 30% for 50 actions"
+    },
+    "runecrafting_upgrade_I": {
+      "name": "Runecrafting Upgrade I",
+      "description": "Permanently increases runecrafting XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "runecrafting_upgrade_II": {
+      "name": "Runecrafting Upgrade II",
+      "description": "Permanently increases runecrafting XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "runecrafting_upgrade_III": {
+      "name": "Runecrafting Upgrade III",
+      "description": "Permanently increases runecrafting XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "runecrafting_upgrade_IV": {
+      "name": "Runecrafting Upgrade IV",
+      "description": "Permanently increases runecrafting XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "runecrafting_upgrade_V": {
+      "name": "Runecrafting Upgrade V",
+      "description": "Permanently increases runecrafting XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "tailoring_boost_consumable": {
+      "name": "Tailoring Boost",
+      "description": "Temporarily increases tailoring speed by 30% for 50 actions"
+    },
+    "tailoring_upgrade_I": {
+      "name": "Tailoring Upgrade I",
+      "description": "Permanently increases tailoring XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "tailoring_upgrade_II": {
+      "name": "Tailoring Upgrade II",
+      "description": "Permanently increases tailoring XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "tailoring_upgrade_III": {
+      "name": "Tailoring Upgrade III",
+      "description": "Permanently increases tailoring XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "tailoring_upgrade_IV": {
+      "name": "Tailoring Upgrade IV",
+      "description": "Permanently increases tailoring XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "tailoring_upgrade_V": {
+      "name": "Tailoring Upgrade V",
+      "description": "Permanently increases tailoring XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "thieving_boost_consumable": {
+      "name": "Thieving Boost",
+      "description": "Temporarily increases thieving speed by 30% for 50 actions"
+    },
+    "thieving_upgrade_I": {
+      "name": "Thieving Upgrade I",
+      "description": "Permanently increases thieving XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "thieving_upgrade_II": {
+      "name": "Thieving Upgrade II",
+      "description": "Permanently increases thieving XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "thieving_upgrade_III": {
+      "name": "Thieving Upgrade III",
+      "description": "Permanently increases thieving XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "thieving_upgrade_IV": {
+      "name": "Thieving Upgrade IV",
+      "description": "Permanently increases thieving XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "thieving_upgrade_V": {
+      "name": "Thieving Upgrade V",
+      "description": "Permanently increases thieving XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "trapping_boost_consumable": {
+      "name": "Trapping Boost",
+      "description": "Temporarily increases trapping speed by 30% for 50 actions"
+    },
+    "trapping_upgrade_I": {
+      "name": "Trapping Upgrade I",
+      "description": "Permanently increases trapping XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "trapping_upgrade_II": {
+      "name": "Trapping Upgrade II",
+      "description": "Permanently increases trapping XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "trapping_upgrade_III": {
+      "name": "Trapping Upgrade III",
+      "description": "Permanently increases trapping XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "trapping_upgrade_IV": {
+      "name": "Trapping Upgrade IV",
+      "description": "Permanently increases trapping XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "trapping_upgrade_V": {
+      "name": "Trapping Upgrade V",
+      "description": "Permanently increases trapping XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "treasure_hunting_boost_consumable": {
+      "name": "Treasure hunting Boost",
+      "description": "Temporarily increases treasure hunting speed by 30% for 50 actions"
+    },
+    "treasure_hunting_upgrade_I": {
+      "name": "Treasure hunting Upgrade I",
+      "description": "Permanently increases treasure hunting XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "treasure_hunting_upgrade_II": {
+      "name": "Treasure hunting Upgrade II",
+      "description": "Permanently increases treasure hunting XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "treasure_hunting_upgrade_III": {
+      "name": "Treasure hunting Upgrade III",
+      "description": "Permanently increases treasure hunting XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "treasure_hunting_upgrade_IV": {
+      "name": "Treasure hunting Upgrade IV",
+      "description": "Permanently increases treasure hunting XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "treasure_hunting_upgrade_V": {
+      "name": "Treasure hunting Upgrade V",
+      "description": "Permanently increases treasure hunting XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "woodcutting_boost_consumable": {
+      "name": "Woodcutting Boost",
+      "description": "Temporarily increases woodcutting speed by 30% for 50 actions"
+    },
+    "woodcutting_upgrade_I": {
+      "name": "Woodcutting Upgrade I",
+      "description": "Permanently increases woodcutting XP gain by 10%, speed by 5%, and yield by 5%"
+    },
+    "woodcutting_upgrade_II": {
+      "name": "Woodcutting Upgrade II",
+      "description": "Permanently increases woodcutting XP gain by 15%, speed by 8%, and yield by 8%"
+    },
+    "woodcutting_upgrade_III": {
+      "name": "Woodcutting Upgrade III",
+      "description": "Permanently increases woodcutting XP gain by 20%, speed by 12%, and yield by 12%"
+    },
+    "woodcutting_upgrade_IV": {
+      "name": "Woodcutting Upgrade IV",
+      "description": "Permanently increases woodcutting XP gain by 25%, speed by 15%, and yield by 15%"
+    },
+    "woodcutting_upgrade_V": {
+      "name": "Woodcutting Upgrade V",
+      "description": "Permanently increases woodcutting XP gain by 30%, speed by 20%, and yield by 20%"
+    }
+  },
+  "mercenary": {
+    "crafting_mercenary": {
+      "name": "Master Crafter",
+      "description": "A master craftsman who helps you create items faster and gain more experience. Provides bonuses for 100 crafting actions."
+    },
+    "foraging_mercenary": {
+      "name": "Foraging Expert",
+      "description": "An expert forager who helps you collect materials more efficiently. Provides bonuses for 100 foraging actions."
+    },
+    "mage_mercenary": {
+      "name": "Hired Mage",
+      "description": "A spellcaster who provides magical support in combat. Fights alongside you for 50 battles."
+    },
+    "mining_mercenary": {
+      "name": "Mining Assistant",
+      "description": "A skilled miner who helps you gather resources faster. Provides bonuses for 100 mining actions."
+    },
+    "rogue_mercenary": {
+      "name": "Hired Rogue",
+      "description": "A swift assassin who strikes from the shadows. Fights alongside you for 50 battles."
+    },
+    "warrior_mercenary": {
+      "name": "Hired Warrior",
+      "description": "A skilled fighter who joins your party in combat. Fights alongside you for 50 battles."
+    }
+  },
+  "quest": {
+    "berserker_quest": {
+      "name": "Rage of the Warrior",
+      "description": "Demonstrate your ferocity by completing the Orc Encampment dungeon."
+    },
+    "guardian_quest": {
+      "name": "Shield of the Protector",
+      "description": "Prove your defensive prowess by completing the Ogre Stronghold dungeon."
+    },
+    "necromancer_quest": {
+      "name": "Gathering of Souls",
+      "description": "Collect 50 Soul Essences to demonstrate your connection to the realm of death."
+    },
+    "ranger_quest": {
+      "name": "Hunter's Mark",
+      "description": "Prove your tracking skills by slaying 50 wolves in combat."
+    },
+    "swashbuckler_quest": {
+      "name": "Duel of the Daring",
+      "description": "Show your swashbuckling prowess by completing the Bandit Camp dungeon."
+    },
+    "wizard_quest": {
+      "name": "Path of the Arcane",
+      "description": "Prove your mastery of arcane magic by completing the Eternal Library dungeon."
+    }
+  }
+}

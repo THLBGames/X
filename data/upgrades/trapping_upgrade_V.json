@@ -15,5 +15,7 @@
   },
   "requirements": {
     "previousTierId": "trapping_upgrade_IV"
-  }
+  },
+  "nameKey": "upgrade.trapping_upgrade_V.name",
+  "descriptionKey": "upgrade.trapping_upgrade_V.description"
 }

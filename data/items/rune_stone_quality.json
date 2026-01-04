@@ -6,6 +6,7 @@
   "rarity": "rare",
   "stackable": true,
   "maxStack": 999,
-  "value": 60
+  "value": 60,
+  "nameKey": "item.rune_stone_quality.name",
+  "descriptionKey": "item.rune_stone_quality.description"
 }
-

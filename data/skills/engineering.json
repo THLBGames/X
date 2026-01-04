@@ -101,6 +101,7 @@
         "intelligence": 15
       }
     }
-  ]
+  ],
+  "nameKey": "skill.engineering.name",
+  "descriptionKey": "skill.engineering.description"
 }
-

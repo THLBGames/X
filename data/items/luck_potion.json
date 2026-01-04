@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "buff",
     "amount": 20
-  }
+  },
+  "nameKey": "item.luck_potion.name",
+  "descriptionKey": "item.luck_potion.description"
 }

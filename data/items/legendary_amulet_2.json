@@ -15,5 +15,7 @@
   },
   "combatStatBonuses": {
     "attack": 40
-  }
+  },
+  "nameKey": "item.legendary_amulet_2.name",
+  "descriptionKey": "item.legendary_amulet_2.description"
 }

@@ -15,6 +15,7 @@
   },
   "combatStatBonuses": {
     "defense": 5
-  }
+  },
+  "nameKey": "item.wooden_shield.name",
+  "descriptionKey": "item.wooden_shield.description"
 }
-

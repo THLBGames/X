@@ -8,7 +8,9 @@
   "value": 5500,
   "requirements": {
     "level": 88,
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "equipmentSlot": "weapon",
   "statBonuses": {
@@ -20,6 +22,7 @@
     "speed": 30,
     "criticalChance": 15,
     "criticalDamage": 0.25
-  }
+  },
+  "nameKey": "item.shadow_blade.name",
+  "descriptionKey": "item.shadow_blade.description"
 }
-

@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 15
+  "value": 15,
+  "nameKey": "item.silver_ore.name",
+  "descriptionKey": "item.silver_ore.description"
 }
-

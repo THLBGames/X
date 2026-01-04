@@ -10,5 +10,7 @@
   "consumableEffect": {
     "type": "offlineTime",
     "offlineTimeHours": 24
-  }
+  },
+  "nameKey": "item.offline_time_upgrade_24h.name",
+  "descriptionKey": "item.offline_time_upgrade_24h.description"
 }

@@ -6,6 +6,7 @@
   "rarity": "legendary",
   "stackable": true,
   "maxStack": 99,
-  "value": 3000
+  "value": 3000,
+  "nameKey": "item.enchanted_item_supreme.name",
+  "descriptionKey": "item.enchanted_item_supreme.description"
 }
-

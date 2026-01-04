@@ -5,13 +5,16 @@
   "type": "passive",
   "maxLevel": 10,
   "requirements": {
-    "class": ["rogue"]
+    "class": [
+      "rogue"
+    ]
   },
   "passiveBonus": {
     "combatStatBonus": {
       "criticalChance": 3,
       "criticalDamage": 0.1
     }
-  }
+  },
+  "nameKey": "skill.sneak_attack.name",
+  "descriptionKey": "skill.sneak_attack.description"
 }
-

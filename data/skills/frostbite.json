@@ -5,10 +5,14 @@
   "type": "active",
   "maxLevel": 5,
   "requirements": {
-    "class": ["mage"]
+    "class": [
+      "mage"
+    ]
   },
   "unlockLevel": 19,
-  "prerequisites": ["ice_lance"],
+  "prerequisites": [
+    "ice_lance"
+  ],
   "manaCost": 28,
   "cooldown": 8,
   "target": "enemy",
@@ -21,6 +25,7 @@
       }
     },
     "debuffId": "frostbite"
-  }
+  },
+  "nameKey": "skill.frostbite.name",
+  "descriptionKey": "skill.frostbite.description"
 }
-

@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 200,
       "max": 300
     },
@@ -37,6 +37,7 @@
   "goldReward": {
     "min": 200,
     "max": 300
-  }
+  },
+  "nameKey": "monster.balrog.name",
+  "descriptionKey": "monster.balrog.description"
 }
-

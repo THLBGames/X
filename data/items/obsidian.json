@@ -6,6 +6,7 @@
   "rarity": "epic",
   "stackable": true,
   "maxStack": 999,
-  "value": 200
+  "value": 200,
+  "nameKey": "item.obsidian.name",
+  "descriptionKey": "item.obsidian.description"
 }
-

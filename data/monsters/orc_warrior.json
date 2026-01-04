@@ -20,7 +20,7 @@
   "lootTable": [
     {
       "itemId": "gold",
-      "chance": 1.0,
+      "chance": 1,
       "min": 45,
       "max": 70
     },
@@ -33,6 +33,7 @@
   "goldReward": {
     "min": 45,
     "max": 70
-  }
+  },
+  "nameKey": "monster.orc_warrior.name",
+  "descriptionKey": "monster.orc_warrior.description"
 }
-

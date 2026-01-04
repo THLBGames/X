@@ -6,6 +6,7 @@
   "rarity": "uncommon",
   "stackable": true,
   "maxStack": 999,
-  "value": 15
+  "value": 15,
+  "nameKey": "item.animal_fang.name",
+  "descriptionKey": "item.animal_fang.description"
 }
-

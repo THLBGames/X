@@ -8,7 +8,9 @@
   "value": 420,
   "requirements": {
     "level": 30,
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "equipmentSlot": "boots",
   "statBonuses": {
@@ -16,6 +18,7 @@
   },
   "combatStatBonuses": {
     "defense": 18
-  }
+  },
+  "nameKey": "item.steel_boots.name",
+  "descriptionKey": "item.steel_boots.description"
 }
-

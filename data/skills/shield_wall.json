@@ -5,15 +5,20 @@
   "type": "active",
   "maxLevel": 3,
   "requirements": {
-    "class": ["warrior"]
+    "class": [
+      "warrior"
+    ]
   },
   "unlockLevel": 12,
-  "prerequisites": ["shield_bash"],
+  "prerequisites": [
+    "shield_bash"
+  ],
   "manaCost": 40,
   "cooldown": 30,
   "target": "self",
   "effect": {
     "buffId": "shield_wall"
-  }
+  },
+  "nameKey": "skill.shield_wall.name",
+  "descriptionKey": "skill.shield_wall.description"
 }
-
