@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { SkillManager } from '../systems/skills/SkillManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
+import { InventoryManager } from '../systems/inventory';
 import { getDataLoader } from '../data';
 import { MAX_SKILL_BAR_SLOTS } from '@idle-rpg/shared';
 import { UI_MESSAGES } from '../constants/ui';
@@ -17,6 +18,7 @@ interface SkillTreeModalProps {
 export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps) {
   const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
+  const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
   const updateSkillBar = useGameState((state) => state.updateSkillBar);
   const updateAutoSkillSetting = useGameState((state) => state.updateAutoSkillSetting);
@@ -24,6 +26,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
   const [filter, setFilter] = useState<'all' | 'available' | 'learned' | 'locked'>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [configSkillId, setConfigSkillId] = useState<string | null>(null);
+  const [showRespecConfirm, setShowRespecConfirm] = useState(false);
 
   if (!isOpen || !character) {
     return null;
@@ -90,7 +93,18 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
       <div className="skill-tree-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>{t('skillTree.title')}</h2>
-          <div className="skill-points-display">{t('character.skillPoints')}: {character.skillPoints}</div>
+          <div className="modal-header-actions">
+            <div className="skill-points-display">{t('character.skillPoints')}: {character.skillPoints}</div>
+            {character.learnedSkills.length > 0 && (
+              <button
+                className="respec-button"
+                onClick={() => setShowRespecConfirm(true)}
+                title={t('skillTree.respecTooltip')}
+              >
+                {t('skillTree.respec')}
+              </button>
+            )}
+          </div>
           <button className="modal-close" onClick={onClose}>
             ×
           </button>
@@ -340,6 +354,48 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
             setConfigSkillId(null);
           }}
         />
+      )}
+      {showRespecConfirm && (
+        <div className="respec-confirm-overlay" onClick={() => setShowRespecConfirm(false)}>
+          <div className="respec-confirm-modal" onClick={(e) => e.stopPropagation()}>
+            <h3>{t('skillTree.respecConfirmTitle')}</h3>
+            <p>{t('skillTree.respecConfirmMessage')}</p>
+            <div className="respec-confirm-actions">
+              <button
+                className="respec-confirm-button"
+                onClick={() => {
+                  const gold = InventoryManager.getGold(inventory);
+                  const respecCost = 1000;
+                  
+                  if (gold < respecCost) {
+                    alert(t('skillTree.respecInsufficientGold', { cost: respecCost }));
+                    setShowRespecConfirm(false);
+                    return;
+                  }
+
+                  const result = SkillManager.respecSkills(character, respecCost);
+                  if (result.success && result.character) {
+                    setCharacter(result.character);
+                    // Deduct gold cost
+                    const newInventory = InventoryManager.removeItem(inventory, 'gold', respecCost);
+                    const setInventory = useGameState.getState().setInventory;
+                    setInventory(newInventory);
+                    setShowRespecConfirm(false);
+                    alert(t('skillTree.respecSuccess', { points: result.refundedPoints || 0 }));
+                  }
+                }}
+              >
+                {t('skillTree.respecConfirm')} (1000 {t('character.gold')})
+              </button>
+              <button
+                className="respec-cancel-button"
+                onClick={() => setShowRespecConfirm(false)}
+              >
+                {t('skillTree.respecCancel')}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

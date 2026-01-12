@@ -109,6 +109,31 @@ export default function DungeonSelector() {
     return DungeonManager.isDungeonUnlocked(dungeon, character.level, completedDungeonIds);
   };
 
+  const getDungeonDifficulty = (dungeon: Dungeon): 'easy' | 'medium' | 'hard' | 'impossible' => {
+    if (!character) return 'impossible';
+    const requiredLevel = dungeon.requiredLevel || 1;
+    const levelDiff = character.level - requiredLevel;
+    
+    if (levelDiff < -2) return 'impossible';
+    if (levelDiff < 0) return 'hard';
+    if (levelDiff <= 2) return 'medium';
+    return 'easy';
+  };
+
+  const getDifficultyLabel = (difficulty: string): string => {
+    return t(`dungeon.difficulty.${difficulty}`);
+  };
+
+  const getDifficultyColor = (difficulty: string): string => {
+    switch (difficulty) {
+      case 'easy': return '#4ecdc4';
+      case 'medium': return '#4a9eff';
+      case 'hard': return '#ffa500';
+      case 'impossible': return '#ff4444';
+      default: return '#888';
+    }
+  };
+
   if (!character) {
     return null;
   }
@@ -134,16 +159,29 @@ export default function DungeonSelector() {
               const unlocked = isDungeonUnlocked(dungeon);
               const progress = getDungeonProgress(dungeon.id);
               const isSelected = selectedDungeonId === dungeon.id;
+              const difficulty = getDungeonDifficulty(dungeon);
+              const difficultyLabel = getDifficultyLabel(difficulty);
+              const difficultyColor = getDifficultyColor(difficulty);
 
               return (
                 <div
                   key={dungeon.id}
-                  className={`dungeon-item ${isSelected ? 'active' : ''} ${!unlocked ? 'locked' : ''}`}
+                  className={`dungeon-item ${isSelected ? 'active' : ''} ${!unlocked ? 'locked' : ''} difficulty-${difficulty}`}
                   onClick={() => unlocked && handleDungeonSelect(dungeon.id)}
                 >
                   <div className="dungeon-header">
                     <div className="dungeon-name">{dataLoader.getTranslatedName(dungeon)}</div>
-                    {!unlocked && <div className="dungeon-locked-badge">{t('dungeon.locked')}</div>}
+                    <div className="dungeon-header-badges">
+                      {unlocked && (
+                        <div 
+                          className="dungeon-difficulty-badge"
+                          style={{ borderColor: difficultyColor, color: difficultyColor }}
+                        >
+                          {difficultyLabel}
+                        </div>
+                      )}
+                      {!unlocked && <div className="dungeon-locked-badge">{t('dungeon.locked')}</div>}
+                    </div>
                   </div>
                   <div className="dungeon-info">
                     <div className="dungeon-tier">{t('dungeon.tier')} {dungeon.tier}</div>
@@ -152,6 +190,15 @@ export default function DungeonSelector() {
                     )}
                   </div>
                   <div className="dungeon-description">{dataLoader.getTranslatedDescription(dungeon)}</div>
+                  {unlocked && (
+                    <div className="dungeon-rewards">
+                      <div className="rewards-label">{t('dungeon.rewards')}:</div>
+                      <div className="rewards-info">
+                        <span className="reward-item">{t('dungeon.expBonus')}: +{Math.round((dungeon.rewards.experienceBonus - 1) * 100)}%</span>
+                        <span className="reward-item">{t('dungeon.goldBonus')}: +{Math.round((dungeon.rewards.goldBonus - 1) * 100)}%</span>
+                      </div>
+                    </div>
+                  )}
                   {progress && progress.completed && (
                     <div className="dungeon-stats">
                       {t('dungeon.completed')} {progress.timesCompleted} {t('dungeon.time')}

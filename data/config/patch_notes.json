@@ -5,9 +5,14 @@
       "date": "2026-01-12",
       "categories": {
         "added": [
-          "Added stat tooltips",
-          "Combat guide modal",
-          "Created basic tutorial"
+          "Add equipment comparison tooltips showing stat changes before equipping (green/red indicators)",
+          "Create 'Next Steps' or progression guidance panel showing recommended actions for current level",
+          "Expand quest system with progression quests, repeatable quests, and achievement-linked quests",
+          "Added skill point respec system (full or partial) to allow build experimentation",
+          "Added difficulty indicators, reward previews, and completion stats to dungeon selector",
+          "Add tutorial/onboarding flow after character creation explaining core game loops and UI elements",
+          "Create combat mechanics guide/modal explaining damage formulas, turn order, critical hits, and status effects",
+          "Add comprehensive stat tooltips explaining what each base stat (Strength, Dexterity, etc.) does and how it converts to combat stats"
         ],
         "changed": [],
         "fixed": [],

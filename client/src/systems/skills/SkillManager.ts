@@ -217,6 +217,38 @@ export class SkillManager {
   }
 
   /**
+   * Respec skills - refund all skill points from learned skills
+   */
+  static respecSkills(
+    character: Character,
+    cost: number = 0
+  ): { success: boolean; character?: Character; reason?: string; refundedPoints?: number } {
+    // Calculate total skill points to refund
+    let totalRefunded = 0;
+    const dataLoader = getDataLoader();
+
+    for (const learnedSkill of character.learnedSkills) {
+      const skill = dataLoader.getSkill(learnedSkill.skillId);
+      if (skill) {
+        const skillCost = skill.unlockCost || 1;
+        totalRefunded += skillCost * learnedSkill.level;
+      }
+    }
+
+    // Return all skill points
+    return {
+      success: true,
+      refundedPoints: totalRefunded,
+      character: {
+        ...character,
+        skillPoints: character.skillPoints + totalRefunded,
+        learnedSkills: [],
+        skillBar: [], // Also clear skill bar
+      },
+    };
+  }
+
+  /**
    * Calculate skill effect value (for active skills with scaling)
    */
   static calculateSkillEffect(

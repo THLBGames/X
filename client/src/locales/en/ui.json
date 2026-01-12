@@ -79,7 +79,16 @@
     "tier": "Tier",
     "completed": "Completed",
     "time": "time",
-    "bestTime": "Best Time"
+    "bestTime": "Best Time",
+    "rewards": "Rewards",
+    "expBonus": "XP Bonus",
+    "goldBonus": "Gold Bonus",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "impossible": "Impossible"
+    }
   },
   "validation": {
     "thresholdRangeError": "Threshold must be between 0 and 100",
@@ -137,7 +146,15 @@
     "skillPoints": "SP",
     "removeFromBar": "Remove from skill bar",
     "addToBar": "Add to skill bar",
-    "bar": "Bar"
+    "bar": "Bar",
+    "respec": "Respec",
+    "respecTooltip": "Refund all skill points (cost: 1000 gold)",
+    "respecConfirmTitle": "Respec Skills",
+    "respecConfirmMessage": "Are you sure you want to respec all skills? This will refund all skill points but costs 1000 gold. All learned skills will be removed.",
+    "respecConfirm": "Confirm Respec",
+    "respecCancel": "Cancel",
+    "respecSuccess": "Successfully respecced! Refunded {{points}} skill points.",
+    "respecInsufficientGold": "Insufficient gold! Respec costs {{cost}} gold."
   },
   "skill": {
     "cooldown": "Cooldown"
@@ -224,6 +241,31 @@
     "completed": "Completed",
     "progress": "Progress",
     "questCompleted": "Quest Completed"
+  },
+  "progression": {
+    "title": "Progression Guide",
+    "xpNeeded": "XP needed",
+    "levelProgress": {
+      "title": "Level Progress"
+    },
+    "recommendedActions": {
+      "title": "Recommended Actions",
+      "dungeon": "Try These Dungeons",
+      "skillPoints": "Spend Skill Points",
+      "skillPointsDesc": "You have {{count}} skill point(s) available. Visit the Skill Tree to learn new abilities.",
+      "equipment": "Equip Better Gear",
+      "equipmentDesc": "Check your inventory for items you can equip to improve your stats.",
+      "quests": "Complete Quests",
+      "questsDesc": "Visit the Quests panel to see available quests and earn rewards.",
+      "skills": "Train Idle Skills",
+      "skillsDesc": "Use idle skills to gather resources and craft items while you're away."
+    },
+    "nextLevelBenefits": {
+      "title": "Next Level Benefits",
+      "skillPoint": "Gain 1 Skill Point",
+      "stats": "Increase all base stats",
+      "unlock": "Unlock new content (dungeons, items, etc.)"
+    }
   },
   "classChange": {
     "currentClass": "Current Class",

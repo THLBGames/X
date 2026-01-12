@@ -14,6 +14,7 @@ import QuestPanel from './QuestPanel';
 import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
+import ProgressionPanel from './ProgressionPanel';
 import SettingsPanel from './SettingsPanel';
 import PatchNotesModal from './PatchNotesModal';
 import OnboardingModal from './OnboardingModal';
@@ -25,7 +26,7 @@ export default function GameView() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const settings = useGameState((state) => state.settings);
   const [activeRightPanel, setActiveRightPanel] = useState<
-    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics'
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression'
   >('character');
   const [showSettings, setShowSettings] = useState(false);
   const [showPatchNotes, setShowPatchNotes] = useState(false);
@@ -149,6 +150,14 @@ export default function GameView() {
               Statistics
             </button>
           </TooltipWrapper>
+          <TooltipWrapper content="View recommended actions and progression guidance">
+            <button
+              className={`panel-tab ${activeRightPanel === 'progression' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('progression')}
+            >
+              Progression
+            </button>
+          </TooltipWrapper>
           <TooltipWrapper content="Game settings and preferences">
             <button className="panel-tab" onClick={() => setShowSettings(true)}>
               Settings
@@ -162,6 +171,7 @@ export default function GameView() {
           {activeRightPanel === 'shop' && <ShopPanel />}
           {activeRightPanel === 'quests' && <QuestPanel />}
           {activeRightPanel === 'statistics' && <StatisticsPanel />}
+          {activeRightPanel === 'progression' && <ProgressionPanel />}
           {activeRightPanel === 'skills' && (
             <div className="skills-tab-placeholder">
               <p>Skills are displayed in the center area.</p>
