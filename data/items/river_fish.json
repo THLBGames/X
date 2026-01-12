@@ -1,0 +1,12 @@
+{
+  "id": "river_fish",
+  "name": "River Fish",
+  "description": "A fish caught from flowing rivers.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5,
+  "nameKey": "item.river_fish.name",
+  "descriptionKey": "item.river_fish.description"
+}

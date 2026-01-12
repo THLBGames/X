@@ -1,0 +1,12 @@
+{
+  "id": "orichalcum_ore",
+  "name": "Orichalcum Ore",
+  "description": "A mythical metal ore of ancient power, used for crafting legendary equipment.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 750,
+  "nameKey": "item.orichalcum_ore.name",
+  "descriptionKey": "item.orichalcum_ore.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "primordial_fish",
+  "name": "Primordial Fish",
+  "description": "A fish from the primordial seas of creation.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800,
+  "nameKey": "item.primordial_fish.name",
+  "descriptionKey": "item.primordial_fish.description"
+}

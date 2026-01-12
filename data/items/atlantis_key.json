@@ -1,0 +1,12 @@
+{
+  "id": "atlantis_key",
+  "name": "Atlantis Key",
+  "description": "The key to the lost city of Atlantis, required to access the Atlantis Ruins.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 3000,
+  "nameKey": "item.atlantis_key.name",
+  "descriptionKey": "item.atlantis_key.description"
+}

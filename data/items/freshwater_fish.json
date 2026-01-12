@@ -1,0 +1,12 @@
+{
+  "id": "freshwater_fish",
+  "name": "Freshwater Fish",
+  "description": "A fish caught from freshwater sources.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.freshwater_fish.name",
+  "descriptionKey": "item.freshwater_fish.description"
+}

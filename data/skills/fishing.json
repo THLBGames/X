@@ -25,6 +25,89 @@
           "itemId": "fish_bone",
           "chance": 0.3,
           "quantity": 1
+        },
+        {
+          "itemId": "fish_scale",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "nodeId": "shallow_pond",
+      "name": "Shallow Pond",
+      "successRate": 0.88,
+      "experienceGain": 12,
+      "timeRequired": 4200,
+      "resources": [
+        {
+          "itemId": "freshwater_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "small_fish",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "fish_bone",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "river_stream",
+      "name": "River Stream",
+      "successRate": 0.87,
+      "experienceGain": 20,
+      "timeRequired": 4500,
+      "resources": [
+        {
+          "itemId": "river_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "freshwater_fish",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "fishing_bait",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "coastal_waters",
+      "name": "Coastal Waters",
+      "successRate": 0.86,
+      "experienceGain": 28,
+      "timeRequired": 4800,
+      "resources": [
+        {
+          "itemId": "saltwater_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "medium_fish",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "fish_scale",
+          "chance": 0.3,
+          "quantity": 1
         }
       ]
     },
@@ -45,6 +128,89 @@
         {
           "itemId": "small_fish",
           "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "saltwater_fish",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "coral_reef",
+      "name": "Coral Reef",
+      "successRate": 0.84,
+      "experienceGain": 45,
+      "timeRequired": 5200,
+      "resources": [
+        {
+          "itemId": "tropical_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "pearl",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "saltwater_fish",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "deep_lake",
+      "name": "Deep Lake",
+      "successRate": 0.83,
+      "experienceGain": 60,
+      "timeRequired": 5500,
+      "resources": [
+        {
+          "itemId": "lake_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "freshwater_pearl",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "freshwater_fish",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "ocean_depths",
+      "name": "Ocean Depths",
+      "successRate": 0.82,
+      "experienceGain": 80,
+      "timeRequired": 5800,
+      "resources": [
+        {
+          "itemId": "deep_sea_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "large_fish",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "pearl",
+          "chance": 0.25,
           "quantity": 1
         }
       ]
@@ -76,6 +242,137 @@
       ]
     },
     {
+      "level": 45,
+      "nodeId": "abyssal_zone",
+      "name": "Abyssal Zone",
+      "successRate": 0.78,
+      "experienceGain": 120,
+      "timeRequired": 6500,
+      "resources": [
+        {
+          "itemId": "abyssal_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "abyssal_pearl",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "deep_sea_fish",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "mermaid_scale",
+          "chance": 0.005,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "mystic_waters",
+      "name": "Mystic Waters",
+      "successRate": 0.77,
+      "experienceGain": 150,
+      "timeRequired": 6800,
+      "resources": [
+        {
+          "itemId": "magic_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "mana_scale",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "pearl",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "mermaid_scale",
+          "chance": 0.005,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "mermaid_grotto",
+      "name": "Mermaid's Grotto",
+      "successRate": 0.75,
+      "experienceGain": 225,
+      "timeRequired": 7000,
+      "unlockRequirements": [
+        {
+          "itemId": "mermaid_scale",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "mermaid_tear",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "magic_fish",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "mana_scale",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "ancient_lake",
+      "name": "Ancient Lake",
+      "successRate": 0.76,
+      "experienceGain": 180,
+      "timeRequired": 7200,
+      "resources": [
+        {
+          "itemId": "ancient_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "fossil_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scale",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "lake_fish",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 60,
       "nodeId": "rare_fish",
       "name": "Rare Fish Spot",
@@ -97,6 +394,169 @@
         {
           "itemId": "pearl",
           "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "volcanic_vent",
+      "name": "Volcanic Vent",
+      "successRate": 0.73,
+      "experienceGain": 220,
+      "timeRequired": 7500,
+      "resources": [
+        {
+          "itemId": "fire_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "lava_core",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "deep_sea_fish",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "kraken_tentacle",
+          "chance": 0.003,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "ice_cavern_lake",
+      "name": "Ice Cavern Lake",
+      "successRate": 0.72,
+      "experienceGain": 250,
+      "timeRequired": 7800,
+      "resources": [
+        {
+          "itemId": "ice_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "frost_crystal",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "abyssal_fish",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "kraken_tentacle",
+          "chance": 0.003,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "kraken_lair",
+      "name": "Kraken's Lair",
+      "successRate": 0.74,
+      "experienceGain": 375,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "kraken_tentacle",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "kraken_ink",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "abyssal_fish",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "black_pearl",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "leviathan_scale",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "leviathan_depths",
+      "name": "Leviathan Depths",
+      "successRate": 0.7,
+      "experienceGain": 320,
+      "timeRequired": 8000,
+      "resources": [
+        {
+          "itemId": "leviathan_scale",
+          "chance": 0.4,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "rare_fish",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "abyssal_pearl",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "void_essence",
+          "chance": 0.1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "celestial_pool",
+      "name": "Celestial Pool",
+      "successRate": 0.68,
+      "experienceGain": 380,
+      "timeRequired": 8500,
+      "resources": [
+        {
+          "itemId": "celestial_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "celestial_scale",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "magic_fish",
+          "chance": 0.35,
           "quantity": 1
         }
       ]
@@ -126,27 +586,324 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 85,
+      "nodeId": "poseidon_trident_site",
+      "name": "Poseidon's Trident Site",
+      "successRate": 0.72,
+      "experienceGain": 570,
+      "timeRequired": 9500,
+      "unlockRequirements": [
+        {
+          "itemId": "poseidon_trident_fragment",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "celestial_fish",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_scale",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "void_fish",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "void_abyss",
+      "name": "Void Abyss",
+      "successRate": 0.67,
+      "experienceGain": 450,
+      "timeRequired": 9000,
+      "resources": [
+        {
+          "itemId": "void_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "void_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "abyssal_pearl",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "black_pearl",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "primordial_sea",
+      "name": "Primordial Sea",
+      "successRate": 0.65,
+      "experienceGain": 500,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "primordial_fish",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "ancient_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scale",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_scale",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "atlantis_ruins",
+      "name": "Atlantis Ruins",
+      "successRate": 0.7,
+      "experienceGain": 750,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "atlantis_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "primordial_fish",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_essence",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_scale",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_angler_paradise",
+      "name": "Master Angler's Paradise",
+      "successRate": 0.6,
+      "experienceGain": 550,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "celestial_fish",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "void_fish",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_fish",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_scale",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "void_essence",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "golden_fishing_rod_spot",
+      "name": "Golden Fishing Rod Spot",
+      "successRate": 0.75,
+      "experienceGain": 825,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "golden_fishing_rod",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "legendary_fish",
+          "chance": 0.8,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "primordial_fish",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "chance": 0.7,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "celestial_scale",
+          "chance": 0.8,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "leviathan_scale",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
-      "level": 30,
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "vitality": 5
+        }
+      }
+    },
+    {
+      "level": 25,
       "bonus": {
         "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "statBonus": {
+          "vitality": 10,
+          "wisdom": 5
+        }
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "statBonus": {
+          "vitality": 15
+        },
+        "itemFindRate": 0.05
       }
     },
     {
       "level": 60,
       "bonus": {
         "goldGeneration": 0.1,
-        "health": 50
+        "statBonus": {
+          "vitality": 20
+        },
+        "combatStatBonus": {
+          "health": 50
+        }
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "statBonus": {
+          "vitality": 25,
+          "wisdom": 10
+        },
+        "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "statBonus": {
+          "vitality": 30,
+          "wisdom": 15
+        },
+        "itemFindRate": 0.15
       }
     },
     {
       "level": 99,
       "bonus": {
         "goldGeneration": 0.15,
-        "health": 100
+        "itemFindRate": 0.2,
+        "statBonus": {
+          "vitality": 35,
+          "wisdom": 20
+        },
+        "combatStatBonus": {
+          "health": 100
+        }
       }
     }
   ],

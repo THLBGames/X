@@ -1,0 +1,12 @@
+{
+  "id": "kraken_ink",
+  "name": "Kraken Ink",
+  "description": "Dark ink from a legendary kraken.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 750,
+  "nameKey": "item.kraken_ink.name",
+  "descriptionKey": "item.kraken_ink.description"
+}

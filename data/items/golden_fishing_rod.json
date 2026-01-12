@@ -1,0 +1,12 @@
+{
+  "id": "golden_fishing_rod",
+  "name": "Golden Fishing Rod",
+  "description": "The ultimate fishing rod, required to access the Golden Fishing Rod Spot.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 5000,
+  "nameKey": "item.golden_fishing_rod.name",
+  "descriptionKey": "item.golden_fishing_rod.description"
+}

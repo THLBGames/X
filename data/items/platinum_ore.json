@@ -1,0 +1,12 @@
+{
+  "id": "platinum_ore",
+  "name": "Platinum Ore",
+  "description": "A rare precious metal ore used for crafting exquisite jewelry and equipment.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 75,
+  "nameKey": "item.platinum_ore.name",
+  "descriptionKey": "item.platinum_ore.description"
+}

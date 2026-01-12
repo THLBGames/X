@@ -1,0 +1,12 @@
+{
+  "id": "mermaid_tear",
+  "name": "Mermaid Tear",
+  "description": "A tear from a mermaid, said to hold great magical power.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 400,
+  "nameKey": "item.mermaid_tear.name",
+  "descriptionKey": "item.mermaid_tear.description"
+}

@@ -1,4 +1,4 @@
-import type { Character, ResourceNode } from '@idle-rpg/shared';
+import type { Character, ResourceNode, Inventory } from '@idle-rpg/shared';
 import { IdleSkillSystem } from './IdleSkillSystem';
 import { UpgradeManager } from '../upgrade/UpgradeManager';
 
@@ -77,9 +77,10 @@ export class ResourceNodeManager {
 
   /**
    * Get the best available resource node for a skill
+   * @param inventory Optional inventory to check for unlock requirements
    */
-  static getBestAvailableNode(character: Character, skillId: string): ResourceNode | null {
-    const availableNodes = IdleSkillSystem.getAvailableResourceNodes(character, skillId);
+  static getBestAvailableNode(character: Character, skillId: string, inventory?: Inventory): ResourceNode | null {
+    const availableNodes = IdleSkillSystem.getAvailableResourceNodes(character, skillId, inventory);
     if (availableNodes.length === 0) {
       return null;
     }
@@ -92,9 +93,10 @@ export class ResourceNodeManager {
 
   /**
    * Get all available nodes for a skill (sorted by level)
+   * @param inventory Optional inventory to check for unlock requirements
    */
-  static getAllAvailableNodes(character: Character, skillId: string): ResourceNode[] {
-    return IdleSkillSystem.getAvailableResourceNodes(character, skillId).sort(
+  static getAllAvailableNodes(character: Character, skillId: string, inventory?: Inventory): ResourceNode[] {
+    return IdleSkillSystem.getAvailableResourceNodes(character, skillId, inventory).sort(
       (a, b) => a.level - b.level
     );
   }

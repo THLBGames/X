@@ -1,0 +1,12 @@
+{
+  "id": "dragonstone",
+  "name": "Dragonstone",
+  "description": "A legendary gem imbued with draconic power, used in the finest jewelry.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1500,
+  "nameKey": "item.dragonstone.name",
+  "descriptionKey": "item.dragonstone.description"
+}

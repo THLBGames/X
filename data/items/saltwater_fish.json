@@ -1,0 +1,12 @@
+{
+  "id": "saltwater_fish",
+  "name": "Saltwater Fish",
+  "description": "A fish caught from saltwater oceans.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 6,
+  "nameKey": "item.saltwater_fish.name",
+  "descriptionKey": "item.saltwater_fish.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "gem_uncommon",
+  "name": "Uncommon Gem",
+  "description": "A gem of uncommon quality used in jewelry crafting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.gem_uncommon.name",
+  "descriptionKey": "item.gem_uncommon.description"
+}

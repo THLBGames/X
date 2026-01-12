@@ -326,6 +326,7 @@ export interface ResourceNode {
   experienceGain: number;
   resources: ResourceDrop[]; // Items that can be obtained
   timeRequired?: number; // Milliseconds required per action
+  unlockRequirements?: Array<{ itemId: string; quantity: number }>; // Items required to unlock this node (for secret unlocks)
 }
 
 export interface ResourceDrop {

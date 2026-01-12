@@ -1,0 +1,12 @@
+{
+  "id": "divine_ore",
+  "name": "Divine Ore",
+  "description": "An otherworldly metal ore imbued with divine energy, the ultimate material for crafting.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000,
+  "nameKey": "item.divine_ore.name",
+  "descriptionKey": "item.divine_ore.description"
+}

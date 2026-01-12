@@ -1,0 +1,12 @@
+{
+  "id": "tropical_fish",
+  "name": "Tropical Fish",
+  "description": "A colorful fish from tropical waters.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12,
+  "nameKey": "item.tropical_fish.name",
+  "descriptionKey": "item.tropical_fish.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "bronze_ore",
+  "name": "Bronze Ore",
+  "description": "An alloy ore made from copper and tin, used for crafting durable equipment.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5,
+  "nameKey": "item.bronze_ore.name",
+  "descriptionKey": "item.bronze_ore.description"
+}

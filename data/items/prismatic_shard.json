@@ -1,0 +1,12 @@
+{
+  "id": "prismatic_shard",
+  "name": "Prismatic Shard",
+  "description": "A rainbow-colored crystal shard containing all elements, used in ultimate crafting.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1000,
+  "nameKey": "item.prismatic_shard.name",
+  "descriptionKey": "item.prismatic_shard.description"
+}

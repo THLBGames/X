@@ -1,0 +1,12 @@
+{
+  "id": "tin_ore",
+  "name": "Tin Ore",
+  "description": "A soft metal ore used in alloy crafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2,
+  "nameKey": "item.tin_ore.name",
+  "descriptionKey": "item.tin_ore.description"
+}

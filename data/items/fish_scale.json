@@ -1,0 +1,12 @@
+{
+  "id": "fish_scale",
+  "name": "Fish Scale",
+  "description": "A common fish scale.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1,
+  "nameKey": "item.fish_scale.name",
+  "descriptionKey": "item.fish_scale.description"
+}
