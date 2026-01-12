@@ -8,6 +8,7 @@ import ClassChangeModal from './ClassChangeModal';
 import SkillTreeModal from './SkillTreeModal';
 import SubclassModal from './SubclassModal';
 import EquipmentPanel from './EquipmentPanel';
+import TooltipWrapper from './TooltipWrapper';
 import './CharacterSheet.css';
 
 export default function CharacterSheet() {
@@ -97,27 +98,39 @@ export default function CharacterSheet() {
         <div className="character-stats">
           <h3>{t('character.stats')}</h3>
           <div className="stat-row">
-            <span>{t('stats.strength', { ns: 'common' })}:</span>
+            <TooltipWrapper content={t('stats.strengthDescription', { ns: 'common' })}>
+              <span style={{ cursor: 'help' }}>{t('stats.strength', { ns: 'common' })}:</span>
+            </TooltipWrapper>
             <span>{character.currentStats.strength}</span>
           </div>
           <div className="stat-row">
-            <span>{t('stats.dexterity', { ns: 'common' })}:</span>
+            <TooltipWrapper content={t('stats.dexterityDescription', { ns: 'common' })}>
+              <span style={{ cursor: 'help' }}>{t('stats.dexterity', { ns: 'common' })}:</span>
+            </TooltipWrapper>
             <span>{character.currentStats.dexterity}</span>
           </div>
           <div className="stat-row">
-            <span>{t('stats.intelligence', { ns: 'common' })}:</span>
+            <TooltipWrapper content={t('stats.intelligenceDescription', { ns: 'common' })}>
+              <span style={{ cursor: 'help' }}>{t('stats.intelligence', { ns: 'common' })}:</span>
+            </TooltipWrapper>
             <span>{character.currentStats.intelligence}</span>
           </div>
           <div className="stat-row">
-            <span>{t('stats.vitality', { ns: 'common' })}:</span>
+            <TooltipWrapper content={t('stats.vitalityDescription', { ns: 'common' })}>
+              <span style={{ cursor: 'help' }}>{t('stats.vitality', { ns: 'common' })}:</span>
+            </TooltipWrapper>
             <span>{character.currentStats.vitality}</span>
           </div>
           <div className="stat-row">
-            <span>{t('stats.wisdom', { ns: 'common' })}:</span>
+            <TooltipWrapper content={t('stats.wisdomDescription', { ns: 'common' })}>
+              <span style={{ cursor: 'help' }}>{t('stats.wisdom', { ns: 'common' })}:</span>
+            </TooltipWrapper>
             <span>{character.currentStats.wisdom}</span>
           </div>
           <div className="stat-row">
-            <span>{t('stats.luck', { ns: 'common' })}:</span>
+            <TooltipWrapper content={t('stats.luckDescription', { ns: 'common' })}>
+              <span style={{ cursor: 'help' }}>{t('stats.luck', { ns: 'common' })}:</span>
+            </TooltipWrapper>
             <span>{character.currentStats.luck}</span>
           </div>
         </div>

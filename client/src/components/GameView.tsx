@@ -16,6 +16,7 @@ import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
 import SettingsPanel from './SettingsPanel';
 import PatchNotesModal from './PatchNotesModal';
+import OnboardingModal from './OnboardingModal';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
@@ -28,6 +29,7 @@ export default function GameView() {
   >('character');
   const [showSettings, setShowSettings] = useState(false);
   const [showPatchNotes, setShowPatchNotes] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   // Initialize game loop
   useGameLoop();
@@ -55,6 +57,17 @@ export default function GameView() {
       // Don't stop music on unmount, let it continue playing
     };
   }, [character, settings.musicEnabled]);
+
+  // Check if onboarding should be shown (once per character creation)
+  useEffect(() => {
+    if (character) {
+      const onboardingShown = localStorage.getItem('onboardingShown');
+      // Only show if character is level 1 (new character) and onboarding hasn't been shown
+      if (character.level === 1 && !onboardingShown) {
+        setShowOnboarding(true);
+      }
+    }
+  }, [character]);
 
   if (!character) {
     return <CharacterCreation />;
@@ -159,6 +172,7 @@ export default function GameView() {
       </div>
       <SettingsPanel isOpen={showSettings} onClose={() => setShowSettings(false)} />
       <PatchNotesModal isOpen={showPatchNotes} onClose={() => setShowPatchNotes(false)} />
+      <OnboardingModal isOpen={showOnboarding} onClose={() => setShowOnboarding(false)} />
     </div>
   );
 }
