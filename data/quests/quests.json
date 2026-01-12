@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_quests": 10,
+  "total_quests": 6,
   "quests": {
     "berserker_quest": {
       "id": "berserker_quest",
@@ -97,68 +97,6 @@
       },
       "nameKey": "quest.wizard_quest.name",
       "descriptionKey": "quest.wizard_quest.description"
-    },
-    "reach_level_10": {
-      "id": "reach_level_10",
-      "name": "Rising Star",
-      "description": "Reach level 10 to prove your dedication to the path of adventure.",
-      "type": "level_reach",
-      "requirements": {
-        "level": 10,
-        "quantity": 1
-      },
-      "rewards": {
-        "experience": 500,
-        "gold": 1000
-      },
-      "nameKey": "quest.reach_level_10.name",
-      "descriptionKey": "quest.reach_level_10.description"
-    },
-    "complete_5_dungeons": {
-      "id": "complete_5_dungeons",
-      "name": "Dungeon Delver",
-      "description": "Complete 5 dungeons to demonstrate your combat prowess.",
-      "type": "dungeon_completion_total",
-      "requirements": {
-        "quantity": 5
-      },
-      "rewards": {
-        "experience": 1500,
-        "gold": 2000
-      },
-      "nameKey": "quest.complete_5_dungeons.name",
-      "descriptionKey": "quest.complete_5_dungeons.description"
-    },
-    "kill_50_monsters": {
-      "id": "kill_50_monsters",
-      "name": "Monster Slayer",
-      "description": "Slay 50 monsters in combat to prove your might.",
-      "type": "monster_kills_total",
-      "requirements": {
-        "quantity": 50
-      },
-      "rewards": {
-        "experience": 1000,
-        "gold": 1500
-      },
-      "nameKey": "quest.kill_50_monsters.name",
-      "descriptionKey": "quest.kill_50_monsters.description"
-    },
-    "reach_level_20": {
-      "id": "reach_level_20",
-      "name": "Experienced Adventurer",
-      "description": "Reach level 20 to unlock new challenges and rewards.",
-      "type": "level_reach",
-      "requirements": {
-        "level": 20,
-        "quantity": 1
-      },
-      "rewards": {
-        "experience": 2000,
-        "gold": 5000
-      },
-      "nameKey": "quest.reach_level_20.name",
-      "descriptionKey": "quest.reach_level_20.description"
     }
   }
 }

@@ -1,6 +1,88 @@
 {
   "versions": [
     {
+      "version": "0.0.8",
+      "date": "2026-01-12",
+      "categories": {
+        "added": [
+          "Fishing skill fully expanded with 25 resource nodes covering levels 1-99",
+          "Secret unlock system for fishing spots - special nodes require rare items to access",
+          "5 secret fishing locations: Mermaid's Grotto, Kraken's Lair, Poseidon's Trident Site, Atlantis Ruins, and Golden Fishing Rod Spot",
+          "New fish types: freshwater, river, saltwater, tropical, lake, deep sea, abyssal, magic, ancient, fire, ice, void, celestial, and primordial fish",
+          "New pearls: freshwater, abyssal, black, and rainbow pearls with varying rarities",
+          "Fish scales system: common scales, mana scales, celestial scales, ancient scales, and leviathan scales",
+          "Special fishing materials: fishing bait, fossil fragments, lava cores, frost crystals, and ancient essence",
+          "Legendary fishing materials: leviathan scales, kraken ink, and mermaid tears",
+          "Secret unlock items: mermaid scale, kraken tentacle, poseidon trident fragment, atlantis key, and golden fishing rod",
+          "Enhanced fishing passive bonuses providing vitality, wisdom, gold generation, health, and item find rate",
+          "Cooking recipes expanded with 8 new fish-based dishes requiring fishing levels 10-95",
+          "Alchemy recipes added using fish scales, pearls, and special fish parts with fishing prerequisites",
+          "Jewelcrafting recipes enhanced with pearl and scale jewelry requiring fishing levels 20-88",
+          "Enchanting recipes added using magical fish parts and scales from fishing",
+          "Runecrafting recipes added for void essence and celestial scale runes from fishing",
+          "Resource node unlock requirements system - nodes can now require specific items in inventory"
+        ],
+        "changed": [
+          "Fishing skill progression rebalanced with nodes every 5-10 levels for smooth advancement",
+          "Cooking recipes now require fishing skill levels for advanced fish dishes (grilled fish, fish stew, sushi, etc.)",
+          "Alchemy recipes enhanced with fish-based potions using scales and pearls with fishing prerequisites",
+          "Jewelcrafting expanded with pearl necklaces, scale bracelets, and special fishing material jewelry",
+          "Enchanting recipes enhanced with pearl, scale, and fish-based enchantments requiring fishing levels",
+          "Runecrafting recipes added using void essence and celestial scales from fishing",
+          "UI updated to display locked secret nodes with unlock requirements and item tooltips"
+        ],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
+      "version": "0.0.7",
+      "date": "2026-01-13",
+      "categories": {
+        "added": [
+          "Mining skill fully expanded with 20 resource nodes covering levels 1-99",
+          "New ore types: tin, bronze, steel, platinum, runite, orichalcum, and divine ores",
+          "Gem deposits and crystal caves for advanced mining resources",
+          "Master Mining Site at level 99 with access to all high-tier resources",
+          "Enhanced mining passive bonuses providing strength, defense, gold generation, and item find rate",
+          "Blacksmithing recipes now require mining skill levels for advanced crafting",
+          "Jewelcrafting recipes integrated with mining gems and precious metals",
+          "Engineering recipes use mining resources (ores, crystals, coal) with skill prerequisites",
+          "Runecrafting recipes added for crystal and void crystal runes",
+          "Enchanting recipes enhanced with gem and crystal enchantments"
+        ],
+        "changed": [
+          "Mining skill progression rebalanced with nodes every 5-10 levels for smooth advancement",
+          "Blacksmithing recipes updated to use new mining ores (bronze, steel, runite, orichalcum, divine)",
+          "Jewelcrafting expanded with recipes using uncommon gems, dragonstones, and prismatic shards",
+          "Engineering recipes now require mining levels 10-95 for various tiers",
+          "Runecrafting recipes added for crystal-based and void-powered runes",
+          "Enchanting recipes enhanced with gem and crystal-based enchantments requiring mining levels"
+        ],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
+      "version": "0.0.6",
+      "date": "2026-01-12",
+      "categories": {
+        "added": [
+          "Add equipment comparison tooltips showing stat changes before equipping (green/red indicators)",
+          "Create 'Next Steps' or progression guidance panel showing recommended actions for current level",
+          "Expand quest system with progression quests, repeatable quests, and achievement-linked quests",
+          "Added skill point respec system (full or partial) to allow build experimentation",
+          "Added difficulty indicators, reward previews, and completion stats to dungeon selector",
+          "Add tutorial/onboarding flow after character creation explaining core game loops and UI elements",
+          "Create combat mechanics guide/modal explaining damage formulas, turn order, critical hits, and status effects",
+          "Add comprehensive stat tooltips explaining what each base stat (Strength, Dexterity, etc.) does and how it converts to combat stats"
+        ],
+        "changed": [""],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
       "version": "0.0.5",
       "date": "2026-01-04",
       "categories": {
