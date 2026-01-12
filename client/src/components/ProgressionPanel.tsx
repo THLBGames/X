@@ -8,7 +8,7 @@ export default function ProgressionPanel() {
   const { t } = useTranslation(['ui', 'common']);
   const character = useGameState((state) => state.character);
   const dungeonProgress = useGameState((state) => state.dungeonProgress);
-  const inventory = useGameState((state) => state.inventory);
+  //const inventory = useGameState((state) => state.inventory);
 
   if (!character) {
     return null;

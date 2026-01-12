@@ -221,7 +221,8 @@ export class SkillManager {
    */
   static respecSkills(
     character: Character,
-    cost: number = 0
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _cost: number = 0
   ): { success: boolean; character?: Character; reason?: string; refundedPoints?: number } {
     // Calculate total skill points to refund
     let totalRefunded = 0;
