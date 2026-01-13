@@ -62,10 +62,9 @@ export class UnlockTreeManager {
    */
   static canUnlockNode(
     character: Character,
-    inventory: Inventory,
     nodeId: string
   ): { canUnlock: boolean; reason?: string } {
-    const dataLoader = getDataLoader();
+    //const dataLoader = getDataLoader();
     
     // Get node data synchronously (if cached) or return false
     // Note: This assumes nodes are preloaded. For now, return error if not cached.
@@ -111,7 +110,7 @@ export class UnlockTreeManager {
     if (node.prerequisites && node.prerequisites.length > 0) {
       for (const prereqId of node.prerequisites) {
         if (!unlockedNodes.includes(prereqId)) {
-          const dataLoader = getDataLoader();
+          //const dataLoader = getDataLoader();
           const prereqNode = this.unlockTreeCache?.find((n) => n.id === prereqId);
           const prereqName = prereqNode?.name || prereqId;
           return {
