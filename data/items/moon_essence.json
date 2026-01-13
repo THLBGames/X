@@ -1,0 +1,12 @@
+{
+  "id": "moon_essence",
+  "name": "Moon Essence",
+  "description": "Essence drawn from moonlight phases.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.moon_essence.name",
+  "descriptionKey": "item.moon_essence.description"
+}

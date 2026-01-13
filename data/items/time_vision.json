@@ -1,0 +1,12 @@
+{
+  "id": "time_vision",
+  "name": "Time Vision",
+  "description": "A vision crystallized from temporal energies.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1800,
+  "nameKey": "item.time_vision.name",
+  "descriptionKey": "item.time_vision.description"
+}

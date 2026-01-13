@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_items": 599,
+  "total_items": 622,
   "items": {
     "abyssal_fish": {
       "id": "abyssal_fish",
@@ -2137,6 +2137,30 @@
       "nameKey": "item.celestial_fish.name",
       "descriptionKey": "item.celestial_fish.description"
     },
+    "celestial_insight": {
+      "id": "celestial_insight",
+      "name": "Celestial Insight",
+      "description": "A crystal containing celestial wisdom and insight.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 650,
+      "nameKey": "item.celestial_insight.name",
+      "descriptionKey": "item.celestial_insight.description"
+    },
+    "celestial_key": {
+      "id": "celestial_key",
+      "name": "Celestial Key",
+      "description": "A key that opens the Celestial Sanctum.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2000,
+      "nameKey": "item.celestial_key.name",
+      "descriptionKey": "item.celestial_key.description"
+    },
     "celestial_scale": {
       "id": "celestial_scale",
       "name": "Celestial Scale",
@@ -2418,6 +2442,18 @@
       "nameKey": "item.copper_sword.name",
       "descriptionKey": "item.copper_sword.description"
     },
+    "cosmic_energy": {
+      "id": "cosmic_energy",
+      "name": "Cosmic Energy",
+      "description": "Raw energy from the cosmos itself.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.cosmic_energy.name",
+      "descriptionKey": "item.cosmic_energy.description"
+    },
     "crystal_shard": {
       "id": "crystal_shard",
       "name": "Crystal Shard",
@@ -2429,6 +2465,18 @@
       "value": 15,
       "nameKey": "item.crystal_shard.name",
       "descriptionKey": "item.crystal_shard.description"
+    },
+    "crystal_shard_divination": {
+      "id": "crystal_shard_divination",
+      "name": "Divination Crystal Shard",
+      "description": "A crystal shard infused with divinatory energy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.crystal_shard_divination.name",
+      "descriptionKey": "item.crystal_shard_divination.description"
     },
     "curse_removal_scroll": {
       "id": "curse_removal_scroll",
@@ -2546,6 +2594,42 @@
       "nameKey": "item.demon_heart.name",
       "descriptionKey": "item.demon_heart.description"
     },
+    "destiny_anchor": {
+      "id": "destiny_anchor",
+      "name": "Destiny Anchor",
+      "description": "An anchor that binds destinies together.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5000,
+      "nameKey": "item.destiny_anchor.name",
+      "descriptionKey": "item.destiny_anchor.description"
+    },
+    "destiny_anchor_key": {
+      "id": "destiny_anchor_key",
+      "name": "Destiny Anchor Key",
+      "description": "A key that opens the Chamber of Destiny.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 4000,
+      "nameKey": "item.destiny_anchor_key.name",
+      "descriptionKey": "item.destiny_anchor_key.description"
+    },
+    "destiny_fragment": {
+      "id": "destiny_fragment",
+      "name": "Destiny Fragment",
+      "description": "A fragment containing glimpses of destiny.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 550,
+      "nameKey": "item.destiny_fragment.name",
+      "descriptionKey": "item.destiny_fragment.description"
+    },
     "dexterity_ring_t1": {
       "id": "dexterity_ring_t1",
       "name": "Ring of Agility",
@@ -2611,6 +2695,18 @@
       },
       "nameKey": "item.dexterity_ring_t3.name",
       "descriptionKey": "item.dexterity_ring_t3.description"
+    },
+    "divination_fragment": {
+      "id": "divination_fragment",
+      "name": "Divination Fragment",
+      "description": "A fragment containing divinatory power.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4,
+      "nameKey": "item.divination_fragment.name",
+      "descriptionKey": "item.divination_fragment.description"
     },
     "divine_artifact": {
       "id": "divine_artifact",
@@ -2678,6 +2774,18 @@
       },
       "nameKey": "item.divine_crown.name",
       "descriptionKey": "item.divine_crown.description"
+    },
+    "divine_energy": {
+      "id": "divine_energy",
+      "name": "Divine Energy",
+      "description": "Pure energy channeled from the cosmos.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.divine_energy.name",
+      "descriptionKey": "item.divine_energy.description"
     },
     "divine_fragment": {
       "id": "divine_fragment",
@@ -2797,6 +2905,18 @@
       "nameKey": "item.divine_ore.name",
       "descriptionKey": "item.divine_ore.description"
     },
+    "divine_prophecy": {
+      "id": "divine_prophecy",
+      "name": "Divine Prophecy",
+      "description": "A prophecy channeled directly from the divine.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2200,
+      "nameKey": "item.divine_prophecy.name",
+      "descriptionKey": "item.divine_prophecy.description"
+    },
     "divine_robes": {
       "id": "divine_robes",
       "name": "Divine Robes",
@@ -2849,6 +2969,18 @@
       },
       "nameKey": "item.divine_robes_bottom.name",
       "descriptionKey": "item.divine_robes_bottom.description"
+    },
+    "diviner_scroll": {
+      "id": "diviner_scroll",
+      "name": "Diviner's Scroll",
+      "description": "An ancient scroll that unlocks the Diviner's Library.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "nameKey": "item.diviner_scroll.name",
+      "descriptionKey": "item.diviner_scroll.description"
     },
     "dragon_blood": {
       "id": "dragon_blood",
@@ -3845,6 +3977,42 @@
       },
       "nameKey": "item.experience_potion_small.name",
       "descriptionKey": "item.experience_potion_small.description"
+    },
+    "fate_crystal": {
+      "id": "fate_crystal",
+      "name": "Fate Crystal",
+      "description": "A crystal that resonates with the threads of fate.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.fate_crystal.name",
+      "descriptionKey": "item.fate_crystal.description"
+    },
+    "fate_weaver": {
+      "id": "fate_weaver",
+      "name": "Fate Weaver",
+      "description": "An artifact that weaves the threads of fate.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4000,
+      "nameKey": "item.fate_weaver.name",
+      "descriptionKey": "item.fate_weaver.description"
+    },
+    "fate_weaver_key": {
+      "id": "fate_weaver_key",
+      "name": "Fate Weaver Key",
+      "description": "A key that opens the Fate Weaver's Chamber.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2500,
+      "nameKey": "item.fate_weaver_key.name",
+      "descriptionKey": "item.fate_weaver_key.description"
     },
     "fertilizer": {
       "id": "fertilizer",
@@ -6061,6 +6229,18 @@
       "nameKey": "item.master_archaeologist_badge.name",
       "descriptionKey": "item.master_archaeologist_badge.description"
     },
+    "master_diviner_seal": {
+      "id": "master_diviner_seal",
+      "name": "Master Diviner's Seal",
+      "description": "The ultimate seal that opens the Master Diviner's Sanctuary.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 6000,
+      "nameKey": "item.master_diviner_seal.name",
+      "descriptionKey": "item.master_diviner_seal.description"
+    },
     "mechanical_device": {
       "id": "mechanical_device",
       "name": "Mechanical Device",
@@ -6621,6 +6801,18 @@
       "nameKey": "item.monster_pelt.name",
       "descriptionKey": "item.monster_pelt.description"
     },
+    "moon_essence": {
+      "id": "moon_essence",
+      "name": "Moon Essence",
+      "description": "Essence drawn from moonlight phases.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.moon_essence.name",
+      "descriptionKey": "item.moon_essence.description"
+    },
     "mummy_wrapping": {
       "id": "mummy_wrapping",
       "name": "Mummy Wrapping",
@@ -7067,6 +7259,18 @@
       "nameKey": "item.phoenix_staff.name",
       "descriptionKey": "item.phoenix_staff.description"
     },
+    "planetary_alignment": {
+      "id": "planetary_alignment",
+      "name": "Planetary Alignment",
+      "description": "A crystal capturing planetary alignment energy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.planetary_alignment.name",
+      "descriptionKey": "item.planetary_alignment.description"
+    },
     "platinum_ore": {
       "id": "platinum_ore",
       "name": "Platinum Ore",
@@ -7215,6 +7419,18 @@
       "nameKey": "item.primordial_relic.name",
       "descriptionKey": "item.primordial_relic.description"
     },
+    "primordial_vision": {
+      "id": "primordial_vision",
+      "name": "Primordial Vision",
+      "description": "A vision from the primordial age of creation.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4500,
+      "nameKey": "item.primordial_vision.name",
+      "descriptionKey": "item.primordial_vision.description"
+    },
     "prismatic_shard": {
       "id": "prismatic_shard",
       "name": "Prismatic Shard",
@@ -7226,6 +7442,18 @@
       "value": 1000,
       "nameKey": "item.prismatic_shard.name",
       "descriptionKey": "item.prismatic_shard.description"
+    },
+    "prophecy_scroll": {
+      "id": "prophecy_scroll",
+      "name": "Prophecy Scroll",
+      "description": "An ancient scroll containing prophetic visions.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.prophecy_scroll.name",
+      "descriptionKey": "item.prophecy_scroll.description"
     },
     "quality_meal": {
       "id": "quality_meal",
@@ -7912,6 +8140,18 @@
       "value": 12,
       "nameKey": "item.raw_meat_quality.name",
       "descriptionKey": "item.raw_meat_quality.description"
+    },
+    "reality_shard": {
+      "id": "reality_shard",
+      "name": "Reality Shard",
+      "description": "A shard from the fabric of reality itself.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.reality_shard.name",
+      "descriptionKey": "item.reality_shard.description"
     },
     "reinforced_leather_armor": {
       "id": "reinforced_leather_armor",
@@ -9059,6 +9299,30 @@
       "nameKey": "item.star_chart.name",
       "descriptionKey": "item.star_chart.description"
     },
+    "star_chart_divination": {
+      "id": "star_chart_divination",
+      "name": "Divination Star Chart",
+      "description": "A chart mapping stars for divinatory purposes.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 40,
+      "nameKey": "item.star_chart_divination.name",
+      "descriptionKey": "item.star_chart_divination.description"
+    },
+    "star_dust": {
+      "id": "star_dust",
+      "name": "Star Dust",
+      "description": "Dust from distant stars, glowing faintly.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.star_dust.name",
+      "descriptionKey": "item.star_dust.description"
+    },
     "steel": {
       "id": "steel",
       "name": "Steel",
@@ -9688,6 +9952,18 @@
       "value": 1500,
       "nameKey": "item.time_sand.name",
       "descriptionKey": "item.time_sand.description"
+    },
+    "time_vision": {
+      "id": "time_vision",
+      "name": "Time Vision",
+      "description": "A vision crystallized from temporal energies.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1800,
+      "nameKey": "item.time_vision.name",
+      "descriptionKey": "item.time_vision.description"
     },
     "tin_ore": {
       "id": "tin_ore",

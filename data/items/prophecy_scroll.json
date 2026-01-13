@@ -1,0 +1,12 @@
+{
+  "id": "prophecy_scroll",
+  "name": "Prophecy Scroll",
+  "description": "An ancient scroll containing prophetic visions.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 600,
+  "nameKey": "item.prophecy_scroll.name",
+  "descriptionKey": "item.prophecy_scroll.description"
+}

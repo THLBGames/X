@@ -1,0 +1,12 @@
+{
+  "id": "fate_weaver",
+  "name": "Fate Weaver",
+  "description": "An artifact that weaves the threads of fate.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4000,
+  "nameKey": "item.fate_weaver.name",
+  "descriptionKey": "item.fate_weaver.description"
+}

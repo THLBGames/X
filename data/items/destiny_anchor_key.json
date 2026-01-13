@@ -1,0 +1,12 @@
+{
+  "id": "destiny_anchor_key",
+  "name": "Destiny Anchor Key",
+  "description": "A key that opens the Chamber of Destiny.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 4000,
+  "nameKey": "item.destiny_anchor_key.name",
+  "descriptionKey": "item.destiny_anchor_key.description"
+}

@@ -1,8 +1,52 @@
 {
   "versions": [
     {
+      "version": "0.1.0",
+      "date": "2026-01-12",
+      "categories": {
+        "added": [
+          "Divination skill fully expanded with 25 resource nodes covering levels 1-99",
+          "New Divination Unlock Tree system - account-wide bonuses purchased with divination resources",
+          "29 unlock tree nodes across combat, skilling, inventory, and utility categories",
+          "Combat unlock nodes providing stat bonuses, combat multipliers, and drop rate increases",
+          "Skilling unlock nodes providing XP, speed, and yield multipliers for all skills",
+          "Inventory unlock nodes providing additional inventory slots (up to +55 slots total)",
+          "Utility unlock nodes providing offline time hours and additional mercenary slots",
+          "Secret unlock system for divination sites - 6 secret locations require special items to access",
+          "Secret divination locations: Diviner's Library, Celestial Sanctum, Fate Weaver's Chamber, Chamber of Destiny, and Master Diviner's Sanctuary",
+          "Common divination resources: divine energy, divination fragments, and star dust",
+          "Uncommon divination resources: crystal shards, moon essence, planetary alignments, and star charts",
+          "Rare divination resources: cosmic energy and fate crystals",
+          "Epic divination resources: destiny fragments, prophecy scrolls, and celestial insights",
+          "Legendary divination resources: time visions, reality shards, and divine prophecies",
+          "Mythic divination resources: primordial visions, fate weavers, and destiny anchors",
+          "Special unlock items: diviner scroll, celestial key, fate weaver key, destiny anchor key, and master diviner seal",
+          "Enhanced divination passive bonuses providing wisdom, intelligence, and item find rate at multiple levels",
+          "Enchanting recipes expanded with 3 new divination-based enchantments using fate crystals, prophecy scrolls, and celestial insights",
+          "Runecrafting recipes added using cosmic energy and time visions from divination with prerequisites",
+          "Alchemy recipes enhanced with moon essence and celestial insight potions requiring divination levels",
+          "Divination shop upgrades (Tiers I-V) providing permanent XP, speed, yield, and success rate bonuses",
+          "Divination consumable boost upgrade for temporary speed and XP increases",
+          "Dynamic inventory system - max slots now increase based on unlock tree bonuses"
+        ],
+        "changed": [
+          "Divination skill progression rebalanced with nodes every 5-10 levels for smooth advancement",
+          "Divination passive bonuses expanded with wisdom, intelligence, and item find rate bonuses at levels 10, 25, 40, 50, 60, 75, 80, 90, and 99",
+          "Character stats system enhanced to apply divination unlock tree bonuses to base stats and combat stats",
+          "Inventory max slots now dynamically calculated from base slots plus unlock tree bonuses",
+          "Enchanting recipes enhanced with fate crystal and prophecy scroll enchantments requiring divination levels 30-50",
+          "Runecrafting recipes added for cosmic energy and time vision runes with divination prerequisites (levels 25-55)",
+          "Alchemy recipes enhanced with moon essence and celestial insight potions using divination materials (levels 15-50)",
+          "Character interface extended to support divination unlock tracking and aggregated bonus storage",
+          "Skill detail view now displays unlock tree tab for divination skill with category filtering"
+        ],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
       "version": "0.0.9",
-      "date": "2026-01-13",
+      "date": "2026-01-12",
       "categories": {
         "added": [
           "Archaeology skill fully expanded with 26 resource nodes covering levels 1-99",
@@ -71,7 +115,7 @@
     },
     {
       "version": "0.0.7",
-      "date": "2026-01-13",
+      "date": "2026-01-12",
       "categories": {
         "added": [
           "Mining skill fully expanded with 20 resource nodes covering levels 1-99",

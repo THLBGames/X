@@ -1,0 +1,12 @@
+{
+  "id": "divination_fragment",
+  "name": "Divination Fragment",
+  "description": "A fragment containing divinatory power.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4,
+  "nameKey": "item.divination_fragment.name",
+  "descriptionKey": "item.divination_fragment.description"
+}

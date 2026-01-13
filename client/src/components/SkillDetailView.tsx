@@ -7,6 +7,7 @@ import { CraftingSystem } from '../systems/skills/CraftingSystem';
 import { InventoryManager } from '../systems/inventory';
 import { SkillManager } from '../systems/skills/SkillManager';
 import { useIdleSkills } from '../hooks/useIdleSkills';
+import DivinationUnlockTree from './DivinationUnlockTree';
 import './SkillDetailView.css';
 
 interface SkillDetailViewProps {
@@ -729,6 +730,12 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
                 </div>
               ))}
           </div>
+        </div>
+      )}
+
+      {isIdleSkill && skillId === 'divination' && (
+        <div className="skill-detail-section">
+          <DivinationUnlockTree skillId={skillId} />
         </div>
       )}
     </div>

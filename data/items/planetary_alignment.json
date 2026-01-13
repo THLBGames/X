@@ -1,0 +1,12 @@
+{
+  "id": "planetary_alignment",
+  "name": "Planetary Alignment",
+  "description": "A crystal capturing planetary alignment energy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 35,
+  "nameKey": "item.planetary_alignment.name",
+  "descriptionKey": "item.planetary_alignment.description"
+}

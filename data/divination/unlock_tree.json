@@ -1,0 +1,490 @@
+[
+  {
+    "id": "divination_combat_strength_1",
+    "name": "Divine Strength I",
+    "description": "Gain +5 strength from divinatory insight",
+    "category": "combat",
+    "cost": [
+      { "itemId": "divine_energy", "quantity": 50 },
+      { "itemId": "divination_fragment", "quantity": 30 }
+    ],
+    "skillLevelRequirement": 10,
+    "bonuses": {
+      "statBonus": {
+        "strength": 5
+      }
+    }
+  },
+  {
+    "id": "divination_combat_intelligence_1",
+    "name": "Divine Intelligence I",
+    "description": "Gain +5 intelligence from divinatory wisdom",
+    "category": "combat",
+    "cost": [
+      { "itemId": "divine_energy", "quantity": 50 },
+      { "itemId": "divination_fragment", "quantity": 30 }
+    ],
+    "skillLevelRequirement": 10,
+    "bonuses": {
+      "statBonus": {
+        "intelligence": 5
+      }
+    }
+  },
+  {
+    "id": "divination_combat_dexterity_1",
+    "name": "Divine Dexterity I",
+    "description": "Gain +5 dexterity from divinatory foresight",
+    "category": "combat",
+    "cost": [
+      { "itemId": "divine_energy", "quantity": 50 },
+      { "itemId": "divination_fragment", "quantity": 30 }
+    ],
+    "skillLevelRequirement": 15,
+    "bonuses": {
+      "statBonus": {
+        "dexterity": 5
+      }
+    }
+  },
+  {
+    "id": "divination_combat_vitality_1",
+    "name": "Divine Vitality I",
+    "description": "Gain +5 vitality from divinatory resilience",
+    "category": "combat",
+    "cost": [
+      { "itemId": "divine_energy", "quantity": 50 },
+      { "itemId": "divination_fragment", "quantity": 30 }
+    ],
+    "skillLevelRequirement": 15,
+    "bonuses": {
+      "statBonus": {
+        "vitality": 5
+      }
+    }
+  },
+  {
+    "id": "divination_combat_xp_1",
+    "name": "Combat Experience Boost I",
+    "description": "Gain 5% more combat experience",
+    "category": "combat",
+    "cost": [
+      { "itemId": "crystal_shard_divination", "quantity": 20 },
+      { "itemId": "moon_essence", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_combat_strength_1"],
+    "skillLevelRequirement": 20,
+    "bonuses": {
+      "combatMultiplier": {
+        "experience": 1.05
+      }
+    }
+  },
+  {
+    "id": "divination_combat_gold_1",
+    "name": "Combat Gold Boost I",
+    "description": "Gain 5% more gold from combat",
+    "category": "combat",
+    "cost": [
+      { "itemId": "crystal_shard_divination", "quantity": 20 },
+      { "itemId": "moon_essence", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_combat_intelligence_1"],
+    "skillLevelRequirement": 20,
+    "bonuses": {
+      "combatMultiplier": {
+        "gold": 1.05
+      }
+    }
+  },
+  {
+    "id": "divination_combat_strength_2",
+    "name": "Divine Strength II",
+    "description": "Gain +15 more strength from enhanced divinatory insight",
+    "category": "combat",
+    "cost": [
+      { "itemId": "cosmic_energy", "quantity": 30 },
+      { "itemId": "fate_crystal", "quantity": 20 }
+    ],
+    "prerequisites": ["divination_combat_strength_1"],
+    "skillLevelRequirement": 35,
+    "bonuses": {
+      "statBonus": {
+        "strength": 15
+      }
+    }
+  },
+  {
+    "id": "divination_combat_intelligence_2",
+    "name": "Divine Intelligence II",
+    "description": "Gain +15 more intelligence from enhanced divinatory wisdom",
+    "category": "combat",
+    "cost": [
+      { "itemId": "cosmic_energy", "quantity": 30 },
+      { "itemId": "fate_crystal", "quantity": 20 }
+    ],
+    "prerequisites": ["divination_combat_intelligence_1"],
+    "skillLevelRequirement": 35,
+    "bonuses": {
+      "statBonus": {
+        "intelligence": 15
+      }
+    }
+  },
+  {
+    "id": "divination_combat_xp_2",
+    "name": "Combat Experience Boost II",
+    "description": "Gain 10% more combat experience",
+    "category": "combat",
+    "cost": [
+      { "itemId": "destiny_fragment", "quantity": 15 },
+      { "itemId": "prophecy_scroll", "quantity": 10 }
+    ],
+    "prerequisites": ["divination_combat_xp_1"],
+    "skillLevelRequirement": 50,
+    "bonuses": {
+      "combatMultiplier": {
+        "experience": 1.1
+      }
+    }
+  },
+  {
+    "id": "divination_combat_strength_3",
+    "name": "Divine Strength III",
+    "description": "Gain +30 more strength from master divinatory insight",
+    "category": "combat",
+    "cost": [
+      { "itemId": "time_vision", "quantity": 10 },
+      { "itemId": "reality_shard", "quantity": 8 }
+    ],
+    "prerequisites": ["divination_combat_strength_2"],
+    "skillLevelRequirement": 70,
+    "bonuses": {
+      "statBonus": {
+        "strength": 30
+      }
+    }
+  },
+  {
+    "id": "divination_skill_xp_1",
+    "name": "Skill Experience Boost I",
+    "description": "Gain 5% more experience from all skills",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "divine_energy", "quantity": 40 },
+      { "itemId": "star_dust", "quantity": 25 }
+    ],
+    "skillLevelRequirement": 10,
+    "bonuses": {
+      "skillMultiplier": {
+        "experience": 1.05
+      }
+    }
+  },
+  {
+    "id": "divination_skill_speed_1",
+    "name": "Skill Speed Boost I",
+    "description": "Perform skills 5% faster",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "crystal_shard_divination", "quantity": 25 },
+      { "itemId": "planetary_alignment", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_skill_xp_1"],
+    "skillLevelRequirement": 20,
+    "bonuses": {
+      "skillMultiplier": {
+        "speed": 0.95
+      }
+    }
+  },
+  {
+    "id": "divination_skill_yield_1",
+    "name": "Resource Yield Boost I",
+    "description": "Gain 10% more resources from gathering skills",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "cosmic_energy", "quantity": 20 },
+      { "itemId": "star_chart_divination", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_skill_speed_1"],
+    "skillLevelRequirement": 30,
+    "bonuses": {
+      "skillMultiplier": {
+        "yield": 1.1
+      }
+    }
+  },
+  {
+    "id": "divination_skill_xp_2",
+    "name": "Skill Experience Boost II",
+    "description": "Gain 10% more experience from all skills",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "fate_crystal", "quantity": 25 },
+      { "itemId": "destiny_fragment", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_skill_xp_1"],
+    "skillLevelRequirement": 40,
+    "bonuses": {
+      "skillMultiplier": {
+        "experience": 1.1
+      }
+    }
+  },
+  {
+    "id": "divination_skill_speed_2",
+    "name": "Skill Speed Boost II",
+    "description": "Perform skills 10% faster",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "celestial_insight", "quantity": 15 },
+      { "itemId": "prophecy_scroll", "quantity": 12 }
+    ],
+    "prerequisites": ["divination_skill_speed_1"],
+    "skillLevelRequirement": 50,
+    "bonuses": {
+      "skillMultiplier": {
+        "speed": 0.9
+      }
+    }
+  },
+  {
+    "id": "divination_skill_xp_3",
+    "name": "Skill Experience Boost III",
+    "description": "Gain 20% more experience from all skills",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "time_vision", "quantity": 12 },
+      { "itemId": "divine_prophecy", "quantity": 10 }
+    ],
+    "prerequisites": ["divination_skill_xp_2"],
+    "skillLevelRequirement": 70,
+    "bonuses": {
+      "skillMultiplier": {
+        "experience": 1.2
+      }
+    }
+  },
+  {
+    "id": "divination_inventory_1",
+    "name": "Expanded Inventory I",
+    "description": "Gain +5 additional inventory slots",
+    "category": "inventory",
+    "cost": [
+      { "itemId": "divine_energy", "quantity": 100 },
+      { "itemId": "divination_fragment", "quantity": 50 }
+    ],
+    "skillLevelRequirement": 15,
+    "bonuses": {
+      "inventorySlots": 5
+    }
+  },
+  {
+    "id": "divination_inventory_2",
+    "name": "Expanded Inventory II",
+    "description": "Gain +10 additional inventory slots",
+    "category": "inventory",
+    "cost": [
+      { "itemId": "cosmic_energy", "quantity": 50 },
+      { "itemId": "fate_crystal", "quantity": 30 }
+    ],
+    "prerequisites": ["divination_inventory_1"],
+    "skillLevelRequirement": 35,
+    "bonuses": {
+      "inventorySlots": 10
+    }
+  },
+  {
+    "id": "divination_inventory_3",
+    "name": "Expanded Inventory III",
+    "description": "Gain +15 additional inventory slots",
+    "category": "inventory",
+    "cost": [
+      { "itemId": "destiny_fragment", "quantity": 40 },
+      { "itemId": "celestial_insight", "quantity": 25 }
+    ],
+    "prerequisites": ["divination_inventory_2"],
+    "skillLevelRequirement": 55,
+    "bonuses": {
+      "inventorySlots": 15
+    }
+  },
+  {
+    "id": "divination_inventory_4",
+    "name": "Expanded Inventory IV",
+    "description": "Gain +25 additional inventory slots",
+    "category": "inventory",
+    "cost": [
+      { "itemId": "time_vision", "quantity": 20 },
+      { "itemId": "reality_shard", "quantity": 15 },
+      { "itemId": "divine_prophecy", "quantity": 10 }
+    ],
+    "prerequisites": ["divination_inventory_3"],
+    "skillLevelRequirement": 80,
+    "bonuses": {
+      "inventorySlots": 25
+    }
+  },
+  {
+    "id": "divination_utility_offline_1",
+    "name": "Extended Offline Time I",
+    "description": "Gain +2 hours of offline progress time",
+    "category": "utility",
+    "cost": [
+      { "itemId": "moon_essence", "quantity": 30 },
+      { "itemId": "planetary_alignment", "quantity": 20 }
+    ],
+    "skillLevelRequirement": 25,
+    "bonuses": {
+      "offlineTimeHours": 2
+    }
+  },
+  {
+    "id": "divination_utility_offline_2",
+    "name": "Extended Offline Time II",
+    "description": "Gain +3 more hours of offline progress time",
+    "category": "utility",
+    "cost": [
+      { "itemId": "celestial_insight", "quantity": 20 },
+      { "itemId": "prophecy_scroll", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_utility_offline_1"],
+    "skillLevelRequirement": 50,
+    "bonuses": {
+      "offlineTimeHours": 3
+    }
+  },
+  {
+    "id": "divination_utility_merc_1",
+    "name": "Additional Mercenary Slot",
+    "description": "Gain +1 additional mercenary slot",
+    "category": "utility",
+    "cost": [
+      { "itemId": "primordial_vision", "quantity": 5 },
+      { "itemId": "fate_weaver", "quantity": 5 },
+      { "itemId": "destiny_anchor", "quantity": 3 }
+    ],
+    "skillLevelRequirement": 90,
+    "bonuses": {
+      "maxMercenaries": 1
+    }
+  },
+  {
+    "id": "divination_combat_attack_1",
+    "name": "Divine Attack Boost",
+    "description": "Gain +10 attack from divinatory power",
+    "category": "combat",
+    "cost": [
+      { "itemId": "cosmic_energy", "quantity": 40 },
+      { "itemId": "fate_crystal", "quantity": 25 }
+    ],
+    "prerequisites": ["divination_combat_strength_1"],
+    "skillLevelRequirement": 30,
+    "bonuses": {
+      "combatStatBonus": {
+        "attack": 10
+      }
+    }
+  },
+  {
+    "id": "divination_combat_defense_1",
+    "name": "Divine Defense Boost",
+    "description": "Gain +10 defense from divinatory protection",
+    "category": "combat",
+    "cost": [
+      { "itemId": "cosmic_energy", "quantity": 40 },
+      { "itemId": "fate_crystal", "quantity": 25 }
+    ],
+    "prerequisites": ["divination_combat_vitality_1"],
+    "skillLevelRequirement": 30,
+    "bonuses": {
+      "combatStatBonus": {
+        "defense": 10
+      }
+    }
+  },
+  {
+    "id": "divination_combat_drop_1",
+    "name": "Enhanced Item Drops I",
+    "description": "Gain 5% increased item drop rate",
+    "category": "combat",
+    "cost": [
+      { "itemId": "destiny_fragment", "quantity": 20 },
+      { "itemId": "prophecy_scroll", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_combat_gold_1"],
+    "skillLevelRequirement": 40,
+    "bonuses": {
+      "combatMultiplier": {
+        "itemDropRate": 1.05
+      }
+    }
+  },
+  {
+    "id": "divination_combat_drop_2",
+    "name": "Enhanced Item Drops II",
+    "description": "Gain 10% increased item drop rate",
+    "category": "combat",
+    "cost": [
+      { "itemId": "time_vision", "quantity": 15 },
+      { "itemId": "divine_prophecy", "quantity": 12 }
+    ],
+    "prerequisites": ["divination_combat_drop_1"],
+    "skillLevelRequirement": 65,
+    "bonuses": {
+      "combatMultiplier": {
+        "itemDropRate": 1.1
+      }
+    }
+  },
+  {
+    "id": "divination_skill_yield_2",
+    "name": "Resource Yield Boost II",
+    "description": "Gain 20% more resources from gathering skills",
+    "category": "skilling",
+    "cost": [
+      { "itemId": "destiny_fragment", "quantity": 30 },
+      { "itemId": "celestial_insight", "quantity": 20 }
+    ],
+    "prerequisites": ["divination_skill_yield_1"],
+    "skillLevelRequirement": 60,
+    "bonuses": {
+      "skillMultiplier": {
+        "yield": 1.2
+      }
+    }
+  },
+  {
+    "id": "divination_combat_critical_1",
+    "name": "Divine Critical Chance",
+    "description": "Gain +2% critical chance from divinatory precision",
+    "category": "combat",
+    "cost": [
+      { "itemId": "time_vision", "quantity": 20 },
+      { "itemId": "reality_shard", "quantity": 15 }
+    ],
+    "prerequisites": ["divination_combat_attack_1", "divination_combat_dexterity_1"],
+    "skillLevelRequirement": 60,
+    "bonuses": {
+      "combatStatBonus": {
+        "criticalChance": 0.02
+      }
+    }
+  },
+  {
+    "id": "divination_utility_offline_3",
+    "name": "Extended Offline Time III",
+    "description": "Gain +5 more hours of offline progress time",
+    "category": "utility",
+    "cost": [
+      { "itemId": "primordial_vision", "quantity": 8 },
+      { "itemId": "fate_weaver", "quantity": 8 }
+    ],
+    "prerequisites": ["divination_utility_offline_2"],
+    "skillLevelRequirement": 85,
+    "bonuses": {
+      "offlineTimeHours": 5
+    }
+  }
+]

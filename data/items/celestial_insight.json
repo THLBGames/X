@@ -1,0 +1,12 @@
+{
+  "id": "celestial_insight",
+  "name": "Celestial Insight",
+  "description": "A crystal containing celestial wisdom and insight.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 650,
+  "nameKey": "item.celestial_insight.name",
+  "descriptionKey": "item.celestial_insight.description"
+}

@@ -262,6 +262,57 @@ export interface ActiveUpgrade {
   remainingActions?: number; // For consumables
 }
 
+// Divination Unlock Tree system
+export interface UnlockTreeNode {
+  id: string; // e.g., "divination_combat_boost_1"
+  name: string;
+  description: string;
+  category: 'combat' | 'skilling' | 'inventory' | 'utility';
+  cost: Array<{ itemId: string; quantity: number }>; // Divination resources
+  prerequisites?: string[]; // Other unlock node IDs
+  skillLevelRequirement?: number; // Divination skill level required
+  bonuses: {
+    // Combat bonuses
+    statBonus?: Partial<Stats>; // +strength, +intelligence, etc.
+    combatStatBonus?: Partial<CombatStats>; // +attack, +defense, etc.
+    combatMultiplier?: {
+      experience?: number; // Combat XP multiplier
+      gold?: number; // Combat gold multiplier
+      itemDropRate?: number; // Item drop rate multiplier
+    };
+    // Skilling bonuses
+    skillMultiplier?: {
+      experience?: number; // Skill XP multiplier (all skills)
+      speed?: number; // Skill speed multiplier
+      yield?: number; // Resource yield multiplier
+    };
+    // Inventory bonuses
+    inventorySlots?: number; // Additional inventory slots
+    // Utility bonuses
+    offlineTimeHours?: number; // Additional offline time
+    maxMercenaries?: number; // Additional mercenary slots
+  };
+}
+
+export interface DivinationUnlockBonuses {
+  // Aggregated bonuses from all unlocked nodes
+  statBonus?: Partial<Stats>;
+  combatStatBonus?: Partial<CombatStats>;
+  combatMultiplier?: {
+    experience?: number;
+    gold?: number;
+    itemDropRate?: number;
+  };
+  skillMultiplier?: {
+    experience?: number;
+    speed?: number;
+    yield?: number;
+  };
+  inventorySlots?: number;
+  offlineTimeHours?: number;
+  maxMercenaries?: number;
+}
+
 // Mercenary system
 // MercenaryType is now an enum - re-export for backward compatibility
 export { MercenaryType };
@@ -476,6 +527,8 @@ export interface Character {
   completedAchievements?: CompletedAchievement[]; // Completed achievements
   autoSkillSettings?: AutoSkillSetting[]; // Automatic skill usage settings
   autoConsumableSettings?: AutoConsumableSetting[]; // Automatic consumable usage settings
+  divinationUnlocks?: string[]; // Array of unlocked divination unlock tree node IDs
+  divinationUnlockBonuses?: DivinationUnlockBonuses; // Aggregated bonuses from all unlocked nodes
 }
 
 export interface LearnedSkill {

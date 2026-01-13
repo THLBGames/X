@@ -1,0 +1,12 @@
+{
+  "id": "destiny_anchor",
+  "name": "Destiny Anchor",
+  "description": "An anchor that binds destinies together.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5000,
+  "nameKey": "item.destiny_anchor.name",
+  "descriptionKey": "item.destiny_anchor.description"
+}

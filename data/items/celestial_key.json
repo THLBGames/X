@@ -1,0 +1,12 @@
+{
+  "id": "celestial_key",
+  "name": "Celestial Key",
+  "description": "A key that opens the Celestial Sanctum.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2000,
+  "nameKey": "item.celestial_key.name",
+  "descriptionKey": "item.celestial_key.description"
+}

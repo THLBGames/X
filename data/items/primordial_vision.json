@@ -1,0 +1,12 @@
+{
+  "id": "primordial_vision",
+  "name": "Primordial Vision",
+  "description": "A vision from the primordial age of creation.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4500,
+  "nameKey": "item.primordial_vision.name",
+  "descriptionKey": "item.primordial_vision.description"
+}

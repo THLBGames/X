@@ -169,6 +169,10 @@ export const useGameState = create<GameState>((set, get) => ({
       // If so, don't preserve old statistics or achievements - start fresh
       const isNewCharacter = !state.character || state.character.id !== character.id;
 
+      // Update inventory maxSlots based on unlock tree bonuses
+      const maxSlots = InventoryManager.getMaxInventorySlots(character);
+      const updatedInventory = { ...state.inventory, maxSlots };
+
       if (isNewCharacter) {
         // New character - use the character's own statistics and achievements (don't preserve old ones)
         console.log(
@@ -182,6 +186,7 @@ export const useGameState = create<GameState>((set, get) => ({
             // Use the character's own achievements (or empty array if not set)
             completedAchievements: character.completedAchievements || [],
           },
+          inventory: updatedInventory,
         };
       }
 
@@ -229,6 +234,7 @@ export const useGameState = create<GameState>((set, get) => ({
             // Always use the preserved statistics and create a new object reference
             statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
           },
+          inventory: updatedInventory,
         };
       }
 
@@ -254,6 +260,7 @@ export const useGameState = create<GameState>((set, get) => ({
             // Always use the preserved statistics and create a new object reference
             statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
           },
+          inventory: updatedInventory,
         };
       }
 
@@ -271,6 +278,7 @@ export const useGameState = create<GameState>((set, get) => ({
           // Always use the preserved statistics and create a new object reference
           statistics: finalStatistics ? { ...finalStatistics } : finalStatistics,
         },
+        inventory: updatedInventory,
       };
     }),
 

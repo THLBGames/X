@@ -260,6 +260,76 @@
       "timeRequired": 8800
     },
     {
+      "recipeId": "fate_crystal_enchant",
+      "name": "Fate Crystal Enchantment",
+      "level": 36,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "fate_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "uncommon_item",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "fate_crystal_enchanted_item",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "prophecy_scroll_enchant",
+      "name": "Prophecy Scroll Enchantment",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "prophecy_scroll",
+          "quantity": 3
+        },
+        {
+          "itemId": "celestial_insight",
+          "quantity": 2
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "rare_item",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "prophecy_scroll_enchanted_item",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 9200
+    },
+    {
       "recipeId": "greater_enchant",
       "name": "Greater Enchantment",
       "level": 60,

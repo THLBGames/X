@@ -1,0 +1,12 @@
+{
+  "id": "divine_energy",
+  "name": "Divine Energy",
+  "description": "Pure energy channeled from the cosmos.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5,
+  "nameKey": "item.divine_energy.name",
+  "descriptionKey": "item.divine_energy.description"
+}

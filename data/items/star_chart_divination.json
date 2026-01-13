@@ -1,0 +1,12 @@
+{
+  "id": "star_chart_divination",
+  "name": "Divination Star Chart",
+  "description": "A chart mapping stars for divinatory purposes.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 40,
+  "nameKey": "item.star_chart_divination.name",
+  "descriptionKey": "item.star_chart_divination.description"
+}
