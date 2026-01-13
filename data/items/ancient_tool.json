@@ -1,0 +1,12 @@
+{
+  "id": "ancient_tool",
+  "name": "Ancient Tool",
+  "description": "A tool used by ancient civilizations.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.ancient_tool.name",
+  "descriptionKey": "item.ancient_tool.description"
+}

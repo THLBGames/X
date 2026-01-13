@@ -1,0 +1,12 @@
+{
+  "id": "mystic_relic",
+  "name": "Mystic Relic",
+  "description": "A relic imbued with mystical energy.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 550,
+  "nameKey": "item.mystic_relic.name",
+  "descriptionKey": "item.mystic_relic.description"
+}

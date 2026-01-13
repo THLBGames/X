@@ -1,0 +1,12 @@
+{
+  "id": "atlantean_artifact",
+  "name": "Atlantean Artifact",
+  "description": "An artifact from the lost city of Atlantis.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3500,
+  "nameKey": "item.atlantean_artifact.name",
+  "descriptionKey": "item.atlantean_artifact.description"
+}

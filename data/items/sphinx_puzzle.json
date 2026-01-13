@@ -1,0 +1,12 @@
+{
+  "id": "sphinx_puzzle",
+  "name": "Sphinx Puzzle",
+  "description": "A mysterious puzzle piece from the Sphinx, required to access the Sphinx's Vault.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2500,
+  "nameKey": "item.sphinx_puzzle.name",
+  "descriptionKey": "item.sphinx_puzzle.description"
+}

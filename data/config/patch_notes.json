@@ -1,6 +1,40 @@
 {
   "versions": [
     {
+      "version": "0.0.9",
+      "date": "2026-01-13",
+      "categories": {
+        "added": [
+          "Archaeology skill fully expanded with 26 resource nodes covering levels 1-99",
+          "Secret unlock system for archaeology sites - special dig sites require rare items to access",
+          "6 secret archaeology locations: Map Room, Pharaoh's Chamber, Sphinx's Vault, Time Portal, Atlantean Archive, and Master's Vault",
+          "New archaeology artifacts: pottery shards, stone fragments, ancient tools, preserved artifacts, golden artifacts, mystic relics",
+          "Legendary archaeology materials: dragon bones, divine artifacts, celestial charts, sphinx statues, time sand, and atlantean tablets",
+          "Mythic archaeology materials: time crystals, atlantean artifacts, and primordial relics",
+          "Special unlock items: ancient map, pharaoh key, sphinx puzzle, time crystal, and master archaeologist badge",
+          "Enhanced archaeology passive bonuses providing wisdom, intelligence, gold generation, and item find rate",
+          "Enchanting recipes expanded with 5 new archaeology-based enchantments using ancient scrolls, tomes, relics, and artifacts",
+          "Runecrafting recipes added using rune stones and ancient artifacts from archaeology with prerequisites",
+          "Jewelcrafting recipes enhanced with ancient gem and golden artifact jewelry requiring archaeology levels",
+          "Alchemy recipes added using ancient relics and mystic items from archaeology",
+          "Engineering recipes expanded with ancient tools and preserved artifacts requiring archaeology levels",
+          "Cooking recipes added using ancient papyrus and preserved artifacts from archaeology"
+        ],
+        "changed": [
+          "Archaeology skill progression rebalanced with nodes every 5-10 levels for smooth advancement",
+          "Archaeology passive bonuses expanded with wisdom and intelligence bonuses at levels 10, 25, 40, 50, 60, 75, 80, 90, and 99",
+          "Enchanting recipes enhanced with ancient scroll, tome, relic, mystic relic, divine artifact, and primordial relic enchantments requiring archaeology levels 30-95",
+          "Runecrafting recipes added for rune stone and ancient artifact runes with archaeology prerequisites",
+          "Jewelcrafting expanded with ancient gem jewelry, golden artifact jewelry, and dragon bone jewelry requiring archaeology levels 45-55",
+          "Alchemy recipes enhanced with ancient relic and mystic relic potions using archaeology materials",
+          "Engineering recipes updated to use ancient tools and preserved artifacts with archaeology prerequisites",
+          "Cooking recipes added for ancient recipe meals and preserved artifact feasts requiring archaeology levels"
+        ],
+        "fixed": [],
+        "removed": []
+      }
+    },
+    {
       "version": "0.0.8",
       "date": "2026-01-12",
       "categories": {

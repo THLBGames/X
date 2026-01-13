@@ -1,0 +1,12 @@
+{
+  "id": "master_archaeologist_badge",
+  "name": "Master Archaeologist Badge",
+  "description": "The ultimate badge of archaeological mastery, required to access the Master's Vault.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 5000,
+  "nameKey": "item.master_archaeologist_badge.name",
+  "descriptionKey": "item.master_archaeologist_badge.description"
+}

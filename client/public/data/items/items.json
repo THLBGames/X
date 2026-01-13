@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_items": 575,
+  "total_items": 599,
   "items": {
     "abyssal_fish": {
       "id": "abyssal_fish",
@@ -749,6 +749,30 @@
       "nameKey": "item.ancient_gem.name",
       "descriptionKey": "item.ancient_gem.description"
     },
+    "ancient_map": {
+      "id": "ancient_map",
+      "name": "Ancient Map",
+      "description": "An ancient map revealing hidden locations, required to access the Map Room.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "nameKey": "item.ancient_map.name",
+      "descriptionKey": "item.ancient_map.description"
+    },
+    "ancient_papyrus": {
+      "id": "ancient_papyrus",
+      "name": "Ancient Papyrus",
+      "description": "An ancient scroll made of papyrus with writings.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.ancient_papyrus.name",
+      "descriptionKey": "item.ancient_papyrus.description"
+    },
     "ancient_relic": {
       "id": "ancient_relic",
       "name": "Ancient Relic",
@@ -822,6 +846,30 @@
       },
       "nameKey": "item.ancient_tome.name",
       "descriptionKey": "item.ancient_tome.description"
+    },
+    "ancient_tome_material": {
+      "id": "ancient_tome_material",
+      "name": "Ancient Tome",
+      "description": "An ancient book of knowledge and wisdom.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.ancient_tome_material.name",
+      "descriptionKey": "item.ancient_tome_material.description"
+    },
+    "ancient_tool": {
+      "id": "ancient_tool",
+      "name": "Ancient Tool",
+      "description": "A tool used by ancient civilizations.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.ancient_tool.name",
+      "descriptionKey": "item.ancient_tool.description"
     },
     "ancient_treasure": {
       "id": "ancient_treasure",
@@ -1485,6 +1533,30 @@
       "nameKey": "item.assassin_gloves.name",
       "descriptionKey": "item.assassin_gloves.description"
     },
+    "atlantean_artifact": {
+      "id": "atlantean_artifact",
+      "name": "Atlantean Artifact",
+      "description": "An artifact from the lost city of Atlantis.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3500,
+      "nameKey": "item.atlantean_artifact.name",
+      "descriptionKey": "item.atlantean_artifact.description"
+    },
+    "atlantean_tablet": {
+      "id": "atlantean_tablet",
+      "name": "Atlantean Tablet",
+      "description": "A tablet inscribed with Atlantean writing.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.atlantean_tablet.name",
+      "descriptionKey": "item.atlantean_tablet.description"
+    },
     "atlantis_key": {
       "id": "atlantis_key",
       "name": "Atlantis Key",
@@ -2041,6 +2113,18 @@
       "nameKey": "item.bronze_sword.name",
       "descriptionKey": "item.bronze_sword.description"
     },
+    "celestial_chart": {
+      "id": "celestial_chart",
+      "name": "Celestial Chart",
+      "description": "An ancient chart mapping the stars and celestial bodies.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1800,
+      "nameKey": "item.celestial_chart.name",
+      "descriptionKey": "item.celestial_chart.description"
+    },
     "celestial_fish": {
       "id": "celestial_fish",
       "name": "Celestial Fish",
@@ -2528,6 +2612,18 @@
       "nameKey": "item.dexterity_ring_t3.name",
       "descriptionKey": "item.dexterity_ring_t3.description"
     },
+    "divine_artifact": {
+      "id": "divine_artifact",
+      "name": "Divine Artifact",
+      "description": "An artifact touched by divine power.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.divine_artifact.name",
+      "descriptionKey": "item.divine_artifact.description"
+    },
     "divine_boots": {
       "id": "divine_boots",
       "name": "Divine Boots",
@@ -2769,7 +2865,7 @@
     "dragon_bone": {
       "id": "dragon_bone",
       "name": "Dragon Bone",
-      "description": "A bone from a dragon.",
+      "description": "A bone from an ancient dragon, still radiating power.",
       "type": "material",
       "rarity": "legendary",
       "stackable": true,
@@ -2789,6 +2885,18 @@
       "value": 2000,
       "nameKey": "item.dragon_scale.name",
       "descriptionKey": "item.dragon_scale.description"
+    },
+    "dragon_scale_ancient": {
+      "id": "dragon_scale_ancient",
+      "name": "Ancient Dragon Scale",
+      "description": "A scale from an ancient dragon, preserved for millennia.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 800,
+      "nameKey": "item.dragon_scale_ancient.name",
+      "descriptionKey": "item.dragon_scale_ancient.description"
     },
     "dragonbone_armor": {
       "id": "dragonbone_armor",
@@ -4230,6 +4338,18 @@
       "value": 50,
       "nameKey": "item.gold_ore.name",
       "descriptionKey": "item.gold_ore.description"
+    },
+    "golden_artifact": {
+      "id": "golden_artifact",
+      "name": "Golden Artifact",
+      "description": "A valuable artifact made of gold from ancient times.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.golden_artifact.name",
+      "descriptionKey": "item.golden_artifact.description"
     },
     "golden_fishing_rod": {
       "id": "golden_fishing_rod",
@@ -5929,6 +6049,18 @@
       "nameKey": "item.marble.name",
       "descriptionKey": "item.marble.description"
     },
+    "master_archaeologist_badge": {
+      "id": "master_archaeologist_badge",
+      "name": "Master Archaeologist Badge",
+      "description": "The ultimate badge of archaeological mastery, required to access the Master's Vault.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 5000,
+      "nameKey": "item.master_archaeologist_badge.name",
+      "descriptionKey": "item.master_archaeologist_badge.description"
+    },
     "mechanical_device": {
       "id": "mechanical_device",
       "name": "Mechanical Device",
@@ -6489,6 +6621,18 @@
       "nameKey": "item.monster_pelt.name",
       "descriptionKey": "item.monster_pelt.description"
     },
+    "mummy_wrapping": {
+      "id": "mummy_wrapping",
+      "name": "Mummy Wrapping",
+      "description": "Ancient wrapping from a mummy, still intact.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.mummy_wrapping.name",
+      "descriptionKey": "item.mummy_wrapping.description"
+    },
     "mushroom": {
       "id": "mushroom",
       "name": "Mushroom",
@@ -6528,6 +6672,18 @@
       },
       "nameKey": "item.mutton.name",
       "descriptionKey": "item.mutton.description"
+    },
+    "mystic_relic": {
+      "id": "mystic_relic",
+      "name": "Mystic Relic",
+      "description": "A relic imbued with mystical energy.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 550,
+      "nameKey": "item.mystic_relic.name",
+      "descriptionKey": "item.mystic_relic.description"
     },
     "mythic_staff": {
       "id": "mythic_staff",
@@ -6849,6 +7005,30 @@
       "nameKey": "item.phantom_pants.name",
       "descriptionKey": "item.phantom_pants.description"
     },
+    "pharaoh_gold": {
+      "id": "pharaoh_gold",
+      "name": "Pharaoh Gold",
+      "description": "Gold from an ancient pharaoh's tomb.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.pharaoh_gold.name",
+      "descriptionKey": "item.pharaoh_gold.description"
+    },
+    "pharaoh_key": {
+      "id": "pharaoh_key",
+      "name": "Pharaoh Key",
+      "description": "A key from an ancient pharaoh, required to access the Pharaoh's Chamber.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1500,
+      "nameKey": "item.pharaoh_key.name",
+      "descriptionKey": "item.pharaoh_key.description"
+    },
     "phoenix_ash": {
       "id": "phoenix_ash",
       "name": "Phoenix Ash",
@@ -6951,6 +7131,18 @@
       "nameKey": "item.potion_meal.name",
       "descriptionKey": "item.potion_meal.description"
     },
+    "pottery_shard": {
+      "id": "pottery_shard",
+      "name": "Pottery Shard",
+      "description": "A fragment of ancient pottery.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.pottery_shard.name",
+      "descriptionKey": "item.pottery_shard.description"
+    },
     "precious_metal": {
       "id": "precious_metal",
       "name": "Precious Metal",
@@ -6975,6 +7167,18 @@
       "nameKey": "item.precision_gear.name",
       "descriptionKey": "item.precision_gear.description"
     },
+    "preserved_artifact": {
+      "id": "preserved_artifact",
+      "name": "Preserved Artifact",
+      "description": "An artifact preserved by time or water.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.preserved_artifact.name",
+      "descriptionKey": "item.preserved_artifact.description"
+    },
     "primal_essence": {
       "id": "primal_essence",
       "name": "Primal Essence",
@@ -6998,6 +7202,18 @@
       "value": 800,
       "nameKey": "item.primordial_fish.name",
       "descriptionKey": "item.primordial_fish.description"
+    },
+    "primordial_relic": {
+      "id": "primordial_relic",
+      "name": "Primordial Relic",
+      "description": "A relic from the primordial age of creation.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4500,
+      "nameKey": "item.primordial_relic.name",
+      "descriptionKey": "item.primordial_relic.description"
     },
     "prismatic_shard": {
       "id": "prismatic_shard",
@@ -8771,6 +8987,30 @@
       "nameKey": "item.speed_potion.name",
       "descriptionKey": "item.speed_potion.description"
     },
+    "sphinx_puzzle": {
+      "id": "sphinx_puzzle",
+      "name": "Sphinx Puzzle",
+      "description": "A mysterious puzzle piece from the Sphinx, required to access the Sphinx's Vault.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2500,
+      "nameKey": "item.sphinx_puzzle.name",
+      "descriptionKey": "item.sphinx_puzzle.description"
+    },
+    "sphinx_statue": {
+      "id": "sphinx_statue",
+      "name": "Sphinx Statue",
+      "description": "A statue of a sphinx from ancient times.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1200,
+      "nameKey": "item.sphinx_statue.name",
+      "descriptionKey": "item.sphinx_statue.description"
+    },
     "spider_silk": {
       "id": "spider_silk",
       "name": "Spider Silk",
@@ -8806,6 +9046,18 @@
       "value": 12,
       "nameKey": "item.spring.name",
       "descriptionKey": "item.spring.description"
+    },
+    "star_chart": {
+      "id": "star_chart",
+      "name": "Star Chart",
+      "description": "An ancient chart mapping the stars.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 180,
+      "nameKey": "item.star_chart.name",
+      "descriptionKey": "item.star_chart.description"
     },
     "steel": {
       "id": "steel",
@@ -9257,6 +9509,18 @@
       "nameKey": "item.stone.name",
       "descriptionKey": "item.stone.description"
     },
+    "stone_fragment": {
+      "id": "stone_fragment",
+      "name": "Stone Fragment",
+      "description": "A fragment of stone from ancient structures.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.stone_fragment.name",
+      "descriptionKey": "item.stone_fragment.description"
+    },
     "strength_potion": {
       "id": "strength_potion",
       "name": "Strength Potion",
@@ -9400,6 +9664,30 @@
       "value": 10,
       "nameKey": "item.thread_quality.name",
       "descriptionKey": "item.thread_quality.description"
+    },
+    "time_crystal": {
+      "id": "time_crystal",
+      "name": "Time Crystal",
+      "description": "A crystal that pulses with temporal energy, required to access the Time Portal.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 4000,
+      "nameKey": "item.time_crystal.name",
+      "descriptionKey": "item.time_crystal.description"
+    },
+    "time_sand": {
+      "id": "time_sand",
+      "name": "Time Sand",
+      "description": "Sand that seems to flow backwards in time.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1500,
+      "nameKey": "item.time_sand.name",
+      "descriptionKey": "item.time_sand.description"
     },
     "tin_ore": {
       "id": "tin_ore",

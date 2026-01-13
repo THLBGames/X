@@ -191,6 +191,41 @@
       "timeRequired": 5500
     },
     {
+      "recipeId": "ancient_recipe_meal",
+      "name": "Ancient Recipe Meal",
+      "level": 44,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_papyrus",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat_quality",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_recipe_meal",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 6000
+    },
+    {
       "recipeId": "magic_fish_soup",
       "name": "Magic Fish Soup",
       "level": 55,
@@ -220,6 +255,76 @@
       },
       "experienceGain": 200,
       "timeRequired": 6000
+    },
+    {
+      "recipeId": "ancient_recipe_meal",
+      "name": "Ancient Recipe Meal",
+      "level": 44,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_papyrus",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat_quality",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_recipe_meal",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "preserved_artifact_feast",
+      "name": "Preserved Artifact Feast",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "preserved_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_tool",
+          "quantity": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat_premium",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "preserved_artifact_feast",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 6800
     },
     {
       "recipeId": "feast",

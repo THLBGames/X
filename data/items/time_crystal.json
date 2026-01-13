@@ -1,0 +1,12 @@
+{
+  "id": "time_crystal",
+  "name": "Time Crystal",
+  "description": "A crystal that pulses with temporal energy, required to access the Time Portal.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 4000,
+  "nameKey": "item.time_crystal.name",
+  "descriptionKey": "item.time_crystal.description"
+}

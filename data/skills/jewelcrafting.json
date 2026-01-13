@@ -141,6 +141,37 @@
       "timeRequired": 7000
     },
     {
+      "recipeId": "ancient_gem_jewelry",
+      "name": "Ancient Gem Jewelry",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_gem",
+          "quantity": 3
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_gem_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 9000
+    },
+    {
       "recipeId": "silver_necklace",
       "name": "Silver Necklace",
       "level": 35,
@@ -232,6 +263,41 @@
       },
       "experienceGain": 200,
       "timeRequired": 9000
+    },
+    {
+      "recipeId": "golden_artifact_jewelry",
+      "name": "Golden Artifact Jewelry",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "golden_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "ancient_gem",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "golden_artifact_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 250,
+      "timeRequired": 9500
     },
     {
       "recipeId": "mana_scale_jewelry",
@@ -391,6 +457,41 @@
       },
       "experienceGain": 450,
       "timeRequired": 12000
+    },
+    {
+      "recipeId": "dragon_bone_jewelry",
+      "name": "Dragon Bone Jewelry",
+      "level": 78,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "dragon_bone",
+          "quantity": 2
+        },
+        {
+          "itemId": "dragon_scale_ancient",
+          "quantity": 3
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dragon_bone_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 12500
     },
     {
       "recipeId": "rainbow_pearl_jewelry",

@@ -1,7 +1,7 @@
 {
   "id": "dragon_bone",
   "name": "Dragon Bone",
-  "description": "A bone from a dragon.",
+  "description": "A bone from an ancient dragon, still radiating power.",
   "type": "material",
   "rarity": "legendary",
   "stackable": true,

@@ -1,0 +1,12 @@
+{
+  "id": "celestial_chart",
+  "name": "Celestial Chart",
+  "description": "An ancient chart mapping the stars and celestial bodies.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1800,
+  "nameKey": "item.celestial_chart.name",
+  "descriptionKey": "item.celestial_chart.description"
+}

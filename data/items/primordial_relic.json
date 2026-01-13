@@ -1,0 +1,12 @@
+{
+  "id": "primordial_relic",
+  "name": "Primordial Relic",
+  "description": "A relic from the primordial age of creation.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4500,
+  "nameKey": "item.primordial_relic.name",
+  "descriptionKey": "item.primordial_relic.description"
+}

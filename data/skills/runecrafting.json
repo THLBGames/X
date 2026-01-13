@@ -60,6 +60,37 @@
       "timeRequired": 8000
     },
     {
+      "recipeId": "rune_stone_rune",
+      "name": "Rune Stone Rune",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "rune_stone_rune",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 7800
+    },
+    {
       "recipeId": "greater_rune",
       "name": "Greater Rune",
       "level": 45,
@@ -118,6 +149,41 @@
       },
       "experienceGain": 280,
       "timeRequired": 10000
+    },
+    {
+      "recipeId": "ancient_artifact_rune",
+      "name": "Ancient Artifact Rune",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 3
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ancient_artifact_rune",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 10200
     },
     {
       "recipeId": "void_rune",
@@ -227,6 +293,41 @@
       },
       "experienceGain": 620,
       "timeRequired": 15500
+    },
+    {
+      "recipeId": "divine_artifact_rune",
+      "name": "Divine Artifact Rune",
+      "level": 87,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_artifact",
+          "quantity": 3
+        },
+        {
+          "itemId": "celestial_chart",
+          "quantity": 2
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_artifact_rune",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 16000
     },
     {
       "recipeId": "supreme_rune",

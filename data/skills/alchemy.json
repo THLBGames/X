@@ -81,6 +81,37 @@
       "timeRequired": 5500
     },
     {
+      "recipeId": "ancient_relic_potion",
+      "name": "Ancient Relic Potion",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_relic",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_relic_potion",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 6500
+    },
+    {
       "recipeId": "strength_potion",
       "name": "Strength Potion",
       "level": 35,

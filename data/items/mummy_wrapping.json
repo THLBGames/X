@@ -1,0 +1,12 @@
+{
+  "id": "mummy_wrapping",
+  "name": "Mummy Wrapping",
+  "description": "Ancient wrapping from a mummy, still intact.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 35,
+  "nameKey": "item.mummy_wrapping.name",
+  "descriptionKey": "item.mummy_wrapping.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ancient_papyrus",
+  "name": "Ancient Papyrus",
+  "description": "An ancient scroll made of papyrus with writings.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.ancient_papyrus.name",
+  "descriptionKey": "item.ancient_papyrus.description"
+}
