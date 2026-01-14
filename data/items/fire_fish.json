@@ -1,0 +1,12 @@
+{
+  "id": "fire_fish",
+  "name": "Fire Fish",
+  "description": "A fish adapted to volcanic waters, radiating heat.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 100,
+  "nameKey": "item.fire_fish.name",
+  "descriptionKey": "item.fire_fish.description"
+}

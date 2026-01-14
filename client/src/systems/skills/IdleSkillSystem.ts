@@ -1,7 +1,8 @@
-import type { Character, IdleSkillLevel, ResourceNode } from '@idle-rpg/shared';
+import type { Character, IdleSkillLevel, ResourceNode, Inventory } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
 import { UpgradeManager, type UpgradeBonuses } from '../upgrade/UpgradeManager';
+import { InventoryManager } from '../inventory';
 
 export class IdleSkillSystem {
   /**
@@ -125,8 +126,9 @@ export class IdleSkillSystem {
 
   /**
    * Get available resource nodes for a skill at current level
+   * @param inventory Optional inventory to check for unlock requirements (for secret nodes)
    */
-  static getAvailableResourceNodes(character: Character, skillId: string): ResourceNode[] {
+  static getAvailableResourceNodes(character: Character, skillId: string, inventory?: Inventory): ResourceNode[] {
     const dataLoader = getDataLoader();
     const skill = dataLoader.getSkill(skillId);
 
@@ -135,7 +137,27 @@ export class IdleSkillSystem {
     }
 
     const skillLevel = this.getSkillLevel(character, skillId);
-    return skill.resourceNodes.filter((node) => skillLevel >= node.level);
+    return skill.resourceNodes.filter((node) => {
+      // Check level requirement
+      if (skillLevel < node.level) {
+        return false;
+      }
+
+      // Check unlock requirements if inventory is provided
+      if (node.unlockRequirements && inventory) {
+        for (const requirement of node.unlockRequirements) {
+          const quantity = InventoryManager.getItemQuantity(inventory, requirement.itemId);
+          if (quantity < requirement.quantity) {
+            return false;
+          }
+        }
+      } else if (node.unlockRequirements && !inventory) {
+        // If node has unlock requirements but no inventory provided, hide it
+        return false;
+      }
+
+      return true;
+    });
   }
 
   /**

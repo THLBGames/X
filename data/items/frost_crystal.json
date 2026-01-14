@@ -1,0 +1,12 @@
+{
+  "id": "frost_crystal",
+  "name": "Frost Crystal",
+  "description": "A crystal formed in frozen waters.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150,
+  "nameKey": "item.frost_crystal.name",
+  "descriptionKey": "item.frost_crystal.description"
+}

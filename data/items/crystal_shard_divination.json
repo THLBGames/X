@@ -1,0 +1,12 @@
+{
+  "id": "crystal_shard_divination",
+  "name": "Divination Crystal Shard",
+  "description": "A crystal shard infused with divinatory energy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.crystal_shard_divination.name",
+  "descriptionKey": "item.crystal_shard_divination.description"
+}

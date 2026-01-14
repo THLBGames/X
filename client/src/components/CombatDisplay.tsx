@@ -7,6 +7,7 @@ import { gameEventEmitter, type GameEvent } from '../systems/events/GameEventEmi
 import CombatArena from './CombatArena';
 import CombatSkillBar from './CombatSkillBar';
 import ConsumableBar from './ConsumableBar';
+import CombatGuideModal from './CombatGuideModal';
 import './CombatDisplay.css';
 
 interface CombatStats {
@@ -33,6 +34,7 @@ export default function CombatDisplay() {
     totalGold: 0,
   });
   const [levelUpMessage, setLevelUpMessage] = useState<string | null>(null);
+  const [showCombatGuide, setShowCombatGuide] = useState(false);
   const previousLevelRef = useRef(character?.level || 1);
 
   // Listen for combat stats updates
@@ -128,11 +130,16 @@ export default function CombatDisplay() {
     <div className="combat-display">
       <div className="combat-header">
         <h2>{t('character.combat')}</h2>
-        {isCombatActive && (
-          <button className="stop-combat-button" onClick={stopCombat}>
-            {t('combat.stopCombat')}
+        <div className="combat-header-actions">
+          <button className="combat-guide-button" onClick={() => setShowCombatGuide(true)}>
+            {t('combat.guideButton')}
           </button>
-        )}
+          {isCombatActive && (
+            <button className="stop-combat-button" onClick={stopCombat}>
+              {t('combat.stopCombat')}
+            </button>
+          )}
+        </div>
       </div>
 
       {isCombatActive ? (
@@ -189,6 +196,8 @@ export default function CombatDisplay() {
       {levelUpMessage && settings.showNotifications && (
         <div className="level-up-notification">{levelUpMessage}</div>
       )}
+
+      <CombatGuideModal isOpen={showCombatGuide} onClose={() => setShowCombatGuide(false)} />
     </div>
   );
 }

@@ -1,0 +1,12 @@
+{
+  "id": "lake_fish",
+  "name": "Lake Fish",
+  "description": "A fish caught from deep lakes.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10,
+  "nameKey": "item.lake_fish.name",
+  "descriptionKey": "item.lake_fish.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "mana_scale",
+  "name": "Mana Scale",
+  "description": "A fish scale infused with magical energy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20,
+  "nameKey": "item.mana_scale.name",
+  "descriptionKey": "item.mana_scale.description"
+}

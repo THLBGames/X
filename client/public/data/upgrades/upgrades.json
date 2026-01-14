@@ -563,7 +563,7 @@
     "divination_upgrade_IV": {
       "id": "divination_upgrade_IV",
       "name": "Divination Upgrade IV",
-      "description": "Permanently increases divination XP gain by 25%, speed by 15%, and yield by 15%",
+      "description": "Permanently increases divination XP gain by 25%, speed by 16%, and yield by 16%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "divination",
@@ -571,9 +571,9 @@
       "price": 8000,
       "bonuses": {
         "experienceMultiplier": 1.25,
-        "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "speedMultiplier": 0.84,
+        "yieldMultiplier": 1.16,
+        "successRateBonus": 0.16
       },
       "requirements": {
         "previousTierId": "divination_upgrade_III"

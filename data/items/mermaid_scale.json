@@ -1,0 +1,12 @@
+{
+  "id": "mermaid_scale",
+  "name": "Mermaid Scale",
+  "description": "A rare scale from a mermaid, required to access secret fishing locations.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 500,
+  "nameKey": "item.mermaid_scale.name",
+  "descriptionKey": "item.mermaid_scale.description"
+}

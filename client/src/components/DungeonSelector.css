@@ -67,6 +67,12 @@
   margin-bottom: 8px;
 }
 
+.dungeon-header-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .dungeon-name {
   font-weight: bold;
   font-size: 1.1rem;
@@ -80,6 +86,15 @@
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: bold;
+}
+
+.dungeon-difficulty-badge {
+  border: 1px solid;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .dungeon-info {
@@ -103,6 +118,49 @@
   color: #aaa;
   margin-bottom: 8px;
   line-height: 1.4;
+}
+
+.dungeon-rewards {
+  margin-top: 8px;
+  padding: 8px;
+  background: rgba(74, 158, 255, 0.1);
+  border: 1px solid rgba(74, 158, 255, 0.3);
+  border-radius: 4px;
+}
+
+.rewards-label {
+  font-size: 0.85rem;
+  color: #4a9eff;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.rewards-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.reward-item {
+  display: inline-block;
+}
+
+.dungeon-item.difficulty-easy {
+  border-left: 3px solid #4ecdc4;
+}
+
+.dungeon-item.difficulty-medium {
+  border-left: 3px solid #4a9eff;
+}
+
+.dungeon-item.difficulty-hard {
+  border-left: 3px solid #ffa500;
+}
+
+.dungeon-item.difficulty-impossible {
+  border-left: 3px solid #ff4444;
 }
 
 .dungeon-stats {

@@ -78,6 +78,68 @@
           "timeRequired": 5000
         },
         {
+          "recipeId": "pearl_elixir",
+          "name": "Pearl Elixir",
+          "level": 30,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "fish_scale",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "pearl_elixir",
+            "quantity": 1
+          },
+          "experienceGain": 90,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "ancient_relic_potion",
+          "name": "Ancient Relic Potion",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_relic",
+              "quantity": 2
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "essence_crystal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "ancient_relic_potion",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 6500
+        },
+        {
           "recipeId": "strength_potion",
           "name": "Strength Potion",
           "level": 35,
@@ -103,6 +165,99 @@
           "timeRequired": 6000
         },
         {
+          "recipeId": "mana_scale_potion",
+          "name": "Mana Scale Potion",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mana_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "magic_fish",
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "mana_scale_potion",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "freshwater_pearl_potion",
+          "name": "Freshwater Pearl Potion",
+          "level": 45,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "freshwater_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "lake_fish",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "freshwater_pearl_potion",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "mermaid_tear_potion",
+          "name": "Mermaid Tear Potion",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mermaid_tear",
+              "quantity": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 1
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "mermaid_tear_potion",
+            "quantity": 1
+          },
+          "experienceGain": 250,
+          "timeRequired": 7000
+        },
+        {
           "recipeId": "elixir",
           "name": "Elixir of Power",
           "level": 65,
@@ -126,6 +281,138 @@
           },
           "experienceGain": 280,
           "timeRequired": 8000
+        },
+        {
+          "recipeId": "abyssal_pearl_elixir",
+          "name": "Abyssal Pearl Elixir",
+          "level": 68,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "abyssal_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "abyssal_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "abyssal_pearl_elixir",
+            "quantity": 1
+          },
+          "experienceGain": 320,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "kraken_ink_potion",
+          "name": "Kraken Ink Potion",
+          "level": 75,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "kraken_ink",
+              "quantity": 2
+            },
+            {
+              "itemId": "black_pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "kraken_ink_potion",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "celestial_scale_elixir",
+          "name": "Celestial Scale Elixir",
+          "level": 82,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "celestial_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_elixir",
+            "quantity": 1
+          },
+          "experienceGain": 550,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "primordial_essence_potion",
+          "name": "Primordial Essence Potion",
+          "level": 92,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "primordial_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "primordial_essence_potion",
+            "quantity": 1
+          },
+          "experienceGain": 680,
+          "timeRequired": 10000
         }
       ],
       "passiveBonuses": [
@@ -295,6 +582,162 @@
               "itemId": "ancient_coin",
               "chance": 0.3,
               "quantity": 1
+            },
+            {
+              "itemId": "pottery_shard",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "nodeId": "burial_ground",
+          "name": "Burial Ground",
+          "successRate": 0.84,
+          "experienceGain": 28,
+          "timeRequired": 6200,
+          "resources": [
+            {
+              "itemId": "ancient_shard",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "pottery_shard",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_coin",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "stone_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "nodeId": "ruins",
+          "name": "Ancient Ruins",
+          "successRate": 0.83,
+          "experienceGain": 40,
+          "timeRequired": 6500,
+          "resources": [
+            {
+              "itemId": "pottery_shard",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_coin",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_shard",
+              "chance": 0.45,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_tool",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "cave_paintings",
+          "name": "Cave Paintings",
+          "successRate": 0.82,
+          "experienceGain": 55,
+          "timeRequired": 6800,
+          "resources": [
+            {
+              "itemId": "ancient_scroll",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_papyrus",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_shard",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "nodeId": "stone_circle",
+          "name": "Stone Circle",
+          "successRate": 0.81,
+          "experienceGain": 65,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "rune_stone",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "stone_fragment",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_map",
+              "chance": 0.003,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "nodeId": "ancient_village",
+          "name": "Ancient Village",
+          "successRate": 0.8,
+          "experienceGain": 75,
+          "timeRequired": 7200,
+          "resources": [
+            {
+              "itemId": "ancient_tool",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "pottery_shard",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_coin",
+              "chance": 0.45,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_map",
+              "chance": 0.003,
+              "quantity": 1
             }
           ]
         },
@@ -320,6 +763,205 @@
             {
               "itemId": "ancient_scroll",
               "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "sunken_ruins",
+          "name": "Sunken Ruins",
+          "successRate": 0.78,
+          "experienceGain": 95,
+          "timeRequired": 7500,
+          "resources": [
+            {
+              "itemId": "preserved_artifact",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_coin",
+              "chance": 0.45,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "nodeId": "ancient_library",
+          "name": "Ancient Library",
+          "successRate": 0.77,
+          "experienceGain": 110,
+          "timeRequired": 7800,
+          "resources": [
+            {
+              "itemId": "ancient_scroll",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_papyrus",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_tome_material",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_map",
+              "chance": 0.003,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 45,
+          "nodeId": "pyramid_site",
+          "name": "Pyramid Site",
+          "successRate": 0.76,
+          "experienceGain": 130,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "golden_artifact",
+              "chance": 0.8,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "pharaoh_gold",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "mummy_wrapping",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "pharaoh_key",
+              "chance": 0.002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 45,
+          "nodeId": "map_room",
+          "name": "Map Room",
+          "successRate": 0.74,
+          "experienceGain": 195,
+          "timeRequired": 8500,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_map",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "ancient_map",
+              "chance": 0.5,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "star_chart",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scroll",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_papyrus",
+              "chance": 0.6,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "mystic_ruins",
+          "name": "Mystic Ruins",
+          "successRate": 0.75,
+          "experienceGain": 150,
+          "timeRequired": 8200,
+          "resources": [
+            {
+              "itemId": "mystic_relic",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "rune_stone",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 55,
+          "nodeId": "dragon_burial_site",
+          "name": "Dragon Burial Site",
+          "successRate": 0.74,
+          "experienceGain": 180,
+          "timeRequired": 8500,
+          "resources": [
+            {
+              "itemId": "dragon_bone",
+              "chance": 0.7,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "dragon_scale_ancient",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.35,
               "quantity": 1
             }
           ]
@@ -356,6 +998,247 @@
           ]
         },
         {
+          "level": 65,
+          "nodeId": "underwater_temple",
+          "name": "Underwater Temple",
+          "successRate": 0.71,
+          "experienceGain": 220,
+          "timeRequired": 8800,
+          "resources": [
+            {
+              "itemId": "preserved_artifact",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "pharaoh_key",
+              "chance": 0.002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 65,
+          "nodeId": "pharaoh_chamber",
+          "name": "Pharaoh's Chamber",
+          "successRate": 0.73,
+          "experienceGain": 330,
+          "timeRequired": 9500,
+          "unlockRequirements": [
+            {
+              "itemId": "pharaoh_key",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "pharaoh_gold",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "golden_artifact",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "mummy_wrapping",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.7,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "celestial_observatory",
+          "name": "Celestial Observatory",
+          "successRate": 0.7,
+          "experienceGain": 260,
+          "timeRequired": 9000,
+          "resources": [
+            {
+              "itemId": "star_chart",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_chart",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scroll",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "sphinx_puzzle",
+              "chance": 0.001,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 75,
+          "nodeId": "ancient_citadel",
+          "name": "Ancient Citadel",
+          "successRate": 0.69,
+          "experienceGain": 300,
+          "timeRequired": 9200,
+          "resources": [
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_treasure",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "golden_artifact",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.45,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "forgotten_kingdom",
+          "name": "Forgotten Kingdom",
+          "successRate": 0.68,
+          "experienceGain": 340,
+          "timeRequired": 9500,
+          "resources": [
+            {
+              "itemId": "ancient_treasure",
+              "chance": 0.7,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "golden_artifact",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_artifact",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "sphinx_puzzle",
+              "chance": 0.001,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "sphinx_vault",
+          "name": "Sphinx's Vault",
+          "successRate": 0.72,
+          "experienceGain": 510,
+          "timeRequired": 10000,
+          "unlockRequirements": [
+            {
+              "itemId": "sphinx_puzzle",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "sphinx_statue",
+              "chance": 0.5,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_treasure",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_artifact",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "golden_artifact",
+              "chance": 0.7,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 85,
+          "nodeId": "demon_ruins",
+          "name": "Demon Ruins",
+          "successRate": 0.67,
+          "experienceGain": 380,
+          "timeRequired": 9800,
+          "resources": [
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "mystic_relic",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_gem",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "time_crystal",
+              "chance": 0.0005,
+              "quantity": 1
+            }
+          ]
+        },
+        {
           "level": 90,
           "nodeId": "forgotten_tomb",
           "name": "Forgotten Tomb",
@@ -380,28 +1263,298 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "level": 90,
+          "nodeId": "time_portal",
+          "name": "Time Portal",
+          "successRate": 0.7,
+          "experienceGain": 600,
+          "timeRequired": 11000,
+          "unlockRequirements": [
+            {
+              "itemId": "time_crystal",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "time_crystal",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "time_sand",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_relic",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_treasure",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "divine_ruins",
+          "name": "Divine Ruins",
+          "successRate": 0.65,
+          "experienceGain": 480,
+          "timeRequired": 10500,
+          "resources": [
+            {
+              "itemId": "divine_artifact",
+              "chance": 0.8,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_treasure",
+              "chance": 0.7,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_chart",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "primordial_relic",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "atlantean_archive",
+          "name": "Atlantean Archive",
+          "successRate": 0.72,
+          "experienceGain": 720,
+          "timeRequired": 11500,
+          "unlockRequirements": [
+            {
+              "itemId": "atlantis_key",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "atlantean_artifact",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "atlantean_tablet",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_relic",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_artifact",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "master_archaeologist_site",
+          "name": "Master Archaeologist's Site",
+          "successRate": 0.6,
+          "experienceGain": 600,
+          "timeRequired": 12000,
+          "resources": [
+            {
+              "itemId": "ancient_treasure",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_artifact",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_relic",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_chart",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_artifact",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "master_vault",
+          "name": "Master's Vault",
+          "successRate": 0.75,
+          "experienceGain": 900,
+          "timeRequired": 12000,
+          "unlockRequirements": [
+            {
+              "itemId": "master_archaeologist_badge",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "ancient_treasure",
+              "chance": 1,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "divine_artifact",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_relic",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_chart",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "atlantean_artifact",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
         }
       ],
       "passiveBonuses": [
         {
+          "level": 10,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 5
+            }
+          }
+        },
+        {
+          "level": 25,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 10
+            },
+            "itemFindRate": 0.05
+          }
+        },
+        {
           "level": 40,
           "bonus": {
             "goldGeneration": 0.1,
+            "statBonus": {
+              "wisdom": 15
+            },
             "itemFindRate": 0.05
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 20,
+              "intelligence": 5
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 25,
+              "intelligence": 10
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 30,
+              "intelligence": 15
+            },
+            "itemFindRate": 0.15
           }
         },
         {
           "level": 80,
           "bonus": {
             "goldGeneration": 0.2,
+            "statBonus": {
+              "wisdom": 35,
+              "intelligence": 20
+            },
             "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 40,
+              "intelligence": 25
+            },
+            "itemFindRate": 0.15
           }
         },
         {
           "level": 99,
           "bonus": {
             "goldGeneration": 0.3,
-            "itemFindRate": 0.15
+            "itemFindRate": 0.15,
+            "statBonus": {
+              "wisdom": 45,
+              "intelligence": 30
+            }
           }
         }
       ],
@@ -594,9 +1747,42 @@
           "timeRequired": 8000
         },
         {
+          "recipeId": "bronze_weapon",
+          "name": "Bronze Weapon",
+          "level": 12,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "bronze_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "coal",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "bronze_weapon",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 9000
+        },
+        {
           "recipeId": "iron_armor",
           "name": "Iron Armor",
           "level": 20,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 15
+            }
+          ],
           "ingredients": [
             {
               "itemId": "iron_ore",
@@ -621,19 +1807,21 @@
         {
           "recipeId": "steel_weapon",
           "name": "Steel Weapon",
-          "level": 40,
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 30
+            }
+          ],
           "ingredients": [
             {
-              "itemId": "iron_ore",
-              "quantity": 10
+              "itemId": "steel_ore",
+              "quantity": 8
             },
             {
               "itemId": "coal",
-              "quantity": 5
-            },
-            {
-              "itemId": "silver_ore",
-              "quantity": 2
+              "quantity": 4
             },
             {
               "itemId": "orc_tooth",
@@ -648,9 +1836,77 @@
           "timeRequired": 12000
         },
         {
+          "recipeId": "silver_equipment",
+          "name": "Silver Equipment",
+          "level": 30,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silver_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "coal",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_common",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "silver_equipment",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "gold_armor",
+          "name": "Gold Armor",
+          "level": 45,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 12
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 3
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "gold_armor",
+            "quantity": 1
+          },
+          "experienceGain": 220,
+          "timeRequired": 13000
+        },
+        {
           "recipeId": "mithril_gear",
           "name": "Mithril Gear",
-          "level": 70,
+          "level": 60,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 55
+            }
+          ],
           "ingredients": [
             {
               "itemId": "mithril_ore",
@@ -659,6 +1915,10 @@
             {
               "itemId": "magic_essence",
               "quantity": 3
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 2
             }
           ],
           "result": {
@@ -667,6 +1927,177 @@
           },
           "experienceGain": 350,
           "timeRequired": 15000
+        },
+        {
+          "recipeId": "runite_weapon",
+          "name": "Runite Weapon",
+          "level": 65,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "runite_ore",
+              "quantity": 15
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "runite_weapon",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 16000
+        },
+        {
+          "recipeId": "adamantite_armor",
+          "name": "Adamantite Armor",
+          "level": 70,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 65
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "adamantite_ore",
+              "quantity": 18
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "adamantite_armor",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 18000
+        },
+        {
+          "recipeId": "orichalcum_gear",
+          "name": "Orichalcum Gear",
+          "level": 80,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "orichalcum_ore",
+              "quantity": 20
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "orichalcum_gear",
+            "quantity": 1
+          },
+          "experienceGain": 600,
+          "timeRequired": 20000
+        },
+        {
+          "recipeId": "divine_equipment",
+          "name": "Divine Equipment",
+          "level": 95,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_ore",
+              "quantity": 25
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "divine_equipment",
+            "quantity": 1
+          },
+          "experienceGain": 800,
+          "timeRequired": 25000
+        },
+        {
+          "recipeId": "golden_fishing_rod",
+          "name": "Golden Fishing Rod",
+          "level": 92,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 40
+            },
+            {
+              "skillId": "jewelcrafting",
+              "level": 70
+            },
+            {
+              "skillId": "fishing",
+              "level": 90
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 50
+            },
+            {
+              "itemId": "mithril_ore",
+              "quantity": 20
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 5
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 10
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 15
+            }
+          ],
+          "result": {
+            "itemId": "golden_fishing_rod",
+            "quantity": 1
+          },
+          "experienceGain": 900,
+          "timeRequired": 30000
         }
       ],
       "passiveBonuses": [
@@ -965,6 +2396,64 @@
           "timeRequired": 4000
         },
         {
+          "recipeId": "grilled_fish",
+          "name": "Grilled Fish",
+          "level": 8,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 10
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "freshwater_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "grilled_fish",
+            "quantity": 1
+          },
+          "experienceGain": 35,
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "fish_stew",
+          "name": "Fish Stew",
+          "level": 15,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 15
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "medium_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "saltwater_fish",
+              "quantity": 1
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "fish_stew",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 4500
+        },
+        {
           "recipeId": "quality_meal",
           "name": "Quality Meal",
           "level": 25,
@@ -990,6 +2479,204 @@
           "timeRequired": 5000
         },
         {
+          "recipeId": "sushi_platter",
+          "name": "Sushi Platter",
+          "level": 28,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "tropical_fish",
+              "quantity": 3
+            },
+            {
+              "itemId": "saltwater_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "sushi_platter",
+            "quantity": 1
+          },
+          "experienceGain": 90,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "deep_sea_delight",
+          "name": "Deep Sea Delight",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "deep_sea_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "pearl",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "deep_sea_delight",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "ancient_recipe_meal",
+          "name": "Ancient Recipe Meal",
+          "level": 44,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_papyrus",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "raw_meat_quality",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "ancient_recipe_meal",
+            "quantity": 1
+          },
+          "experienceGain": 160,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "magic_fish_soup",
+          "name": "Magic Fish Soup",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "magic_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "mana_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "magic_fish_soup",
+            "quantity": 1
+          },
+          "experienceGain": 200,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "ancient_recipe_meal",
+          "name": "Ancient Recipe Meal",
+          "level": 44,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_papyrus",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "raw_meat_quality",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "ancient_recipe_meal",
+            "quantity": 1
+          },
+          "experienceGain": 160,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "preserved_artifact_feast",
+          "name": "Preserved Artifact Feast",
+          "level": 58,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "preserved_artifact",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_tool",
+              "quantity": 3
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "raw_meat_premium",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "preserved_artifact_feast",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 6800
+        },
+        {
           "recipeId": "feast",
           "name": "Grand Feast",
           "level": 60,
@@ -1013,6 +2700,169 @@
           },
           "experienceGain": 200,
           "timeRequired": 6000
+        },
+        {
+          "recipeId": "fire_fish_platter",
+          "name": "Fire Fish Platter",
+          "level": 68,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 65
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "fire_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "lava_core",
+              "quantity": 1
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "fire_fish_platter",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "ice_fish_cuisine",
+          "name": "Ice Fish Cuisine",
+          "level": 72,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ice_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "frost_crystal",
+              "quantity": 1
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "ice_fish_cuisine",
+            "quantity": 1
+          },
+          "experienceGain": 300,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "leviathan_feast",
+          "name": "Leviathan Feast",
+          "level": 78,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "leviathan_scale",
+              "quantity": 2
+            },
+            {
+              "itemId": "rare_fish",
+              "quantity": 3
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "leviathan_feast",
+            "quantity": 1
+          },
+          "experienceGain": 400,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "celestial_sushi",
+          "name": "Celestial Sushi",
+          "level": 85,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "celestial_fish",
+              "quantity": 3
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 1
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "celestial_sushi",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "primordial_bouillabaisse",
+          "name": "Primordial Bouillabaisse",
+          "level": 97,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "primordial_fish",
+              "quantity": 4
+            },
+            {
+              "itemId": "ancient_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 2
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "primordial_bouillabaisse",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 8000
         }
       ],
       "passiveBonuses": [
@@ -1269,7 +3119,7 @@
     "divination": {
       "id": "divination",
       "name": "Divination",
-      "description": "Gather energy and essence from the environment",
+      "description": "Channel cosmic energies and divine visions to gain insights and power",
       "type": "gathering",
       "category": "gathering",
       "maxLevel": 99,
@@ -1284,14 +3134,187 @@
           "timeRequired": 5000,
           "resources": [
             {
-              "itemId": "energy_wisp",
+              "itemId": "divine_energy",
               "chance": 1,
               "min": 1,
               "max": 3
             },
             {
-              "itemId": "minor_essence",
+              "itemId": "divination_fragment",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "star_dust",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "nodeId": "minor_vision",
+          "name": "Minor Vision Site",
+          "successRate": 0.87,
+          "experienceGain": 24,
+          "timeRequired": 5200,
+          "resources": [
+            {
+              "itemId": "divine_energy",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "divination_fragment",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "star_dust",
+              "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "nodeId": "crystal_formation",
+          "name": "Crystal Formation",
+          "successRate": 0.86,
+          "experienceGain": 36,
+          "timeRequired": 5400,
+          "resources": [
+            {
+              "itemId": "crystal_shard_divination",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_energy",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "moon_essence",
               "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "moonlight_site",
+          "name": "Moonlight Divination Site",
+          "successRate": 0.85,
+          "experienceGain": 50,
+          "timeRequired": 5600,
+          "resources": [
+            {
+              "itemId": "moon_essence",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "crystal_shard_divination",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "planetary_alignment",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "nodeId": "stellar_alignment",
+          "name": "Stellar Alignment Site",
+          "successRate": 0.84,
+          "experienceGain": 65,
+          "timeRequired": 5800,
+          "resources": [
+            {
+              "itemId": "planetary_alignment",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "star_chart_divination",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "moon_essence",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "diviner_scroll",
+              "chance": 0.002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "nodeId": "cosmic_well",
+          "name": "Cosmic Energy Well",
+          "successRate": 0.83,
+          "experienceGain": 80,
+          "timeRequired": 6000,
+          "resources": [
+            {
+              "itemId": "cosmic_energy",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "star_chart_divination",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "fate_crystal",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "diviner_scroll",
+              "chance": 0.002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "nodeId": "fate_weaving",
+          "name": "Fate Weaving Site",
+          "successRate": 0.82,
+          "experienceGain": 100,
+          "timeRequired": 6200,
+          "resources": [
+            {
+              "itemId": "fate_crystal",
+              "chance": 0.85,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "cosmic_energy",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "destiny_fragment",
+              "chance": 0.25,
               "quantity": 1
             }
           ]
@@ -1300,9 +3323,9 @@
           "level": 35,
           "nodeId": "essence_well",
           "name": "Essence Well",
-          "successRate": 0.82,
-          "experienceGain": 75,
-          "timeRequired": 6000,
+          "successRate": 0.81,
+          "experienceGain": 120,
+          "timeRequired": 6400,
           "resources": [
             {
               "itemId": "essence_crystal",
@@ -1311,13 +3334,196 @@
               "max": 2
             },
             {
-              "itemId": "energy_wisp",
+              "itemId": "divine_energy",
               "chance": 0.4,
               "quantity": 1
             },
             {
               "itemId": "moderate_essence",
               "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "nodeId": "destiny_vision",
+          "name": "Destiny Vision Site",
+          "successRate": 0.8,
+          "experienceGain": 145,
+          "timeRequired": 6600,
+          "resources": [
+            {
+              "itemId": "destiny_fragment",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "prophecy_scroll",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "fate_crystal",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_key",
+              "chance": 0.002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 45,
+          "nodeId": "prophecy_pool",
+          "name": "Prophecy Pool",
+          "successRate": 0.79,
+          "experienceGain": 170,
+          "timeRequired": 6800,
+          "resources": [
+            {
+              "itemId": "prophecy_scroll",
+              "chance": 0.85,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_insight",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "destiny_fragment",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_key",
+              "chance": 0.002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 45,
+          "nodeId": "diviner_library",
+          "name": "Diviner's Library",
+          "successRate": 0.77,
+          "experienceGain": 255,
+          "timeRequired": 7200,
+          "unlockRequirements": [
+            {
+              "itemId": "diviner_scroll",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "prophecy_scroll",
+              "chance": 0.9,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "celestial_insight",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "star_chart_divination",
+              "chance": 0.7,
+              "quantity": 1
+            },
+            {
+              "itemId": "diviner_scroll",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "celestial_observatory",
+          "name": "Celestial Observatory",
+          "successRate": 0.78,
+          "experienceGain": 200,
+          "timeRequired": 7000,
+          "resources": [
+            {
+              "itemId": "celestial_insight",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "time_vision",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "prophecy_scroll",
+              "chance": 0.6,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 55,
+          "nodeId": "time_stream",
+          "name": "Time Stream Divination",
+          "successRate": 0.77,
+          "experienceGain": 230,
+          "timeRequired": 7200,
+          "resources": [
+            {
+              "itemId": "time_vision",
+              "chance": 0.8,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "reality_shard",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_insight",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "reality_fragment",
+          "name": "Reality Fragment Site",
+          "successRate": 0.76,
+          "experienceGain": 260,
+          "timeRequired": 7400,
+          "resources": [
+            {
+              "itemId": "reality_shard",
+              "chance": 0.85,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "time_vision",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "fate_weaver_key",
+              "chance": 0.001,
               "quantity": 1
             }
           ]
@@ -1354,7 +3560,202 @@
           ]
         },
         {
-          "level": 95,
+          "level": 65,
+          "nodeId": "celestial_sanctum",
+          "name": "Celestial Sanctum",
+          "successRate": 0.73,
+          "experienceGain": 390,
+          "timeRequired": 8000,
+          "unlockRequirements": [
+            {
+              "itemId": "celestial_key",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "celestial_insight",
+              "chance": 1,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "time_vision",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_key",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "divine_prophecy_site",
+          "name": "Divine Prophecy Site",
+          "successRate": 0.74,
+          "experienceGain": 300,
+          "timeRequired": 7600,
+          "resources": [
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "reality_shard",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "fate_weaver_key",
+              "chance": 0.001,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 75,
+          "nodeId": "primordial_vision_site",
+          "name": "Primordial Vision Site",
+          "successRate": 0.72,
+          "experienceGain": 340,
+          "timeRequired": 7800,
+          "resources": [
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "destiny_anchor_key",
+              "chance": 0.0005,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "fate_weaver_site",
+          "name": "Fate Weaver Site",
+          "successRate": 0.71,
+          "experienceGain": 380,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.75,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "fate_weaver_key",
+              "chance": 0.001,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "fate_weaver_chamber",
+          "name": "Fate Weaver's Chamber",
+          "successRate": 0.73,
+          "experienceGain": 570,
+          "timeRequired": 8500,
+          "unlockRequirements": [
+            {
+              "itemId": "fate_weaver_key",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.9,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.7,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 85,
+          "nodeId": "destiny_anchor_site",
+          "name": "Destiny Anchor Site",
+          "successRate": 0.7,
+          "experienceGain": 420,
+          "timeRequired": 8200,
+          "resources": [
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.75,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "destiny_anchor_key",
+              "chance": 0.0005,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
           "nodeId": "void_rift",
           "name": "Void Rift",
           "successRate": 0.65,
@@ -1378,28 +3779,238 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "level": 90,
+          "nodeId": "destiny_chamber",
+          "name": "Chamber of Destiny",
+          "successRate": 0.72,
+          "experienceGain": 630,
+          "timeRequired": 9200,
+          "unlockRequirements": [
+            {
+              "itemId": "destiny_anchor_key",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.9,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "cosmic_convergence",
+          "name": "Cosmic Convergence",
+          "successRate": 0.68,
+          "experienceGain": 480,
+          "timeRequired": 8800,
+          "resources": [
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "master_diviner_seal",
+              "chance": 0.0002,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "master_diviner_site",
+          "name": "Master Diviner's Site",
+          "successRate": 0.65,
+          "experienceGain": 550,
+          "timeRequired": 9500,
+          "resources": [
+            {
+              "itemId": "primordial_vision",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "master_diviner_sanctuary",
+          "name": "Master Diviner's Sanctuary",
+          "successRate": 0.75,
+          "experienceGain": 825,
+          "timeRequired": 10000,
+          "unlockRequirements": [
+            {
+              "itemId": "master_diviner_seal",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "primordial_vision",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "destiny_anchor",
+              "chance": 0.9,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "fate_weaver",
+              "chance": 0.8,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "divine_prophecy",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            }
+          ]
         }
       ],
       "passiveBonuses": [
         {
+          "level": 10,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 5
+            }
+          }
+        },
+        {
+          "level": 25,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 10,
+              "intelligence": 5
+            },
+            "itemFindRate": 0.05
+          }
+        },
+        {
           "level": 40,
           "bonus": {
-            "mana": 50,
-            "magicAttack": 5
+            "statBonus": {
+              "wisdom": 15,
+              "intelligence": 10
+            },
+            "itemFindRate": 0.05
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 20,
+              "intelligence": 15
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 25,
+              "intelligence": 20
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 30,
+              "intelligence": 25
+            },
+            "itemFindRate": 0.15
           }
         },
         {
           "level": 80,
           "bonus": {
-            "mana": 100,
-            "magicAttack": 10
+            "statBonus": {
+              "wisdom": 35,
+              "intelligence": 30
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "statBonus": {
+              "wisdom": 40,
+              "intelligence": 35
+            },
+            "itemFindRate": 0.15
           }
         },
         {
           "level": 99,
           "bonus": {
-            "mana": 200,
-            "magicAttack": 20
+            "statBonus": {
+              "wisdom": 45,
+              "intelligence": 40
+            },
+            "itemFindRate": 0.2
           }
         }
       ],
@@ -1477,6 +4088,142 @@
           "timeRequired": 6000
         },
         {
+          "recipeId": "gem_enchant",
+          "name": "Gem Enchantment",
+          "level": 25,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "uncommon_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gem_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 100,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "pearl_enchant",
+          "name": "Pearl Enchantment",
+          "level": 28,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "fish_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "uncommon_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "pearl_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 110,
+          "timeRequired": 7200
+        },
+        {
+          "recipeId": "ancient_scroll_enchant",
+          "name": "Ancient Scroll Enchantment",
+          "level": 32,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 3
+            },
+            {
+              "itemId": "ancient_relic",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "uncommon_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "ancient_scroll_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "mana_scale_enchant",
+          "name": "Mana Scale Enchantment",
+          "level": 52,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mana_scale",
+              "quantity": 4
+            },
+            {
+              "itemId": "magic_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "rare_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "mana_scale_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 220,
+          "timeRequired": 9500
+        },
+        {
           "recipeId": "moderate_enchant",
           "name": "Moderate Enchantment",
           "level": 35,
@@ -1500,6 +4247,146 @@
           },
           "experienceGain": 130,
           "timeRequired": 8000
+        },
+        {
+          "recipeId": "crystal_enchant",
+          "name": "Crystal Enchantment",
+          "level": 50,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "rare_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "crystal_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 200,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "ancient_tome_enchant",
+          "name": "Ancient Tome Enchantment",
+          "level": 48,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_tome_material",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "rare_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "ancient_tome_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 190,
+          "timeRequired": 8800
+        },
+        {
+          "recipeId": "fate_crystal_enchant",
+          "name": "Fate Crystal Enchantment",
+          "level": 36,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "fate_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "uncommon_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "fate_crystal_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 7800
+        },
+        {
+          "recipeId": "prophecy_scroll_enchant",
+          "name": "Prophecy Scroll Enchantment",
+          "level": 50,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "prophecy_scroll",
+              "quantity": 3
+            },
+            {
+              "itemId": "celestial_insight",
+              "quantity": 2
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "rare_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "prophecy_scroll_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 210,
+          "timeRequired": 9200
         },
         {
           "recipeId": "greater_enchant",
@@ -1533,6 +4420,255 @@
           "timeRequired": 10000
         },
         {
+          "recipeId": "epic_gem_enchant",
+          "name": "Epic Gem Enchantment",
+          "level": 70,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gem_epic",
+              "quantity": 3
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "epic_gem_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "ancient_relic_enchant",
+          "name": "Ancient Relic Enchantment",
+          "level": 58,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_relic",
+              "quantity": 3
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "rare_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "ancient_relic_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 240,
+          "timeRequired": 9800
+        },
+        {
+          "recipeId": "mystic_relic_enchant",
+          "name": "Mystic Relic Enchantment",
+          "level": 74,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mystic_relic",
+              "quantity": 3
+            },
+            {
+              "itemId": "ancient_artifact",
+              "quantity": 2
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "mystic_relic_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 390,
+          "timeRequired": 11300
+        },
+        {
+          "recipeId": "mermaid_tear_enchant",
+          "name": "Mermaid Tear Enchantment",
+          "level": 72,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mermaid_tear",
+              "quantity": 3
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "mermaid_tear_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 370,
+          "timeRequired": 11200
+        },
+        {
+          "recipeId": "leviathan_scale_enchant",
+          "name": "Leviathan Scale Enchantment",
+          "level": 78,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "leviathan_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "abyssal_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "leviathan_scale_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 450,
+          "timeRequired": 12500
+        },
+        {
+          "recipeId": "void_enchant",
+          "name": "Void Enchantment",
+          "level": 82,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "void_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 480,
+          "timeRequired": 13000
+        },
+        {
+          "recipeId": "celestial_scale_enchant",
+          "name": "Celestial Scale Enchantment",
+          "level": 84,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 4
+            },
+            {
+              "itemId": "celestial_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "epic_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 520,
+          "timeRequired": 13500
+        },
+        {
           "recipeId": "supreme_enchant",
           "name": "Supreme Enchantment",
           "level": 90,
@@ -1556,6 +4692,197 @@
           },
           "experienceGain": 500,
           "timeRequired": 12000
+        },
+        {
+          "recipeId": "prismatic_enchant",
+          "name": "Prismatic Enchantment",
+          "level": 92,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "legendary_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 15000
+        },
+        {
+          "recipeId": "ancient_scale_enchant",
+          "name": "Ancient Scale Enchantment",
+          "level": 94,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_scale",
+              "quantity": 4
+            },
+            {
+              "itemId": "ancient_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "primordial_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "legendary_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "ancient_scale_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 700,
+          "timeRequired": 15500
+        },
+        {
+          "recipeId": "divine_artifact_enchant",
+          "name": "Divine Artifact Enchantment",
+          "level": 86,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_artifact",
+              "quantity": 3
+            },
+            {
+              "itemId": "ancient_treasure",
+              "quantity": 2
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "legendary_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "divine_artifact_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 580,
+          "timeRequired": 14500
+        },
+        {
+          "recipeId": "primordial_relic_enchant",
+          "name": "Primordial Relic Enchantment",
+          "level": 96,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "primordial_relic",
+              "quantity": 3
+            },
+            {
+              "itemId": "divine_artifact",
+              "quantity": 2
+            },
+            {
+              "itemId": "time_crystal",
+              "quantity": 2
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 8
+            },
+            {
+              "itemId": "legendary_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "primordial_relic_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 780,
+          "timeRequired": 18500
+        },
+        {
+          "recipeId": "divine_enchant",
+          "name": "Divine Enchantment",
+          "level": 97,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 8
+            },
+            {
+              "itemId": "legendary_item",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "divine_enchanted_item",
+            "quantity": 1
+          },
+          "experienceGain": 750,
+          "timeRequired": 18000
         }
       ],
       "passiveBonuses": [
@@ -1615,19 +4942,58 @@
           "timeRequired": 7000
         },
         {
-          "recipeId": "mechanical_device",
-          "name": "Mechanical Device",
-          "level": 40,
+          "recipeId": "coal_powered_device",
+          "name": "Coal-Powered Device",
+          "level": 12,
           "skillPrerequisites": [
             {
-              "skillId": "blacksmithing",
-              "level": 30
+              "skillId": "mining",
+              "level": 10
             }
           ],
           "ingredients": [
             {
-              "itemId": "steel",
+              "itemId": "bronze_ore",
+              "quantity": 4
+            },
+            {
+              "itemId": "coal",
+              "quantity": 5
+            },
+            {
+              "itemId": "gears",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "coal_powered_device",
+            "quantity": 1
+          },
+          "experienceGain": 60,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "steel_mechanism",
+          "name": "Steel Mechanism",
+          "level": 30,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 30
+            },
+            {
+              "skillId": "blacksmithing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "steel_ore",
               "quantity": 6
+            },
+            {
+              "itemId": "coal",
+              "quantity": 4
             },
             {
               "itemId": "gears",
@@ -1639,6 +5005,45 @@
             }
           ],
           "result": {
+            "itemId": "steel_mechanism",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "mechanical_device",
+          "name": "Mechanical Device",
+          "level": 40,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 30
+            },
+            {
+              "skillId": "blacksmithing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "steel_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "gears",
+              "quantity": 4
+            },
+            {
+              "itemId": "spring",
+              "quantity": 2
+            },
+            {
+              "itemId": "coal",
+              "quantity": 3
+            }
+          ],
+          "result": {
             "itemId": "mechanical_device",
             "quantity": 1
           },
@@ -1646,9 +5051,46 @@
           "timeRequired": 11000
         },
         {
+          "recipeId": "crystal_circuit",
+          "name": "Crystal Circuit",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "crystal_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "silver_ore",
+              "quantity": 4
+            },
+            {
+              "itemId": "precision_gear",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "crystal_circuit",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 12000
+        },
+        {
           "recipeId": "advanced_gadget",
           "name": "Advanced Gadget",
-          "level": 75,
+          "level": 70,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 55
+            }
+          ],
           "ingredients": [
             {
               "itemId": "mithril_ore",
@@ -1657,6 +5099,10 @@
             {
               "itemId": "magic_essence",
               "quantity": 4
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
             },
             {
               "itemId": "precision_gear",
@@ -1669,6 +5115,142 @@
           },
           "experienceGain": 380,
           "timeRequired": 13000
+        },
+        {
+          "recipeId": "runite_automaton",
+          "name": "Runite Automaton",
+          "level": 68,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "runite_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "precision_gear",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "runite_automaton",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 14000
+        },
+        {
+          "recipeId": "void_powered_device",
+          "name": "Void-Powered Device",
+          "level": 85,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "adamantite_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 6
+            },
+            {
+              "itemId": "precision_gear",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "void_powered_device",
+            "quantity": 1
+          },
+          "experienceGain": 550,
+          "timeRequired": 16000
+        },
+        {
+          "recipeId": "prismatic_engine",
+          "name": "Prismatic Engine",
+          "level": 92,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "orichalcum_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "precision_gear",
+              "quantity": 6
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_engine",
+            "quantity": 1
+          },
+          "experienceGain": 680,
+          "timeRequired": 18000
+        },
+        {
+          "recipeId": "divine_construct",
+          "name": "Divine Construct",
+          "level": 98,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_ore",
+              "quantity": 12
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 4
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "precision_gear",
+              "quantity": 8
+            }
+          ],
+          "result": {
+            "itemId": "divine_construct",
+            "quantity": 1
+          },
+          "experienceGain": 800,
+          "timeRequired": 20000
         }
       ],
       "passiveBonuses": [
@@ -2052,6 +5634,89 @@
               "itemId": "fish_bone",
               "chance": 0.3,
               "quantity": 1
+            },
+            {
+              "itemId": "fish_scale",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "nodeId": "shallow_pond",
+          "name": "Shallow Pond",
+          "successRate": 0.88,
+          "experienceGain": 12,
+          "timeRequired": 4200,
+          "resources": [
+            {
+              "itemId": "freshwater_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "small_fish",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "fish_bone",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "nodeId": "river_stream",
+          "name": "River Stream",
+          "successRate": 0.87,
+          "experienceGain": 20,
+          "timeRequired": 4500,
+          "resources": [
+            {
+              "itemId": "river_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "freshwater_fish",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "fishing_bait",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "coastal_waters",
+          "name": "Coastal Waters",
+          "successRate": 0.86,
+          "experienceGain": 28,
+          "timeRequired": 4800,
+          "resources": [
+            {
+              "itemId": "saltwater_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "medium_fish",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "fish_scale",
+              "chance": 0.3,
+              "quantity": 1
             }
           ]
         },
@@ -2072,6 +5737,89 @@
             {
               "itemId": "small_fish",
               "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "saltwater_fish",
+              "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
+          "nodeId": "coral_reef",
+          "name": "Coral Reef",
+          "successRate": 0.84,
+          "experienceGain": 45,
+          "timeRequired": 5200,
+          "resources": [
+            {
+              "itemId": "tropical_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "pearl",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "saltwater_fish",
+              "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "nodeId": "deep_lake",
+          "name": "Deep Lake",
+          "successRate": 0.83,
+          "experienceGain": 60,
+          "timeRequired": 5500,
+          "resources": [
+            {
+              "itemId": "lake_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "freshwater_pearl",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "freshwater_fish",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "ocean_depths",
+          "name": "Ocean Depths",
+          "successRate": 0.82,
+          "experienceGain": 80,
+          "timeRequired": 5800,
+          "resources": [
+            {
+              "itemId": "deep_sea_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "large_fish",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "pearl",
+              "chance": 0.25,
               "quantity": 1
             }
           ]
@@ -2103,6 +5851,137 @@
           ]
         },
         {
+          "level": 45,
+          "nodeId": "abyssal_zone",
+          "name": "Abyssal Zone",
+          "successRate": 0.78,
+          "experienceGain": 120,
+          "timeRequired": 6500,
+          "resources": [
+            {
+              "itemId": "abyssal_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "abyssal_pearl",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "deep_sea_fish",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "mermaid_scale",
+              "chance": 0.005,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "mystic_waters",
+          "name": "Mystic Waters",
+          "successRate": 0.77,
+          "experienceGain": 150,
+          "timeRequired": 6800,
+          "resources": [
+            {
+              "itemId": "magic_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "mana_scale",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "pearl",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "mermaid_scale",
+              "chance": 0.005,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "mermaid_grotto",
+          "name": "Mermaid's Grotto",
+          "successRate": 0.75,
+          "experienceGain": 225,
+          "timeRequired": 7000,
+          "unlockRequirements": [
+            {
+              "itemId": "mermaid_scale",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "mermaid_tear",
+              "chance": 0.4,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "magic_fish",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "mana_scale",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 55,
+          "nodeId": "ancient_lake",
+          "name": "Ancient Lake",
+          "successRate": 0.76,
+          "experienceGain": 180,
+          "timeRequired": 7200,
+          "resources": [
+            {
+              "itemId": "ancient_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "fossil_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scale",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "lake_fish",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
           "level": 60,
           "nodeId": "rare_fish",
           "name": "Rare Fish Spot",
@@ -2124,6 +6003,169 @@
             {
               "itemId": "pearl",
               "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 65,
+          "nodeId": "volcanic_vent",
+          "name": "Volcanic Vent",
+          "successRate": 0.73,
+          "experienceGain": 220,
+          "timeRequired": 7500,
+          "resources": [
+            {
+              "itemId": "fire_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "lava_core",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "deep_sea_fish",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "kraken_tentacle",
+              "chance": 0.003,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "ice_cavern_lake",
+          "name": "Ice Cavern Lake",
+          "successRate": 0.72,
+          "experienceGain": 250,
+          "timeRequired": 7800,
+          "resources": [
+            {
+              "itemId": "ice_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "frost_crystal",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "abyssal_fish",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "kraken_tentacle",
+              "chance": 0.003,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "kraken_lair",
+          "name": "Kraken's Lair",
+          "successRate": 0.74,
+          "experienceGain": 375,
+          "timeRequired": 8500,
+          "unlockRequirements": [
+            {
+              "itemId": "kraken_tentacle",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "kraken_ink",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "abyssal_fish",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "black_pearl",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "leviathan_scale",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 75,
+          "nodeId": "leviathan_depths",
+          "name": "Leviathan Depths",
+          "successRate": 0.7,
+          "experienceGain": 320,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "leviathan_scale",
+              "chance": 0.4,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "rare_fish",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "abyssal_pearl",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "void_essence",
+              "chance": 0.1,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "celestial_pool",
+          "name": "Celestial Pool",
+          "successRate": 0.68,
+          "experienceGain": 380,
+          "timeRequired": 8500,
+          "resources": [
+            {
+              "itemId": "celestial_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "celestial_scale",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "magic_fish",
+              "chance": 0.35,
               "quantity": 1
             }
           ]
@@ -2153,27 +6195,324 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "level": 85,
+          "nodeId": "poseidon_trident_site",
+          "name": "Poseidon's Trident Site",
+          "successRate": 0.72,
+          "experienceGain": 570,
+          "timeRequired": 9500,
+          "unlockRequirements": [
+            {
+              "itemId": "poseidon_trident_fragment",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "celestial_fish",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_scale",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "chance": 0.45,
+              "quantity": 1
+            },
+            {
+              "itemId": "void_fish",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "void_abyss",
+          "name": "Void Abyss",
+          "successRate": 0.67,
+          "experienceGain": 450,
+          "timeRequired": 9000,
+          "resources": [
+            {
+              "itemId": "void_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "void_essence",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "abyssal_pearl",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "black_pearl",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "primordial_sea",
+          "name": "Primordial Sea",
+          "successRate": 0.65,
+          "experienceGain": 500,
+          "timeRequired": 9500,
+          "resources": [
+            {
+              "itemId": "primordial_fish",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "ancient_essence",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scale",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_scale",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "atlantis_ruins",
+          "name": "Atlantis Ruins",
+          "successRate": 0.7,
+          "experienceGain": 750,
+          "timeRequired": 10000,
+          "unlockRequirements": [
+            {
+              "itemId": "atlantis_key",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "primordial_fish",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_essence",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_scale",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "master_angler_paradise",
+          "name": "Master Angler's Paradise",
+          "successRate": 0.6,
+          "experienceGain": 550,
+          "timeRequired": 10000,
+          "resources": [
+            {
+              "itemId": "celestial_fish",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "void_fish",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primordial_fish",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "chance": 0.6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_scale",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "void_essence",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "golden_fishing_rod_spot",
+          "name": "Golden Fishing Rod Spot",
+          "successRate": 0.75,
+          "experienceGain": 825,
+          "timeRequired": 10000,
+          "unlockRequirements": [
+            {
+              "itemId": "golden_fishing_rod",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "legendary_fish",
+              "chance": 0.8,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "primordial_fish",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "chance": 0.7,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "celestial_scale",
+              "chance": 0.8,
+              "min": 2,
+              "max": 3
+            },
+            {
+              "itemId": "leviathan_scale",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
         }
       ],
       "passiveBonuses": [
         {
-          "level": 30,
+          "level": 10,
+          "bonus": {
+            "statBonus": {
+              "vitality": 5
+            }
+          }
+        },
+        {
+          "level": 25,
           "bonus": {
             "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 40,
+          "bonus": {
+            "statBonus": {
+              "vitality": 10,
+              "wisdom": 5
+            }
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "statBonus": {
+              "vitality": 15
+            },
+            "itemFindRate": 0.05
           }
         },
         {
           "level": 60,
           "bonus": {
             "goldGeneration": 0.1,
-            "health": 50
+            "statBonus": {
+              "vitality": 20
+            },
+            "combatStatBonus": {
+              "health": 50
+            }
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "statBonus": {
+              "vitality": 25,
+              "wisdom": 10
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "statBonus": {
+              "vitality": 30,
+              "wisdom": 15
+            },
+            "itemFindRate": 0.15
           }
         },
         {
           "level": 99,
           "bonus": {
             "goldGeneration": 0.15,
-            "health": 100
+            "itemFindRate": 0.2,
+            "statBonus": {
+              "vitality": 35,
+              "wisdom": 20
+            },
+            "combatStatBonus": {
+              "health": 100
+            }
           }
         }
       ],
@@ -2904,9 +7243,158 @@
           "timeRequired": 6000
         },
         {
+          "recipeId": "pearl_necklace",
+          "name": "Pearl Necklace",
+          "level": 20,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "pearl",
+              "quantity": 4
+            },
+            {
+              "itemId": "silver_ore",
+              "quantity": 3
+            },
+            {
+              "itemId": "chain",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "pearl_necklace",
+            "quantity": 1
+          },
+          "experienceGain": 85,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "scale_bracelet",
+          "name": "Scale Bracelet",
+          "level": 22,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "fish_scale",
+              "quantity": 10
+            },
+            {
+              "itemId": "copper_ore",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "scale_bracelet",
+            "quantity": 1
+          },
+          "experienceGain": 70,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "bronze_jewelry",
+          "name": "Bronze Jewelry",
+          "level": 18,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "bronze_ore",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_common",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "bronze_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 55,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "uncommon_gem_ring",
+          "name": "Uncommon Gem Ring",
+          "level": 25,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silver_ore",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "uncommon_gem_ring",
+            "quantity": 1
+          },
+          "experienceGain": 90,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "ancient_gem_jewelry",
+          "name": "Ancient Gem Jewelry",
+          "level": 48,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_gem",
+              "quantity": 3
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "ancient_gem_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 210,
+          "timeRequired": 9000
+        },
+        {
           "recipeId": "silver_necklace",
           "name": "Silver Necklace",
           "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 25
+            }
+          ],
           "ingredients": [
             {
               "itemId": "silver_ore",
@@ -2929,9 +7417,143 @@
           "timeRequired": 8000
         },
         {
+          "recipeId": "freshwater_pearl_jewelry",
+          "name": "Freshwater Pearl Jewelry",
+          "level": 45,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "freshwater_pearl",
+              "quantity": 5
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "freshwater_pearl_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "platinum_jewelry",
+          "name": "Platinum Jewelry",
+          "level": 50,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "platinum_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 3
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "platinum_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 200,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "golden_artifact_jewelry",
+          "name": "Golden Artifact Jewelry",
+          "level": 52,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "golden_artifact",
+              "quantity": 2
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "ancient_gem",
+              "quantity": 2
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "golden_artifact_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 250,
+          "timeRequired": 9500
+        },
+        {
+          "recipeId": "mana_scale_jewelry",
+          "name": "Mana Scale Jewelry",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mana_scale",
+              "quantity": 6
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "mana_scale_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 240,
+          "timeRequired": 9500
+        },
+        {
           "recipeId": "gold_jewelry",
           "name": "Gold Jewelry Set",
-          "level": 65,
+          "level": 60,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 40
+            }
+          ],
           "ingredients": [
             {
               "itemId": "gold_ore",
@@ -2952,6 +7574,301 @@
           },
           "experienceGain": 300,
           "timeRequired": 10000
+        },
+        {
+          "recipeId": "epic_gem_necklace",
+          "name": "Epic Gem Necklace",
+          "level": 70,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mithril_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 4
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "epic_gem_necklace",
+            "quantity": 1
+          },
+          "experienceGain": 380,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "abyssal_pearl_jewelry",
+          "name": "Abyssal Pearl Jewelry",
+          "level": 72,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "abyssal_pearl",
+              "quantity": 4
+            },
+            {
+              "itemId": "black_pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "mithril_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "abyssal_pearl_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 11500
+        },
+        {
+          "recipeId": "dragonstone_jewelry",
+          "name": "Dragonstone Jewelry",
+          "level": 75,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "dragonstone",
+              "quantity": 2
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "dragonstone_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 450,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "dragon_bone_jewelry",
+          "name": "Dragon Bone Jewelry",
+          "level": 78,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "dragon_bone",
+              "quantity": 2
+            },
+            {
+              "itemId": "dragon_scale_ancient",
+              "quantity": 3
+            },
+            {
+              "itemId": "mithril_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "dragon_bone_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 480,
+          "timeRequired": 12500
+        },
+        {
+          "recipeId": "rainbow_pearl_jewelry",
+          "name": "Rainbow Pearl Jewelry",
+          "level": 82,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 4
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "rainbow_pearl_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 520,
+          "timeRequired": 13000
+        },
+        {
+          "recipeId": "legendary_gem_set",
+          "name": "Legendary Gem Set",
+          "level": 85,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "orichalcum_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 4
+            },
+            {
+              "itemId": "dragonstone",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "legendary_gem_set",
+            "quantity": 1
+          },
+          "experienceGain": 550,
+          "timeRequired": 14000
+        },
+        {
+          "recipeId": "prismatic_jewelry",
+          "name": "Prismatic Jewelry",
+          "level": 90,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "orichalcum_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 15000
+        },
+        {
+          "recipeId": "celestial_scale_jewelry",
+          "name": "Celestial Scale Jewelry",
+          "level": 88,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 4
+            },
+            {
+              "itemId": "orichalcum_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 600,
+          "timeRequired": 16000
+        },
+        {
+          "recipeId": "divine_jewelry",
+          "name": "Divine Jewelry",
+          "level": 98,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_ore",
+              "quantity": 12
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 4
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "divine_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 750,
+          "timeRequired": 18000
         }
       ],
       "passiveBonuses": [
@@ -3447,6 +8364,63 @@
               "itemId": "stone",
               "chance": 0.5,
               "quantity": 1
+            },
+            {
+              "itemId": "rough_stone",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "nodeId": "tin_ore",
+          "name": "Tin Ore Vein",
+          "successRate": 0.93,
+          "experienceGain": 15,
+          "timeRequired": 3200,
+          "resources": [
+            {
+              "itemId": "tin_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "copper_ore",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "rough_stone",
+              "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "nodeId": "coal_deposit",
+          "name": "Coal Deposit",
+          "successRate": 0.92,
+          "experienceGain": 20,
+          "timeRequired": 3500,
+          "resources": [
+            {
+              "itemId": "coal",
+              "chance": 1,
+              "min": 1,
+              "max": 4
+            },
+            {
+              "itemId": "stone",
+              "chance": 0.6,
+              "quantity": 1
+            },
+            {
+              "itemId": "rough_stone",
+              "chance": 0.4,
+              "quantity": 1
             }
           ]
         },
@@ -3468,11 +8442,47 @@
               "itemId": "copper_ore",
               "chance": 0.3,
               "quantity": 1
+            },
+            {
+              "itemId": "coal",
+              "chance": 0.25,
+              "quantity": 1
             }
           ]
         },
         {
-          "level": 30,
+          "level": 20,
+          "nodeId": "bronze_ore",
+          "name": "Bronze Ore Vein",
+          "successRate": 0.88,
+          "experienceGain": 35,
+          "timeRequired": 4200,
+          "resources": [
+            {
+              "itemId": "bronze_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "copper_ore",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "tin_ore",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "polished_stone",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 25,
           "nodeId": "silver_ore",
           "name": "Silver Ore Vein",
           "successRate": 0.85,
@@ -3489,11 +8499,79 @@
               "itemId": "iron_ore",
               "chance": 0.3,
               "quantity": 1
+            },
+            {
+              "itemId": "gem_common",
+              "chance": 0.15,
+              "quantity": 1
             }
           ]
         },
         {
-          "level": 50,
+          "level": 30,
+          "nodeId": "steel_ore",
+          "name": "Steel Ore Deposit",
+          "successRate": 0.83,
+          "experienceGain": 65,
+          "timeRequired": 5200,
+          "resources": [
+            {
+              "itemId": "steel_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "iron_ore",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "coal",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "polished_stone",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "gemstone_deposit",
+          "name": "Gemstone Deposit",
+          "successRate": 0.82,
+          "experienceGain": 80,
+          "timeRequired": 5500,
+          "resources": [
+            {
+              "itemId": "gem_uncommon",
+              "chance": 0.7,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "gem_common",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "polished_stone",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 40,
           "nodeId": "gold_ore",
           "name": "Gold Ore Vein",
           "successRate": 0.8,
@@ -3515,11 +8593,78 @@
               "itemId": "gem_rare",
               "chance": 0.1,
               "quantity": 1
+            },
+            {
+              "itemId": "gem_uncommon",
+              "chance": 0.2,
+              "quantity": 1
             }
           ]
         },
         {
-          "level": 70,
+          "level": 45,
+          "nodeId": "platinum_ore",
+          "name": "Platinum Ore Vein",
+          "successRate": 0.78,
+          "experienceGain": 120,
+          "timeRequired": 6200,
+          "resources": [
+            {
+              "itemId": "platinum_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "gold_ore",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_rare",
+              "chance": 0.15,
+              "quantity": 1
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "nodeId": "crystal_cave",
+          "name": "Crystal Cave",
+          "successRate": 0.75,
+          "experienceGain": 150,
+          "timeRequired": 6500,
+          "resources": [
+            {
+              "itemId": "crystal_shard",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "gem_uncommon",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_rare",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "polished_stone",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 55,
           "nodeId": "mithril_ore",
           "name": "Mithril Ore Vein",
           "successRate": 0.75,
@@ -3541,16 +8686,52 @@
               "itemId": "gem_epic",
               "chance": 0.15,
               "quantity": 1
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.3,
+              "quantity": 1
             }
           ]
         },
         {
-          "level": 90,
+          "level": 60,
+          "nodeId": "runite_ore",
+          "name": "Runite Ore Vein",
+          "successRate": 0.73,
+          "experienceGain": 250,
+          "timeRequired": 7200,
+          "resources": [
+            {
+              "itemId": "runite_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "mithril_ore",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_epic",
+              "chance": 0.18,
+              "quantity": 1
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.35,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 65,
           "nodeId": "adamantite_ore",
           "name": "Adamantite Ore Vein",
-          "successRate": 0.7,
-          "experienceGain": 400,
-          "timeRequired": 8000,
+          "successRate": 0.72,
+          "experienceGain": 300,
+          "timeRequired": 7500,
           "resources": [
             {
               "itemId": "adamantite_ore",
@@ -3564,8 +8745,244 @@
               "quantity": 1
             },
             {
+              "itemId": "gem_epic",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "dragonstone_deposit",
+          "name": "Dragonstone Deposit",
+          "successRate": 0.7,
+          "experienceGain": 350,
+          "timeRequired": 7800,
+          "resources": [
+            {
+              "itemId": "dragonstone",
+              "chance": 0.8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "gem_legendary",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_epic",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "adamantite_ore",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 75,
+          "nodeId": "orichalcum_ore",
+          "name": "Orichalcum Vein",
+          "successRate": 0.68,
+          "experienceGain": 400,
+          "timeRequired": 8000,
+          "resources": [
+            {
+              "itemId": "orichalcum_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "adamantite_ore",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "dragonstone",
+              "chance": 0.15,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_legendary",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "void_crystal_deposit",
+          "name": "Void Crystal Deposit",
+          "successRate": 0.67,
+          "experienceGain": 450,
+          "timeRequired": 8500,
+          "resources": [
+            {
+              "itemId": "void_crystal",
+              "chance": 0.9,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
               "itemId": "gem_legendary",
               "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.1,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 85,
+          "nodeId": "prismatic_ore",
+          "name": "Prismatic Ore Vein",
+          "successRate": 0.65,
+          "experienceGain": 500,
+          "timeRequired": 9000,
+          "resources": [
+            {
+              "itemId": "prismatic_shard",
+              "chance": 0.85,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "void_crystal",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_legendary",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.15,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "ancient_relic_deposit",
+          "name": "Ancient Relic Deposit",
+          "successRate": 0.65,
+          "experienceGain": 550,
+          "timeRequired": 9500,
+          "resources": [
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.7,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "prismatic_shard",
+              "chance": 0.25,
+              "quantity": 1
+            },
+            {
+              "itemId": "void_crystal",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_legendary",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "divine_ore",
+          "name": "Divine Ore Vein",
+          "successRate": 0.65,
+          "experienceGain": 600,
+          "timeRequired": 10000,
+          "resources": [
+            {
+              "itemId": "divine_ore",
+              "chance": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "itemId": "orichalcum_ore",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "prismatic_shard",
+              "chance": 0.25,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "master_mining_site",
+          "name": "Master Mining Site",
+          "successRate": 0.65,
+          "experienceGain": 650,
+          "timeRequired": 10000,
+          "resources": [
+            {
+              "itemId": "divine_ore",
+              "chance": 0.4,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "prismatic_shard",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "void_crystal",
+              "chance": 0.4,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "gem_legendary",
+              "chance": 0.5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "ancient_relic",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.35,
               "quantity": 1
             }
           ]
@@ -3573,9 +8990,29 @@
       ],
       "passiveBonuses": [
         {
+          "level": 10,
+          "bonus": {
+            "statBonus": {
+              "strength": 5
+            }
+          }
+        },
+        {
           "level": 25,
           "bonus": {
             "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 40,
+          "bonus": {
+            "statBonus": {
+              "strength": 10,
+              "vitality": 5
+            },
+            "combatStatBonus": {
+              "defense": 5
+            }
           }
         },
         {
@@ -3585,10 +9022,52 @@
           }
         },
         {
+          "level": 60,
+          "bonus": {
+            "statBonus": {
+              "strength": 15
+            },
+            "itemFindRate": 0.05
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "statBonus": {
+              "strength": 20,
+              "vitality": 10
+            },
+            "combatStatBonus": {
+              "defense": 10
+            },
+            "itemFindRate": 0.1
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "statBonus": {
+              "strength": 25,
+              "vitality": 15
+            },
+            "combatStatBonus": {
+              "defense": 15
+            },
+            "itemFindRate": 0.15
+          }
+        },
+        {
           "level": 99,
           "bonus": {
             "goldGeneration": 0.2,
-            "itemFindRate": 0.1
+            "itemFindRate": 0.1,
+            "statBonus": {
+              "strength": 30,
+              "vitality": 20
+            },
+            "combatStatBonus": {
+              "defense": 20
+            }
           }
         }
       ],
@@ -4091,6 +9570,68 @@
           "timeRequired": 7000
         },
         {
+          "recipeId": "crystal_rune",
+          "name": "Crystal Rune",
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "crystal_rune",
+            "quantity": 1
+          },
+          "experienceGain": 120,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "rune_stone_rune",
+          "name": "Rune Stone Rune",
+          "level": 32,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 4
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "rune_stone_rune",
+            "quantity": 1
+          },
+          "experienceGain": 110,
+          "timeRequired": 7800
+        },
+        {
           "recipeId": "greater_rune",
           "name": "Greater Rune",
           "level": 45,
@@ -4116,6 +9657,286 @@
           "timeRequired": 9000
         },
         {
+          "recipeId": "enhanced_crystal_rune",
+          "name": "Enhanced Crystal Rune",
+          "level": 60,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "crystal_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "enhanced_crystal_rune",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "ancient_artifact_rune",
+          "name": "Ancient Artifact Rune",
+          "level": 62,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_artifact",
+              "quantity": 2
+            },
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "ancient_relic",
+              "quantity": 3
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "ancient_artifact_rune",
+            "quantity": 1
+          },
+          "experienceGain": 300,
+          "timeRequired": 10200
+        },
+        {
+          "recipeId": "cosmic_energy_rune",
+          "name": "Cosmic Energy Rune",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "cosmic_energy_rune",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 8200
+        },
+        {
+          "recipeId": "time_vision_rune",
+          "name": "Time Vision Rune",
+          "level": 64,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "time_vision",
+              "quantity": 2
+            },
+            {
+              "itemId": "reality_shard",
+              "quantity": 2
+            },
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "time_vision_rune",
+            "quantity": 1
+          },
+          "experienceGain": 320,
+          "timeRequired": 10400
+        },
+        {
+          "recipeId": "void_rune",
+          "name": "Void Rune",
+          "level": 75,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "void_rune",
+            "quantity": 1
+          },
+          "experienceGain": 450,
+          "timeRequired": 13000
+        },
+        {
+          "recipeId": "void_essence_rune",
+          "name": "Void Essence Rune",
+          "level": 77,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 90
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "void_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_fish",
+              "quantity": 2
+            },
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "void_essence_rune",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 13500
+        },
+        {
+          "recipeId": "celestial_scale_rune",
+          "name": "Celestial Scale Rune",
+          "level": 85,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "celestial_fish",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 5
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_rune",
+            "quantity": 1
+          },
+          "experienceGain": 620,
+          "timeRequired": 15500
+        },
+        {
+          "recipeId": "divine_artifact_rune",
+          "name": "Divine Artifact Rune",
+          "level": 87,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_artifact",
+              "quantity": 3
+            },
+            {
+              "itemId": "celestial_chart",
+              "quantity": 2
+            },
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 5
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "divine_artifact_rune",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 16000
+        },
+        {
           "recipeId": "supreme_rune",
           "name": "Supreme Rune",
           "level": 80,
@@ -4139,6 +9960,76 @@
           },
           "experienceGain": 420,
           "timeRequired": 12000
+        },
+        {
+          "recipeId": "prismatic_rune",
+          "name": "Prismatic Rune",
+          "level": 88,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 5
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_rune",
+            "quantity": 1
+          },
+          "experienceGain": 600,
+          "timeRequired": 15000
+        },
+        {
+          "recipeId": "divine_rune",
+          "name": "Divine Rune",
+          "level": 96,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 95
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            }
+          ],
+          "result": {
+            "itemId": "divine_rune",
+            "quantity": 1
+          },
+          "experienceGain": 750,
+          "timeRequired": 18000
         }
       ],
       "passiveBonuses": [

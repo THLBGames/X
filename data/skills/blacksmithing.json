@@ -29,9 +29,42 @@
       "timeRequired": 8000
     },
     {
+      "recipeId": "bronze_weapon",
+      "name": "Bronze Weapon",
+      "level": 12,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "bronze_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 9000
+    },
+    {
       "recipeId": "iron_armor",
       "name": "Iron Armor",
       "level": 20,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 15
+        }
+      ],
       "ingredients": [
         {
           "itemId": "iron_ore",
@@ -56,19 +89,21 @@
     {
       "recipeId": "steel_weapon",
       "name": "Steel Weapon",
-      "level": 40,
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        }
+      ],
       "ingredients": [
         {
-          "itemId": "iron_ore",
-          "quantity": 10
+          "itemId": "steel_ore",
+          "quantity": 8
         },
         {
           "itemId": "coal",
-          "quantity": 5
-        },
-        {
-          "itemId": "silver_ore",
-          "quantity": 2
+          "quantity": 4
         },
         {
           "itemId": "orc_tooth",
@@ -83,9 +118,77 @@
       "timeRequired": 12000
     },
     {
+      "recipeId": "silver_equipment",
+      "name": "Silver Equipment",
+      "level": 30,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silver_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "silver_equipment",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "gold_armor",
+      "name": "Gold Armor",
+      "level": 45,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "gold_armor",
+        "quantity": 1
+      },
+      "experienceGain": 220,
+      "timeRequired": 13000
+    },
+    {
       "recipeId": "mithril_gear",
       "name": "Mithril Gear",
-      "level": 70,
+      "level": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        }
+      ],
       "ingredients": [
         {
           "itemId": "mithril_ore",
@@ -94,6 +197,10 @@
         {
           "itemId": "magic_essence",
           "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 2
         }
       ],
       "result": {
@@ -102,6 +209,177 @@
       },
       "experienceGain": 350,
       "timeRequired": 15000
+    },
+    {
+      "recipeId": "runite_weapon",
+      "name": "Runite Weapon",
+      "level": 65,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "runite_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "adamantite_armor",
+      "name": "Adamantite Armor",
+      "level": 70,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "adamantite_armor",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "orichalcum_gear",
+      "name": "Orichalcum Gear",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 20
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "orichalcum_gear",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "divine_equipment",
+      "name": "Divine Equipment",
+      "level": 95,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 25
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "divine_equipment",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 25000
+    },
+    {
+      "recipeId": "golden_fishing_rod",
+      "name": "Golden Fishing Rod",
+      "level": 92,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 40
+        },
+        {
+          "skillId": "jewelcrafting",
+          "level": 70
+        },
+        {
+          "skillId": "fishing",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 50
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 20
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 10
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 15
+        }
+      ],
+      "result": {
+        "itemId": "golden_fishing_rod",
+        "quantity": 1
+      },
+      "experienceGain": 900,
+      "timeRequired": 30000
     }
   ],
   "passiveBonuses": [

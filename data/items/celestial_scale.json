@@ -1,0 +1,12 @@
+{
+  "id": "celestial_scale",
+  "name": "Celestial Scale",
+  "description": "A divine scale from celestial fish.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 400,
+  "nameKey": "item.celestial_scale.name",
+  "descriptionKey": "item.celestial_scale.description"
+}

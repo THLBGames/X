@@ -1,0 +1,12 @@
+{
+  "id": "divine_artifact",
+  "name": "Divine Artifact",
+  "description": "An artifact touched by divine power.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000,
+  "nameKey": "item.divine_artifact.name",
+  "descriptionKey": "item.divine_artifact.description"
+}

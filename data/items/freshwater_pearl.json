@@ -1,0 +1,12 @@
+{
+  "id": "freshwater_pearl",
+  "name": "Freshwater Pearl",
+  "description": "A pearl found in freshwater sources.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.freshwater_pearl.name",
+  "descriptionKey": "item.freshwater_pearl.description"
+}

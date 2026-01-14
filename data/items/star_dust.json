@@ -1,0 +1,12 @@
+{
+  "id": "star_dust",
+  "name": "Star Dust",
+  "description": "Dust from distant stars, glowing faintly.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.star_dust.name",
+  "descriptionKey": "item.star_dust.description"
+}

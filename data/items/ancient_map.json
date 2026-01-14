@@ -1,0 +1,12 @@
+{
+  "id": "ancient_map",
+  "name": "Ancient Map",
+  "description": "An ancient map revealing hidden locations, required to access the Map Room.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "nameKey": "item.ancient_map.name",
+  "descriptionKey": "item.ancient_map.description"
+}

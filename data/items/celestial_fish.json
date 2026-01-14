@@ -1,0 +1,12 @@
+{
+  "id": "celestial_fish",
+  "name": "Celestial Fish",
+  "description": "A divine fish from celestial waters.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 350,
+  "nameKey": "item.celestial_fish.name",
+  "descriptionKey": "item.celestial_fish.description"
+}

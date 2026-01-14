@@ -29,19 +29,58 @@
       "timeRequired": 7000
     },
     {
-      "recipeId": "mechanical_device",
-      "name": "Mechanical Device",
-      "level": 40,
+      "recipeId": "coal_powered_device",
+      "name": "Coal-Powered Device",
+      "level": 12,
       "skillPrerequisites": [
         {
-          "skillId": "blacksmithing",
-          "level": 30
+          "skillId": "mining",
+          "level": 10
         }
       ],
       "ingredients": [
         {
-          "itemId": "steel",
+          "itemId": "bronze_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gears",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "coal_powered_device",
+        "quantity": 1
+      },
+      "experienceGain": 60,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "steel_mechanism",
+      "name": "Steel Mechanism",
+      "level": 30,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
           "quantity": 6
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
         },
         {
           "itemId": "gears",
@@ -53,6 +92,45 @@
         }
       ],
       "result": {
+        "itemId": "steel_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "mechanical_device",
+      "name": "Mechanical Device",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "gears",
+          "quantity": 4
+        },
+        {
+          "itemId": "spring",
+          "quantity": 2
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        }
+      ],
+      "result": {
         "itemId": "mechanical_device",
         "quantity": 1
       },
@@ -60,9 +138,46 @@
       "timeRequired": 11000
     },
     {
+      "recipeId": "crystal_circuit",
+      "name": "Crystal Circuit",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "silver_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "crystal_circuit",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 12000
+    },
+    {
       "recipeId": "advanced_gadget",
       "name": "Advanced Gadget",
-      "level": 75,
+      "level": 70,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        }
+      ],
       "ingredients": [
         {
           "itemId": "mithril_ore",
@@ -71,6 +186,10 @@
         {
           "itemId": "magic_essence",
           "quantity": 4
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
         },
         {
           "itemId": "precision_gear",
@@ -83,6 +202,142 @@
       },
       "experienceGain": 380,
       "timeRequired": 13000
+    },
+    {
+      "recipeId": "runite_automaton",
+      "name": "Runite Automaton",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "runite_automaton",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "void_powered_device",
+      "name": "Void-Powered Device",
+      "level": 85,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "void_powered_device",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "prismatic_engine",
+      "name": "Prismatic Engine",
+      "level": 92,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_engine",
+        "quantity": 1
+      },
+      "experienceGain": 680,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "divine_construct",
+      "name": "Divine Construct",
+      "level": 98,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "divine_construct",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 20000
     }
   ],
   "passiveBonuses": [

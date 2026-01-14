@@ -7,6 +7,7 @@ import { CraftingSystem } from '../systems/skills/CraftingSystem';
 import { InventoryManager } from '../systems/inventory';
 import { SkillManager } from '../systems/skills/SkillManager';
 import { useIdleSkills } from '../hooks/useIdleSkills';
+import DivinationUnlockTree from './DivinationUnlockTree';
 import './SkillDetailView.css';
 
 interface SkillDetailViewProps {
@@ -73,7 +74,7 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
 
   // Idle skill specific data
   const availableNodes = isIdleSkill && skill.resourceNodes
-    ? ResourceNodeManager.getAllAvailableNodes(character, skillId)
+    ? ResourceNodeManager.getAllAvailableNodes(character, skillId, inventory)
     : [];
   const allNodes = isIdleSkill ? (skill.resourceNodes || []) : [];
   const availableRecipes = isIdleSkill && skill.recipes
@@ -378,43 +379,75 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
               <div className="resource-nodes-list">
                 {allNodes
                   .filter((node) => !availableNodes.some((an) => an.nodeId === node.nodeId))
-                  .map((node) => (
-                    <div key={node.nodeId} className="resource-node-item locked">
-                      <div className="resource-node-header">
-                        <span className="resource-node-name">{node.name}</span>
-                        <span className="resource-node-level">Level {node.level}+</span>
-                      </div>
-                      <div className="resource-node-info">
-                        <div className="locked-message">Requires Skill Level {node.level}</div>
-                        {node.resources && node.resources.length > 0 && (
-                          <div className="resource-node-drops">
-                            <div className="resource-drops-label">Possible Resources:</div>
-                            <div className="resource-drops-list">
-                              {node.resources.map((drop, idx) => {
-                                const item = dataLoader.getItem(drop.itemId);
-                                const itemName = item ? item.name : drop.itemId;
-                                let quantityText = '';
-                                if (drop.min !== undefined && drop.max !== undefined) {
-                                  quantityText = `${drop.min}-${drop.max}`;
-                                } else if (drop.quantity !== undefined) {
-                                  quantityText = `${drop.quantity}`;
-                                } else {
-                                  quantityText = '1';
-                                }
-                                return (
-                                  <div key={idx} className="resource-drop-item">
-                                    <span className="drop-item-name">{itemName}</span>
-                                    <span className="drop-quantity">x{quantityText}</span>
-                                    <span className="drop-chance">({(drop.chance * 100).toFixed(0)}%)</span>
-                                  </div>
-                                );
-                              })}
+                  .map((node) => {
+                    const skillLevelCheck = skillLevel >= node.level;
+                    const unlockRequirementsMet = node.unlockRequirements
+                      ? node.unlockRequirements.every((req) => {
+                          const quantity = InventoryManager.getItemQuantity(inventory, req.itemId);
+                          return quantity >= req.quantity;
+                        })
+                      : true;
+                    const isLockedByLevel = !skillLevelCheck;
+                    const isLockedByItems = node.unlockRequirements && !unlockRequirementsMet;
+                    
+                    return (
+                      <div key={node.nodeId} className="resource-node-item locked">
+                        <div className="resource-node-header">
+                          <span className="resource-node-name">{node.name}</span>
+                          <span className="resource-node-level">Level {node.level}+</span>
+                        </div>
+                        <div className="resource-node-info">
+                          {isLockedByLevel && (
+                            <div className="locked-message">Requires Skill Level {node.level}</div>
+                          )}
+                          {isLockedByItems && (
+                            <div className="locked-message">
+                              <div>Secret Location - Requires:</div>
+                              <div className="unlock-requirements">
+                                {node.unlockRequirements!.map((req, idx) => {
+                                  const item = dataLoader.getItem(req.itemId);
+                                  const itemName = item ? item.name : req.itemId;
+                                  const have = InventoryManager.getItemQuantity(inventory, req.itemId);
+                                  const hasEnough = have >= req.quantity;
+                                  return (
+                                    <div key={idx} className={`unlock-requirement-item ${hasEnough ? 'met' : 'missing'}`}>
+                                      {req.quantity}x {itemName} {!hasEnough && `(have ${have})`}
+                                    </div>
+                                  );
+                                })}
+                              </div>
                             </div>
-                          </div>
-                        )}
+                          )}
+                          {node.resources && node.resources.length > 0 && (
+                            <div className="resource-node-drops">
+                              <div className="resource-drops-label">Possible Resources:</div>
+                              <div className="resource-drops-list">
+                                {node.resources.map((drop, idx) => {
+                                  const item = dataLoader.getItem(drop.itemId);
+                                  const itemName = item ? item.name : drop.itemId;
+                                  let quantityText = '';
+                                  if (drop.min !== undefined && drop.max !== undefined) {
+                                    quantityText = `${drop.min}-${drop.max}`;
+                                  } else if (drop.quantity !== undefined) {
+                                    quantityText = `${drop.quantity}`;
+                                  } else {
+                                    quantityText = '1';
+                                  }
+                                  return (
+                                    <div key={idx} className="resource-drop-item">
+                                      <span className="drop-item-name">{itemName}</span>
+                                      <span className="drop-quantity">x{quantityText}</span>
+                                      <span className="drop-chance">({(drop.chance * 100).toFixed(0)}%)</span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
               </div>
             </div>
           )}
@@ -697,6 +730,12 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
                 </div>
               ))}
           </div>
+        </div>
+      )}
+
+      {isIdleSkill && skillId === 'divination' && (
+        <div className="skill-detail-section">
+          <DivinationUnlockTree skillId={skillId} />
         </div>
       )}
     </div>

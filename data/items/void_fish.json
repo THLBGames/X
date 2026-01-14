@@ -1,0 +1,12 @@
+{
+  "id": "void_fish",
+  "name": "Void Fish",
+  "description": "A mysterious fish touched by void energy.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 300,
+  "nameKey": "item.void_fish.name",
+  "descriptionKey": "item.void_fish.description"
+}

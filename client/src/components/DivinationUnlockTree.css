@@ -1,0 +1,224 @@
+.divination-unlock-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.unlock-tree-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.unlock-tree-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.unlock-tree-category-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.unlock-tree-category-filter button {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.unlock-tree-category-filter button:hover {
+  background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
+  border-color: #555;
+}
+
+.unlock-tree-category-filter button.active {
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.3) 0%, rgba(74, 158, 255, 0.2) 100%);
+  border-color: #4a9eff;
+  color: #fff;
+}
+
+.unlock-tree-nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.unlock-tree-node {
+  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.unlock-tree-node.unlocked {
+  border-color: #4ecdc4;
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, #252525 100%);
+}
+
+.unlock-tree-node.available:not(.unlocked) {
+  border-color: #90ee90;
+  cursor: pointer;
+}
+
+.unlock-tree-node.available:not(.unlocked):hover {
+  border-color: #7acc7a;
+  background: linear-gradient(135deg, rgba(144, 238, 144, 0.1) 0%, #252525 100%);
+}
+
+.unlock-tree-node.locked {
+  opacity: 0.7;
+  border-color: #666;
+}
+
+.unlock-node-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unlock-node-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.unlock-node-badge {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(78, 205, 196, 0.2) 100%);
+  color: #4ecdc4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.unlock-node-description {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.unlock-node-cost {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cost-label {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.cost-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cost-item {
+  color: #ccc;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.cost-item.missing {
+  color: #ff6b6b;
+}
+
+.unlock-node-requirement {
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.unlock-node-requirement.met {
+  color: #90ee90;
+}
+
+.unlock-node-requirement.unmet {
+  color: #ff6b6b;
+}
+
+.unlock-node-error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.unlock-node-button {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.3) 0%, rgba(74, 158, 255, 0.2) 100%);
+  border: 1px solid #4a9eff;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.unlock-node-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.4) 0%, rgba(74, 158, 255, 0.3) 100%);
+  border-color: #5aaaff;
+}
+
+.unlock-node-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unlock-node-bonuses {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #444;
+}
+
+.bonuses-label {
+  font-weight: 600;
+  color: #4ecdc4;
+  font-size: 0.9rem;
+}
+
+.bonus-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bonus-item {
+  color: #90ee90;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  background: rgba(144, 238, 144, 0.1);
+  border-radius: 4px;
+}
+
+.unlock-tree-loading {
+  text-align: center;
+  padding: 40px;
+  color: #ccc;
+}
+
+.unlock-tree-empty {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-style: italic;
+}

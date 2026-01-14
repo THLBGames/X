@@ -46,6 +46,64 @@
       "timeRequired": 4000
     },
     {
+      "recipeId": "grilled_fish",
+      "name": "Grilled Fish",
+      "level": 8,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "freshwater_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "grilled_fish",
+        "quantity": 1
+      },
+      "experienceGain": 35,
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "fish_stew",
+      "name": "Fish Stew",
+      "level": 15,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "medium_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "saltwater_fish",
+          "quantity": 1
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fish_stew",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 4500
+    },
+    {
       "recipeId": "quality_meal",
       "name": "Quality Meal",
       "level": 25,
@@ -71,6 +129,204 @@
       "timeRequired": 5000
     },
     {
+      "recipeId": "sushi_platter",
+      "name": "Sushi Platter",
+      "level": 28,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "tropical_fish",
+          "quantity": 3
+        },
+        {
+          "itemId": "saltwater_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "sushi_platter",
+        "quantity": 1
+      },
+      "experienceGain": 90,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "deep_sea_delight",
+      "name": "Deep Sea Delight",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "deep_sea_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "pearl",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "deep_sea_delight",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "ancient_recipe_meal",
+      "name": "Ancient Recipe Meal",
+      "level": 44,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_papyrus",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat_quality",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_recipe_meal",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "magic_fish_soup",
+      "name": "Magic Fish Soup",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "magic_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "mana_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "magic_fish_soup",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "ancient_recipe_meal",
+      "name": "Ancient Recipe Meal",
+      "level": 44,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_papyrus",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat_quality",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_recipe_meal",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "preserved_artifact_feast",
+      "name": "Preserved Artifact Feast",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "preserved_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_tool",
+          "quantity": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat_premium",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "preserved_artifact_feast",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 6800
+    },
+    {
       "recipeId": "feast",
       "name": "Grand Feast",
       "level": 60,
@@ -94,6 +350,169 @@
       },
       "experienceGain": 200,
       "timeRequired": 6000
+    },
+    {
+      "recipeId": "fire_fish_platter",
+      "name": "Fire Fish Platter",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "fire_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "lava_core",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fire_fish_platter",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "ice_fish_cuisine",
+      "name": "Ice Fish Cuisine",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ice_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "frost_crystal",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ice_fish_cuisine",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "leviathan_feast",
+      "name": "Leviathan Feast",
+      "level": 78,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "leviathan_scale",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_fish",
+          "quantity": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "leviathan_feast",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "celestial_sushi",
+      "name": "Celestial Sushi",
+      "level": 85,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_fish",
+          "quantity": 3
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 2
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "celestial_sushi",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "primordial_bouillabaisse",
+      "name": "Primordial Bouillabaisse",
+      "level": 97,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "primordial_fish",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 2
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "primordial_bouillabaisse",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 8000
     }
   ],
   "passiveBonuses": [

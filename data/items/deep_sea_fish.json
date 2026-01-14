@@ -1,0 +1,12 @@
+{
+  "id": "deep_sea_fish",
+  "name": "Deep Sea Fish",
+  "description": "A fish from the deep ocean depths.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.deep_sea_fish.name",
+  "descriptionKey": "item.deep_sea_fish.description"
+}

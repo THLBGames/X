@@ -365,11 +365,21 @@ export class CharacterManager {
    */
   static updateCharacterStats(character: Character): Character {
     // Calculate current stats (base stats + equipment bonuses)
-    const currentStats = this.calculateCurrentStats(
+    let currentStats = this.calculateCurrentStats(
       character.baseStats,
       character.equipment,
       character.statusEffects
     );
+
+    // Apply divination unlock tree stat bonuses
+    if (character.divinationUnlockBonuses?.statBonus) {
+      for (const [stat, value] of Object.entries(character.divinationUnlockBonuses.statBonus)) {
+        if (value !== undefined) {
+          const statKey = stat as keyof Stats;
+          currentStats[statKey] = (currentStats[statKey] || 0) + value;
+        }
+      }
+    }
 
     // Calculate combat stats using current stats (which already include equipment stat bonuses)
     // Pass empty equipment to calculateCombatStats so it doesn't apply stat bonuses twice
@@ -436,6 +446,18 @@ export class CharacterManager {
     for (const _effect of character.statusEffects) {
       // In a real implementation, you'd load the status effect definition
       // For now, status effects don't modify combat stats directly
+    }
+
+    // Apply divination unlock tree combat stat bonuses
+    if (character.divinationUnlockBonuses?.combatStatBonus) {
+      for (const [stat, value] of Object.entries(character.divinationUnlockBonuses.combatStatBonus)) {
+        if (value !== undefined) {
+          const combatStatKey = stat as keyof CombatStats;
+          if (combatStats[combatStatKey] !== undefined) {
+            (combatStats[combatStatKey] as number) += value;
+          }
+        }
+      }
     }
 
     return {

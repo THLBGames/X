@@ -1,0 +1,12 @@
+{
+  "id": "black_pearl",
+  "name": "Black Pearl",
+  "description": "A rare black pearl of great value.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 250,
+  "nameKey": "item.black_pearl.name",
+  "descriptionKey": "item.black_pearl.description"
+}

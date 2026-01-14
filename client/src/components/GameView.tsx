@@ -14,8 +14,10 @@ import QuestPanel from './QuestPanel';
 import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
+import ProgressionPanel from './ProgressionPanel';
 import SettingsPanel from './SettingsPanel';
 import PatchNotesModal from './PatchNotesModal';
+import OnboardingModal from './OnboardingModal';
 import CharacterCreation from './CharacterCreation';
 import './GameView.css';
 
@@ -24,10 +26,11 @@ export default function GameView() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const settings = useGameState((state) => state.settings);
   const [activeRightPanel, setActiveRightPanel] = useState<
-    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics'
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression'
   >('character');
   const [showSettings, setShowSettings] = useState(false);
   const [showPatchNotes, setShowPatchNotes] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   // Initialize game loop
   useGameLoop();
@@ -55,6 +58,17 @@ export default function GameView() {
       // Don't stop music on unmount, let it continue playing
     };
   }, [character, settings.musicEnabled]);
+
+  // Check if onboarding should be shown (once per character creation)
+  useEffect(() => {
+    if (character) {
+      const onboardingShown = localStorage.getItem('onboardingShown');
+      // Only show if character is level 1 (new character) and onboarding hasn't been shown
+      if (character.level === 1 && !onboardingShown) {
+        setShowOnboarding(true);
+      }
+    }
+  }, [character]);
 
   if (!character) {
     return <CharacterCreation />;
@@ -136,6 +150,14 @@ export default function GameView() {
               Statistics
             </button>
           </TooltipWrapper>
+          <TooltipWrapper content="View recommended actions and progression guidance">
+            <button
+              className={`panel-tab ${activeRightPanel === 'progression' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('progression')}
+            >
+              Progression
+            </button>
+          </TooltipWrapper>
           <TooltipWrapper content="Game settings and preferences">
             <button className="panel-tab" onClick={() => setShowSettings(true)}>
               Settings
@@ -149,6 +171,7 @@ export default function GameView() {
           {activeRightPanel === 'shop' && <ShopPanel />}
           {activeRightPanel === 'quests' && <QuestPanel />}
           {activeRightPanel === 'statistics' && <StatisticsPanel />}
+          {activeRightPanel === 'progression' && <ProgressionPanel />}
           {activeRightPanel === 'skills' && (
             <div className="skills-tab-placeholder">
               <p>Skills are displayed in the center area.</p>
@@ -159,6 +182,7 @@ export default function GameView() {
       </div>
       <SettingsPanel isOpen={showSettings} onClose={() => setShowSettings(false)} />
       <PatchNotesModal isOpen={showPatchNotes} onClose={() => setShowPatchNotes(false)} />
+      <OnboardingModal isOpen={showOnboarding} onClose={() => setShowOnboarding(false)} />
     </div>
   );
 }

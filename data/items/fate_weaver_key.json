@@ -1,0 +1,12 @@
+{
+  "id": "fate_weaver_key",
+  "name": "Fate Weaver Key",
+  "description": "A key that opens the Fate Weaver's Chamber.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2500,
+  "nameKey": "item.fate_weaver_key.name",
+  "descriptionKey": "item.fate_weaver_key.description"
+}

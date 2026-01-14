@@ -5,7 +5,13 @@
     "intelligence": "Intelligence",
     "vitality": "Vitality",
     "wisdom": "Wisdom",
-    "luck": "Luck"
+    "luck": "Luck",
+    "strengthDescription": "Increases Attack (2x per point) and slightly increases Defense (0.5x via Dexterity)",
+    "dexterityDescription": "Increases Speed (1.5x per point) and Critical Chance (0.1% per point)",
+    "intelligenceDescription": "Increases Magic Attack (2x per point), Mana (3x per point), and Magic Defense (0.5x per point)",
+    "vitalityDescription": "Increases Health (10x per point) and Defense (1.5x per point)",
+    "wisdomDescription": "Increases Mana (5x per point), Magic Defense (1.5x per point), and slightly increases Magic Attack (0.5x per point)",
+    "luckDescription": "Increases Critical Chance (0.1% per point)"
   },
   "itemType": {
     "type": "Type",

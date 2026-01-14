@@ -1,0 +1,12 @@
+{
+  "id": "steel_ore",
+  "name": "Steel Ore",
+  "description": "A strong alloy ore created from iron and coal, used for crafting quality equipment.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12,
+  "nameKey": "item.steel_ore.name",
+  "descriptionKey": "item.steel_ore.description"
+}

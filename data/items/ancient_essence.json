@@ -1,0 +1,12 @@
+{
+  "id": "ancient_essence",
+  "name": "Ancient Essence",
+  "description": "Primordial essence from ancient waters.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 600,
+  "nameKey": "item.ancient_essence.name",
+  "descriptionKey": "item.ancient_essence.description"
+}

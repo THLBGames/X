@@ -29,9 +29,158 @@
       "timeRequired": 6000
     },
     {
+      "recipeId": "pearl_necklace",
+      "name": "Pearl Necklace",
+      "level": 20,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "pearl",
+          "quantity": 4
+        },
+        {
+          "itemId": "silver_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "chain",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "pearl_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "scale_bracelet",
+      "name": "Scale Bracelet",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "fish_scale",
+          "quantity": 10
+        },
+        {
+          "itemId": "copper_ore",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "scale_bracelet",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "bronze_jewelry",
+      "name": "Bronze Jewelry",
+      "level": 18,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "bronze_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "uncommon_gem_ring",
+      "name": "Uncommon Gem Ring",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silver_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "uncommon_gem_ring",
+        "quantity": 1
+      },
+      "experienceGain": 90,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "ancient_gem_jewelry",
+      "name": "Ancient Gem Jewelry",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_gem",
+          "quantity": 3
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_gem_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 9000
+    },
+    {
       "recipeId": "silver_necklace",
       "name": "Silver Necklace",
       "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 25
+        }
+      ],
       "ingredients": [
         {
           "itemId": "silver_ore",
@@ -54,9 +203,143 @@
       "timeRequired": 8000
     },
     {
+      "recipeId": "freshwater_pearl_jewelry",
+      "name": "Freshwater Pearl Jewelry",
+      "level": 45,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "freshwater_pearl",
+          "quantity": 5
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "freshwater_pearl_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "platinum_jewelry",
+      "name": "Platinum Jewelry",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "platinum_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "platinum_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "golden_artifact_jewelry",
+      "name": "Golden Artifact Jewelry",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "golden_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "ancient_gem",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "golden_artifact_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 250,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "mana_scale_jewelry",
+      "name": "Mana Scale Jewelry",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mana_scale",
+          "quantity": 6
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "mana_scale_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 9500
+    },
+    {
       "recipeId": "gold_jewelry",
       "name": "Gold Jewelry Set",
-      "level": 65,
+      "level": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 40
+        }
+      ],
       "ingredients": [
         {
           "itemId": "gold_ore",
@@ -77,6 +360,301 @@
       },
       "experienceGain": 300,
       "timeRequired": 10000
+    },
+    {
+      "recipeId": "epic_gem_necklace",
+      "name": "Epic Gem Necklace",
+      "level": 70,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 4
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "epic_gem_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "abyssal_pearl_jewelry",
+      "name": "Abyssal Pearl Jewelry",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "abyssal_pearl",
+          "quantity": 4
+        },
+        {
+          "itemId": "black_pearl",
+          "quantity": 2
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "abyssal_pearl_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "dragonstone_jewelry",
+      "name": "Dragonstone Jewelry",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "dragonstone",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dragonstone_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "dragon_bone_jewelry",
+      "name": "Dragon Bone Jewelry",
+      "level": 78,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "dragon_bone",
+          "quantity": 2
+        },
+        {
+          "itemId": "dragon_scale_ancient",
+          "quantity": 3
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dragon_bone_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "rainbow_pearl_jewelry",
+      "name": "Rainbow Pearl Jewelry",
+      "level": 82,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 3
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 4
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "rainbow_pearl_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 520,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "legendary_gem_set",
+      "name": "Legendary Gem Set",
+      "level": 85,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 4
+        },
+        {
+          "itemId": "dragonstone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "legendary_gem_set",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "prismatic_jewelry",
+      "name": "Prismatic Jewelry",
+      "level": 90,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "celestial_scale_jewelry",
+      "name": "Celestial Scale Jewelry",
+      "level": 88,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 4
+        },
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "celestial_scale_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "divine_jewelry",
+      "name": "Divine Jewelry",
+      "level": 98,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "divine_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 18000
     }
   ],
   "passiveBonuses": [

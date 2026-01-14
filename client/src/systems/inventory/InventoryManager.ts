@@ -1,7 +1,18 @@
-import type { Inventory, InventoryItem, Equipment, EquipmentSlot } from '@idle-rpg/shared';
+import type { Inventory, InventoryItem, Equipment, EquipmentSlot, Character } from '@idle-rpg/shared';
+import { MAX_INVENTORY_SLOTS } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
 
 export class InventoryManager {
+  /**
+   * Get max inventory slots (base + unlock tree bonuses)
+   */
+  static getMaxInventorySlots(character?: Character | null): number {
+    let maxSlots = MAX_INVENTORY_SLOTS;
+    if (character?.divinationUnlockBonuses?.inventorySlots) {
+      maxSlots += character.divinationUnlockBonuses.inventorySlots;
+    }
+    return maxSlots;
+  }
   /**
    * Add item to inventory
    */

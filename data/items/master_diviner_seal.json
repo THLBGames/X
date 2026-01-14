@@ -1,0 +1,12 @@
+{
+  "id": "master_diviner_seal",
+  "name": "Master Diviner's Seal",
+  "description": "The ultimate seal that opens the Master Diviner's Sanctuary.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 6000,
+  "nameKey": "item.master_diviner_seal.name",
+  "descriptionKey": "item.master_diviner_seal.description"
+}

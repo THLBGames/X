@@ -1,0 +1,12 @@
+{
+  "id": "stone_fragment",
+  "name": "Stone Fragment",
+  "description": "A fragment of stone from ancient structures.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.stone_fragment.name",
+  "descriptionKey": "item.stone_fragment.description"
+}

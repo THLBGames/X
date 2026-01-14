@@ -1,0 +1,12 @@
+{
+  "id": "divine_prophecy",
+  "name": "Divine Prophecy",
+  "description": "A prophecy channeled directly from the divine.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2200,
+  "nameKey": "item.divine_prophecy.name",
+  "descriptionKey": "item.divine_prophecy.description"
+}

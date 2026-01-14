@@ -25,7 +25,52 @@
     "idleHint": "Choose a dungeon from the list below and click \"Start Combat\"",
     "emptySlot": "Empty Slot",
     "you": "You",
-    "roundDelay": "Preparing next round..."
+    "roundDelay": "Preparing next round...",
+    "guideButton": "Combat Guide"
+  },
+  "combatGuide": {
+    "title": "Combat Guide",
+    "close": "Close",
+    "turnOrder": {
+      "title": "Turn Order",
+      "description": "Combat is turn-based, with participants acting in order based on their Speed stat.",
+      "speedBased": "Higher Speed acts first",
+      "fasterFirst": "If two participants have the same Speed, the order is random",
+      "roundBased": "All participants take one turn per round"
+    },
+    "damage": {
+      "title": "Damage Calculation",
+      "description": "Physical damage is calculated using the following formula:",
+      "formula": "Damage = Attack × (1 - Defense / (Defense + 100))",
+      "explanation": "Higher Defense reduces damage taken, but with diminishing returns. For example, 100 Defense reduces damage by 50%, while 200 Defense reduces damage by 66.7%."
+    },
+    "defense": {
+      "title": "Defense & Damage Mitigation",
+      "description": "Defense reduces incoming damage. The mitigation percentage can be calculated as:",
+      "formula": "Mitigation % = Defense / (Defense + 100) × 100",
+      "explanation": "This means 100 Defense = 50% mitigation, 200 Defense = 66.7% mitigation, and 300 Defense = 75% mitigation."
+    },
+    "criticalHits": {
+      "title": "Critical Hits",
+      "description": "Critical hits deal increased damage and have a chance to occur based on your stats.",
+      "damage": "Critical hits deal 1.5× normal damage",
+      "chance": "Critical chance is calculated from Dexterity and Luck stats",
+      "formula": "Critical Chance = (Dexterity + Luck) × 0.1%"
+    },
+    "statusEffects": {
+      "title": "Status Effects",
+      "description": "Status effects can be applied to participants, providing buffs or debuffs.",
+      "duration": "Effects have a duration (in seconds) and expire after that time",
+      "stacking": "Most effects stack with each other, but identical effects typically refresh duration instead",
+      "expiration": "Effects can be removed early by certain skills or when a participant dies"
+    },
+    "tips": {
+      "title": "Combat Tips",
+      "speed": "High Speed allows you to act first and potentially eliminate enemies before they attack",
+      "defense": "Defense is highly valuable - even small increases significantly reduce damage taken",
+      "critical": "Critical hits are powerful - consider building Dexterity and Luck for critical-focused builds",
+      "skills": "Use skills strategically - they often deal more damage than basic attacks or provide utility"
+    }
   },
   "dungeon": {
     "selectDungeon": "Select Dungeon",
@@ -34,7 +79,16 @@
     "tier": "Tier",
     "completed": "Completed",
     "time": "time",
-    "bestTime": "Best Time"
+    "bestTime": "Best Time",
+    "rewards": "Rewards",
+    "expBonus": "XP Bonus",
+    "goldBonus": "Gold Bonus",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "impossible": "Impossible"
+    }
   },
   "validation": {
     "thresholdRangeError": "Threshold must be between 0 and 100",
@@ -92,7 +146,15 @@
     "skillPoints": "SP",
     "removeFromBar": "Remove from skill bar",
     "addToBar": "Add to skill bar",
-    "bar": "Bar"
+    "bar": "Bar",
+    "respec": "Respec",
+    "respecTooltip": "Refund all skill points (cost: 1000 gold)",
+    "respecConfirmTitle": "Respec Skills",
+    "respecConfirmMessage": "Are you sure you want to respec all skills? This will refund all skill points but costs 1000 gold. All learned skills will be removed.",
+    "respecConfirm": "Confirm Respec",
+    "respecCancel": "Cancel",
+    "respecSuccess": "Successfully respecced! Refunded {{points}} skill points.",
+    "respecInsufficientGold": "Insufficient gold! Respec costs {{cost}} gold."
   },
   "skill": {
     "cooldown": "Cooldown"
@@ -179,6 +241,31 @@
     "completed": "Completed",
     "progress": "Progress",
     "questCompleted": "Quest Completed"
+  },
+  "progression": {
+    "title": "Progression Guide",
+    "xpNeeded": "XP needed",
+    "levelProgress": {
+      "title": "Level Progress"
+    },
+    "recommendedActions": {
+      "title": "Recommended Actions",
+      "dungeon": "Try These Dungeons",
+      "skillPoints": "Spend Skill Points",
+      "skillPointsDesc": "You have {{count}} skill point(s) available. Visit the Skill Tree to learn new abilities.",
+      "equipment": "Equip Better Gear",
+      "equipmentDesc": "Check your inventory for items you can equip to improve your stats.",
+      "quests": "Complete Quests",
+      "questsDesc": "Visit the Quests panel to see available quests and earn rewards.",
+      "skills": "Train Idle Skills",
+      "skillsDesc": "Use idle skills to gather resources and craft items while you're away."
+    },
+    "nextLevelBenefits": {
+      "title": "Next Level Benefits",
+      "skillPoint": "Gain 1 Skill Point",
+      "stats": "Increase all base stats",
+      "unlock": "Unlock new content (dungeons, items, etc.)"
+    }
   },
   "classChange": {
     "currentClass": "Current Class",
@@ -326,6 +413,40 @@
     "removed": "Removed",
     "noNotes": "No patch notes available",
     "close": "Close"
+  },
+  "onboarding": {
+    "title": "Welcome to Tales of Heroes, Legends & Beasts!",
+    "welcome": "Welcome, hero! Your adventure begins now. This guide will help you understand the basics of your journey.",
+    "start": "Start Playing",
+    "tip": "💡 Tip",
+    "tipDescription": "You can access this guide and other help information from the Settings panel at any time. Hover over stat names and UI elements to see helpful tooltips!",
+    "combat": {
+      "title": "Combat System",
+      "description": "Combat is turn-based. Select a dungeon and start combat to battle monsters and earn rewards.",
+      "step1": "Choose a dungeon from the Dungeon Selector",
+      "step2": "Click 'Start Combat' to begin fighting",
+      "step3": "Use skills and consumables during combat to aid your victory"
+    },
+    "skills": {
+      "title": "Idle Skills",
+      "description": "Train skills to gather resources, craft items, and gain experience even when offline.",
+      "step1": "Open the Skills panel to see available skills",
+      "step2": "Click on a skill to start training",
+      "step3": "Collect resources and use them to craft items"
+    },
+    "character": {
+      "title": "Character Progression",
+      "description": "Level up your character, equip better gear, and unlock new abilities.",
+      "step1": "Check your Character panel to see stats and information",
+      "step2": "Visit the Equipment panel to equip better items",
+      "step3": "Use the Skill Tree to learn new combat skills"
+    },
+    "firstSteps": {
+      "title": "Your First Steps",
+      "step1": "Select a dungeon and start your first combat",
+      "step2": "Equip any starter gear from your inventory",
+      "step3": "Try an idle skill to start gathering resources"
+    }
   }
 }
 

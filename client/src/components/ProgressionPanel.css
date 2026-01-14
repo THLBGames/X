@@ -1,0 +1,141 @@
+.progression-panel {
+  padding: 16px;
+  color: #fff;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.progression-panel h2 {
+  margin: 0 0 20px 0;
+  color: #4a9eff;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 8px;
+}
+
+.progression-section {
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.progression-section h3 {
+  margin: 0 0 12px 0;
+  color: #4a9eff;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+}
+
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccc;
+}
+
+.progress-row .value {
+  color: #fff;
+  font-weight: bold;
+}
+
+.progress-bar-container {
+  margin-top: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff 0%, #4ecdc4 100%);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.recommended-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommended-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  background: #0a0a1e;
+  border: 1px solid #444;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.recommended-item:hover {
+  background: #1a1a2e;
+  border-color: #4a9eff;
+}
+
+.recommended-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.recommended-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recommended-title {
+  color: #4a9eff;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.recommended-description {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  padding: 8px;
+  background: #0a0a1e;
+  border-radius: 4px;
+}
+
+.benefit-icon {
+  color: #4ecdc4;
+  font-weight: bold;
+  font-size: 1.2rem;
+}

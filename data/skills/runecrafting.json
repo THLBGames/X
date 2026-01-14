@@ -29,6 +29,68 @@
       "timeRequired": 7000
     },
     {
+      "recipeId": "crystal_rune",
+      "name": "Crystal Rune",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "crystal_rune",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "rune_stone_rune",
+      "name": "Rune Stone Rune",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "rune_stone_rune",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 7800
+    },
+    {
       "recipeId": "greater_rune",
       "name": "Greater Rune",
       "level": 45,
@@ -54,6 +116,286 @@
       "timeRequired": 9000
     },
     {
+      "recipeId": "enhanced_crystal_rune",
+      "name": "Enhanced Crystal Rune",
+      "level": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "enhanced_crystal_rune",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "ancient_artifact_rune",
+      "name": "Ancient Artifact Rune",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 3
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ancient_artifact_rune",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 10200
+    },
+    {
+      "recipeId": "cosmic_energy_rune",
+      "name": "Cosmic Energy Rune",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_energy_rune",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "time_vision_rune",
+      "name": "Time Vision Rune",
+      "level": 64,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "time_vision",
+          "quantity": 2
+        },
+        {
+          "itemId": "reality_shard",
+          "quantity": 2
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "time_vision_rune",
+        "quantity": 1
+      },
+      "experienceGain": 320,
+      "timeRequired": 10400
+    },
+    {
+      "recipeId": "void_rune",
+      "name": "Void Rune",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "void_rune",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "void_essence_rune",
+      "name": "Void Essence Rune",
+      "level": 77,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "void_fish",
+          "quantity": 2
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "void_essence_rune",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 13500
+    },
+    {
+      "recipeId": "celestial_scale_rune",
+      "name": "Celestial Scale Rune",
+      "level": 85,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "celestial_fish",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "celestial_scale_rune",
+        "quantity": 1
+      },
+      "experienceGain": 620,
+      "timeRequired": 15500
+    },
+    {
+      "recipeId": "divine_artifact_rune",
+      "name": "Divine Artifact Rune",
+      "level": 87,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_artifact",
+          "quantity": 3
+        },
+        {
+          "itemId": "celestial_chart",
+          "quantity": 2
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_artifact_rune",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 16000
+    },
+    {
       "recipeId": "supreme_rune",
       "name": "Supreme Rune",
       "level": 80,
@@ -77,6 +419,76 @@
       },
       "experienceGain": 420,
       "timeRequired": 12000
+    },
+    {
+      "recipeId": "prismatic_rune",
+      "name": "Prismatic Rune",
+      "level": 88,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_rune",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "divine_rune",
+      "name": "Divine Rune",
+      "level": 96,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "divine_rune",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 18000
     }
   ],
   "passiveBonuses": [

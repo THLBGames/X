@@ -1,7 +1,7 @@
 {
   "id": "divination",
   "name": "Divination",
-  "description": "Gather energy and essence from the environment",
+  "description": "Channel cosmic energies and divine visions to gain insights and power",
   "type": "gathering",
   "category": "gathering",
   "maxLevel": 99,
@@ -16,14 +16,187 @@
       "timeRequired": 5000,
       "resources": [
         {
-          "itemId": "energy_wisp",
+          "itemId": "divine_energy",
           "chance": 1,
           "min": 1,
           "max": 3
         },
         {
-          "itemId": "minor_essence",
+          "itemId": "divination_fragment",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "star_dust",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "nodeId": "minor_vision",
+      "name": "Minor Vision Site",
+      "successRate": 0.87,
+      "experienceGain": 24,
+      "timeRequired": 5200,
+      "resources": [
+        {
+          "itemId": "divine_energy",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "divination_fragment",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "star_dust",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "crystal_formation",
+      "name": "Crystal Formation",
+      "successRate": 0.86,
+      "experienceGain": 36,
+      "timeRequired": 5400,
+      "resources": [
+        {
+          "itemId": "crystal_shard_divination",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_energy",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "moon_essence",
           "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "moonlight_site",
+      "name": "Moonlight Divination Site",
+      "successRate": 0.85,
+      "experienceGain": 50,
+      "timeRequired": 5600,
+      "resources": [
+        {
+          "itemId": "moon_essence",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "crystal_shard_divination",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "planetary_alignment",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "stellar_alignment",
+      "name": "Stellar Alignment Site",
+      "successRate": 0.84,
+      "experienceGain": 65,
+      "timeRequired": 5800,
+      "resources": [
+        {
+          "itemId": "planetary_alignment",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "star_chart_divination",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "moon_essence",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "diviner_scroll",
+          "chance": 0.002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "cosmic_well",
+      "name": "Cosmic Energy Well",
+      "successRate": 0.83,
+      "experienceGain": 80,
+      "timeRequired": 6000,
+      "resources": [
+        {
+          "itemId": "cosmic_energy",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "star_chart_divination",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "fate_crystal",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "diviner_scroll",
+          "chance": 0.002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "fate_weaving",
+      "name": "Fate Weaving Site",
+      "successRate": 0.82,
+      "experienceGain": 100,
+      "timeRequired": 6200,
+      "resources": [
+        {
+          "itemId": "fate_crystal",
+          "chance": 0.85,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "cosmic_energy",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "destiny_fragment",
+          "chance": 0.25,
           "quantity": 1
         }
       ]
@@ -32,9 +205,9 @@
       "level": 35,
       "nodeId": "essence_well",
       "name": "Essence Well",
-      "successRate": 0.82,
-      "experienceGain": 75,
-      "timeRequired": 6000,
+      "successRate": 0.81,
+      "experienceGain": 120,
+      "timeRequired": 6400,
       "resources": [
         {
           "itemId": "essence_crystal",
@@ -43,13 +216,196 @@
           "max": 2
         },
         {
-          "itemId": "energy_wisp",
+          "itemId": "divine_energy",
           "chance": 0.4,
           "quantity": 1
         },
         {
           "itemId": "moderate_essence",
           "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "destiny_vision",
+      "name": "Destiny Vision Site",
+      "successRate": 0.8,
+      "experienceGain": 145,
+      "timeRequired": 6600,
+      "resources": [
+        {
+          "itemId": "destiny_fragment",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "prophecy_scroll",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "fate_crystal",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_key",
+          "chance": 0.002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "prophecy_pool",
+      "name": "Prophecy Pool",
+      "successRate": 0.79,
+      "experienceGain": 170,
+      "timeRequired": 6800,
+      "resources": [
+        {
+          "itemId": "prophecy_scroll",
+          "chance": 0.85,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_insight",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "destiny_fragment",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_key",
+          "chance": 0.002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "diviner_library",
+      "name": "Diviner's Library",
+      "successRate": 0.77,
+      "experienceGain": 255,
+      "timeRequired": 7200,
+      "unlockRequirements": [
+        {
+          "itemId": "diviner_scroll",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "prophecy_scroll",
+          "chance": 0.9,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "celestial_insight",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "star_chart_divination",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "diviner_scroll",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "celestial_observatory",
+      "name": "Celestial Observatory",
+      "successRate": 0.78,
+      "experienceGain": 200,
+      "timeRequired": 7000,
+      "resources": [
+        {
+          "itemId": "celestial_insight",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "time_vision",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "prophecy_scroll",
+          "chance": 0.6,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "time_stream",
+      "name": "Time Stream Divination",
+      "successRate": 0.77,
+      "experienceGain": 230,
+      "timeRequired": 7200,
+      "resources": [
+        {
+          "itemId": "time_vision",
+          "chance": 0.8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "reality_shard",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_insight",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "reality_fragment",
+      "name": "Reality Fragment Site",
+      "successRate": 0.76,
+      "experienceGain": 260,
+      "timeRequired": 7400,
+      "resources": [
+        {
+          "itemId": "reality_shard",
+          "chance": 0.85,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "time_vision",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "fate_weaver_key",
+          "chance": 0.001,
           "quantity": 1
         }
       ]
@@ -86,7 +442,202 @@
       ]
     },
     {
-      "level": 95,
+      "level": 65,
+      "nodeId": "celestial_sanctum",
+      "name": "Celestial Sanctum",
+      "successRate": 0.73,
+      "experienceGain": 390,
+      "timeRequired": 8000,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "celestial_insight",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "time_vision",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_key",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "divine_prophecy_site",
+      "name": "Divine Prophecy Site",
+      "successRate": 0.74,
+      "experienceGain": 300,
+      "timeRequired": 7600,
+      "resources": [
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "reality_shard",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "fate_weaver_key",
+          "chance": 0.001,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "primordial_vision_site",
+      "name": "Primordial Vision Site",
+      "successRate": 0.72,
+      "experienceGain": 340,
+      "timeRequired": 7800,
+      "resources": [
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "destiny_anchor_key",
+          "chance": 0.0005,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "fate_weaver_site",
+      "name": "Fate Weaver Site",
+      "successRate": 0.71,
+      "experienceGain": 380,
+      "timeRequired": 8000,
+      "resources": [
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.75,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "fate_weaver_key",
+          "chance": 0.001,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "fate_weaver_chamber",
+      "name": "Fate Weaver's Chamber",
+      "successRate": 0.73,
+      "experienceGain": 570,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "fate_weaver_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.9,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.7,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "destiny_anchor_site",
+      "name": "Destiny Anchor Site",
+      "successRate": 0.7,
+      "experienceGain": 420,
+      "timeRequired": 8200,
+      "resources": [
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.75,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "destiny_anchor_key",
+          "chance": 0.0005,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
       "nodeId": "void_rift",
       "name": "Void Rift",
       "successRate": 0.65,
@@ -110,28 +661,238 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 90,
+      "nodeId": "destiny_chamber",
+      "name": "Chamber of Destiny",
+      "successRate": 0.72,
+      "experienceGain": 630,
+      "timeRequired": 9200,
+      "unlockRequirements": [
+        {
+          "itemId": "destiny_anchor_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.9,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "cosmic_convergence",
+      "name": "Cosmic Convergence",
+      "successRate": 0.68,
+      "experienceGain": 480,
+      "timeRequired": 8800,
+      "resources": [
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "master_diviner_seal",
+          "chance": 0.0002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_diviner_site",
+      "name": "Master Diviner's Site",
+      "successRate": 0.65,
+      "experienceGain": 550,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "primordial_vision",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_diviner_sanctuary",
+      "name": "Master Diviner's Sanctuary",
+      "successRate": 0.75,
+      "experienceGain": 825,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "master_diviner_seal",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "primordial_vision",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "destiny_anchor",
+          "chance": 0.9,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "fate_weaver",
+          "chance": 0.8,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "divine_prophecy",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 5
+        }
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 10,
+          "intelligence": 5
+        },
+        "itemFindRate": 0.05
+      }
+    },
+    {
       "level": 40,
       "bonus": {
-        "mana": 50,
-        "magicAttack": 5
+        "statBonus": {
+          "wisdom": 15,
+          "intelligence": 10
+        },
+        "itemFindRate": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 20,
+          "intelligence": 15
+        },
+        "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 25,
+          "intelligence": 20
+        },
+        "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 30,
+          "intelligence": 25
+        },
+        "itemFindRate": 0.15
       }
     },
     {
       "level": 80,
       "bonus": {
-        "mana": 100,
-        "magicAttack": 10
+        "statBonus": {
+          "wisdom": 35,
+          "intelligence": 30
+        },
+        "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 40,
+          "intelligence": 35
+        },
+        "itemFindRate": 0.15
       }
     },
     {
       "level": 99,
       "bonus": {
-        "mana": 200,
-        "magicAttack": 20
+        "statBonus": {
+          "wisdom": 45,
+          "intelligence": 40
+        },
+        "itemFindRate": 0.2
       }
     }
   ],

@@ -1,0 +1,12 @@
+{
+  "id": "leviathan_scale",
+  "name": "Leviathan Scale",
+  "description": "A massive scale from a legendary leviathan.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800,
+  "nameKey": "item.leviathan_scale.name",
+  "descriptionKey": "item.leviathan_scale.description"
+}

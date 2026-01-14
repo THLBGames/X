@@ -1,0 +1,12 @@
+{
+  "id": "ancient_tome_material",
+  "name": "Ancient Tome",
+  "description": "An ancient book of knowledge and wisdom.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 200,
+  "nameKey": "item.ancient_tome_material.name",
+  "descriptionKey": "item.ancient_tome_material.description"
+}

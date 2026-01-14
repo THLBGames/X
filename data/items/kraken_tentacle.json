@@ -1,0 +1,12 @@
+{
+  "id": "kraken_tentacle",
+  "name": "Kraken Tentacle",
+  "description": "A tentacle from a legendary kraken, required to access the Kraken's Lair.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1000,
+  "nameKey": "item.kraken_tentacle.name",
+  "descriptionKey": "item.kraken_tentacle.description"
+}

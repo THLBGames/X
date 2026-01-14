@@ -1,0 +1,12 @@
+{
+  "id": "pharaoh_key",
+  "name": "Pharaoh Key",
+  "description": "A key from an ancient pharaoh, required to access the Pharaoh's Chamber.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1500,
+  "nameKey": "item.pharaoh_key.name",
+  "descriptionKey": "item.pharaoh_key.description"
+}

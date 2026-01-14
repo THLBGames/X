@@ -1,0 +1,12 @@
+{
+  "id": "fossil_fragment",
+  "name": "Fossil Fragment",
+  "description": "A fragment from an ancient fossil found in lake beds.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 60,
+  "nameKey": "item.fossil_fragment.name",
+  "descriptionKey": "item.fossil_fragment.description"
+}

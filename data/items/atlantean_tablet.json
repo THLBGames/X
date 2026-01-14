@@ -1,0 +1,12 @@
+{
+  "id": "atlantean_tablet",
+  "name": "Atlantean Tablet",
+  "description": "A tablet inscribed with Atlantean writing.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000,
+  "nameKey": "item.atlantean_tablet.name",
+  "descriptionKey": "item.atlantean_tablet.description"
+}

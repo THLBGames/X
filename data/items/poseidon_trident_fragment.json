@@ -1,0 +1,12 @@
+{
+  "id": "poseidon_trident_fragment",
+  "name": "Poseidon Trident Fragment",
+  "description": "A fragment of Poseidon's legendary trident, required to access the Trident Site.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2000,
+  "nameKey": "item.poseidon_trident_fragment.name",
+  "descriptionKey": "item.poseidon_trident_fragment.description"
+}

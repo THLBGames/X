@@ -1,0 +1,12 @@
+{
+  "id": "preserved_artifact",
+  "name": "Preserved Artifact",
+  "description": "An artifact preserved by time or water.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 120,
+  "nameKey": "item.preserved_artifact.name",
+  "descriptionKey": "item.preserved_artifact.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "star_chart",
+  "name": "Star Chart",
+  "description": "An ancient chart mapping the stars.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 180,
+  "nameKey": "item.star_chart.name",
+  "descriptionKey": "item.star_chart.description"
+}

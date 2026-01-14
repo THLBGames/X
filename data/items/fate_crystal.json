@@ -1,0 +1,12 @@
+{
+  "id": "fate_crystal",
+  "name": "Fate Crystal",
+  "description": "A crystal that resonates with the threads of fate.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150,
+  "nameKey": "item.fate_crystal.name",
+  "descriptionKey": "item.fate_crystal.description"
+}

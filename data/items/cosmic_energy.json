@@ -1,0 +1,12 @@
+{
+  "id": "cosmic_energy",
+  "name": "Cosmic Energy",
+  "description": "Raw energy from the cosmos itself.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 120,
+  "nameKey": "item.cosmic_energy.name",
+  "descriptionKey": "item.cosmic_energy.description"
+}

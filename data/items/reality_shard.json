@@ -1,0 +1,12 @@
+{
+  "id": "reality_shard",
+  "name": "Reality Shard",
+  "description": "A shard from the fabric of reality itself.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2000,
+  "nameKey": "item.reality_shard.name",
+  "descriptionKey": "item.reality_shard.description"
+}

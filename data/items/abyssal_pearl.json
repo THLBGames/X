@@ -1,0 +1,12 @@
+{
+  "id": "abyssal_pearl",
+  "name": "Abyssal Pearl",
+  "description": "A dark pearl from the abyssal depths.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 100,
+  "nameKey": "item.abyssal_pearl.name",
+  "descriptionKey": "item.abyssal_pearl.description"
+}

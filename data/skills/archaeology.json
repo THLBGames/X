@@ -25,6 +25,162 @@
           "itemId": "ancient_coin",
           "chance": 0.3,
           "quantity": 1
+        },
+        {
+          "itemId": "pottery_shard",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "nodeId": "burial_ground",
+      "name": "Burial Ground",
+      "successRate": 0.84,
+      "experienceGain": 28,
+      "timeRequired": 6200,
+      "resources": [
+        {
+          "itemId": "ancient_shard",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "pottery_shard",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_coin",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "stone_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "ruins",
+      "name": "Ancient Ruins",
+      "successRate": 0.83,
+      "experienceGain": 40,
+      "timeRequired": 6500,
+      "resources": [
+        {
+          "itemId": "pottery_shard",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_coin",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_shard",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_tool",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "cave_paintings",
+      "name": "Cave Paintings",
+      "successRate": 0.82,
+      "experienceGain": 55,
+      "timeRequired": 6800,
+      "resources": [
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_papyrus",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_shard",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "stone_circle",
+      "name": "Stone Circle",
+      "successRate": 0.81,
+      "experienceGain": 65,
+      "timeRequired": 7000,
+      "resources": [
+        {
+          "itemId": "rune_stone",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_gem",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "stone_fragment",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_map",
+          "chance": 0.003,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "ancient_village",
+      "name": "Ancient Village",
+      "successRate": 0.8,
+      "experienceGain": 75,
+      "timeRequired": 7200,
+      "resources": [
+        {
+          "itemId": "ancient_tool",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "pottery_shard",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_coin",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_map",
+          "chance": 0.003,
+          "quantity": 1
         }
       ]
     },
@@ -50,6 +206,205 @@
         {
           "itemId": "ancient_scroll",
           "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "sunken_ruins",
+      "name": "Sunken Ruins",
+      "successRate": 0.78,
+      "experienceGain": 95,
+      "timeRequired": 7500,
+      "resources": [
+        {
+          "itemId": "preserved_artifact",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_coin",
+          "chance": 0.45,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "ancient_library",
+      "name": "Ancient Library",
+      "successRate": 0.77,
+      "experienceGain": 110,
+      "timeRequired": 7800,
+      "resources": [
+        {
+          "itemId": "ancient_scroll",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_papyrus",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_tome_material",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_map",
+          "chance": 0.003,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "pyramid_site",
+      "name": "Pyramid Site",
+      "successRate": 0.76,
+      "experienceGain": 130,
+      "timeRequired": 8000,
+      "resources": [
+        {
+          "itemId": "golden_artifact",
+          "chance": 0.8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "pharaoh_gold",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "mummy_wrapping",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "pharaoh_key",
+          "chance": 0.002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "map_room",
+      "name": "Map Room",
+      "successRate": 0.74,
+      "experienceGain": 195,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_map",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ancient_map",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "star_chart",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_papyrus",
+          "chance": 0.6,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "mystic_ruins",
+      "name": "Mystic Ruins",
+      "successRate": 0.75,
+      "experienceGain": 150,
+      "timeRequired": 8200,
+      "resources": [
+        {
+          "itemId": "mystic_relic",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_gem",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "rune_stone",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "dragon_burial_site",
+      "name": "Dragon Burial Site",
+      "successRate": 0.74,
+      "experienceGain": 180,
+      "timeRequired": 8500,
+      "resources": [
+        {
+          "itemId": "dragon_bone",
+          "chance": 0.7,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "dragon_scale_ancient",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_gem",
+          "chance": 0.35,
           "quantity": 1
         }
       ]
@@ -86,6 +441,247 @@
       ]
     },
     {
+      "level": 65,
+      "nodeId": "underwater_temple",
+      "name": "Underwater Temple",
+      "successRate": 0.71,
+      "experienceGain": 220,
+      "timeRequired": 8800,
+      "resources": [
+        {
+          "itemId": "preserved_artifact",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "pharaoh_key",
+          "chance": 0.002,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "pharaoh_chamber",
+      "name": "Pharaoh's Chamber",
+      "successRate": 0.73,
+      "experienceGain": 330,
+      "timeRequired": 9500,
+      "unlockRequirements": [
+        {
+          "itemId": "pharaoh_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "pharaoh_gold",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "golden_artifact",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "mummy_wrapping",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.7,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "celestial_observatory",
+      "name": "Celestial Observatory",
+      "successRate": 0.7,
+      "experienceGain": 260,
+      "timeRequired": 9000,
+      "resources": [
+        {
+          "itemId": "star_chart",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_chart",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_gem",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "sphinx_puzzle",
+          "chance": 0.001,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "ancient_citadel",
+      "name": "Ancient Citadel",
+      "successRate": 0.69,
+      "experienceGain": 300,
+      "timeRequired": 9200,
+      "resources": [
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "golden_artifact",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_gem",
+          "chance": 0.45,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "forgotten_kingdom",
+      "name": "Forgotten Kingdom",
+      "successRate": 0.68,
+      "experienceGain": 340,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.7,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "golden_artifact",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "sphinx_puzzle",
+          "chance": 0.001,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "sphinx_vault",
+      "name": "Sphinx's Vault",
+      "successRate": 0.72,
+      "experienceGain": 510,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "sphinx_puzzle",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "sphinx_statue",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "golden_artifact",
+          "chance": 0.7,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "demon_ruins",
+      "name": "Demon Ruins",
+      "successRate": 0.67,
+      "experienceGain": 380,
+      "timeRequired": 9800,
+      "resources": [
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "mystic_relic",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_gem",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "time_crystal",
+          "chance": 0.0005,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 90,
       "nodeId": "forgotten_tomb",
       "name": "Forgotten Tomb",
@@ -110,28 +706,298 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 90,
+      "nodeId": "time_portal",
+      "name": "Time Portal",
+      "successRate": 0.7,
+      "experienceGain": 600,
+      "timeRequired": 11000,
+      "unlockRequirements": [
+        {
+          "itemId": "time_crystal",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "time_crystal",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "time_sand",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_relic",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "divine_ruins",
+      "name": "Divine Ruins",
+      "successRate": 0.65,
+      "experienceGain": 480,
+      "timeRequired": 10500,
+      "resources": [
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_chart",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_relic",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "atlantean_archive",
+      "name": "Atlantean Archive",
+      "successRate": 0.72,
+      "experienceGain": 720,
+      "timeRequired": 11500,
+      "unlockRequirements": [
+        {
+          "itemId": "atlantis_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "atlantean_artifact",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "atlantean_tablet",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_relic",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_archaeologist_site",
+      "name": "Master Archaeologist's Site",
+      "successRate": 0.6,
+      "experienceGain": 600,
+      "timeRequired": 12000,
+      "resources": [
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_relic",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_chart",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_vault",
+      "name": "Master's Vault",
+      "successRate": 0.75,
+      "experienceGain": 900,
+      "timeRequired": 12000,
+      "unlockRequirements": [
+        {
+          "itemId": "master_archaeologist_badge",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ancient_treasure",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_relic",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_chart",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "atlantean_artifact",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 5
+        }
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 10
+        },
+        "itemFindRate": 0.05
+      }
+    },
+    {
       "level": 40,
       "bonus": {
         "goldGeneration": 0.1,
+        "statBonus": {
+          "wisdom": 15
+        },
         "itemFindRate": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 20,
+          "intelligence": 5
+        },
+        "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 25,
+          "intelligence": 10
+        },
+        "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 30,
+          "intelligence": 15
+        },
+        "itemFindRate": 0.15
       }
     },
     {
       "level": 80,
       "bonus": {
         "goldGeneration": 0.2,
+        "statBonus": {
+          "wisdom": 35,
+          "intelligence": 20
+        },
         "itemFindRate": 0.1
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "statBonus": {
+          "wisdom": 40,
+          "intelligence": 25
+        },
+        "itemFindRate": 0.15
       }
     },
     {
       "level": 99,
       "bonus": {
         "goldGeneration": 0.3,
-        "itemFindRate": 0.15
+        "itemFindRate": 0.15,
+        "statBonus": {
+          "wisdom": 45,
+          "intelligence": 30
+        }
       }
     }
   ],

@@ -1,0 +1,12 @@
+{
+  "id": "time_sand",
+  "name": "Time Sand",
+  "description": "Sand that seems to flow backwards in time.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1500,
+  "nameKey": "item.time_sand.name",
+  "descriptionKey": "item.time_sand.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "dragon_scale_ancient",
+  "name": "Ancient Dragon Scale",
+  "description": "A scale from an ancient dragon, preserved for millennia.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800,
+  "nameKey": "item.dragon_scale_ancient.name",
+  "descriptionKey": "item.dragon_scale_ancient.description"
+}

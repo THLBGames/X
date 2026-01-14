@@ -1,0 +1,12 @@
+{
+  "id": "golden_artifact",
+  "name": "Golden Artifact",
+  "description": "A valuable artifact made of gold from ancient times.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 600,
+  "nameKey": "item.golden_artifact.name",
+  "descriptionKey": "item.golden_artifact.description"
+}

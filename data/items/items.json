@@ -1,7 +1,31 @@
 {
   "version": "1.0.0",
-  "total_items": 528,
+  "total_items": 622,
   "items": {
+    "abyssal_fish": {
+      "id": "abyssal_fish",
+      "name": "Abyssal Fish",
+      "description": "A rare fish from the abyssal depths.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.abyssal_fish.name",
+      "descriptionKey": "item.abyssal_fish.description"
+    },
+    "abyssal_pearl": {
+      "id": "abyssal_pearl",
+      "name": "Abyssal Pearl",
+      "description": "A dark pearl from the abyssal depths.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 100,
+      "nameKey": "item.abyssal_pearl.name",
+      "descriptionKey": "item.abyssal_pearl.description"
+    },
     "adamantite_armor": {
       "id": "adamantite_armor",
       "name": "Adamantite Armor",
@@ -689,6 +713,30 @@
       "nameKey": "item.ancient_coin.name",
       "descriptionKey": "item.ancient_coin.description"
     },
+    "ancient_essence": {
+      "id": "ancient_essence",
+      "name": "Ancient Essence",
+      "description": "Primordial essence from ancient waters.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.ancient_essence.name",
+      "descriptionKey": "item.ancient_essence.description"
+    },
+    "ancient_fish": {
+      "id": "ancient_fish",
+      "name": "Ancient Fish",
+      "description": "A fish species that has existed since ancient times.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 45,
+      "nameKey": "item.ancient_fish.name",
+      "descriptionKey": "item.ancient_fish.description"
+    },
     "ancient_gem": {
       "id": "ancient_gem",
       "name": "Ancient Gem",
@@ -701,6 +749,30 @@
       "nameKey": "item.ancient_gem.name",
       "descriptionKey": "item.ancient_gem.description"
     },
+    "ancient_map": {
+      "id": "ancient_map",
+      "name": "Ancient Map",
+      "description": "An ancient map revealing hidden locations, required to access the Map Room.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "nameKey": "item.ancient_map.name",
+      "descriptionKey": "item.ancient_map.description"
+    },
+    "ancient_papyrus": {
+      "id": "ancient_papyrus",
+      "name": "Ancient Papyrus",
+      "description": "An ancient scroll made of papyrus with writings.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.ancient_papyrus.name",
+      "descriptionKey": "item.ancient_papyrus.description"
+    },
     "ancient_relic": {
       "id": "ancient_relic",
       "name": "Ancient Relic",
@@ -712,6 +784,18 @@
       "value": 400,
       "nameKey": "item.ancient_relic.name",
       "descriptionKey": "item.ancient_relic.description"
+    },
+    "ancient_scale": {
+      "id": "ancient_scale",
+      "name": "Ancient Scale",
+      "description": "A scale from an ancient fish species.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 75,
+      "nameKey": "item.ancient_scale.name",
+      "descriptionKey": "item.ancient_scale.description"
     },
     "ancient_scroll": {
       "id": "ancient_scroll",
@@ -762,6 +846,30 @@
       },
       "nameKey": "item.ancient_tome.name",
       "descriptionKey": "item.ancient_tome.description"
+    },
+    "ancient_tome_material": {
+      "id": "ancient_tome_material",
+      "name": "Ancient Tome",
+      "description": "An ancient book of knowledge and wisdom.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.ancient_tome_material.name",
+      "descriptionKey": "item.ancient_tome_material.description"
+    },
+    "ancient_tool": {
+      "id": "ancient_tool",
+      "name": "Ancient Tool",
+      "description": "A tool used by ancient civilizations.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.ancient_tool.name",
+      "descriptionKey": "item.ancient_tool.description"
     },
     "ancient_treasure": {
       "id": "ancient_treasure",
@@ -1425,6 +1533,42 @@
       "nameKey": "item.assassin_gloves.name",
       "descriptionKey": "item.assassin_gloves.description"
     },
+    "atlantean_artifact": {
+      "id": "atlantean_artifact",
+      "name": "Atlantean Artifact",
+      "description": "An artifact from the lost city of Atlantis.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3500,
+      "nameKey": "item.atlantean_artifact.name",
+      "descriptionKey": "item.atlantean_artifact.description"
+    },
+    "atlantean_tablet": {
+      "id": "atlantean_tablet",
+      "name": "Atlantean Tablet",
+      "description": "A tablet inscribed with Atlantean writing.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.atlantean_tablet.name",
+      "descriptionKey": "item.atlantean_tablet.description"
+    },
+    "atlantis_key": {
+      "id": "atlantis_key",
+      "name": "Atlantis Key",
+      "description": "The key to the lost city of Atlantis, required to access the Atlantis Ruins.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 3000,
+      "nameKey": "item.atlantis_key.name",
+      "descriptionKey": "item.atlantis_key.description"
+    },
     "balrog_horn": {
       "id": "balrog_horn",
       "name": "Balrog Horn",
@@ -1648,6 +1792,18 @@
       "value": 1,
       "nameKey": "item.berry_seed.name",
       "descriptionKey": "item.berry_seed.description"
+    },
+    "black_pearl": {
+      "id": "black_pearl",
+      "name": "Black Pearl",
+      "description": "A rare black pearl of great value.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 250,
+      "nameKey": "item.black_pearl.name",
+      "descriptionKey": "item.black_pearl.description"
     },
     "blessed_water": {
       "id": "blessed_water",
@@ -1895,6 +2051,18 @@
       "nameKey": "item.bronze_mace.name",
       "descriptionKey": "item.bronze_mace.description"
     },
+    "bronze_ore": {
+      "id": "bronze_ore",
+      "name": "Bronze Ore",
+      "description": "An alloy ore made from copper and tin, used for crafting durable equipment.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.bronze_ore.name",
+      "descriptionKey": "item.bronze_ore.description"
+    },
     "bronze_spear": {
       "id": "bronze_spear",
       "name": "Bronze Spear",
@@ -1944,6 +2112,66 @@
       },
       "nameKey": "item.bronze_sword.name",
       "descriptionKey": "item.bronze_sword.description"
+    },
+    "celestial_chart": {
+      "id": "celestial_chart",
+      "name": "Celestial Chart",
+      "description": "An ancient chart mapping the stars and celestial bodies.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1800,
+      "nameKey": "item.celestial_chart.name",
+      "descriptionKey": "item.celestial_chart.description"
+    },
+    "celestial_fish": {
+      "id": "celestial_fish",
+      "name": "Celestial Fish",
+      "description": "A divine fish from celestial waters.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 350,
+      "nameKey": "item.celestial_fish.name",
+      "descriptionKey": "item.celestial_fish.description"
+    },
+    "celestial_insight": {
+      "id": "celestial_insight",
+      "name": "Celestial Insight",
+      "description": "A crystal containing celestial wisdom and insight.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 650,
+      "nameKey": "item.celestial_insight.name",
+      "descriptionKey": "item.celestial_insight.description"
+    },
+    "celestial_key": {
+      "id": "celestial_key",
+      "name": "Celestial Key",
+      "description": "A key that opens the Celestial Sanctum.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2000,
+      "nameKey": "item.celestial_key.name",
+      "descriptionKey": "item.celestial_key.description"
+    },
+    "celestial_scale": {
+      "id": "celestial_scale",
+      "name": "Celestial Scale",
+      "description": "A divine scale from celestial fish.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 400,
+      "nameKey": "item.celestial_scale.name",
+      "descriptionKey": "item.celestial_scale.description"
     },
     "chain": {
       "id": "chain",
@@ -2214,6 +2442,18 @@
       "nameKey": "item.copper_sword.name",
       "descriptionKey": "item.copper_sword.description"
     },
+    "cosmic_energy": {
+      "id": "cosmic_energy",
+      "name": "Cosmic Energy",
+      "description": "Raw energy from the cosmos itself.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.cosmic_energy.name",
+      "descriptionKey": "item.cosmic_energy.description"
+    },
     "crystal_shard": {
       "id": "crystal_shard",
       "name": "Crystal Shard",
@@ -2225,6 +2465,18 @@
       "value": 15,
       "nameKey": "item.crystal_shard.name",
       "descriptionKey": "item.crystal_shard.description"
+    },
+    "crystal_shard_divination": {
+      "id": "crystal_shard_divination",
+      "name": "Divination Crystal Shard",
+      "description": "A crystal shard infused with divinatory energy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.crystal_shard_divination.name",
+      "descriptionKey": "item.crystal_shard_divination.description"
     },
     "curse_removal_scroll": {
       "id": "curse_removal_scroll",
@@ -2290,6 +2542,18 @@
       "nameKey": "item.dark_relic.name",
       "descriptionKey": "item.dark_relic.description"
     },
+    "deep_sea_fish": {
+      "id": "deep_sea_fish",
+      "name": "Deep Sea Fish",
+      "description": "A fish from the deep ocean depths.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.deep_sea_fish.name",
+      "descriptionKey": "item.deep_sea_fish.description"
+    },
     "defense_potion": {
       "id": "defense_potion",
       "name": "Defense Potion",
@@ -2329,6 +2593,42 @@
       "value": 500,
       "nameKey": "item.demon_heart.name",
       "descriptionKey": "item.demon_heart.description"
+    },
+    "destiny_anchor": {
+      "id": "destiny_anchor",
+      "name": "Destiny Anchor",
+      "description": "An anchor that binds destinies together.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5000,
+      "nameKey": "item.destiny_anchor.name",
+      "descriptionKey": "item.destiny_anchor.description"
+    },
+    "destiny_anchor_key": {
+      "id": "destiny_anchor_key",
+      "name": "Destiny Anchor Key",
+      "description": "A key that opens the Chamber of Destiny.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 4000,
+      "nameKey": "item.destiny_anchor_key.name",
+      "descriptionKey": "item.destiny_anchor_key.description"
+    },
+    "destiny_fragment": {
+      "id": "destiny_fragment",
+      "name": "Destiny Fragment",
+      "description": "A fragment containing glimpses of destiny.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 550,
+      "nameKey": "item.destiny_fragment.name",
+      "descriptionKey": "item.destiny_fragment.description"
     },
     "dexterity_ring_t1": {
       "id": "dexterity_ring_t1",
@@ -2396,6 +2696,30 @@
       "nameKey": "item.dexterity_ring_t3.name",
       "descriptionKey": "item.dexterity_ring_t3.description"
     },
+    "divination_fragment": {
+      "id": "divination_fragment",
+      "name": "Divination Fragment",
+      "description": "A fragment containing divinatory power.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4,
+      "nameKey": "item.divination_fragment.name",
+      "descriptionKey": "item.divination_fragment.description"
+    },
+    "divine_artifact": {
+      "id": "divine_artifact",
+      "name": "Divine Artifact",
+      "description": "An artifact touched by divine power.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.divine_artifact.name",
+      "descriptionKey": "item.divine_artifact.description"
+    },
     "divine_boots": {
       "id": "divine_boots",
       "name": "Divine Boots",
@@ -2450,6 +2774,30 @@
       },
       "nameKey": "item.divine_crown.name",
       "descriptionKey": "item.divine_crown.description"
+    },
+    "divine_energy": {
+      "id": "divine_energy",
+      "name": "Divine Energy",
+      "description": "Pure energy channeled from the cosmos.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.divine_energy.name",
+      "descriptionKey": "item.divine_energy.description"
+    },
+    "divine_fragment": {
+      "id": "divine_fragment",
+      "name": "Divine Fragment",
+      "description": "A fragment of divine essence, used in the creation of mythic equipment.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2500,
+      "nameKey": "item.divine_fragment.name",
+      "descriptionKey": "item.divine_fragment.description"
     },
     "divine_gloves": {
       "id": "divine_gloves",
@@ -2545,6 +2893,30 @@
       "nameKey": "item.divine_orb.name",
       "descriptionKey": "item.divine_orb.description"
     },
+    "divine_ore": {
+      "id": "divine_ore",
+      "name": "Divine Ore",
+      "description": "An otherworldly metal ore imbued with divine energy, the ultimate material for crafting.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.divine_ore.name",
+      "descriptionKey": "item.divine_ore.description"
+    },
+    "divine_prophecy": {
+      "id": "divine_prophecy",
+      "name": "Divine Prophecy",
+      "description": "A prophecy channeled directly from the divine.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2200,
+      "nameKey": "item.divine_prophecy.name",
+      "descriptionKey": "item.divine_prophecy.description"
+    },
     "divine_robes": {
       "id": "divine_robes",
       "name": "Divine Robes",
@@ -2598,6 +2970,18 @@
       "nameKey": "item.divine_robes_bottom.name",
       "descriptionKey": "item.divine_robes_bottom.description"
     },
+    "diviner_scroll": {
+      "id": "diviner_scroll",
+      "name": "Diviner's Scroll",
+      "description": "An ancient scroll that unlocks the Diviner's Library.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "nameKey": "item.diviner_scroll.name",
+      "descriptionKey": "item.diviner_scroll.description"
+    },
     "dragon_blood": {
       "id": "dragon_blood",
       "name": "Dragon Blood",
@@ -2613,7 +2997,7 @@
     "dragon_bone": {
       "id": "dragon_bone",
       "name": "Dragon Bone",
-      "description": "A bone from a dragon.",
+      "description": "A bone from an ancient dragon, still radiating power.",
       "type": "material",
       "rarity": "legendary",
       "stackable": true,
@@ -2633,6 +3017,18 @@
       "value": 2000,
       "nameKey": "item.dragon_scale.name",
       "descriptionKey": "item.dragon_scale.description"
+    },
+    "dragon_scale_ancient": {
+      "id": "dragon_scale_ancient",
+      "name": "Ancient Dragon Scale",
+      "description": "A scale from an ancient dragon, preserved for millennia.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 800,
+      "nameKey": "item.dragon_scale_ancient.name",
+      "descriptionKey": "item.dragon_scale_ancient.description"
     },
     "dragonbone_armor": {
       "id": "dragonbone_armor",
@@ -2864,6 +3260,18 @@
       },
       "nameKey": "item.dragonhide_armor.name",
       "descriptionKey": "item.dragonhide_armor.description"
+    },
+    "dragonstone": {
+      "id": "dragonstone",
+      "name": "Dragonstone",
+      "description": "A legendary gem imbued with draconic power, used in the finest jewelry.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1500,
+      "nameKey": "item.dragonstone.name",
+      "descriptionKey": "item.dragonstone.description"
     },
     "dwarven_ale": {
       "id": "dwarven_ale",
@@ -3570,6 +3978,42 @@
       "nameKey": "item.experience_potion_small.name",
       "descriptionKey": "item.experience_potion_small.description"
     },
+    "fate_crystal": {
+      "id": "fate_crystal",
+      "name": "Fate Crystal",
+      "description": "A crystal that resonates with the threads of fate.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.fate_crystal.name",
+      "descriptionKey": "item.fate_crystal.description"
+    },
+    "fate_weaver": {
+      "id": "fate_weaver",
+      "name": "Fate Weaver",
+      "description": "An artifact that weaves the threads of fate.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4000,
+      "nameKey": "item.fate_weaver.name",
+      "descriptionKey": "item.fate_weaver.description"
+    },
+    "fate_weaver_key": {
+      "id": "fate_weaver_key",
+      "name": "Fate Weaver Key",
+      "description": "A key that opens the Fate Weaver's Chamber.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2500,
+      "nameKey": "item.fate_weaver_key.name",
+      "descriptionKey": "item.fate_weaver_key.description"
+    },
     "fertilizer": {
       "id": "fertilizer",
       "name": "Fertilizer",
@@ -3770,6 +4214,18 @@
       "nameKey": "item.fire_core.name",
       "descriptionKey": "item.fire_core.description"
     },
+    "fire_fish": {
+      "id": "fire_fish",
+      "name": "Fire Fish",
+      "description": "A fish adapted to volcanic waters, radiating heat.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 100,
+      "nameKey": "item.fire_fish.name",
+      "descriptionKey": "item.fire_fish.description"
+    },
     "fish_bone": {
       "id": "fish_bone",
       "name": "Fish Bone",
@@ -3781,6 +4237,18 @@
       "value": 1,
       "nameKey": "item.fish_bone.name",
       "descriptionKey": "item.fish_bone.description"
+    },
+    "fish_scale": {
+      "id": "fish_scale",
+      "name": "Fish Scale",
+      "description": "A common fish scale.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1,
+      "nameKey": "item.fish_scale.name",
+      "descriptionKey": "item.fish_scale.description"
     },
     "fish_stew": {
       "id": "fish_stew",
@@ -3797,6 +4265,66 @@
       },
       "nameKey": "item.fish_stew.name",
       "descriptionKey": "item.fish_stew.description"
+    },
+    "fishing_bait": {
+      "id": "fishing_bait",
+      "name": "Fishing Bait",
+      "description": "Bait used to attract fish.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2,
+      "nameKey": "item.fishing_bait.name",
+      "descriptionKey": "item.fishing_bait.description"
+    },
+    "fossil_fragment": {
+      "id": "fossil_fragment",
+      "name": "Fossil Fragment",
+      "description": "A fragment from an ancient fossil found in lake beds.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 60,
+      "nameKey": "item.fossil_fragment.name",
+      "descriptionKey": "item.fossil_fragment.description"
+    },
+    "freshwater_fish": {
+      "id": "freshwater_fish",
+      "name": "Freshwater Fish",
+      "description": "A fish caught from freshwater sources.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.freshwater_fish.name",
+      "descriptionKey": "item.freshwater_fish.description"
+    },
+    "freshwater_pearl": {
+      "id": "freshwater_pearl",
+      "name": "Freshwater Pearl",
+      "description": "A pearl found in freshwater sources.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.freshwater_pearl.name",
+      "descriptionKey": "item.freshwater_pearl.description"
+    },
+    "frost_crystal": {
+      "id": "frost_crystal",
+      "name": "Frost Crystal",
+      "description": "A crystal formed in frozen waters.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.frost_crystal.name",
+      "descriptionKey": "item.frost_crystal.description"
     },
     "fruit": {
       "id": "fruit",
@@ -3869,6 +4397,18 @@
       "value": 75,
       "nameKey": "item.gem_rare.name",
       "descriptionKey": "item.gem_rare.description"
+    },
+    "gem_uncommon": {
+      "id": "gem_uncommon",
+      "name": "Uncommon Gem",
+      "description": "A gem of uncommon quality used in jewelry crafting.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.gem_uncommon.name",
+      "descriptionKey": "item.gem_uncommon.description"
     },
     "giant_scale": {
       "id": "giant_scale",
@@ -3966,6 +4506,30 @@
       "value": 50,
       "nameKey": "item.gold_ore.name",
       "descriptionKey": "item.gold_ore.description"
+    },
+    "golden_artifact": {
+      "id": "golden_artifact",
+      "name": "Golden Artifact",
+      "description": "A valuable artifact made of gold from ancient times.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.golden_artifact.name",
+      "descriptionKey": "item.golden_artifact.description"
+    },
+    "golden_fishing_rod": {
+      "id": "golden_fishing_rod",
+      "name": "Golden Fishing Rod",
+      "description": "The ultimate fishing rod, required to access the Golden Fishing Rod Spot.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 5000,
+      "nameKey": "item.golden_fishing_rod.name",
+      "descriptionKey": "item.golden_fishing_rod.description"
     },
     "grand_feast": {
       "id": "grand_feast",
@@ -4194,6 +4758,18 @@
       "value": 600,
       "nameKey": "item.holy_relic.name",
       "descriptionKey": "item.holy_relic.description"
+    },
+    "ice_fish": {
+      "id": "ice_fish",
+      "name": "Ice Fish",
+      "description": "A fish that thrives in frozen waters.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 100,
+      "nameKey": "item.ice_fish.name",
+      "descriptionKey": "item.ice_fish.description"
     },
     "identification_scroll": {
       "id": "identification_scroll",
@@ -4650,6 +5226,42 @@
       "nameKey": "item.jewelry.name",
       "descriptionKey": "item.jewelry.description"
     },
+    "kraken_ink": {
+      "id": "kraken_ink",
+      "name": "Kraken Ink",
+      "description": "Dark ink from a legendary kraken.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 750,
+      "nameKey": "item.kraken_ink.name",
+      "descriptionKey": "item.kraken_ink.description"
+    },
+    "kraken_tentacle": {
+      "id": "kraken_tentacle",
+      "name": "Kraken Tentacle",
+      "description": "A tentacle from a legendary kraken, required to access the Kraken's Lair.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1000,
+      "nameKey": "item.kraken_tentacle.name",
+      "descriptionKey": "item.kraken_tentacle.description"
+    },
+    "lake_fish": {
+      "id": "lake_fish",
+      "name": "Lake Fish",
+      "description": "A fish caught from deep lakes.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 10,
+      "nameKey": "item.lake_fish.name",
+      "descriptionKey": "item.lake_fish.description"
+    },
     "large_fish": {
       "id": "large_fish",
       "name": "Large Fish",
@@ -4661,6 +5273,18 @@
       "value": 30,
       "nameKey": "item.large_fish.name",
       "descriptionKey": "item.large_fish.description"
+    },
+    "lava_core": {
+      "id": "lava_core",
+      "name": "Lava Core",
+      "description": "A core of molten rock from volcanic vents.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.lava_core.name",
+      "descriptionKey": "item.lava_core.description"
     },
     "leather": {
       "id": "leather",
@@ -5064,6 +5688,18 @@
       "nameKey": "item.legendary_trinket.name",
       "descriptionKey": "item.legendary_trinket.description"
     },
+    "leviathan_scale": {
+      "id": "leviathan_scale",
+      "name": "Leviathan Scale",
+      "description": "A massive scale from a legendary leviathan.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 800,
+      "nameKey": "item.leviathan_scale.name",
+      "descriptionKey": "item.leviathan_scale.description"
+    },
     "lich_phylactery": {
       "id": "lich_phylactery",
       "name": "Lich Phylactery",
@@ -5401,6 +6037,18 @@
       "nameKey": "item.magic_essence.name",
       "descriptionKey": "item.magic_essence.description"
     },
+    "magic_fish": {
+      "id": "magic_fish",
+      "name": "Magic Fish",
+      "description": "A fish infused with magical energy.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.magic_fish.name",
+      "descriptionKey": "item.magic_fish.description"
+    },
     "magic_fruit": {
       "id": "magic_fruit",
       "name": "Magic Fruit",
@@ -5521,6 +6169,18 @@
       "nameKey": "item.mana_potion_small.name",
       "descriptionKey": "item.mana_potion_small.description"
     },
+    "mana_scale": {
+      "id": "mana_scale",
+      "name": "Mana Scale",
+      "description": "A fish scale infused with magical energy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 20,
+      "nameKey": "item.mana_scale.name",
+      "descriptionKey": "item.mana_scale.description"
+    },
     "maple_log": {
       "id": "maple_log",
       "name": "Maple Log",
@@ -5557,6 +6217,30 @@
       "nameKey": "item.marble.name",
       "descriptionKey": "item.marble.description"
     },
+    "master_archaeologist_badge": {
+      "id": "master_archaeologist_badge",
+      "name": "Master Archaeologist Badge",
+      "description": "The ultimate badge of archaeological mastery, required to access the Master's Vault.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 5000,
+      "nameKey": "item.master_archaeologist_badge.name",
+      "descriptionKey": "item.master_archaeologist_badge.description"
+    },
+    "master_diviner_seal": {
+      "id": "master_diviner_seal",
+      "name": "Master Diviner's Seal",
+      "description": "The ultimate seal that opens the Master Diviner's Sanctuary.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 6000,
+      "nameKey": "item.master_diviner_seal.name",
+      "descriptionKey": "item.master_diviner_seal.description"
+    },
     "mechanical_device": {
       "id": "mechanical_device",
       "name": "Mechanical Device",
@@ -5580,6 +6264,30 @@
       "value": 8,
       "nameKey": "item.medium_fish.name",
       "descriptionKey": "item.medium_fish.description"
+    },
+    "mermaid_scale": {
+      "id": "mermaid_scale",
+      "name": "Mermaid Scale",
+      "description": "A rare scale from a mermaid, required to access secret fishing locations.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 500,
+      "nameKey": "item.mermaid_scale.name",
+      "descriptionKey": "item.mermaid_scale.description"
+    },
+    "mermaid_tear": {
+      "id": "mermaid_tear",
+      "name": "Mermaid Tear",
+      "description": "A tear from a mermaid, said to hold great magical power.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 400,
+      "nameKey": "item.mermaid_tear.name",
+      "descriptionKey": "item.mermaid_tear.description"
     },
     "metal_ring": {
       "id": "metal_ring",
@@ -6093,6 +6801,30 @@
       "nameKey": "item.monster_pelt.name",
       "descriptionKey": "item.monster_pelt.description"
     },
+    "moon_essence": {
+      "id": "moon_essence",
+      "name": "Moon Essence",
+      "description": "Essence drawn from moonlight phases.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.moon_essence.name",
+      "descriptionKey": "item.moon_essence.description"
+    },
+    "mummy_wrapping": {
+      "id": "mummy_wrapping",
+      "name": "Mummy Wrapping",
+      "description": "Ancient wrapping from a mummy, still intact.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.mummy_wrapping.name",
+      "descriptionKey": "item.mummy_wrapping.description"
+    },
     "mushroom": {
       "id": "mushroom",
       "name": "Mushroom",
@@ -6132,6 +6864,18 @@
       },
       "nameKey": "item.mutton.name",
       "descriptionKey": "item.mutton.description"
+    },
+    "mystic_relic": {
+      "id": "mystic_relic",
+      "name": "Mystic Relic",
+      "description": "A relic imbued with mystical energy.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 550,
+      "nameKey": "item.mystic_relic.name",
+      "descriptionKey": "item.mystic_relic.description"
     },
     "mythic_staff": {
       "id": "mythic_staff",
@@ -6311,6 +7055,18 @@
       "nameKey": "item.order_shard.name",
       "descriptionKey": "item.order_shard.description"
     },
+    "orichalcum_ore": {
+      "id": "orichalcum_ore",
+      "name": "Orichalcum Ore",
+      "description": "A mythical metal ore of ancient power, used for crafting legendary equipment.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 750,
+      "nameKey": "item.orichalcum_ore.name",
+      "descriptionKey": "item.orichalcum_ore.description"
+    },
     "pearl": {
       "id": "pearl",
       "name": "Pearl",
@@ -6441,6 +7197,30 @@
       "nameKey": "item.phantom_pants.name",
       "descriptionKey": "item.phantom_pants.description"
     },
+    "pharaoh_gold": {
+      "id": "pharaoh_gold",
+      "name": "Pharaoh Gold",
+      "description": "Gold from an ancient pharaoh's tomb.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.pharaoh_gold.name",
+      "descriptionKey": "item.pharaoh_gold.description"
+    },
+    "pharaoh_key": {
+      "id": "pharaoh_key",
+      "name": "Pharaoh Key",
+      "description": "A key from an ancient pharaoh, required to access the Pharaoh's Chamber.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1500,
+      "nameKey": "item.pharaoh_key.name",
+      "descriptionKey": "item.pharaoh_key.description"
+    },
     "phoenix_ash": {
       "id": "phoenix_ash",
       "name": "Phoenix Ash",
@@ -6479,6 +7259,30 @@
       "nameKey": "item.phoenix_staff.name",
       "descriptionKey": "item.phoenix_staff.description"
     },
+    "planetary_alignment": {
+      "id": "planetary_alignment",
+      "name": "Planetary Alignment",
+      "description": "A crystal capturing planetary alignment energy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.planetary_alignment.name",
+      "descriptionKey": "item.planetary_alignment.description"
+    },
+    "platinum_ore": {
+      "id": "platinum_ore",
+      "name": "Platinum Ore",
+      "description": "A rare precious metal ore used for crafting exquisite jewelry and equipment.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 75,
+      "nameKey": "item.platinum_ore.name",
+      "descriptionKey": "item.platinum_ore.description"
+    },
     "poison_gland": {
       "id": "poison_gland",
       "name": "Poison Gland",
@@ -6503,6 +7307,18 @@
       "nameKey": "item.polished_stone.name",
       "descriptionKey": "item.polished_stone.description"
     },
+    "poseidon_trident_fragment": {
+      "id": "poseidon_trident_fragment",
+      "name": "Poseidon Trident Fragment",
+      "description": "A fragment of Poseidon's legendary trident, required to access the Trident Site.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2000,
+      "nameKey": "item.poseidon_trident_fragment.name",
+      "descriptionKey": "item.poseidon_trident_fragment.description"
+    },
     "potion_meal": {
       "id": "potion_meal",
       "name": "Potion Meal",
@@ -6518,6 +7334,18 @@
       },
       "nameKey": "item.potion_meal.name",
       "descriptionKey": "item.potion_meal.description"
+    },
+    "pottery_shard": {
+      "id": "pottery_shard",
+      "name": "Pottery Shard",
+      "description": "A fragment of ancient pottery.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.pottery_shard.name",
+      "descriptionKey": "item.pottery_shard.description"
     },
     "precious_metal": {
       "id": "precious_metal",
@@ -6543,6 +7371,18 @@
       "nameKey": "item.precision_gear.name",
       "descriptionKey": "item.precision_gear.description"
     },
+    "preserved_artifact": {
+      "id": "preserved_artifact",
+      "name": "Preserved Artifact",
+      "description": "An artifact preserved by time or water.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.preserved_artifact.name",
+      "descriptionKey": "item.preserved_artifact.description"
+    },
     "primal_essence": {
       "id": "primal_essence",
       "name": "Primal Essence",
@@ -6554,6 +7394,66 @@
       "value": 2000,
       "nameKey": "item.primal_essence.name",
       "descriptionKey": "item.primal_essence.description"
+    },
+    "primordial_fish": {
+      "id": "primordial_fish",
+      "name": "Primordial Fish",
+      "description": "A fish from the primordial seas of creation.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 800,
+      "nameKey": "item.primordial_fish.name",
+      "descriptionKey": "item.primordial_fish.description"
+    },
+    "primordial_relic": {
+      "id": "primordial_relic",
+      "name": "Primordial Relic",
+      "description": "A relic from the primordial age of creation.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4500,
+      "nameKey": "item.primordial_relic.name",
+      "descriptionKey": "item.primordial_relic.description"
+    },
+    "primordial_vision": {
+      "id": "primordial_vision",
+      "name": "Primordial Vision",
+      "description": "A vision from the primordial age of creation.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4500,
+      "nameKey": "item.primordial_vision.name",
+      "descriptionKey": "item.primordial_vision.description"
+    },
+    "prismatic_shard": {
+      "id": "prismatic_shard",
+      "name": "Prismatic Shard",
+      "description": "A rainbow-colored crystal shard containing all elements, used in ultimate crafting.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1000,
+      "nameKey": "item.prismatic_shard.name",
+      "descriptionKey": "item.prismatic_shard.description"
+    },
+    "prophecy_scroll": {
+      "id": "prophecy_scroll",
+      "name": "Prophecy Scroll",
+      "description": "An ancient scroll containing prophetic visions.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.prophecy_scroll.name",
+      "descriptionKey": "item.prophecy_scroll.description"
     },
     "quality_meal": {
       "id": "quality_meal",
@@ -7121,6 +8021,18 @@
       "nameKey": "item.quest_item_50.name",
       "descriptionKey": "item.quest_item_50.description"
     },
+    "rainbow_pearl": {
+      "id": "rainbow_pearl",
+      "name": "Rainbow Pearl",
+      "description": "A magnificent pearl that shimmers with all colors.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.rainbow_pearl.name",
+      "descriptionKey": "item.rainbow_pearl.description"
+    },
     "rare_berry": {
       "id": "rare_berry",
       "name": "Rare Berry",
@@ -7228,6 +8140,18 @@
       "value": 12,
       "nameKey": "item.raw_meat_quality.name",
       "descriptionKey": "item.raw_meat_quality.description"
+    },
+    "reality_shard": {
+      "id": "reality_shard",
+      "name": "Reality Shard",
+      "description": "A shard from the fabric of reality itself.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2000,
+      "nameKey": "item.reality_shard.name",
+      "descriptionKey": "item.reality_shard.description"
     },
     "reinforced_leather_armor": {
       "id": "reinforced_leather_armor",
@@ -7686,6 +8610,18 @@
       "nameKey": "item.ring_tier6_3.name",
       "descriptionKey": "item.ring_tier6_3.description"
     },
+    "river_fish": {
+      "id": "river_fish",
+      "name": "River Fish",
+      "description": "A fish caught from flowing rivers.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.river_fish.name",
+      "descriptionKey": "item.river_fish.description"
+    },
     "roasted_meat": {
       "id": "roasted_meat",
       "name": "Roasted Meat",
@@ -7789,6 +8725,30 @@
       "value": 250,
       "nameKey": "item.rune_stone_rare.name",
       "descriptionKey": "item.rune_stone_rare.description"
+    },
+    "runite_ore": {
+      "id": "runite_ore",
+      "name": "Runite Ore",
+      "description": "A high-tier magical metal ore used for crafting powerful equipment.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.runite_ore.name",
+      "descriptionKey": "item.runite_ore.description"
+    },
+    "saltwater_fish": {
+      "id": "saltwater_fish",
+      "name": "Saltwater Fish",
+      "description": "A fish caught from saltwater oceans.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 6,
+      "nameKey": "item.saltwater_fish.name",
+      "descriptionKey": "item.saltwater_fish.description"
     },
     "sapphire_amulet": {
       "id": "sapphire_amulet",
@@ -8267,6 +9227,30 @@
       "nameKey": "item.speed_potion.name",
       "descriptionKey": "item.speed_potion.description"
     },
+    "sphinx_puzzle": {
+      "id": "sphinx_puzzle",
+      "name": "Sphinx Puzzle",
+      "description": "A mysterious puzzle piece from the Sphinx, required to access the Sphinx's Vault.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2500,
+      "nameKey": "item.sphinx_puzzle.name",
+      "descriptionKey": "item.sphinx_puzzle.description"
+    },
+    "sphinx_statue": {
+      "id": "sphinx_statue",
+      "name": "Sphinx Statue",
+      "description": "A statue of a sphinx from ancient times.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1200,
+      "nameKey": "item.sphinx_statue.name",
+      "descriptionKey": "item.sphinx_statue.description"
+    },
     "spider_silk": {
       "id": "spider_silk",
       "name": "Spider Silk",
@@ -8302,6 +9286,42 @@
       "value": 12,
       "nameKey": "item.spring.name",
       "descriptionKey": "item.spring.description"
+    },
+    "star_chart": {
+      "id": "star_chart",
+      "name": "Star Chart",
+      "description": "An ancient chart mapping the stars.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 180,
+      "nameKey": "item.star_chart.name",
+      "descriptionKey": "item.star_chart.description"
+    },
+    "star_chart_divination": {
+      "id": "star_chart_divination",
+      "name": "Divination Star Chart",
+      "description": "A chart mapping stars for divinatory purposes.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 40,
+      "nameKey": "item.star_chart_divination.name",
+      "descriptionKey": "item.star_chart_divination.description"
+    },
+    "star_dust": {
+      "id": "star_dust",
+      "name": "Star Dust",
+      "description": "Dust from distant stars, glowing faintly.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.star_dust.name",
+      "descriptionKey": "item.star_dust.description"
     },
     "steel": {
       "id": "steel",
@@ -8607,6 +9627,18 @@
       "nameKey": "item.steel_mask.name",
       "descriptionKey": "item.steel_mask.description"
     },
+    "steel_ore": {
+      "id": "steel_ore",
+      "name": "Steel Ore",
+      "description": "A strong alloy ore created from iron and coal, used for crafting quality equipment.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 12,
+      "nameKey": "item.steel_ore.name",
+      "descriptionKey": "item.steel_ore.description"
+    },
     "steel_shield": {
       "id": "steel_shield",
       "name": "Steel Shield",
@@ -8740,6 +9772,18 @@
       "value": 1,
       "nameKey": "item.stone.name",
       "descriptionKey": "item.stone.description"
+    },
+    "stone_fragment": {
+      "id": "stone_fragment",
+      "name": "Stone Fragment",
+      "description": "A fragment of stone from ancient structures.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.stone_fragment.name",
+      "descriptionKey": "item.stone_fragment.description"
     },
     "strength_potion": {
       "id": "strength_potion",
@@ -8885,6 +9929,54 @@
       "nameKey": "item.thread_quality.name",
       "descriptionKey": "item.thread_quality.description"
     },
+    "time_crystal": {
+      "id": "time_crystal",
+      "name": "Time Crystal",
+      "description": "A crystal that pulses with temporal energy, required to access the Time Portal.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 4000,
+      "nameKey": "item.time_crystal.name",
+      "descriptionKey": "item.time_crystal.description"
+    },
+    "time_sand": {
+      "id": "time_sand",
+      "name": "Time Sand",
+      "description": "Sand that seems to flow backwards in time.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1500,
+      "nameKey": "item.time_sand.name",
+      "descriptionKey": "item.time_sand.description"
+    },
+    "time_vision": {
+      "id": "time_vision",
+      "name": "Time Vision",
+      "description": "A vision crystallized from temporal energies.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1800,
+      "nameKey": "item.time_vision.name",
+      "descriptionKey": "item.time_vision.description"
+    },
+    "tin_ore": {
+      "id": "tin_ore",
+      "name": "Tin Ore",
+      "description": "A soft metal ore used in alloy crafting.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2,
+      "nameKey": "item.tin_ore.name",
+      "descriptionKey": "item.tin_ore.description"
+    },
     "trade_good": {
       "id": "trade_good",
       "name": "Trade Good",
@@ -8984,6 +10076,18 @@
       "value": 15,
       "nameKey": "item.troll_hide.name",
       "descriptionKey": "item.troll_hide.description"
+    },
+    "tropical_fish": {
+      "id": "tropical_fish",
+      "name": "Tropical Fish",
+      "description": "A colorful fish from tropical waters.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 12,
+      "nameKey": "item.tropical_fish.name",
+      "descriptionKey": "item.tropical_fish.description"
     },
     "uncommon_herb": {
       "id": "uncommon_herb",
@@ -9177,6 +10281,18 @@
       "nameKey": "item.vitality_amulet_t3.name",
       "descriptionKey": "item.vitality_amulet_t3.description"
     },
+    "void_crystal": {
+      "id": "void_crystal",
+      "name": "Void Crystal",
+      "description": "A crystal containing void energy, used in advanced runecrafting and enchanting.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 400,
+      "nameKey": "item.void_crystal.name",
+      "descriptionKey": "item.void_crystal.description"
+    },
     "void_essence": {
       "id": "void_essence",
       "name": "Void Essence",
@@ -9188,6 +10304,18 @@
       "value": 1000,
       "nameKey": "item.void_essence.name",
       "descriptionKey": "item.void_essence.description"
+    },
+    "void_fish": {
+      "id": "void_fish",
+      "name": "Void Fish",
+      "description": "A mysterious fish touched by void energy.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 300,
+      "nameKey": "item.void_fish.name",
+      "descriptionKey": "item.void_fish.description"
     },
     "void_shard": {
       "id": "void_shard",
