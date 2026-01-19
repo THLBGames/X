@@ -27,6 +27,7 @@ export enum ConsumableEffectType {
   BUFF = 'buff',
   EXPERIENCE = 'experience',
   OFFLINE_TIME = 'offlineTime',
+  CUSTOM = 'custom', // For custom effects like chests that grant loot
 }
 
 export enum CombatActionType {

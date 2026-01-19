@@ -1,0 +1,113 @@
+.treasure-chest-modal {
+  min-width: 500px;
+  max-width: 600px;
+}
+
+.treasure-chest-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.treasure-gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255, 215, 0, 0.15);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.gold-icon {
+  font-size: 1.5rem;
+}
+
+.gold-amount {
+  color: #ffd700;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.treasure-items {
+  margin-top: 20px;
+}
+
+.treasure-items h3 {
+  color: #fff;
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-reward {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background: #333;
+  border: 2px solid #444;
+  transition: all 0.2s;
+}
+
+.item-reward:hover {
+  background: #3a3a3a;
+  border-color: #555;
+}
+
+.item-reward.rarity-common {
+  border-color: #9d9d9d;
+}
+
+.item-reward.rarity-uncommon {
+  border-color: #1eff00;
+}
+
+.item-reward.rarity-rare {
+  border-color: #0070dd;
+}
+
+.item-reward.rarity-epic {
+  border-color: #a335ee;
+}
+
+.item-reward.rarity-legendary {
+  border-color: #ff8000;
+}
+
+.item-reward.rarity-mythic {
+  border-color: #e6cc80;
+  box-shadow: 0 0 8px rgba(230, 204, 128, 0.5);
+}
+
+.item-reward .item-name {
+  color: #fff;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.item-reward .item-quantity {
+  color: #4a9eff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.treasure-empty {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-style: italic;
+}

@@ -10,6 +10,8 @@ import { showNotification } from './NotificationManager';
 import TooltipWrapper from './TooltipWrapper';
 import ItemContextMenu from './ItemContextMenu';
 import SellItemModal from './SellItemModal';
+import TreasureChestModal from './TreasureChestModal';
+import { generateChestLoot } from '../systems/treasure/TreasureChestManager';
 import type { Item, Inventory } from '@idle-rpg/shared';
 import { VALID_COMBAT_CONSUMABLE_EFFECTS, MAX_CONSUMABLE_BAR_SLOTS, ItemType, ConsumableEffectType } from '@idle-rpg/shared';
 import { UI_MESSAGES } from '../constants/ui';
@@ -34,6 +36,10 @@ export default function InventoryPanel() {
   } | null>(null);
   const [sellModalItem, setSellModalItem] = useState<Item | null>(null);
   const [isRightClick, setIsRightClick] = useState(false);
+  const [treasureChestLoot, setTreasureChestLoot] = useState<{
+    items: Array<{ itemId: string; quantity: number }>;
+    gold: number;
+  } | null>(null);
 
   const dataLoader = getDataLoader();
 
@@ -166,6 +172,39 @@ export default function InventoryPanel() {
       // For now, just show a notification
       showNotification(UI_MESSAGES.BUFF_APPLIED(effect.buffId), 'info', 3000);
       audioManager.playSound('/audio/sfx/buff.mp3', 0.6);
+    } else if (effect.type === ConsumableEffectType.CUSTOM || effect.type === 'custom') {
+      // Handle chest-style items (treasure chests, loot boxes, etc.)
+      try {
+        const lootResult = generateChestLoot(item);
+      
+      // Add gold and items to inventory
+      let currentInventory = inventory;
+      if (lootResult.gold > 0) {
+        currentInventory = InventoryManager.addItem(currentInventory, 'gold', lootResult.gold);
+      }
+      
+      for (const lootItem of lootResult.items) {
+        try {
+          currentInventory = InventoryManager.addItem(currentInventory, lootItem.itemId, lootItem.quantity);
+        } catch (error) {
+          console.warn(`Failed to add item ${lootItem.itemId} to inventory:`, error);
+        }
+      }
+      
+      // Remove treasure chest from inventory
+      const newInventory = InventoryManager.removeItem(currentInventory, itemId, 1);
+      setInventory(newInventory);
+      
+        // Show treasure chest modal
+        setTreasureChestLoot(lootResult);
+        audioManager.playSound('/audio/sfx/victory.mp3', 0.6);
+        
+        return; // Return early to avoid removing item twice
+      } catch (error) {
+        console.error('Failed to open chest:', error);
+        alert(error instanceof Error ? error.message : 'Failed to open chest');
+        return;
+      }
     }
 
     setCharacter(updatedCharacter);
@@ -345,6 +384,14 @@ export default function InventoryPanel() {
           inventory={inventory}
           onClose={() => setSellModalItem(null)}
           onSell={handleSellFromModal}
+        />
+      )}
+      {treasureChestLoot && (
+        <TreasureChestModal
+          isOpen={!!treasureChestLoot}
+          onClose={() => setTreasureChestLoot(null)}
+          items={treasureChestLoot.items}
+          gold={treasureChestLoot.gold}
         />
       )}
     </div>

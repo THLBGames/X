@@ -133,6 +133,12 @@ export interface ConsumableEffect {
   buffId?: string;
   duration?: number; // For buffs, in seconds
   offlineTimeHours?: number; // Hours to add to max offline time (for offline time upgrades)
+  // For custom effects (like chests)
+  lootTable?: LootEntry[]; // Loot table for chest-style items
+  goldReward?: {
+    min: number;
+    max: number;
+  }; // Gold reward range for chest-style items
 }
 
 // Loot table entry
