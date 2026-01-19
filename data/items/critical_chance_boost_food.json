@@ -1,0 +1,17 @@
+{
+  "id": "critical_chance_boost_food",
+  "name": "Critical Chance Boost Food",
+  "description": "Increases critical hit chance for a duration.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 80,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "critical_chance_boost",
+    "duration": 600
+  },
+  "nameKey": "item.critical_chance_boost_food.name",
+  "descriptionKey": "item.critical_chance_boost_food.description"
+}

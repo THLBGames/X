@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_upgrades": 159,
+  "total_upgrades": 161,
   "upgrades": {
     "alchemy_boost_consumable": {
       "id": "alchemy_boost_consumable",
@@ -541,6 +541,35 @@
       "nameKey": "upgrade.cooking_upgrade_V.name",
       "descriptionKey": "upgrade.cooking_upgrade_V.description"
     },
+    "cooking_master_chef": {
+      "id": "cooking_master_chef",
+      "name": "Master Chef",
+      "description": "Unlocks 15 ultra-rare cooking recipes requiring legendary components. Grants access to master-tier feasts and meals.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "VI",
+      "price": 25000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "phoenix_feast_secret",
+          "dragon_heart_stew_secret",
+          "divine_banquet_secret",
+          "world_tree_nectar_secret",
+          "celestial_banquet_secret",
+          "primal_meal_secret",
+          "omnipotence_meal_uber",
+          "reality_breaking_soup_uber",
+          "godlike_feast_uber"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 85,
+        "previousTierId": "cooking_upgrade_V"
+      },
+      "nameKey": "upgrade.cooking_master_chef.name",
+      "descriptionKey": "upgrade.cooking_master_chef.description"
+    },
     "divination_boost_consumable": {
       "id": "divination_boost_consumable",
       "name": "Divination Boost",
@@ -900,6 +929,31 @@
       },
       "nameKey": "upgrade.engineering_upgrade_V.name",
       "descriptionKey": "upgrade.engineering_upgrade_V.description"
+    },
+    "engineering_master_blueprint": {
+      "id": "engineering_master_blueprint",
+      "name": "Master Engineer's Blueprint",
+      "description": "Unlocks secret engineering recipes for advanced devices. Requires engineering level 70.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "Master",
+      "price": 50000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "ancient_scroll_device",
+          "master_engineer_blueprint",
+          "phoenix_core_engine",
+          "dragon_scale_mechanism",
+          "void_crystal_construct",
+          "divine_engineering_core"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 70
+      },
+      "nameKey": "upgrade.engineering_master_blueprint.name",
+      "descriptionKey": "upgrade.engineering_master_blueprint.description"
     },
     "farming_boost_consumable": {
       "id": "farming_boost_consumable",

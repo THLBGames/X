@@ -1,0 +1,17 @@
+{
+  "id": "cooking_foraging_xp_food",
+  "name": "Foraging Experience Food",
+  "description": "Increases foraging experience gain.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 32,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "foraging_xp_boost"
+  },
+  "nameKey": "item.cooking_foraging_xp_food.name",
+  "descriptionKey": "item.cooking_foraging_xp_food.description"
+}

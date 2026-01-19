@@ -1,0 +1,17 @@
+{
+  "id": "cooking_enchanting_xp_food",
+  "name": "Enchanting Experience Food",
+  "description": "Increases enchanting experience gain.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 135,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "enchanting_xp_boost"
+  },
+  "nameKey": "item.cooking_enchanting_xp_food.name",
+  "descriptionKey": "item.cooking_enchanting_xp_food.description"
+}

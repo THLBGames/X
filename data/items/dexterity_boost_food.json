@@ -1,0 +1,17 @@
+{
+  "id": "dexterity_boost_food",
+  "name": "Dexterity Boost Food",
+  "description": "Increases dexterity for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 65,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "dexterity_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.dexterity_boost_food.name",
+  "descriptionKey": "item.dexterity_boost_food.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cooking_runecrafting_xp_food",
+  "name": "Runecrafting Experience Food",
+  "description": "Increases runecrafting experience gain.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 145,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "runecrafting_xp_boost"
+  },
+  "nameKey": "item.cooking_runecrafting_xp_food.name",
+  "descriptionKey": "item.cooking_runecrafting_xp_food.description"
+}

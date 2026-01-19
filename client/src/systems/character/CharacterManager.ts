@@ -23,7 +23,7 @@ export class CharacterManager {
     }
 
     const baseStats = { ...characterClass.baseStats };
-    const combatStats = this.calculateCombatStats(baseStats, {}, []);
+    const combatStats = this.calculateCombatStats(baseStats, {}, [], undefined);
 
     return {
       id: `char_${Date.now()}`,
@@ -52,7 +52,7 @@ export class CharacterManager {
   }
 
   /**
-   * Calculate combat stats from base stats, equipment, and status effects
+   * Calculate combat stats from base stats, equipment, enchantments, and status effects
    */
   static calculateCombatStats(
     baseStats: Stats,
@@ -60,7 +60,8 @@ export class CharacterManager {
     statusEffects: Array<{
       statModifier?: Partial<Stats>;
       combatStatModifier?: Partial<CombatStats>;
-    }>
+    }>,
+    character?: Character
   ): CombatStats {
     const dataLoader = getDataLoader();
     let stats = { ...baseStats };
@@ -91,6 +92,22 @@ export class CharacterManager {
               stats[statKey] = (stats[statKey] || 0) + value;
             }
           });
+        }
+
+        // Apply enchantments from this item
+        if (character?.itemEnchantments) {
+          const key = `${slot}_${itemId}`;
+          const enchantments = character.itemEnchantments[key] || [];
+          for (const enchantment of enchantments) {
+            if (enchantment.statBonus) {
+              Object.entries(enchantment.statBonus).forEach(([key, value]) => {
+                const statKey = key as keyof Stats;
+                if (value !== undefined) {
+                  stats[statKey] = (stats[statKey] || 0) + value;
+                }
+              });
+            }
+          }
         }
       }
     }
@@ -148,7 +165,7 @@ export class CharacterManager {
     // Critical Chance = (Dexterity + Luck) * 0.1%
     combatStats.criticalChance = (stats.dexterity + stats.luck) * 0.1;
 
-    // Apply equipment combat stat bonuses
+    // Apply equipment combat stat bonuses and enchantments
     for (const slot of equipmentSlots) {
       const itemId = equipment[slot];
       if (itemId) {
@@ -160,6 +177,22 @@ export class CharacterManager {
               (combatStats[combatStatKey] as number) += value;
             }
           });
+        }
+
+        // Apply enchantments from this item (combat stat bonuses)
+        if (character?.itemEnchantments) {
+          const key = `${slot}_${itemId}`;
+          const enchantments = character.itemEnchantments[key] || [];
+          for (const enchantment of enchantments) {
+            if (enchantment.combatStatBonus) {
+              Object.entries(enchantment.combatStatBonus).forEach(([key, value]) => {
+                const combatStatKey = key as keyof CombatStats;
+                if (value !== undefined && combatStats[combatStatKey] !== undefined) {
+                  (combatStats[combatStatKey] as number) += value;
+                }
+              });
+            }
+          }
         }
       }
     }
@@ -280,7 +313,8 @@ export class CharacterManager {
       character.statusEffects.map((_se) => {
         // In a real implementation, you'd load the status effect definition
         return { statModifier: {}, combatStatModifier: {} };
-      })
+      }),
+      character
     );
 
     // Grant skill point (every level)
@@ -312,12 +346,13 @@ export class CharacterManager {
   }
 
   /**
-   * Calculate current stats (base stats + equipment bonuses + status effects)
+   * Calculate current stats (base stats + equipment bonuses + enchantments + status effects)
    */
   static calculateCurrentStats(
     baseStats: Stats,
     equipment: Equipment,
-    statusEffects: ActiveStatusEffect[]
+    statusEffects: ActiveStatusEffect[],
+    character?: Character
   ): Stats {
     const dataLoader = getDataLoader();
     const stats = { ...baseStats };
@@ -334,7 +369,7 @@ export class CharacterManager {
       'amulet',
     ];
 
-    // Apply equipment stat bonuses
+    // Apply equipment stat bonuses and enchantments
     for (const slot of equipmentSlots) {
       const itemId = equipment[slot];
       if (itemId) {
@@ -346,6 +381,22 @@ export class CharacterManager {
               stats[statKey] = (stats[statKey] || 0) + value;
             }
           });
+        }
+
+        // Apply enchantments from this item
+        if (character.itemEnchantments) {
+          const key = `${slot}_${itemId}`;
+          const enchantments = character.itemEnchantments[key] || [];
+          for (const enchantment of enchantments) {
+            if (enchantment.statBonus) {
+              Object.entries(enchantment.statBonus).forEach(([key, value]) => {
+                const statKey = key as keyof Stats;
+                if (value !== undefined) {
+                  stats[statKey] = (stats[statKey] || 0) + value;
+                }
+              });
+            }
+          }
         }
       }
     }
@@ -364,11 +415,12 @@ export class CharacterManager {
    * Update character's current stats based on equipment and status effects
    */
   static updateCharacterStats(character: Character): Character {
-    // Calculate current stats (base stats + equipment bonuses)
+    // Calculate current stats (base stats + equipment bonuses + enchantments)
     let currentStats = this.calculateCurrentStats(
       character.baseStats,
       character.equipment,
-      character.statusEffects
+      character.statusEffects,
+      character
     );
 
     // Apply divination unlock tree stat bonuses
@@ -426,7 +478,7 @@ export class CharacterManager {
     combatStats.speed = currentStats.dexterity * 1.5;
     combatStats.criticalChance = (currentStats.dexterity + currentStats.luck) * 0.1;
 
-    // Apply equipment combat stat bonuses
+    // Apply equipment combat stat bonuses and enchantments
     for (const slot of equipmentSlots) {
       const itemId = character.equipment[slot];
       if (itemId) {
@@ -438,6 +490,22 @@ export class CharacterManager {
               (combatStats[combatStatKey] as number) += value;
             }
           });
+        }
+
+        // Apply enchantments from this item (combat stat bonuses)
+        if (character.itemEnchantments) {
+          const key = `${slot}_${itemId}`;
+          const enchantments = character.itemEnchantments[key] || [];
+          for (const enchantment of enchantments) {
+            if (enchantment.combatStatBonus) {
+              Object.entries(enchantment.combatStatBonus).forEach(([key, value]) => {
+                const combatStatKey = key as keyof CombatStats;
+                if (value !== undefined && combatStats[combatStatKey] !== undefined) {
+                  (combatStats[combatStatKey] as number) += value;
+                }
+              });
+            }
+          }
         }
       }
     }

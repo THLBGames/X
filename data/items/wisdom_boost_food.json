@@ -1,0 +1,17 @@
+{
+  "id": "wisdom_boost_food",
+  "name": "Wisdom Boost Food",
+  "description": "Increases wisdom for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 75,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "wisdom_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.wisdom_boost_food.name",
+  "descriptionKey": "item.wisdom_boost_food.description"
+}

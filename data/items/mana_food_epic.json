@@ -1,0 +1,16 @@
+{
+  "id": "mana_food_epic",
+  "name": "Epic Mana Food",
+  "description": "Restores 800 mana.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 220,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 800
+  },
+  "nameKey": "item.mana_food_epic.name",
+  "descriptionKey": "item.mana_food_epic.description"
+}

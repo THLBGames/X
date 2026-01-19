@@ -1,0 +1,16 @@
+{
+  "id": "health_food_epic",
+  "name": "Epic Health Food",
+  "description": "Restores 1000 health.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 250,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 1000
+  },
+  "nameKey": "item.health_food_epic.name",
+  "descriptionKey": "item.health_food_epic.description"
+}

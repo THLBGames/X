@@ -43,7 +43,9 @@
         "buffId": { "type": "string" },
         "duration": { "type": "number" }
       }
-    }
+    },
+    "maxEnchantments": { "type": "number", "description": "Maximum number of enchantments this item can have (defaults based on rarity if not specified)" },
+    "enchantmentSlots": { "type": "number", "description": "Number of enchantment slots available (synonym for maxEnchantments)" }
   }
 }
 

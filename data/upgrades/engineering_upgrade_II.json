@@ -1,7 +1,7 @@
 {
   "id": "engineering_upgrade_II",
   "name": "Engineering Upgrade II",
-  "description": "Permanently increases engineering XP gain by 15%, speed by 8%, and yield by 8%",
+  "description": "Permanently increases engineering XP gain by 15%, speed by 8%, success rate by 8%, and yield by 8%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "engineering",
@@ -10,8 +10,8 @@
   "bonuses": {
     "experienceMultiplier": 1.15,
     "speedMultiplier": 0.92,
-    "yieldMultiplier": 1.08,
-    "successRateBonus": 0.08
+    "successRateBonus": 0.08,
+    "yieldMultiplier": 1.08
   },
   "requirements": {
     "previousTierId": "engineering_upgrade_I"

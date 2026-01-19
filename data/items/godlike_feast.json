@@ -1,0 +1,17 @@
+{
+  "id": "godlike_feast",
+  "name": "Godlike Feast",
+  "description": "The ultimate feast that grants temporary godlike powers across all skills and combat.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 25000,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "godlike_boost",
+    "duration": 18000
+  },
+  "nameKey": "item.godlike_feast.name",
+  "descriptionKey": "item.godlike_feast.description"
+}

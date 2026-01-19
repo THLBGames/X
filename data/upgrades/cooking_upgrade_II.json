@@ -6,7 +6,7 @@
   "scope": "skill",
   "skillId": "cooking",
   "tier": "II",
-  "price": 2828,
+  "price": 1000,
   "bonuses": {
     "experienceMultiplier": 1.15,
     "speedMultiplier": 0.92,

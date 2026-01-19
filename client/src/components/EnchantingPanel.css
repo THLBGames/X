@@ -1,0 +1,273 @@
+.enchanting-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+.enchanting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #444;
+}
+
+.enchanting-header h2 {
+  margin: 0;
+}
+
+.enchanting-level {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #8f8;
+}
+
+.enchanting-content {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.enchanting-sidebar {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.items-section {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.items-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item-entry {
+  padding: 0.75rem;
+  background: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.item-entry:hover {
+  background: #3a3a3a;
+}
+
+.item-entry.selected {
+  background: #4a4a4a;
+  border: 2px solid #8f8;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.item-slot,
+.item-quantity,
+.enchantment-count {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.enchanting-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.selected-item-info {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.selected-item-info h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.current-enchantments {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+}
+
+.current-enchantments h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.enchantment-item {
+  padding: 0.5rem;
+  background: #333;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.enchantments-section {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.enchantments-section h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe-entry {
+  padding: 1rem;
+  background: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.recipe-entry:hover {
+  background: #3a3a3a;
+}
+
+.recipe-entry.selected {
+  background: #4a4a4a;
+  border: 2px solid #8f8;
+}
+
+.recipe-entry.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.unlock-badge {
+  padding: 0.25rem 0.5rem;
+  background: #844;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.recipe-description {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-requirements {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.unlock-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #484;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.unlock-button:hover {
+  background: #5a5;
+}
+
+.enchantment-details {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.enchantment-details h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.recipe-info {
+  margin-bottom: 1rem;
+}
+
+.recipe-info ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.recipe-info li.insufficient {
+  color: #f88;
+}
+
+.enchant-button {
+  width: 100%;
+  padding: 1rem;
+  background: #484;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.enchant-button:hover:not(:disabled) {
+  background: #5a5;
+}
+
+.enchant-button:disabled {
+  background: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  color: #f88;
+  font-size: 0.9rem;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #888;
+}

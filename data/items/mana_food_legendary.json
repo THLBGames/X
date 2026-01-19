@@ -1,0 +1,16 @@
+{
+  "id": "mana_food_legendary",
+  "name": "Legendary Mana Food",
+  "description": "Restores 1500 mana.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 450,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 1500
+  },
+  "nameKey": "item.mana_food_legendary.name",
+  "descriptionKey": "item.mana_food_legendary.description"
+}

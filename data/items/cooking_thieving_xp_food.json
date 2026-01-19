@@ -1,0 +1,17 @@
+{
+  "id": "cooking_thieving_xp_food",
+  "name": "Thieving Experience Food",
+  "description": "Increases thieving experience gain.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 80,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "thieving_xp_boost"
+  },
+  "nameKey": "item.cooking_thieving_xp_food.name",
+  "descriptionKey": "item.cooking_thieving_xp_food.description"
+}

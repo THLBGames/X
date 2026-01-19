@@ -1,0 +1,16 @@
+{
+  "id": "health_food_large",
+  "name": "Large Health Food",
+  "description": "Restores 500 health.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 100,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 500
+  },
+  "nameKey": "item.health_food_large.name",
+  "descriptionKey": "item.health_food_large.description"
+}

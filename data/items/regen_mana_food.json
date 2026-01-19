@@ -1,0 +1,17 @@
+{
+  "id": "regen_mana_food",
+  "name": "Mana Regeneration Food",
+  "description": "Gradually restores mana over time.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 50,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "mana_regen",
+    "duration": 300
+  },
+  "nameKey": "item.regen_mana_food.name",
+  "descriptionKey": "item.regen_mana_food.description"
+}

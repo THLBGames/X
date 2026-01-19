@@ -1,0 +1,480 @@
+{
+  "version": "1.0.0",
+  "total_recipes": 35,
+  "recipes": {
+    "recipe_minor_strength": {
+      "id": "recipe_minor_strength",
+      "enchantmentId": "minor_strength",
+      "name": "Enchant: Minor Strength",
+      "description": "Enchant an item with minor strength bonus",
+      "requiredEnchantingLevel": 5,
+      "materials": [
+        {
+          "itemId": "minor_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 25,
+      "goldCost": 50
+    },
+    "recipe_minor_dexterity": {
+      "id": "recipe_minor_dexterity",
+      "enchantmentId": "minor_dexterity",
+      "name": "Enchant: Minor Dexterity",
+      "description": "Enchant an item with minor dexterity bonus",
+      "requiredEnchantingLevel": 5,
+      "materials": [
+        {
+          "itemId": "minor_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 25,
+      "goldCost": 50
+    },
+    "recipe_minor_intelligence": {
+      "id": "recipe_minor_intelligence",
+      "enchantmentId": "minor_intelligence",
+      "name": "Enchant: Minor Intelligence",
+      "description": "Enchant an item with minor intelligence bonus",
+      "requiredEnchantingLevel": 5,
+      "materials": [
+        {
+          "itemId": "minor_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 25,
+      "goldCost": 50
+    },
+    "recipe_minor_attack": {
+      "id": "recipe_minor_attack",
+      "enchantmentId": "minor_attack",
+      "name": "Enchant: Minor Attack",
+      "description": "Enchant an item with minor attack bonus",
+      "requiredEnchantingLevel": 8,
+      "materials": [
+        {
+          "itemId": "minor_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 30,
+      "goldCost": 75
+    },
+    "recipe_moderate_strength": {
+      "id": "recipe_moderate_strength",
+      "enchantmentId": "moderate_strength",
+      "name": "Enchant: Moderate Strength",
+      "description": "Enchant an item with moderate strength bonus",
+      "requiredEnchantingLevel": 25,
+      "materials": [
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 80,
+      "goldCost": 200
+    },
+    "recipe_moderate_attack": {
+      "id": "recipe_moderate_attack",
+      "enchantmentId": "moderate_attack",
+      "name": "Enchant: Moderate Attack",
+      "description": "Enchant an item with moderate attack bonus",
+      "requiredEnchantingLevel": 28,
+      "materials": [
+        {
+          "itemId": "moderate_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 100,
+      "goldCost": 300
+    },
+    "recipe_greater_strength": {
+      "id": "recipe_greater_strength",
+      "enchantmentId": "greater_strength",
+      "name": "Enchant: Greater Strength",
+      "description": "Enchant an item with greater strength bonus",
+      "requiredEnchantingLevel": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 200,
+      "goldCost": 800
+    },
+    "recipe_greater_attack": {
+      "id": "recipe_greater_attack",
+      "enchantmentId": "greater_attack",
+      "name": "Enchant: Greater Attack",
+      "description": "Enchant an item with greater attack bonus",
+      "requiredEnchantingLevel": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "greater_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 2
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 250,
+      "goldCost": 1000
+    },
+    "recipe_supreme_strength": {
+      "id": "recipe_supreme_strength",
+      "enchantmentId": "supreme_strength",
+      "name": "Enchant: Supreme Strength",
+      "description": "Enchant an item with supreme strength bonus",
+      "requiredEnchantingLevel": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 75
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "supreme_essence",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 2
+        }
+      ],
+      "baseSuccessRate": 0.85,
+      "experienceGain": 400,
+      "goldCost": 2000
+    },
+    "recipe_lifesteal_minor": {
+      "id": "recipe_lifesteal_minor",
+      "enchantmentId": "lifesteal_minor",
+      "name": "Enchant: Minor Lifesteal",
+      "description": "Enchant an item with minor lifesteal effect",
+      "requiredEnchantingLevel": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 35
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "moderate_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "blood_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.80,
+      "experienceGain": 150,
+      "goldCost": 500
+    },
+    "recipe_mana_on_hit_minor": {
+      "id": "recipe_mana_on_hit_minor",
+      "enchantmentId": "mana_on_hit_minor",
+      "name": "Enchant: Minor Mana on Hit",
+      "description": "Enchant an item with minor mana on hit effect",
+      "requiredEnchantingLevel": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "runecrafting",
+          "level": 35
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "moderate_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.80,
+      "experienceGain": 150,
+      "goldCost": 500
+    },
+    "recipe_critical_boost_minor": {
+      "id": "recipe_critical_boost_minor",
+      "enchantmentId": "critical_boost_minor",
+      "name": "Enchant: Minor Critical Boost",
+      "description": "Enchant an item with minor critical chance boost",
+      "requiredEnchantingLevel": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "jewelcrafting",
+          "level": 35
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "moderate_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "baseSuccessRate": 0.80,
+      "experienceGain": 130,
+      "goldCost": 450
+    },
+    "recipe_experience_gain_minor": {
+      "id": "recipe_experience_gain_minor",
+      "enchantmentId": "experience_gain_minor",
+      "name": "Enchant: Minor Experience Gain",
+      "description": "Enchant an item with minor experience gain boost",
+      "requiredEnchantingLevel": 45,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 40
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "greater_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "fate_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 1
+        }
+      ],
+      "baseSuccessRate": 0.75,
+      "experienceGain": 180,
+      "goldCost": 600
+    },
+    "recipe_ancient_scroll_enchant": {
+      "id": "recipe_ancient_scroll_enchant",
+      "enchantmentId": "ancient_scroll_enchant",
+      "name": "Enchant: Ancient Scroll",
+      "description": "Secret enchantment using ancient knowledge",
+      "requiredEnchantingLevel": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 30
+        }
+      ],
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 5
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 3
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "baseSuccessRate": 0.75,
+      "experienceGain": 200,
+      "goldCost": 800
+    },
+    "recipe_prismatic_enchant": {
+      "id": "recipe_prismatic_enchant",
+      "enchantmentId": "prismatic_enchant",
+      "name": "Enchant: Prismatic",
+      "description": "Legendary enchantment using prismatic shards",
+      "requiredEnchantingLevel": 95,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 85
+        },
+        {
+          "skillId": "jewelcrafting",
+          "level": 80
+        }
+      ],
+      "unlockRequirements": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 2
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 8
+        }
+      ],
+      "baseSuccessRate": 0.70,
+      "experienceGain": 650,
+      "goldCost": 5000
+    },
+    "recipe_divine_enchant": {
+      "id": "recipe_divine_enchant",
+      "enchantmentId": "divine_enchant",
+      "name": "Enchant: Divine",
+      "description": "Ultimate enchantment of divine power",
+      "requiredEnchantingLevel": 99,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        },
+        {
+          "skillId": "archaeology",
+          "level": 90
+        },
+        {
+          "skillId": "divination",
+          "level": 85
+        }
+      ],
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "void_essence",
+          "quantity": 1
+        }
+      ],
+      "materials": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 10
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 5
+        }
+      ],
+      "baseSuccessRate": 0.65,
+      "experienceGain": 750,
+      "goldCost": 10000
+    }
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "version": "1.0.0",
+  "total_enchantments": 120,
+  "enchantments": {
+    "minor_strength": {
+      "id": "minor_strength",
+      "name": "Minor Strength",
+      "description": "Adds +1-3 strength to an item",
+      "statBonus": {
+        "strength": 2
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_dexterity": {
+      "id": "minor_dexterity",
+      "name": "Minor Dexterity",
+      "description": "Adds +1-3 dexterity to an item",
+      "statBonus": {
+        "dexterity": 2
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_intelligence": {
+      "id": "minor_intelligence",
+      "name": "Minor Intelligence",
+      "description": "Adds +1-3 intelligence to an item",
+      "statBonus": {
+        "intelligence": 2
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_vitality": {
+      "id": "minor_vitality",
+      "name": "Minor Vitality",
+      "description": "Adds +1-3 vitality to an item",
+      "statBonus": {
+        "vitality": 2
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_wisdom": {
+      "id": "minor_wisdom",
+      "name": "Minor Wisdom",
+      "description": "Adds +1-3 wisdom to an item",
+      "statBonus": {
+        "wisdom": 2
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_luck": {
+      "id": "minor_luck",
+      "name": "Minor Luck",
+      "description": "Adds +1-3 luck to an item",
+      "statBonus": {
+        "luck": 2
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_attack": {
+      "id": "minor_attack",
+      "name": "Minor Attack",
+      "description": "Adds +2-5 attack to an item",
+      "combatStatBonus": {
+        "attack": 3
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "minor_defense": {
+      "id": "minor_defense",
+      "name": "Minor Defense",
+      "description": "Adds +2-5 defense to an item",
+      "combatStatBonus": {
+        "defense": 3
+      },
+      "tier": "minor",
+      "levelRange": [1, 20]
+    },
+    "moderate_strength": {
+      "id": "moderate_strength",
+      "name": "Moderate Strength",
+      "description": "Adds +3-7 strength to an item",
+      "statBonus": {
+        "strength": 5
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_dexterity": {
+      "id": "moderate_dexterity",
+      "name": "Moderate Dexterity",
+      "description": "Adds +3-7 dexterity to an item",
+      "statBonus": {
+        "dexterity": 5
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_intelligence": {
+      "id": "moderate_intelligence",
+      "name": "Moderate Intelligence",
+      "description": "Adds +3-7 intelligence to an item",
+      "statBonus": {
+        "intelligence": 5
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_attack": {
+      "id": "moderate_attack",
+      "name": "Moderate Attack",
+      "description": "Adds +5-10 attack to an item",
+      "combatStatBonus": {
+        "attack": 7
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_defense": {
+      "id": "moderate_defense",
+      "name": "Moderate Defense",
+      "description": "Adds +5-10 defense to an item",
+      "combatStatBonus": {
+        "defense": 7
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_magic_attack": {
+      "id": "moderate_magic_attack",
+      "name": "Moderate Magic Attack",
+      "description": "Adds +5-10 magic attack to an item",
+      "combatStatBonus": {
+        "magicAttack": 7
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_magic_defense": {
+      "id": "moderate_magic_defense",
+      "name": "Moderate Magic Defense",
+      "description": "Adds +5-10 magic defense to an item",
+      "combatStatBonus": {
+        "magicDefense": 7
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "moderate_health": {
+      "id": "moderate_health",
+      "name": "Moderate Health",
+      "description": "Adds +20-50 max health to an item",
+      "combatStatBonus": {
+        "maxHealth": 35
+      },
+      "tier": "moderate",
+      "levelRange": [21, 50]
+    },
+    "greater_strength": {
+      "id": "greater_strength",
+      "name": "Greater Strength",
+      "description": "Adds +8-15 strength to an item",
+      "statBonus": {
+        "strength": 12
+      },
+      "tier": "greater",
+      "levelRange": [51, 75]
+    },
+    "greater_attack": {
+      "id": "greater_attack",
+      "name": "Greater Attack",
+      "description": "Adds +15-25 attack to an item",
+      "combatStatBonus": {
+        "attack": 20
+      },
+      "tier": "greater",
+      "levelRange": [51, 75]
+    },
+    "greater_defense": {
+      "id": "greater_defense",
+      "name": "Greater Defense",
+      "description": "Adds +15-25 defense to an item",
+      "combatStatBonus": {
+        "defense": 20
+      },
+      "tier": "greater",
+      "levelRange": [51, 75]
+    },
+    "supreme_strength": {
+      "id": "supreme_strength",
+      "name": "Supreme Strength",
+      "description": "Adds +15-25 strength to an item",
+      "statBonus": {
+        "strength": 20
+      },
+      "tier": "supreme",
+      "levelRange": [76, 99]
+    },
+    "supreme_attack": {
+      "id": "supreme_attack",
+      "name": "Supreme Attack",
+      "description": "Adds +25-40 attack to an item",
+      "combatStatBonus": {
+        "attack": 32
+      },
+      "tier": "supreme",
+      "levelRange": [76, 99]
+    },
+    "lifesteal_minor": {
+      "id": "lifesteal_minor",
+      "name": "Minor Lifesteal",
+      "description": "Heals 2% of damage dealt as health",
+      "effects": [
+        {
+          "id": "lifesteal_minor",
+          "name": "Minor Lifesteal",
+          "description": "Heals 2% of damage dealt",
+          "effectType": "lifesteal",
+          "value": 2
+        }
+      ],
+      "tier": "effect",
+      "levelRange": [35, 99]
+    },
+    "mana_on_hit_minor": {
+      "id": "mana_on_hit_minor",
+      "name": "Minor Mana on Hit",
+      "description": "Restores 1 mana per hit",
+      "effects": [
+        {
+          "id": "mana_on_hit_minor",
+          "name": "Minor Mana on Hit",
+          "description": "Restores 1 mana per hit",
+          "effectType": "mana_on_hit",
+          "value": 1
+        }
+      ],
+      "tier": "effect",
+      "levelRange": [35, 99]
+    },
+    "critical_boost_minor": {
+      "id": "critical_boost_minor",
+      "name": "Minor Critical Boost",
+      "description": "Increases critical chance by 2%",
+      "combatStatBonus": {
+        "criticalChance": 2
+      },
+      "tier": "effect",
+      "levelRange": [35, 99]
+    },
+    "experience_gain_minor": {
+      "id": "experience_gain_minor",
+      "name": "Minor Experience Gain",
+      "description": "Increases experience gain by 5%",
+      "effects": [
+        {
+          "id": "experience_gain_minor",
+          "name": "Minor Experience Gain",
+          "description": "Increases experience gain by 5%",
+          "effectType": "experience_gain",
+          "value": 5
+        }
+      ],
+      "tier": "effect",
+      "levelRange": [35, 99]
+    },
+    "gold_gain_minor": {
+      "id": "gold_gain_minor",
+      "name": "Minor Gold Gain",
+      "description": "Increases gold gain by 5%",
+      "effects": [
+        {
+          "id": "gold_gain_minor",
+          "name": "Minor Gold Gain",
+          "description": "Increases gold gain by 5%",
+          "effectType": "gold_gain",
+          "value": 5
+        }
+      ],
+      "tier": "effect",
+      "levelRange": [35, 99]
+    },
+    "ancient_scroll_enchant": {
+      "id": "ancient_scroll_enchant",
+      "name": "Ancient Scroll Enchantment",
+      "description": "Powerful enchantment from ancient knowledge. Adds +20 to all stats.",
+      "statBonus": {
+        "strength": 20,
+        "dexterity": 20,
+        "intelligence": 20,
+        "vitality": 20,
+        "wisdom": 20,
+        "luck": 20
+      },
+      "tier": "secret",
+      "levelRange": [32, 99],
+      "secret": true
+    },
+    "prismatic_enchant": {
+      "id": "prismatic_enchant",
+      "name": "Prismatic Enchantment",
+      "description": "Legendary enchantment using prismatic shards. Adds +30 to all combat stats.",
+      "combatStatBonus": {
+        "attack": 30,
+        "defense": 30,
+        "magicAttack": 30,
+        "magicDefense": 30,
+        "criticalChance": 5,
+        "criticalDamage": 0.1
+      },
+      "tier": "secret",
+      "levelRange": [92, 99],
+      "secret": true
+    },
+    "divine_enchant": {
+      "id": "divine_enchant",
+      "name": "Divine Enchantment",
+      "description": "Ultimate enchantment of divine power. Adds massive bonuses and special effects.",
+      "statBonus": {
+        "strength": 30,
+        "dexterity": 30,
+        "intelligence": 30,
+        "vitality": 30,
+        "wisdom": 30,
+        "luck": 30
+      },
+      "combatStatBonus": {
+        "attack": 40,
+        "defense": 40,
+        "magicAttack": 40,
+        "magicDefense": 40,
+        "criticalChance": 10,
+        "criticalDamage": 0.2
+      },
+      "effects": [
+        {
+          "id": "divine_lifesteal",
+          "name": "Divine Lifesteal",
+          "description": "Heals 5% of damage dealt",
+          "effectType": "lifesteal",
+          "value": 5
+        },
+        {
+          "id": "divine_experience",
+          "name": "Divine Experience",
+          "description": "Increases experience gain by 15%",
+          "effectType": "experience_gain",
+          "value": 15
+        }
+      ],
+      "tier": "secret",
+      "levelRange": [97, 99],
+      "secret": true
+    }
+  }
+}

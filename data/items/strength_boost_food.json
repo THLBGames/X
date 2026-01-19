@@ -1,0 +1,17 @@
+{
+  "id": "strength_boost_food",
+  "name": "Strength Boost Food",
+  "description": "Increases strength for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 55,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "strength_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.strength_boost_food.name",
+  "descriptionKey": "item.strength_boost_food.description"
+}

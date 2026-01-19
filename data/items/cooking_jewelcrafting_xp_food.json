@@ -1,0 +1,17 @@
+{
+  "id": "cooking_jewelcrafting_xp_food",
+  "name": "Jewelcrafting Experience Food",
+  "description": "Increases jewelcrafting experience gain.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 130,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "jewelcrafting_xp_boost"
+  },
+  "nameKey": "item.cooking_jewelcrafting_xp_food.name",
+  "descriptionKey": "item.cooking_jewelcrafting_xp_food.description"
+}

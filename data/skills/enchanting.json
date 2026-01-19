@@ -828,10 +828,31 @@
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "magicAttack": 5,
+        "magicDefense": 3
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "magicAttack": 8,
+        "magicDefense": 5
+      }
+    },
+    {
       "level": 45,
       "bonus": {
         "magicAttack": 12,
         "magicDefense": 8
+      }
+    },
+    {
+      "level": 65,
+      "bonus": {
+        "magicAttack": 18,
+        "magicDefense": 12
       }
     },
     {

@@ -1,0 +1,16 @@
+{
+  "id": "phoenix_feast",
+  "name": "Phoenix Feast",
+  "description": "A legendary feast that restores massive health and mana, and provides powerful combat bonuses.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1000,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 5000
+  },
+  "nameKey": "item.phoenix_feast.name",
+  "descriptionKey": "item.phoenix_feast.description"
+}

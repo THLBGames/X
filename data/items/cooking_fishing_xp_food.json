@@ -1,0 +1,17 @@
+{
+  "id": "cooking_fishing_xp_food",
+  "name": "Fishing Experience Food",
+  "description": "Increases fishing experience gain.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 35,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "fishing_xp_boost"
+  },
+  "nameKey": "item.cooking_fishing_xp_food.name",
+  "descriptionKey": "item.cooking_fishing_xp_food.description"
+}

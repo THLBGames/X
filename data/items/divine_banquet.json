@@ -1,0 +1,17 @@
+{
+  "id": "divine_banquet",
+  "name": "Divine Banquet",
+  "description": "A divine feast that provides massive skill XP bonuses and combat stat increases.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 5000,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "divine_banquet_boost",
+    "duration": 7200
+  },
+  "nameKey": "item.divine_banquet.name",
+  "descriptionKey": "item.divine_banquet.description"
+}

@@ -1,20 +1,26 @@
 {
   "id": "enchanting_upgrade_V",
   "name": "Enchanting Upgrade V",
-  "description": "Permanently increases enchanting XP gain by 30%, speed by 20%, and yield by 20%",
+  "description": "Permanently increases enchanting success rate by 25% and unlocks legendary enchantments",
   "type": "permanent",
   "scope": "skill",
   "skillId": "enchanting",
   "tier": "V",
-  "price": 11180,
+  "price": 25000,
   "bonuses": {
     "experienceMultiplier": 1.3,
-    "speedMultiplier": 0.8,
-    "yieldMultiplier": 1.2,
-    "successRateBonus": 0.2
+    "speedMultiplier": 0.88,
+    "successRateBonus": 0.25,
+    "unlocksRecipes": [
+      "recipe_supreme_strength",
+      "recipe_supreme_attack",
+      "recipe_prismatic_enchant",
+      "recipe_divine_enchant"
+    ]
   },
   "requirements": {
-    "previousTierId": "enchanting_upgrade_IV"
+    "previousTierId": "enchanting_upgrade_IV",
+    "skillLevel": 85
   },
   "nameKey": "upgrade.enchanting_upgrade_V.name",
   "descriptionKey": "upgrade.enchanting_upgrade_V.description"

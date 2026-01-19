@@ -1,0 +1,17 @@
+{
+  "id": "cooking_archaeology_xp_food",
+  "name": "Archaeology Experience Food",
+  "description": "Increases archaeology experience gain.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 85,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "archaeology_xp_boost"
+  },
+  "nameKey": "item.cooking_archaeology_xp_food.name",
+  "descriptionKey": "item.cooking_archaeology_xp_food.description"
+}

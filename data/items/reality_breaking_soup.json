@@ -1,0 +1,17 @@
+{
+  "id": "reality_breaking_soup",
+  "name": "Reality-Breaking Soup",
+  "description": "A soup that breaks the boundaries of reality, providing unimaginable power.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 15000,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "reality_breaking_boost",
+    "duration": 14400
+  },
+  "nameKey": "item.reality_breaking_soup.name",
+  "descriptionKey": "item.reality_breaking_soup.description"
+}

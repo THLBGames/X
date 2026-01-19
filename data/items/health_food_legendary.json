@@ -1,0 +1,16 @@
+{
+  "id": "health_food_legendary",
+  "name": "Legendary Health Food",
+  "description": "Restores 2000 health.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 500,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 2000
+  },
+  "nameKey": "item.health_food_legendary.name",
+  "descriptionKey": "item.health_food_legendary.description"
+}

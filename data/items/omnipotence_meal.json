@@ -1,0 +1,17 @@
+{
+  "id": "omnipotence_meal",
+  "name": "Omnipotence Meal",
+  "description": "A meal of ultimate power that provides godlike bonuses to all aspects of gameplay.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 10000,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "omnipotence_boost",
+    "duration": 10800
+  },
+  "nameKey": "item.omnipotence_meal.name",
+  "descriptionKey": "item.omnipotence_meal.description"
+}

@@ -1,20 +1,26 @@
 {
   "id": "enchanting_upgrade_III",
   "name": "Enchanting Upgrade III",
-  "description": "Permanently increases enchanting XP gain by 20%, speed by 12%, and yield by 12%",
+  "description": "Permanently increases enchanting success rate by 15% and unlocks advanced enchantments",
   "type": "permanent",
   "scope": "skill",
   "skillId": "enchanting",
   "tier": "III",
-  "price": 5196,
+  "price": 6000,
   "bonuses": {
     "experienceMultiplier": 1.2,
-    "speedMultiplier": 0.88,
-    "yieldMultiplier": 1.12,
-    "successRateBonus": 0.12
+    "speedMultiplier": 0.93,
+    "successRateBonus": 0.15,
+    "unlocksRecipes": [
+      "recipe_greater_strength",
+      "recipe_greater_attack",
+      "recipe_lifesteal_minor",
+      "recipe_mana_on_hit_minor"
+    ]
   },
   "requirements": {
-    "previousTierId": "enchanting_upgrade_II"
+    "previousTierId": "enchanting_upgrade_II",
+    "skillLevel": 50
   },
   "nameKey": "upgrade.enchanting_upgrade_III.name",
   "descriptionKey": "upgrade.enchanting_upgrade_III.description"
