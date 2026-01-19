@@ -143,9 +143,9 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
     stopTraining(skillId);
   };
 
-  const handleLearnSkill = () => {
+  const handleLearnSkill = async () => {
     if (!isCombatSkill) return;
-    const result = SkillManager.learnSkill(character, skillId, 1);
+    const result = await SkillManager.learnSkill(character, skillId, 1);
     if (result.success && result.character) {
       setCharacter(result.character);
     } else {
@@ -153,9 +153,9 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
     }
   };
 
-  const handleUpgradeSkill = () => {
+  const handleUpgradeSkill = async () => {
     if (!isCombatSkill || skillLevel >= skill.maxLevel) return;
-    const result = SkillManager.learnSkill(character, skillId, skillLevel + 1);
+    const result = await SkillManager.learnSkill(character, skillId, skillLevel + 1);
     if (result.success && result.character) {
       setCharacter(result.character);
     } else {
@@ -509,42 +509,44 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
                             return;
                           }
 
-                          const result = CraftingSystem.craftItem(character, inventory, skillId, recipe);
-                          
-                          if (result.success) {
-                            // Update inventory with new item and removed ingredients
-                            let newInventory = inventory;
-                            for (const ingredient of recipe.ingredients) {
-                              newInventory = InventoryManager.removeItem(newInventory, ingredient.itemId, ingredient.quantity);
-                            }
-                            if (result.itemId) {
-                              newInventory = InventoryManager.addItem(newInventory, result.itemId, result.quantity || 1);
-                            }
-                            setInventory(newInventory);
-
-                            // Add experience
-                            const expResult = IdleSkillSystem.addSkillExperience(character, skillId, result.experience);
-                            setCharacter(expResult.character);
-
-                            alert(`Successfully crafted ${recipe.name}!`);
-                          } else {
-                            // Failed craft - still consume ingredients with 50% chance
-                            let newInventory = inventory;
-                            for (const ingredient of recipe.ingredients) {
-                              if (Math.random() < 0.5) {
+                          (async () => {
+                            const result = await CraftingSystem.craftItem(character, inventory, skillId, recipe);
+                            
+                            if (result.success) {
+                              // Update inventory with new item and removed ingredients
+                              let newInventory = inventory;
+                              for (const ingredient of recipe.ingredients) {
                                 newInventory = InventoryManager.removeItem(newInventory, ingredient.itemId, ingredient.quantity);
                               }
-                            }
-                            setInventory(newInventory);
+                              if (result.itemId) {
+                                newInventory = InventoryManager.addItem(newInventory, result.itemId, result.quantity || 1);
+                              }
+                              setInventory(newInventory);
 
-                            // Add reduced experience
-                            if (result.experience > 0) {
+                              // Add experience
                               const expResult = IdleSkillSystem.addSkillExperience(character, skillId, result.experience);
                               setCharacter(expResult.character);
-                            }
 
-                            alert(result.reason || 'Crafting failed');
-                          }
+                              alert(`Successfully crafted ${recipe.name}!`);
+                            } else {
+                              // Failed craft - still consume ingredients with 50% chance
+                              let newInventory = inventory;
+                              for (const ingredient of recipe.ingredients) {
+                                if (Math.random() < 0.5) {
+                                  newInventory = InventoryManager.removeItem(newInventory, ingredient.itemId, ingredient.quantity);
+                                }
+                              }
+                              setInventory(newInventory);
+
+                              // Add reduced experience
+                              if (result.experience > 0) {
+                                const expResult = IdleSkillSystem.addSkillExperience(character, skillId, result.experience);
+                                setCharacter(expResult.character);
+                              }
+
+                              alert(result.reason || 'Crafting failed');
+                            }
+                          })();
                         }}
                         disabled={!canCraft}
                         title={canCraft ? `Craft ${recipe.name}` : skillLevel < recipe.level ? `Requires skill level ${recipe.level}` : `Missing ingredients`}

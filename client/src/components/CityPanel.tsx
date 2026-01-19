@@ -8,33 +8,23 @@ import './CityPanel.css';
 export default function CityPanel() {
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
-  const unlockBuilding = useGameState((state) => state.unlockBuilding);
-  const upgradeBuilding = useGameState((state) => state.upgradeBuilding);
+  //const unlockBuilding = useGameState((state) => state.unlockBuilding);
+  //const upgradeBuilding = useGameState((state) => state.upgradeBuilding);
 
   const [selectedBuilding, setSelectedBuilding] = useState<Building | null>(null);
   const [showBuildingModal, setShowBuildingModal] = useState(false);
   const [buildings, setBuildings] = useState<Building[]>([]);
-  const [availableBuildings, setAvailableBuildings] = useState<Building[]>([]);
 
   // Load buildings
   useEffect(() => {
     const loadBuildings = async () => {
       const allBuildings = await CityManager.getAllBuildings();
       setBuildings(allBuildings);
-      
-      if (character) {
-        const available = await CityManager.getAvailableBuildings(character);
-        setAvailableBuildings(available);
-      }
     };
     loadBuildings();
   }, [character]);
 
-  if (!character) {
-    return <div className="city-panel">No character loaded</div>;
-  }
-
-  const city = character.city || CityManager.initializeCity();
+  const city = character?.city || CityManager.initializeCity();
 
   // Get building progress for all buildings
   const buildingProgress = useMemo(() => {
@@ -48,6 +38,10 @@ export default function CityPanel() {
     }
     return progress;
   }, [buildings, city]);
+
+  if (!character) {
+    return <div className="city-panel">No character loaded</div>;
+  }
 
   // Categorize buildings
   const coreBuildings = buildings.filter((b) => b.category === 'core');

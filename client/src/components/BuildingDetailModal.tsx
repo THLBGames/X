@@ -21,8 +21,8 @@ export default function BuildingDetailModal({
   character,
   inventory,
 }: BuildingDetailModalProps) {
-  const unlockBuilding = useGameState((state) => state.unlockBuilding);
-  const upgradeBuilding = useGameState((state) => state.upgradeBuilding);
+  //const unlockBuilding = useGameState((state) => state.unlockBuilding);
+  //const upgradeBuilding = useGameState((state) => state.upgradeBuilding);
   const setCharacter = useGameState((state) => state.setCharacter);
   const setInventory = useGameState((state) => state.setInventory);
 

@@ -3,15 +3,14 @@ import { useGameState } from '../systems';
 import { GuildManager } from '../systems/city/GuildManager';
 import { CityManager } from '../systems/city/CityManager';
 import type { Guild } from '@idle-rpg/shared';
-import { IdleSkillSystem } from '../systems/skills/IdleSkillSystem';
 import { getDataLoader } from '../data';
 import './GuildPanel.css';
 
 export default function GuildPanel() {
   const character = useGameState((state) => state.character);
-  const joinGuild = useGameState((state) => state.joinGuild);
-  const switchPrimaryGuild = useGameState((state) => state.switchPrimaryGuild);
-  const rankUpGuild = useGameState((state) => state.rankUpGuild);
+  //const joinGuild = useGameState((state) => state.joinGuild);
+  //const switchPrimaryGuild = useGameState((state) => state.switchPrimaryGuild);
+  //const rankUpGuild = useGameState((state) => state.rankUpGuild);
   const setCharacter = useGameState((state) => state.setCharacter);
 
   const [guilds, setGuilds] = useState<Guild[]>([]);
