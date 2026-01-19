@@ -11,7 +11,14 @@
     "experienceMultiplier": 1.2,
     "speedMultiplier": 0.88,
     "yieldMultiplier": 1.12,
-    "successRateBonus": 0.12
+    "successRateBonus": 0.12,
+    "unlocksRecipes": [
+      "ancient_papyrus_potion_secret",
+      "identification_scroll_potion_secret",
+      "curse_removal_scroll_potion_secret",
+      "blessing_scroll_potion_secret",
+      "trapping_advanced_schematics_elixir_secret"
+    ]
   },
   "requirements": {
     "previousTierId": "alchemy_upgrade_II"

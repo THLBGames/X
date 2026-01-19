@@ -1,0 +1,17 @@
+{
+  "id": "advanced_strength_potion",
+  "name": "Advanced Strength Potion",
+  "description": "An alchemy-crafted advanced strength potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 510,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "advanced_strength_boost",
+    "duration": 820
+  },
+  "nameKey": "item.advanced_strength_potion.name",
+  "descriptionKey": "item.advanced_strength_potion.description"
+}

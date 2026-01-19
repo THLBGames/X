@@ -1,0 +1,17 @@
+{
+  "id": "stamina_potion_enhanced",
+  "name": "Rare Stolen Potion",
+  "description": "An alchemy-crafted rare stolen potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 275,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "stamina_potion_enhanced_buff",
+    "duration": 650
+  },
+  "nameKey": "item.stamina_potion_enhanced.name",
+  "descriptionKey": "item.stamina_potion_enhanced.description"
+}

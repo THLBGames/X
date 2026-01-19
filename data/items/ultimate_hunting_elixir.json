@@ -1,0 +1,17 @@
+{
+  "id": "ultimate_hunting_elixir",
+  "name": "Ultimate Hunting Elixir",
+  "description": "An alchemy-crafted ultimate hunting elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1460,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "ultimate_hunting_elixir_buff",
+    "duration": 1220
+  },
+  "nameKey": "item.ultimate_hunting_elixir.name",
+  "descriptionKey": "item.ultimate_hunting_elixir.description"
+}

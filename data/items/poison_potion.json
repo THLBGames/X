@@ -1,0 +1,17 @@
+{
+  "id": "poison_potion",
+  "name": "Toxic Poison Potion",
+  "description": "An alchemy-crafted toxic poison potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 485,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "poison_potion_buff",
+    "duration": 770
+  },
+  "nameKey": "item.poison_potion.name",
+  "descriptionKey": "item.poison_potion.description"
+}

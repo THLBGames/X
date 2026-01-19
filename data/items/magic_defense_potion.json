@@ -1,0 +1,17 @@
+{
+  "id": "magic_defense_potion",
+  "name": "Magic Defense Potion",
+  "description": "An alchemy-crafted magic defense potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 490,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "magic_defense_boost",
+    "duration": 780
+  },
+  "nameKey": "item.magic_defense_potion.name",
+  "descriptionKey": "item.magic_defense_potion.description"
+}

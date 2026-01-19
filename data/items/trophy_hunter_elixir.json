@@ -1,0 +1,17 @@
+{
+  "id": "trophy_hunter_elixir",
+  "name": "Trophy Hunter Elixir",
+  "description": "An alchemy-crafted trophy hunter elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 830,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "trophy_hunter_elixir_buff",
+    "duration": 960
+  },
+  "nameKey": "item.trophy_hunter_elixir.name",
+  "descriptionKey": "item.trophy_hunter_elixir.description"
+}

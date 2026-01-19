@@ -1,0 +1,17 @@
+{
+  "id": "ancient_key_elixir",
+  "name": "Ancient Key Elixir",
+  "description": "An alchemy-crafted ancient key elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 830,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "ancient_key_elixir_buff",
+    "duration": 960
+  },
+  "nameKey": "item.ancient_key_elixir.name",
+  "descriptionKey": "item.ancient_key_elixir.description"
+}

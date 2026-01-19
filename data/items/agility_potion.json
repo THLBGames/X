@@ -1,0 +1,17 @@
+{
+  "id": "agility_potion",
+  "name": "Claw Elixir",
+  "description": "An alchemy-crafted claw elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 460,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "agility_potion_buff",
+    "duration": 720
+  },
+  "nameKey": "item.agility_potion.name",
+  "descriptionKey": "item.agility_potion.description"
+}

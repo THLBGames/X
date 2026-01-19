@@ -1,0 +1,17 @@
+{
+  "id": "combat_mastery_elixir",
+  "name": "Combat Mastery Elixir",
+  "description": "An alchemy-crafted combat mastery elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 545,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "combat_mastery_elixir_buff",
+    "duration": 890
+  },
+  "nameKey": "item.combat_mastery_elixir.name",
+  "descriptionKey": "item.combat_mastery_elixir.description"
+}

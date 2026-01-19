@@ -1,0 +1,17 @@
+{
+  "id": "resist_frost_potion",
+  "name": "Frost Resistance Potion",
+  "description": "An alchemy-crafted frost resistance potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 480,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "resist_frost_potion_buff",
+    "duration": 760
+  },
+  "nameKey": "item.resist_frost_potion.name",
+  "descriptionKey": "item.resist_frost_potion.description"
+}

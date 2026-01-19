@@ -1,0 +1,16 @@
+{
+  "id": "primal_health_elixir",
+  "name": "Master Stolen Elixir",
+  "description": "An alchemy-crafted master stolen elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 875,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 800
+  },
+  "nameKey": "item.primal_health_elixir.name",
+  "descriptionKey": "item.primal_health_elixir.description"
+}

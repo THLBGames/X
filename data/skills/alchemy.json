@@ -1363,6 +1363,1781 @@
       },
       "experienceGain": 450,
       "timeRequired": 8500
+    },
+    {
+      "recipeId": "vitality_potion",
+      "name": "Vitality Potion",
+      "level": 20,
+      "ingredients": [
+        {"itemId": "uncommon_herb", "quantity": 3},
+        {"itemId": "animal_hide", "quantity": 2}
+      ],
+      "result": {"itemId": "vitality_potion", "quantity": 1},
+      "experienceGain": 70,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "intelligence_potion",
+      "name": "Intelligence Potion",
+      "level": 22,
+      "ingredients": [
+        {"itemId": "uncommon_herb", "quantity": 3},
+        {"itemId": "essence_crystal", "quantity": 1}
+      ],
+      "result": {"itemId": "intelligence_potion", "quantity": 1},
+      "experienceGain": 80,
+      "timeRequired": 5400
+    },
+    {
+      "recipeId": "dexterity_potion",
+      "name": "Dexterity Potion",
+      "level": 24,
+      "ingredients": [
+        {"itemId": "uncommon_herb", "quantity": 3},
+        {"itemId": "animal_fang", "quantity": 1}
+      ],
+      "result": {"itemId": "dexterity_potion", "quantity": 1},
+      "experienceGain": 85,
+      "timeRequired": 5600
+    },
+    {
+      "recipeId": "wisdom_potion",
+      "name": "Wisdom Potion",
+      "level": 26,
+      "ingredients": [
+        {"itemId": "uncommon_herb", "quantity": 3},
+        {"itemId": "energy_wisp", "quantity": 2}
+      ],
+      "result": {"itemId": "wisdom_potion", "quantity": 1},
+      "experienceGain": 90,
+      "timeRequired": 5700
+    },
+    {
+      "recipeId": "luck_potion_basic",
+      "name": "Luck Potion",
+      "level": 28,
+      "ingredients": [
+        {"itemId": "rare_herb", "quantity": 2},
+        {"itemId": "gem_common", "quantity": 1}
+      ],
+      "result": {"itemId": "luck_potion", "quantity": 1},
+      "experienceGain": 95,
+      "timeRequired": 5800
+    },
+    {
+      "recipeId": "mining_xp_potion",
+      "name": "Mining Experience Potion",
+      "level": 21,
+      "skillPrerequisites": [{"skillId": "mining", "level": 15}],
+      "ingredients": [
+        {"itemId": "copper_ore", "quantity": 5},
+        {"itemId": "uncommon_herb", "quantity": 2},
+        {"itemId": "water", "quantity": 1}
+      ],
+      "result": {"itemId": "mining_xp_potion", "quantity": 1},
+      "experienceGain": 100,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "woodcutting_xp_potion",
+      "name": "Woodcutting Experience Potion",
+      "level": 23,
+      "skillPrerequisites": [{"skillId": "woodcutting", "level": 20}],
+      "ingredients": [
+        {"itemId": "oak_log", "quantity": 5},
+        {"itemId": "uncommon_herb", "quantity": 2},
+        {"itemId": "water", "quantity": 1}
+      ],
+      "result": {"itemId": "woodcutting_xp_potion", "quantity": 1},
+      "experienceGain": 110,
+      "timeRequired": 5600
+    },
+    {
+      "recipeId": "fishing_xp_potion",
+      "name": "Fishing Experience Potion",
+      "level": 25,
+      "skillPrerequisites": [{"skillId": "fishing", "level": 20}],
+      "ingredients": [
+        {"itemId": "freshwater_fish", "quantity": 4},
+        {"itemId": "uncommon_herb", "quantity": 2},
+        {"itemId": "water", "quantity": 1}
+      ],
+      "result": {"itemId": "fishing_xp_potion", "quantity": 1},
+      "experienceGain": 120,
+      "timeRequired": 5700
+    },
+    {
+      "recipeId": "herbalism_xp_potion",
+      "name": "Herbalism Experience Potion",
+      "level": 27,
+      "skillPrerequisites": [{"skillId": "herbalism", "level": 25}],
+      "ingredients": [
+        {"itemId": "common_herb", "quantity": 8},
+        {"itemId": "uncommon_herb", "quantity": 2},
+        {"itemId": "water", "quantity": 1}
+      ],
+      "result": {"itemId": "herbalism_xp_potion", "quantity": 1},
+      "experienceGain": 130,
+      "timeRequired": 5800
+    },
+    {
+      "recipeId": "foraging_xp_potion",
+      "name": "Foraging Experience Potion",
+      "level": 29,
+      "skillPrerequisites": [{"skillId": "foraging", "level": 25}],
+      "ingredients": [
+        {"itemId": "berry", "quantity": 6},
+        {"itemId": "fruit", "quantity": 3},
+        {"itemId": "uncommon_herb", "quantity": 2}
+      ],
+      "result": {"itemId": "foraging_xp_potion", "quantity": 1},
+      "experienceGain": 140,
+      "timeRequired": 5900
+    },
+    {
+      "recipeId": "hunting_xp_potion",
+      "name": "Hunting Experience Potion",
+      "level": 31,
+      "skillPrerequisites": [{"skillId": "hunting", "level": 30}],
+      "ingredients": [
+        {"itemId": "animal_hide", "quantity": 5},
+        {"itemId": "animal_bone", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 2}
+      ],
+      "result": {"itemId": "hunting_xp_potion", "quantity": 1},
+      "experienceGain": 150,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "trapping_xp_potion",
+      "name": "Trapping Experience Potion",
+      "level": 33,
+      "skillPrerequisites": [{"skillId": "trapping", "level": 30}],
+      "ingredients": [
+        {"itemId": "animal_pelt", "quantity": 4},
+        {"itemId": "animal_fang", "quantity": 2},
+        {"itemId": "rare_herb", "quantity": 2}
+      ],
+      "result": {"itemId": "trapping_xp_potion", "quantity": 1},
+      "experienceGain": 160,
+      "timeRequired": 6100
+    },
+    {
+      "recipeId": "quarrying_xp_potion",
+      "name": "Quarrying Experience Potion",
+      "level": 35,
+      "skillPrerequisites": [{"skillId": "quarrying", "level": 30}],
+      "ingredients": [
+        {"itemId": "stone", "quantity": 8},
+        {"itemId": "rough_stone", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 2}
+      ],
+      "result": {"itemId": "quarrying_xp_potion", "quantity": 1},
+      "experienceGain": 170,
+      "timeRequired": 6200
+    },
+    {
+      "recipeId": "treasure_hunting_xp_potion",
+      "name": "Treasure Hunting Experience Potion",
+      "level": 37,
+      "skillPrerequisites": [{"skillId": "treasure_hunting", "level": 35}],
+      "ingredients": [
+        {"itemId": "ancient_coin", "quantity": 5},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "essence_crystal", "quantity": 1}
+      ],
+      "result": {"itemId": "treasure_hunting_xp_potion", "quantity": 1},
+      "experienceGain": 180,
+      "timeRequired": 6300
+    },
+    {
+      "recipeId": "thieving_xp_potion",
+      "name": "Thieving Experience Potion",
+      "level": 39,
+      "skillPrerequisites": [{"skillId": "thieving", "level": 35}],
+      "ingredients": [
+        {"itemId": "stolen_gem_common", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "essence_crystal", "quantity": 1}
+      ],
+      "result": {"itemId": "thieving_xp_potion", "quantity": 1},
+      "experienceGain": 190,
+      "timeRequired": 6400
+    },
+    {
+      "recipeId": "archaeology_xp_potion",
+      "name": "Archaeology Experience Potion",
+      "level": 41,
+      "skillPrerequisites": [{"skillId": "archaeology", "level": 35}],
+      "ingredients": [
+        {"itemId": "ancient_shard", "quantity": 5},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "essence_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "archaeology_xp_potion", "quantity": 1},
+      "experienceGain": 200,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "cooking_xp_potion",
+      "name": "Cooking Experience Potion",
+      "level": 43,
+      "skillPrerequisites": [{"skillId": "cooking", "level": 40}],
+      "ingredients": [
+        {"itemId": "raw_meat", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "water", "quantity": 2}
+      ],
+      "result": {"itemId": "cooking_xp_potion", "quantity": 1},
+      "experienceGain": 210,
+      "timeRequired": 6600
+    },
+    {
+      "recipeId": "blacksmithing_xp_potion",
+      "name": "Blacksmithing Experience Potion",
+      "level": 45,
+      "skillPrerequisites": [{"skillId": "blacksmithing", "level": 40}],
+      "ingredients": [
+        {"itemId": "iron_ore", "quantity": 6},
+        {"itemId": "coal", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "blacksmithing_xp_potion", "quantity": 1},
+      "experienceGain": 220,
+      "timeRequired": 6700
+    },
+    {
+      "recipeId": "engineering_xp_potion",
+      "name": "Engineering Experience Potion",
+      "level": 47,
+      "skillPrerequisites": [{"skillId": "engineering", "level": 40}],
+      "ingredients": [
+        {"itemId": "gears", "quantity": 5},
+        {"itemId": "iron_ore", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "engineering_xp_potion", "quantity": 1},
+      "experienceGain": 230,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "tailoring_xp_potion",
+      "name": "Tailoring Experience Potion",
+      "level": 49,
+      "skillPrerequisites": [{"skillId": "tailoring", "level": 40}],
+      "ingredients": [
+        {"itemId": "cloth", "quantity": 8},
+        {"itemId": "leather", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "tailoring_xp_potion", "quantity": 1},
+      "experienceGain": 240,
+      "timeRequired": 6900
+    },
+    {
+      "recipeId": "leatherworking_xp_potion",
+      "name": "Leatherworking Experience Potion",
+      "level": 51,
+      "skillPrerequisites": [{"skillId": "leatherworking", "level": 40}],
+      "ingredients": [
+        {"itemId": "leather", "quantity": 8},
+        {"itemId": "animal_hide", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "leatherworking_xp_potion", "quantity": 1},
+      "experienceGain": 250,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "jewelcrafting_xp_potion",
+      "name": "Jewelcrafting Experience Potion",
+      "level": 53,
+      "skillPrerequisites": [{"skillId": "jewelcrafting", "level": 40}],
+      "ingredients": [
+        {"itemId": "gem_common", "quantity": 6},
+        {"itemId": "gem_uncommon", "quantity": 2},
+        {"itemId": "rare_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "jewelcrafting_xp_potion", "quantity": 1},
+      "experienceGain": 260,
+      "timeRequired": 7100
+    },
+    {
+      "recipeId": "enchanting_xp_potion",
+      "name": "Enchanting Experience Potion",
+      "level": 55,
+      "skillPrerequisites": [{"skillId": "enchanting", "level": 40}],
+      "ingredients": [
+        {"itemId": "essence_crystal", "quantity": 4},
+        {"itemId": "mana_crystal", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "enchanting_xp_potion", "quantity": 1},
+      "experienceGain": 270,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "runecrafting_xp_potion",
+      "name": "Runecrafting Experience Potion",
+      "level": 57,
+      "skillPrerequisites": [{"skillId": "runecrafting", "level": 40}],
+      "ingredients": [
+        {"itemId": "rune_stone", "quantity": 5},
+        {"itemId": "moderate_essence", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "runecrafting_xp_potion", "quantity": 1},
+      "experienceGain": 280,
+      "timeRequired": 7300
+    },
+    {
+      "recipeId": "gold_generation_potion",
+      "name": "Gold Generation Potion",
+      "level": 32,
+      "ingredients": [
+        {"itemId": "gold_ore", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 2},
+        {"itemId": "essence_crystal", "quantity": 1}
+      ],
+      "result": {"itemId": "gold_generation_potion", "quantity": 1},
+      "experienceGain": 125,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "item_find_potion",
+      "name": "Item Find Potion",
+      "level": 34,
+      "ingredients": [
+        {"itemId": "gem_uncommon", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 2},
+        {"itemId": "essence_crystal", "quantity": 1}
+      ],
+      "result": {"itemId": "item_find_potion", "quantity": 1},
+      "experienceGain": 135,
+      "timeRequired": 6100
+    },
+    {
+      "recipeId": "offline_time_potion",
+      "name": "Offline Time Potion",
+      "level": 36,
+      "ingredients": [
+        {"itemId": "ancient_scroll", "quantity": 2},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "essence_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "offline_time_potion", "quantity": 1},
+      "experienceGain": 145,
+      "timeRequired": 6200
+    },
+    {
+      "recipeId": "critical_chance_potion",
+      "name": "Critical Chance Potion",
+      "level": 38,
+      "ingredients": [
+        {"itemId": "animal_claw", "quantity": 4},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "gem_rare", "quantity": 1}
+      ],
+      "result": {"itemId": "critical_chance_potion", "quantity": 1},
+      "experienceGain": 155,
+      "timeRequired": 6300
+    },
+    {
+      "recipeId": "speed_boost_potion",
+      "name": "Speed Boost Potion",
+      "level": 40,
+      "ingredients": [
+        {"itemId": "energy_wisp", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 2},
+        {"itemId": "essence_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "speed_potion", "quantity": 1},
+      "experienceGain": 165,
+      "timeRequired": 6400
+    },
+    {
+      "recipeId": "phoenix_elixir_secret",
+      "name": "Phoenix Elixir",
+      "level": 55,
+      "unlockRequirements": [
+        {"itemId": "phoenix_feather", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "phoenix_feather", "quantity": 1},
+        {"itemId": "fire_herb", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "divine_energy", "quantity": 1}
+      ],
+      "result": {"itemId": "phoenix_elixir", "quantity": 1},
+      "experienceGain": 400,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "ancient_scroll_potion_secret",
+      "name": "Ancient Scroll Potion",
+      "level": 48,
+      "unlockRequirements": [
+        {"itemId": "ancient_scroll", "quantity": 3}
+      ],
+      "ingredients": [
+        {"itemId": "ancient_scroll", "quantity": 3},
+        {"itemId": "ancient_relic", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 3}
+      ],
+      "result": {"itemId": "ancient_scroll_potion", "quantity": 1},
+      "experienceGain": 290,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "druid_medallion_elixir_secret",
+      "name": "Druid Medallion Elixir",
+      "level": 52,
+      "unlockRequirements": [
+        {"itemId": "druid_medallion", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "druid_medallion", "quantity": 1},
+        {"itemId": "nature_imbued_herb", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 4}
+      ],
+      "result": {"itemId": "druid_medallion_elixir", "quantity": 1},
+      "experienceGain": 350,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "master_herbalist_key_elixir_secret",
+      "name": "Master Herbalist Elixir",
+      "level": 58,
+      "unlockRequirements": [
+        {"itemId": "master_herbalist_key", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "master_herbalist_key", "quantity": 1},
+        {"itemId": "master_herb", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "herb_essence_rare", "quantity": 2}
+      ],
+      "result": {"itemId": "master_herbalist_elixir", "quantity": 1},
+      "experienceGain": 450,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "world_tree_sapling_elixir_secret",
+      "name": "World Tree Elixir",
+      "level": 85,
+      "unlockRequirements": [
+        {"itemId": "world_tree_sapling", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "world_tree_sapling", "quantity": 1},
+        {"itemId": "world_tree_essence", "quantity": 2},
+        {"itemId": "legendary_herb", "quantity": 3},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "world_tree_elixir", "quantity": 1},
+      "experienceGain": 750,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "dragon_heart_elixir_secret",
+      "name": "Dragon Heart Elixir",
+      "level": 78,
+      "unlockRequirements": [
+        {"itemId": "dragon_heart", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "hunting", "level": 75}
+      ],
+      "ingredients": [
+        {"itemId": "dragon_heart", "quantity": 1},
+        {"itemId": "dragon_scale", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 1}
+      ],
+      "result": {"itemId": "dragon_heart_elixir", "quantity": 1},
+      "experienceGain": 650,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "lich_phylactery_potion_secret",
+      "name": "Lich Phylactery Potion",
+      "level": 82,
+      "unlockRequirements": [
+        {"itemId": "lich_phylactery", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "lich_phylactery", "quantity": 1},
+        {"itemId": "dark_crystal", "quantity": 4},
+        {"itemId": "legendary_herb", "quantity": 3},
+        {"itemId": "forbidden_herb", "quantity": 2}
+      ],
+      "result": {"itemId": "lich_phylactery_potion", "quantity": 1},
+      "experienceGain": 700,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "divine_artifact_elixir_secret",
+      "name": "Divine Artifact Elixir",
+      "level": 88,
+      "unlockRequirements": [
+        {"itemId": "divine_artifact", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "archaeology", "level": 85}
+      ],
+      "ingredients": [
+        {"itemId": "divine_artifact", "quantity": 1},
+        {"itemId": "divine_fragment", "quantity": 3},
+        {"itemId": "legendary_herb", "quantity": 4},
+        {"itemId": "prismatic_shard", "quantity": 2}
+      ],
+      "result": {"itemId": "divine_artifact_elixir", "quantity": 1},
+      "experienceGain": 800,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "world_essence_elixir",
+      "name": "World Essence Elixir",
+      "level": 95,
+      "ingredients": [
+        {"itemId": "divine_ore", "quantity": 5},
+        {"itemId": "prismatic_shard", "quantity": 3},
+        {"itemId": "world_tree_sapling", "quantity": 1},
+        {"itemId": "dragon_heart", "quantity": 1},
+        {"itemId": "ancient_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "world_essence_elixir", "quantity": 1},
+      "experienceGain": 900,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "primal_void_elixir",
+      "name": "Primal Void Elixir",
+      "level": 91,
+      "ingredients": [
+        {"itemId": "void_crystal", "quantity": 5},
+        {"itemId": "primal_essence", "quantity": 4},
+        {"itemId": "forbidden_herb", "quantity": 3},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "primal_void_elixir", "quantity": 1},
+      "experienceGain": 850,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "cosmic_essence_elixir",
+      "name": "Cosmic Essence Elixir",
+      "level": 93,
+      "ingredients": [
+        {"itemId": "cosmic_energy", "quantity": 4},
+        {"itemId": "celestial_fragment", "quantity": 3},
+        {"itemId": "legendary_herb", "quantity": 4},
+        {"itemId": "prismatic_shard", "quantity": 3}
+      ],
+      "result": {"itemId": "cosmic_essence_elixir", "quantity": 1},
+      "experienceGain": 880,
+      "timeRequired": 12200
+    },
+    {
+      "recipeId": "eternal_life_elixir",
+      "name": "Eternal Life Elixir",
+      "level": 96,
+      "ingredients": [
+        {"itemId": "divine_energy", "quantity": 5},
+        {"itemId": "phoenix_feather", "quantity": 2},
+        {"itemId": "world_tree_sapling", "quantity": 1},
+        {"itemId": "legendary_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 3}
+      ],
+      "result": {"itemId": "eternal_life_elixir", "quantity": 1},
+      "experienceGain": 920,
+      "timeRequired": 13500
+    },
+    {
+      "recipeId": "omnipotence_elixir",
+      "name": "Omnipotence Elixir",
+      "level": 98,
+      "ingredients": [
+        {"itemId": "divine_ore", "quantity": 7},
+        {"itemId": "world_tree_sapling", "quantity": 2},
+        {"itemId": "dragon_heart", "quantity": 2},
+        {"itemId": "prismatic_shard", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 5}
+      ],
+      "result": {"itemId": "omnipotence_elixir", "quantity": 1},
+      "experienceGain": 950,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "defense_mastery_potion",
+      "name": "Defense Mastery Potion",
+      "level": 42,
+      "ingredients": [
+        {"itemId": "animal_bone", "quantity": 8},
+        {"itemId": "rare_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "defense_mastery_potion", "quantity": 1},
+      "experienceGain": 175,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "attack_mastery_potion",
+      "name": "Attack Mastery Potion",
+      "level": 44,
+      "ingredients": [
+        {"itemId": "animal_fang", "quantity": 6},
+        {"itemId": "rare_herb", "quantity": 4},
+        {"itemId": "gem_rare", "quantity": 2}
+      ],
+      "result": {"itemId": "attack_mastery_potion", "quantity": 1},
+      "experienceGain": 185,
+      "timeRequired": 6600
+    },
+    {
+      "recipeId": "magic_attack_potion",
+      "name": "Magic Attack Potion",
+      "level": 46,
+      "ingredients": [
+        {"itemId": "mana_crystal", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 3},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "magic_attack_potion", "quantity": 1},
+      "experienceGain": 195,
+      "timeRequired": 6700
+    },
+    {
+      "recipeId": "magic_defense_potion",
+      "name": "Magic Defense Potion",
+      "level": 48,
+      "ingredients": [
+        {"itemId": "energy_wisp", "quantity": 6},
+        {"itemId": "epic_herb", "quantity": 3},
+        {"itemId": "gem_epic", "quantity": 1}
+      ],
+      "result": {"itemId": "magic_defense_potion", "quantity": 1},
+      "experienceGain": 205,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "celestial_key_elixir_secret",
+      "name": "Celestial Key Elixir",
+      "level": 68,
+      "unlockRequirements": [
+        {"itemId": "celestial_key", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "celestial_key", "quantity": 1},
+        {"itemId": "celestial_fragment", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "celestial_essence", "quantity": 2}
+      ],
+      "result": {"itemId": "celestial_key_elixir", "quantity": 1},
+      "experienceGain": 480,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "destiny_anchor_elixir_secret",
+      "name": "Destiny Anchor Elixir",
+      "level": 72,
+      "unlockRequirements": [
+        {"itemId": "destiny_anchor", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "divination", "level": 70}
+      ],
+      "ingredients": [
+        {"itemId": "destiny_anchor", "quantity": 1},
+        {"itemId": "destiny_fragment", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 1}
+      ],
+      "result": {"itemId": "destiny_anchor_elixir", "quantity": 1},
+      "experienceGain": 520,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "fate_weaver_elixir_secret",
+      "name": "Fate Weaver Elixir",
+      "level": 74,
+      "unlockRequirements": [
+        {"itemId": "fate_weaver", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "divination", "level": 70}
+      ],
+      "ingredients": [
+        {"itemId": "fate_weaver", "quantity": 1},
+        {"itemId": "fate_crystal", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "fate_weaver_elixir", "quantity": 1},
+      "experienceGain": 540,
+      "timeRequired": 10200
+    },
+    {
+      "recipeId": "ancient_papyrus_potion_secret",
+      "name": "Ancient Papyrus Potion",
+      "level": 50,
+      "unlockRequirements": [
+        {"itemId": "ancient_papyrus", "quantity": 2}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "archaeology", "level": 45}
+      ],
+      "ingredients": [
+        {"itemId": "ancient_papyrus", "quantity": 2},
+        {"itemId": "ancient_shard", "quantity": 5},
+        {"itemId": "rare_herb", "quantity": 4}
+      ],
+      "result": {"itemId": "ancient_papyrus_potion", "quantity": 1},
+      "experienceGain": 300,
+      "timeRequired": 7600
+    },
+    {
+      "recipeId": "atlantis_key_elixir_secret",
+      "name": "Atlantis Key Elixir",
+      "level": 64,
+      "unlockRequirements": [
+        {"itemId": "atlantis_key", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "fishing", "level": 60},
+        {"skillId": "archaeology", "level": 55}
+      ],
+      "ingredients": [
+        {"itemId": "atlantis_key", "quantity": 1},
+        {"itemId": "atlantean_artifact", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "abyssal_pearl", "quantity": 3}
+      ],
+      "result": {"itemId": "atlantis_key_elixir", "quantity": 1},
+      "experienceGain": 440,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "void_key_elixir_secret",
+      "name": "Void Key Elixir",
+      "level": 80,
+      "unlockRequirements": [
+        {"itemId": "void_key", "quantity": 1}
+      ],
+      "ingredients": [
+        {"itemId": "void_key", "quantity": 1},
+        {"itemId": "void_crystal", "quantity": 5},
+        {"itemId": "void_stone", "quantity": 3},
+        {"itemId": "legendary_herb", "quantity": 4},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "void_key_elixir", "quantity": 1},
+      "experienceGain": 680,
+      "timeRequired": 11200
+    },
+    {
+      "recipeId": "ancient_tome_potion_secret",
+      "name": "Ancient Tome Potion",
+      "level": 60,
+      "unlockRequirements": [
+        {"itemId": "ancient_tome", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "archaeology", "level": 55}
+      ],
+      "ingredients": [
+        {"itemId": "ancient_tome", "quantity": 1},
+        {"itemId": "ancient_tome_material", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "ancient_tome_potion", "quantity": 1},
+      "experienceGain": 380,
+      "timeRequired": 8800
+    },
+    {
+      "recipeId": "golden_fishing_rod_elixir_secret",
+      "name": "Golden Fishing Rod Elixir",
+      "level": 56,
+      "unlockRequirements": [
+        {"itemId": "golden_fishing_rod", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "fishing", "level": 50}
+      ],
+      "ingredients": [
+        {"itemId": "golden_fishing_rod", "quantity": 1},
+        {"itemId": "gold_ore", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 3},
+        {"itemId": "pearl", "quantity": 4}
+      ],
+      "result": {"itemId": "golden_fishing_rod_elixir", "quantity": 1},
+      "experienceGain": 330,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "regen_health_potion",
+      "name": "Health Regeneration Potion",
+      "level": 38,
+      "ingredients": [
+        {"itemId": "medicinal_root", "quantity": 6},
+        {"itemId": "rare_herb", "quantity": 3},
+        {"itemId": "water", "quantity": 2}
+      ],
+      "result": {"itemId": "regen_health_potion", "quantity": 1},
+      "experienceGain": 150,
+      "timeRequired": 6200
+    },
+    {
+      "recipeId": "regen_mana_potion",
+      "name": "Mana Regeneration Potion",
+      "level": 40,
+      "ingredients": [
+        {"itemId": "energy_wisp", "quantity": 7},
+        {"itemId": "epic_herb", "quantity": 2},
+        {"itemId": "essence_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "regen_mana_potion", "quantity": 1},
+      "experienceGain": 160,
+      "timeRequired": 6300
+    },
+    {
+      "recipeId": "resist_fire_potion",
+      "name": "Fire Resistance Potion",
+      "level": 44,
+      "ingredients": [
+        {"itemId": "fire_core", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 4},
+        {"itemId": "water", "quantity": 2}
+      ],
+      "result": {"itemId": "resist_fire_potion", "quantity": 1},
+      "experienceGain": 180,
+      "timeRequired": 6400
+    },
+    {
+      "recipeId": "resist_frost_potion",
+      "name": "Frost Resistance Potion",
+      "level": 46,
+      "ingredients": [
+        {"itemId": "frost_crystal", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 4},
+        {"itemId": "water", "quantity": 2}
+      ],
+      "result": {"itemId": "resist_frost_potion", "quantity": 1},
+      "experienceGain": 190,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "multi_stat_potion",
+      "name": "Multi-Stat Potion",
+      "level": 50,
+      "ingredients": [
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 3},
+        {"itemId": "gem_rare", "quantity": 2}
+      ],
+      "result": {"itemId": "multi_stat_potion", "quantity": 1},
+      "experienceGain": 280,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "combat_mastery_elixir",
+      "name": "Combat Mastery Elixir",
+      "level": 59,
+      "ingredients": [
+        {"itemId": "epic_herb", "quantity": 6},
+        {"itemId": "mana_crystal", "quantity": 4},
+        {"itemId": "gem_epic", "quantity": 2}
+      ],
+      "result": {"itemId": "combat_mastery_elixir", "quantity": 1},
+      "experienceGain": 370,
+      "timeRequired": 7900
+    },
+    {
+      "recipeId": "balanced_essence_potion",
+      "name": "Balanced Essence Potion",
+      "level": 61,
+      "ingredients": [
+        {"itemId": "greater_essence", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "balanced_essence_potion", "quantity": 1},
+      "experienceGain": 390,
+      "timeRequired": 8100
+    },
+    {
+      "recipeId": "thieves_guild_token_elixir_secret",
+      "name": "Thieves Guild Elixir",
+      "level": 54,
+      "unlockRequirements": [
+        {"itemId": "thieves_guild_token", "quantity": 2}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "thieving", "level": 50}
+      ],
+      "ingredients": [
+        {"itemId": "thieves_guild_token", "quantity": 2},
+        {"itemId": "stolen_essence_rare", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 4}
+      ],
+      "result": {"itemId": "thieves_guild_elixir", "quantity": 1},
+      "experienceGain": 360,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "shadow_pass_elixir_secret",
+      "name": "Shadow Pass Elixir",
+      "level": 62,
+      "unlockRequirements": [
+        {"itemId": "shadow_pass", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "thieving", "level": 60}
+      ],
+      "ingredients": [
+        {"itemId": "shadow_pass", "quantity": 1},
+        {"itemId": "stolen_gem_rare", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "dark_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "shadow_pass_elixir", "quantity": 1},
+      "experienceGain": 420,
+      "timeRequired": 8600
+    },
+    {
+      "recipeId": "ancient_key_thieving_elixir_secret",
+      "name": "Ancient Key Elixir",
+      "level": 66,
+      "unlockRequirements": [
+        {"itemId": "ancient_key_thieving", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "thieving", "level": 65}
+      ],
+      "ingredients": [
+        {"itemId": "ancient_key_thieving", "quantity": 1},
+        {"itemId": "stolen_scroll_ancient", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "ancient_scroll", "quantity": 2}
+      ],
+      "result": {"itemId": "ancient_key_elixir", "quantity": 1},
+      "experienceGain": 460,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "master_thief_mark_elixir_secret",
+      "name": "Master Thief Elixir",
+      "level": 70,
+      "unlockRequirements": [
+        {"itemId": "master_thief_mark", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "thieving", "level": 70}
+      ],
+      "ingredients": [
+        {"itemId": "master_thief_mark", "quantity": 1},
+        {"itemId": "stolen_artifact", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 6},
+        {"itemId": "magical_material", "quantity": 2}
+      ],
+      "result": {"itemId": "master_thief_elixir", "quantity": 1},
+      "experienceGain": 500,
+      "timeRequired": 9400
+    },
+    {
+      "recipeId": "godslayer_hunting_license_elixir_secret",
+      "name": "Godslayer Hunting Elixir",
+      "level": 84,
+      "unlockRequirements": [
+        {"itemId": "godslayer_hunting_license", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "hunting", "level": 80}
+      ],
+      "ingredients": [
+        {"itemId": "godslayer_hunting_license", "quantity": 1},
+        {"itemId": "legendary_pelt", "quantity": 3},
+        {"itemId": "legendary_bone", "quantity": 2},
+        {"itemId": "legendary_herb", "quantity": 4},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "godslayer_hunting_elixir", "quantity": 1},
+      "experienceGain": 740,
+      "timeRequired": 11800
+    },
+    {
+      "recipeId": "godslayer_trapping_medallion_elixir_secret",
+      "name": "Godslayer Trapping Elixir",
+      "level": 86,
+      "unlockRequirements": [
+        {"itemId": "godslayer_trapping_medallion", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "trapping", "level": 80}
+      ],
+      "ingredients": [
+        {"itemId": "godslayer_trapping_medallion", "quantity": 1},
+        {"itemId": "mythical_pelt", "quantity": 3},
+        {"itemId": "mythical_bone", "quantity": 2},
+        {"itemId": "legendary_herb", "quantity": 4},
+        {"itemId": "divine_fragment", "quantity": 3}
+      ],
+      "result": {"itemId": "godslayer_trapping_elixir", "quantity": 1},
+      "experienceGain": 780,
+      "timeRequired": 12200
+    },
+    {
+      "recipeId": "legendary_hunter_medallion_elixir_secret",
+      "name": "Legendary Hunter Elixir",
+      "level": 76,
+      "unlockRequirements": [
+        {"itemId": "legendary_hunter_medallion", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "hunting", "level": 70}
+      ],
+      "ingredients": [
+        {"itemId": "legendary_hunter_medallion", "quantity": 1},
+        {"itemId": "legendary_pelt", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 1}
+      ],
+      "result": {"itemId": "legendary_hunter_elixir", "quantity": 1},
+      "experienceGain": 620,
+      "timeRequired": 10600
+    },
+    {
+      "recipeId": "master_hunting_badge_elixir_secret",
+      "name": "Master Hunting Elixir",
+      "level": 74,
+      "unlockRequirements": [
+        {"itemId": "master_hunting_badge", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "hunting", "level": 70}
+      ],
+      "ingredients": [
+        {"itemId": "master_hunting_badge", "quantity": 1},
+        {"itemId": "animal_claw", "quantity": 8},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "master_hunting_elixir", "quantity": 1},
+      "experienceGain": 600,
+      "timeRequired": 10400
+    },
+    {
+      "recipeId": "trophy_hunter_license_elixir_secret",
+      "name": "Trophy Hunter Elixir",
+      "level": 66,
+      "unlockRequirements": [
+        {"itemId": "trophy_hunter_license", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "hunting", "level": 60}
+      ],
+      "ingredients": [
+        {"itemId": "trophy_hunter_license", "quantity": 1},
+        {"itemId": "rare_trophy", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "trophy_hunter_elixir", "quantity": 1},
+      "experienceGain": 470,
+      "timeRequired": 9100
+    },
+    {
+      "recipeId": "master_trapper_badge_elixir_secret",
+      "name": "Master Trapper Elixir",
+      "level": 72,
+      "unlockRequirements": [
+        {"itemId": "master_trapper_badge", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "trapping", "level": 65}
+      ],
+      "ingredients": [
+        {"itemId": "master_trapper_badge", "quantity": 1},
+        {"itemId": "ancient_pelt", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "master_trapper_elixir", "quantity": 1},
+      "experienceGain": 560,
+      "timeRequired": 9800
+    },
+    {
+      "recipeId": "advanced_strength_potion",
+      "name": "Advanced Strength Potion",
+      "level": 52,
+      "ingredients": [
+        {"itemId": "rare_herb", "quantity": 6},
+        {"itemId": "animal_fang", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "advanced_strength_potion", "quantity": 1},
+      "experienceGain": 340,
+      "timeRequired": 7700
+    },
+    {
+      "recipeId": "advanced_vitality_potion",
+      "name": "Advanced Vitality Potion",
+      "level": 54,
+      "ingredients": [
+        {"itemId": "rare_herb", "quantity": 6},
+        {"itemId": "animal_hide", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "advanced_vitality_potion", "quantity": 1},
+      "experienceGain": 350,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "advanced_dexterity_potion",
+      "name": "Advanced Dexterity Potion",
+      "level": 56,
+      "ingredients": [
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "animal_claw", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "advanced_dexterity_potion", "quantity": 1},
+      "experienceGain": 360,
+      "timeRequired": 7900
+    },
+    {
+      "recipeId": "advanced_intelligence_potion",
+      "name": "Advanced Intelligence Potion",
+      "level": 58,
+      "ingredients": [
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "mana_crystal", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "advanced_intelligence_potion", "quantity": 1},
+      "experienceGain": 370,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "advanced_wisdom_potion",
+      "name": "Advanced Wisdom Potion",
+      "level": 60,
+      "ingredients": [
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "energy_wisp", "quantity": 8},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "advanced_wisdom_potion", "quantity": 1},
+      "experienceGain": 380,
+      "timeRequired": 8100
+    },
+    {
+      "recipeId": "stamina_boost_potion",
+      "name": "Stamina Boost Potion",
+      "level": 42,
+      "ingredients": [
+        {"itemId": "mushroom", "quantity": 8},
+        {"itemId": "rare_herb", "quantity": 4},
+        {"itemId": "water", "quantity": 2}
+      ],
+      "result": {"itemId": "stamina_boost_potion", "quantity": 1},
+      "experienceGain": 170,
+      "timeRequired": 6400
+    },
+    {
+      "recipeId": "blessing_scroll_potion_secret",
+      "name": "Blessing Scroll Potion",
+      "level": 51,
+      "unlockRequirements": [
+        {"itemId": "blessing_scroll", "quantity": 2}
+      ],
+      "ingredients": [
+        {"itemId": "blessing_scroll", "quantity": 2},
+        {"itemId": "rare_herb", "quantity": 5},
+        {"itemId": "holy_relic", "quantity": 2}
+      ],
+      "result": {"itemId": "blessing_scroll_potion", "quantity": 1},
+      "experienceGain": 320,
+      "timeRequired": 7600
+    },
+    {
+      "recipeId": "curse_removal_scroll_potion_secret",
+      "name": "Curse Removal Potion",
+      "level": 49,
+      "unlockRequirements": [
+        {"itemId": "curse_removal_scroll", "quantity": 2}
+      ],
+      "ingredients": [
+        {"itemId": "curse_removal_scroll", "quantity": 2},
+        {"itemId": "blessed_water", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 4}
+      ],
+      "result": {"itemId": "curse_removal_potion", "quantity": 1},
+      "experienceGain": 310,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "identification_scroll_potion_secret",
+      "name": "Identification Potion",
+      "level": 47,
+      "unlockRequirements": [
+        {"itemId": "identification_scroll", "quantity": 3}
+      ],
+      "ingredients": [
+        {"itemId": "identification_scroll", "quantity": 3},
+        {"itemId": "rare_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 2}
+      ],
+      "result": {"itemId": "identification_potion", "quantity": 1},
+      "experienceGain": 300,
+      "timeRequired": 7400
+    },
+    {
+      "recipeId": "diviner_scroll_elixir_secret",
+      "name": "Diviner Scroll Elixir",
+      "level": 63,
+      "unlockRequirements": [
+        {"itemId": "diviner_scroll", "quantity": 2}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "divination", "level": 60}
+      ],
+      "ingredients": [
+        {"itemId": "diviner_scroll", "quantity": 2},
+        {"itemId": "divination_fragment", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "diviner_scroll_elixir", "quantity": 1},
+      "experienceGain": 430,
+      "timeRequired": 8700
+    },
+    {
+      "recipeId": "titan_hammer_elixir_secret",
+      "name": "Titan Hammer Elixir",
+      "level": 90,
+      "unlockRequirements": [
+        {"itemId": "titan_hammer", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "quarrying", "level": 85}
+      ],
+      "ingredients": [
+        {"itemId": "titan_hammer", "quantity": 1},
+        {"itemId": "titanstone", "quantity": 5},
+        {"itemId": "legendary_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 3}
+      ],
+      "result": {"itemId": "titan_hammer_elixir", "quantity": 1},
+      "experienceGain": 870,
+      "timeRequired": 12800
+    },
+    {
+      "recipeId": "ultimate_hunting_mastery_token_elixir_secret",
+      "name": "Ultimate Hunting Elixir",
+      "level": 92,
+      "unlockRequirements": [
+        {"itemId": "ultimate_hunting_mastery_token", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "hunting", "level": 90}
+      ],
+      "ingredients": [
+        {"itemId": "ultimate_hunting_mastery_token", "quantity": 1},
+        {"itemId": "mythical_pelt", "quantity": 4},
+        {"itemId": "legendary_bone", "quantity": 3},
+        {"itemId": "legendary_herb", "quantity": 5},
+        {"itemId": "divine_fragment", "quantity": 4}
+      ],
+      "result": {"itemId": "ultimate_hunting_elixir", "quantity": 1},
+      "experienceGain": 890,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "trapping_legendary_blueprint_elixir_secret",
+      "name": "Legendary Trapping Elixir",
+      "level": 77,
+      "unlockRequirements": [
+        {"itemId": "trapping_legendary_blueprint", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "trapping", "level": 70}
+      ],
+      "ingredients": [
+        {"itemId": "trapping_legendary_blueprint", "quantity": 1},
+        {"itemId": "primordial_pelt", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 6},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "legendary_trapping_elixir", "quantity": 1},
+      "experienceGain": 640,
+      "timeRequired": 10800
+    },
+    {
+      "recipeId": "trapping_master_manual_elixir_secret",
+      "name": "Trapping Master Elixir",
+      "level": 79,
+      "unlockRequirements": [
+        {"itemId": "trapping_master_manual", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "trapping", "level": 75}
+      ],
+      "ingredients": [
+        {"itemId": "trapping_master_manual", "quantity": 1},
+        {"itemId": "divine_bone", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 6},
+        {"itemId": "divine_fragment", "quantity": 3}
+      ],
+      "result": {"itemId": "trapping_master_elixir", "quantity": 1},
+      "experienceGain": 660,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "trapping_beast_lure_recipe_elixir_secret",
+      "name": "Beast Lure Elixir",
+      "level": 68,
+      "unlockRequirements": [
+        {"itemId": "trapping_beast_lure_recipe", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "trapping", "level": 60}
+      ],
+      "ingredients": [
+        {"itemId": "trapping_beast_lure_recipe", "quantity": 1},
+        {"itemId": "beast_essence", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "beast_lure_elixir", "quantity": 1},
+      "experienceGain": 490,
+      "timeRequired": 9600
+    },
+    {
+      "recipeId": "trapping_advanced_schematics_elixir_secret",
+      "name": "Advanced Trapping Elixir",
+      "level": 56,
+      "unlockRequirements": [
+        {"itemId": "trapping_advanced_schematics_I", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "trapping", "level": 50}
+      ],
+      "ingredients": [
+        {"itemId": "trapping_advanced_schematics_I", "quantity": 1},
+        {"itemId": "animal_pelt", "quantity": 8},
+        {"itemId": "rare_herb", "quantity": 5}
+      ],
+      "result": {"itemId": "advanced_trapping_elixir", "quantity": 1},
+      "experienceGain": 340,
+      "timeRequired": 7700
+    },
+    {
+      "recipeId": "enhanced_mining_xp_potion",
+      "name": "Enhanced Mining Experience Potion",
+      "level": 62,
+      "skillPrerequisites": [{"skillId": "mining", "level": 50}],
+      "ingredients": [
+        {"itemId": "iron_ore", "quantity": 8},
+        {"itemId": "gold_ore", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "enhanced_mining_xp_potion", "quantity": 1},
+      "experienceGain": 400,
+      "timeRequired": 8400
+    },
+    {
+      "recipeId": "enhanced_woodcutting_xp_potion",
+      "name": "Enhanced Woodcutting Experience Potion",
+      "level": 64,
+      "skillPrerequisites": [{"skillId": "woodcutting", "level": 50}],
+      "ingredients": [
+        {"itemId": "maple_log", "quantity": 8},
+        {"itemId": "yew_log", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "enhanced_woodcutting_xp_potion", "quantity": 1},
+      "experienceGain": 410,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "enhanced_fishing_xp_potion",
+      "name": "Enhanced Fishing Experience Potion",
+      "level": 66,
+      "skillPrerequisites": [{"skillId": "fishing", "level": 50}],
+      "ingredients": [
+        {"itemId": "saltwater_fish", "quantity": 8},
+        {"itemId": "deep_sea_fish", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 3}
+      ],
+      "result": {"itemId": "enhanced_fishing_xp_potion", "quantity": 1},
+      "experienceGain": 420,
+      "timeRequired": 8600
+    },
+    {
+      "recipeId": "enhanced_herbalism_xp_potion",
+      "name": "Enhanced Herbalism Experience Potion",
+      "level": 68,
+      "skillPrerequisites": [{"skillId": "herbalism", "level": 50}],
+      "ingredients": [
+        {"itemId": "rare_herb", "quantity": 8},
+        {"itemId": "epic_herb", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "herb_essence", "quantity": 4}
+      ],
+      "result": {"itemId": "enhanced_herbalism_xp_potion", "quantity": 1},
+      "experienceGain": 430,
+      "timeRequired": 8700
+    },
+    {
+      "recipeId": "enhanced_foraging_xp_potion",
+      "name": "Enhanced Foraging Experience Potion",
+      "level": 70,
+      "skillPrerequisites": [{"skillId": "foraging", "level": 50}],
+      "ingredients": [
+        {"itemId": "exotic_fruit", "quantity": 6},
+        {"itemId": "enchanted_fruit", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "fruit_essence", "quantity": 2}
+      ],
+      "result": {"itemId": "enhanced_foraging_xp_potion", "quantity": 1},
+      "experienceGain": 440,
+      "timeRequired": 8800
+    },
+    {
+      "recipeId": "enhanced_hunting_xp_potion",
+      "name": "Enhanced Hunting Experience Potion",
+      "level": 72,
+      "skillPrerequisites": [{"skillId": "hunting", "level": 50}],
+      "ingredients": [
+        {"itemId": "animal_hide_quality", "quantity": 6},
+        {"itemId": "rare_trophy", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "enhanced_hunting_xp_potion", "quantity": 1},
+      "experienceGain": 450,
+      "timeRequired": 8900
+    },
+    {
+      "recipeId": "enhanced_trapping_xp_potion",
+      "name": "Enhanced Trapping Experience Potion",
+      "level": 74,
+      "skillPrerequisites": [{"skillId": "trapping", "level": 50}],
+      "ingredients": [
+        {"itemId": "animal_pelt", "quantity": 10},
+        {"itemId": "beast_essence", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "enhanced_trapping_xp_potion", "quantity": 1},
+      "experienceGain": 460,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "enhanced_quarrying_xp_potion",
+      "name": "Enhanced Quarrying Experience Potion",
+      "level": 76,
+      "skillPrerequisites": [{"skillId": "quarrying", "level": 50}],
+      "ingredients": [
+        {"itemId": "polished_stone", "quantity": 10},
+        {"itemId": "crystalized_stone", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "enhanced_quarrying_xp_potion", "quantity": 1},
+      "experienceGain": 470,
+      "timeRequired": 9100
+    },
+    {
+      "recipeId": "enhanced_treasure_hunting_xp_potion",
+      "name": "Enhanced Treasure Hunting Experience Potion",
+      "level": 78,
+      "skillPrerequisites": [{"skillId": "treasure_hunting", "level": 50}],
+      "ingredients": [
+        {"itemId": "ancient_treasure", "quantity": 4},
+        {"itemId": "golden_artifact", "quantity": 2},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_treasure_hunting_xp_potion", "quantity": 1},
+      "experienceGain": 480,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "enhanced_thieving_xp_potion",
+      "name": "Enhanced Thieving Experience Potion",
+      "level": 80,
+      "skillPrerequisites": [{"skillId": "thieving", "level": 50}],
+      "ingredients": [
+        {"itemId": "stolen_gem_rare", "quantity": 5},
+        {"itemId": "valuable_trinket", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_thieving_xp_potion", "quantity": 1},
+      "experienceGain": 490,
+      "timeRequired": 9300
+    },
+    {
+      "recipeId": "enhanced_archaeology_xp_potion",
+      "name": "Enhanced Archaeology Experience Potion",
+      "level": 82,
+      "skillPrerequisites": [{"skillId": "archaeology", "level": 50}],
+      "ingredients": [
+        {"itemId": "ancient_artifact", "quantity": 4},
+        {"itemId": "ancient_gem", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_archaeology_xp_potion", "quantity": 1},
+      "experienceGain": 500,
+      "timeRequired": 9400
+    },
+    {
+      "recipeId": "enhanced_cooking_xp_potion",
+      "name": "Enhanced Cooking Experience Potion",
+      "level": 84,
+      "skillPrerequisites": [{"skillId": "cooking", "level": 50}],
+      "ingredients": [
+        {"itemId": "raw_meat_quality", "quantity": 6},
+        {"itemId": "exotic_fruit", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_cooking_xp_potion", "quantity": 1},
+      "experienceGain": 510,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "enhanced_blacksmithing_xp_potion",
+      "name": "Enhanced Blacksmithing Experience Potion",
+      "level": 86,
+      "skillPrerequisites": [{"skillId": "blacksmithing", "level": 50}],
+      "ingredients": [
+        {"itemId": "steel_ore", "quantity": 10},
+        {"itemId": "mithril_ore", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_blacksmithing_xp_potion", "quantity": 1},
+      "experienceGain": 520,
+      "timeRequired": 9600
+    },
+    {
+      "recipeId": "enhanced_engineering_xp_potion",
+      "name": "Enhanced Engineering Experience Potion",
+      "level": 88,
+      "skillPrerequisites": [{"skillId": "engineering", "level": 50}],
+      "ingredients": [
+        {"itemId": "advanced_component", "quantity": 6},
+        {"itemId": "gears", "quantity": 8},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_engineering_xp_potion", "quantity": 1},
+      "experienceGain": 530,
+      "timeRequired": 9700
+    },
+    {
+      "recipeId": "enhanced_tailoring_xp_potion",
+      "name": "Enhanced Tailoring Experience Potion",
+      "level": 90,
+      "skillPrerequisites": [{"skillId": "tailoring", "level": 50}],
+      "ingredients": [
+        {"itemId": "enchanted_cloth", "quantity": 8},
+        {"itemId": "leather", "quantity": 8},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_tailoring_xp_potion", "quantity": 1},
+      "experienceGain": 540,
+      "timeRequired": 9800
+    },
+    {
+      "recipeId": "enhanced_leatherworking_xp_potion",
+      "name": "Enhanced Leatherworking Experience Potion",
+      "level": 92,
+      "skillPrerequisites": [{"skillId": "leatherworking", "level": 50}],
+      "ingredients": [
+        {"itemId": "animal_hide_rare", "quantity": 8},
+        {"itemId": "leather", "quantity": 10},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_leatherworking_xp_potion", "quantity": 1},
+      "experienceGain": 550,
+      "timeRequired": 9900
+    },
+    {
+      "recipeId": "enhanced_jewelcrafting_xp_potion",
+      "name": "Enhanced Jewelcrafting Experience Potion",
+      "level": 94,
+      "skillPrerequisites": [{"skillId": "jewelcrafting", "level": 50}],
+      "ingredients": [
+        {"itemId": "gem_rare", "quantity": 6},
+        {"itemId": "gem_epic", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_jewelcrafting_xp_potion", "quantity": 1},
+      "experienceGain": 560,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "enhanced_enchanting_xp_potion",
+      "name": "Enhanced Enchanting Experience Potion",
+      "level": 96,
+      "skillPrerequisites": [{"skillId": "enchanting", "level": 50}],
+      "ingredients": [
+        {"itemId": "mana_crystal", "quantity": 8},
+        {"itemId": "greater_essence", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_enchanting_xp_potion", "quantity": 1},
+      "experienceGain": 570,
+      "timeRequired": 10100
+    },
+    {
+      "recipeId": "enhanced_runecrafting_xp_potion",
+      "name": "Enhanced Runecrafting Experience Potion",
+      "level": 97,
+      "skillPrerequisites": [{"skillId": "runecrafting", "level": 50}],
+      "ingredients": [
+        {"itemId": "rune_stone", "quantity": 10},
+        {"itemId": "greater_rune", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "enhanced_runecrafting_xp_potion", "quantity": 1},
+      "experienceGain": 580,
+      "timeRequired": 10200
+    },
+    {
+      "recipeId": "merchant_ledger_elixir_secret",
+      "name": "Merchant Ledger Elixir",
+      "level": 59,
+      "unlockRequirements": [
+        {"itemId": "merchant_ledger", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "thieving", "level": 55}
+      ],
+      "ingredients": [
+        {"itemId": "merchant_ledger", "quantity": 1},
+        {"itemId": "stolen_gem_uncommon", "quantity": 5},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "gold_ore", "quantity": 6}
+      ],
+      "result": {"itemId": "merchant_ledger_elixir", "quantity": 1},
+      "experienceGain": 385,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "stolen_scroll_rare_potion_secret",
+      "name": "Rare Stolen Scroll Potion",
+      "level": 57,
+      "unlockRequirements": [
+        {"itemId": "stolen_scroll_rare", "quantity": 3}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "thieving", "level": 50}
+      ],
+      "ingredients": [
+        {"itemId": "stolen_scroll_rare", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "rare_stolen_scroll_potion", "quantity": 1},
+      "experienceGain": 365,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "ancient_map_potion_secret",
+      "name": "Ancient Map Potion",
+      "level": 61,
+      "unlockRequirements": [
+        {"itemId": "ancient_map", "quantity": 2}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "treasure_hunting", "level": 55},
+        {"skillId": "archaeology", "level": 50}
+      ],
+      "ingredients": [
+        {"itemId": "ancient_map", "quantity": 2},
+        {"itemId": "ancient_coin", "quantity": 8},
+        {"itemId": "epic_herb", "quantity": 4},
+        {"itemId": "essence_crystal", "quantity": 4}
+      ],
+      "result": {"itemId": "ancient_map_potion", "quantity": 1},
+      "experienceGain": 405,
+      "timeRequired": 8300
+    },
+    {
+      "recipeId": "divine_prophecy_elixir_secret",
+      "name": "Divine Prophecy Elixir",
+      "level": 83,
+      "unlockRequirements": [
+        {"itemId": "divine_prophecy", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "divination", "level": 80}
+      ],
+      "ingredients": [
+        {"itemId": "divine_prophecy", "quantity": 1},
+        {"itemId": "divine_fragment", "quantity": 4},
+        {"itemId": "celestial_fragment", "quantity": 3},
+        {"itemId": "legendary_herb", "quantity": 5},
+        {"itemId": "prismatic_shard", "quantity": 2}
+      ],
+      "result": {"itemId": "divine_prophecy_elixir", "quantity": 1},
+      "experienceGain": 720,
+      "timeRequired": 11600
+    },
+    {
+      "recipeId": "celestial_insight_elixir_secret",
+      "name": "Celestial Insight Elixir",
+      "level": 81,
+      "unlockRequirements": [
+        {"itemId": "celestial_insight", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "divination", "level": 75}
+      ],
+      "ingredients": [
+        {"itemId": "celestial_insight", "quantity": 1},
+        {"itemId": "celestial_fragment", "quantity": 4},
+        {"itemId": "epic_herb", "quantity": 6},
+        {"itemId": "divine_fragment", "quantity": 2}
+      ],
+      "result": {"itemId": "celestial_insight_elixir", "quantity": 1},
+      "experienceGain": 700,
+      "timeRequired": 11400
+    },
+    {
+      "recipeId": "celestial_chart_elixir_secret",
+      "name": "Celestial Chart Elixir",
+      "level": 73,
+      "unlockRequirements": [
+        {"itemId": "celestial_chart", "quantity": 1}
+      ],
+      "skillPrerequisites": [
+        {"skillId": "divination", "level": 65}
+      ],
+      "ingredients": [
+        {"itemId": "celestial_chart", "quantity": 1},
+        {"itemId": "celestial_fragment", "quantity": 3},
+        {"itemId": "epic_herb", "quantity": 5},
+        {"itemId": "essence_crystal", "quantity": 5}
+      ],
+      "result": {"itemId": "celestial_chart_elixir", "quantity": 1},
+      "experienceGain": 580,
+      "timeRequired": 10000
     }
   ],
   "passiveBonuses": [
@@ -1370,21 +3145,35 @@
       "level": 40,
       "bonus": {
         "mana": 75,
-        "magicAttack": 8
+        "magicAttack": 8,
+        "alchemySuccessRate": 0.1
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "mana": 120,
+        "magicAttack": 12,
+        "potionEffectiveness": 0.15
       }
     },
     {
       "level": 80,
       "bonus": {
         "mana": 150,
-        "magicAttack": 15
+        "magicAttack": 15,
+        "alchemySpeed": 0.2,
+        "potionEffectiveness": 0.2
       }
     },
     {
       "level": 99,
       "bonus": {
         "mana": 250,
-        "magicAttack": 25
+        "magicAttack": 25,
+        "alchemySpeed": 0.25,
+        "potionEffectiveness": 0.25,
+        "potionDuration": 0.25
       }
     }
   ],

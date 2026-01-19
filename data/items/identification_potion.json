@@ -1,0 +1,17 @@
+{
+  "id": "identification_potion",
+  "name": "Identification Potion",
+  "description": "An alchemy-crafted identification potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 485,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "identification_potion_buff",
+    "duration": 770
+  },
+  "nameKey": "item.identification_potion.name",
+  "descriptionKey": "item.identification_potion.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "primordial_essence_potion",
+  "name": "Primordial Essence Potion",
+  "description": "An alchemy-crafted primordial essence potion.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1460,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "primordial_essence_potion_buff",
+    "duration": 1220
+  },
+  "nameKey": "item.primordial_essence_potion.name",
+  "descriptionKey": "item.primordial_essence_potion.description"
+}

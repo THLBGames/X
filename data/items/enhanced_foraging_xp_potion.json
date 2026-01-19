@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_foraging_xp_potion",
+  "name": "Enhanced Foraging Experience Potion",
+  "description": "An alchemy-crafted enhanced foraging experience potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 850,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 900
+  },
+  "nameKey": "item.enhanced_foraging_xp_potion.name",
+  "descriptionKey": "item.enhanced_foraging_xp_potion.description"
+}

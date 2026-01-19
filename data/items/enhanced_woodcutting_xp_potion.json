@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_woodcutting_xp_potion",
+  "name": "Enhanced Woodcutting Experience Potion",
+  "description": "An alchemy-crafted enhanced woodcutting experience potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 820,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 840
+  },
+  "nameKey": "item.enhanced_woodcutting_xp_potion.name",
+  "descriptionKey": "item.enhanced_woodcutting_xp_potion.description"
+}

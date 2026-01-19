@@ -1,0 +1,17 @@
+{
+  "id": "master_thief_elixir",
+  "name": "Master Thief Elixir",
+  "description": "An alchemy-crafted master thief elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 850,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "master_thief_elixir_buff",
+    "duration": 1000
+  },
+  "nameKey": "item.master_thief_elixir.name",
+  "descriptionKey": "item.master_thief_elixir.description"
+}

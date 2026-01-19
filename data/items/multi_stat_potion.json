@@ -1,0 +1,17 @@
+{
+  "id": "multi_stat_potion",
+  "name": "Multi-Stat Potion",
+  "description": "An alchemy-crafted multi-stat potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 500,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "multi_stat_potion_buff",
+    "duration": 800
+  },
+  "nameKey": "item.multi_stat_potion.name",
+  "descriptionKey": "item.multi_stat_potion.description"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_cooking_xp_potion",
+  "name": "Enhanced Cooking Experience Potion",
+  "description": "An alchemy-crafted enhanced cooking experience potion.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1420,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 1040
+  },
+  "nameKey": "item.enhanced_cooking_xp_potion.name",
+  "descriptionKey": "item.enhanced_cooking_xp_potion.description"
+}

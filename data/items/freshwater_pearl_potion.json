@@ -1,0 +1,17 @@
+{
+  "id": "freshwater_pearl_potion",
+  "name": "Freshwater Pearl Potion",
+  "description": "An alchemy-crafted freshwater pearl potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 475,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "freshwater_pearl_potion_buff",
+    "duration": 750
+  },
+  "nameKey": "item.freshwater_pearl_potion.name",
+  "descriptionKey": "item.freshwater_pearl_potion.description"
+}

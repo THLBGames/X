@@ -1,0 +1,17 @@
+{
+  "id": "lich_phylactery_potion",
+  "name": "Lich Phylactery Potion",
+  "description": "An alchemy-crafted lich phylactery potion.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1410,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "lich_phylactery_potion_buff",
+    "duration": 1120
+  },
+  "nameKey": "item.lich_phylactery_potion.name",
+  "descriptionKey": "item.lich_phylactery_potion.description"
+}

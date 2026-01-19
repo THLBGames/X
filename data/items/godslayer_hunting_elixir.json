@@ -1,0 +1,17 @@
+{
+  "id": "godslayer_hunting_elixir",
+  "name": "Godslayer Hunting Elixir",
+  "description": "An alchemy-crafted godslayer hunting elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1420,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "godslayer_hunting_elixir_buff",
+    "duration": 1140
+  },
+  "nameKey": "item.godslayer_hunting_elixir.name",
+  "descriptionKey": "item.godslayer_hunting_elixir.description"
+}

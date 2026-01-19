@@ -1,0 +1,16 @@
+{
+  "id": "mining_xp_potion",
+  "name": "Mining Experience Potion",
+  "description": "An alchemy-crafted mining experience potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 205,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 410
+  },
+  "nameKey": "item.mining_xp_potion.name",
+  "descriptionKey": "item.mining_xp_potion.description"
+}

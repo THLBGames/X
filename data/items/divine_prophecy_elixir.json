@@ -1,0 +1,17 @@
+{
+  "id": "divine_prophecy_elixir",
+  "name": "Divine Prophecy Elixir",
+  "description": "An alchemy-crafted divine prophecy elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1415,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "divine_prophecy_elixir_buff",
+    "duration": 1130
+  },
+  "nameKey": "item.divine_prophecy_elixir.name",
+  "descriptionKey": "item.divine_prophecy_elixir.description"
+}

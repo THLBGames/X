@@ -1,0 +1,17 @@
+{
+  "id": "celestial_key_elixir",
+  "name": "Celestial Key Elixir",
+  "description": "An alchemy-crafted celestial key elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 840,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "celestial_key_elixir_buff",
+    "duration": 980
+  },
+  "nameKey": "item.celestial_key_elixir.name",
+  "descriptionKey": "item.celestial_key_elixir.description"
+}

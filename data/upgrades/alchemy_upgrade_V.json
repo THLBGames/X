@@ -11,7 +11,24 @@
     "experienceMultiplier": 1.3,
     "speedMultiplier": 0.8,
     "yieldMultiplier": 1.2,
-    "successRateBonus": 0.2
+    "successRateBonus": 0.2,
+    "unlocksRecipes": [
+      "celestial_key_elixir_secret",
+      "destiny_anchor_elixir_secret",
+      "fate_weaver_elixir_secret",
+      "atlantis_key_elixir_secret",
+      "shadow_pass_elixir_secret",
+      "ancient_key_thieving_elixir_secret",
+      "master_thief_mark_elixir_secret",
+      "legendary_hunter_medallion_elixir_secret",
+      "master_hunting_badge_elixir_secret",
+      "master_trapper_badge_elixir_secret",
+      "diviner_scroll_elixir_secret",
+      "celestial_chart_elixir_secret",
+      "trapping_legendary_blueprint_elixir_secret",
+      "trapping_master_manual_elixir_secret",
+      "merchant_ledger_elixir_secret"
+    ]
   },
   "requirements": {
     "previousTierId": "alchemy_upgrade_IV"

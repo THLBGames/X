@@ -1,0 +1,17 @@
+{
+  "id": "legendary_trapping_elixir",
+  "name": "Legendary Trapping Elixir",
+  "description": "An alchemy-crafted legendary trapping elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 885,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "legendary_trapping_elixir_buff",
+    "duration": 1070
+  },
+  "nameKey": "item.legendary_trapping_elixir.name",
+  "descriptionKey": "item.legendary_trapping_elixir.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "ancient_scroll_potion",
+  "name": "Ancient Scroll Potion",
+  "description": "An alchemy-crafted ancient scroll potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 490,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "ancient_scroll_potion_buff",
+    "duration": 780
+  },
+  "nameKey": "item.ancient_scroll_potion.name",
+  "descriptionKey": "item.ancient_scroll_potion.description"
+}

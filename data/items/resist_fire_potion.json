@@ -1,0 +1,17 @@
+{
+  "id": "resist_fire_potion",
+  "name": "Fire Resistance Potion",
+  "description": "An alchemy-crafted fire resistance potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 470,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "resist_fire_potion_buff",
+    "duration": 740
+  },
+  "nameKey": "item.resist_fire_potion.name",
+  "descriptionKey": "item.resist_fire_potion.description"
+}

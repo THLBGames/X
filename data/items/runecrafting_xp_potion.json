@@ -1,0 +1,16 @@
+{
+  "id": "runecrafting_xp_potion",
+  "name": "Runecrafting Experience Potion",
+  "description": "An alchemy-crafted runecrafting experience potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 535,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 770
+  },
+  "nameKey": "item.runecrafting_xp_potion.name",
+  "descriptionKey": "item.runecrafting_xp_potion.description"
+}

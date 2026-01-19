@@ -1,0 +1,17 @@
+{
+  "id": "advanced_intelligence_potion",
+  "name": "Advanced Intelligence Potion",
+  "description": "An alchemy-crafted advanced intelligence potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 540,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "advanced_intelligence_boost",
+    "duration": 880
+  },
+  "nameKey": "item.advanced_intelligence_potion.name",
+  "descriptionKey": "item.advanced_intelligence_potion.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "advanced_trapping_elixir",
+  "name": "Advanced Trapping Elixir",
+  "description": "An alchemy-crafted advanced trapping elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 530,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "advanced_trapping_elixir_buff",
+    "duration": 860
+  },
+  "nameKey": "item.advanced_trapping_elixir.name",
+  "descriptionKey": "item.advanced_trapping_elixir.description"
+}

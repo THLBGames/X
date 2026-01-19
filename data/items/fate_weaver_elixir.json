@@ -1,0 +1,17 @@
+{
+  "id": "fate_weaver_elixir",
+  "name": "Fate Weaver Elixir",
+  "description": "An alchemy-crafted fate weaver elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 870,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "fate_weaver_elixir_buff",
+    "duration": 1040
+  },
+  "nameKey": "item.fate_weaver_elixir.name",
+  "descriptionKey": "item.fate_weaver_elixir.description"
+}

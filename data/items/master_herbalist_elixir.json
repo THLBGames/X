@@ -1,0 +1,17 @@
+{
+  "id": "master_herbalist_elixir",
+  "name": "Master Herbalist Elixir",
+  "description": "An alchemy-crafted master herbalist elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 540,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "master_herbalist_elixir_buff",
+    "duration": 880
+  },
+  "nameKey": "item.master_herbalist_elixir.name",
+  "descriptionKey": "item.master_herbalist_elixir.description"
+}

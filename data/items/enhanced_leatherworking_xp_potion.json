@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_leatherworking_xp_potion",
+  "name": "Enhanced Leatherworking Experience Potion",
+  "description": "An alchemy-crafted enhanced leatherworking experience potion.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1460,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 1120
+  },
+  "nameKey": "item.enhanced_leatherworking_xp_potion.name",
+  "descriptionKey": "item.enhanced_leatherworking_xp_potion.description"
+}

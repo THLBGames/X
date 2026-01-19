@@ -1,0 +1,17 @@
+{
+  "id": "primal_potion",
+  "name": "Primal Potion",
+  "description": "An alchemy-crafted primal potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 875,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "primal_potion_buff",
+    "duration": 1050
+  },
+  "nameKey": "item.primal_potion.name",
+  "descriptionKey": "item.primal_potion.description"
+}

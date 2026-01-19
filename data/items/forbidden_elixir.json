@@ -1,0 +1,17 @@
+{
+  "id": "forbidden_elixir",
+  "name": "Forbidden Elixir",
+  "description": "An alchemy-crafted forbidden elixir.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2985,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "forbidden_elixir_buff",
+    "duration": 1270
+  },
+  "nameKey": "item.forbidden_elixir.name",
+  "descriptionKey": "item.forbidden_elixir.description"
+}

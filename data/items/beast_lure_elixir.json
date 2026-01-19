@@ -1,0 +1,17 @@
+{
+  "id": "beast_lure_elixir",
+  "name": "Beast Lure Elixir",
+  "description": "An alchemy-crafted beast lure elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 840,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "beast_lure_elixir_buff",
+    "duration": 980
+  },
+  "nameKey": "item.beast_lure_elixir.name",
+  "descriptionKey": "item.beast_lure_elixir.description"
+}

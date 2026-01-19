@@ -1,0 +1,17 @@
+{
+  "id": "bone_powder",
+  "name": "Bone Powder",
+  "description": "An alchemy-crafted bone powder.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 125,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "bone_powder_buff",
+    "duration": 450
+  },
+  "nameKey": "item.bone_powder.name",
+  "descriptionKey": "item.bone_powder.description"
+}

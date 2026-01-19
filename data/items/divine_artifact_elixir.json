@@ -1,0 +1,17 @@
+{
+  "id": "divine_artifact_elixir",
+  "name": "Divine Artifact Elixir",
+  "description": "An alchemy-crafted divine artifact elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1440,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "divine_artifact_elixir_buff",
+    "duration": 1180
+  },
+  "nameKey": "item.divine_artifact_elixir.name",
+  "descriptionKey": "item.divine_artifact_elixir.description"
+}

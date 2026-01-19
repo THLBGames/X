@@ -1,0 +1,17 @@
+{
+  "id": "ancient_map_potion",
+  "name": "Ancient Map Potion",
+  "description": "An alchemy-crafted ancient map potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 805,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "ancient_map_potion_buff",
+    "duration": 910
+  },
+  "nameKey": "item.ancient_map_potion.name",
+  "descriptionKey": "item.ancient_map_potion.description"
+}

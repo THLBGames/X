@@ -1,0 +1,16 @@
+{
+  "id": "thieving_xp_potion",
+  "name": "Thieving Experience Potion",
+  "description": "An alchemy-crafted thieving experience potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 295,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 590
+  },
+  "nameKey": "item.thieving_xp_potion.name",
+  "descriptionKey": "item.thieving_xp_potion.description"
+}

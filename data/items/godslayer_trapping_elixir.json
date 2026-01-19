@@ -1,0 +1,17 @@
+{
+  "id": "godslayer_trapping_elixir",
+  "name": "Godslayer Trapping Elixir",
+  "description": "An alchemy-crafted godslayer trapping elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1430,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "godslayer_trapping_elixir_buff",
+    "duration": 1160
+  },
+  "nameKey": "item.godslayer_trapping_elixir.name",
+  "descriptionKey": "item.godslayer_trapping_elixir.description"
+}

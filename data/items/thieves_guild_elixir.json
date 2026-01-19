@@ -1,0 +1,17 @@
+{
+  "id": "thieves_guild_elixir",
+  "name": "Thieves Guild Elixir",
+  "description": "An alchemy-crafted thieves guild elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 520,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "thieves_guild_elixir_buff",
+    "duration": 840
+  },
+  "nameKey": "item.thieves_guild_elixir.name",
+  "descriptionKey": "item.thieves_guild_elixir.description"
+}

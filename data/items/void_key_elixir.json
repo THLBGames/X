@@ -1,0 +1,17 @@
+{
+  "id": "void_key_elixir",
+  "name": "Void Key Elixir",
+  "description": "An alchemy-crafted void key elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1400,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "void_key_elixir_buff",
+    "duration": 1100
+  },
+  "nameKey": "item.void_key_elixir.name",
+  "descriptionKey": "item.void_key_elixir.description"
+}

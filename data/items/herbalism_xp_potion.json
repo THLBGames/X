@@ -1,0 +1,16 @@
+{
+  "id": "herbalism_xp_potion",
+  "name": "Herbalism Experience Potion",
+  "description": "An alchemy-crafted herbalism experience potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 235,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 470
+  },
+  "nameKey": "item.herbalism_xp_potion.name",
+  "descriptionKey": "item.herbalism_xp_potion.description"
+}
