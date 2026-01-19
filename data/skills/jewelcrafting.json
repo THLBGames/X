@@ -1,7 +1,7 @@
 {
   "id": "jewelcrafting",
   "name": "Jewelcrafting",
-  "description": "Create jewelry and gems",
+  "description": "Create jewelry and gems for enchanting and trade",
   "type": "production",
   "category": "production",
   "maxLevel": 99,
@@ -10,10 +10,88 @@
     {
       "recipeId": "copper_ring",
       "name": "Copper Ring",
-      "level": 10,
+      "level": 1,
       "ingredients": [
         {
           "itemId": "copper_ore",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "copper_ring",
+        "quantity": 1
+      },
+      "experienceGain": 25,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "copper_necklace",
+      "name": "Copper Necklace",
+      "level": 3,
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "chain",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "copper_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 30,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "copper_bracelet",
+      "name": "Copper Bracelet",
+      "level": 5,
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "copper_bracelet",
+        "quantity": 1
+      },
+      "experienceGain": 28,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "polish_gem_common",
+      "name": "Polish Common Gem",
+      "level": 8,
+      "ingredients": [
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "gem_common",
+        "quantity": 1
+      },
+      "experienceGain": 20,
+      "timeRequired": 3000
+    },
+    {
+      "recipeId": "bronze_ring",
+      "name": "Bronze Ring",
+      "level": 10,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
           "quantity": 3
         },
         {
@@ -22,11 +100,72 @@
         }
       ],
       "result": {
-        "itemId": "copper_ring",
+        "itemId": "bronze_ring",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "bronze_jewelry",
+      "name": "Bronze Jewelry Set",
+      "level": 12,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 18
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "bronze_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "polish_gem_uncommon",
+      "name": "Polish Uncommon Gem",
+      "level": 15,
+      "ingredients": [
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "gem_uncommon",
         "quantity": 1
       },
       "experienceGain": 35,
-      "timeRequired": 6000
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "gem_dust_common",
+      "name": "Common Gem Dust",
+      "level": 18,
+      "ingredients": [
+        {
+          "itemId": "gem_common",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gem_dust_common",
+        "quantity": 2
+      },
+      "experienceGain": 45,
+      "timeRequired": 5000
     },
     {
       "recipeId": "pearl_necklace",
@@ -87,36 +226,36 @@
       "timeRequired": 6500
     },
     {
-      "recipeId": "bronze_jewelry",
-      "name": "Bronze Jewelry",
-      "level": 18,
+      "recipeId": "silver_ring",
+      "name": "Silver Ring",
+      "level": 25,
       "skillPrerequisites": [
         {
           "skillId": "mining",
-          "level": 20
+          "level": 25
         }
       ],
       "ingredients": [
         {
-          "itemId": "bronze_ore",
+          "itemId": "silver_ore",
           "quantity": 4
         },
         {
-          "itemId": "gem_common",
-          "quantity": 2
+          "itemId": "gem_uncommon",
+          "quantity": 1
         }
       ],
       "result": {
-        "itemId": "bronze_jewelry",
+        "itemId": "silver_ring",
         "quantity": 1
       },
-      "experienceGain": 55,
-      "timeRequired": 6500
+      "experienceGain": 90,
+      "timeRequired": 7000
     },
     {
       "recipeId": "uncommon_gem_ring",
       "name": "Uncommon Gem Ring",
-      "level": 25,
+      "level": 28,
       "skillPrerequisites": [
         {
           "skillId": "mining",
@@ -137,8 +276,182 @@
         "itemId": "uncommon_gem_ring",
         "quantity": 1
       },
-      "experienceGain": 90,
+      "experienceGain": 100,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "polish_gem_rare",
+      "name": "Polish Rare Gem",
+      "level": 30,
+      "ingredients": [
+        {
+          "itemId": "gem_rare",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "gem_rare",
+        "quantity": 1
+      },
+      "experienceGain": 60,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "gem_dust_uncommon",
+      "name": "Uncommon Gem Dust",
+      "level": 32,
+      "ingredients": [
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gem_dust_uncommon",
+        "quantity": 2
+      },
+      "experienceGain": 75,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "silver_necklace",
+      "name": "Silver Necklace",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silver_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "chain",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "silver_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "refine_gem_common_to_uncommon",
+      "name": "Refine Common to Uncommon Gem",
+      "level": 38,
+      "ingredients": [
+        {
+          "itemId": "gem_common",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "gem_uncommon",
+        "quantity": 1
+      },
+      "experienceGain": 95,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "freshwater_pearl_jewelry",
+      "name": "Freshwater Pearl Jewelry",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "freshwater_pearl",
+          "quantity": 5
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "freshwater_pearl_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "gold_ring",
+      "name": "Gold Ring",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "gold_ring",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "polish_gem_epic",
+      "name": "Polish Epic Gem",
+      "level": 45,
+      "ingredients": [
+        {
+          "itemId": "gem_epic",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "gem_epic",
+        "quantity": 1
+      },
+      "experienceGain": 120,
       "timeRequired": 7000
+    },
+    {
+      "recipeId": "gem_dust_rare",
+      "name": "Rare Gem Dust",
+      "level": 47,
+      "ingredients": [
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gem_dust_rare",
+        "quantity": 2
+      },
+      "experienceGain": 130,
+      "timeRequired": 6500
     },
     {
       "recipeId": "ancient_gem_jewelry",
@@ -172,68 +485,6 @@
       "timeRequired": 9000
     },
     {
-      "recipeId": "silver_necklace",
-      "name": "Silver Necklace",
-      "level": 35,
-      "skillPrerequisites": [
-        {
-          "skillId": "mining",
-          "level": 25
-        }
-      ],
-      "ingredients": [
-        {
-          "itemId": "silver_ore",
-          "quantity": 5
-        },
-        {
-          "itemId": "gem_rare",
-          "quantity": 2
-        },
-        {
-          "itemId": "chain",
-          "quantity": 1
-        }
-      ],
-      "result": {
-        "itemId": "silver_necklace",
-        "quantity": 1
-      },
-      "experienceGain": 140,
-      "timeRequired": 8000
-    },
-    {
-      "recipeId": "freshwater_pearl_jewelry",
-      "name": "Freshwater Pearl Jewelry",
-      "level": 45,
-      "skillPrerequisites": [
-        {
-          "skillId": "fishing",
-          "level": 30
-        }
-      ],
-      "ingredients": [
-        {
-          "itemId": "freshwater_pearl",
-          "quantity": 5
-        },
-        {
-          "itemId": "gold_ore",
-          "quantity": 4
-        },
-        {
-          "itemId": "gem_rare",
-          "quantity": 2
-        }
-      ],
-      "result": {
-        "itemId": "freshwater_pearl_jewelry",
-        "quantity": 1
-      },
-      "experienceGain": 180,
-      "timeRequired": 8500
-    },
-    {
       "recipeId": "platinum_jewelry",
       "name": "Platinum Jewelry",
       "level": 50,
@@ -265,13 +516,30 @@
       "timeRequired": 9000
     },
     {
+      "recipeId": "refine_gem_uncommon_to_rare",
+      "name": "Refine Uncommon to Rare Gem",
+      "level": 52,
+      "ingredients": [
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "gem_rare",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 8500
+    },
+    {
       "recipeId": "golden_artifact_jewelry",
       "name": "Golden Artifact Jewelry",
-      "level": 52,
+      "level": 55,
       "skillPrerequisites": [
         {
           "skillId": "archaeology",
-          "level": 45
+          "level": 50
         }
       ],
       "ingredients": [
@@ -302,7 +570,7 @@
     {
       "recipeId": "mana_scale_jewelry",
       "name": "Mana Scale Jewelry",
-      "level": 55,
+      "level": 58,
       "skillPrerequisites": [
         {
           "skillId": "fishing",
@@ -337,7 +605,7 @@
       "skillPrerequisites": [
         {
           "skillId": "mining",
-          "level": 40
+          "level": 50
         }
       ],
       "ingredients": [
@@ -359,6 +627,57 @@
         "quantity": 1
       },
       "experienceGain": 300,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "polish_gem_legendary",
+      "name": "Polish Legendary Gem",
+      "level": 62,
+      "ingredients": [
+        {
+          "itemId": "gem_legendary",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "gem_legendary",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "gem_dust_epic",
+      "name": "Epic Gem Dust",
+      "level": 65,
+      "ingredients": [
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gem_dust_epic",
+        "quantity": 2
+      },
+      "experienceGain": 220,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "refine_gem_rare_to_epic",
+      "name": "Refine Rare to Epic Gem",
+      "level": 68,
+      "ingredients": [
+        {
+          "itemId": "gem_rare",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "gem_epic",
+        "quantity": 1
+      },
+      "experienceGain": 280,
       "timeRequired": 10000
     },
     {
@@ -399,7 +718,7 @@
       "skillPrerequisites": [
         {
           "skillId": "fishing",
-          "level": 45
+          "level": 60
         }
       ],
       "ingredients": [
@@ -465,7 +784,7 @@
       "skillPrerequisites": [
         {
           "skillId": "archaeology",
-          "level": 55
+          "level": 60
         }
       ],
       "ingredients": [
@@ -494,13 +813,34 @@
       "timeRequired": 12500
     },
     {
+      "recipeId": "refine_gem_epic_to_legendary",
+      "name": "Refine Epic to Legendary Gem",
+      "level": 80,
+      "ingredients": [
+        {
+          "itemId": "gem_epic",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "gem_legendary",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 12000
+    },
+    {
       "recipeId": "rainbow_pearl_jewelry",
       "name": "Rainbow Pearl Jewelry",
       "level": 82,
       "skillPrerequisites": [
         {
           "skillId": "fishing",
-          "level": 50
+          "level": 70
         }
       ],
       "ingredients": [
@@ -535,7 +875,7 @@
       "skillPrerequisites": [
         {
           "skillId": "mining",
-          "level": 70
+          "level": 75
         }
       ],
       "ingredients": [
@@ -560,35 +900,21 @@
       "timeRequired": 14000
     },
     {
-      "recipeId": "prismatic_jewelry",
-      "name": "Prismatic Jewelry",
-      "level": 90,
-      "skillPrerequisites": [
-        {
-          "skillId": "mining",
-          "level": 85
-        }
-      ],
+      "recipeId": "gem_dust_legendary",
+      "name": "Legendary Gem Dust",
+      "level": 87,
       "ingredients": [
-        {
-          "itemId": "orichalcum_ore",
-          "quantity": 10
-        },
-        {
-          "itemId": "prismatic_shard",
-          "quantity": 3
-        },
         {
           "itemId": "gem_legendary",
           "quantity": 3
         }
       ],
       "result": {
-        "itemId": "prismatic_jewelry",
-        "quantity": 1
+        "itemId": "gem_dust_legendary",
+        "quantity": 2
       },
-      "experienceGain": 650,
-      "timeRequired": 15000
+      "experienceGain": 450,
+      "timeRequired": 10000
     },
     {
       "recipeId": "celestial_scale_jewelry",
@@ -626,13 +952,44 @@
       "timeRequired": 16000
     },
     {
-      "recipeId": "divine_jewelry",
-      "name": "Divine Jewelry",
-      "level": 98,
+      "recipeId": "prismatic_jewelry",
+      "name": "Prismatic Jewelry",
+      "level": 90,
       "skillPrerequisites": [
         {
           "skillId": "mining",
-          "level": 95
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "divine_jewelry",
+      "name": "Divine Jewelry",
+      "level": 95,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 90
         }
       ],
       "ingredients": [
@@ -655,29 +1012,6 @@
       },
       "experienceGain": 750,
       "timeRequired": 18000
-    }
-  ],
-  "passiveBonuses": [
-    {
-      "level": 40,
-      "bonus": {
-        "goldGeneration": 0.1,
-        "luck": 5
-      }
-    },
-    {
-      "level": 80,
-      "bonus": {
-        "goldGeneration": 0.2,
-        "luck": 10
-      }
-    },
-    {
-      "level": 99,
-      "bonus": {
-        "goldGeneration": 0.3,
-        "luck": 15
-      }
     },
     {
       "recipeId": "stolen_gem_jewelry",
@@ -775,6 +1109,288 @@
       },
       "experienceGain": 600,
       "timeRequired": 15000
+    },
+    {
+      "recipeId": "secret_ancient_jewelry_mold",
+      "name": "Ancient Jewelry Mold",
+      "level": 65,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_jewelry_mold",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_gem",
+          "quantity": 5
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "ancient_jewelry_mold",
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "ancient_gem_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "secret_master_cutter_tool",
+      "name": "Master Gem Cutter's Work",
+      "level": 70,
+      "unlockRequirements": [
+        {
+          "itemId": "master_cutter_tool",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        },
+        {
+          "itemId": "master_cutter_tool",
+          "quantity": 1
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "gem_legendary",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "secret_divine_gem_fragment",
+      "name": "Divine Gem Fragment Jewelry",
+      "level": 92,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_gem_fragment",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_gem_fragment",
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "divine_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "secret_runecrafting_enhanced",
+      "name": "Runecrafting-Enhanced Jewelry",
+      "level": 55,
+      "unlockRequirements": [
+        {
+          "itemId": "enchanted_rune_core",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "runecrafting",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_rune_core",
+          "quantity": 1
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gold_jewelry_set",
+        "quantity": 1
+      },
+      "experienceGain": 320,
+      "timeRequired": 10500
+    },
+    {
+      "recipeId": "secret_enchanting_synergy",
+      "name": "Enchanting-Synergy Jewelry",
+      "level": 75,
+      "unlockRequirements": [
+        {
+          "itemId": "enchanted_gem_core",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_gem_core",
+          "quantity": 1
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "epic_gem_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "secret_thief_master_tools",
+      "name": "Master Thief's Jewelry",
+      "level": 60,
+      "unlockRequirements": [
+        {
+          "itemId": "master_thief_tools",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 7
+        },
+        {
+          "itemId": "stolen_gem_uncommon",
+          "quantity": 5
+        },
+        {
+          "itemId": "master_thief_tools",
+          "quantity": 1
+        },
+        {
+          "itemId": "valuable_trinket",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "gold_jewelry_set",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 11000
+    }
+  ],
+  "passiveBonuses": [
+    {
+      "level": 25,
+      "bonus": {
+        "goldGeneration": 0.05,
+        "luck": 2
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "goldGeneration": 0.1,
+        "luck": 5
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "goldGeneration": 0.1,
+        "luck": 5
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "goldGeneration": 0.15,
+        "luck": 10,
+        "itemValue": 0.05
+      }
+    },
+    {
+      "level": 80,
+      "bonus": {
+        "goldGeneration": 0.2,
+        "luck": 10
+      }
+    },
+    {
+      "level": 99,
+      "bonus": {
+        "goldGeneration": 0.3,
+        "luck": 15,
+        "itemValue": 0.1
+      }
     }
   ],
   "nameKey": "skill.jewelcrafting.name",

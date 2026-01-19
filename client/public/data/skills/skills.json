@@ -16003,6 +16003,126 @@
           ]
         },
         {
+          "level": 5,
+          "nodeId": "corn_field",
+          "name": "Corn Field",
+          "successRate": 0.92,
+          "experienceGain": 18,
+          "timeRequired": 10500,
+          "resources": [
+            {
+              "itemId": "corn",
+              "chance": 1,
+              "min": 2,
+              "max": 5
+            },
+            {
+              "itemId": "corn_seed",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "wheat",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "nodeId": "carrot_patch",
+          "name": "Carrot Patch",
+          "successRate": 0.91,
+          "experienceGain": 25,
+          "timeRequired": 11000,
+          "resources": [
+            {
+              "itemId": "carrot",
+              "chance": 1,
+              "min": 3,
+              "max": 6
+            },
+            {
+              "itemId": "carrot_seed",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "nodeId": "potato_field",
+          "name": "Potato Field",
+          "successRate": 0.9,
+          "experienceGain": 32,
+          "timeRequired": 11500,
+          "resources": [
+            {
+              "itemId": "potato",
+              "chance": 1,
+              "min": 4,
+              "max": 7
+            },
+            {
+              "itemId": "potato_seed",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "carrot",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "nodeId": "tomato_garden",
+          "name": "Tomato Garden",
+          "successRate": 0.89,
+          "experienceGain": 38,
+          "timeRequired": 11800,
+          "resources": [
+            {
+              "itemId": "tomato",
+              "chance": 1,
+              "min": 2,
+              "max": 5
+            },
+            {
+              "itemId": "tomato_seed",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 18,
+          "nodeId": "cabbage_patch",
+          "name": "Cabbage Patch",
+          "successRate": 0.88,
+          "experienceGain": 42,
+          "timeRequired": 12000,
+          "resources": [
+            {
+              "itemId": "cabbage",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "cabbage_seed",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "vegetable",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
           "level": 25,
           "nodeId": "vegetable_garden",
           "name": "Vegetable Garden",
@@ -16019,6 +16139,194 @@
             {
               "itemId": "wheat",
               "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 28,
+          "nodeId": "rice_paddy",
+          "name": "Rice Paddy",
+          "successRate": 0.87,
+          "experienceGain": 48,
+          "timeRequired": 12500,
+          "resources": [
+            {
+              "itemId": "rice",
+              "chance": 1,
+              "min": 3,
+              "max": 6
+            },
+            {
+              "itemId": "rice_seed",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "wheat",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 32,
+          "nodeId": "bean_field",
+          "name": "Bean Field",
+          "successRate": 0.86,
+          "experienceGain": 55,
+          "timeRequired": 13000,
+          "resources": [
+            {
+              "itemId": "bean",
+              "chance": 1,
+              "min": 3,
+              "max": 5
+            },
+            {
+              "itemId": "bean_seed",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "vegetable",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 35,
+          "nodeId": "onion_garden",
+          "name": "Onion Garden",
+          "successRate": 0.85,
+          "experienceGain": 62,
+          "timeRequired": 13200,
+          "resources": [
+            {
+              "itemId": "onion",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "onion_seed",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "vegetable",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 38,
+          "nodeId": "pepper_garden",
+          "name": "Pepper Garden",
+          "successRate": 0.84,
+          "experienceGain": 70,
+          "timeRequired": 13500,
+          "resources": [
+            {
+              "itemId": "pepper",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "pepper_seed",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "wild_spice",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "nodeId": "ancient_seed_garden",
+          "name": "Ancient Seed Garden",
+          "successRate": 0.82,
+          "experienceGain": 75,
+          "timeRequired": 14000,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "ancient_seed",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "ancient_scroll",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 42,
+          "nodeId": "fruit_orchard",
+          "name": "Fruit Orchard",
+          "successRate": 0.83,
+          "experienceGain": 80,
+          "timeRequired": 13800,
+          "resources": [
+            {
+              "itemId": "fruit",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "fruit_seed",
+              "chance": 0.35,
+              "quantity": 1
+            },
+            {
+              "itemId": "berry",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 45,
+          "nodeId": "berry_farm",
+          "name": "Berry Farm",
+          "successRate": 0.82,
+          "experienceGain": 88,
+          "timeRequired": 14000,
+          "resources": [
+            {
+              "itemId": "berry",
+              "chance": 1,
+              "min": 3,
+              "max": 6
+            },
+            {
+              "itemId": "berry_seed",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "fruit",
+              "chance": 0.3,
               "quantity": 1
             }
           ]
@@ -16043,9 +16351,480 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "level": 55,
+          "nodeId": "enchanted_crop_field",
+          "name": "Enchanted Crop Field",
+          "successRate": 0.8,
+          "experienceGain": 110,
+          "timeRequired": 14500,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 40
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "enchanted_crop",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "magic_essence",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "vegetable",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "phoenix_feather_farm",
+          "name": "Phoenix Feather Farm",
+          "successRate": 0.78,
+          "experienceGain": 125,
+          "timeRequired": 15000,
+          "unlockRequirements": [
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "phoenix_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "fire_herb",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "nodeId": "spice_plantation",
+          "name": "Spice Plantation",
+          "successRate": 0.79,
+          "experienceGain": 120,
+          "timeRequired": 14800,
+          "resources": [
+            {
+              "itemId": "wild_spice",
+              "chance": 1,
+              "min": 2,
+              "max": 4
+            },
+            {
+              "itemId": "aromatic_leaves",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "pepper",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 65,
+          "nodeId": "exotic_fruit_grove",
+          "name": "Exotic Fruit Grove",
+          "successRate": 0.77,
+          "experienceGain": 135,
+          "timeRequired": 15200,
+          "resources": [
+            {
+              "itemId": "exotic_fruit",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "fruit",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "berry",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "dragon_scale_plantation",
+          "name": "Dragon Scale Plantation",
+          "successRate": 0.75,
+          "experienceGain": 150,
+          "timeRequired": 15500,
+          "unlockRequirements": [
+            {
+              "itemId": "dragon_scale",
+              "quantity": 2
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "dragon_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "dragon_scale",
+              "chance": 0.2,
+              "quantity": 1
+            },
+            {
+              "itemId": "epic_herb",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "nodeId": "medicinal_herb_garden",
+          "name": "Medicinal Herb Garden",
+          "successRate": 0.76,
+          "experienceGain": 145,
+          "timeRequired": 15300,
+          "skillPrerequisites": [
+            {
+              "skillId": "herbalism",
+              "level": 60
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "rare_herb",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "epic_herb",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "common_herb",
+              "chance": 0.5,
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "level": 75,
+          "nodeId": "rare_seed_garden",
+          "name": "Rare Seed Garden",
+          "successRate": 0.74,
+          "experienceGain": 165,
+          "timeRequired": 15800,
+          "resources": [
+            {
+              "itemId": "rare_seed",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "exotic_fruit",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "rare_herb",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "nodeId": "magical_crop_field",
+          "name": "Magical Crop Field",
+          "successRate": 0.72,
+          "experienceGain": 180,
+          "timeRequired": 16000,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 65
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "magical_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 3
+            },
+            {
+              "itemId": "magic_essence",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "crystal_shard",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 85,
+          "nodeId": "celestial_garden",
+          "name": "Celestial Garden",
+          "successRate": 0.7,
+          "experienceGain": 200,
+          "timeRequired": 16500,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 70
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "celestial_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "celestial_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "cosmic_energy",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 88,
+          "nodeId": "world_tree_orchard",
+          "name": "World Tree Orchard",
+          "successRate": 0.68,
+          "experienceGain": 220,
+          "timeRequired": 17000,
+          "unlockRequirements": [
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 80
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "world_tree_fruit",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "world_tree_essence",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "legendary_berry",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 90,
+          "nodeId": "divine_crop_field",
+          "name": "Divine Crop Field",
+          "successRate": 0.66,
+          "experienceGain": 240,
+          "timeRequired": 17500,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 80
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "divine_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "prismatic_shard",
+              "chance": 0.2,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 92,
+          "nodeId": "divine_fragment_garden",
+          "name": "Divine Fragment Garden",
+          "successRate": 0.65,
+          "experienceGain": 260,
+          "timeRequired": 18000,
+          "unlockRequirements": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            }
+          ],
+          "resources": [
+            {
+              "itemId": "divine_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "celestial_crop",
+              "chance": 0.5,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 95,
+          "nodeId": "primal_garden",
+          "name": "Primal Garden",
+          "successRate": 0.64,
+          "experienceGain": 280,
+          "timeRequired": 18500,
+          "resources": [
+            {
+              "itemId": "primal_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "primal_essence",
+              "chance": 0.4,
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_crop",
+              "chance": 0.3,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "level": 99,
+          "nodeId": "eternal_farm",
+          "name": "Eternal Farm",
+          "successRate": 0.62,
+          "experienceGain": 320,
+          "timeRequired": 20000,
+          "resources": [
+            {
+              "itemId": "eternal_crop",
+              "chance": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "chance": 0.5,
+              "quantity": 1
+            },
+            {
+              "itemId": "prismatic_shard",
+              "chance": 0.3,
+              "quantity": 1
+            },
+            {
+              "itemId": "primal_crop",
+              "chance": 0.4,
+              "quantity": 1
+            }
+          ]
         }
       ],
       "recipes": [
+        {
+          "recipeId": "seed_pack",
+          "name": "Seed Pack",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "wheat_seed",
+              "quantity": 5
+            },
+            {
+              "itemId": "cloth",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "seed_pack",
+            "quantity": 1
+          },
+          "experienceGain": 15,
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "compost",
+          "name": "Compost",
+          "level": 8,
+          "ingredients": [
+            {
+              "itemId": "vegetable",
+              "quantity": 5
+            },
+            {
+              "itemId": "water",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "compost",
+            "quantity": 3
+          },
+          "experienceGain": 18,
+          "timeRequired": 4500
+        },
         {
           "recipeId": "fertilizer",
           "name": "Fertilizer",
@@ -16066,14 +16845,1117 @@
           },
           "experienceGain": 20,
           "timeRequired": 5000
+        },
+        {
+          "recipeId": "quality_fertilizer",
+          "name": "Quality Fertilizer",
+          "level": 12,
+          "ingredients": [
+            {
+              "itemId": "compost",
+              "quantity": 5
+            },
+            {
+              "itemId": "bone_meal",
+              "quantity": 3
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "quality_fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 25,
+          "timeRequired": 5200
+        },
+        {
+          "recipeId": "animal_feed",
+          "name": "Animal Feed",
+          "level": 15,
+          "ingredients": [
+            {
+              "itemId": "wheat",
+              "quantity": 5
+            },
+            {
+              "itemId": "corn",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "animal_feed",
+            "quantity": 3
+          },
+          "experienceGain": 30,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "crop_bundle",
+          "name": "Crop Bundle",
+          "level": 18,
+          "ingredients": [
+            {
+              "itemId": "wheat",
+              "quantity": 3
+            },
+            {
+              "itemId": "vegetable",
+              "quantity": 3
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "crop_bundle",
+            "quantity": 1
+          },
+          "experienceGain": 35,
+          "timeRequired": 5800
+        },
+        {
+          "recipeId": "premium_fertilizer",
+          "name": "Premium Fertilizer",
+          "level": 22,
+          "ingredients": [
+            {
+              "itemId": "compost",
+              "quantity": 6
+            },
+            {
+              "itemId": "bone_meal",
+              "quantity": 4
+            },
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "premium_fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 45,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "enriched_soil",
+          "name": "Enriched Soil",
+          "level": 25,
+          "ingredients": [
+            {
+              "itemId": "compost",
+              "quantity": 8
+            },
+            {
+              "itemId": "fertilizer",
+              "quantity": 2
+            },
+            {
+              "itemId": "water",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "enriched_soil",
+            "quantity": 3
+          },
+          "experienceGain": 50,
+          "timeRequired": 6200
+        },
+        {
+          "recipeId": "farming_tools",
+          "name": "Farming Tools",
+          "level": 28,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "iron_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "oak_log",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "farming_tools",
+            "quantity": 1
+          },
+          "experienceGain": 55,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "irrigation_system",
+          "name": "Irrigation System",
+          "level": 32,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 25
+            },
+            {
+              "skillId": "engineering",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "iron_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "gears",
+              "quantity": 3
+            },
+            {
+              "itemId": "water",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "irrigation_system",
+            "quantity": 1
+          },
+          "experienceGain": 65,
+          "timeRequired": 7000
+        },
+        {
+          "recipeId": "ancient_farming_techniques",
+          "name": "Ancient Farming Techniques",
+          "level": 35,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_relic",
+              "quantity": 1
+            },
+            {
+              "itemId": "fertilizer",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "ancient_farming_techniques",
+            "quantity": 1
+          },
+          "experienceGain": 75,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "greenhouse_kit",
+          "name": "Greenhouse Kit",
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "oak_log",
+              "quantity": 10
+            },
+            {
+              "itemId": "iron_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "cloth",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "greenhouse_kit",
+            "quantity": 1
+          },
+          "experienceGain": 70,
+          "timeRequired": 7200
+        },
+        {
+          "recipeId": "crop_preservative",
+          "name": "Crop Preservative",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "common_herb",
+              "quantity": 5
+            },
+            {
+              "itemId": "water",
+              "quantity": 3
+            },
+            {
+              "itemId": "salt",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "crop_preservative",
+            "quantity": 3
+          },
+          "experienceGain": 80,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "druids_crop_circle",
+          "name": "Druid's Crop Circle",
+          "level": 45,
+          "unlockRequirements": [
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "herbalism",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "druids_crop_circle",
+            "quantity": 1
+          },
+          "experienceGain": 100,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "hybrid_seeds",
+          "name": "Hybrid Seeds",
+          "level": 42,
+          "ingredients": [
+            {
+              "itemId": "wheat_seed",
+              "quantity": 3
+            },
+            {
+              "itemId": "corn_seed",
+              "quantity": 3
+            },
+            {
+              "itemId": "fertilizer",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "hybrid_seeds",
+            "quantity": 2
+          },
+          "experienceGain": 90,
+          "timeRequired": 7800
+        },
+        {
+          "recipeId": "advanced_compost",
+          "name": "Advanced Compost",
+          "level": 45,
+          "ingredients": [
+            {
+              "itemId": "compost",
+              "quantity": 5
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "bone_meal",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "advanced_compost",
+            "quantity": 3
+          },
+          "experienceGain": 95,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "magical_fertilizer",
+          "name": "Magical Fertilizer",
+          "level": 48,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "fertilizer",
+              "quantity": 5
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "magical_fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 110,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "enchanted_seeds",
+          "name": "Enchanted Seeds",
+          "level": 52,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "hybrid_seeds",
+              "quantity": 3
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_seeds",
+            "quantity": 2
+          },
+          "experienceGain": 130,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "master_farmers_manual",
+          "name": "Master Farmer's Manual",
+          "level": 55,
+          "unlockRequirements": [
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "master_farmers_manual",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 9200
+        },
+        {
+          "recipeId": "growth_elixir",
+          "name": "Growth Elixir",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "water",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "growth_elixir",
+            "quantity": 1
+          },
+          "experienceGain": 135,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "fertility_potion",
+          "name": "Fertility Potion",
+          "level": 58,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "epic_herb",
+              "quantity": 2
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "fertility_potion",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 9500
+        },
+        {
+          "recipeId": "phoenix_crop_revival",
+          "name": "Phoenix Crop Revival",
+          "level": 65,
+          "unlockRequirements": [
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            },
+            {
+              "itemId": "fire_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "growth_elixir",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "phoenix_crop_revival",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "master_farming_tools",
+          "name": "Master Farming Tools",
+          "level": 62,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 50
+            },
+            {
+              "skillId": "engineering",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "steel_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "advanced_component",
+              "quantity": 3
+            },
+            {
+              "itemId": "gears",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "master_farming_tools",
+            "quantity": 1
+          },
+          "experienceGain": 170,
+          "timeRequired": 9800
+        },
+        {
+          "recipeId": "magical_greenhouse",
+          "name": "Magical Greenhouse",
+          "level": 65,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 55
+            },
+            {
+              "skillId": "woodcutting",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "magic_log",
+              "quantity": 5
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "magical_greenhouse",
+            "quantity": 1
+          },
+          "experienceGain": 185,
+          "timeRequired": 10200
+        },
+        {
+          "recipeId": "primal_compost",
+          "name": "Primal Compost",
+          "level": 68,
+          "ingredients": [
+            {
+              "itemId": "advanced_compost",
+              "quantity": 5
+            },
+            {
+              "itemId": "primal_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "epic_herb",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "primal_compost",
+            "quantity": 3
+          },
+          "experienceGain": 200,
+          "timeRequired": 10500
+        },
+        {
+          "recipeId": "dragon_scale_fertilizer",
+          "name": "Dragon Scale Fertilizer",
+          "level": 75,
+          "unlockRequirements": [
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "magical_fertilizer",
+              "quantity": 5
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "dragon_scale_fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 250,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "celestial_fertilizer",
+          "name": "Celestial Fertilizer",
+          "level": 72,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "magical_fertilizer",
+              "quantity": 5
+            },
+            {
+              "itemId": "celestial_fragment",
+              "quantity": 2
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "celestial_fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 230,
+          "timeRequired": 10800
+        },
+        {
+          "recipeId": "divine_seeds",
+          "name": "Divine Seeds",
+          "level": 75,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 65
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_seeds",
+              "quantity": 5
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 2
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "divine_seeds",
+            "quantity": 2
+          },
+          "experienceGain": 260,
+          "timeRequired": 11200
+        },
+        {
+          "recipeId": "eternal_growth_potion",
+          "name": "Eternal Growth Potion",
+          "level": 78,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "fertility_potion",
+              "quantity": 2
+            },
+            {
+              "itemId": "primal_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "eternal_growth_potion",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 11500
+        },
+        {
+          "recipeId": "celestial_growth_formula",
+          "name": "Celestial Growth Formula",
+          "level": 85,
+          "unlockRequirements": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 3
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 75
+            },
+            {
+              "skillId": "fishing",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "celestial_fertilizer",
+              "quantity": 3
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "celestial_growth_formula",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "cosmic_fertilizer",
+          "name": "Cosmic Fertilizer",
+          "level": 82,
+          "ingredients": [
+            {
+              "itemId": "celestial_fertilizer",
+              "quantity": 5
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 4
+            },
+            {
+              "itemId": "celestial_fragment",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "cosmic_fertilizer",
+            "quantity": 2
+          },
+          "experienceGain": 320,
+          "timeRequired": 11800
+        },
+        {
+          "recipeId": "prismatic_seeds",
+          "name": "Prismatic Seeds",
+          "level": 85,
+          "ingredients": [
+            {
+              "itemId": "divine_seeds",
+              "quantity": 5
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_seeds",
+            "quantity": 2
+          },
+          "experienceGain": 340,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "divine_harvest_ritual",
+          "name": "Divine Harvest Ritual",
+          "level": 90,
+          "unlockRequirements": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            },
+            {
+              "itemId": "cosmic_fertilizer",
+              "quantity": 3
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "divine_harvest_ritual",
+            "quantity": 1
+          },
+          "experienceGain": 400,
+          "timeRequired": 12500
+        },
+        {
+          "recipeId": "divine_growth_elixir",
+          "name": "Divine Growth Elixir",
+          "level": 88,
+          "ingredients": [
+            {
+              "itemId": "eternal_growth_potion",
+              "quantity": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "divine_growth_elixir",
+            "quantity": 1
+          },
+          "experienceGain": 380,
+          "timeRequired": 12200
+        },
+        {
+          "recipeId": "world_tree_seeds",
+          "name": "World Tree Seeds",
+          "level": 95,
+          "unlockRequirements": [
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            },
+            {
+              "itemId": "world_tree_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "divine_seeds",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "world_tree_seeds",
+            "quantity": 2
+          },
+          "experienceGain": 450,
+          "timeRequired": 13000
+        },
+        {
+          "recipeId": "master_farmers_kit",
+          "name": "Master Farmer's Kit",
+          "level": 92,
+          "ingredients": [
+            {
+              "itemId": "master_farming_tools",
+              "quantity": 1
+            },
+            {
+              "itemId": "magical_greenhouse",
+              "quantity": 1
+            },
+            {
+              "itemId": "cosmic_fertilizer",
+              "quantity": 5
+            },
+            {
+              "itemId": "divine_seeds",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "master_farmers_kit",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 12800
+        },
+        {
+          "recipeId": "omnipotent_crop_enhancer",
+          "name": "Omnipotent Crop Enhancer",
+          "level": 95,
+          "ingredients": [
+            {
+              "itemId": "divine_growth_elixir",
+              "quantity": 2
+            },
+            {
+              "itemId": "prismatic_seeds",
+              "quantity": 3
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "omnipotent_crop_enhancer",
+            "quantity": 1
+          },
+          "experienceGain": 480,
+          "timeRequired": 13500
+        },
+        {
+          "recipeId": "eternal_farm_equipment",
+          "name": "Eternal Farm Equipment",
+          "level": 99,
+          "ingredients": [
+            {
+              "itemId": "master_farmers_kit",
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 8
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 8
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "eternal_farm_equipment",
+            "quantity": 1
+          },
+          "experienceGain": 600,
+          "timeRequired": 15000
         }
       ],
       "passiveBonuses": [
+        {
+          "level": 10,
+          "bonus": {
+            "health": 25,
+            "goldGeneration": 0.05
+          }
+        },
+        {
+          "level": 20,
+          "bonus": {
+            "health": 40,
+            "goldGeneration": 0.08,
+            "statBonus": {
+              "vitality": 2
+            }
+          }
+        },
         {
           "level": 30,
           "bonus": {
             "goldGeneration": 0.08,
             "health": 50
+          }
+        },
+        {
+          "level": 40,
+          "bonus": {
+            "health": 70,
+            "goldGeneration": 0.1,
+            "statBonus": {
+              "vitality": 4
+            }
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "health": 90,
+            "goldGeneration": 0.12,
+            "statBonus": {
+              "vitality": 6
+            },
+            "cropYield": 0.05
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "health": 110,
+            "goldGeneration": 0.15,
+            "statBonus": {
+              "vitality": 8
+            }
           }
         },
         {
@@ -16084,10 +17966,46 @@
           }
         },
         {
+          "level": 70,
+          "bonus": {
+            "health": 130,
+            "goldGeneration": 0.18,
+            "statBonus": {
+              "vitality": 10
+            },
+            "cropYield": 0.1
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "health": 150,
+            "goldGeneration": 0.2,
+            "statBonus": {
+              "vitality": 12
+            }
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "health": 170,
+            "goldGeneration": 0.22,
+            "statBonus": {
+              "vitality": 14
+            },
+            "cropYield": 0.15
+          }
+        },
+        {
           "level": 99,
           "bonus": {
             "goldGeneration": 0.25,
-            "health": 200
+            "health": 200,
+            "statBonus": {
+              "vitality": 20
+            },
+            "cropYield": 0.2
           }
         }
       ],
@@ -19530,7 +21448,7 @@
     "jewelcrafting": {
       "id": "jewelcrafting",
       "name": "Jewelcrafting",
-      "description": "Create jewelry and gems",
+      "description": "Create jewelry and gems for enchanting and trade",
       "type": "production",
       "category": "production",
       "maxLevel": 99,
@@ -19539,10 +21457,88 @@
         {
           "recipeId": "copper_ring",
           "name": "Copper Ring",
-          "level": 10,
+          "level": 1,
           "ingredients": [
             {
               "itemId": "copper_ore",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "copper_ring",
+            "quantity": 1
+          },
+          "experienceGain": 25,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "copper_necklace",
+          "name": "Copper Necklace",
+          "level": 3,
+          "ingredients": [
+            {
+              "itemId": "copper_ore",
+              "quantity": 3
+            },
+            {
+              "itemId": "chain",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "copper_necklace",
+            "quantity": 1
+          },
+          "experienceGain": 30,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "copper_bracelet",
+          "name": "Copper Bracelet",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "copper_ore",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "copper_bracelet",
+            "quantity": 1
+          },
+          "experienceGain": 28,
+          "timeRequired": 5200
+        },
+        {
+          "recipeId": "polish_gem_common",
+          "name": "Polish Common Gem",
+          "level": 8,
+          "ingredients": [
+            {
+              "itemId": "gem_common",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gem_common",
+            "quantity": 1
+          },
+          "experienceGain": 20,
+          "timeRequired": 3000
+        },
+        {
+          "recipeId": "bronze_ring",
+          "name": "Bronze Ring",
+          "level": 10,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 15
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "bronze_ore",
               "quantity": 3
             },
             {
@@ -19551,11 +21547,72 @@
             }
           ],
           "result": {
-            "itemId": "copper_ring",
+            "itemId": "bronze_ring",
+            "quantity": 1
+          },
+          "experienceGain": 40,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "bronze_jewelry",
+          "name": "Bronze Jewelry Set",
+          "level": 12,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 18
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "bronze_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_common",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "bronze_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "polish_gem_uncommon",
+          "name": "Polish Uncommon Gem",
+          "level": 15,
+          "ingredients": [
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gem_uncommon",
             "quantity": 1
           },
           "experienceGain": 35,
-          "timeRequired": 6000
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "gem_dust_common",
+          "name": "Common Gem Dust",
+          "level": 18,
+          "ingredients": [
+            {
+              "itemId": "gem_common",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "gem_dust_common",
+            "quantity": 2
+          },
+          "experienceGain": 45,
+          "timeRequired": 5000
         },
         {
           "recipeId": "pearl_necklace",
@@ -19616,36 +21673,36 @@
           "timeRequired": 6500
         },
         {
-          "recipeId": "bronze_jewelry",
-          "name": "Bronze Jewelry",
-          "level": 18,
+          "recipeId": "silver_ring",
+          "name": "Silver Ring",
+          "level": 25,
           "skillPrerequisites": [
             {
               "skillId": "mining",
-              "level": 20
+              "level": 25
             }
           ],
           "ingredients": [
             {
-              "itemId": "bronze_ore",
+              "itemId": "silver_ore",
               "quantity": 4
             },
             {
-              "itemId": "gem_common",
-              "quantity": 2
+              "itemId": "gem_uncommon",
+              "quantity": 1
             }
           ],
           "result": {
-            "itemId": "bronze_jewelry",
+            "itemId": "silver_ring",
             "quantity": 1
           },
-          "experienceGain": 55,
-          "timeRequired": 6500
+          "experienceGain": 90,
+          "timeRequired": 7000
         },
         {
           "recipeId": "uncommon_gem_ring",
           "name": "Uncommon Gem Ring",
-          "level": 25,
+          "level": 28,
           "skillPrerequisites": [
             {
               "skillId": "mining",
@@ -19666,8 +21723,182 @@
             "itemId": "uncommon_gem_ring",
             "quantity": 1
           },
-          "experienceGain": 90,
+          "experienceGain": 100,
+          "timeRequired": 7200
+        },
+        {
+          "recipeId": "polish_gem_rare",
+          "name": "Polish Rare Gem",
+          "level": 30,
+          "ingredients": [
+            {
+              "itemId": "gem_rare",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gem_rare",
+            "quantity": 1
+          },
+          "experienceGain": 60,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "gem_dust_uncommon",
+          "name": "Uncommon Gem Dust",
+          "level": 32,
+          "ingredients": [
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "gem_dust_uncommon",
+            "quantity": 2
+          },
+          "experienceGain": 75,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "silver_necklace",
+          "name": "Silver Necklace",
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silver_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            },
+            {
+              "itemId": "chain",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "silver_necklace",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "refine_gem_common_to_uncommon",
+          "name": "Refine Common to Uncommon Gem",
+          "level": 38,
+          "ingredients": [
+            {
+              "itemId": "gem_common",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "gem_uncommon",
+            "quantity": 1
+          },
+          "experienceGain": 95,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "freshwater_pearl_jewelry",
+          "name": "Freshwater Pearl Jewelry",
+          "level": 40,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "freshwater_pearl",
+              "quantity": 5
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "freshwater_pearl_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "gold_ring",
+          "name": "Gold Ring",
+          "level": 42,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gold_ring",
+            "quantity": 1
+          },
+          "experienceGain": 160,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "polish_gem_epic",
+          "name": "Polish Epic Gem",
+          "level": 45,
+          "ingredients": [
+            {
+              "itemId": "gem_epic",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gem_epic",
+            "quantity": 1
+          },
+          "experienceGain": 120,
           "timeRequired": 7000
+        },
+        {
+          "recipeId": "gem_dust_rare",
+          "name": "Rare Gem Dust",
+          "level": 47,
+          "ingredients": [
+            {
+              "itemId": "gem_rare",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "gem_dust_rare",
+            "quantity": 2
+          },
+          "experienceGain": 130,
+          "timeRequired": 6500
         },
         {
           "recipeId": "ancient_gem_jewelry",
@@ -19701,68 +21932,6 @@
           "timeRequired": 9000
         },
         {
-          "recipeId": "silver_necklace",
-          "name": "Silver Necklace",
-          "level": 35,
-          "skillPrerequisites": [
-            {
-              "skillId": "mining",
-              "level": 25
-            }
-          ],
-          "ingredients": [
-            {
-              "itemId": "silver_ore",
-              "quantity": 5
-            },
-            {
-              "itemId": "gem_rare",
-              "quantity": 2
-            },
-            {
-              "itemId": "chain",
-              "quantity": 1
-            }
-          ],
-          "result": {
-            "itemId": "silver_necklace",
-            "quantity": 1
-          },
-          "experienceGain": 140,
-          "timeRequired": 8000
-        },
-        {
-          "recipeId": "freshwater_pearl_jewelry",
-          "name": "Freshwater Pearl Jewelry",
-          "level": 45,
-          "skillPrerequisites": [
-            {
-              "skillId": "fishing",
-              "level": 30
-            }
-          ],
-          "ingredients": [
-            {
-              "itemId": "freshwater_pearl",
-              "quantity": 5
-            },
-            {
-              "itemId": "gold_ore",
-              "quantity": 4
-            },
-            {
-              "itemId": "gem_rare",
-              "quantity": 2
-            }
-          ],
-          "result": {
-            "itemId": "freshwater_pearl_jewelry",
-            "quantity": 1
-          },
-          "experienceGain": 180,
-          "timeRequired": 8500
-        },
-        {
           "recipeId": "platinum_jewelry",
           "name": "Platinum Jewelry",
           "level": 50,
@@ -19794,13 +21963,30 @@
           "timeRequired": 9000
         },
         {
+          "recipeId": "refine_gem_uncommon_to_rare",
+          "name": "Refine Uncommon to Rare Gem",
+          "level": 52,
+          "ingredients": [
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "gem_rare",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 8500
+        },
+        {
           "recipeId": "golden_artifact_jewelry",
           "name": "Golden Artifact Jewelry",
-          "level": 52,
+          "level": 55,
           "skillPrerequisites": [
             {
               "skillId": "archaeology",
-              "level": 45
+              "level": 50
             }
           ],
           "ingredients": [
@@ -19831,7 +22017,7 @@
         {
           "recipeId": "mana_scale_jewelry",
           "name": "Mana Scale Jewelry",
-          "level": 55,
+          "level": 58,
           "skillPrerequisites": [
             {
               "skillId": "fishing",
@@ -19866,7 +22052,7 @@
           "skillPrerequisites": [
             {
               "skillId": "mining",
-              "level": 40
+              "level": 50
             }
           ],
           "ingredients": [
@@ -19888,6 +22074,57 @@
             "quantity": 1
           },
           "experienceGain": 300,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "polish_gem_legendary",
+          "name": "Polish Legendary Gem",
+          "level": 62,
+          "ingredients": [
+            {
+              "itemId": "gem_legendary",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "gem_legendary",
+            "quantity": 1
+          },
+          "experienceGain": 200,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "gem_dust_epic",
+          "name": "Epic Gem Dust",
+          "level": 65,
+          "ingredients": [
+            {
+              "itemId": "gem_epic",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "gem_dust_epic",
+            "quantity": 2
+          },
+          "experienceGain": 220,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "refine_gem_rare_to_epic",
+          "name": "Refine Rare to Epic Gem",
+          "level": 68,
+          "ingredients": [
+            {
+              "itemId": "gem_rare",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "gem_epic",
+            "quantity": 1
+          },
+          "experienceGain": 280,
           "timeRequired": 10000
         },
         {
@@ -19928,7 +22165,7 @@
           "skillPrerequisites": [
             {
               "skillId": "fishing",
-              "level": 45
+              "level": 60
             }
           ],
           "ingredients": [
@@ -19994,7 +22231,7 @@
           "skillPrerequisites": [
             {
               "skillId": "archaeology",
-              "level": 55
+              "level": 60
             }
           ],
           "ingredients": [
@@ -20023,13 +22260,34 @@
           "timeRequired": 12500
         },
         {
+          "recipeId": "refine_gem_epic_to_legendary",
+          "name": "Refine Epic to Legendary Gem",
+          "level": 80,
+          "ingredients": [
+            {
+              "itemId": "gem_epic",
+              "quantity": 5
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "gem_legendary",
+            "quantity": 1
+          },
+          "experienceGain": 400,
+          "timeRequired": 12000
+        },
+        {
           "recipeId": "rainbow_pearl_jewelry",
           "name": "Rainbow Pearl Jewelry",
           "level": 82,
           "skillPrerequisites": [
             {
               "skillId": "fishing",
-              "level": 50
+              "level": 70
             }
           ],
           "ingredients": [
@@ -20064,7 +22322,7 @@
           "skillPrerequisites": [
             {
               "skillId": "mining",
-              "level": 70
+              "level": 75
             }
           ],
           "ingredients": [
@@ -20089,35 +22347,21 @@
           "timeRequired": 14000
         },
         {
-          "recipeId": "prismatic_jewelry",
-          "name": "Prismatic Jewelry",
-          "level": 90,
-          "skillPrerequisites": [
-            {
-              "skillId": "mining",
-              "level": 85
-            }
-          ],
+          "recipeId": "gem_dust_legendary",
+          "name": "Legendary Gem Dust",
+          "level": 87,
           "ingredients": [
-            {
-              "itemId": "orichalcum_ore",
-              "quantity": 10
-            },
-            {
-              "itemId": "prismatic_shard",
-              "quantity": 3
-            },
             {
               "itemId": "gem_legendary",
               "quantity": 3
             }
           ],
           "result": {
-            "itemId": "prismatic_jewelry",
-            "quantity": 1
+            "itemId": "gem_dust_legendary",
+            "quantity": 2
           },
-          "experienceGain": 650,
-          "timeRequired": 15000
+          "experienceGain": 450,
+          "timeRequired": 10000
         },
         {
           "recipeId": "celestial_scale_jewelry",
@@ -20155,13 +22399,44 @@
           "timeRequired": 16000
         },
         {
-          "recipeId": "divine_jewelry",
-          "name": "Divine Jewelry",
-          "level": 98,
+          "recipeId": "prismatic_jewelry",
+          "name": "Prismatic Jewelry",
+          "level": 90,
           "skillPrerequisites": [
             {
               "skillId": "mining",
-              "level": 95
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "orichalcum_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 15000
+        },
+        {
+          "recipeId": "divine_jewelry",
+          "name": "Divine Jewelry",
+          "level": 95,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 90
             }
           ],
           "ingredients": [
@@ -20184,29 +22459,6 @@
           },
           "experienceGain": 750,
           "timeRequired": 18000
-        }
-      ],
-      "passiveBonuses": [
-        {
-          "level": 40,
-          "bonus": {
-            "goldGeneration": 0.1,
-            "luck": 5
-          }
-        },
-        {
-          "level": 80,
-          "bonus": {
-            "goldGeneration": 0.2,
-            "luck": 10
-          }
-        },
-        {
-          "level": 99,
-          "bonus": {
-            "goldGeneration": 0.3,
-            "luck": 15
-          }
         },
         {
           "recipeId": "stolen_gem_jewelry",
@@ -20304,6 +22556,288 @@
           },
           "experienceGain": 600,
           "timeRequired": 15000
+        },
+        {
+          "recipeId": "secret_ancient_jewelry_mold",
+          "name": "Ancient Jewelry Mold",
+          "level": 65,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_jewelry_mold",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "ancient_gem",
+              "quantity": 5
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 8
+            },
+            {
+              "itemId": "ancient_jewelry_mold",
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "ancient_gem_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "secret_master_cutter_tool",
+          "name": "Master Gem Cutter's Work",
+          "level": 70,
+          "unlockRequirements": [
+            {
+              "itemId": "master_cutter_tool",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            },
+            {
+              "itemId": "master_cutter_tool",
+              "quantity": 1
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "gem_legendary",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "secret_divine_gem_fragment",
+          "name": "Divine Gem Fragment Jewelry",
+          "level": 92,
+          "unlockRequirements": [
+            {
+              "itemId": "divine_gem_fragment",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 90
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "divine_gem_fragment",
+              "quantity": 1
+            },
+            {
+              "itemId": "divine_ore",
+              "quantity": 10
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "divine_jewelry",
+            "quantity": 1
+          },
+          "experienceGain": 800,
+          "timeRequired": 20000
+        },
+        {
+          "recipeId": "secret_runecrafting_enhanced",
+          "name": "Runecrafting-Enhanced Jewelry",
+          "level": 55,
+          "unlockRequirements": [
+            {
+              "itemId": "enchanted_rune_core",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "runecrafting",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_rune_core",
+              "quantity": 1
+            },
+            {
+              "itemId": "mana_crystal",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "gold_jewelry_set",
+            "quantity": 1
+          },
+          "experienceGain": 320,
+          "timeRequired": 10500
+        },
+        {
+          "recipeId": "secret_enchanting_synergy",
+          "name": "Enchanting-Synergy Jewelry",
+          "level": 75,
+          "unlockRequirements": [
+            {
+              "itemId": "enchanted_gem_core",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "mithril_ore",
+              "quantity": 6
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_gem_core",
+              "quantity": 1
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "epic_gem_necklace",
+            "quantity": 1
+          },
+          "experienceGain": 450,
+          "timeRequired": 11500
+        },
+        {
+          "recipeId": "secret_thief_master_tools",
+          "name": "Master Thief's Jewelry",
+          "level": 60,
+          "unlockRequirements": [
+            {
+              "itemId": "master_thief_tools",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "thieving",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "gold_ore",
+              "quantity": 7
+            },
+            {
+              "itemId": "stolen_gem_uncommon",
+              "quantity": 5
+            },
+            {
+              "itemId": "master_thief_tools",
+              "quantity": 1
+            },
+            {
+              "itemId": "valuable_trinket",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "gold_jewelry_set",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 11000
+        }
+      ],
+      "passiveBonuses": [
+        {
+          "level": 25,
+          "bonus": {
+            "goldGeneration": 0.05,
+            "luck": 2
+          }
+        },
+        {
+          "level": 40,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "luck": 5
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "goldGeneration": 0.1,
+            "luck": 5
+          }
+        },
+        {
+          "level": 75,
+          "bonus": {
+            "goldGeneration": 0.15,
+            "luck": 10,
+            "itemValue": 0.05
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "goldGeneration": 0.2,
+            "luck": 10
+          }
+        },
+        {
+          "level": 99,
+          "bonus": {
+            "goldGeneration": 0.3,
+            "luck": 15,
+            "itemValue": 0.1
+          }
         }
       ],
       "nameKey": "skill.jewelcrafting.name",
@@ -20369,6 +22903,48 @@
       "experienceFormula": "baseExp * (level * 1.3)",
       "recipes": [
         {
+          "recipeId": "leather_bag",
+          "name": "Leather Bag",
+          "level": 1,
+          "ingredients": [
+            {
+              "itemId": "animal_hide",
+              "quantity": 3
+            },
+            {
+              "itemId": "thread",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "leather_bag",
+            "quantity": 1
+          },
+          "experienceGain": 15,
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "leather_gloves",
+          "name": "Leather Gloves",
+          "level": 3,
+          "ingredients": [
+            {
+              "itemId": "animal_hide",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "leather_gloves",
+            "quantity": 1
+          },
+          "experienceGain": 22,
+          "timeRequired": 4500
+        },
+        {
           "recipeId": "leather_armor",
           "name": "Leather Armor",
           "level": 5,
@@ -20390,58 +22966,125 @@
           "timeRequired": 5500
         },
         {
-          "recipeId": "reinforced_leather",
-          "name": "Reinforced Leather",
-          "level": 30,
+          "recipeId": "leather_boots",
+          "name": "Leather Boots",
+          "level": 7,
           "ingredients": [
             {
-              "itemId": "animal_hide_quality",
-              "quantity": 8
+              "itemId": "animal_hide",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            },
+            {
+              "itemId": "small_bone",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "leather_boots",
+            "quantity": 1
+          },
+          "experienceGain": 35,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "leather_helmet",
+          "name": "Leather Helmet",
+          "level": 9,
+          "ingredients": [
+            {
+              "itemId": "animal_hide",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread",
+              "quantity": 3
+            },
+            {
+              "itemId": "small_bone",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "leather_helmet",
+            "quantity": 1
+          },
+          "experienceGain": 40,
+          "timeRequired": 5200
+        },
+        {
+          "recipeId": "leather_pants",
+          "name": "Leather Pants",
+          "level": 12,
+          "ingredients": [
+            {
+              "itemId": "animal_hide",
+              "quantity": 6
+            },
+            {
+              "itemId": "thread",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "leather_pants",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "leather_belt",
+          "name": "Leather Belt",
+          "level": 15,
+          "ingredients": [
+            {
+              "itemId": "animal_hide",
+              "quantity": 3
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
             },
             {
               "itemId": "metal_ring",
-              "quantity": 4
-            },
-            {
-              "itemId": "wolf_pelt",
-              "quantity": 3
+              "quantity": 1
             }
           ],
           "result": {
-            "itemId": "reinforced_leather_armor",
+            "itemId": "leather_belt",
             "quantity": 1
           },
-          "experienceGain": 100,
-          "timeRequired": 7500
+          "experienceGain": 60,
+          "timeRequired": 5800
         },
         {
-          "recipeId": "monster_hide_armor",
-          "name": "Monster Hide Armor",
-          "level": 60,
+          "recipeId": "leather_backpack",
+          "name": "Leather Backpack",
+          "level": 18,
           "ingredients": [
             {
-              "itemId": "monster_pelt",
-              "quantity": 10
+              "itemId": "animal_hide",
+              "quantity": 8
             },
             {
-              "itemId": "monster_bone",
-              "quantity": 5
+              "itemId": "thread",
+              "quantity": 4
             },
             {
-              "itemId": "enchanted_thread",
-              "quantity": 3
-            },
-            {
-              "itemId": "troll_hide",
+              "itemId": "small_bone",
               "quantity": 4
             }
           ],
           "result": {
-            "itemId": "monster_hide_armor",
+            "itemId": "leather_backpack",
             "quantity": 1
           },
-          "experienceGain": 240,
-          "timeRequired": 9500
+          "experienceGain": 70,
+          "timeRequired": 6500
         },
         {
           "recipeId": "reinforced_trap_leather",
@@ -20475,6 +23118,242 @@
           "timeRequired": 7000
         },
         {
+          "recipeId": "hunter_leather_vest",
+          "name": "Hunter Leather Vest",
+          "level": 22,
+          "skillPrerequisites": [
+            {
+              "skillId": "hunting",
+              "level": 20
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 6
+            },
+            {
+              "itemId": "thread",
+              "quantity": 3
+            },
+            {
+              "itemId": "animal_bone",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "hunter_leather_vest",
+            "quantity": 1
+          },
+          "experienceGain": 85,
+          "timeRequired": 6800
+        },
+        {
+          "recipeId": "quality_leather_armor",
+          "name": "Quality Leather Armor",
+          "level": 28,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 8
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "metal_ring",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "quality_leather_armor",
+            "quantity": 1
+          },
+          "experienceGain": 95,
+          "timeRequired": 7200
+        },
+        {
+          "recipeId": "reinforced_leather",
+          "name": "Reinforced Leather",
+          "level": 30,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 8
+            },
+            {
+              "itemId": "metal_ring",
+              "quantity": 4
+            },
+            {
+              "itemId": "wolf_pelt",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "reinforced_leather_armor",
+            "quantity": 1
+          },
+          "experienceGain": 100,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "metal_reinforced_leather",
+          "name": "Metal-Reinforced Leather",
+          "level": 32,
+          "skillPrerequisites": [
+            {
+              "skillId": "blacksmithing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 10
+            },
+            {
+              "itemId": "iron_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "metal_reinforced_leather",
+            "quantity": 1
+          },
+          "experienceGain": 110,
+          "timeRequired": 7800
+        },
+        {
+          "recipeId": "beast_hide_armor",
+          "name": "Beast Hide Armor",
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "hunting",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 10
+            },
+            {
+              "itemId": "animal_bone",
+              "quantity": 5
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "beast_hide_armor",
+            "quantity": 1
+          },
+          "experienceGain": 120,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "scale_mail_leather",
+          "name": "Scale Mail Leather",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 8
+            },
+            {
+              "itemId": "fish_scale",
+              "quantity": 12
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "scale_mail_leather",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 8200
+        },
+        {
+          "recipeId": "hybrid_cloth_leather",
+          "name": "Hybrid Cloth-Leather Armor",
+          "level": 40,
+          "skillPrerequisites": [
+            {
+              "skillId": "tailoring",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 6
+            },
+            {
+              "itemId": "cloth",
+              "quantity": 6
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "hybrid_cloth_leather",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "treated_leather",
+          "name": "Treated Leather",
+          "level": 42,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 8
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 5
+            },
+            {
+              "itemId": "water",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "treated_leather",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 8800
+        },
+        {
           "recipeId": "dire_beast_armor",
           "name": "Dire Beast Armor",
           "level": 50,
@@ -20504,9 +23383,804 @@
           },
           "experienceGain": 180,
           "timeRequired": 9000
+        },
+        {
+          "recipeId": "enchanted_leather",
+          "name": "Enchanted Leather Armor",
+          "level": 52,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 8
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_leather",
+            "quantity": 1
+          },
+          "experienceGain": 190,
+          "timeRequired": 9200
+        },
+        {
+          "recipeId": "gem_embedded_leather",
+          "name": "Gem-Embedded Leather",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "jewelcrafting",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 10
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "gem_embedded_leather",
+            "quantity": 1
+          },
+          "experienceGain": 210,
+          "timeRequired": 9500
+        },
+        {
+          "recipeId": "aquatic_leather",
+          "name": "Aquatic Leather Armor",
+          "level": 58,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 8
+            },
+            {
+              "itemId": "fish_scale",
+              "quantity": 15
+            },
+            {
+              "itemId": "pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "aquatic_leather",
+            "quantity": 1
+          },
+          "experienceGain": 220,
+          "timeRequired": 9800
+        },
+        {
+          "recipeId": "monster_hide_armor",
+          "name": "Monster Hide Armor",
+          "level": 60,
+          "ingredients": [
+            {
+              "itemId": "monster_pelt",
+              "quantity": 10
+            },
+            {
+              "itemId": "monster_bone",
+              "quantity": 5
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 3
+            },
+            {
+              "itemId": "troll_hide",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "monster_hide_armor",
+            "quantity": 1
+          },
+          "experienceGain": 240,
+          "timeRequired": 9500
+        },
+        {
+          "recipeId": "ancient_leather_pattern",
+          "name": "Ancient Leather Pattern",
+          "level": 65,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 10
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_relic",
+              "quantity": 1
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "ancient_leather_pattern",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "fate_bound_leather",
+          "name": "Fate-Bound Leather",
+          "level": 68,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 12
+            },
+            {
+              "itemId": "fate_crystal",
+              "quantity": 2
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 6
+            }
+          ],
+          "result": {
+            "itemId": "fate_bound_leather",
+            "quantity": 1
+          },
+          "experienceGain": 300,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "legendary_beast_leather",
+          "name": "Legendary Beast Leather",
+          "level": 72,
+          "skillPrerequisites": [
+            {
+              "skillId": "hunting",
+              "level": 65
+            },
+            {
+              "skillId": "trapping",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "legendary_pelt",
+              "quantity": 5
+            },
+            {
+              "itemId": "legendary_bone",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 8
+            }
+          ],
+          "result": {
+            "itemId": "legendary_beast_leather",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 13000
+        },
+        {
+          "recipeId": "primal_leather",
+          "name": "Primal Leather",
+          "level": 75,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 15
+            },
+            {
+              "itemId": "primal_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 8
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "primal_leather",
+            "quantity": 1
+          },
+          "experienceGain": 380,
+          "timeRequired": 14000
+        },
+        {
+          "recipeId": "divine_leather",
+          "name": "Divine Leather Armor",
+          "level": 80,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 18
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 10
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "divine_leather",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 15000
+        },
+        {
+          "recipeId": "cosmic_leather",
+          "name": "Cosmic Leather",
+          "level": 85,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 20
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 4
+            },
+            {
+              "itemId": "celestial_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 12
+            }
+          ],
+          "result": {
+            "itemId": "cosmic_leather",
+            "quantity": 1
+          },
+          "experienceGain": 480,
+          "timeRequired": 16000
+        },
+        {
+          "recipeId": "eternal_leather",
+          "name": "Eternal Leather",
+          "level": 90,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 25
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 4
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 15
+            }
+          ],
+          "result": {
+            "itemId": "eternal_leather",
+            "quantity": 1
+          },
+          "experienceGain": 550,
+          "timeRequired": 18000
+        },
+        {
+          "recipeId": "omnipotent_leather",
+          "name": "Omnipotent Leather",
+          "level": 95,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 30
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 6
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 20
+            }
+          ],
+          "result": {
+            "itemId": "omnipotent_leather",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 20000
+        },
+        {
+          "recipeId": "master_leather_set",
+          "name": "Master Leather Set",
+          "level": 99,
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 40
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 8
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 8
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 5
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 25
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "master_leather_set",
+            "quantity": 1
+          },
+          "experienceGain": 800,
+          "timeRequired": 25000
+        },
+        {
+          "recipeId": "ancient_scroll_leather",
+          "name": "Ancient Scroll Leather",
+          "level": 28,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 8
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 1
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "ancient_scroll_leather",
+            "quantity": 1
+          },
+          "experienceGain": 105,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "dragon_scale_leather",
+          "name": "Dragon Scale Leather",
+          "level": 62,
+          "unlockRequirements": [
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 10
+            },
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "dragon_scale_leather",
+            "quantity": 1
+          },
+          "experienceGain": 260,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "phoenix_feather_leather",
+          "name": "Phoenix Feather Leather",
+          "level": 55,
+          "unlockRequirements": [
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 8
+            },
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            },
+            {
+              "itemId": "fire_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "phoenix_feather_leather",
+            "quantity": 1
+          },
+          "experienceGain": 230,
+          "timeRequired": 9600
+        },
+        {
+          "recipeId": "celestial_scale_leather",
+          "name": "Celestial Scale Leather",
+          "level": 82,
+          "unlockRequirements": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 18
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 10
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_leather",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 17000
+        },
+        {
+          "recipeId": "divine_fragment_leather",
+          "name": "Divine Fragment Leather",
+          "level": 78,
+          "unlockRequirements": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 15
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 8
+            }
+          ],
+          "result": {
+            "itemId": "divine_fragment_leather",
+            "quantity": 1
+          },
+          "experienceGain": 400,
+          "timeRequired": 14500
+        },
+        {
+          "recipeId": "master_key_leather",
+          "name": "Master Key Leather",
+          "level": 45,
+          "unlockRequirements": [
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 12
+            },
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "master_key_leather",
+            "quantity": 1
+          },
+          "experienceGain": 160,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "druid_medallion_leather",
+          "name": "Druid Medallion Leather",
+          "level": 38,
+          "unlockRequirements": [
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_quality",
+              "quantity": 10
+            },
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "druid_medallion_leather",
+            "quantity": 1
+          },
+          "experienceGain": 135,
+          "timeRequired": 8300
+        },
+        {
+          "recipeId": "void_crystal_leather",
+          "name": "Void Crystal Leather",
+          "level": 70,
+          "unlockRequirements": [
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 12
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 7
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "void_crystal_leather",
+            "quantity": 1
+          },
+          "experienceGain": 320,
+          "timeRequired": 12500
+        },
+        {
+          "recipeId": "prismatic_shard_leather",
+          "name": "Prismatic Shard Leather",
+          "level": 88,
+          "unlockRequirements": [
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 6
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 22
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 6
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 14
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_shard_leather",
+            "quantity": 1
+          },
+          "experienceGain": 580,
+          "timeRequired": 19000
+        },
+        {
+          "recipeId": "world_tree_leather",
+          "name": "World Tree Leather",
+          "level": 92,
+          "unlockRequirements": [
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "animal_hide_rare",
+              "quantity": 28
+            },
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            },
+            {
+              "itemId": "world_tree_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 18
+            }
+          ],
+          "result": {
+            "itemId": "world_tree_leather",
+            "quantity": 1
+          },
+          "experienceGain": 620,
+          "timeRequired": 20000
         }
       ],
       "passiveBonuses": [
+        {
+          "level": 10,
+          "bonus": {
+            "defense": 3,
+            "dexterity": 1
+          }
+        },
+        {
+          "level": 20,
+          "bonus": {
+            "defense": 5,
+            "dexterity": 2
+          }
+        },
         {
           "level": 30,
           "bonus": {
@@ -20515,10 +24189,45 @@
           }
         },
         {
+          "level": 40,
+          "bonus": {
+            "defense": 10,
+            "dexterity": 4
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "defense": 12,
+            "dexterity": 5
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "defense": 13,
+            "dexterity": 5
+          }
+        },
+        {
           "level": 70,
           "bonus": {
             "defense": 15,
             "dexterity": 6
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "defense": 18,
+            "dexterity": 7
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "defense": 22,
+            "dexterity": 9
           }
         },
         {
@@ -22604,6 +26313,173 @@
       "experienceFormula": "baseExp * (level * 1.4)",
       "recipes": [
         {
+          "recipeId": "basic_power_rune",
+          "name": "Basic Power Rune",
+          "level": 1,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 1
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "basic_power_rune",
+            "quantity": 1
+          },
+          "experienceGain": 20,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "rune_of_strength",
+          "name": "Rune of Strength",
+          "level": 3,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 2
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_strength",
+            "quantity": 1
+          },
+          "experienceGain": 28,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "rune_of_protection",
+          "name": "Rune of Protection",
+          "level": 5,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 2
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "small_bone",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_protection",
+            "quantity": 1
+          },
+          "experienceGain": 35,
+          "timeRequired": 6000
+        },
+        {
+          "recipeId": "rune_of_speed",
+          "name": "Rune of Speed",
+          "level": 7,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 2
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "energy_wisp",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_speed",
+            "quantity": 1
+          },
+          "experienceGain": 40,
+          "timeRequired": 6200
+        },
+        {
+          "recipeId": "rune_of_critical_strike",
+          "name": "Rune of Critical Strike",
+          "level": 10,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 3
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "animal_fang",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_critical_strike",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "rune_of_life_steal",
+          "name": "Rune of Life Steal",
+          "level": 12,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 3
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "animal_blood",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_life_steal",
+            "quantity": 1
+          },
+          "experienceGain": 55,
+          "timeRequired": 6800
+        },
+        {
+          "recipeId": "rune_of_mana",
+          "name": "Rune of Mana",
+          "level": 14,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 3
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "mana_crystal",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_mana",
+            "quantity": 1
+          },
+          "experienceGain": 60,
+          "timeRequired": 7000
+        },
+        {
           "recipeId": "minor_rune",
           "name": "Minor Rune",
           "level": 15,
@@ -22625,35 +26501,130 @@
           "timeRequired": 7000
         },
         {
-          "recipeId": "crystal_rune",
-          "name": "Crystal Rune",
-          "level": 35,
+          "recipeId": "rune_of_experience",
+          "name": "Rune of Experience",
+          "level": 18,
+          "ingredients": [
+            {
+              "itemId": "rune_stone",
+              "quantity": 4
+            },
+            {
+              "itemId": "minor_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "essence_crystal",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_experience",
+            "quantity": 1
+          },
+          "experienceGain": 70,
+          "timeRequired": 7200
+        },
+        {
+          "recipeId": "nature_rune",
+          "name": "Nature Rune",
+          "level": 22,
           "skillPrerequisites": [
             {
-              "skillId": "mining",
-              "level": 50
+              "skillId": "herbalism",
+              "level": 20
             }
           ],
           "ingredients": [
             {
-              "itemId": "crystal_shard",
+              "itemId": "rune_stone",
               "quantity": 3
             },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "nature_rune",
+            "quantity": 1
+          },
+          "experienceGain": 85,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "beast_power_rune",
+          "name": "Beast Power Rune",
+          "level": 25,
+          "skillPrerequisites": [
+            {
+              "skillId": "hunting",
+              "level": 22
+            }
+          ],
+          "ingredients": [
             {
               "itemId": "rune_stone_quality",
               "quantity": 2
             },
             {
               "itemId": "moderate_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "animal_hide",
+              "quantity": 3
+            },
+            {
+              "itemId": "animal_bone",
               "quantity": 2
             }
           ],
           "result": {
-            "itemId": "crystal_rune",
+            "itemId": "beast_power_rune",
             "quantity": 1
           },
-          "experienceGain": 120,
-          "timeRequired": 8000
+          "experienceGain": 95,
+          "timeRequired": 7700
+        },
+        {
+          "recipeId": "trapped_essence_rune",
+          "name": "Trapped Essence Rune",
+          "level": 28,
+          "skillPrerequisites": [
+            {
+              "skillId": "trapping",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "animal_pelt",
+              "quantity": 3
+            },
+            {
+              "itemId": "beast_essence",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "trapped_essence_rune",
+            "quantity": 1
+          },
+          "experienceGain": 105,
+          "timeRequired": 7800
         },
         {
           "recipeId": "rune_stone_rune",
@@ -22687,6 +26658,196 @@
           "timeRequired": 7800
         },
         {
+          "recipeId": "crystal_rune",
+          "name": "Crystal Rune",
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "crystal_rune",
+            "quantity": 1
+          },
+          "experienceGain": 120,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "metal_reinforced_rune",
+          "name": "Metal-Reinforced Rune",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "blacksmithing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "iron_ore",
+              "quantity": 3
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "metal_reinforced_rune",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 8200
+        },
+        {
+          "recipeId": "cosmic_energy_rune",
+          "name": "Cosmic Energy Rune",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 3
+            },
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "cosmic_energy_rune",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 8200
+        },
+        {
+          "recipeId": "aquatic_rune",
+          "name": "Aquatic Rune",
+          "level": 40,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "fish_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "pearl",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "aquatic_rune",
+            "quantity": 1
+          },
+          "experienceGain": 145,
+          "timeRequired": 8300
+        },
+        {
+          "recipeId": "enhanced_enchantment_rune",
+          "name": "Enhanced Enchantment Rune",
+          "level": 42,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "enhanced_enchantment_rune",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "gem_embedded_rune",
+          "name": "Gem-Embedded Rune",
+          "level": 44,
+          "skillPrerequisites": [
+            {
+              "skillId": "jewelcrafting",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "gem_embedded_rune",
+            "quantity": 1
+          },
+          "experienceGain": 155,
+          "timeRequired": 8600
+        },
+        {
           "recipeId": "greater_rune",
           "name": "Greater Rune",
           "level": 45,
@@ -22710,6 +26871,122 @@
           },
           "experienceGain": 160,
           "timeRequired": 9000
+        },
+        {
+          "recipeId": "alchemical_rune",
+          "name": "Alchemical Rune",
+          "level": 48,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "rare_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "essence_crystal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "alchemical_rune",
+            "quantity": 1
+          },
+          "experienceGain": 170,
+          "timeRequired": 9200
+        },
+        {
+          "recipeId": "rune_of_gold",
+          "name": "Rune of Gold",
+          "level": 50,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "gold_ore",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_gold",
+            "quantity": 1
+          },
+          "experienceGain": 180,
+          "timeRequired": 9500
+        },
+        {
+          "recipeId": "rune_of_item_find",
+          "name": "Rune of Item Find",
+          "level": 52,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "rune_of_item_find",
+            "quantity": 1
+          },
+          "experienceGain": 190,
+          "timeRequired": 9600
+        },
+        {
+          "recipeId": "fate_rune",
+          "name": "Fate Rune",
+          "level": 55,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 5
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "fate_crystal",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "fate_rune",
+            "quantity": 1
+          },
+          "experienceGain": 210,
+          "timeRequired": 9800
         },
         {
           "recipeId": "enhanced_crystal_rune",
@@ -22782,37 +27059,6 @@
           "timeRequired": 10200
         },
         {
-          "recipeId": "cosmic_energy_rune",
-          "name": "Cosmic Energy Rune",
-          "level": 38,
-          "skillPrerequisites": [
-            {
-              "skillId": "divination",
-              "level": 25
-            }
-          ],
-          "ingredients": [
-            {
-              "itemId": "cosmic_energy",
-              "quantity": 3
-            },
-            {
-              "itemId": "rune_stone_quality",
-              "quantity": 3
-            },
-            {
-              "itemId": "moderate_essence",
-              "quantity": 3
-            }
-          ],
-          "result": {
-            "itemId": "cosmic_energy_rune",
-            "quantity": 1
-          },
-          "experienceGain": 140,
-          "timeRequired": 8200
-        },
-        {
           "recipeId": "time_vision_rune",
           "name": "Time Vision Rune",
           "level": 64,
@@ -22846,6 +27092,70 @@
           },
           "experienceGain": 320,
           "timeRequired": 10400
+        },
+        {
+          "recipeId": "legendary_beast_rune",
+          "name": "Legendary Beast Rune",
+          "level": 66,
+          "skillPrerequisites": [
+            {
+              "skillId": "hunting",
+              "level": 60
+            },
+            {
+              "skillId": "trapping",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "legendary_pelt",
+              "quantity": 2
+            },
+            {
+              "itemId": "legendary_bone",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "legendary_beast_rune",
+            "quantity": 1
+          },
+          "experienceGain": 340,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "primal_essence_rune",
+          "name": "Primal Essence Rune",
+          "level": 68,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "primal_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "primal_essence_rune",
+            "quantity": 1
+          },
+          "experienceGain": 360,
+          "timeRequired": 11200
         },
         {
           "recipeId": "void_rune",
@@ -22916,6 +27226,31 @@
           },
           "experienceGain": 500,
           "timeRequired": 13500
+        },
+        {
+          "recipeId": "supreme_rune",
+          "name": "Supreme Rune",
+          "level": 80,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "void_essence",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "supreme_rune",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 12000
         },
         {
           "recipeId": "celestial_scale_rune",
@@ -22992,31 +27327,6 @@
           "timeRequired": 16000
         },
         {
-          "recipeId": "supreme_rune",
-          "name": "Supreme Rune",
-          "level": 80,
-          "ingredients": [
-            {
-              "itemId": "rune_stone_rare",
-              "quantity": 4
-            },
-            {
-              "itemId": "supreme_essence",
-              "quantity": 4
-            },
-            {
-              "itemId": "void_essence",
-              "quantity": 2
-            }
-          ],
-          "result": {
-            "itemId": "supreme_rune",
-            "quantity": 1
-          },
-          "experienceGain": 420,
-          "timeRequired": 12000
-        },
-        {
           "recipeId": "prismatic_rune",
           "name": "Prismatic Rune",
           "level": 88,
@@ -23052,6 +27362,70 @@
           "timeRequired": 15000
         },
         {
+          "recipeId": "cosmic_rune",
+          "name": "Cosmic Rune",
+          "level": 90,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 6
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 5
+            },
+            {
+              "itemId": "celestial_fragment",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "cosmic_rune",
+            "quantity": 1
+          },
+          "experienceGain": 680,
+          "timeRequired": 16500
+        },
+        {
+          "recipeId": "eternal_rune",
+          "name": "Eternal Rune",
+          "level": 92,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 6
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "eternal_rune",
+            "quantity": 1
+          },
+          "experienceGain": 720,
+          "timeRequired": 17000
+        },
+        {
           "recipeId": "divine_rune",
           "name": "Divine Rune",
           "level": 96,
@@ -23085,14 +27459,475 @@
           },
           "experienceGain": 750,
           "timeRequired": 18000
+        },
+        {
+          "recipeId": "omnipotent_rune",
+          "name": "Omnipotent Rune",
+          "level": 99,
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 8
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 8
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "omnipotent_rune",
+            "quantity": 1
+          },
+          "experienceGain": 900,
+          "timeRequired": 20000
+        },
+        {
+          "recipeId": "ancient_scroll_rune_secret",
+          "name": "Ancient Scroll Rune",
+          "level": 30,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 3
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "ancient_scroll_rune",
+            "quantity": 1
+          },
+          "experienceGain": 125,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "dragon_scale_rune_secret",
+          "name": "Dragon Scale Rune",
+          "level": 65,
+          "unlockRequirements": [
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 4
+            },
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "dragon_scale_rune",
+            "quantity": 1
+          },
+          "experienceGain": 310,
+          "timeRequired": 10300
+        },
+        {
+          "recipeId": "phoenix_feather_rune_secret",
+          "name": "Phoenix Feather Rune",
+          "level": 58,
+          "unlockRequirements": [
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 5
+            },
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            },
+            {
+              "itemId": "fire_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "phoenix_feather_rune",
+            "quantity": 1
+          },
+          "experienceGain": 240,
+          "timeRequired": 9900
+        },
+        {
+          "recipeId": "celestial_scale_rune_secret",
+          "name": "Celestial Scale Rune (Secret)",
+          "level": 83,
+          "unlockRequirements": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 5
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_rune_secret",
+            "quantity": 1
+          },
+          "experienceGain": 580,
+          "timeRequired": 15200
+        },
+        {
+          "recipeId": "divine_fragment_rune_secret",
+          "name": "Divine Fragment Rune",
+          "level": 78,
+          "unlockRequirements": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 5
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 5
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 2
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "divine_fragment_rune",
+            "quantity": 1
+          },
+          "experienceGain": 480,
+          "timeRequired": 13800
+        },
+        {
+          "recipeId": "master_key_rune_secret",
+          "name": "Master Key Rune",
+          "level": 48,
+          "unlockRequirements": [
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 4
+            },
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            },
+            {
+              "itemId": "greater_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "master_key_rune",
+            "quantity": 1
+          },
+          "experienceGain": 165,
+          "timeRequired": 9100
+        },
+        {
+          "recipeId": "druid_medallion_rune_secret",
+          "name": "Druid Medallion Rune",
+          "level": 40,
+          "unlockRequirements": [
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "moderate_essence",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "druid_medallion_rune",
+            "quantity": 1
+          },
+          "experienceGain": 148,
+          "timeRequired": 8400
+        },
+        {
+          "recipeId": "world_tree_rune_secret",
+          "name": "World Tree Rune",
+          "level": 94,
+          "unlockRequirements": [
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 7
+            },
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            },
+            {
+              "itemId": "world_tree_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 7
+            }
+          ],
+          "result": {
+            "itemId": "world_tree_rune",
+            "quantity": 1
+          },
+          "experienceGain": 750,
+          "timeRequired": 17500
+        },
+        {
+          "recipeId": "reality_shard_rune_secret",
+          "name": "Reality Shard Rune",
+          "level": 86,
+          "unlockRequirements": [
+            {
+              "itemId": "reality_shard",
+              "quantity": 3
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 80
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 5
+            },
+            {
+              "itemId": "reality_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 6
+            },
+            {
+              "itemId": "time_vision",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "reality_shard_rune",
+            "quantity": 1
+          },
+          "experienceGain": 640,
+          "timeRequired": 16200
+        },
+        {
+          "recipeId": "godslayer_essence_rune_secret",
+          "name": "Godslayer Essence Rune",
+          "level": 98,
+          "unlockRequirements": [
+            {
+              "itemId": "godslayer_essence",
+              "quantity": 2
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "rune_stone_rare",
+              "quantity": 8
+            },
+            {
+              "itemId": "godslayer_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 4
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "supreme_essence",
+              "quantity": 8
+            }
+          ],
+          "result": {
+            "itemId": "godslayer_essence_rune",
+            "quantity": 1
+          },
+          "experienceGain": 850,
+          "timeRequired": 19000
         }
       ],
       "passiveBonuses": [
+        {
+          "level": 10,
+          "bonus": {
+            "magicAttack": 5,
+            "magicDefense": 3
+          }
+        },
+        {
+          "level": 20,
+          "bonus": {
+            "magicAttack": 8,
+            "magicDefense": 5
+          }
+        },
+        {
+          "level": 30,
+          "bonus": {
+            "magicAttack": 10,
+            "magicDefense": 7
+          }
+        },
+        {
+          "level": 40,
+          "bonus": {
+            "magicAttack": 12,
+            "magicDefense": 8
+          }
+        },
         {
           "level": 50,
           "bonus": {
             "magicAttack": 15,
             "magicDefense": 10
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "magicAttack": 18,
+            "magicDefense": 12
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "magicAttack": 22,
+            "magicDefense": 15
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "magicAttack": 26,
+            "magicDefense": 18
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "magicAttack": 28,
+            "magicDefense": 19
           }
         },
         {
@@ -23539,6 +28374,48 @@
       "experienceFormula": "baseExp * (level * 1.3)",
       "recipes": [
         {
+          "recipeId": "cloth_bag",
+          "name": "Cloth Bag",
+          "level": 1,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 3
+            },
+            {
+              "itemId": "thread",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "cloth_bag",
+            "quantity": 1
+          },
+          "experienceGain": 15,
+          "timeRequired": 4000
+        },
+        {
+          "recipeId": "cloth_gloves",
+          "name": "Cloth Gloves",
+          "level": 3,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "cloth_gloves",
+            "quantity": 1
+          },
+          "experienceGain": 22,
+          "timeRequired": 4500
+        },
+        {
           "recipeId": "cloth_robe",
           "name": "Cloth Robe",
           "level": 5,
@@ -23558,6 +28435,190 @@
           },
           "experienceGain": 25,
           "timeRequired": 5000
+        },
+        {
+          "recipeId": "cloth_pants",
+          "name": "Cloth Pants",
+          "level": 7,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 6
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "cloth_pants",
+            "quantity": 1
+          },
+          "experienceGain": 30,
+          "timeRequired": 5200
+        },
+        {
+          "recipeId": "cloth_boots",
+          "name": "Cloth Boots",
+          "level": 9,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            },
+            {
+              "itemId": "small_bone",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "cloth_boots",
+            "quantity": 1
+          },
+          "experienceGain": 35,
+          "timeRequired": 5000
+        },
+        {
+          "recipeId": "cloth_hat",
+          "name": "Cloth Hat",
+          "level": 11,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "cloth_hat",
+            "quantity": 1
+          },
+          "experienceGain": 40,
+          "timeRequired": 5200
+        },
+        {
+          "recipeId": "simple_robe",
+          "name": "Simple Robe",
+          "level": 13,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 7
+            },
+            {
+              "itemId": "thread",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "simple_robe",
+            "quantity": 1
+          },
+          "experienceGain": 45,
+          "timeRequired": 5500
+        },
+        {
+          "recipeId": "cloth_belt",
+          "name": "Cloth Belt",
+          "level": 15,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 3
+            },
+            {
+              "itemId": "thread",
+              "quantity": 2
+            },
+            {
+              "itemId": "metal_ring",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "cloth_belt",
+            "quantity": 1
+          },
+          "experienceGain": 50,
+          "timeRequired": 5800
+        },
+        {
+          "recipeId": "cloth_backpack",
+          "name": "Cloth Backpack",
+          "level": 18,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 8
+            },
+            {
+              "itemId": "thread",
+              "quantity": 4
+            },
+            {
+              "itemId": "small_bone",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "cloth_backpack",
+            "quantity": 1
+          },
+          "experienceGain": 60,
+          "timeRequired": 6500
+        },
+        {
+          "recipeId": "enhanced_cloth_robe",
+          "name": "Enhanced Cloth Robe",
+          "level": 20,
+          "ingredients": [
+            {
+              "itemId": "cloth",
+              "quantity": 10
+            },
+            {
+              "itemId": "thread",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_common",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "enhanced_cloth_robe",
+            "quantity": 1
+          },
+          "experienceGain": 70,
+          "timeRequired": 6800
+        },
+        {
+          "recipeId": "silk_robe",
+          "name": "Silk Robe",
+          "level": 22,
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 6
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "silk_robe",
+            "quantity": 1
+          },
+          "experienceGain": 80,
+          "timeRequired": 7000
         },
         {
           "recipeId": "silk_armor",
@@ -23589,6 +28650,431 @@
           "timeRequired": 7000
         },
         {
+          "recipeId": "mage_hat",
+          "name": "Mage Hat",
+          "level": 25,
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 5
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 3
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 1
+            }
+          ],
+          "result": {
+            "itemId": "mage_hat",
+            "quantity": 1
+          },
+          "experienceGain": 85,
+          "timeRequired": 7200
+        },
+        {
+          "recipeId": "hybrid_cloth_leather_armor",
+          "name": "Hybrid Cloth-Leather Armor",
+          "level": 28,
+          "skillPrerequisites": [
+            {
+              "skillId": "leatherworking",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 6
+            },
+            {
+              "itemId": "animal_hide",
+              "quantity": 4
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "hybrid_cloth_leather_armor",
+            "quantity": 1
+          },
+          "experienceGain": 100,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "ancient_scroll_robe",
+          "name": "Ancient Scroll Robe",
+          "level": 28,
+          "unlockRequirements": [
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 8
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 1
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "ancient_scroll_robe",
+            "quantity": 1
+          },
+          "experienceGain": 105,
+          "timeRequired": 7500
+        },
+        {
+          "recipeId": "gem_embedded_cloth",
+          "name": "Gem-Embedded Cloth Armor",
+          "level": 32,
+          "skillPrerequisites": [
+            {
+              "skillId": "jewelcrafting",
+              "level": 25
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 8
+            },
+            {
+              "itemId": "gem_uncommon",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "gem_embedded_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 110,
+          "timeRequired": 7800
+        },
+        {
+          "recipeId": "treated_cloth",
+          "name": "Treated Cloth",
+          "level": 35,
+          "skillPrerequisites": [
+            {
+              "skillId": "alchemy",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 8
+            },
+            {
+              "itemId": "common_herb",
+              "quantity": 5
+            },
+            {
+              "itemId": "water",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "treated_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 120,
+          "timeRequired": 8000
+        },
+        {
+          "recipeId": "aquatic_cloth",
+          "name": "Aquatic Cloth Armor",
+          "level": 38,
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 8
+            },
+            {
+              "itemId": "fish_scale",
+              "quantity": 12
+            },
+            {
+              "itemId": "pearl",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "aquatic_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 130,
+          "timeRequired": 8200
+        },
+        {
+          "recipeId": "nature_infused_cloth",
+          "name": "Nature-Infused Cloth",
+          "level": 40,
+          "skillPrerequisites": [
+            {
+              "skillId": "herbalism",
+              "level": 35
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 10
+            },
+            {
+              "itemId": "uncommon_herb",
+              "quantity": 4
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "nature_infused_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 140,
+          "timeRequired": 8500
+        },
+        {
+          "recipeId": "metal_reinforced_cloth",
+          "name": "Metal-Reinforced Cloth",
+          "level": 42,
+          "skillPrerequisites": [
+            {
+              "skillId": "mining",
+              "level": 30
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 10
+            },
+            {
+              "itemId": "iron_ore",
+              "quantity": 5
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "metal_reinforced_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 150,
+          "timeRequired": 8800
+        },
+        {
+          "recipeId": "nature_cloth",
+          "name": "Nature Cloth",
+          "level": 45,
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 8
+            },
+            {
+              "itemId": "tree_bark",
+              "quantity": 6
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "nature_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 160,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "druid_medallion_robe",
+          "name": "Druid Medallion Robe",
+          "level": 35,
+          "unlockRequirements": [
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 10
+            },
+            {
+              "itemId": "druid_medallion",
+              "quantity": 1
+            },
+            {
+              "itemId": "nature_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "druid_medallion_robe",
+            "quantity": 1
+          },
+          "experienceGain": 135,
+          "timeRequired": 8300
+        },
+        {
+          "recipeId": "enchanted_cloth_armor",
+          "name": "Enchanted Cloth Armor",
+          "level": 48,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 40
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 8
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "enchanted_cloth_armor",
+            "quantity": 1
+          },
+          "experienceGain": 170,
+          "timeRequired": 9200
+        },
+        {
+          "recipeId": "master_key_robe",
+          "name": "Master Key Robe",
+          "level": 42,
+          "unlockRequirements": [
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "silk",
+              "quantity": 12
+            },
+            {
+              "itemId": "master_key",
+              "quantity": 1
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            },
+            {
+              "itemId": "thread_quality",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "master_key_robe",
+            "quantity": 1
+          },
+          "experienceGain": 155,
+          "timeRequired": 9000
+        },
+        {
+          "recipeId": "arcane_robes",
+          "name": "Arcane Robes",
+          "level": 52,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 45
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 10
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 4
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "arcane_robes",
+            "quantity": 1
+          },
+          "experienceGain": 200,
+          "timeRequired": 9500
+        },
+        {
           "recipeId": "mage_robes",
           "name": "Mage Robes",
           "level": 55,
@@ -23616,28 +29102,701 @@
           },
           "experienceGain": 220,
           "timeRequired": 9000
+        },
+        {
+          "recipeId": "phoenix_feather_cloth",
+          "name": "Phoenix Feather Cloth",
+          "level": 55,
+          "unlockRequirements": [
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 8
+            },
+            {
+              "itemId": "phoenix_feather",
+              "quantity": 1
+            },
+            {
+              "itemId": "fire_herb",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 4
+            }
+          ],
+          "result": {
+            "itemId": "phoenix_feather_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 230,
+          "timeRequired": 9600
+        },
+        {
+          "recipeId": "mystic_cloth_armor",
+          "name": "Mystic Cloth Armor",
+          "level": 58,
+          "skillPrerequisites": [
+            {
+              "skillId": "enchanting",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 12
+            },
+            {
+              "itemId": "magic_essence",
+              "quantity": 5
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "mystic_cloth_armor",
+            "quantity": 1
+          },
+          "experienceGain": 240,
+          "timeRequired": 9800
+        },
+        {
+          "recipeId": "dragon_scale_cloth",
+          "name": "Dragon Scale Cloth",
+          "level": 62,
+          "unlockRequirements": [
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 10
+            },
+            {
+              "itemId": "dragon_scale",
+              "quantity": 3
+            },
+            {
+              "itemId": "crystal_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "dragon_scale_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 260,
+          "timeRequired": 10000
+        },
+        {
+          "recipeId": "ancient_cloth_pattern",
+          "name": "Ancient Cloth Pattern",
+          "level": 65,
+          "skillPrerequisites": [
+            {
+              "skillId": "archaeology",
+              "level": 50
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 10
+            },
+            {
+              "itemId": "ancient_scroll",
+              "quantity": 2
+            },
+            {
+              "itemId": "ancient_relic",
+              "quantity": 1
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 5
+            }
+          ],
+          "result": {
+            "itemId": "ancient_cloth_pattern",
+            "quantity": 1
+          },
+          "experienceGain": 280,
+          "timeRequired": 11000
+        },
+        {
+          "recipeId": "fate_bound_cloth",
+          "name": "Fate-Bound Cloth",
+          "level": 68,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 55
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 12
+            },
+            {
+              "itemId": "fate_crystal",
+              "quantity": 2
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 6
+            }
+          ],
+          "result": {
+            "itemId": "fate_bound_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 300,
+          "timeRequired": 12000
+        },
+        {
+          "recipeId": "celestial_garments",
+          "name": "Celestial Garments",
+          "level": 72,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 60
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 15
+            },
+            {
+              "itemId": "celestial_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 8
+            }
+          ],
+          "result": {
+            "itemId": "celestial_garments",
+            "quantity": 1
+          },
+          "experienceGain": 350,
+          "timeRequired": 13000
+        },
+        {
+          "recipeId": "void_crystal_cloth",
+          "name": "Void Crystal Cloth",
+          "level": 70,
+          "unlockRequirements": [
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 12
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 7
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "void_crystal_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 320,
+          "timeRequired": 12500
+        },
+        {
+          "recipeId": "legendary_cloth_armor",
+          "name": "Legendary Cloth Armor",
+          "level": 75,
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 18
+            },
+            {
+              "itemId": "primal_essence",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 8
+            },
+            {
+              "itemId": "gem_rare",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "legendary_cloth_armor",
+            "quantity": 1
+          },
+          "experienceGain": 380,
+          "timeRequired": 14000
+        },
+        {
+          "recipeId": "divine_robes",
+          "name": "Divine Robes",
+          "level": 80,
+          "skillPrerequisites": [
+            {
+              "skillId": "divination",
+              "level": 70
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 18
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 10
+            },
+            {
+              "itemId": "gem_epic",
+              "quantity": 2
+            }
+          ],
+          "result": {
+            "itemId": "divine_robes",
+            "quantity": 1
+          },
+          "experienceGain": 420,
+          "timeRequired": 15000
+        },
+        {
+          "recipeId": "celestial_scale_garment",
+          "name": "Celestial Scale Garment",
+          "level": 82,
+          "unlockRequirements": [
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "fishing",
+              "level": 75
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 18
+            },
+            {
+              "itemId": "celestial_scale",
+              "quantity": 5
+            },
+            {
+              "itemId": "rainbow_pearl",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 10
+            }
+          ],
+          "result": {
+            "itemId": "celestial_scale_garment",
+            "quantity": 1
+          },
+          "experienceGain": 500,
+          "timeRequired": 17000
+        },
+        {
+          "recipeId": "cosmic_cloth_armor",
+          "name": "Cosmic Cloth Armor",
+          "level": 85,
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 20
+            },
+            {
+              "itemId": "cosmic_energy",
+              "quantity": 4
+            },
+            {
+              "itemId": "celestial_fragment",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 12
+            }
+          ],
+          "result": {
+            "itemId": "cosmic_cloth_armor",
+            "quantity": 1
+          },
+          "experienceGain": 480,
+          "timeRequired": 16000
+        },
+        {
+          "recipeId": "divine_fragment_robe",
+          "name": "Divine Fragment Robe",
+          "level": 87,
+          "unlockRequirements": [
+            {
+              "itemId": "divine_fragment",
+              "quantity": 10
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 22
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 10
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 4
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 12
+            }
+          ],
+          "result": {
+            "itemId": "divine_fragment_robe",
+            "quantity": 1
+          },
+          "experienceGain": 600,
+          "timeRequired": 18000
+        },
+        {
+          "recipeId": "prismatic_shard_cloth",
+          "name": "Prismatic Shard Cloth",
+          "level": 88,
+          "unlockRequirements": [
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 6
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 22
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 6
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 4
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 14
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_shard_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 580,
+          "timeRequired": 19000
+        },
+        {
+          "recipeId": "eternal_garments",
+          "name": "Eternal Garments",
+          "level": 90,
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 25
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 4
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 15
+            }
+          ],
+          "result": {
+            "itemId": "eternal_garments",
+            "quantity": 1
+          },
+          "experienceGain": 550,
+          "timeRequired": 18000
+        },
+        {
+          "recipeId": "world_tree_cloth",
+          "name": "World Tree Cloth",
+          "level": 92,
+          "unlockRequirements": [
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            }
+          ],
+          "skillPrerequisites": [
+            {
+              "skillId": "woodcutting",
+              "level": 85
+            }
+          ],
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 28
+            },
+            {
+              "itemId": "world_tree_sapling",
+              "quantity": 1
+            },
+            {
+              "itemId": "world_tree_essence",
+              "quantity": 2
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 18
+            }
+          ],
+          "result": {
+            "itemId": "world_tree_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 620,
+          "timeRequired": 20000
+        },
+        {
+          "recipeId": "prismatic_cloth",
+          "name": "Prismatic Cloth",
+          "level": 95,
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 30
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 6
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 5
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 3
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 20
+            }
+          ],
+          "result": {
+            "itemId": "prismatic_cloth",
+            "quantity": 1
+          },
+          "experienceGain": 650,
+          "timeRequired": 20000
+        },
+        {
+          "recipeId": "master_tailor_set",
+          "name": "Master Tailor Set",
+          "level": 99,
+          "ingredients": [
+            {
+              "itemId": "enchanted_cloth",
+              "quantity": 40
+            },
+            {
+              "itemId": "divine_fragment",
+              "quantity": 8
+            },
+            {
+              "itemId": "prismatic_shard",
+              "quantity": 8
+            },
+            {
+              "itemId": "void_crystal",
+              "quantity": 5
+            },
+            {
+              "itemId": "enchanted_thread",
+              "quantity": 25
+            },
+            {
+              "itemId": "gem_legendary",
+              "quantity": 3
+            }
+          ],
+          "result": {
+            "itemId": "master_tailor_set",
+            "quantity": 1
+          },
+          "experienceGain": 800,
+          "timeRequired": 25000
         }
       ],
       "passiveBonuses": [
         {
-          "level": 35,
+          "level": 10,
           "bonus": {
-            "magicDefense": 10,
-            "mana": 50
+            "magicDefense": 5,
+            "mana": 25
           }
         },
         {
-          "level": 75,
+          "level": 20,
           "bonus": {
-            "magicDefense": 20,
-            "mana": 100
+            "magicDefense": 8,
+            "mana": 50,
+            "statBonus": {
+              "intelligence": 2
+            }
+          }
+        },
+        {
+          "level": 30,
+          "bonus": {
+            "magicDefense": 12,
+            "mana": 75,
+            "statBonus": {
+              "intelligence": 3
+            }
+          }
+        },
+        {
+          "level": 40,
+          "bonus": {
+            "magicDefense": 15,
+            "mana": 100,
+            "statBonus": {
+              "intelligence": 5
+            }
+          }
+        },
+        {
+          "level": 50,
+          "bonus": {
+            "magicDefense": 18,
+            "mana": 125,
+            "statBonus": {
+              "intelligence": 7
+            },
+            "craftingSpeed": 0.05
+          }
+        },
+        {
+          "level": 60,
+          "bonus": {
+            "magicDefense": 22,
+            "mana": 150,
+            "statBonus": {
+              "intelligence": 9
+            }
+          }
+        },
+        {
+          "level": 70,
+          "bonus": {
+            "magicDefense": 25,
+            "mana": 175,
+            "statBonus": {
+              "intelligence": 11
+            },
+            "craftingSpeed": 0.1
+          }
+        },
+        {
+          "level": 80,
+          "bonus": {
+            "magicDefense": 30,
+            "mana": 200,
+            "statBonus": {
+              "intelligence": 13
+            }
+          }
+        },
+        {
+          "level": 90,
+          "bonus": {
+            "magicDefense": 35,
+            "mana": 225,
+            "statBonus": {
+              "intelligence": 15
+            },
+            "craftingSpeed": 0.15
           }
         },
         {
           "level": 99,
           "bonus": {
-            "magicDefense": 30,
-            "mana": 150
+            "magicDefense": 40,
+            "mana": 250,
+            "statBonus": {
+              "intelligence": 20
+            },
+            "craftingSpeed": 0.2
           }
         }
       ],

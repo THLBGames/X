@@ -1,0 +1,125 @@
+{
+  "version": "1.0.0",
+  "titles": {
+    "the_unstoppable": {
+      "id": "the_unstoppable",
+      "name": "The Unstoppable",
+      "description": "A title earned by those who reach level 50, proving their unwavering determination.",
+      "category": "milestone",
+      "requirements": {
+        "level": 50
+      },
+      "bonuses": {
+        "statBonus": {
+          "strength": 5,
+          "dexterity": 5,
+          "intelligence": 5,
+          "vitality": 5,
+          "wisdom": 5,
+          "luck": 5
+        }
+      }
+    },
+    "dragon_slayer": {
+      "id": "dragon_slayer",
+      "name": "Dragon Slayer",
+      "description": "Earned by defeating 5 dragons. Your prowess against these legendary beasts is unmatched.",
+      "category": "combat",
+      "requirements": {
+        "monsterKills": {
+          "dragon_whelp": 5
+        }
+      },
+      "bonuses": {
+        "combatStatBonus": {
+          "attack": 10
+        },
+        "combatMultiplier": {
+          "itemDropRate": 1.15
+        }
+      }
+    },
+    "master_craftsman": {
+      "id": "master_craftsman",
+      "name": "Master Craftsman",
+      "description": "Reach level 50 in any crafting skill to earn this title of expertise.",
+      "category": "crafting",
+      "requirements": {
+        "skillLevels": {
+          "crafting": 50
+        }
+      },
+      "bonuses": {
+        "skillMultiplier": {
+          "experience": 1.1,
+          "yield": 1.1
+        }
+      }
+    },
+    "the_explorer": {
+      "id": "the_explorer",
+      "name": "The Explorer",
+      "description": "Complete 10 dungeons to earn this title of exploration.",
+      "category": "exploration",
+      "requirements": {
+        "dungeonCompletions": 10
+      },
+      "bonuses": {
+        "inventorySlots": 5
+      }
+    },
+    "the_legend": {
+      "id": "the_legend",
+      "name": "The Legend",
+      "description": "A title reserved for those who have completed all major story arcs and achieved greatness.",
+      "category": "achievement",
+      "requirements": {
+        "level": 75,
+        "dungeonCompletions": 20,
+        "achievementIds": []
+      },
+      "bonuses": {
+        "combatMultiplier": {
+          "experience": 1.1,
+          "gold": 1.1,
+          "itemDropRate": 1.1
+        },
+        "skillMultiplier": {
+          "experience": 1.1,
+          "speed": 1.05,
+          "yield": 1.1
+        }
+      }
+    },
+    "first_blood": {
+      "id": "first_blood",
+      "name": "First Blood",
+      "description": "Earned by completing your first dungeon. The journey begins.",
+      "category": "milestone",
+      "requirements": {
+        "dungeonCompletions": 1
+      },
+      "bonuses": {
+        "combatStatBonus": {
+          "attack": 2
+        }
+      }
+    },
+    "skill_master": {
+      "id": "skill_master",
+      "name": "Skill Master",
+      "description": "Reach level 99 in any skill to earn this prestigious title.",
+      "category": "crafting",
+      "requirements": {
+        "skillLevels": {}
+      },
+      "bonuses": {
+        "skillMultiplier": {
+          "experience": 1.15,
+          "speed": 1.1,
+          "yield": 1.15
+        }
+      }
+    }
+  }
+}

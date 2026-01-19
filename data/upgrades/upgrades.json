@@ -1058,6 +1058,41 @@
       "nameKey": "upgrade.farming_boost_consumable.name",
       "descriptionKey": "upgrade.farming_boost_consumable.description"
     },
+    "farming_master_techniques": {
+      "id": "farming_master_techniques",
+      "name": "Farming Master Techniques",
+      "description": "Unlocks 15+ secret farming recipes and resourceNodes requiring legendary components. Grants access to master-tier farming equipment and divine crops.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "farming",
+      "tier": "VI",
+      "price": 30000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "ancient_farming_techniques",
+          "druids_crop_circle",
+          "master_farmers_manual",
+          "phoenix_crop_revival",
+          "dragon_scale_fertilizer",
+          "celestial_growth_formula",
+          "divine_harvest_ritual",
+          "world_tree_seeds"
+        ],
+        "unlocksResourceNodes": [
+          "ancient_seed_garden",
+          "phoenix_feather_farm",
+          "dragon_scale_plantation",
+          "world_tree_orchard",
+          "divine_fragment_garden"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 90,
+        "previousTierId": "farming_upgrade_V"
+      },
+      "nameKey": "upgrade.farming_master_techniques.name",
+      "descriptionKey": "upgrade.farming_master_techniques.description"
+    },
     "farming_upgrade_I": {
       "id": "farming_upgrade_I",
       "name": "Farming Upgrade I",
@@ -1909,20 +1944,47 @@
     },
     "jewelcrafting_boost_consumable": {
       "id": "jewelcrafting_boost_consumable",
-      "name": "Jewelcrafting Boost",
-      "description": "Temporarily increases jewelcrafting speed by 30% for 50 actions",
+      "name": "Jewelcrafting Elixir",
+      "description": "Temporarily increases jewelcrafting speed by 30% and XP gain by 20% for 50 actions",
       "type": "consumable",
       "scope": "skill",
       "skillId": "jewelcrafting",
-      "price": 500,
+      "price": 3000,
       "bonuses": {
         "speedMultiplier": 0.7,
         "experienceMultiplier": 1.2
       },
       "actionDuration": 50,
-      "requirements": {},
+      "requirements": {
+        "skillLevel": 25
+      },
       "nameKey": "upgrade.jewelcrafting_boost_consumable.name",
       "descriptionKey": "upgrade.jewelcrafting_boost_consumable.description"
+    },
+    "jewelcrafting_master_cutter": {
+      "id": "jewelcrafting_master_cutter",
+      "name": "Master Gem Cutter's Manual",
+      "description": "Unlocks advanced gem cutting and refining recipes. Grants access to master-tier gem processing techniques.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "jewelcrafting",
+      "tier": "VI",
+      "price": 30000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "secret_master_cutter_tool",
+          "advanced_gem_refining",
+          "master_gem_polishing"
+        ],
+        "experienceMultiplier": 1.1,
+        "yieldMultiplier": 1.2
+      },
+      "requirements": {
+        "skillLevel": 70,
+        "previousTierId": "jewelcrafting_upgrade_V"
+      },
+      "nameKey": "upgrade.jewelcrafting_master_cutter.name",
+      "descriptionKey": "upgrade.jewelcrafting_master_cutter.description"
     },
     "jewelcrafting_upgrade_I": {
       "id": "jewelcrafting_upgrade_I",
@@ -1932,7 +1994,7 @@
       "scope": "skill",
       "skillId": "jewelcrafting",
       "tier": "I",
-      "price": 1000,
+      "price": 1500,
       "bonuses": {
         "experienceMultiplier": 1.1,
         "speedMultiplier": 0.95,
@@ -1951,7 +2013,7 @@
       "scope": "skill",
       "skillId": "jewelcrafting",
       "tier": "II",
-      "price": 2828,
+      "price": 3182,
       "bonuses": {
         "experienceMultiplier": 1.15,
         "speedMultiplier": 0.92,
@@ -1967,17 +2029,17 @@
     "jewelcrafting_upgrade_III": {
       "id": "jewelcrafting_upgrade_III",
       "name": "Jewelcrafting Upgrade III",
-      "description": "Permanently increases jewelcrafting XP gain by 20%, speed by 12%, and yield by 12%",
+      "description": "Permanently increases jewelcrafting XP gain by 20%, speed by 10%, and yield by 10%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "jewelcrafting",
       "tier": "III",
-      "price": 5196,
+      "price": 5500,
       "bonuses": {
         "experienceMultiplier": 1.2,
-        "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "speedMultiplier": 0.9,
+        "yieldMultiplier": 1.1,
+        "successRateBonus": 0.1
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_II"
@@ -1988,17 +2050,17 @@
     "jewelcrafting_upgrade_IV": {
       "id": "jewelcrafting_upgrade_IV",
       "name": "Jewelcrafting Upgrade IV",
-      "description": "Permanently increases jewelcrafting XP gain by 25%, speed by 15%, and yield by 15%",
+      "description": "Permanently increases jewelcrafting XP gain by 25%, speed by 12%, and yield by 12%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "jewelcrafting",
       "tier": "IV",
-      "price": 8000,
+      "price": 12000,
       "bonuses": {
         "experienceMultiplier": 1.25,
-        "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_III"
@@ -2009,17 +2071,17 @@
     "jewelcrafting_upgrade_V": {
       "id": "jewelcrafting_upgrade_V",
       "name": "Jewelcrafting Upgrade V",
-      "description": "Permanently increases jewelcrafting XP gain by 30%, speed by 20%, and yield by 20%",
+      "description": "Permanently increases jewelcrafting XP gain by 30%, speed by 15%, and yield by 15%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "jewelcrafting",
       "tier": "V",
-      "price": 11180,
+      "price": 25000,
       "bonuses": {
         "experienceMultiplier": 1.3,
-        "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
       },
       "requirements": {
         "previousTierId": "jewelcrafting_upgrade_IV"
@@ -2030,11 +2092,11 @@
     "leatherworking_boost_consumable": {
       "id": "leatherworking_boost_consumable",
       "name": "Leatherworking Boost",
-      "description": "Temporarily increases leatherworking speed by 30% for 50 actions",
+      "description": "Temporarily increases leatherworking speed by 30% and XP gain by 20% for 50 actions",
       "type": "consumable",
       "scope": "skill",
       "skillId": "leatherworking",
-      "price": 500,
+      "price": 600,
       "bonuses": {
         "speedMultiplier": 0.7,
         "experienceMultiplier": 1.2
@@ -2047,17 +2109,17 @@
     "leatherworking_upgrade_I": {
       "id": "leatherworking_upgrade_I",
       "name": "Leatherworking Upgrade I",
-      "description": "Permanently increases leatherworking XP gain by 10%, speed by 5%, and yield by 5%",
+      "description": "Permanently increases leatherworking XP gain by 10%, speed by 5%, success rate by 5%, and yield by 5%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "leatherworking",
       "tier": "I",
-      "price": 1000,
+      "price": 1200,
       "bonuses": {
         "experienceMultiplier": 1.1,
         "speedMultiplier": 0.95,
-        "yieldMultiplier": 1.05,
-        "successRateBonus": 0.05
+        "successRateBonus": 0.05,
+        "yieldMultiplier": 1.05
       },
       "requirements": {},
       "nameKey": "upgrade.leatherworking_upgrade_I.name",
@@ -2066,17 +2128,17 @@
     "leatherworking_upgrade_II": {
       "id": "leatherworking_upgrade_II",
       "name": "Leatherworking Upgrade II",
-      "description": "Permanently increases leatherworking XP gain by 15%, speed by 8%, and yield by 8%",
+      "description": "Permanently increases leatherworking XP gain by 15%, speed by 8%, success rate by 8%, and yield by 8%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "leatherworking",
       "tier": "II",
-      "price": 2828,
+      "price": 3394,
       "bonuses": {
         "experienceMultiplier": 1.15,
         "speedMultiplier": 0.92,
-        "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
+        "successRateBonus": 0.08,
+        "yieldMultiplier": 1.08
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_I"
@@ -2087,17 +2149,17 @@
     "leatherworking_upgrade_III": {
       "id": "leatherworking_upgrade_III",
       "name": "Leatherworking Upgrade III",
-      "description": "Permanently increases leatherworking XP gain by 20%, speed by 12%, and yield by 12%",
+      "description": "Permanently increases leatherworking XP gain by 20%, speed by 12%, success rate by 12%, and yield by 12%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "leatherworking",
       "tier": "III",
-      "price": 5196,
+      "price": 6235,
       "bonuses": {
         "experienceMultiplier": 1.2,
         "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "successRateBonus": 0.12,
+        "yieldMultiplier": 1.12
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_II"
@@ -2108,17 +2170,17 @@
     "leatherworking_upgrade_IV": {
       "id": "leatherworking_upgrade_IV",
       "name": "Leatherworking Upgrade IV",
-      "description": "Permanently increases leatherworking XP gain by 25%, speed by 15%, and yield by 15%",
+      "description": "Permanently increases leatherworking XP gain by 25%, speed by 15%, success rate by 15%, and yield by 15%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "leatherworking",
       "tier": "IV",
-      "price": 8000,
+      "price": 9600,
       "bonuses": {
         "experienceMultiplier": 1.25,
         "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "successRateBonus": 0.15,
+        "yieldMultiplier": 1.15
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_III"
@@ -2129,17 +2191,17 @@
     "leatherworking_upgrade_V": {
       "id": "leatherworking_upgrade_V",
       "name": "Leatherworking Upgrade V",
-      "description": "Permanently increases leatherworking XP gain by 30%, speed by 20%, and yield by 20%",
+      "description": "Permanently increases leatherworking XP gain by 30%, speed by 20%, success rate by 20%, and yield by 20%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "leatherworking",
       "tier": "V",
-      "price": 11180,
+      "price": 13416,
       "bonuses": {
         "experienceMultiplier": 1.3,
         "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "successRateBonus": 0.2,
+        "yieldMultiplier": 1.2
       },
       "requirements": {
         "previousTierId": "leatherworking_upgrade_IV"
@@ -2643,6 +2705,36 @@
       "requirements": {},
       "nameKey": "upgrade.tailoring_boost_consumable.name",
       "descriptionKey": "upgrade.tailoring_boost_consumable.description"
+    },
+    "tailoring_master_patterns": {
+      "id": "tailoring_master_patterns",
+      "name": "Tailoring Master Patterns",
+      "description": "Unlocks 15+ secret tailoring recipes requiring legendary components. Grants access to master-tier cloth armor and garments.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "tailoring",
+      "tier": "VI",
+      "price": 30000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "ancient_scroll_robe",
+          "druid_medallion_robe",
+          "master_key_robe",
+          "phoenix_feather_cloth",
+          "dragon_scale_cloth",
+          "void_crystal_cloth",
+          "celestial_scale_garment",
+          "divine_fragment_robe",
+          "prismatic_shard_cloth",
+          "world_tree_cloth"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 90,
+        "previousTierId": "tailoring_upgrade_V"
+      },
+      "nameKey": "upgrade.tailoring_master_patterns.name",
+      "descriptionKey": "upgrade.tailoring_master_patterns.description"
     },
     "tailoring_upgrade_I": {
       "id": "tailoring_upgrade_I",

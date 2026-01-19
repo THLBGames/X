@@ -3,9 +3,12 @@
   border: 1px solid #444;
   border-radius: 8px;
   padding: 10px;
-  flex: 0 0 auto;
-  overflow-y: auto;
+  flex: 1;
+  height: 100%;
   min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   scrollbar-width: thin;
   scrollbar-color: #555 #1a1a1a;
 }

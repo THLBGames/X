@@ -8,6 +8,48 @@
   "experienceFormula": "baseExp * (level * 1.3)",
   "recipes": [
     {
+      "recipeId": "leather_bag",
+      "name": "Leather Bag",
+      "level": 1,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 3
+        },
+        {
+          "itemId": "thread",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "leather_bag",
+        "quantity": 1
+      },
+      "experienceGain": 15,
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "leather_gloves",
+      "name": "Leather Gloves",
+      "level": 3,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "leather_gloves",
+        "quantity": 1
+      },
+      "experienceGain": 22,
+      "timeRequired": 4500
+    },
+    {
       "recipeId": "leather_armor",
       "name": "Leather Armor",
       "level": 5,
@@ -29,58 +71,125 @@
       "timeRequired": 5500
     },
     {
-      "recipeId": "reinforced_leather",
-      "name": "Reinforced Leather",
-      "level": 30,
+      "recipeId": "leather_boots",
+      "name": "Leather Boots",
+      "level": 7,
       "ingredients": [
         {
-          "itemId": "animal_hide_quality",
-          "quantity": 8
+          "itemId": "animal_hide",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        },
+        {
+          "itemId": "small_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "leather_boots",
+        "quantity": 1
+      },
+      "experienceGain": 35,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "leather_helmet",
+      "name": "Leather Helmet",
+      "level": 9,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread",
+          "quantity": 3
+        },
+        {
+          "itemId": "small_bone",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "leather_helmet",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "leather_pants",
+      "name": "Leather Pants",
+      "level": 12,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 6
+        },
+        {
+          "itemId": "thread",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "leather_pants",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "leather_belt",
+      "name": "Leather Belt",
+      "level": 15,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 3
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
         },
         {
           "itemId": "metal_ring",
-          "quantity": 4
-        },
-        {
-          "itemId": "wolf_pelt",
-          "quantity": 3
+          "quantity": 1
         }
       ],
       "result": {
-        "itemId": "reinforced_leather_armor",
+        "itemId": "leather_belt",
         "quantity": 1
       },
-      "experienceGain": 100,
-      "timeRequired": 7500
+      "experienceGain": 60,
+      "timeRequired": 5800
     },
     {
-      "recipeId": "monster_hide_armor",
-      "name": "Monster Hide Armor",
-      "level": 60,
+      "recipeId": "leather_backpack",
+      "name": "Leather Backpack",
+      "level": 18,
       "ingredients": [
         {
-          "itemId": "monster_pelt",
-          "quantity": 10
+          "itemId": "animal_hide",
+          "quantity": 8
         },
         {
-          "itemId": "monster_bone",
-          "quantity": 5
+          "itemId": "thread",
+          "quantity": 4
         },
         {
-          "itemId": "enchanted_thread",
-          "quantity": 3
-        },
-        {
-          "itemId": "troll_hide",
+          "itemId": "small_bone",
           "quantity": 4
         }
       ],
       "result": {
-        "itemId": "monster_hide_armor",
+        "itemId": "leather_backpack",
         "quantity": 1
       },
-      "experienceGain": 240,
-      "timeRequired": 9500
+      "experienceGain": 70,
+      "timeRequired": 6500
     },
     {
       "recipeId": "reinforced_trap_leather",
@@ -114,6 +223,242 @@
       "timeRequired": 7000
     },
     {
+      "recipeId": "hunter_leather_vest",
+      "name": "Hunter Leather Vest",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 6
+        },
+        {
+          "itemId": "thread",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_bone",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "hunter_leather_vest",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "quality_leather_armor",
+      "name": "Quality Leather Armor",
+      "level": 28,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 8
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "metal_ring",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "quality_leather_armor",
+        "quantity": 1
+      },
+      "experienceGain": 95,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "reinforced_leather",
+      "name": "Reinforced Leather",
+      "level": 30,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 8
+        },
+        {
+          "itemId": "metal_ring",
+          "quantity": 4
+        },
+        {
+          "itemId": "wolf_pelt",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "reinforced_leather_armor",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "metal_reinforced_leather",
+      "name": "Metal-Reinforced Leather",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "blacksmithing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 10
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "metal_reinforced_leather",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "beast_hide_armor",
+      "name": "Beast Hide Armor",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 10
+        },
+        {
+          "itemId": "animal_bone",
+          "quantity": 5
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "beast_hide_armor",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "scale_mail_leather",
+      "name": "Scale Mail Leather",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 8
+        },
+        {
+          "itemId": "fish_scale",
+          "quantity": 12
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "scale_mail_leather",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "hybrid_cloth_leather",
+      "name": "Hybrid Cloth-Leather Armor",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "tailoring",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 6
+        },
+        {
+          "itemId": "cloth",
+          "quantity": 6
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "hybrid_cloth_leather",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "treated_leather",
+      "name": "Treated Leather",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 8
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 5
+        },
+        {
+          "itemId": "water",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "treated_leather",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 8800
+    },
+    {
       "recipeId": "dire_beast_armor",
       "name": "Dire Beast Armor",
       "level": 50,
@@ -143,9 +488,804 @@
       },
       "experienceGain": 180,
       "timeRequired": 9000
+    },
+    {
+      "recipeId": "enchanted_leather",
+      "name": "Enchanted Leather Armor",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 8
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_leather",
+        "quantity": 1
+      },
+      "experienceGain": 190,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "gem_embedded_leather",
+      "name": "Gem-Embedded Leather",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "jewelcrafting",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 10
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "gem_embedded_leather",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "aquatic_leather",
+      "name": "Aquatic Leather Armor",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 8
+        },
+        {
+          "itemId": "fish_scale",
+          "quantity": 15
+        },
+        {
+          "itemId": "pearl",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "aquatic_leather",
+        "quantity": 1
+      },
+      "experienceGain": 220,
+      "timeRequired": 9800
+    },
+    {
+      "recipeId": "monster_hide_armor",
+      "name": "Monster Hide Armor",
+      "level": 60,
+      "ingredients": [
+        {
+          "itemId": "monster_pelt",
+          "quantity": 10
+        },
+        {
+          "itemId": "monster_bone",
+          "quantity": 5
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 3
+        },
+        {
+          "itemId": "troll_hide",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "monster_hide_armor",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "ancient_leather_pattern",
+      "name": "Ancient Leather Pattern",
+      "level": 65,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 10
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ancient_leather_pattern",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "fate_bound_leather",
+      "name": "Fate-Bound Leather",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 12
+        },
+        {
+          "itemId": "fate_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "fate_bound_leather",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "legendary_beast_leather",
+      "name": "Legendary Beast Leather",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 65
+        },
+        {
+          "skillId": "trapping",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "legendary_pelt",
+          "quantity": 5
+        },
+        {
+          "itemId": "legendary_bone",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "legendary_beast_leather",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "primal_leather",
+      "name": "Primal Leather",
+      "level": 75,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 15
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 8
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "primal_leather",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "divine_leather",
+      "name": "Divine Leather Armor",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 18
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 10
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "divine_leather",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "cosmic_leather",
+      "name": "Cosmic Leather",
+      "level": 85,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 20
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 4
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 12
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_leather",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "eternal_leather",
+      "name": "Eternal Leather",
+      "level": 90,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 25
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 15
+        }
+      ],
+      "result": {
+        "itemId": "eternal_leather",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "omnipotent_leather",
+      "name": "Omnipotent Leather",
+      "level": 95,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 30
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 6
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 20
+        }
+      ],
+      "result": {
+        "itemId": "omnipotent_leather",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "master_leather_set",
+      "name": "Master Leather Set",
+      "level": 99,
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 40
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 8
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 25
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_leather_set",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 25000
+    },
+    {
+      "recipeId": "ancient_scroll_leather",
+      "name": "Ancient Scroll Leather",
+      "level": 28,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 8
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ancient_scroll_leather",
+        "quantity": 1
+      },
+      "experienceGain": 105,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "dragon_scale_leather",
+      "name": "Dragon Scale Leather",
+      "level": 62,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 10
+        },
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dragon_scale_leather",
+        "quantity": 1
+      },
+      "experienceGain": 260,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "phoenix_feather_leather",
+      "name": "Phoenix Feather Leather",
+      "level": 55,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 8
+        },
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "fire_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_feather_leather",
+        "quantity": 1
+      },
+      "experienceGain": 230,
+      "timeRequired": 9600
+    },
+    {
+      "recipeId": "celestial_scale_leather",
+      "name": "Celestial Scale Leather",
+      "level": 82,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 18
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "celestial_scale_leather",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 17000
+    },
+    {
+      "recipeId": "divine_fragment_leather",
+      "name": "Divine Fragment Leather",
+      "level": 78,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 15
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "divine_fragment_leather",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 14500
+    },
+    {
+      "recipeId": "master_key_leather",
+      "name": "Master Key Leather",
+      "level": 45,
+      "unlockRequirements": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 12
+        },
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "master_key_leather",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "druid_medallion_leather",
+      "name": "Druid Medallion Leather",
+      "level": 38,
+      "unlockRequirements": [
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_quality",
+          "quantity": 10
+        },
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "druid_medallion_leather",
+        "quantity": 1
+      },
+      "experienceGain": 135,
+      "timeRequired": 8300
+    },
+    {
+      "recipeId": "void_crystal_leather",
+      "name": "Void Crystal Leather",
+      "level": 70,
+      "unlockRequirements": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 12
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 7
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "void_crystal_leather",
+        "quantity": 1
+      },
+      "experienceGain": 320,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "prismatic_shard_leather",
+      "name": "Prismatic Shard Leather",
+      "level": 88,
+      "unlockRequirements": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 6
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 22
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 6
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 14
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_shard_leather",
+        "quantity": 1
+      },
+      "experienceGain": 580,
+      "timeRequired": 19000
+    },
+    {
+      "recipeId": "world_tree_leather",
+      "name": "World Tree Leather",
+      "level": 92,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide_rare",
+          "quantity": 28
+        },
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 18
+        }
+      ],
+      "result": {
+        "itemId": "world_tree_leather",
+        "quantity": 1
+      },
+      "experienceGain": 620,
+      "timeRequired": 20000
     }
   ],
   "passiveBonuses": [
+    {
+      "level": 10,
+      "bonus": {
+        "defense": 3,
+        "dexterity": 1
+      }
+    },
+    {
+      "level": 20,
+      "bonus": {
+        "defense": 5,
+        "dexterity": 2
+      }
+    },
     {
       "level": 30,
       "bonus": {
@@ -154,10 +1294,45 @@
       }
     },
     {
+      "level": 40,
+      "bonus": {
+        "defense": 10,
+        "dexterity": 4
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "defense": 12,
+        "dexterity": 5
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "defense": 13,
+        "dexterity": 5
+      }
+    },
+    {
       "level": 70,
       "bonus": {
         "defense": 15,
         "dexterity": 6
+      }
+    },
+    {
+      "level": 80,
+      "bonus": {
+        "defense": 18,
+        "dexterity": 7
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "defense": 22,
+        "dexterity": 9
       }
     },
     {

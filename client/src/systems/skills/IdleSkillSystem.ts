@@ -3,6 +3,8 @@ import { getDataLoader } from '@/data';
 import { MercenaryManager } from '../mercenary/MercenaryManager';
 import { UpgradeManager, type UpgradeBonuses } from '../upgrade/UpgradeManager';
 import { InventoryManager } from '../inventory';
+import { CityManager } from '../city/CityManager';
+import { GuildManager } from '../city/GuildManager';
 
 export class IdleSkillSystem {
   /**
@@ -235,6 +237,56 @@ export class IdleSkillSystem {
    */
   static getUpgradeBonuses(character: Character, skillId: string): UpgradeBonuses {
     return UpgradeManager.getUpgradeBonuses(character, skillId);
+  }
+
+  /**
+   * Get all skill bonuses (building + guild + mercenary + upgrade) for a skill
+   */
+  static async getAllSkillBonuses(character: Character, skillId: string): Promise<{
+    experienceMultiplier: number;
+    speedMultiplier: number;
+    yieldMultiplier: number;
+    craftingSuccessRate: number;
+  }> {
+    // Start with base values
+    let experienceMultiplier = 1;
+    let speedMultiplier = 1;
+    let yieldMultiplier = 1;
+    let craftingSuccessRate = 0;
+
+    // Get building bonuses
+    const buildingBonuses = await CityManager.getBuildingBonuses(character);
+    if (buildingBonuses.skillMultiplier[skillId]) {
+      experienceMultiplier *= buildingBonuses.skillMultiplier[skillId];
+    }
+    craftingSuccessRate += buildingBonuses.craftingSuccessRate;
+    yieldMultiplier *= buildingBonuses.resourceYield;
+
+    // Get guild bonuses
+    const guildBonuses = await GuildManager.getGuildBonuses(character);
+    if (guildBonuses.skillMultiplier[skillId]) {
+      experienceMultiplier *= guildBonuses.skillMultiplier[skillId];
+    }
+
+    // Get mercenary bonuses
+    const mercenaryBonuses = this.getSkillingMercenaryBonuses(character);
+    experienceMultiplier *= mercenaryBonuses.experienceMultiplier;
+    speedMultiplier *= mercenaryBonuses.speedMultiplier;
+    yieldMultiplier *= mercenaryBonuses.yieldMultiplier;
+
+    // Get upgrade bonuses
+    const upgradeBonuses = this.getUpgradeBonuses(character, skillId);
+    experienceMultiplier *= upgradeBonuses.experienceMultiplier;
+    speedMultiplier *= upgradeBonuses.speedMultiplier;
+    yieldMultiplier *= upgradeBonuses.yieldMultiplier;
+    craftingSuccessRate += upgradeBonuses.successRateBonus || 0;
+
+    return {
+      experienceMultiplier,
+      speedMultiplier,
+      yieldMultiplier,
+      craftingSuccessRate,
+    };
   }
 
   /**

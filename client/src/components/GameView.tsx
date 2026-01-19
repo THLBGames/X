@@ -15,6 +15,10 @@ import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
 import ProgressionPanel from './ProgressionPanel';
+import ChroniclePanel from './ChroniclePanel';
+import CityPanel from './CityPanel';
+import GuildPanel from './GuildPanel';
+import VendorPanel from './VendorPanel';
 import SettingsPanel from './SettingsPanel';
 import PatchNotesModal from './PatchNotesModal';
 import OnboardingModal from './OnboardingModal';
@@ -26,7 +30,7 @@ export default function GameView() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const settings = useGameState((state) => state.settings);
   const [activeRightPanel, setActiveRightPanel] = useState<
-    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression'
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression' | 'chronicle' | 'city' | 'guilds' | 'vendors'
   >('character');
   const [showSettings, setShowSettings] = useState(false);
   const [showPatchNotes, setShowPatchNotes] = useState(false);
@@ -74,8 +78,12 @@ export default function GameView() {
     return <CharacterCreation />;
   }
 
+  // Determine which panels should show in center area
+  const centerPanels: Array<typeof activeRightPanel> = ['skills', 'shop', 'chronicle', 'city', 'guilds', 'vendors', 'inventory'];
+  const isCenterPanel = centerPanels.includes(activeRightPanel);
+
   return (
-    <div className={`game-view ${activeRightPanel === 'skills' ? 'skills-active' : ''}`}>
+    <div className={`game-view ${isCenterPanel ? 'center-panel-active' : ''}`}>
       <div className="game-header">
         <h2 className="game-title-header">Tales of Heroes, Legends & Beasts</h2>
         <button className="patch-notes-button" onClick={() => setShowPatchNotes(true)}>
@@ -85,6 +93,18 @@ export default function GameView() {
       <div className="game-view-center">
         {activeRightPanel === 'skills' ? (
           <SkillsPanel />
+        ) : activeRightPanel === 'shop' ? (
+          <ShopPanel />
+        ) : activeRightPanel === 'chronicle' ? (
+          <ChroniclePanel />
+        ) : activeRightPanel === 'city' ? (
+          <CityPanel />
+        ) : activeRightPanel === 'guilds' ? (
+          <GuildPanel />
+        ) : activeRightPanel === 'vendors' ? (
+          <VendorPanel />
+        ) : activeRightPanel === 'inventory' ? (
+          <InventoryPanel />
         ) : (
           <>
             <CombatDisplay />
@@ -158,6 +178,38 @@ export default function GameView() {
               Progression
             </button>
           </TooltipWrapper>
+          <TooltipWrapper content="View your character's story and legend titles">
+            <button
+              className={`panel-tab ${activeRightPanel === 'chronicle' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('chronicle')}
+            >
+              Chronicle
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Manage your city and buildings">
+            <button
+              className={`panel-tab ${activeRightPanel === 'city' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('city')}
+            >
+              City
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Join and manage guilds">
+            <button
+              className={`panel-tab ${activeRightPanel === 'guilds' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('guilds')}
+            >
+              Guilds
+            </button>
+          </TooltipWrapper>
+          <TooltipWrapper content="Shop from building and guild vendors">
+            <button
+              className={`panel-tab ${activeRightPanel === 'vendors' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('vendors')}
+            >
+              Vendors
+            </button>
+          </TooltipWrapper>
           <TooltipWrapper content="Game settings and preferences">
             <button className="panel-tab" onClick={() => setShowSettings(true)}>
               Settings
@@ -167,15 +219,20 @@ export default function GameView() {
         <div className="right-panel-content">
           {activeRightPanel === 'character' && <CharacterPanel />}
           {activeRightPanel === 'equipment' && <EquipmentPanel />}
-          {activeRightPanel === 'inventory' && <InventoryPanel />}
-          {activeRightPanel === 'shop' && <ShopPanel />}
           {activeRightPanel === 'quests' && <QuestPanel />}
           {activeRightPanel === 'statistics' && <StatisticsPanel />}
           {activeRightPanel === 'progression' && <ProgressionPanel />}
-          {activeRightPanel === 'skills' && (
-            <div className="skills-tab-placeholder">
-              <p>Skills are displayed in the center area.</p>
-              <p>Select a skill from the sidebar to view details.</p>
+          {isCenterPanel && (
+            <div className="center-panel-placeholder">
+              {activeRightPanel === 'skills' && (
+                <p>Skills are displayed in the center area. Select a skill from the sidebar to view details.</p>
+              )}
+              {activeRightPanel === 'shop' && <p>Shop is displayed in the center area.</p>}
+              {activeRightPanel === 'chronicle' && <p>Chronicle is displayed in the center area.</p>}
+              {activeRightPanel === 'city' && <p>City management is displayed in the center area.</p>}
+              {activeRightPanel === 'guilds' && <p>Guilds are displayed in the center area.</p>}
+              {activeRightPanel === 'vendors' && <p>Vendors are displayed in the center area.</p>}
+              {activeRightPanel === 'inventory' && <p>Inventory is displayed in the center area.</p>}
             </div>
           )}
         </div>

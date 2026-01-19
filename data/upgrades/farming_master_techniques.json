@@ -1,0 +1,35 @@
+{
+  "id": "farming_master_techniques",
+  "name": "Farming Master Techniques",
+  "description": "Unlocks 15+ secret farming recipes and resourceNodes requiring legendary components. Grants access to master-tier farming equipment and divine crops.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "farming",
+  "tier": "VI",
+  "price": 30000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "ancient_farming_techniques",
+      "druids_crop_circle",
+      "master_farmers_manual",
+      "phoenix_crop_revival",
+      "dragon_scale_fertilizer",
+      "celestial_growth_formula",
+      "divine_harvest_ritual",
+      "world_tree_seeds"
+    ],
+    "unlocksResourceNodes": [
+      "ancient_seed_garden",
+      "phoenix_feather_farm",
+      "dragon_scale_plantation",
+      "world_tree_orchard",
+      "divine_fragment_garden"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 90,
+    "previousTierId": "farming_upgrade_V"
+  },
+  "nameKey": "upgrade.farming_master_techniques.name",
+  "descriptionKey": "upgrade.farming_master_techniques.description"
+}

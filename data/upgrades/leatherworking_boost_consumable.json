@@ -1,11 +1,11 @@
 {
   "id": "leatherworking_boost_consumable",
   "name": "Leatherworking Boost",
-  "description": "Temporarily increases leatherworking speed by 30% for 50 actions",
+  "description": "Temporarily increases leatherworking speed by 30% and XP gain by 20% for 50 actions",
   "type": "consumable",
   "scope": "skill",
   "skillId": "leatherworking",
-  "price": 500,
+  "price": 600,
   "bonuses": {
     "speedMultiplier": 0.7,
     "experienceMultiplier": 1.2

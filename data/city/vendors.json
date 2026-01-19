@@ -1,0 +1,206 @@
+{
+  "version": "1.0.0",
+  "vendors": {
+    "general_store_vendor": {
+      "id": "general_store_vendor",
+      "name": "General Store Vendor",
+      "description": "Sells common items and basic supplies.",
+      "buildingId": "general_store",
+      "items": [
+        {
+          "itemId": "health_potion",
+          "price": 50,
+          "unlockLevel": 1
+        },
+        {
+          "itemId": "mana_potion",
+          "price": 50,
+          "unlockLevel": 1
+        },
+        {
+          "itemId": "iron_ore",
+          "price": 10,
+          "unlockLevel": 1
+        },
+        {
+          "itemId": "herb",
+          "price": 5,
+          "unlockLevel": 1
+        }
+      ],
+      "buybackRate": 0.5
+    },
+    "general_store_vendor_advanced": {
+      "id": "general_store_vendor_advanced",
+      "name": "General Store Vendor (Advanced)",
+      "description": "Sells advanced items and rare supplies.",
+      "buildingId": "general_store",
+      "items": [
+        {
+          "itemId": "greater_health_potion",
+          "price": 200,
+          "unlockLevel": 2
+        },
+        {
+          "itemId": "greater_mana_potion",
+          "price": 200,
+          "unlockLevel": 2
+        },
+        {
+          "itemId": "steel_ingot",
+          "price": 100,
+          "unlockLevel": 2
+        }
+      ],
+      "buybackRate": 0.5
+    },
+    "blacksmithing_guild_vendor": {
+      "id": "blacksmithing_guild_vendor",
+      "name": "Guild Blacksmith",
+      "description": "Exclusive blacksmithing supplies for guild members.",
+      "guildId": "blacksmithing_guild",
+      "items": [
+        {
+          "itemId": "apprentice_blacksmith_hammer",
+          "price": 500,
+          "guildRank": 1
+        },
+        {
+          "itemId": "steel_recipe",
+          "price": 1000,
+          "guildRank": 2
+        },
+        {
+          "itemId": "journeyman_blacksmith_hammer",
+          "price": 2000,
+          "guildRank": 2
+        },
+        {
+          "itemId": "master_blacksmith_hammer",
+          "price": 5000,
+          "guildRank": 3
+        },
+        {
+          "itemId": "legendary_weapon_recipe",
+          "price": 10000,
+          "guildRank": 3
+        },
+        {
+          "itemId": "guild_master_sword",
+          "price": 50000,
+          "guildRank": 3
+        }
+      ],
+      "buybackRate": 0.6
+    },
+    "mage_guild_vendor": {
+      "id": "mage_guild_vendor",
+      "name": "Guild Alchemist",
+      "description": "Exclusive magical supplies for guild members.",
+      "guildId": "mage_guild",
+      "items": [
+        {
+          "itemId": "apprentice_staff",
+          "price": 500,
+          "guildRank": 1
+        },
+        {
+          "itemId": "advanced_potion_recipe",
+          "price": 1000,
+          "guildRank": 2
+        },
+        {
+          "itemId": "journeyman_staff",
+          "price": 2000,
+          "guildRank": 2
+        },
+        {
+          "itemId": "master_staff",
+          "price": 5000,
+          "guildRank": 3
+        },
+        {
+          "itemId": "legendary_spell_recipe",
+          "price": 10000,
+          "guildRank": 3
+        },
+        {
+          "itemId": "guild_master_staff",
+          "price": 50000,
+          "guildRank": 3
+        }
+      ],
+      "buybackRate": 0.6
+    },
+    "ranger_guild_vendor": {
+      "id": "ranger_guild_vendor",
+      "name": "Guild Tracker",
+      "description": "Exclusive ranger supplies for guild members.",
+      "guildId": "ranger_guild",
+      "items": [
+        {
+          "itemId": "ranger_bow",
+          "price": 500,
+          "guildRank": 1
+        }
+      ],
+      "buybackRate": 0.6
+    },
+    "warrior_guild_vendor": {
+      "id": "warrior_guild_vendor",
+      "name": "Guild Armorer",
+      "description": "Exclusive warrior supplies for guild members.",
+      "guildId": "warrior_guild",
+      "items": [
+        {
+          "itemId": "warrior_sword",
+          "price": 500,
+          "guildRank": 1
+        }
+      ],
+      "buybackRate": 0.6
+    },
+    "rogue_guild_vendor": {
+      "id": "rogue_guild_vendor",
+      "name": "Guild Assassin",
+      "description": "Exclusive rogue supplies for guild members.",
+      "guildId": "rogue_guild",
+      "items": [
+        {
+          "itemId": "rogue_dagger",
+          "price": 500,
+          "guildRank": 1
+        }
+      ],
+      "buybackRate": 0.6
+    },
+    "crafting_guild_vendor": {
+      "id": "crafting_guild_vendor",
+      "name": "Guild Artisan",
+      "description": "Exclusive crafting supplies for guild members.",
+      "guildId": "crafting_guild",
+      "items": [
+        {
+          "itemId": "crafting_tools",
+          "price": 500,
+          "guildRank": 1
+        }
+      ],
+      "buybackRate": 0.6
+    },
+    "merchant_guild_vendor": {
+      "id": "merchant_guild_vendor",
+      "name": "Guild Trader",
+      "description": "Exclusive trading supplies for guild members.",
+      "guildId": "merchant_guild",
+      "items": [
+        {
+          "itemId": "trading_license",
+          "price": 1000,
+          "guildRank": 1
+        }
+      ],
+      "buybackRate": 0.7
+    }
+  }
+}

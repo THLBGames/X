@@ -266,7 +266,7 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
   };
 
   // Skills tab functions
-  const handleGrantSkill = () => {
+  const handleGrantSkill = async () => {
     const skillId = skillIdInput.trim();
     const level = parseInt(skillLevelInput, 10);
 
@@ -286,7 +286,7 @@ export default function DebugPanel({ isOpen, onClose }: DebugPanelProps) {
       return;
     }
 
-    const result = SkillManager.learnSkill(character, skillId, level);
+    const result = await SkillManager.learnSkill(character, skillId, level);
     if (result.success && result.character) {
       setCharacter(result.character);
       setSkillIdInput('');

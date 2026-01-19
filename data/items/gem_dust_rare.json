@@ -1,0 +1,12 @@
+{
+  "id": "gem_dust_rare",
+  "name": "Rare Gem Dust",
+  "description": "Finely ground rare gem dust used in enchanting and alchemy.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50,
+  "nameKey": "item.gem_dust_rare.name",
+  "descriptionKey": "item.gem_dust_rare.description"
+}

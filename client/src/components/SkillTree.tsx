@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { SkillManager } from '../systems/skills/SkillManager';
-import { MAX_SKILL_BAR_SLOTS } from '@idle-rpg/shared';
+import { MAX_SKILL_BAR_SLOTS, type Skill } from '@idle-rpg/shared';
 import { UI_MESSAGES } from '../constants/ui';
 // import { getDataLoader } from '../data';
 import './SkillTree.css';
+
+type SkillTreeItem = {
+  skill: Skill;
+  level: number;
+  canLearn: boolean;
+  reason?: string;
+  prerequisitesMet: boolean;
+};
 
 export default function SkillTree() {
   const character = useGameState((state) => state.character);
@@ -12,36 +20,48 @@ export default function SkillTree() {
   const updateSkillBar = useGameState((state) => state.updateSkillBar);
   const [filter, setFilter] = useState<'all' | 'available' | 'learned' | 'locked'>('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [skillTree, setSkillTree] = useState<SkillTreeItem[]>([]);
+
+  // Load skill tree when character changes
+  useEffect(() => {
+    if (character) {
+      SkillManager.getSkillTree(character).then((tree) => {
+        setSkillTree(tree);
+      });
+    }
+  }, [character]);
 
   if (!character) {
     return null;
   }
 
-  const skillTree = SkillManager.getSkillTree(character);
   // const dataLoader = getDataLoader();
 
   // Filter skills
   let filteredSkills = skillTree;
   if (filter === 'available') {
-    filteredSkills = skillTree.filter((s) => s.canLearn && !s.level);
+    filteredSkills = skillTree.filter((s: SkillTreeItem) => s.canLearn && !s.level);
   } else if (filter === 'learned') {
-    filteredSkills = skillTree.filter((s) => s.level > 0);
+    filteredSkills = skillTree.filter((s: SkillTreeItem) => s.level > 0);
   } else if (filter === 'locked') {
-    filteredSkills = skillTree.filter((s) => !s.canLearn && !s.level);
+    filteredSkills = skillTree.filter((s: SkillTreeItem) => !s.canLearn && !s.level);
   }
 
   // Search filter
   if (searchTerm) {
-    filteredSkills = filteredSkills.filter((s) =>
+    filteredSkills = filteredSkills.filter((s: SkillTreeItem) =>
       s.skill.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       s.skill.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 
-  const handleLearnSkill = (skillId: string) => {
-    const result = SkillManager.learnSkill(character, skillId, 1);
+  const handleLearnSkill = async (skillId: string) => {
+    const result = await SkillManager.learnSkill(character, skillId, 1);
     if (result.success && result.character) {
       setCharacter(result.character);
+      // Reload skill tree after learning
+      const updatedTree = await SkillManager.getSkillTree(result.character);
+      setSkillTree(updatedTree);
     } else {
       alert(result.reason || UI_MESSAGES.CANNOT_LEARN_SKILL());
     }
@@ -119,7 +139,7 @@ export default function SkillTree() {
         {filteredSkills.length === 0 ? (
           <div className="no-skills">No skills found</div>
         ) : (
-          filteredSkills.map(({ skill, level, canLearn, reason, prerequisitesMet }) => {
+          filteredSkills.map(({ skill, level, canLearn, reason, prerequisitesMet }: SkillTreeItem) => {
             const isLearned = level > 0;
             const isMaxLevel = level >= skill.maxLevel;
             const cost = skill.unlockCost || 1;

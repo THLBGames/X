@@ -8,6 +8,173 @@
   "experienceFormula": "baseExp * (level * 1.4)",
   "recipes": [
     {
+      "recipeId": "basic_power_rune",
+      "name": "Basic Power Rune",
+      "level": 1,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 1
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "basic_power_rune",
+        "quantity": 1
+      },
+      "experienceGain": 20,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "rune_of_strength",
+      "name": "Rune of Strength",
+      "level": 3,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 2
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_strength",
+        "quantity": 1
+      },
+      "experienceGain": 28,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "rune_of_protection",
+      "name": "Rune of Protection",
+      "level": 5,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 2
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "small_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_protection",
+        "quantity": 1
+      },
+      "experienceGain": 35,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "rune_of_speed",
+      "name": "Rune of Speed",
+      "level": 7,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 2
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "energy_wisp",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_speed",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 6200
+    },
+    {
+      "recipeId": "rune_of_critical_strike",
+      "name": "Rune of Critical Strike",
+      "level": 10,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 3
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_fang",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_critical_strike",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "rune_of_life_steal",
+      "name": "Rune of Life Steal",
+      "level": 12,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 3
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_blood",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_life_steal",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "rune_of_mana",
+      "name": "Rune of Mana",
+      "level": 14,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 3
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_mana",
+        "quantity": 1
+      },
+      "experienceGain": 60,
+      "timeRequired": 7000
+    },
+    {
       "recipeId": "minor_rune",
       "name": "Minor Rune",
       "level": 15,
@@ -29,35 +196,130 @@
       "timeRequired": 7000
     },
     {
-      "recipeId": "crystal_rune",
-      "name": "Crystal Rune",
-      "level": 35,
+      "recipeId": "rune_of_experience",
+      "name": "Rune of Experience",
+      "level": 18,
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 4
+        },
+        {
+          "itemId": "minor_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_experience",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "nature_rune",
+      "name": "Nature Rune",
+      "level": 22,
       "skillPrerequisites": [
         {
-          "skillId": "mining",
-          "level": 50
+          "skillId": "herbalism",
+          "level": 20
         }
       ],
       "ingredients": [
         {
-          "itemId": "crystal_shard",
+          "itemId": "rune_stone",
           "quantity": 3
         },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "nature_rune",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "beast_power_rune",
+      "name": "Beast Power Rune",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 22
+        }
+      ],
+      "ingredients": [
         {
           "itemId": "rune_stone_quality",
           "quantity": 2
         },
         {
           "itemId": "moderate_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_hide",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_bone",
           "quantity": 2
         }
       ],
       "result": {
-        "itemId": "crystal_rune",
+        "itemId": "beast_power_rune",
         "quantity": 1
       },
-      "experienceGain": 120,
-      "timeRequired": 8000
+      "experienceGain": 95,
+      "timeRequired": 7700
+    },
+    {
+      "recipeId": "trapped_essence_rune",
+      "name": "Trapped Essence Rune",
+      "level": 28,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_pelt",
+          "quantity": 3
+        },
+        {
+          "itemId": "beast_essence",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "trapped_essence_rune",
+        "quantity": 1
+      },
+      "experienceGain": 105,
+      "timeRequired": 7800
     },
     {
       "recipeId": "rune_stone_rune",
@@ -91,6 +353,196 @@
       "timeRequired": 7800
     },
     {
+      "recipeId": "crystal_rune",
+      "name": "Crystal Rune",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "crystal_rune",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "metal_reinforced_rune",
+      "name": "Metal-Reinforced Rune",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "blacksmithing",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "metal_reinforced_rune",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "cosmic_energy_rune",
+      "name": "Cosmic Energy Rune",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 3
+        },
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_energy_rune",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "aquatic_rune",
+      "name": "Aquatic Rune",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "fish_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "pearl",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "aquatic_rune",
+        "quantity": 1
+      },
+      "experienceGain": 145,
+      "timeRequired": 8300
+    },
+    {
+      "recipeId": "enhanced_enchantment_rune",
+      "name": "Enhanced Enchantment Rune",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "enhanced_enchantment_rune",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "gem_embedded_rune",
+      "name": "Gem-Embedded Rune",
+      "level": 44,
+      "skillPrerequisites": [
+        {
+          "skillId": "jewelcrafting",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "gem_embedded_rune",
+        "quantity": 1
+      },
+      "experienceGain": 155,
+      "timeRequired": 8600
+    },
+    {
       "recipeId": "greater_rune",
       "name": "Greater Rune",
       "level": 45,
@@ -114,6 +566,122 @@
       },
       "experienceGain": 160,
       "timeRequired": 9000
+    },
+    {
+      "recipeId": "alchemical_rune",
+      "name": "Alchemical Rune",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "alchemical_rune",
+        "quantity": 1
+      },
+      "experienceGain": 170,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "rune_of_gold",
+      "name": "Rune of Gold",
+      "level": 50,
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_gold",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "rune_of_item_find",
+      "name": "Rune of Item Find",
+      "level": 52,
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "rune_of_item_find",
+        "quantity": 1
+      },
+      "experienceGain": 190,
+      "timeRequired": 9600
+    },
+    {
+      "recipeId": "fate_rune",
+      "name": "Fate Rune",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 5
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "fate_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fate_rune",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 9800
     },
     {
       "recipeId": "enhanced_crystal_rune",
@@ -186,37 +754,6 @@
       "timeRequired": 10200
     },
     {
-      "recipeId": "cosmic_energy_rune",
-      "name": "Cosmic Energy Rune",
-      "level": 38,
-      "skillPrerequisites": [
-        {
-          "skillId": "divination",
-          "level": 25
-        }
-      ],
-      "ingredients": [
-        {
-          "itemId": "cosmic_energy",
-          "quantity": 3
-        },
-        {
-          "itemId": "rune_stone_quality",
-          "quantity": 3
-        },
-        {
-          "itemId": "moderate_essence",
-          "quantity": 3
-        }
-      ],
-      "result": {
-        "itemId": "cosmic_energy_rune",
-        "quantity": 1
-      },
-      "experienceGain": 140,
-      "timeRequired": 8200
-    },
-    {
       "recipeId": "time_vision_rune",
       "name": "Time Vision Rune",
       "level": 64,
@@ -250,6 +787,70 @@
       },
       "experienceGain": 320,
       "timeRequired": 10400
+    },
+    {
+      "recipeId": "legendary_beast_rune",
+      "name": "Legendary Beast Rune",
+      "level": 66,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 60
+        },
+        {
+          "skillId": "trapping",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "legendary_pelt",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "legendary_beast_rune",
+        "quantity": 1
+      },
+      "experienceGain": 340,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "primal_essence_rune",
+      "name": "Primal Essence Rune",
+      "level": 68,
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "primal_essence_rune",
+        "quantity": 1
+      },
+      "experienceGain": 360,
+      "timeRequired": 11200
     },
     {
       "recipeId": "void_rune",
@@ -320,6 +921,31 @@
       },
       "experienceGain": 500,
       "timeRequired": 13500
+    },
+    {
+      "recipeId": "supreme_rune",
+      "name": "Supreme Rune",
+      "level": 80,
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "void_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "supreme_rune",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 12000
     },
     {
       "recipeId": "celestial_scale_rune",
@@ -396,31 +1022,6 @@
       "timeRequired": 16000
     },
     {
-      "recipeId": "supreme_rune",
-      "name": "Supreme Rune",
-      "level": 80,
-      "ingredients": [
-        {
-          "itemId": "rune_stone_rare",
-          "quantity": 4
-        },
-        {
-          "itemId": "supreme_essence",
-          "quantity": 4
-        },
-        {
-          "itemId": "void_essence",
-          "quantity": 2
-        }
-      ],
-      "result": {
-        "itemId": "supreme_rune",
-        "quantity": 1
-      },
-      "experienceGain": 420,
-      "timeRequired": 12000
-    },
-    {
       "recipeId": "prismatic_rune",
       "name": "Prismatic Rune",
       "level": 88,
@@ -456,6 +1057,70 @@
       "timeRequired": 15000
     },
     {
+      "recipeId": "cosmic_rune",
+      "name": "Cosmic Rune",
+      "level": 90,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 6
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 6
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 5
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_rune",
+        "quantity": 1
+      },
+      "experienceGain": 680,
+      "timeRequired": 16500
+    },
+    {
+      "recipeId": "eternal_rune",
+      "name": "Eternal Rune",
+      "level": 92,
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 6
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 6
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "eternal_rune",
+        "quantity": 1
+      },
+      "experienceGain": 720,
+      "timeRequired": 17000
+    },
+    {
       "recipeId": "divine_rune",
       "name": "Divine Rune",
       "level": 96,
@@ -489,14 +1154,475 @@
       },
       "experienceGain": 750,
       "timeRequired": 18000
+    },
+    {
+      "recipeId": "omnipotent_rune",
+      "name": "Omnipotent Rune",
+      "level": 99,
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 8
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 8
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "omnipotent_rune",
+        "quantity": 1
+      },
+      "experienceGain": 900,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "ancient_scroll_rune_secret",
+      "name": "Ancient Scroll Rune",
+      "level": 30,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 3
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "ancient_scroll_rune",
+        "quantity": 1
+      },
+      "experienceGain": 125,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "dragon_scale_rune_secret",
+      "name": "Dragon Scale Rune",
+      "level": 65,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dragon_scale_rune",
+        "quantity": 1
+      },
+      "experienceGain": 310,
+      "timeRequired": 10300
+    },
+    {
+      "recipeId": "phoenix_feather_rune_secret",
+      "name": "Phoenix Feather Rune",
+      "level": 58,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 5
+        },
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "fire_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_feather_rune",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 9900
+    },
+    {
+      "recipeId": "celestial_scale_rune_secret",
+      "name": "Celestial Scale Rune (Secret)",
+      "level": 83,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 3
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "celestial_scale_rune_secret",
+        "quantity": 1
+      },
+      "experienceGain": 580,
+      "timeRequired": 15200
+    },
+    {
+      "recipeId": "divine_fragment_rune_secret",
+      "name": "Divine Fragment Rune",
+      "level": 78,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 2
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_fragment_rune",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 13800
+    },
+    {
+      "recipeId": "master_key_rune_secret",
+      "name": "Master Key Rune",
+      "level": 48,
+      "unlockRequirements": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 4
+        },
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "greater_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "master_key_rune",
+        "quantity": 1
+      },
+      "experienceGain": 165,
+      "timeRequired": 9100
+    },
+    {
+      "recipeId": "druid_medallion_rune_secret",
+      "name": "Druid Medallion Rune",
+      "level": 40,
+      "unlockRequirements": [
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "druid_medallion_rune",
+        "quantity": 1
+      },
+      "experienceGain": 148,
+      "timeRequired": 8400
+    },
+    {
+      "recipeId": "world_tree_rune_secret",
+      "name": "World Tree Rune",
+      "level": 94,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 7
+        },
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 7
+        }
+      ],
+      "result": {
+        "itemId": "world_tree_rune",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 17500
+    },
+    {
+      "recipeId": "reality_shard_rune_secret",
+      "name": "Reality Shard Rune",
+      "level": 86,
+      "unlockRequirements": [
+        {
+          "itemId": "reality_shard",
+          "quantity": 3
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 5
+        },
+        {
+          "itemId": "reality_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 6
+        },
+        {
+          "itemId": "time_vision",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "reality_shard_rune",
+        "quantity": 1
+      },
+      "experienceGain": 640,
+      "timeRequired": 16200
+    },
+    {
+      "recipeId": "godslayer_essence_rune_secret",
+      "name": "Godslayer Essence Rune",
+      "level": 98,
+      "unlockRequirements": [
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 2
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone_rare",
+          "quantity": 8
+        },
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "supreme_essence",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "godslayer_essence_rune",
+        "quantity": 1
+      },
+      "experienceGain": 850,
+      "timeRequired": 19000
     }
   ],
   "passiveBonuses": [
+    {
+      "level": 10,
+      "bonus": {
+        "magicAttack": 5,
+        "magicDefense": 3
+      }
+    },
+    {
+      "level": 20,
+      "bonus": {
+        "magicAttack": 8,
+        "magicDefense": 5
+      }
+    },
+    {
+      "level": 30,
+      "bonus": {
+        "magicAttack": 10,
+        "magicDefense": 7
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "magicAttack": 12,
+        "magicDefense": 8
+      }
+    },
     {
       "level": 50,
       "bonus": {
         "magicAttack": 15,
         "magicDefense": 10
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "magicAttack": 18,
+        "magicDefense": 12
+      }
+    },
+    {
+      "level": 70,
+      "bonus": {
+        "magicAttack": 22,
+        "magicDefense": 15
+      }
+    },
+    {
+      "level": 80,
+      "bonus": {
+        "magicAttack": 26,
+        "magicDefense": 18
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "magicAttack": 28,
+        "magicDefense": 19
       }
     },
     {

@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "templates": {
+    "character_creation": {
+      "title": "The Beginning",
+      "narratives": {
+        "warrior": "{{name}} stood at the edge of the training grounds, gripping their weapon with determination. The path of a warrior was not an easy one, but {{name}} was ready to face whatever challenges lay ahead.",
+        "rogue": "{{name}} emerged from the shadows, daggers gleaming in the moonlight. The life of a rogue was one of stealth and precision, and {{name}} was prepared to master it.",
+        "mage": "{{name}} felt the arcane energies coursing through their veins as they opened their first spellbook. The mysteries of magic awaited, and {{name}} was eager to unlock them.",
+        "ranger": "{{name}} nocked an arrow, feeling the familiar weight of the bow. The wilderness called, and {{name}} was ready to answer.",
+        "default": "{{name}} began their journey, stepping into a world of adventure and danger. The path ahead was uncertain, but {{name}} was determined to make their mark."
+      }
+    },
+    "first_dungeon": {
+      "title": "First Steps into Darkness",
+      "narratives": {
+        "warrior": "{{name}} entered the dungeon, shield raised and weapon at the ready. The first true test of combat awaited, and {{name}} would not be found wanting.",
+        "rogue": "{{name}} slipped into the dungeon's entrance, moving silently through the shadows. The first real challenge of their journey had begun.",
+        "mage": "{{name}} stepped into the dungeon, arcane power crackling at their fingertips. The first battle would test their magical prowess.",
+        "ranger": "{{name}} entered the dungeon, bow drawn and senses alert. The hunt had begun.",
+        "default": "{{name}} ventured into their first dungeon, heart pounding with anticipation. This was where legends were born."
+      }
+    },
+    "level_milestone": {
+      "title": "Growing Stronger",
+      "narratives": {
+        "10": "{{name}} felt a surge of power as they reached level 10. The journey was just beginning, but already {{name}} could feel themselves growing stronger with each battle.",
+        "20": "At level 20, {{name}} had proven themselves a capable adventurer. The challenges ahead would be greater, but so too would be the rewards.",
+        "30": "Level 30 marked a turning point. {{name}} was no longer a novice, but a seasoned warrior whose name was beginning to be known.",
+        "50": "Reaching level 50, {{name}} had become a force to be reckoned with. Their legend was growing, and tales of their exploits were spreading.",
+        "75": "At level 75, {{name}} stood among the elite. Few could match their power, and fewer still their determination.",
+        "99": "Level 99. {{name}} had reached the pinnacle of mortal power. Their name would be remembered for generations to come.",
+        "default": "{{name}} reached level {{level}}, growing ever stronger with each passing day. The path forward was clear."
+      }
+    },
+    "boss_defeat": {
+      "title": "Victory Over Darkness",
+      "narratives": {
+        "first": "{{name}} stood victorious over their first major foe. The battle had been fierce, but {{name}} had emerged triumphant. This was only the beginning.",
+        "default": "{{name}} defeated {{monsterName}}, a powerful adversary. The victory was hard-won, but {{name}} had proven their strength once again."
+      }
+    },
+    "achievement_unlock": {
+      "title": "A Mark of Excellence",
+      "narratives": {
+        "default": "{{name}} achieved {{achievementName}}, a testament to their dedication and skill. This milestone would be remembered in the annals of history."
+      }
+    },
+    "skill_mastery": {
+      "title": "Mastery Achieved",
+      "narratives": {
+        "50": "{{name}} reached level 50 in {{skillName}}, achieving true mastery. Their expertise in this field was now legendary.",
+        "99": "{{name}} reached the pinnacle of {{skillName}}, level 99. Few had ever achieved such mastery, and {{name}}'s name would be remembered among the greats."
+      }
+    },
+    "legendary_item": {
+      "title": "A Legendary Find",
+      "narratives": {
+        "default": "{{name}} discovered {{itemName}}, a legendary artifact of immense power. Such finds were rare, and this would surely aid {{name}} in their quest."
+      }
+    },
+    "quest_completion": {
+      "title": "Quest Complete",
+      "narratives": {
+        "default": "{{name}} completed the quest: {{questName}}. The task was done, and {{name}} had proven their worth once more."
+      }
+    },
+    "subclass_unlock": {
+      "title": "Evolution",
+      "narratives": {
+        "default": "{{name}} unlocked the path of {{subclassName}}, evolving beyond their original class. A new chapter in their journey had begun."
+      }
+    },
+    "divination_milestone": {
+      "title": "Unlocking Mysteries",
+      "narratives": {
+        "default": "{{name}} unlocked {{nodeName}} in the divination tree, gaining new insights and powers. The mysteries of the arcane were slowly being revealed."
+      }
+    }
+  }
+}

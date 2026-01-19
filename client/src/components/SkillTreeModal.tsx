@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { SkillManager } from '../systems/skills/SkillManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
 import { InventoryManager } from '../systems/inventory';
 import { getDataLoader } from '../data';
-import { MAX_SKILL_BAR_SLOTS } from '@idle-rpg/shared';
+import { MAX_SKILL_BAR_SLOTS, type Skill } from '@idle-rpg/shared';
 import { UI_MESSAGES } from '../constants/ui';
 import AutoSkillConfigModal from './AutoSkillConfigModal';
 import './SkillTreeModal.css';
@@ -14,6 +14,14 @@ interface SkillTreeModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+type SkillTreeItem = {
+  skill: Skill;
+  level: number;
+  canLearn: boolean;
+  reason?: string;
+  prerequisitesMet: boolean;
+};
 
 export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps) {
   const { t } = useTranslation('ui');
@@ -27,37 +35,49 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
   const [searchTerm, setSearchTerm] = useState('');
   const [configSkillId, setConfigSkillId] = useState<string | null>(null);
   const [showRespecConfirm, setShowRespecConfirm] = useState(false);
+  const [skillTree, setSkillTree] = useState<SkillTreeItem[]>([]);
+
+  // Load skill tree when component opens or character changes
+  useEffect(() => {
+    if (isOpen && character) {
+      SkillManager.getSkillTree(character).then((tree) => {
+        setSkillTree(tree);
+      });
+    }
+  }, [isOpen, character]);
 
   if (!isOpen || !character) {
     return null;
   }
 
-  const skillTree = SkillManager.getSkillTree(character);
   const dataLoader = getDataLoader();
 
   // Filter skills
   let filteredSkills = skillTree;
   if (filter === 'available') {
-    filteredSkills = skillTree.filter((s) => s.canLearn && !s.level);
+    filteredSkills = skillTree.filter((s: SkillTreeItem) => s.canLearn && !s.level);
   } else if (filter === 'learned') {
-    filteredSkills = skillTree.filter((s) => s.level > 0);
+    filteredSkills = skillTree.filter((s: SkillTreeItem) => s.level > 0);
   } else if (filter === 'locked') {
-    filteredSkills = skillTree.filter((s) => !s.canLearn && !s.level);
+    filteredSkills = skillTree.filter((s: SkillTreeItem) => !s.canLearn && !s.level);
   }
 
   // Search filter
   if (searchTerm) {
-    filteredSkills = filteredSkills.filter((s) => {
+    filteredSkills = filteredSkills.filter((s: SkillTreeItem) => {
       const skillName = dataLoader.getTranslatedName(s.skill).toLowerCase();
       const skillDesc = dataLoader.getTranslatedDescription(s.skill).toLowerCase();
       return skillName.includes(searchTerm.toLowerCase()) || skillDesc.includes(searchTerm.toLowerCase());
     });
   }
 
-  const handleLearnSkill = (skillId: string) => {
-    const result = SkillManager.learnSkill(character, skillId, 1);
+  const handleLearnSkill = async (skillId: string) => {
+    const result = await SkillManager.learnSkill(character, skillId, 1);
     if (result.success && result.character) {
       setCharacter(result.character);
+      // Reload skill tree after learning
+      const updatedTree = await SkillManager.getSkillTree(result.character);
+      setSkillTree(updatedTree);
     } else {
       alert(result.reason || UI_MESSAGES.CANNOT_LEARN_SKILL());
     }
@@ -175,7 +195,13 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                     </div>
                   </div>
                 ) : (
-                  filteredSkills.map(({ skill, level, canLearn, reason, prerequisitesMet }) => {
+                  filteredSkills.map(({ skill, level, canLearn, reason, prerequisitesMet }: {
+                    skill: Skill;
+                    level: number;
+                    canLearn: boolean;
+                    reason?: string;
+                    prerequisitesMet: boolean;
+                  }) => {
                     const isLearned = level > 0;
                     const isMaxLevel = level >= skill.maxLevel;
                     const cost = skill.unlockCost || 1;

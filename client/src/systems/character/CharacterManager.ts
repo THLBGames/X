@@ -9,6 +9,8 @@ import { getDataLoader } from '@/data';
 import { calculateExperienceForLevel } from '@/utils/experience';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
 import { gameEventEmitter } from '../events/GameEventEmitter';
+import { ChronicleManager } from '../chronicle/ChronicleManager';
+import { CityManager } from '../city/CityManager';
 
 export class CharacterManager {
   /**
@@ -48,6 +50,8 @@ export class CharacterManager {
       consumableUpgrades: [], // Initialize empty consumable upgrades array
       statistics: undefined, // Will be initialized when needed
       completedAchievements: [], // Initialize empty achievements array
+      chronicle: ChronicleManager.initializeChronicle(), // Initialize chronicle system
+      city: CityManager.initializeCity(), // Initialize city system
     };
   }
 
@@ -116,6 +120,19 @@ export class CharacterManager {
     for (const effect of statusEffects) {
       if (effect.statModifier) {
         Object.entries(effect.statModifier).forEach(([key, value]) => {
+          const statKey = key as keyof Stats;
+          if (value !== undefined) {
+            stats[statKey] = (stats[statKey] || 0) + value;
+          }
+        });
+      }
+    }
+
+    // Apply active title stat bonuses
+    if (character) {
+      const titleBonuses = ChronicleManager.getActiveTitleBonuses(character);
+      if (titleBonuses.statBonus) {
+        Object.entries(titleBonuses.statBonus).forEach(([key, value]) => {
           const statKey = key as keyof Stats;
           if (value !== undefined) {
             stats[statKey] = (stats[statKey] || 0) + value;
@@ -201,6 +218,19 @@ export class CharacterManager {
     for (const effect of statusEffects) {
       if (effect.combatStatModifier) {
         Object.entries(effect.combatStatModifier).forEach(([key, value]) => {
+          const combatStatKey = key as keyof CombatStats;
+          if (value !== undefined && combatStats[combatStatKey] !== undefined) {
+            (combatStats[combatStatKey] as number) += value;
+          }
+        });
+      }
+    }
+
+    // Apply active title combat stat bonuses
+    if (character) {
+      const titleBonuses = ChronicleManager.getActiveTitleBonuses(character);
+      if (titleBonuses.combatStatBonus) {
+        Object.entries(titleBonuses.combatStatBonus).forEach(([key, value]) => {
           const combatStatKey = key as keyof CombatStats;
           if (value !== undefined && combatStats[combatStatKey] !== undefined) {
             (combatStats[combatStatKey] as number) += value;

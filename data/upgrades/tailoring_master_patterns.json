@@ -1,0 +1,30 @@
+{
+  "id": "tailoring_master_patterns",
+  "name": "Tailoring Master Patterns",
+  "description": "Unlocks 15+ secret tailoring recipes requiring legendary components. Grants access to master-tier cloth armor and garments.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "tailoring",
+  "tier": "VI",
+  "price": 30000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "ancient_scroll_robe",
+      "druid_medallion_robe",
+      "master_key_robe",
+      "phoenix_feather_cloth",
+      "dragon_scale_cloth",
+      "void_crystal_cloth",
+      "celestial_scale_garment",
+      "divine_fragment_robe",
+      "prismatic_shard_cloth",
+      "world_tree_cloth"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 90,
+    "previousTierId": "tailoring_upgrade_V"
+  },
+  "nameKey": "upgrade.tailoring_master_patterns.name",
+  "descriptionKey": "upgrade.tailoring_master_patterns.description"
+}

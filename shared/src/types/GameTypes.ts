@@ -580,6 +580,8 @@ export interface Character {
   divinationUnlockBonuses?: DivinationUnlockBonuses; // Aggregated bonuses from all unlocked nodes
   itemEnchantments?: Record<string, ItemEnchantment[]>; // Key: "${equipmentSlot}_${itemId}", Value: array of enchantments on that item
   unlockedEnchantments?: string[]; // Array of unlocked enchantment recipe IDs (for secret unlocks)
+  chronicle?: ChronicleData; // Chronicle system data (narrative story, titles, choices)
+  city?: CityData; // City system data (buildings, guilds, vendors)
 }
 
 export interface LearnedSkill {
@@ -813,6 +815,199 @@ export interface GameSettings {
 
   // Localization
   language?: string; // Language code (e.g., 'en', 'es', 'fr'), defaults to 'en'
+}
+
+// City System - Building and Guild management
+export type BuildingCategory = 'core' | 'expanded' | 'specialized';
+
+export interface BuildingLevel {
+  level: number;
+  upgradeCost: {
+    gold: number;
+    materials?: Array<{ itemId: string; quantity: number }>;
+  };
+  bonuses: {
+    skillMultiplier?: Record<string, number>; // skillId -> multiplier
+    craftingSuccessRate?: number;
+    resourceYield?: number;
+    unlocks?: {
+      recipes?: string[];
+      vendors?: string[];
+      features?: string[];
+    };
+  };
+  description: string; // What this level unlocks
+}
+
+export interface Building {
+  id: string;
+  name: string;
+  description: string;
+  category: BuildingCategory;
+  unlockRequirements: {
+    level?: number;
+    gold?: number;
+    materials?: Array<{ itemId: string; quantity: number }>;
+    prerequisiteBuildings?: Array<{ buildingId: string; level: number }>;
+    questId?: string; // Optional quest requirement
+  };
+  maxLevel: number;
+  levels: BuildingLevel[]; // Level 1-5 definitions
+  associatedGuildId?: string; // If building is a guild hall
+  skillGates?: string[]; // Skill IDs that require this building
+}
+
+export interface GuildRank {
+  rank: number;
+  name: string; // e.g., "Apprentice", "Journeyman", "Master"
+  requirements: {
+    level?: number;
+    skillLevels?: Record<string, number>; // skillId -> level
+    questsCompleted?: number;
+  };
+  benefits: {
+    experienceMultiplier: number; // Additional multiplier
+    vendorDiscount: number; // Percentage discount (0-1)
+    unlocks?: {
+      items?: string[];
+      recipes?: string[];
+      quests?: string[];
+    };
+  };
+}
+
+export interface Guild {
+  id: string;
+  name: string;
+  description: string;
+  buildingId: string; // Associated guild hall building
+  ranks: GuildRank[];
+  vendors: string[]; // Vendor IDs
+  skillBonuses: Record<string, number>; // skillId -> experience multiplier
+  exclusiveItems?: string[]; // Item IDs only available to members
+}
+
+export interface Vendor {
+  id: string;
+  name: string;
+  description: string;
+  buildingId?: string; // If vendor is in a specific building
+  guildId?: string; // If vendor is guild-specific
+  items: Array<{
+    itemId: string;
+    price: number;
+    stock?: number; // Optional limited stock
+    unlockLevel?: number; // Building level required
+    guildRank?: number; // Guild rank required
+  }>;
+  buybackRate?: number; // Sell price multiplier (0-1)
+}
+
+export interface BuildingProgress {
+  buildingId: string;
+  level: number;
+  unlockedAt: number; // Timestamp
+}
+
+export interface GuildProgress {
+  guildId: string;
+  rank: number;
+  experience: number; // Guild experience (earned through guild activities)
+  experienceToNext: number;
+  joinedAt: number; // Timestamp
+}
+
+export interface CityData {
+  buildings: BuildingProgress[]; // Unlocked buildings with levels
+  primaryGuildId?: string; // Currently primary guild
+  secondaryGuildIds: string[]; // Secondary guild memberships
+  guildProgress: Record<string, GuildProgress>; // guildId -> progress
+}
+
+// Chronicle System - Narrative progression
+export type ChronicleCategory = 'combat' | 'crafting' | 'exploration' | 'achievement' | 'milestone' | 'choice' | 'general';
+
+export interface ChronicleEntry {
+  id: string; // Unique entry ID
+  timestamp: number; // When this event occurred
+  category: ChronicleCategory;
+  title: string; // Short title for the entry
+  narrative: string; // The story text
+  metadata?: {
+    level?: number;
+    dungeonId?: string;
+    monsterId?: string;
+    achievementId?: string;
+    skillId?: string;
+    itemId?: string;
+    questId?: string;
+    [key: string]: any; // Allow additional metadata
+  };
+}
+
+export interface NarrativeChoiceOption {
+  id: string;
+  text: string;
+  description?: string; // Optional description of what this choice means
+  consequences?: {
+    titleId?: string; // Title to unlock
+    statBonus?: Partial<Stats>;
+    combatStatBonus?: Partial<CombatStats>;
+    narrativePath?: string; // Affects future narrative generation
+  };
+}
+
+export interface NarrativeChoice {
+  id: string;
+  scenarioId: string; // Reference to choice scenario definition
+  prompt: string; // The question/choice prompt
+  options: NarrativeChoiceOption[];
+  triggeredAt: number; // Timestamp when choice was presented
+  chosenOptionId?: string; // Which option was chosen (if any)
+  resolvedAt?: number; // Timestamp when choice was resolved
+}
+
+export interface LegendTitle {
+  id: string;
+  name: string;
+  description: string;
+  category: 'combat' | 'crafting' | 'exploration' | 'achievement' | 'general';
+  requirements: {
+    level?: number;
+    dungeonCompletions?: number;
+    monsterKills?: Record<string, number>; // monsterId -> count
+    achievementIds?: string[];
+    skillLevels?: Record<string, number>; // skillId -> level
+    choicePath?: string; // Requires specific narrative choice
+    [key: string]: any; // Allow other requirement types
+  };
+  bonuses: {
+    statBonus?: Partial<Stats>;
+    combatStatBonus?: Partial<CombatStats>;
+    combatMultiplier?: {
+      experience?: number;
+      gold?: number;
+      itemDropRate?: number;
+    };
+    skillMultiplier?: {
+      experience?: number;
+      speed?: number;
+      yield?: number;
+    };
+    inventorySlots?: number;
+    [key: string]: any; // Allow other bonus types
+  };
+  tier?: number; // For progressive titles (1, 2, 3, etc.)
+  maxTier?: number; // Maximum tier for this title
+}
+
+export interface ChronicleData {
+  entries: ChronicleEntry[]; // All story entries (limit to last 1000)
+  activeTitleId?: string; // Currently active title
+  unlockedTitles: string[]; // Array of unlocked title IDs
+  choiceHistory: NarrativeChoice[]; // All choices made
+  lastMilestoneLevel: number; // Track last level milestone recorded
+  recordedMilestones: string[]; // Array of milestone keys that have been recorded (e.g., "first_dungeon", "level_10")
 }
 
 // All types are already exported with their definitions above
