@@ -28,6 +28,8 @@ import { AchievementManager } from '../systems/achievements/AchievementManager';
 import { InventoryManager } from '../systems/inventory';
 import { CombatManager } from './combat/CombatManager';
 import { ChronicleManager } from './chronicle/ChronicleManager';
+import { CityManager } from './city/CityManager';
+import { GuildManager } from './city/GuildManager';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
@@ -142,6 +144,13 @@ interface GameState {
   recordChronicleMilestone: (milestoneType: string, category: 'combat' | 'crafting' | 'exploration' | 'achievement' | 'milestone' | 'choice' | 'general', metadata?: Record<string, any>) => void;
   setActiveTitle: (titleId: string | undefined) => void;
   recordNarrativeChoice: (choiceId: string, optionId: string) => void;
+
+  // Actions - City
+  unlockBuilding: (buildingId: string) => void;
+  upgradeBuilding: (buildingId: string) => void;
+  joinGuild: (guildId: string, asPrimary: boolean) => void;
+  switchPrimaryGuild: (guildId: string) => void;
+  rankUpGuild: (guildId: string) => void;
 }
 
 const defaultInventory: Inventory = {
@@ -178,6 +187,11 @@ export const useGameState = create<GameState>((set, get) => ({
       // Initialize chronicle if missing
       if (!character.chronicle) {
         character.chronicle = ChronicleManager.initializeChronicle();
+      }
+
+      // Initialize city if missing
+      if (!character.city) {
+        character.city = CityManager.initializeCity();
       }
 
       // Update inventory maxSlots based on unlock tree bonuses
@@ -1263,4 +1277,62 @@ export const useGameState = create<GameState>((set, get) => ({
         character: updatedCharacter,
       };
     }),
+
+  // City actions
+  unlockBuilding: (buildingId) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    CityManager.unlockBuilding(state.character, state.inventory, buildingId).then((result) => {
+      if (result.success && result.character && result.inventory) {
+        useGameState.getState().setCharacter(result.character);
+        useGameState.getState().setInventory(result.inventory);
+      }
+    });
+  },
+
+  upgradeBuilding: (buildingId) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    CityManager.upgradeBuilding(state.character, state.inventory, buildingId).then((result) => {
+      if (result.success && result.character && result.inventory) {
+        useGameState.getState().setCharacter(result.character);
+        useGameState.getState().setInventory(result.inventory);
+      }
+    });
+  },
+
+  joinGuild: (guildId, asPrimary) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    GuildManager.joinGuild(state.character, guildId, asPrimary).then((result) => {
+      if (result.success && result.character) {
+        useGameState.getState().setCharacter(result.character);
+      }
+    });
+  },
+
+  switchPrimaryGuild: (guildId) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    GuildManager.switchPrimaryGuild(state.character, guildId).then((result) => {
+      if (result.success && result.character) {
+        useGameState.getState().setCharacter(result.character);
+      }
+    });
+  },
+
+  rankUpGuild: (guildId) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    GuildManager.rankUp(state.character, guildId).then((result) => {
+      if (result.success && result.character) {
+        useGameState.getState().setCharacter(result.character);
+      }
+    });
+  },
 }));

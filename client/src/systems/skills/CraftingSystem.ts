@@ -1,6 +1,7 @@
 import type { Character, Recipe, Inventory } from '@idle-rpg/shared';
 import { IdleSkillSystem } from './IdleSkillSystem';
 import { InventoryManager } from '../inventory';
+import { CityManager } from '../city/CityManager';
 
 export interface CraftingResult {
   success: boolean;
@@ -14,12 +15,12 @@ export class CraftingSystem {
   /**
    * Attempt to craft an item using a recipe
    */
-  static craftItem(
+  static async craftItem(
     character: Character,
     inventory: Inventory,
     skillId: string,
     recipe: Recipe
-  ): CraftingResult {
+  ): Promise<CraftingResult> {
     const skillLevel = IdleSkillSystem.getSkillLevel(character, skillId);
 
     // Check skill level requirement
@@ -71,10 +72,12 @@ export class CraftingSystem {
       }
     }
 
-    // Calculate success rate (higher skill = better success)
+    // Calculate success rate (higher skill = better success + building bonuses)
     const levelBonus = Math.min(skillLevel - recipe.level, 30) * 0.01; // +1% per level, max +30%
     const baseSuccessRate = 0.85; // Base 85% success rate
-    const successRate = Math.min(baseSuccessRate + levelBonus, 0.98); // Cap at 98%
+    const buildingBonuses = await CityManager.getBuildingBonuses(character);
+    const craftingBonus = buildingBonuses.craftingSuccessRate || 0;
+    const successRate = Math.min(baseSuccessRate + levelBonus + craftingBonus, 0.98); // Cap at 98%
     const success = Math.random() <= successRate;
 
     if (!success) {

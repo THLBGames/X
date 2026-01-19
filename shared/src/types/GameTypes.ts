@@ -581,6 +581,7 @@ export interface Character {
   itemEnchantments?: Record<string, ItemEnchantment[]>; // Key: "${equipmentSlot}_${itemId}", Value: array of enchantments on that item
   unlockedEnchantments?: string[]; // Array of unlocked enchantment recipe IDs (for secret unlocks)
   chronicle?: ChronicleData; // Chronicle system data (narrative story, titles, choices)
+  city?: CityData; // City system data (buildings, guilds, vendors)
 }
 
 export interface LearnedSkill {
@@ -814,6 +815,113 @@ export interface GameSettings {
 
   // Localization
   language?: string; // Language code (e.g., 'en', 'es', 'fr'), defaults to 'en'
+}
+
+// City System - Building and Guild management
+export type BuildingCategory = 'core' | 'expanded' | 'specialized';
+
+export interface BuildingLevel {
+  level: number;
+  upgradeCost: {
+    gold: number;
+    materials?: Array<{ itemId: string; quantity: number }>;
+  };
+  bonuses: {
+    skillMultiplier?: Record<string, number>; // skillId -> multiplier
+    craftingSuccessRate?: number;
+    resourceYield?: number;
+    unlocks?: {
+      recipes?: string[];
+      vendors?: string[];
+      features?: string[];
+    };
+  };
+  description: string; // What this level unlocks
+}
+
+export interface Building {
+  id: string;
+  name: string;
+  description: string;
+  category: BuildingCategory;
+  unlockRequirements: {
+    level?: number;
+    gold?: number;
+    materials?: Array<{ itemId: string; quantity: number }>;
+    prerequisiteBuildings?: Array<{ buildingId: string; level: number }>;
+    questId?: string; // Optional quest requirement
+  };
+  maxLevel: number;
+  levels: BuildingLevel[]; // Level 1-5 definitions
+  associatedGuildId?: string; // If building is a guild hall
+  skillGates?: string[]; // Skill IDs that require this building
+}
+
+export interface GuildRank {
+  rank: number;
+  name: string; // e.g., "Apprentice", "Journeyman", "Master"
+  requirements: {
+    level?: number;
+    skillLevels?: Record<string, number>; // skillId -> level
+    questsCompleted?: number;
+  };
+  benefits: {
+    experienceMultiplier: number; // Additional multiplier
+    vendorDiscount: number; // Percentage discount (0-1)
+    unlocks?: {
+      items?: string[];
+      recipes?: string[];
+      quests?: string[];
+    };
+  };
+}
+
+export interface Guild {
+  id: string;
+  name: string;
+  description: string;
+  buildingId: string; // Associated guild hall building
+  ranks: GuildRank[];
+  vendors: string[]; // Vendor IDs
+  skillBonuses: Record<string, number>; // skillId -> experience multiplier
+  exclusiveItems?: string[]; // Item IDs only available to members
+}
+
+export interface Vendor {
+  id: string;
+  name: string;
+  description: string;
+  buildingId?: string; // If vendor is in a specific building
+  guildId?: string; // If vendor is guild-specific
+  items: Array<{
+    itemId: string;
+    price: number;
+    stock?: number; // Optional limited stock
+    unlockLevel?: number; // Building level required
+    guildRank?: number; // Guild rank required
+  }>;
+  buybackRate?: number; // Sell price multiplier (0-1)
+}
+
+export interface BuildingProgress {
+  buildingId: string;
+  level: number;
+  unlockedAt: number; // Timestamp
+}
+
+export interface GuildProgress {
+  guildId: string;
+  rank: number;
+  experience: number; // Guild experience (earned through guild activities)
+  experienceToNext: number;
+  joinedAt: number; // Timestamp
+}
+
+export interface CityData {
+  buildings: BuildingProgress[]; // Unlocked buildings with levels
+  primaryGuildId?: string; // Currently primary guild
+  secondaryGuildIds: string[]; // Secondary guild memberships
+  guildProgress: Record<string, GuildProgress>; // guildId -> progress
 }
 
 // Chronicle System - Narrative progression

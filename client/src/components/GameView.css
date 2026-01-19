@@ -85,13 +85,13 @@
   min-height: 0;
 }
 
-.game-view.skills-active .game-view-center {
+.game-view.center-panel-active .game-view-center {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.skills-tab-placeholder {
+.center-panel-placeholder {
   padding: 20px;
   text-align: center;
   color: #888;
@@ -99,7 +99,7 @@
   line-height: 1.6;
 }
 
-.skills-tab-placeholder p {
+.center-panel-placeholder p {
   margin: 8px 0;
 }
 

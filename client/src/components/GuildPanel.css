@@ -1,0 +1,237 @@
+.guild-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  padding: 20px;
+  background: var(--bg-secondary, #1a1a1a);
+  color: var(--text-primary, #ffffff);
+  overflow-y: auto;
+}
+
+.guild-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--border-color, #444);
+}
+
+.guild-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.8em;
+  color: var(--text-primary, #ffffff);
+}
+
+.guild-info {
+  display: flex;
+  gap: 20px;
+}
+
+.info-item {
+  font-size: 0.9em;
+  color: var(--text-secondary, #aaaaaa);
+}
+
+.guilds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.guild-card {
+  background: var(--bg-tertiary, #252525);
+  border: 2px solid var(--border-color, #444);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.guild-card.primary {
+  border-color: var(--accent-color, #4a9eff);
+  box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+}
+
+.guild-card.secondary {
+  border-color: #ffa500;
+  opacity: 0.9;
+}
+
+.guild-card.not-member {
+  opacity: 0.7;
+}
+
+.guild-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.guild-name {
+  margin: 0;
+  font-size: 1.3em;
+  color: var(--text-primary, #ffffff);
+}
+
+.primary-badge {
+  background: var(--accent-color, #4a9eff);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.secondary-badge {
+  background: #ffa500;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.guild-description {
+  font-size: 0.9em;
+  color: var(--text-secondary, #aaaaaa);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.guild-requirement {
+  font-size: 0.85em;
+  color: var(--text-tertiary, #888);
+  font-style: italic;
+  margin-bottom: 10px;
+  padding: 8px;
+  background: rgba(136, 136, 136, 0.1);
+  border-radius: 4px;
+}
+
+.guild-progress {
+  margin: 15px 0;
+  padding: 15px;
+  background: var(--bg-primary, #2a2a2a);
+  border-radius: 6px;
+}
+
+.guild-rank {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--accent-color, #4a9eff);
+  margin-bottom: 8px;
+}
+
+.guild-experience {
+  font-size: 0.9em;
+  color: var(--text-secondary, #aaaaaa);
+  margin-bottom: 10px;
+}
+
+.rank-up-button {
+  background: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.rank-up-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.rank-up-reason {
+  font-size: 0.85em;
+  color: #f44336;
+  margin-top: 8px;
+  padding: 8px;
+  background: rgba(244, 67, 54, 0.1);
+  border-radius: 4px;
+}
+
+.guild-benefits {
+  margin: 15px 0;
+  padding: 15px;
+  background: var(--bg-primary, #2a2a2a);
+  border-radius: 6px;
+}
+
+.guild-benefits h4 {
+  margin: 0 0 10px 0;
+  font-size: 1em;
+  color: var(--text-primary, #ffffff);
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-bonuses {
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+.skill-bonus-item {
+  font-size: 0.85em;
+  color: var(--text-secondary, #aaaaaa);
+  margin-left: 10px;
+}
+
+.guild-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.join-primary-button,
+.join-secondary-button,
+.switch-primary-button {
+  background: var(--accent-color, #4a9eff);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.join-primary-button:hover:not(:disabled),
+.join-secondary-button:hover:not(:disabled),
+.switch-primary-button:hover {
+  background: #3a8eef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+}
+
+.join-secondary-button {
+  background: #ffa500;
+}
+
+.join-secondary-button:hover:not(:disabled) {
+  background: #ff9500;
+}
+
+.join-primary-button:disabled,
+.join-secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.join-reason {
+  font-size: 0.85em;
+  color: #f44336;
+  padding: 8px;
+  background: rgba(244, 67, 54, 0.1);
+  border-radius: 4px;
+}

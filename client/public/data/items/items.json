@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_items": 962,
+  "total_items": 967,
   "items": {
     "abyssal_fish": {
       "id": "abyssal_fish",
@@ -6716,6 +6716,66 @@
       "value": 10,
       "nameKey": "item.gem_common.name",
       "descriptionKey": "item.gem_common.description"
+    },
+    "gem_dust_common": {
+      "id": "gem_dust_common",
+      "name": "Common Gem Dust",
+      "description": "Finely ground common gem dust used in enchanting and alchemy.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.gem_dust_common.name",
+      "descriptionKey": "item.gem_dust_common.description"
+    },
+    "gem_dust_epic": {
+      "id": "gem_dust_epic",
+      "name": "Epic Gem Dust",
+      "description": "Finely ground epic gem dust used in enchanting and alchemy.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.gem_dust_epic.name",
+      "descriptionKey": "item.gem_dust_epic.description"
+    },
+    "gem_dust_legendary": {
+      "id": "gem_dust_legendary",
+      "name": "Legendary Gem Dust",
+      "description": "Finely ground legendary gem dust used in enchanting and alchemy.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.gem_dust_legendary.name",
+      "descriptionKey": "item.gem_dust_legendary.description"
+    },
+    "gem_dust_rare": {
+      "id": "gem_dust_rare",
+      "name": "Rare Gem Dust",
+      "description": "Finely ground rare gem dust used in enchanting and alchemy.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.gem_dust_rare.name",
+      "descriptionKey": "item.gem_dust_rare.description"
+    },
+    "gem_dust_uncommon": {
+      "id": "gem_dust_uncommon",
+      "name": "Uncommon Gem Dust",
+      "description": "Finely ground uncommon gem dust used in enchanting and alchemy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.gem_dust_uncommon.name",
+      "descriptionKey": "item.gem_dust_uncommon.description"
     },
     "gem_epic": {
       "id": "gem_epic",

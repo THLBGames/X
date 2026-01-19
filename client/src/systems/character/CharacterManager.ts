@@ -50,6 +50,7 @@ export class CharacterManager {
       statistics: undefined, // Will be initialized when needed
       completedAchievements: [], // Initialize empty achievements array
       chronicle: ChronicleManager.initializeChronicle(), // Initialize chronicle system
+      city: CityManager.initializeCity(), // Initialize city system
     };
   }
 

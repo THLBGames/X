@@ -1,0 +1,237 @@
+{
+  "version": "1.0.0",
+  "guilds": {
+    "blacksmithing_guild": {
+      "id": "blacksmithing_guild",
+      "name": "Blacksmithing Guild",
+      "description": "Master craftsmen dedicated to the art of forging weapons and armor.",
+      "buildingId": "blacksmithing_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.05,
+            "unlocks": {
+              "items": ["apprentice_blacksmith_hammer"]
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Journeyman",
+          "requirements": {
+            "level": 20,
+            "skillLevels": {
+              "blacksmithing": 25
+            }
+          },
+          "benefits": {
+            "experienceMultiplier": 0.2,
+            "vendorDiscount": 0.1,
+            "unlocks": {
+              "items": ["journeyman_blacksmith_hammer", "steel_recipe"]
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Master",
+          "requirements": {
+            "level": 40,
+            "skillLevels": {
+              "blacksmithing": 50
+            },
+            "questsCompleted": 10
+          },
+          "benefits": {
+            "experienceMultiplier": 0.3,
+            "vendorDiscount": 0.15,
+            "unlocks": {
+              "items": ["master_blacksmith_hammer", "legendary_weapon_recipe"]
+            }
+          }
+        }
+      ],
+      "vendors": ["blacksmithing_guild_vendor"],
+      "skillBonuses": {
+        "blacksmithing": 1.2,
+        "mining": 1.1
+      },
+      "exclusiveItems": ["guild_master_sword", "guild_master_armor"]
+    },
+    "mage_guild": {
+      "id": "mage_guild",
+      "name": "Mage Guild",
+      "description": "Scholars and practitioners of the arcane arts.",
+      "buildingId": "mage_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.05,
+            "unlocks": {
+              "items": ["apprentice_staff"]
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Journeyman",
+          "requirements": {
+            "level": 20,
+            "skillLevels": {
+              "alchemy": 25
+            }
+          },
+          "benefits": {
+            "experienceMultiplier": 0.2,
+            "vendorDiscount": 0.1,
+            "unlocks": {
+              "items": ["journeyman_staff", "advanced_potion_recipe"]
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Master",
+          "requirements": {
+            "level": 40,
+            "skillLevels": {
+              "alchemy": 50,
+              "enchanting": 30
+            },
+            "questsCompleted": 10
+          },
+          "benefits": {
+            "experienceMultiplier": 0.3,
+            "vendorDiscount": 0.15,
+            "unlocks": {
+              "items": ["master_staff", "legendary_spell_recipe"]
+            }
+          }
+        }
+      ],
+      "vendors": ["mage_guild_vendor"],
+      "skillBonuses": {
+        "alchemy": 1.2,
+        "enchanting": 1.15
+      },
+      "exclusiveItems": ["guild_master_staff", "guild_master_robes"]
+    },
+    "ranger_guild": {
+      "id": "ranger_guild",
+      "name": "Ranger Guild",
+      "description": "Masters of the wilderness, tracking, and ranged combat.",
+      "buildingId": "ranger_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.05
+          }
+        }
+      ],
+      "vendors": ["ranger_guild_vendor"],
+      "skillBonuses": {
+        "foraging": 1.2,
+        "hunting": 1.15
+      }
+    },
+    "warrior_guild": {
+      "id": "warrior_guild",
+      "name": "Warrior Guild",
+      "description": "Elite fighters dedicated to mastering melee combat.",
+      "buildingId": "warrior_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.05
+          }
+        }
+      ],
+      "vendors": ["warrior_guild_vendor"],
+      "skillBonuses": {
+        "combat": 1.2
+      }
+    },
+    "rogue_guild": {
+      "id": "rogue_guild",
+      "name": "Rogue Guild",
+      "description": "Shadows and assassins, masters of stealth and precision.",
+      "buildingId": "rogue_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.05
+          }
+        }
+      ],
+      "vendors": ["rogue_guild_vendor"],
+      "skillBonuses": {
+        "stealth": 1.2,
+        "lockpicking": 1.15
+      }
+    },
+    "crafting_guild": {
+      "id": "crafting_guild",
+      "name": "Crafting Guild",
+      "description": "General craftsmen and artisans of all trades.",
+      "buildingId": "crafting_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.05
+          }
+        }
+      ],
+      "vendors": ["crafting_guild_vendor"],
+      "skillBonuses": {
+        "crafting": 1.15,
+        "woodworking": 1.1,
+        "tailoring": 1.1
+      }
+    },
+    "merchant_guild": {
+      "id": "merchant_guild",
+      "name": "Merchant Guild",
+      "description": "Traders and merchants focused on commerce and economics.",
+      "buildingId": "merchant_guild_hall",
+      "ranks": [
+        {
+          "rank": 1,
+          "name": "Apprentice",
+          "requirements": {},
+          "benefits": {
+            "experienceMultiplier": 0.1,
+            "vendorDiscount": 0.1
+          }
+        }
+      ],
+      "vendors": ["merchant_guild_vendor"],
+      "skillBonuses": {
+        "trading": 1.2
+      }
+    }
+  }
+}

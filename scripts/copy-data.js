@@ -25,7 +25,7 @@ const dataDirectoriesWithCombinedFiles = [
 ];
 
 // Directories to copy entirely (not data directories)
-const fullCopyDirectories = ['config', 'schemas', 'chronicle', 'divination', 'enchantments'];
+const fullCopyDirectories = ['config', 'schemas', 'chronicle', 'divination', 'enchantments', 'city'];
 
 // Files to copy from root
 const rootFiles = ['README.md'];

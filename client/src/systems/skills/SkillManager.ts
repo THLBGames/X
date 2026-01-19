@@ -1,15 +1,16 @@
 import type { Character, Skill } from '@idle-rpg/shared';
 import { getDataLoader } from '@/data';
+import { CityManager } from '../city/CityManager';
 
 export class SkillManager {
   /**
    * Check if a skill can be learned
    */
-  static canLearnSkill(
+  static async canLearnSkill(
     character: Character,
     skillId: string,
     skillLevel: number = 1
-  ): { canLearn: boolean; reason?: string } {
+  ): Promise<{ canLearn: boolean; reason?: string }> {
     const dataLoader = getDataLoader();
     const skill = dataLoader.getSkill(skillId);
 
@@ -53,18 +54,38 @@ export class SkillManager {
       }
     }
 
+    // Check building requirements
+    const buildingRequirement = await CityManager.getSkillBuildingRequirement(character, skillId);
+    if (buildingRequirement.required) {
+      if (!character.city) {
+        return {
+          canLearn: false,
+          reason: `Requires ${buildingRequirement.buildingId} to be built`,
+        };
+      }
+      const buildingLevel = CityManager.getBuildingLevel(character.city, buildingRequirement.buildingId);
+      if (buildingLevel < (buildingRequirement.requiredLevel || 1)) {
+        const building = await CityManager.getBuilding(buildingRequirement.buildingId);
+        const buildingName = building?.name || buildingRequirement.buildingId;
+        return {
+          canLearn: false,
+          reason: `Requires ${buildingName} level ${buildingRequirement.requiredLevel || 1} (current: ${buildingLevel})`,
+        };
+      }
+    }
+
     return { canLearn: true };
   }
 
   /**
    * Learn or upgrade a skill
    */
-  static learnSkill(
+  static async learnSkill(
     character: Character,
     skillId: string,
     skillLevel: number = 1
-  ): { success: boolean; character?: Character; reason?: string } {
-    const canLearn = this.canLearnSkill(character, skillId, skillLevel);
+  ): Promise<{ success: boolean; character?: Character; reason?: string }> {
+    const canLearn = await this.canLearnSkill(character, skillId, skillLevel);
 
     if (!canLearn.canLearn) {
       return { success: false, reason: canLearn.reason };
@@ -170,13 +191,13 @@ export class SkillManager {
   /**
    * Get skill tree structure (skills organized by prerequisites)
    */
-  static getSkillTree(character: Character): Array<{
+  static async getSkillTree(character: Character): Promise<Array<{
     skill: Skill;
     level: number;
     canLearn: boolean;
     reason?: string;
     prerequisitesMet: boolean;
-  }> {
+  }>> {
     const availableSkills = this.getAvailableSkills(character);
     const skillTree: Array<{
       skill: Skill;
@@ -188,7 +209,7 @@ export class SkillManager {
 
     for (const skill of availableSkills) {
       const level = this.getSkillLevel(character, skill.id);
-      const canLearnResult = this.canLearnSkill(character, skill.id, 1);
+      const canLearnResult = await this.canLearnSkill(character, skill.id, 1);
       const prerequisitesMet =
         !skill.prerequisites ||
         skill.prerequisites.every((prereqId) => this.isSkillLearned(character, prereqId));
