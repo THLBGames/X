@@ -1,0 +1,12 @@
+{
+  "id": "gem_dust_uncommon",
+  "name": "Uncommon Gem Dust",
+  "description": "Finely ground uncommon gem dust used in enchanting and alchemy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.gem_dust_uncommon.name",
+  "descriptionKey": "item.gem_dust_uncommon.description"
+}

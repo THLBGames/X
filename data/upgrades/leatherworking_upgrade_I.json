@@ -1,17 +1,17 @@
 {
   "id": "leatherworking_upgrade_I",
   "name": "Leatherworking Upgrade I",
-  "description": "Permanently increases leatherworking XP gain by 10%, speed by 5%, and yield by 5%",
+  "description": "Permanently increases leatherworking XP gain by 10%, speed by 5%, success rate by 5%, and yield by 5%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "leatherworking",
   "tier": "I",
-  "price": 1000,
+  "price": 1200,
   "bonuses": {
     "experienceMultiplier": 1.1,
     "speedMultiplier": 0.95,
-    "yieldMultiplier": 1.05,
-    "successRateBonus": 0.05
+    "successRateBonus": 0.05,
+    "yieldMultiplier": 1.05
   },
   "requirements": {},
   "nameKey": "upgrade.leatherworking_upgrade_I.name",

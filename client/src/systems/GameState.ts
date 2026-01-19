@@ -27,6 +27,7 @@ import { StatisticsManager } from '../systems/statistics/StatisticsManager';
 import { AchievementManager } from '../systems/achievements/AchievementManager';
 import { InventoryManager } from '../systems/inventory';
 import { CombatManager } from './combat/CombatManager';
+import { ChronicleManager } from './chronicle/ChronicleManager';
 import { getDataLoader } from '../data';
 import { stopAllIdleSkills } from '../hooks/useIdleSkills';
 
@@ -136,6 +137,11 @@ interface GameState {
   updateAutoConsumableSetting: (itemId: string, setting: AutoConsumableSetting) => void;
   removeAutoConsumableSetting: (itemId: string) => void;
   queueConsumable: (itemId: string | null) => void;
+
+  // Actions - Chronicle
+  recordChronicleMilestone: (milestoneType: string, category: 'combat' | 'crafting' | 'exploration' | 'achievement' | 'milestone' | 'choice' | 'general', metadata?: Record<string, any>) => void;
+  setActiveTitle: (titleId: string | undefined) => void;
+  recordNarrativeChoice: (choiceId: string, optionId: string) => void;
 }
 
 const defaultInventory: Inventory = {
@@ -168,6 +174,11 @@ export const useGameState = create<GameState>((set, get) => ({
       // CRITICAL: Check if this is a completely new character (different ID or no existing character)
       // If so, don't preserve old statistics or achievements - start fresh
       const isNewCharacter = !state.character || state.character.id !== character.id;
+
+      // Initialize chronicle if missing
+      if (!character.chronicle) {
+        character.chronicle = ChronicleManager.initializeChronicle();
+      }
 
       // Update inventory maxSlots based on unlock tree bonuses
       const maxSlots = InventoryManager.getMaxInventorySlots(character);
@@ -1212,6 +1223,44 @@ export const useGameState = create<GameState>((set, get) => ({
           ...state.character,
           autoConsumableSettings: updatedSettings,
         },
+      };
+    }),
+
+  // Chronicle actions
+  recordChronicleMilestone: (milestoneType, category, metadata) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    const result = ChronicleManager.recordMilestone(state.character, milestoneType, category, metadata);
+    if (result.character) {
+      // Check for title unlocks asynchronously
+      ChronicleManager.checkTitleUnlocks(result.character).then((titleCheck) => {
+        if (titleCheck.unlockedTitles.length > 0) {
+          useGameState.getState().setCharacter(titleCheck.character);
+        } else {
+          useGameState.getState().setCharacter(result.character);
+        }
+      });
+    }
+  },
+
+  setActiveTitle: (titleId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = ChronicleManager.setActiveTitle(state.character, titleId);
+      return {
+        character: updatedCharacter,
+      };
+    }),
+
+  recordNarrativeChoice: (choiceId, optionId) =>
+    set((state) => {
+      if (!state.character) return {};
+
+      const updatedCharacter = ChronicleManager.recordChoice(state.character, choiceId, optionId);
+      return {
+        character: updatedCharacter,
       };
     }),
 }));

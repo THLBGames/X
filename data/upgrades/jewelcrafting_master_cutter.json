@@ -1,0 +1,25 @@
+{
+  "id": "jewelcrafting_master_cutter",
+  "name": "Master Gem Cutter's Manual",
+  "description": "Unlocks advanced gem cutting and refining recipes. Grants access to master-tier gem processing techniques.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "jewelcrafting",
+  "tier": "VI",
+  "price": 30000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "secret_master_cutter_tool",
+      "advanced_gem_refining",
+      "master_gem_polishing"
+    ],
+    "experienceMultiplier": 1.1,
+    "yieldMultiplier": 1.2
+  },
+  "requirements": {
+    "skillLevel": 70,
+    "previousTierId": "jewelcrafting_upgrade_V"
+  },
+  "nameKey": "upgrade.jewelcrafting_master_cutter.name",
+  "descriptionKey": "upgrade.jewelcrafting_master_cutter.description"
+}

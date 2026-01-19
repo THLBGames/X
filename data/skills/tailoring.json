@@ -8,6 +8,48 @@
   "experienceFormula": "baseExp * (level * 1.3)",
   "recipes": [
     {
+      "recipeId": "cloth_bag",
+      "name": "Cloth Bag",
+      "level": 1,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 3
+        },
+        {
+          "itemId": "thread",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "cloth_bag",
+        "quantity": 1
+      },
+      "experienceGain": 15,
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "cloth_gloves",
+      "name": "Cloth Gloves",
+      "level": 3,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cloth_gloves",
+        "quantity": 1
+      },
+      "experienceGain": 22,
+      "timeRequired": 4500
+    },
+    {
       "recipeId": "cloth_robe",
       "name": "Cloth Robe",
       "level": 5,
@@ -27,6 +69,190 @@
       },
       "experienceGain": 25,
       "timeRequired": 5000
+    },
+    {
+      "recipeId": "cloth_pants",
+      "name": "Cloth Pants",
+      "level": 7,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 6
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cloth_pants",
+        "quantity": 1
+      },
+      "experienceGain": 30,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "cloth_boots",
+      "name": "Cloth Boots",
+      "level": 9,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        },
+        {
+          "itemId": "small_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cloth_boots",
+        "quantity": 1
+      },
+      "experienceGain": 35,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "cloth_hat",
+      "name": "Cloth Hat",
+      "level": 11,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "cloth_hat",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "simple_robe",
+      "name": "Simple Robe",
+      "level": 13,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 7
+        },
+        {
+          "itemId": "thread",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "simple_robe",
+        "quantity": 1
+      },
+      "experienceGain": 45,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "cloth_belt",
+      "name": "Cloth Belt",
+      "level": 15,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 3
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        },
+        {
+          "itemId": "metal_ring",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "cloth_belt",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 5800
+    },
+    {
+      "recipeId": "cloth_backpack",
+      "name": "Cloth Backpack",
+      "level": 18,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 8
+        },
+        {
+          "itemId": "thread",
+          "quantity": 4
+        },
+        {
+          "itemId": "small_bone",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "cloth_backpack",
+        "quantity": 1
+      },
+      "experienceGain": 60,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "enhanced_cloth_robe",
+      "name": "Enhanced Cloth Robe",
+      "level": 20,
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 10
+        },
+        {
+          "itemId": "thread",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "enhanced_cloth_robe",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "silk_robe",
+      "name": "Silk Robe",
+      "level": 22,
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 6
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "silk_robe",
+        "quantity": 1
+      },
+      "experienceGain": 80,
+      "timeRequired": 7000
     },
     {
       "recipeId": "silk_armor",
@@ -58,6 +284,431 @@
       "timeRequired": 7000
     },
     {
+      "recipeId": "mage_hat",
+      "name": "Mage Hat",
+      "level": 25,
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 5
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "mage_hat",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "hybrid_cloth_leather_armor",
+      "name": "Hybrid Cloth-Leather Armor",
+      "level": 28,
+      "skillPrerequisites": [
+        {
+          "skillId": "leatherworking",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 6
+        },
+        {
+          "itemId": "animal_hide",
+          "quantity": 4
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "hybrid_cloth_leather_armor",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "ancient_scroll_robe",
+      "name": "Ancient Scroll Robe",
+      "level": 28,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 8
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ancient_scroll_robe",
+        "quantity": 1
+      },
+      "experienceGain": 105,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "gem_embedded_cloth",
+      "name": "Gem-Embedded Cloth Armor",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "jewelcrafting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 8
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "gem_embedded_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "treated_cloth",
+      "name": "Treated Cloth",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 8
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 5
+        },
+        {
+          "itemId": "water",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "treated_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "aquatic_cloth",
+      "name": "Aquatic Cloth Armor",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 8
+        },
+        {
+          "itemId": "fish_scale",
+          "quantity": 12
+        },
+        {
+          "itemId": "pearl",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "aquatic_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "nature_infused_cloth",
+      "name": "Nature-Infused Cloth",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 10
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "nature_infused_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "metal_reinforced_cloth",
+      "name": "Metal-Reinforced Cloth",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 10
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "metal_reinforced_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 8800
+    },
+    {
+      "recipeId": "nature_cloth",
+      "name": "Nature Cloth",
+      "level": 45,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 8
+        },
+        {
+          "itemId": "tree_bark",
+          "quantity": 6
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "nature_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "druid_medallion_robe",
+      "name": "Druid Medallion Robe",
+      "level": 35,
+      "unlockRequirements": [
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 10
+        },
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "druid_medallion_robe",
+        "quantity": 1
+      },
+      "experienceGain": 135,
+      "timeRequired": 8300
+    },
+    {
+      "recipeId": "enchanted_cloth_armor",
+      "name": "Enchanted Cloth Armor",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 8
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_cloth_armor",
+        "quantity": 1
+      },
+      "experienceGain": 170,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "master_key_robe",
+      "name": "Master Key Robe",
+      "level": 42,
+      "unlockRequirements": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silk",
+          "quantity": 12
+        },
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "thread_quality",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "master_key_robe",
+        "quantity": 1
+      },
+      "experienceGain": 155,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "arcane_robes",
+      "name": "Arcane Robes",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 10
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "arcane_robes",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 9500
+    },
+    {
       "recipeId": "mage_robes",
       "name": "Mage Robes",
       "level": 55,
@@ -85,28 +736,701 @@
       },
       "experienceGain": 220,
       "timeRequired": 9000
+    },
+    {
+      "recipeId": "phoenix_feather_cloth",
+      "name": "Phoenix Feather Cloth",
+      "level": 55,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 8
+        },
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "fire_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_feather_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 230,
+      "timeRequired": 9600
+    },
+    {
+      "recipeId": "mystic_cloth_armor",
+      "name": "Mystic Cloth Armor",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 12
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "mystic_cloth_armor",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 9800
+    },
+    {
+      "recipeId": "dragon_scale_cloth",
+      "name": "Dragon Scale Cloth",
+      "level": 62,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 10
+        },
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dragon_scale_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 260,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "ancient_cloth_pattern",
+      "name": "Ancient Cloth Pattern",
+      "level": 65,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 10
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ancient_cloth_pattern",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "fate_bound_cloth",
+      "name": "Fate-Bound Cloth",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 12
+        },
+        {
+          "itemId": "fate_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "fate_bound_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "celestial_garments",
+      "name": "Celestial Garments",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 15
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "celestial_garments",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "void_crystal_cloth",
+      "name": "Void Crystal Cloth",
+      "level": 70,
+      "unlockRequirements": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 12
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 7
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "void_crystal_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 320,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "legendary_cloth_armor",
+      "name": "Legendary Cloth Armor",
+      "level": 75,
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 18
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 8
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "legendary_cloth_armor",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "divine_robes",
+      "name": "Divine Robes",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 18
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 10
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "divine_robes",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "celestial_scale_garment",
+      "name": "Celestial Scale Garment",
+      "level": 82,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 18
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "celestial_scale_garment",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 17000
+    },
+    {
+      "recipeId": "cosmic_cloth_armor",
+      "name": "Cosmic Cloth Armor",
+      "level": 85,
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 20
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 4
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 12
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_cloth_armor",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "divine_fragment_robe",
+      "name": "Divine Fragment Robe",
+      "level": 87,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 22
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 12
+        }
+      ],
+      "result": {
+        "itemId": "divine_fragment_robe",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "prismatic_shard_cloth",
+      "name": "Prismatic Shard Cloth",
+      "level": 88,
+      "unlockRequirements": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 6
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 22
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 6
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 14
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_shard_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 580,
+      "timeRequired": 19000
+    },
+    {
+      "recipeId": "eternal_garments",
+      "name": "Eternal Garments",
+      "level": 90,
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 25
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 15
+        }
+      ],
+      "result": {
+        "itemId": "eternal_garments",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "world_tree_cloth",
+      "name": "World Tree Cloth",
+      "level": 92,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 28
+        },
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 18
+        }
+      ],
+      "result": {
+        "itemId": "world_tree_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 620,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "prismatic_cloth",
+      "name": "Prismatic Cloth",
+      "level": 95,
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 30
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 6
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 20
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_cloth",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "master_tailor_set",
+      "name": "Master Tailor Set",
+      "level": 99,
+      "ingredients": [
+        {
+          "itemId": "enchanted_cloth",
+          "quantity": 40
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 8
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 25
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_tailor_set",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 25000
     }
   ],
   "passiveBonuses": [
     {
-      "level": 35,
+      "level": 10,
       "bonus": {
-        "magicDefense": 10,
-        "mana": 50
+        "magicDefense": 5,
+        "mana": 25
       }
     },
     {
-      "level": 75,
+      "level": 20,
       "bonus": {
-        "magicDefense": 20,
-        "mana": 100
+        "magicDefense": 8,
+        "mana": 50,
+        "statBonus": {
+          "intelligence": 2
+        }
+      }
+    },
+    {
+      "level": 30,
+      "bonus": {
+        "magicDefense": 12,
+        "mana": 75,
+        "statBonus": {
+          "intelligence": 3
+        }
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "magicDefense": 15,
+        "mana": 100,
+        "statBonus": {
+          "intelligence": 5
+        }
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "magicDefense": 18,
+        "mana": 125,
+        "statBonus": {
+          "intelligence": 7
+        },
+        "craftingSpeed": 0.05
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "magicDefense": 22,
+        "mana": 150,
+        "statBonus": {
+          "intelligence": 9
+        }
+      }
+    },
+    {
+      "level": 70,
+      "bonus": {
+        "magicDefense": 25,
+        "mana": 175,
+        "statBonus": {
+          "intelligence": 11
+        },
+        "craftingSpeed": 0.1
+      }
+    },
+    {
+      "level": 80,
+      "bonus": {
+        "magicDefense": 30,
+        "mana": 200,
+        "statBonus": {
+          "intelligence": 13
+        }
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "magicDefense": 35,
+        "mana": 225,
+        "statBonus": {
+          "intelligence": 15
+        },
+        "craftingSpeed": 0.15
       }
     },
     {
       "level": 99,
       "bonus": {
-        "magicDefense": 30,
-        "mana": 150
+        "magicDefense": 40,
+        "mana": 250,
+        "statBonus": {
+          "intelligence": 20
+        },
+        "craftingSpeed": 0.2
       }
     }
   ],

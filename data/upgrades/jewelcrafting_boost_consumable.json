@@ -1,17 +1,19 @@
 {
   "id": "jewelcrafting_boost_consumable",
-  "name": "Jewelcrafting Boost",
-  "description": "Temporarily increases jewelcrafting speed by 30% for 50 actions",
+  "name": "Jewelcrafting Elixir",
+  "description": "Temporarily increases jewelcrafting speed by 30% and XP gain by 20% for 50 actions",
   "type": "consumable",
   "scope": "skill",
   "skillId": "jewelcrafting",
-  "price": 500,
+  "price": 3000,
   "bonuses": {
     "speedMultiplier": 0.7,
     "experienceMultiplier": 1.2
   },
   "actionDuration": 50,
-  "requirements": {},
+  "requirements": {
+    "skillLevel": 25
+  },
   "nameKey": "upgrade.jewelcrafting_boost_consumable.name",
   "descriptionKey": "upgrade.jewelcrafting_boost_consumable.description"
 }

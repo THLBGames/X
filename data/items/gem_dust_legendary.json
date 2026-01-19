@@ -1,0 +1,12 @@
+{
+  "id": "gem_dust_legendary",
+  "name": "Legendary Gem Dust",
+  "description": "Finely ground legendary gem dust used in enchanting and alchemy.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 500,
+  "nameKey": "item.gem_dust_legendary.name",
+  "descriptionKey": "item.gem_dust_legendary.description"
+}

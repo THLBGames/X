@@ -9,6 +9,7 @@ import { gameEventEmitter, type GameEvent } from './GameEventEmitter';
 import { useGameState } from '../GameState';
 import { StatisticsManager } from '../statistics/StatisticsManager';
 import { DungeonManager } from '../dungeon/DungeonManager';
+import { ChronicleManager } from '../chronicle/ChronicleManager';
 import { getDataLoader } from '@/data';
 
 // Debounce achievement checking to prevent excessive calls
@@ -346,16 +347,160 @@ export function initializeEventListeners(): () => void {
     }
   };
 
+  // Chronicle listener - records milestones and checks for narrative choices
+  const chronicleListener = async (event: GameEvent) => {
+    const state = useGameState.getState();
+    if (!state.character) return;
+
+    // Preload chronicle data if needed
+    await ChronicleManager.preloadData();
+
+    switch (event.type) {
+      case 'level_up': {
+        const newLevel = event.newLevel;
+        const chronicle = state.character.chronicle || ChronicleManager.initializeChronicle();
+        
+        // Record level milestone every 10 levels or at level 1
+        if (newLevel % 10 === 0 || newLevel === 1) {
+          const milestoneType = newLevel === 1 ? 'character_creation' : 'level_milestone';
+          state.recordChronicleMilestone(milestoneType, 'milestone', {
+            level: newLevel,
+          });
+
+          // Check for narrative choice at level 50
+          if (newLevel === 50) {
+            const choice = await ChronicleManager.getTriggeredChoice(
+              state.character,
+              'level_milestone',
+              { level: 50 }
+            );
+            if (choice) {
+              // Add choice to chronicle if not already present
+              const updatedChronicle = {
+                ...chronicle,
+                choiceHistory: [...(chronicle.choiceHistory || []), choice],
+              };
+              state.setCharacter({
+                ...state.character,
+                chronicle: updatedChronicle,
+              });
+            }
+          }
+        }
+
+        // Check for title unlocks
+        const titleCheck = await ChronicleManager.checkTitleUnlocks(state.character);
+        if (titleCheck.unlockedTitles.length > 0) {
+          state.setCharacter(titleCheck.character);
+        }
+        break;
+      }
+
+      case 'combat_won': {
+        const chronicle = state.character.chronicle || ChronicleManager.initializeChronicle();
+        const stats = state.character.statistics;
+        
+        // Check if this is the first dungeon completion
+        const totalVictories = stats?.totalCombatVictories || 0;
+        if (totalVictories === 1) {
+          state.recordChronicleMilestone('first_dungeon', 'exploration', {
+            dungeonId: state.currentDungeonId,
+          });
+
+          // Check for first boss victory choice
+          const choice = await ChronicleManager.getTriggeredChoice(
+            state.character,
+            'boss_defeat',
+            { isFirst: true }
+          );
+          if (choice) {
+            const updatedChronicle = {
+              ...chronicle,
+              choiceHistory: [...(chronicle.choiceHistory || []), choice],
+            };
+            state.setCharacter({
+              ...state.character,
+              chronicle: updatedChronicle,
+            });
+          }
+        }
+
+        // Check for title unlocks
+        const titleCheck = await ChronicleManager.checkTitleUnlocks(state.character);
+        if (titleCheck.unlockedTitles.length > 0) {
+          state.setCharacter(titleCheck.character);
+        }
+        break;
+      }
+
+      case 'quest_completed': {
+        state.recordChronicleMilestone('quest_completion', 'achievement', {
+          questId: event.questId,
+        });
+
+        // Check for title unlocks
+        const titleCheck = await ChronicleManager.checkTitleUnlocks(state.character);
+        if (titleCheck.unlockedTitles.length > 0) {
+          state.setCharacter(titleCheck.character);
+        }
+        break;
+      }
+
+      case 'skill_action': {
+        // Check for skill mastery milestones (level 50, 99)
+        const idleSkills = state.character.idleSkills || [];
+        const skill = idleSkills.find((s) => s.skillId === event.skillId);
+        if (skill && (skill.level === 50 || skill.level === 99)) {
+          const dataLoader = getDataLoader();
+          const skillData = dataLoader.getSkill(event.skillId);
+          const isCrafting = skillData?.category === 'crafting';
+
+          state.recordChronicleMilestone('skill_mastery', isCrafting ? 'crafting' : 'general', {
+            skillId: event.skillId,
+            skillName: skillData?.name || event.skillId,
+            level: skill.level,
+          });
+
+          // Check for crafting masterpiece choice at level 50
+          if (skill.level === 50 && isCrafting) {
+            const chronicle = state.character.chronicle || ChronicleManager.initializeChronicle();
+            const choice = await ChronicleManager.getTriggeredChoice(
+              state.character,
+              'skill_milestone',
+              { skillLevel: 50, skillCategory: 'crafting', skillId: event.skillId }
+            );
+            if (choice) {
+              const updatedChronicle = {
+                ...chronicle,
+                choiceHistory: [...(chronicle.choiceHistory || []), choice],
+              };
+              state.setCharacter({
+                ...state.character,
+                chronicle: updatedChronicle,
+              });
+            }
+          }
+        }
+        break;
+      }
+
+      default:
+        break;
+    }
+  };
+
   // Subscribe to events
   const unsubscribeStatistics = gameEventEmitter.on(statisticsListener);
   const unsubscribeAchievements = gameEventEmitter.on(achievementListener);
   const unsubscribeDungeonUnlock = gameEventEmitter.on(dungeonUnlockListener);
+  const unsubscribeChronicle = gameEventEmitter.on(chronicleListener);
 
   // Return cleanup function
   return () => {
     unsubscribeStatistics();
     unsubscribeAchievements();
     unsubscribeDungeonUnlock();
+    unsubscribeChronicle();
     if (achievementCheckTimeout) {
       clearTimeout(achievementCheckTimeout);
       achievementCheckTimeout = null;

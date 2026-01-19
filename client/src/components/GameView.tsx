@@ -15,6 +15,7 @@ import CharacterPanel from './CharacterPanel';
 import EquipmentPanel from './EquipmentPanel';
 import StatisticsPanel from './StatisticsPanel';
 import ProgressionPanel from './ProgressionPanel';
+import ChroniclePanel from './ChroniclePanel';
 import SettingsPanel from './SettingsPanel';
 import PatchNotesModal from './PatchNotesModal';
 import OnboardingModal from './OnboardingModal';
@@ -26,7 +27,7 @@ export default function GameView() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const settings = useGameState((state) => state.settings);
   const [activeRightPanel, setActiveRightPanel] = useState<
-    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression'
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression' | 'chronicle'
   >('character');
   const [showSettings, setShowSettings] = useState(false);
   const [showPatchNotes, setShowPatchNotes] = useState(false);
@@ -158,6 +159,14 @@ export default function GameView() {
               Progression
             </button>
           </TooltipWrapper>
+          <TooltipWrapper content="View your character's story and legend titles">
+            <button
+              className={`panel-tab ${activeRightPanel === 'chronicle' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('chronicle')}
+            >
+              Chronicle
+            </button>
+          </TooltipWrapper>
           <TooltipWrapper content="Game settings and preferences">
             <button className="panel-tab" onClick={() => setShowSettings(true)}>
               Settings
@@ -172,6 +181,7 @@ export default function GameView() {
           {activeRightPanel === 'quests' && <QuestPanel />}
           {activeRightPanel === 'statistics' && <StatisticsPanel />}
           {activeRightPanel === 'progression' && <ProgressionPanel />}
+          {activeRightPanel === 'chronicle' && <ChroniclePanel />}
           {activeRightPanel === 'skills' && (
             <div className="skills-tab-placeholder">
               <p>Skills are displayed in the center area.</p>

@@ -1,0 +1,137 @@
+{
+  "version": "1.0.0",
+  "scenarios": {
+    "first_boss_victory": {
+      "id": "first_boss_victory",
+      "trigger": {
+        "type": "boss_defeat",
+        "isFirst": true
+      },
+      "prompt": "How do you want to be remembered for this victory?",
+      "options": [
+        {
+          "id": "aggressive",
+          "text": "As a fierce warrior who shows no mercy",
+          "description": "Embrace your aggressive nature",
+          "consequences": {
+            "narrativePath": "aggressive",
+            "statBonus": {
+              "strength": 2
+            }
+          }
+        },
+        {
+          "id": "strategic",
+          "text": "As a tactical mastermind who outwits their foes",
+          "description": "Value strategy over brute force",
+          "consequences": {
+            "narrativePath": "strategic",
+            "statBonus": {
+              "intelligence": 2
+            }
+          }
+        },
+        {
+          "id": "merciful",
+          "text": "As a protector who shows compassion even to enemies",
+          "description": "Choose mercy and compassion",
+          "consequences": {
+            "narrativePath": "merciful",
+            "statBonus": {
+              "wisdom": 2
+            }
+          }
+        }
+      ]
+    },
+    "level_50_reflection": {
+      "id": "level_50_reflection",
+      "trigger": {
+        "type": "level_milestone",
+        "level": 50
+      },
+      "prompt": "What drives you forward on your journey?",
+      "options": [
+        {
+          "id": "power",
+          "text": "The pursuit of power and strength",
+          "description": "Seek ultimate power",
+          "consequences": {
+            "narrativePath": "power_seeker",
+            "statBonus": {
+              "strength": 3,
+              "intelligence": 3
+            }
+          }
+        },
+        {
+          "id": "knowledge",
+          "text": "The thirst for knowledge and understanding",
+          "description": "Value wisdom and learning",
+          "consequences": {
+            "narrativePath": "scholar",
+            "statBonus": {
+              "intelligence": 5,
+              "wisdom": 2
+            }
+          }
+        },
+        {
+          "id": "protection",
+          "text": "The desire to protect others",
+          "description": "Dedicate yourself to protecting the innocent",
+          "consequences": {
+            "narrativePath": "protector",
+            "statBonus": {
+              "vitality": 5,
+              "wisdom": 3
+            }
+          }
+        }
+      ]
+    },
+    "crafting_masterpiece": {
+      "id": "crafting_masterpiece",
+      "trigger": {
+        "type": "skill_milestone",
+        "skillLevel": 50,
+        "skillCategory": "crafting"
+      },
+      "prompt": "How do you feel about your creation?",
+      "options": [
+        {
+          "id": "proud",
+          "text": "I am proud of my work and will continue to improve",
+          "description": "Take pride in your craftsmanship",
+          "consequences": {
+            "narrativePath": "master_crafter",
+            "titleId": "master_craftsman"
+          }
+        },
+        {
+          "id": "humble",
+          "text": "There is always more to learn",
+          "description": "Remain humble and continue learning",
+          "consequences": {
+            "narrativePath": "humble_artisan",
+            "statBonus": {
+              "wisdom": 3
+            }
+          }
+        },
+        {
+          "id": "ambitious",
+          "text": "This is just the beginning - I will create even greater works",
+          "description": "Set ambitious goals for the future",
+          "consequences": {
+            "narrativePath": "ambitious_creator",
+            "statBonus": {
+              "intelligence": 3,
+              "luck": 2
+            }
+          }
+        }
+      ]
+    }
+  }
+}

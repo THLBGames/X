@@ -29,6 +29,126 @@
       ]
     },
     {
+      "level": 5,
+      "nodeId": "corn_field",
+      "name": "Corn Field",
+      "successRate": 0.92,
+      "experienceGain": 18,
+      "timeRequired": 10500,
+      "resources": [
+        {
+          "itemId": "corn",
+          "chance": 1,
+          "min": 2,
+          "max": 5
+        },
+        {
+          "itemId": "corn_seed",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "wheat",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "nodeId": "carrot_patch",
+      "name": "Carrot Patch",
+      "successRate": 0.91,
+      "experienceGain": 25,
+      "timeRequired": 11000,
+      "resources": [
+        {
+          "itemId": "carrot",
+          "chance": 1,
+          "min": 3,
+          "max": 6
+        },
+        {
+          "itemId": "carrot_seed",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "nodeId": "potato_field",
+      "name": "Potato Field",
+      "successRate": 0.90,
+      "experienceGain": 32,
+      "timeRequired": 11500,
+      "resources": [
+        {
+          "itemId": "potato",
+          "chance": 1,
+          "min": 4,
+          "max": 7
+        },
+        {
+          "itemId": "potato_seed",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "carrot",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "tomato_garden",
+      "name": "Tomato Garden",
+      "successRate": 0.89,
+      "experienceGain": 38,
+      "timeRequired": 11800,
+      "resources": [
+        {
+          "itemId": "tomato",
+          "chance": 1,
+          "min": 2,
+          "max": 5
+        },
+        {
+          "itemId": "tomato_seed",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 18,
+      "nodeId": "cabbage_patch",
+      "name": "Cabbage Patch",
+      "successRate": 0.88,
+      "experienceGain": 42,
+      "timeRequired": 12000,
+      "resources": [
+        {
+          "itemId": "cabbage",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "cabbage_seed",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "vegetable",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 25,
       "nodeId": "vegetable_garden",
       "name": "Vegetable Garden",
@@ -45,6 +165,194 @@
         {
           "itemId": "wheat",
           "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 28,
+      "nodeId": "rice_paddy",
+      "name": "Rice Paddy",
+      "successRate": 0.87,
+      "experienceGain": 48,
+      "timeRequired": 12500,
+      "resources": [
+        {
+          "itemId": "rice",
+          "chance": 1,
+          "min": 3,
+          "max": 6
+        },
+        {
+          "itemId": "rice_seed",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "wheat",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 32,
+      "nodeId": "bean_field",
+      "name": "Bean Field",
+      "successRate": 0.86,
+      "experienceGain": 55,
+      "timeRequired": 13000,
+      "resources": [
+        {
+          "itemId": "bean",
+          "chance": 1,
+          "min": 3,
+          "max": 5
+        },
+        {
+          "itemId": "bean_seed",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "vegetable",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "onion_garden",
+      "name": "Onion Garden",
+      "successRate": 0.85,
+      "experienceGain": 62,
+      "timeRequired": 13200,
+      "resources": [
+        {
+          "itemId": "onion",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "onion_seed",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "vegetable",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 38,
+      "nodeId": "pepper_garden",
+      "name": "Pepper Garden",
+      "successRate": 0.84,
+      "experienceGain": 70,
+      "timeRequired": 13500,
+      "resources": [
+        {
+          "itemId": "pepper",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "pepper_seed",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "wild_spice",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "ancient_seed_garden",
+      "name": "Ancient Seed Garden",
+      "successRate": 0.82,
+      "experienceGain": 75,
+      "timeRequired": 14000,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ancient_seed",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 42,
+      "nodeId": "fruit_orchard",
+      "name": "Fruit Orchard",
+      "successRate": 0.83,
+      "experienceGain": 80,
+      "timeRequired": 13800,
+      "resources": [
+        {
+          "itemId": "fruit",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "fruit_seed",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "berry",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "berry_farm",
+      "name": "Berry Farm",
+      "successRate": 0.82,
+      "experienceGain": 88,
+      "timeRequired": 14000,
+      "resources": [
+        {
+          "itemId": "berry",
+          "chance": 1,
+          "min": 3,
+          "max": 6
+        },
+        {
+          "itemId": "berry_seed",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "fruit",
+          "chance": 0.3,
           "quantity": 1
         }
       ]
@@ -69,9 +377,480 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 55,
+      "nodeId": "enchanted_crop_field",
+      "name": "Enchanted Crop Field",
+      "successRate": 0.80,
+      "experienceGain": 110,
+      "timeRequired": 14500,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 40
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "enchanted_crop",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "magic_essence",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "vegetable",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "phoenix_feather_farm",
+      "name": "Phoenix Feather Farm",
+      "successRate": 0.78,
+      "experienceGain": 125,
+      "timeRequired": 15000,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "phoenix_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "fire_herb",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "spice_plantation",
+      "name": "Spice Plantation",
+      "successRate": 0.79,
+      "experienceGain": 120,
+      "timeRequired": 14800,
+      "resources": [
+        {
+          "itemId": "wild_spice",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "aromatic_leaves",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "pepper",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "exotic_fruit_grove",
+      "name": "Exotic Fruit Grove",
+      "successRate": 0.77,
+      "experienceGain": 135,
+      "timeRequired": 15200,
+      "resources": [
+        {
+          "itemId": "exotic_fruit",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "fruit",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "berry",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "dragon_scale_plantation",
+      "name": "Dragon Scale Plantation",
+      "successRate": 0.75,
+      "experienceGain": 150,
+      "timeRequired": 15500,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 2
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "dragon_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "dragon_scale",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "medicinal_herb_garden",
+      "name": "Medicinal Herb Garden",
+      "successRate": 0.76,
+      "experienceGain": 145,
+      "timeRequired": 15300,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 60
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "rare_herb",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "common_herb",
+          "chance": 0.5,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "rare_seed_garden",
+      "name": "Rare Seed Garden",
+      "successRate": 0.74,
+      "experienceGain": 165,
+      "timeRequired": 15800,
+      "resources": [
+        {
+          "itemId": "rare_seed",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "exotic_fruit",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "magical_crop_field",
+      "name": "Magical Crop Field",
+      "successRate": 0.72,
+      "experienceGain": 180,
+      "timeRequired": 16000,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 65
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "magical_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "magic_essence",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "crystal_shard",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "celestial_garden",
+      "name": "Celestial Garden",
+      "successRate": 0.70,
+      "experienceGain": 200,
+      "timeRequired": 16500,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 70
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "celestial_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "cosmic_energy",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 88,
+      "nodeId": "world_tree_orchard",
+      "name": "World Tree Orchard",
+      "successRate": 0.68,
+      "experienceGain": 220,
+      "timeRequired": 17000,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 80
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "world_tree_fruit",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "world_tree_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_berry",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "divine_crop_field",
+      "name": "Divine Crop Field",
+      "successRate": 0.66,
+      "experienceGain": 240,
+      "timeRequired": 17500,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 80
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "divine_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "prismatic_shard",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 92,
+      "nodeId": "divine_fragment_garden",
+      "name": "Divine Fragment Garden",
+      "successRate": 0.65,
+      "experienceGain": 260,
+      "timeRequired": 18000,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "divine_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_crop",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "primal_garden",
+      "name": "Primal Garden",
+      "successRate": 0.64,
+      "experienceGain": 280,
+      "timeRequired": 18500,
+      "resources": [
+        {
+          "itemId": "primal_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_crop",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "eternal_farm",
+      "name": "Eternal Farm",
+      "successRate": 0.62,
+      "experienceGain": 320,
+      "timeRequired": 20000,
+      "resources": [
+        {
+          "itemId": "eternal_crop",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "prismatic_shard",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_crop",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "recipes": [
+    {
+      "recipeId": "seed_pack",
+      "name": "Seed Pack",
+      "level": 5,
+      "ingredients": [
+        {
+          "itemId": "wheat_seed",
+          "quantity": 5
+        },
+        {
+          "itemId": "cloth",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "seed_pack",
+        "quantity": 1
+      },
+      "experienceGain": 15,
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "compost",
+      "name": "Compost",
+      "level": 8,
+      "ingredients": [
+        {
+          "itemId": "vegetable",
+          "quantity": 5
+        },
+        {
+          "itemId": "water",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "compost",
+        "quantity": 3
+      },
+      "experienceGain": 18,
+      "timeRequired": 4500
+    },
     {
       "recipeId": "fertilizer",
       "name": "Fertilizer",
@@ -92,14 +871,1117 @@
       },
       "experienceGain": 20,
       "timeRequired": 5000
+    },
+    {
+      "recipeId": "quality_fertilizer",
+      "name": "Quality Fertilizer",
+      "level": 12,
+      "ingredients": [
+        {
+          "itemId": "compost",
+          "quantity": 5
+        },
+        {
+          "itemId": "bone_meal",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "quality_fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 25,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "animal_feed",
+      "name": "Animal Feed",
+      "level": 15,
+      "ingredients": [
+        {
+          "itemId": "wheat",
+          "quantity": 5
+        },
+        {
+          "itemId": "corn",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "animal_feed",
+        "quantity": 3
+      },
+      "experienceGain": 30,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "crop_bundle",
+      "name": "Crop Bundle",
+      "level": 18,
+      "ingredients": [
+        {
+          "itemId": "wheat",
+          "quantity": 3
+        },
+        {
+          "itemId": "vegetable",
+          "quantity": 3
+        },
+        {
+          "itemId": "thread",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "crop_bundle",
+        "quantity": 1
+      },
+      "experienceGain": 35,
+      "timeRequired": 5800
+    },
+    {
+      "recipeId": "premium_fertilizer",
+      "name": "Premium Fertilizer",
+      "level": 22,
+      "ingredients": [
+        {
+          "itemId": "compost",
+          "quantity": 6
+        },
+        {
+          "itemId": "bone_meal",
+          "quantity": 4
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "premium_fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 45,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "enriched_soil",
+      "name": "Enriched Soil",
+      "level": 25,
+      "ingredients": [
+        {
+          "itemId": "compost",
+          "quantity": 8
+        },
+        {
+          "itemId": "fertilizer",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "enriched_soil",
+        "quantity": 3
+      },
+      "experienceGain": 50,
+      "timeRequired": 6200
+    },
+    {
+      "recipeId": "farming_tools",
+      "name": "Farming Tools",
+      "level": 28,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "oak_log",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "farming_tools",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "irrigation_system",
+      "name": "Irrigation System",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 25
+        },
+        {
+          "skillId": "engineering",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        },
+        {
+          "itemId": "water",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "irrigation_system",
+        "quantity": 1
+      },
+      "experienceGain": 65,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "ancient_farming_techniques",
+      "name": "Ancient Farming Techniques",
+      "level": 35,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 1
+        },
+        {
+          "itemId": "fertilizer",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ancient_farming_techniques",
+        "quantity": 1
+      },
+      "experienceGain": 75,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "greenhouse_kit",
+      "name": "Greenhouse Kit",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "oak_log",
+          "quantity": 10
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "cloth",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "greenhouse_kit",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "crop_preservative",
+      "name": "Crop Preservative",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "common_herb",
+          "quantity": 5
+        },
+        {
+          "itemId": "water",
+          "quantity": 3
+        },
+        {
+          "itemId": "salt",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "crop_preservative",
+        "quantity": 3
+      },
+      "experienceGain": 80,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "druids_crop_circle",
+      "name": "Druid's Crop Circle",
+      "level": 45,
+      "unlockRequirements": [
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "druids_crop_circle",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "hybrid_seeds",
+      "name": "Hybrid Seeds",
+      "level": 42,
+      "ingredients": [
+        {
+          "itemId": "wheat_seed",
+          "quantity": 3
+        },
+        {
+          "itemId": "corn_seed",
+          "quantity": 3
+        },
+        {
+          "itemId": "fertilizer",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "hybrid_seeds",
+        "quantity": 2
+      },
+      "experienceGain": 90,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "advanced_compost",
+      "name": "Advanced Compost",
+      "level": 45,
+      "ingredients": [
+        {
+          "itemId": "compost",
+          "quantity": 5
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "bone_meal",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "advanced_compost",
+        "quantity": 3
+      },
+      "experienceGain": 95,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "magical_fertilizer",
+      "name": "Magical Fertilizer",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "fertilizer",
+          "quantity": 5
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "magical_fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 110,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "enchanted_seeds",
+      "name": "Enchanted Seeds",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "hybrid_seeds",
+          "quantity": 3
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_seeds",
+        "quantity": 2
+      },
+      "experienceGain": 130,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "master_farmers_manual",
+      "name": "Master Farmer's Manual",
+      "level": 55,
+      "unlockRequirements": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "master_farmers_manual",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "growth_elixir",
+      "name": "Growth Elixir",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "growth_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 135,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "fertility_potion",
+      "name": "Fertility Potion",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "nature_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fertility_potion",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "phoenix_crop_revival",
+      "name": "Phoenix Crop Revival",
+      "level": 65,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "fire_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "growth_elixir",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_crop_revival",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "master_farming_tools",
+      "name": "Master Farming Tools",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        },
+        {
+          "skillId": "engineering",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "advanced_component",
+          "quantity": 3
+        },
+        {
+          "itemId": "gears",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "master_farming_tools",
+        "quantity": 1
+      },
+      "experienceGain": 170,
+      "timeRequired": 9800
+    },
+    {
+      "recipeId": "magical_greenhouse",
+      "name": "Magical Greenhouse",
+      "level": 65,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 55
+        },
+        {
+          "skillId": "woodcutting",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "magic_log",
+          "quantity": 5
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "magical_greenhouse",
+        "quantity": 1
+      },
+      "experienceGain": 185,
+      "timeRequired": 10200
+    },
+    {
+      "recipeId": "primal_compost",
+      "name": "Primal Compost",
+      "level": 68,
+      "ingredients": [
+        {
+          "itemId": "advanced_compost",
+          "quantity": 5
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "primal_compost",
+        "quantity": 3
+      },
+      "experienceGain": 200,
+      "timeRequired": 10500
+    },
+    {
+      "recipeId": "dragon_scale_fertilizer",
+      "name": "Dragon Scale Fertilizer",
+      "level": 75,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "magical_fertilizer",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "dragon_scale_fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 250,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "celestial_fertilizer",
+      "name": "Celestial Fertilizer",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "magical_fertilizer",
+          "quantity": 5
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 2
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "celestial_fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 230,
+      "timeRequired": 10800
+    },
+    {
+      "recipeId": "divine_seeds",
+      "name": "Divine Seeds",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_seeds",
+          "quantity": 5
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "divine_seeds",
+        "quantity": 2
+      },
+      "experienceGain": 260,
+      "timeRequired": 11200
+    },
+    {
+      "recipeId": "eternal_growth_potion",
+      "name": "Eternal Growth Potion",
+      "level": 78,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "fertility_potion",
+          "quantity": 2
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "eternal_growth_potion",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "celestial_growth_formula",
+      "name": "Celestial Growth Formula",
+      "level": 85,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 3
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 75
+        },
+        {
+          "skillId": "fishing",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "celestial_fertilizer",
+          "quantity": 3
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "celestial_growth_formula",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "cosmic_fertilizer",
+      "name": "Cosmic Fertilizer",
+      "level": 82,
+      "ingredients": [
+        {
+          "itemId": "celestial_fertilizer",
+          "quantity": 5
+        },
+        {
+          "itemId": "cosmic_energy",
+          "quantity": 4
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_fertilizer",
+        "quantity": 2
+      },
+      "experienceGain": 320,
+      "timeRequired": 11800
+    },
+    {
+      "recipeId": "prismatic_seeds",
+      "name": "Prismatic Seeds",
+      "level": 85,
+      "ingredients": [
+        {
+          "itemId": "divine_seeds",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_seeds",
+        "quantity": 2
+      },
+      "experienceGain": 340,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "divine_harvest_ritual",
+      "name": "Divine Harvest Ritual",
+      "level": 90,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "cosmic_fertilizer",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "divine_harvest_ritual",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "divine_growth_elixir",
+      "name": "Divine Growth Elixir",
+      "level": 88,
+      "ingredients": [
+        {
+          "itemId": "eternal_growth_potion",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "divine_growth_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 12200
+    },
+    {
+      "recipeId": "world_tree_seeds",
+      "name": "World Tree Seeds",
+      "level": 95,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_seeds",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "world_tree_seeds",
+        "quantity": 2
+      },
+      "experienceGain": 450,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "master_farmers_kit",
+      "name": "Master Farmer's Kit",
+      "level": 92,
+      "ingredients": [
+        {
+          "itemId": "master_farming_tools",
+          "quantity": 1
+        },
+        {
+          "itemId": "magical_greenhouse",
+          "quantity": 1
+        },
+        {
+          "itemId": "cosmic_fertilizer",
+          "quantity": 5
+        },
+        {
+          "itemId": "divine_seeds",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_farmers_kit",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 12800
+    },
+    {
+      "recipeId": "omnipotent_crop_enhancer",
+      "name": "Omnipotent Crop Enhancer",
+      "level": 95,
+      "ingredients": [
+        {
+          "itemId": "divine_growth_elixir",
+          "quantity": 2
+        },
+        {
+          "itemId": "prismatic_seeds",
+          "quantity": 3
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "omnipotent_crop_enhancer",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 13500
+    },
+    {
+      "recipeId": "eternal_farm_equipment",
+      "name": "Eternal Farm Equipment",
+      "level": 99,
+      "ingredients": [
+        {
+          "itemId": "master_farmers_kit",
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 8
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "eternal_farm_equipment",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 15000
     }
   ],
   "passiveBonuses": [
+    {
+      "level": 10,
+      "bonus": {
+        "health": 25,
+        "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 20,
+      "bonus": {
+        "health": 40,
+        "goldGeneration": 0.08,
+        "statBonus": {
+          "vitality": 2
+        }
+      }
+    },
     {
       "level": 30,
       "bonus": {
         "goldGeneration": 0.08,
         "health": 50
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "health": 70,
+        "goldGeneration": 0.10,
+        "statBonus": {
+          "vitality": 4
+        }
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "health": 90,
+        "goldGeneration": 0.12,
+        "statBonus": {
+          "vitality": 6
+        },
+        "cropYield": 0.05
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "health": 110,
+        "goldGeneration": 0.15,
+        "statBonus": {
+          "vitality": 8
+        }
       }
     },
     {
@@ -110,10 +1992,46 @@
       }
     },
     {
+      "level": 70,
+      "bonus": {
+        "health": 130,
+        "goldGeneration": 0.18,
+        "statBonus": {
+          "vitality": 10
+        },
+        "cropYield": 0.10
+      }
+    },
+    {
+      "level": 80,
+      "bonus": {
+        "health": 150,
+        "goldGeneration": 0.20,
+        "statBonus": {
+          "vitality": 12
+        }
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "health": 170,
+        "goldGeneration": 0.22,
+        "statBonus": {
+          "vitality": 14
+        },
+        "cropYield": 0.15
+      }
+    },
+    {
       "level": 99,
       "bonus": {
         "goldGeneration": 0.25,
-        "health": 200
+        "health": 200,
+        "statBonus": {
+          "vitality": 20
+        },
+        "cropYield": 0.20
       }
     }
   ],
