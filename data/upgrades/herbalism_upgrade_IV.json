@@ -8,10 +8,10 @@
   "tier": "IV",
   "price": 8000,
   "bonuses": {
-    "experienceMultiplier": 1.25,
-    "speedMultiplier": 0.85,
-    "yieldMultiplier": 1.15,
-    "successRateBonus": 0.15
+    "experienceMultiplier": 1.4,
+    "speedMultiplier": 0.8,
+    "yieldMultiplier": 1.2,
+    "successRateBonus": 0.08
   },
   "requirements": {
     "previousTierId": "herbalism_upgrade_III"

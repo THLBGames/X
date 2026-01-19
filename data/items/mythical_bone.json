@@ -1,0 +1,12 @@
+{
+  "id": "mythical_bone",
+  "name": "Mythical Bone",
+  "description": "A bone from a mythical creature.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 350,
+  "nameKey": "item.mythical_bone.name",
+  "descriptionKey": "item.mythical_bone.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "fire_herb",
+  "name": "Fire Herb",
+  "description": "An herb infused with phoenix fire. Burns with inner flame but remains intact.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 180,
+  "nameKey": "item.fire_herb.name",
+  "descriptionKey": "item.fire_herb.description"
+}

@@ -29,6 +29,84 @@
       ]
     },
     {
+      "level": 5,
+      "nodeId": "sandstone_deposit",
+      "name": "Sandstone Deposit",
+      "successRate": 0.92,
+      "experienceGain": 15,
+      "timeRequired": 3600,
+      "resources": [
+        {
+          "itemId": "sandstone",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "limestone",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "rough_stone",
+          "chance": 0.45,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "slate_quarry",
+      "name": "Slate Quarry",
+      "successRate": 0.91,
+      "experienceGain": 22,
+      "timeRequired": 3800,
+      "resources": [
+        {
+          "itemId": "slate",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "sandstone",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "rough_stone",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "cobblestone_quarry",
+      "name": "Cobblestone Quarry",
+      "successRate": 0.89,
+      "experienceGain": 28,
+      "timeRequired": 4200,
+      "resources": [
+        {
+          "itemId": "cobblestone",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "slate",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "limestone",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 20,
       "nodeId": "granite_quarry",
       "name": "Granite Quarry",
@@ -45,6 +123,68 @@
         {
           "itemId": "limestone",
           "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "cobblestone",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "basalt_deposit",
+      "name": "Basalt Deposit",
+      "successRate": 0.85,
+      "experienceGain": 55,
+      "timeRequired": 5000,
+      "resources": [
+        {
+          "itemId": "basalt",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "granite",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "polished_stone",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "travertine_quarry",
+      "name": "Travertine Quarry",
+      "successRate": 0.83,
+      "experienceGain": 75,
+      "timeRequired": 5300,
+      "resources": [
+        {
+          "itemId": "travertine",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "basalt",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "granite",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "polished_stone",
+          "chance": 0.3,
           "quantity": 1
         }
       ]
@@ -72,6 +212,153 @@
           "itemId": "polished_stone",
           "chance": 0.2,
           "quantity": 1
+        },
+        {
+          "itemId": "travertine",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "ancient_stone_circle",
+      "name": "Ancient Stone Circle",
+      "successRate": 0.80,
+      "experienceGain": 140,
+      "timeRequired": 6000,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_stone_tablet",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ancient_fragment",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "marble",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "basalt",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "polished_stone",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_stone",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "onyx_deposit",
+      "name": "Onyx Deposit",
+      "successRate": 0.78,
+      "experienceGain": 180,
+      "timeRequired": 6200,
+      "resources": [
+        {
+          "itemId": "onyx",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "marble",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "basalt",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "polished_stone",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "jadeite_quarry",
+      "name": "Jadeite Quarry",
+      "successRate": 0.76,
+      "experienceGain": 200,
+      "timeRequired": 6400,
+      "resources": [
+        {
+          "itemId": "jadeite",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "onyx",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "marble",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "polished_stone",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "dragons_quarry",
+      "name": "Dragon's Quarry",
+      "successRate": 0.74,
+      "experienceGain": 260,
+      "timeRequired": 6800,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "dragonstone",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "volcanic_stone",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "obsidian",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "jadeite",
+          "chance": 0.3,
+          "quantity": 1
         }
       ]
     },
@@ -98,29 +385,323 @@
           "itemId": "volcanic_stone",
           "chance": 0.3,
           "quantity": 1
+        },
+        {
+          "itemId": "onyx",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "titans_worksite",
+      "name": "Titan's Worksite",
+      "successRate": 0.72,
+      "experienceGain": 320,
+      "timeRequired": 7200,
+      "unlockRequirements": [
+        {
+          "itemId": "titan_hammer",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "titanstone",
+          "chance": 0.7,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "massive_stone_block",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "obsidian",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "jadeite",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "crystalized_stone_deposit",
+      "name": "Crystalized Stone Deposit",
+      "successRate": 0.70,
+      "experienceGain": 380,
+      "timeRequired": 7800,
+      "resources": [
+        {
+          "itemId": "crystalized_stone",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "obsidian",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "jadeite",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "crystal_shard",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "celestial_quarry",
+      "name": "Celestial Quarry",
+      "successRate": 0.68,
+      "experienceGain": 450,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "celestial_stone",
+          "chance": 0.75,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "star_fragment",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "crystalized_stone",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "primal_stone_quarry",
+      "name": "Primal Stone Quarry",
+      "successRate": 0.67,
+      "experienceGain": 500,
+      "timeRequired": 9000,
+      "resources": [
+        {
+          "itemId": "primal_stone",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "crystalized_stone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "obsidian",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "void_stone_mine",
+      "name": "Void Stone Mine",
+      "successRate": 0.65,
+      "experienceGain": 580,
+      "timeRequired": 9500,
+      "unlockRequirements": [
+        {
+          "itemId": "void_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "void_stone",
+          "chance": 0.8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "null_fragment",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primal_stone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_stone",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_quarry_site",
+      "name": "Master Quarry Site",
+      "successRate": 0.65,
+      "experienceGain": 650,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "primal_stone",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_stone",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "void_stone",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "titanstone",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "crystalized_stone",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.3,
+          "quantity": 1
         }
       ]
     }
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "defense": 2
+        },
+        "goldGeneration": 0.02
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "statBonus": {
+          "defense": 5
+        },
+        "itemFindRate": 0.03
+      }
+    },
+    {
       "level": 30,
       "bonus": {
-        "defense": 5
+        "statBonus": {
+          "defense": 5
+        }
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "statBonus": {
+          "defense": 8
+        },
+        "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "statBonus": {
+          "defense": 10
+        },
+        "goldGeneration": 0.05,
+        "itemFindRate": 0.05
       }
     },
     {
       "level": 60,
       "bonus": {
-        "defense": 10,
+        "statBonus": {
+          "defense": 10
+        },
         "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "statBonus": {
+          "defense": 15
+        },
+        "goldGeneration": 0.10,
+        "itemFindRate": 0.08
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "statBonus": {
+          "defense": 20
+        },
+        "goldGeneration": 0.15,
+        "itemFindRate": 0.10
       }
     },
     {
       "level": 99,
       "bonus": {
-        "defense": 20,
-        "goldGeneration": 0.1
+        "statBonus": {
+          "defense": 25,
+          "strength": 5
+        },
+        "goldGeneration": 0.20,
+        "itemFindRate": 0.15
       }
     }
   ],

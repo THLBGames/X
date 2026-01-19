@@ -1,0 +1,12 @@
+{
+  "id": "legendary_essence",
+  "name": "Legendary Essence",
+  "description": "The concentrated essence of a legendary being.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 900,
+  "nameKey": "item.legendary_essence.name",
+  "descriptionKey": "item.legendary_essence.description"
+}

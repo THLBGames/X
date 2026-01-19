@@ -1,0 +1,12 @@
+{
+  "id": "ancient_stone_tablet",
+  "name": "Ancient Stone Tablet",
+  "description": "A mysterious tablet covered in ancient runes, required to access the Ancient Stone Circle.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 750,
+  "nameKey": "item.ancient_stone_tablet.name",
+  "descriptionKey": "item.ancient_stone_tablet.description"
+}

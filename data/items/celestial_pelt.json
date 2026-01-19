@@ -1,0 +1,12 @@
+{
+  "id": "celestial_pelt",
+  "name": "Celestial Pelt",
+  "description": "A pelt infused with celestial energy.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 450,
+  "nameKey": "item.celestial_pelt.name",
+  "descriptionKey": "item.celestial_pelt.description"
+}

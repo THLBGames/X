@@ -1,0 +1,12 @@
+{
+  "id": "basalt",
+  "name": "Basalt",
+  "description": "Dense volcanic basalt stone, excellent for durability.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.basalt.name",
+  "descriptionKey": "item.basalt.description"
+}

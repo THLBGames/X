@@ -1,0 +1,12 @@
+{
+  "id": "massive_stone_block",
+  "name": "Massive Stone Block",
+  "description": "An enormous block of stone, perfect for grand constructions.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 250,
+  "nameKey": "item.massive_stone_block.name",
+  "descriptionKey": "item.massive_stone_block.description"
+}

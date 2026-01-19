@@ -1,0 +1,12 @@
+{
+  "id": "stolen_essence_moderate",
+  "name": "Stolen Moderate Essence",
+  "description": "A moderate essence stolen from an enchanter, useful for advanced enchanting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.stolen_essence_moderate.name",
+  "descriptionKey": "item.stolen_essence_moderate.description"
+}

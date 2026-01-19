@@ -1,0 +1,12 @@
+{
+  "id": "stolen_herb_rare",
+  "name": "Stolen Rare Herb",
+  "description": "A rare herb stolen from an alchemist, highly valued for potion making.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50,
+  "nameKey": "item.stolen_herb_rare.name",
+  "descriptionKey": "item.stolen_herb_rare.description"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "trapping_legendary_blueprint",
+  "name": "Legendary Trap Blueprint",
+  "description": "Unlocks secret trap nodes. Requires materials: mythical_pelt x5, legendary_bone x3, divine_fragment x1",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Legendary",
+  "price": 30000,
+  "materialRequirements": [
+    {
+      "itemId": "mythical_pelt",
+      "quantity": 5
+    },
+    {
+      "itemId": "legendary_bone",
+      "quantity": 3
+    },
+    {
+      "itemId": "divine_fragment",
+      "quantity": 1
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.25,
+    "yieldMultiplier": 1.3,
+    "experienceMultiplier": 1.3
+  },
+  "requirements": {
+    "skillLevel": 75
+  },
+  "nameKey": "upgrade.trapping_legendary_blueprint.name",
+  "descriptionKey": "upgrade.trapping_legendary_blueprint.description"
+}

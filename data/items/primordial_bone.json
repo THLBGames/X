@@ -1,0 +1,12 @@
+{
+  "id": "primordial_bone",
+  "name": "Primordial Bone",
+  "description": "A bone from a primordial creature.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 650,
+  "nameKey": "item.primordial_bone.name",
+  "descriptionKey": "item.primordial_bone.description"
+}

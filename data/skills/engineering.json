@@ -11,13 +11,19 @@
       "recipeId": "simple_tool",
       "name": "Simple Tool",
       "level": 5,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
       "ingredients": [
         {
           "itemId": "iron_ore",
           "quantity": 3
         },
         {
-          "itemId": "wood",
+          "itemId": "oak_log",
           "quantity": 2
         }
       ],
@@ -27,6 +33,68 @@
       },
       "experienceGain": 30,
       "timeRequired": 7000
+    },
+    {
+      "recipeId": "improved_tool",
+      "name": "Improved Tool",
+      "level": 18,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "maple_log",
+          "quantity": 3
+        },
+        {
+          "itemId": "gears",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "improved_tool",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "precision_wooden_mechanism",
+      "name": "Precision Wooden Mechanism",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "yew_log",
+          "quantity": 4
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "precision_wooden_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 9500
     },
     {
       "recipeId": "coal_powered_device",
@@ -338,6 +406,239 @@
       },
       "experienceGain": 800,
       "timeRequired": 20000
+    },
+    {
+      "recipeId": "stone_mechanism",
+      "name": "Stone Mechanism",
+      "level": 15,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "slate",
+          "quantity": 8
+        },
+        {
+          "itemId": "bronze_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "stone_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "basalt_gears",
+      "name": "Basalt Gears",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "basalt",
+          "quantity": 12
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "basalt_gears",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "crystalized_stone_device",
+      "name": "Crystalized Stone Device",
+      "level": 85,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "crystalized_stone",
+          "quantity": 15
+        },
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "crystalized_stone_device",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 22000
+    },
+    {
+      "recipeId": "void_stone_engine",
+      "name": "Void Stone Engine",
+      "level": 95,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_stone",
+          "quantity": 10
+        },
+        {
+          "itemId": "divine_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "null_fragment",
+          "quantity": 6
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "void_stone_engine",
+        "quantity": 1
+      },
+      "experienceGain": 850,
+      "timeRequired": 28000
+    },
+    {
+      "recipeId": "stolen_component_device",
+      "name": "Stolen Component Device",
+      "level": 20,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "engineering_component",
+          "quantity": 4
+        },
+        {
+          "itemId": "simple_component",
+          "quantity": 3
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "simple_tool",
+        "quantity": 1
+      },
+      "experienceGain": 80,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "rare_stolen_mechanism",
+      "name": "Rare Stolen Mechanism",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "advanced_component",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_component",
+          "quantity": 2
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "steel_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 220,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "ultimate_stolen_engine",
+      "name": "Ultimate Stolen Engine",
+      "level": 90,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ultimate_component",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_material",
+          "quantity": 3
+        },
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_construct",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 25000
     }
   ],
   "passiveBonuses": [

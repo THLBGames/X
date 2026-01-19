@@ -1,0 +1,12 @@
+{
+  "id": "celestial_fragment",
+  "name": "Celestial Fragment",
+  "description": "A fragment of pure celestial energy, required to access the Celestial Quarry.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1200,
+  "nameKey": "item.celestial_fragment.name",
+  "descriptionKey": "item.celestial_fragment.description"
+}

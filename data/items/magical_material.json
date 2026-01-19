@@ -1,0 +1,12 @@
+{
+  "id": "magical_material",
+  "name": "Magical Material",
+  "description": "Material stolen from an archmage, infused with powerful magical energy.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 280,
+  "nameKey": "item.magical_material.name",
+  "descriptionKey": "item.magical_material.description"
+}

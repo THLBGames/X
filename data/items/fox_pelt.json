@@ -1,0 +1,12 @@
+{
+  "id": "fox_pelt",
+  "name": "Fox Pelt",
+  "description": "A fine pelt from a trapped fox.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.fox_pelt.name",
+  "descriptionKey": "item.fox_pelt.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "thieves_guild_token",
+  "name": "Thieves' Guild Token",
+  "description": "A token proving membership in the Thieves' Guild, required to access the Thieves' Guild Vault.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "nameKey": "item.thieves_guild_token.name",
+  "descriptionKey": "item.thieves_guild_token.description"
+}

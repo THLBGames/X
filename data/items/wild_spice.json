@@ -1,0 +1,12 @@
+{
+  "id": "wild_spice",
+  "name": "Wild Spice",
+  "description": "Aromatic spices that enhance cooking and alchemy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12,
+  "nameKey": "item.wild_spice.name",
+  "descriptionKey": "item.wild_spice.description"
+}

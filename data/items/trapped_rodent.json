@@ -1,0 +1,12 @@
+{
+  "id": "trapped_rodent",
+  "name": "Trapped Rodent",
+  "description": "A small rodent caught in a trap.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4,
+  "nameKey": "item.trapped_rodent.name",
+  "descriptionKey": "item.trapped_rodent.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "trophy_hunter_license",
+  "name": "Trophy Hunter's License",
+  "description": "A license allowing access to elite trophy hunting grounds.",
+  "type": "quest",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 1,
+  "value": 2000,
+  "nameKey": "item.trophy_hunter_license.name",
+  "descriptionKey": "item.trophy_hunter_license.description"
+}

@@ -420,6 +420,14 @@
       "name": "Common Trinket",
       "description": "A simple decorative trinket."
     },
+    "crafting_component": {
+      "name": "Componente de Artesanía",
+      "description": "Un componente de artesanía robado de un aprendiz, útil para varias habilidades de artesanía."
+    },
+    "crafting_recipe": {
+      "name": "Receta de Artesanía",
+      "description": "Un pergamino de receta robado de un artesano o comerciante, enseña nuevas fórmulas de artesanía."
+    },
     "compost": {
       "name": "Compost",
       "description": "Organic compost for fertilizing crops."
@@ -561,12 +569,12 @@
       "description": "The blood of a dragon, highly valuable and magical."
     },
     "dragon_bone": {
-      "name": "Dragon Bone",
-      "description": "A bone from a dragon."
+      "name": "Hueso de Dragón",
+      "description": "Un hueso de un dragón."
     },
     "dragon_scale": {
-      "name": "Dragon Scale",
-      "description": "A scale from a dragon."
+      "name": "Escama de Dragón",
+      "description": "Una escama de un dragón."
     },
     "dwarven_ale": {
       "name": "Dwarven Ale",
@@ -600,6 +608,10 @@
       "name": "Elemental Core",
       "description": "The core of an elemental being."
     },
+    "engineering_component": {
+      "name": "Componente de Ingeniería",
+      "description": "Un componente robado de un artesano, útil para proyectos de ingeniería."
+    },
     "elixir_power": {
       "name": "Elixir of Power",
       "description": "A powerful elixir that enhances combat abilities."
@@ -615,6 +627,14 @@
     "enchanted_cloth": {
       "name": "Enchanted Cloth",
       "description": "Cloth infused with magical properties."
+    },
+    "enchanted_material": {
+      "name": "Material Encantado",
+      "description": "Material robado de un encantador, ya imbuido con propiedades mágicas."
+    },
+    "enchanting_recipe": {
+      "name": "Receta de Encantamiento",
+      "description": "Un pergamino de receta robado de un archimago, enseña técnicas avanzadas de encantamiento."
     },
     "enchanted_gloves": {
       "name": "Enchanted Gloves",
@@ -1820,6 +1840,10 @@
       "name": "Silver Ore",
       "description": "A precious metal ore used for crafting quality equipment and jewelry."
     },
+    "simple_component": {
+      "name": "Componente Simple",
+      "description": "Un componente de artesanía simple adquirido mediante robo, útil para ingeniería."
+    },
     "simple_tool": {
       "name": "Simple Tool",
       "description": "A basic tool for engineering projects."
@@ -1919,6 +1943,170 @@
     "steel_weapon": {
       "name": "Steel Weapon",
       "description": "A well-crafted weapon made from steel."
+    },
+    "stolen_artifact": {
+      "name": "Artefacto Robado",
+      "description": "Un artefacto robado de fuentes legendarias, extremadamente valioso y poderoso."
+    },
+    "stolen_essence_minor": {
+      "name": "Esencia Menor Robada",
+      "description": "Una esencia menor robada de un aprendiz, útil para encantamiento y alquimia."
+    },
+    "stolen_essence_moderate": {
+      "name": "Esencia Moderada Robada",
+      "description": "Una esencia moderada robada de un encantador, útil para encantamiento avanzado."
+    },
+    "stolen_essence_rare": {
+      "name": "Esencia Rara Robada",
+      "description": "Una esencia rara robada de un archimago, poderosa para encantamiento avanzado y runas."
+    },
+    "stolen_gem_common": {
+      "name": "Gema Común Robada",
+      "description": "Una gema común adquirida mediante robo, útil para joyería."
+    },
+    "stolen_gem_uncommon": {
+      "name": "Gema Poco Común Robada",
+      "description": "Una gema poco común robada de un noble o comerciante, útil para crear joyas."
+    },
+    "stolen_herb_common": {
+      "name": "Hierba Común Robada",
+      "description": "Una hierba común adquirida mediante robo, útil para alquimia."
+    },
+    "stolen_herb_rare": {
+      "name": "Hierba Rara Robada",
+      "description": "Una hierba rara robada de un alquimista, muy valorada para hacer pociones."
+    },
+    "stolen_ore": {
+      "name": "Mineral Robado",
+      "description": "Mineral robado del stock de un herrero, útil para herrería e ingeniería."
+    },
+    "stolen_scroll": {
+      "name": "Pergamino Robado",
+      "description": "Un pergamino robado de un encantador o erudito, útil para encantamiento y runas."
+    },
+    "stolen_scroll_ancient": {
+      "name": "Pergamino Antiguo Robado",
+      "description": "Un pergamino antiguo robado de un guardián antiguo, contiene conocimiento olvidado."
+    },
+    "stolen_scroll_basic": {
+      "name": "Pergamino Básico Robado",
+      "description": "Un pergamino básico robado de un viajero, contiene conocimiento simple."
+    },
+    "stolen_scroll_rare": {
+      "name": "Pergamino Raro Robado",
+      "description": "Un pergamino raro robado de un archimago, contiene poderoso conocimiento mágico."
+    },
+    "advanced_component": {
+      "name": "Componente Avanzado",
+      "description": "Un componente avanzado de ingeniería robado de un maestro artesano."
+    },
+    "ancient_key_thieving": {
+      "name": "Llave Antigua",
+      "description": "Una llave antigua descubierta mediante robo, requerida para acceder a la Bóveda Antigua."
+    },
+    "ancient_material": {
+      "name": "Material Antiguo",
+      "description": "Material robado de fuentes antiguas, preservado a través de los siglos."
+    },
+    "celestial_essence": {
+      "name": "Esencia Celestial",
+      "description": "Esencia celestial robada de un agente divino, contiene energía divina pura."
+    },
+    "divine_material": {
+      "name": "Material Divino",
+      "description": "Material divino robado de un agente divino, contiene poder celestial."
+    },
+    "exotic_goods": {
+      "name": "Bienes Exóticos",
+      "description": "Bienes exóticos robados del almacén secreto de un comerciante, valiosos y raros."
+    },
+    "forbidden_material": {
+      "name": "Material Prohibido",
+      "description": "Material prohibido del Mercado de las Sombras, usado en recetas de artesanía oscura."
+    },
+    "illegal_goods": {
+      "name": "Bienes Ilegales",
+      "description": "Bienes ilegales adquiridos del Mercado de las Sombras, valiosos pero peligrosos de poseer."
+    },
+    "jewelry_component": {
+      "name": "Componente de Joyería",
+      "description": "Un componente robado de un joyero, útil para crear joyas."
+    },
+    "legendary_material": {
+      "name": "Material Legendario",
+      "description": "Material legendario robado de objetivos de alto valor, extremadamente valioso para artesanía."
+    },
+    "lockpick_rare": {
+      "name": "Ganzúa Rara",
+      "description": "Una ganzúa de alta calidad robada del Gremio de Ladrones, mejora el éxito de apertura de cerraduras."
+    },
+    "magical_material": {
+      "name": "Material Mágico",
+      "description": "Material robado de un archimago, imbuido con poderosa energía mágica."
+    },
+    "master_recipe": {
+      "name": "Receta Maestra",
+      "description": "Un pergamino de receta maestra robado de un maestro artesano, contiene el conocimiento de artesanía más avanzado."
+    },
+    "master_thief_mark": {
+      "name": "Marca del Maestro Ladrón",
+      "description": "La marca definitiva de un maestro ladrón, requerida para acceder al Alijo del Maestro Ladrón."
+    },
+    "merchant_ledger": {
+      "name": "Libro Mayor del Comerciante",
+      "description": "Un libro mayor robado que revela la ubicación del almacén secreto de un comerciante, requerido para acceder a él."
+    },
+    "metal_scrap": {
+      "name": "Chatarra Metálica",
+      "description": "Chatarra metálica robada de un herrero, puede ser refundida en materiales útiles."
+    },
+    "potion_recipe": {
+      "name": "Receta de Poción",
+      "description": "Un pergamino de receta robado de un alquimista, enseña nuevas fórmulas de poción."
+    },
+    "primordial_essence": {
+      "name": "Esencia Primordial",
+      "description": "Esencia primordial robada de un guardián antiguo, contiene poder desde el comienzo de los tiempos."
+    },
+    "rare_component": {
+      "name": "Componente Raro",
+      "description": "Un componente raro adquirido del Mercado de las Sombras, útil para ingeniería avanzada."
+    },
+    "rare_crafting_material": {
+      "name": "Material de Artesanía Raro",
+      "description": "Material raro robado de un maestro artesano, esencial para proyectos de artesanía avanzada."
+    },
+    "rare_material": {
+      "name": "Material Raro",
+      "description": "Un material de artesanía raro robado del almacén de un comerciante, útil para artesanía avanzada."
+    },
+    "reforging_material": {
+      "name": "Material de Refundición",
+      "description": "Material especial robado de un herrero, usado para refundir armas y armaduras."
+    },
+    "shadow_pass": {
+      "name": "Pase de las Sombras",
+      "description": "Un pase que otorga acceso al Mercado de las Sombras subterráneo, requerido para entrar."
+    },
+    "skill_book": {
+      "name": "Libro de Habilidades",
+      "description": "Un libro de habilidades robado del Gremio de Ladrones, proporciona conocimiento sobre técnicas de robo."
+    },
+    "thief_tool": {
+      "name": "Herramienta de Ladrón",
+      "description": "Una herramienta especializada usada por ladrones, adquirida del Gremio de Ladrones."
+    },
+    "thieves_guild_token": {
+      "name": "Ficha del Gremio de Ladrones",
+      "description": "Una ficha que prueba la membresía en el Gremio de Ladrones, requerida para acceder a la Bóveda del Gremio de Ladrones."
+    },
+    "ultimate_component": {
+      "name": "Componente Definitivo",
+      "description": "El componente de artesanía definitivo, robado de fuentes legendarias."
+    },
+    "valuable_trinket": {
+      "name": "Trinkete Valioso",
+      "description": "Un trinkete valioso robado de un comerciante, puede venderse o usarse en artesanía."
     },
     "stone": {
       "name": "Stone",
@@ -2079,6 +2267,142 @@
     "yew_log": {
       "name": "Yew Log",
       "description": "A rare log from a yew tree, used for advanced crafting."
+    },
+    "ancient_bone": {
+      "name": "Hueso Antiguo",
+      "description": "Un hueso de una criatura antigua."
+    },
+    "ancient_pelt": {
+      "name": "Piel Antigua",
+      "description": "Una piel antigua de una criatura antigua."
+    },
+    "bear_pelt": {
+      "name": "Piel de Oso",
+      "description": "Una piel gruesa de un oso atrapado."
+    },
+    "beast_essence": {
+      "name": "Esencia de Bestia",
+      "description": "La esencia concentrada de una bestia atrapada."
+    },
+    "boar_tusk": {
+      "name": "Colmillo de Jabalí",
+      "description": "Un colmillo de un jabalí atrapado."
+    },
+    "celestial_pelt": {
+      "name": "Piel Celestial",
+      "description": "Una piel infundida con energía celestial."
+    },
+    "deer_antler": {
+      "name": "Astas de Ciervo",
+      "description": "Astas de un ciervo atrapado."
+    },
+    "deer_hide": {
+      "name": "Piel de Ciervo",
+      "description": "Una piel de un ciervo atrapado."
+    },
+    "dire_pelt": {
+      "name": "Piel Dire",
+      "description": "Una piel temible de una bestia dire."
+    },
+    "divine_bone": {
+      "name": "Hueso Divino",
+      "description": "Un hueso infundido con poder divino."
+    },
+    "draconic_essence": {
+      "name": "Esencia Dracónica",
+      "description": "La esencia poderosa extraída de los restos de un dragón."
+    },
+    "ethereal_essence": {
+      "name": "Esencia Etérea",
+      "description": "Una esencia mística de seres etéreos."
+    },
+    "feather": {
+      "name": "Pluma",
+      "description": "Una pluma de un pájaro atrapado."
+    },
+    "fox_pelt": {
+      "name": "Piel de Zorro",
+      "description": "Una fina piel de un zorro atrapado."
+    },
+    "godslayer_trapping_medallion": {
+      "name": "Medallón de Trampas Matador de Dioses",
+      "description": "Un medallón legendario que otorga acceso a los terrenos de trampas matador de dioses."
+    },
+    "legendary_bone": {
+      "name": "Hueso Legendario",
+      "description": "Un hueso de una criatura legendaria."
+    },
+    "legendary_essence": {
+      "name": "Esencia Legendaria",
+      "description": "La esencia concentrada de un ser legendario."
+    },
+    "legendary_pelt": {
+      "name": "Piel Legendaria",
+      "description": "Una piel legendaria de calidad excepcional."
+    },
+    "master_trapper_badge": {
+      "name": "Insignia del Maestro Trampero",
+      "description": "La insignia definitiva que reconoce el dominio de la habilidad de trampas."
+    },
+    "monster_trap_upgrade": {
+      "name": "Mejora de Trampa de Monstruo",
+      "description": "Un esquema para mejorar las trampas para atrapar monstruos de manera más efectiva."
+    },
+    "mythical_bone": {
+      "name": "Hueso Mítico",
+      "description": "Un hueso de una criatura mítica."
+    },
+    "mythical_pelt": {
+      "name": "Piel Mítica",
+      "description": "Una piel de una criatura mítica."
+    },
+    "phantom_pelt": {
+      "name": "Piel Fantasma",
+      "description": "Una piel etérea de una criatura fantasma."
+    },
+    "premium_meat": {
+      "name": "Carne Premium",
+      "description": "Carne de alta calidad de una criatura atrapada."
+    },
+    "primordial_bone": {
+      "name": "Hueso Primordial",
+      "description": "Un hueso de una criatura primordial."
+    },
+    "primordial_pelt": {
+      "name": "Piel Primordial",
+      "description": "Una piel de una bestia primordial."
+    },
+    "rabbit_pelt": {
+      "name": "Piel de Conejo",
+      "description": "Una piel suave de un conejo atrapado."
+    },
+    "rare_essence": {
+      "name": "Esencia Rara",
+      "description": "Una esencia rara de criaturas atrapadas."
+    },
+    "small_bone": {
+      "name": "Hueso Pequeño",
+      "description": "Un hueso pequeño de una criatura atrapada."
+    },
+    "spirit_bone": {
+      "name": "Hueso Espiritual",
+      "description": "Un hueso infundido con energía espiritual."
+    },
+    "trophy_hunter_license": {
+      "name": "Licencia de Cazador de Trofeos",
+      "description": "Una licencia que permite el acceso a terrenos de caza de trofeos de élite."
+    },
+    "trapped_animal_premium": {
+      "name": "Animal Atrapado Premium",
+      "description": "Un animal excepcionalmente fino atrapado en una trampa."
+    },
+    "trapped_bird": {
+      "name": "Pájaro Atrapado",
+      "description": "Un pájaro atrapado en una trampa."
+    },
+    "trapped_rodent": {
+      "name": "Roedor Atrapado",
+      "description": "Un pequeño roedor atrapado en una trampa."
     }
   },
   "monster": {
@@ -3470,6 +3794,34 @@
     "woodcutting_upgrade_V": {
       "name": "Woodcutting Upgrade V",
       "description": "Permanently increases woodcutting XP gain by 30%, speed by 20%, and yield by 20%"
+    },
+    "trapping_advanced_schematics_I": {
+      "name": "Esquemas de Trampa Avanzados I",
+      "description": "Desbloquea diseños de trampa avanzados. Requiere materiales: animal_atrapado_calidad x5, piel_animal x10"
+    },
+    "trapping_advanced_schematics_II": {
+      "name": "Esquemas de Trampa Avanzados II",
+      "description": "Mejora aún más los diseños de trampa. Requiere materiales: monstruo_atrapado x3, piel_monstruo x8"
+    },
+    "trapping_advanced_schematics_III": {
+      "name": "Esquemas de Trampa Avanzados III",
+      "description": "Diseños de trampa de nivel maestro. Requiere materiales: animal_atrapado_premium x5, piel_rara x5"
+    },
+    "trapping_advanced_schematics_IV": {
+      "name": "Esquemas de Trampa Avanzados IV",
+      "description": "Diseños de trampa legendarios. Requiere materiales: piel_mítica x3, hueso_legendario x2"
+    },
+    "trapping_beast_lure_recipe": {
+      "name": "Receta de Cebo de Bestia",
+      "description": "Desbloquea la receta para crear cebos consumibles. Requiere materiales: carne_animal x10, hierba_poco_común x5"
+    },
+    "trapping_legendary_blueprint": {
+      "name": "Plano de Trampa Legendario",
+      "description": "Desbloquea nodos de trampa secretos. Requiere materiales: piel_mítica x5, hueso_legendario x3, fragmento_divino x1"
+    },
+    "trapping_master_manual": {
+      "name": "Manual del Maestro Trampero",
+      "description": "La guía definitiva de trampas. Requiere materiales: monstruo_atrapado x10, piel_monstruo x20"
     }
   },
   "mercenary": {

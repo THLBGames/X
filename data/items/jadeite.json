@@ -1,0 +1,12 @@
+{
+  "id": "jadeite",
+  "name": "Jadeite",
+  "description": "Precious jadeite stone with mystical properties.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 80,
+  "nameKey": "item.jadeite.name",
+  "descriptionKey": "item.jadeite.description"
+}

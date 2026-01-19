@@ -1,0 +1,12 @@
+{
+  "id": "stolen_essence_minor",
+  "name": "Stolen Minor Essence",
+  "description": "A minor essence stolen from an apprentice, useful for enchanting and alchemy.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10,
+  "nameKey": "item.stolen_essence_minor.name",
+  "descriptionKey": "item.stolen_essence_minor.description"
+}

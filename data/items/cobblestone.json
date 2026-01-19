@@ -1,0 +1,12 @@
+{
+  "id": "cobblestone",
+  "name": "Cobblestone",
+  "description": "Rounded stones used for paving and construction.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 4,
+  "nameKey": "item.cobblestone.name",
+  "descriptionKey": "item.cobblestone.description"
+}

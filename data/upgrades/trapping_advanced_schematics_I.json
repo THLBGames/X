@@ -1,0 +1,30 @@
+{
+  "id": "trapping_advanced_schematics_I",
+  "name": "Advanced Trap Schematics I",
+  "description": "Unlocks advanced trap designs. Requires materials: trapped_animal_quality x5, animal_pelt x10",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Advanced_I",
+  "price": 2500,
+  "materialRequirements": [
+    {
+      "itemId": "trapped_animal_quality",
+      "quantity": 5
+    },
+    {
+      "itemId": "animal_pelt",
+      "quantity": 10
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.05,
+    "yieldMultiplier": 1.1,
+    "experienceMultiplier": 1.1
+  },
+  "requirements": {
+    "skillLevel": 25
+  },
+  "nameKey": "upgrade.trapping_advanced_schematics_I.name",
+  "descriptionKey": "upgrade.trapping_advanced_schematics_I.description"
+}

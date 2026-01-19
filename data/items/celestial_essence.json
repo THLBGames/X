@@ -1,0 +1,12 @@
+{
+  "id": "celestial_essence",
+  "name": "Celestial Essence",
+  "description": "Celestial essence stolen from a divine agent, contains pure divine energy.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 750,
+  "nameKey": "item.celestial_essence.name",
+  "descriptionKey": "item.celestial_essence.description"
+}

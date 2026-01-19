@@ -1,0 +1,12 @@
+{
+  "id": "sandstone",
+  "name": "Sandstone",
+  "description": "Soft sandstone used in early construction.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.sandstone.name",
+  "descriptionKey": "item.sandstone.description"
+}

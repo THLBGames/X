@@ -1,0 +1,12 @@
+{
+  "id": "ultimate_hunting_mastery_token",
+  "name": "Ultimate Hunting Mastery Token",
+  "description": "The ultimate symbol of hunting mastery. Unlocks access to the Ultimate Hunter's Sanctuary.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 15000,
+  "nameKey": "item.ultimate_hunting_mastery_token.name",
+  "descriptionKey": "item.ultimate_hunting_mastery_token.description"
+}

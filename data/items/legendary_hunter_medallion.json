@@ -1,0 +1,12 @@
+{
+  "id": "legendary_hunter_medallion",
+  "name": "Legendary Hunter Medallion",
+  "description": "An ancient medallion bestowed upon legendary hunters. Unlocks access to the Legendary Hunter Grounds.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 5000,
+  "nameKey": "item.legendary_hunter_medallion.name",
+  "descriptionKey": "item.legendary_hunter_medallion.description"
+}

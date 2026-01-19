@@ -1,7 +1,7 @@
 {
   "id": "treasure_hunting_upgrade_IV",
   "name": "Treasure hunting Upgrade IV",
-  "description": "Permanently increases treasure hunting XP gain by 25%, speed by 15%, and yield by 15%",
+  "description": "Permanently increases treasure hunting XP gain by 25%, speed by 15%, yield by 15%, and rare material chance by 8%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "treasure_hunting",
@@ -11,7 +11,8 @@
     "experienceMultiplier": 1.25,
     "speedMultiplier": 0.85,
     "yieldMultiplier": 1.15,
-    "successRateBonus": 0.15
+    "successRateBonus": 0.15,
+    "rareMaterialChance": 0.08
   },
   "requirements": {
     "previousTierId": "treasure_hunting_upgrade_III"

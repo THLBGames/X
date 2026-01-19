@@ -1,0 +1,12 @@
+{
+  "id": "rare_material",
+  "name": "Rare Material",
+  "description": "A rare crafting material stolen from a merchant's warehouse, useful for advanced crafting.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150,
+  "nameKey": "item.rare_material.name",
+  "descriptionKey": "item.rare_material.description"
+}

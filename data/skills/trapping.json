@@ -29,6 +29,142 @@
       ]
     },
     {
+      "level": 5,
+      "nodeId": "rabbit_snare",
+      "name": "Rabbit Snare",
+      "successRate": 0.88,
+      "experienceGain": 18,
+      "timeRequired": 5500,
+      "resources": [
+        {
+          "itemId": "trapped_animal",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rabbit_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "small_bone",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "bird_trap",
+      "name": "Bird Trap",
+      "successRate": 0.87,
+      "experienceGain": 22,
+      "timeRequired": 5800,
+      "resources": [
+        {
+          "itemId": "trapped_bird",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "feather",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "small_bone",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "rodent_trap",
+      "name": "Rodent Trap",
+      "successRate": 0.86,
+      "experienceGain": 28,
+      "timeRequired": 5900,
+      "resources": [
+        {
+          "itemId": "trapped_rodent",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "animal_pelt",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "small_bone",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "fox_trap",
+      "name": "Fox Trap",
+      "successRate": 0.84,
+      "experienceGain": 35,
+      "timeRequired": 6200,
+      "resources": [
+        {
+          "itemId": "trapped_animal_quality",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "fox_pelt",
+          "chance": 0.65,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_meat",
+          "chance": 0.55,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "deer_snare",
+      "name": "Deer Snare",
+      "successRate": 0.83,
+      "experienceGain": 45,
+      "timeRequired": 6400,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 20
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "trapped_animal_quality",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "deer_hide",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "deer_antler",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 30,
       "nodeId": "medium_trap",
       "name": "Medium Animal Trap",
@@ -51,6 +187,221 @@
           "itemId": "animal_meat",
           "chance": 0.6,
           "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "bear_trap",
+      "name": "Bear Trap",
+      "successRate": 0.78,
+      "experienceGain": 75,
+      "timeRequired": 7200,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 30
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "trapped_animal_quality",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "bear_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_meat",
+          "chance": 0.65,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "boar_snare",
+      "name": "Boar Snare",
+      "successRate": 0.77,
+      "experienceGain": 90,
+      "timeRequired": 7400,
+      "resources": [
+        {
+          "itemId": "trapped_animal_quality",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "boar_tusk",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "raw_meat_quality",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "enhanced_monster_trap",
+      "name": "Enhanced Monster Trap",
+      "successRate": 0.75,
+      "experienceGain": 110,
+      "timeRequired": 7600,
+      "unlockRequirements": [
+        {
+          "itemId": "monster_trap_upgrade",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "trapped_monster",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "monster_pelt",
+          "chance": 0.8,
+          "quantity": 1
+        },
+        {
+          "itemId": "monster_bone",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "beast_essence",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "dire_beast_trap",
+      "name": "Dire Beast Trap",
+      "successRate": 0.76,
+      "experienceGain": 120,
+      "timeRequired": 7500,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 40
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "trapped_monster",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "dire_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "monster_bone",
+          "chance": 0.65,
+          "quantity": 1
+        },
+        {
+          "itemId": "beast_essence",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "elite_game_trap",
+      "name": "Elite Game Trap",
+      "successRate": 0.74,
+      "experienceGain": 150,
+      "timeRequired": 7800,
+      "resources": [
+        {
+          "itemId": "trapped_animal_premium",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "rare_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "premium_meat",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "monster_pit_trap",
+      "name": "Monster Pit Trap",
+      "successRate": 0.73,
+      "experienceGain": 180,
+      "timeRequired": 8000,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 50
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "trapped_monster",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "monster_pelt",
+          "chance": 0.85,
+          "quantity": 1
+        },
+        {
+          "itemId": "monster_bone",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "monster_essence",
+          "chance": 0.4,
+          "quantity": 1
         }
       ]
     },
@@ -59,7 +410,7 @@
       "nodeId": "large_trap",
       "name": "Large Monster Trap",
       "successRate": 0.72,
-      "experienceGain": 160,
+      "experienceGain": 200,
       "timeRequired": 8000,
       "resources": [
         {
@@ -84,28 +435,423 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 60,
+      "nodeId": "trophy_hunter_trap",
+      "name": "Trophy Hunter's Trap",
+      "successRate": 0.74,
+      "experienceGain": 240,
+      "timeRequired": 8200,
+      "unlockRequirements": [
+        {
+          "itemId": "trophy_hunter_license",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "trapped_animal_premium",
+          "chance": 0.8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "trapped_monster",
+          "chance": 0.8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "rare_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "premium_meat",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "monster_essence",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "draconic_snare",
+      "name": "Draconic Snare",
+      "successRate": 0.71,
+      "experienceGain": 250,
+      "timeRequired": 8500,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 60
+        },
+        {
+          "skillId": "hunting",
+          "level": 60
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "dragon_scale",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "dragon_bone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "draconic_essence",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "ancient_beast_trap",
+      "name": "Ancient Beast Trap",
+      "successRate": 0.7,
+      "experienceGain": 280,
+      "timeRequired": 8800,
+      "resources": [
+        {
+          "itemId": "ancient_pelt",
+          "chance": 0.65,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_bone",
+          "chance": 0.55,
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "mythical_capture_trap",
+      "name": "Mythical Capture Trap",
+      "successRate": 0.69,
+      "experienceGain": 320,
+      "timeRequired": 9000,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 70
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "mythical_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "mythical_bone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_essence",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "ethereal_snare",
+      "name": "Ethereal Snare",
+      "successRate": 0.68,
+      "experienceGain": 380,
+      "timeRequired": 9200,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 75
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ethereal_essence",
+          "chance": 0.55,
+          "quantity": 1
+        },
+        {
+          "itemId": "phantom_pelt",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "spirit_bone",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "celestial_trap",
+      "name": "Celestial Trap",
+      "successRate": 0.67,
+      "experienceGain": 420,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "celestial_pelt",
+          "chance": 0.55,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_essence",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_bone",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "godslayer_trap",
+      "name": "Godslayer Trap",
+      "successRate": 0.72,
+      "experienceGain": 550,
+      "timeRequired": 9800,
+      "unlockRequirements": [
+        {
+          "itemId": "godslayer_trapping_medallion",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "celestial_pelt",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "celestial_essence",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_bone",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "primordial_beast_trap",
+      "name": "Primordial Beast Trap",
+      "successRate": 0.66,
+      "experienceGain": 480,
+      "timeRequired": 9800,
+      "resources": [
+        {
+          "itemId": "primordial_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_bone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_essence",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "legendary_capture",
+      "name": "Legendary Capture",
+      "successRate": 0.65,
+      "experienceGain": 520,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "legendary_pelt",
+          "chance": 0.55,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_bone",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_essence",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_trapper_ultimate_trap",
+      "name": "Master Trapper's Ultimate Trap",
+      "successRate": 0.65,
+      "experienceGain": 550,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "master_trapper_badge",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "primordial_pelt",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "legendary_pelt",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_bone",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "legendary_bone",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_essence",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 2,
+          "luck": 1
+        }
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 5
+        },
+        "itemFindRate": 0.02
+      }
+    },
+    {
       "level": 35,
       "bonus": {
-        "goldGeneration": 0.08,
-        "luck": 2
+        "statBonus": {
+          "dexterity": 8,
+          "luck": 3
+        },
+        "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 12,
+          "luck": 5
+        },
+        "goldGeneration": 0.1,
+        "itemFindRate": 0.05
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 15,
+          "luck": 8
+        },
+        "combatStatBonus": {
+          "criticalChance": 0.03
+        }
       }
     },
     {
       "level": 70,
       "bonus": {
-        "goldGeneration": 0.15,
-        "luck": 4
+        "statBonus": {
+          "dexterity": 18,
+          "luck": 10
+        },
+        "goldGeneration": 0.15
+      }
+    },
+    {
+      "level": 85,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 22,
+          "luck": 12
+        },
+        "combatStatBonus": {
+          "criticalChance": 0.05
+        },
+        "itemFindRate": 0.15
       }
     },
     {
       "level": 99,
       "bonus": {
+        "statBonus": {
+          "dexterity": 25,
+          "luck": 15
+        },
         "goldGeneration": 0.25,
-        "luck": 6
+        "itemFindRate": 0.2,
+        "combatStatBonus": {
+          "criticalChance": 0.06
+        }
       }
     }
   ],

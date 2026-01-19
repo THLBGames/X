@@ -1,0 +1,12 @@
+{
+  "id": "stolen_gem_common",
+  "name": "Stolen Common Gem",
+  "description": "A common gem acquired through thieving, useful for jewelcrafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.stolen_gem_common.name",
+  "descriptionKey": "item.stolen_gem_common.description"
+}

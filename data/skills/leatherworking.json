@@ -81,6 +81,68 @@
       },
       "experienceGain": 240,
       "timeRequired": 9500
+    },
+    {
+      "recipeId": "reinforced_trap_leather",
+      "name": "Reinforced Trap Leather",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_pelt",
+          "quantity": 8
+        },
+        {
+          "itemId": "thread",
+          "quantity": 3
+        },
+        {
+          "itemId": "small_bone",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "reinforced_trap_leather",
+        "quantity": 1
+      },
+      "experienceGain": 80,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "dire_beast_armor",
+      "name": "Dire Beast Armor",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "dire_pelt",
+          "quantity": 6
+        },
+        {
+          "itemId": "monster_bone",
+          "quantity": 4
+        },
+        {
+          "itemId": "enchanted_thread",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "dire_beast_armor",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 9000
     }
   ],
   "passiveBonuses": [

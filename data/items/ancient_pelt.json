@@ -1,0 +1,12 @@
+{
+  "id": "ancient_pelt",
+  "name": "Ancient Pelt",
+  "description": "An ancient pelt from a creature of old.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 200,
+  "nameKey": "item.ancient_pelt.name",
+  "descriptionKey": "item.ancient_pelt.description"
+}

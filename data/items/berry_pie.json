@@ -1,0 +1,16 @@
+{
+  "id": "berry_pie",
+  "name": "Berry Pie",
+  "description": "A delicious pie made from fresh berries.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 20,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 40
+  },
+  "nameKey": "item.berry_pie.name",
+  "descriptionKey": "item.berry_pie.description"
+}

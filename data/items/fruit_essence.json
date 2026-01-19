@@ -1,0 +1,12 @@
+{
+  "id": "fruit_essence",
+  "name": "Fruit Essence",
+  "description": "Concentrated essence extracted from enchanted fruits.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 45,
+  "nameKey": "item.fruit_essence.name",
+  "descriptionKey": "item.fruit_essence.description"
+}

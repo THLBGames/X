@@ -1,0 +1,12 @@
+{
+  "id": "mythical_pelt",
+  "name": "Mythical Pelt",
+  "description": "A pelt from a mythical creature.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 400,
+  "nameKey": "item.mythical_pelt.name",
+  "descriptionKey": "item.mythical_pelt.description"
+}

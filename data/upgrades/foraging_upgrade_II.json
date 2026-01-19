@@ -11,7 +11,9 @@
     "experienceMultiplier": 1.15,
     "speedMultiplier": 0.92,
     "yieldMultiplier": 1.08,
-    "successRateBonus": 0.08
+    "successRateBonus": 0.08,
+    "unlocksNodes": ["common_nut_tree"],
+    "unlocksRecipes": ["berry_pie"]
   },
   "requirements": {
     "previousTierId": "foraging_upgrade_I"

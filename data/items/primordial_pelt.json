@@ -1,0 +1,12 @@
+{
+  "id": "primordial_pelt",
+  "name": "Primordial Pelt",
+  "description": "A pelt from a primordial beast.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 700,
+  "nameKey": "item.primordial_pelt.name",
+  "descriptionKey": "item.primordial_pelt.description"
+}

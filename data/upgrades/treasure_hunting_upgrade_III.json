@@ -1,7 +1,7 @@
 {
   "id": "treasure_hunting_upgrade_III",
   "name": "Treasure hunting Upgrade III",
-  "description": "Permanently increases treasure hunting XP gain by 20%, speed by 12%, and yield by 12%",
+  "description": "Permanently increases treasure hunting XP gain by 20%, speed by 12%, yield by 12%, and rare material chance by 5%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "treasure_hunting",
@@ -11,7 +11,8 @@
     "experienceMultiplier": 1.2,
     "speedMultiplier": 0.88,
     "yieldMultiplier": 1.12,
-    "successRateBonus": 0.12
+    "successRateBonus": 0.12,
+    "rareMaterialChance": 0.05
   },
   "requirements": {
     "previousTierId": "treasure_hunting_upgrade_II"

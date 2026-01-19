@@ -1,0 +1,16 @@
+{
+  "id": "ancient_essence_potion",
+  "name": "Ancient Essence Potion",
+  "description": "A powerful potion infused with ancient mushroom essence.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 150,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 250
+  },
+  "nameKey": "item.ancient_essence_potion.name",
+  "descriptionKey": "item.ancient_essence_potion.description"
+}

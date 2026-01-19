@@ -128,6 +128,18 @@
       "name": "Ancient Artifact",
       "description": "A powerful artifact from a lost civilization."
     },
+    "ancient_fragment": {
+      "name": "Ancient Fragment",
+      "description": "A fragment of ancient stone imbued with forgotten power."
+    },
+    "ancient_stone_tablet": {
+      "name": "Ancient Stone Tablet",
+      "description": "A mysterious tablet covered in ancient runes, required to access the Ancient Stone Circle."
+    },
+    "basalt": {
+      "name": "Basalt",
+      "description": "Dense volcanic basalt stone, excellent for durability."
+    },
     "ancient_coin": {
       "name": "Ancient Coin",
       "description": "A coin from a long-lost civilization."
@@ -188,9 +200,29 @@
       "name": "Animal Meat",
       "description": "Meat from a trapped animal."
     },
+    "beast_essence": {
+      "name": "Beast Essence",
+      "description": "The concentrated essence of a trapped beast."
+    },
+    "bear_pelt": {
+      "name": "Bear Pelt",
+      "description": "A thick pelt from a trapped bear."
+    },
+    "boar_tusk": {
+      "name": "Boar Tusk",
+      "description": "A tusk from a trapped boar."
+    },
     "animal_pelt": {
       "name": "Animal Pelt",
       "description": "A pelt from a trapped animal."
+    },
+    "ancient_bone": {
+      "name": "Ancient Bone",
+      "description": "A bone from an ancient creature."
+    },
+    "ancient_pelt": {
+      "name": "Ancient Pelt",
+      "description": "An ancient pelt from a creature of old."
     },
     "apple": {
       "name": "Apple",
@@ -352,6 +384,10 @@
       "name": "Bread Roll",
       "description": "A small bread roll that restores health."
     },
+    "cobblestone": {
+      "name": "Cobblestone",
+      "description": "Rounded stones used for paving and construction."
+    },
     "bronze_axe": {
       "name": "Bronze Axe",
       "description": "A basic bronze axe."
@@ -420,9 +456,25 @@
       "name": "Common Trinket",
       "description": "A simple decorative trinket."
     },
+    "crafting_component": {
+      "name": "Crafting Component",
+      "description": "A crafting component stolen from an apprentice, useful for various crafting skills."
+    },
+    "crafting_recipe": {
+      "name": "Crafting Recipe",
+      "description": "A recipe scroll stolen from a craftsman or merchant, teaches new crafting formulas."
+    },
     "compost": {
       "name": "Compost",
       "description": "Organic compost for fertilizing crops."
+    },
+    "celestial_fragment": {
+      "name": "Celestial Fragment",
+      "description": "A fragment of pure celestial energy, required to access the Celestial Quarry."
+    },
+    "celestial_stone": {
+      "name": "Celestial Stone",
+      "description": "Stone blessed by the celestial realms."
     },
     "copper_axe": {
       "name": "Copper Axe",
@@ -451,6 +503,10 @@
     "crystal_shard": {
       "name": "Crystal Shard",
       "description": "A shard of magical crystal."
+    },
+    "crystalized_stone": {
+      "name": "Crystalized Stone",
+      "description": "Stone that has crystallized with magical energy."
     },
     "cursed_water": {
       "name": "Cursed Water",
@@ -600,6 +656,10 @@
       "name": "Elemental Core",
       "description": "The core of an elemental being."
     },
+    "engineering_component": {
+      "name": "Engineering Component",
+      "description": "A component stolen from a craftsman, useful for engineering projects."
+    },
     "elixir_power": {
       "name": "Elixir of Power",
       "description": "A powerful elixir that enhances combat abilities."
@@ -615,6 +675,14 @@
     "enchanted_cloth": {
       "name": "Enchanted Cloth",
       "description": "Cloth infused with magical properties."
+    },
+    "enchanted_material": {
+      "name": "Enchanted Material",
+      "description": "Material stolen from an enchanter, already imbued with magical properties."
+    },
+    "enchanting_recipe": {
+      "name": "Enchanting Recipe",
+      "description": "A recipe scroll stolen from an archmage, teaches advanced enchanting techniques."
     },
     "enchanted_gloves": {
       "name": "Enchanted Gloves",
@@ -831,6 +899,10 @@
     "granite": {
       "name": "Granite",
       "description": "Durable granite stone for construction."
+    },
+    "jadeite": {
+      "name": "Jadeite",
+      "description": "Precious jadeite stone with mystical properties."
     },
     "greater_essence": {
       "name": "Greater Essence",
@@ -1067,6 +1139,10 @@
     "limestone": {
       "name": "Limestone",
       "description": "Basic limestone from quarries."
+    },
+    "null_fragment": {
+      "name": "Null Fragment",
+      "description": "A fragment of pure nothingness from the void."
     },
     "luck_potion": {
       "name": "Luck Potion",
@@ -1308,6 +1384,10 @@
       "name": "Obsidian",
       "description": "Dark volcanic glass with magical properties."
     },
+    "onyx": {
+      "name": "Onyx",
+      "description": "Deep black onyx stone, prized for its elegance."
+    },
     "offline_time_upgrade_24h": {
       "name": "Offline Time Upgrade (+24 Hours)",
       "description": "Permanently increases your maximum offline progress time by 24 hours."
@@ -1363,6 +1443,10 @@
     "polished_stone": {
       "name": "Polished Stone",
       "description": "Smooth polished stone for decorative work."
+    },
+    "primal_stone": {
+      "name": "Primal Stone",
+      "description": "Ancient stone from the dawn of creation."
     },
     "potion_meal": {
       "name": "Potion Meal",
@@ -1716,6 +1800,18 @@
       "name": "Rough Stone",
       "description": "Unprocessed stone from quarrying."
     },
+    "sandstone": {
+      "name": "Sandstone",
+      "description": "Soft sandstone used in early construction."
+    },
+    "slate": {
+      "name": "Slate",
+      "description": "Flat slate stone used for roofing and flooring."
+    },
+    "star_fragment": {
+      "name": "Star Fragment",
+      "description": "A fragment of a fallen star, containing celestial energy."
+    },
     "royal_seal": {
       "name": "Royal Seal",
       "description": "An official seal from royalty."
@@ -1820,6 +1916,14 @@
       "name": "Silver Ore",
       "description": "A precious metal ore used for crafting quality equipment and jewelry."
     },
+    "star_fragment": {
+      "name": "Star Fragment",
+      "description": "A fragment of a fallen star, containing celestial energy."
+    },
+    "simple_component": {
+      "name": "Simple Component",
+      "description": "A simple crafting component acquired through thieving, useful for engineering."
+    },
     "simple_tool": {
       "name": "Simple Tool",
       "description": "A basic tool for engineering projects."
@@ -1843,6 +1947,174 @@
     "spirit_essence": {
       "name": "Spirit Essence",
       "description": "Essence from spiritual beings."
+    },
+    "spring": {
+      "name": "Spring",
+      "description": "A mechanical spring for devices."
+    },
+    "stolen_artifact": {
+      "name": "Stolen Artifact",
+      "description": "An artifact stolen from legendary sources, extremely valuable and powerful."
+    },
+    "stolen_essence_minor": {
+      "name": "Stolen Minor Essence",
+      "description": "A minor essence stolen from an apprentice, useful for enchanting and alchemy."
+    },
+    "stolen_essence_moderate": {
+      "name": "Stolen Moderate Essence",
+      "description": "A moderate essence stolen from an enchanter, useful for advanced enchanting."
+    },
+    "stolen_essence_rare": {
+      "name": "Stolen Rare Essence",
+      "description": "A rare essence stolen from an archmage, powerful for advanced enchanting and runecrafting."
+    },
+    "stolen_gem_common": {
+      "name": "Stolen Common Gem",
+      "description": "A common gem acquired through thieving, useful for jewelcrafting."
+    },
+    "stolen_gem_uncommon": {
+      "name": "Stolen Uncommon Gem",
+      "description": "An uncommon gem stolen from a noble or merchant, useful for crafting jewelry."
+    },
+    "stolen_herb_common": {
+      "name": "Stolen Common Herb",
+      "description": "A common herb acquired through thieving, useful for alchemy."
+    },
+    "stolen_herb_rare": {
+      "name": "Stolen Rare Herb",
+      "description": "A rare herb stolen from an alchemist, highly valued for potion making."
+    },
+    "stolen_ore": {
+      "name": "Stolen Ore",
+      "description": "Ore stolen from a blacksmith's stock, useful for blacksmithing and engineering."
+    },
+    "stolen_scroll": {
+      "name": "Stolen Scroll",
+      "description": "A scroll stolen from an enchanter or scholar, useful for enchanting and runecrafting."
+    },
+    "stolen_scroll_ancient": {
+      "name": "Stolen Ancient Scroll",
+      "description": "An ancient scroll stolen from an ancient keeper, contains forgotten knowledge."
+    },
+    "stolen_scroll_basic": {
+      "name": "Stolen Basic Scroll",
+      "description": "A basic scroll stolen from a traveler, contains simple knowledge."
+    },
+    "stolen_scroll_rare": {
+      "name": "Stolen Rare Scroll",
+      "description": "A rare scroll stolen from an archmage, contains powerful magical knowledge."
+    },
+    "advanced_component": {
+      "name": "Advanced Component",
+      "description": "An advanced engineering component stolen from a master craftsman."
+    },
+    "ancient_key_thieving": {
+      "name": "Ancient Key",
+      "description": "An ancient key discovered through thieving, required to access the Ancient Vault."
+    },
+    "ancient_material": {
+      "name": "Ancient Material",
+      "description": "Material stolen from ancient sources, preserved through the ages."
+    },
+    "celestial_essence": {
+      "name": "Celestial Essence",
+      "description": "Celestial essence stolen from a divine agent, contains pure divine energy."
+    },
+    "divine_material": {
+      "name": "Divine Material",
+      "description": "Divine material stolen from a divine agent, contains celestial power."
+    },
+    "exotic_goods": {
+      "name": "Exotic Goods",
+      "description": "Exotic goods stolen from a merchant's secret warehouse, valuable and rare."
+    },
+    "forbidden_material": {
+      "name": "Forbidden Material",
+      "description": "Forbidden material from the Shadow Market, used in dark crafting recipes."
+    },
+    "illegal_goods": {
+      "name": "Illegal Goods",
+      "description": "Illegal goods acquired from the Shadow Market, valuable but dangerous to possess."
+    },
+    "jewelry_component": {
+      "name": "Jewelry Component",
+      "description": "A component stolen from a jewelcrafter, useful for crafting jewelry."
+    },
+    "legendary_material": {
+      "name": "Legendary Material",
+      "description": "Legendary material stolen from high-value targets, extremely valuable for crafting."
+    },
+    "lockpick_rare": {
+      "name": "Rare Lockpick",
+      "description": "A high-quality lockpick stolen from the Thieves' Guild, improves lockpicking success."
+    },
+    "magical_material": {
+      "name": "Magical Material",
+      "description": "Material stolen from an archmage, infused with powerful magical energy."
+    },
+    "master_recipe": {
+      "name": "Master Recipe",
+      "description": "A master recipe scroll stolen from a master craftsman, contains the most advanced crafting knowledge."
+    },
+    "master_thief_mark": {
+      "name": "Master Thief's Mark",
+      "description": "The ultimate mark of a master thief, required to access the Master Thief's Cache."
+    },
+    "merchant_ledger": {
+      "name": "Merchant's Ledger",
+      "description": "A stolen ledger revealing the location of a merchant's secret warehouse, required to access it."
+    },
+    "metal_scrap": {
+      "name": "Metal Scrap",
+      "description": "Metal scrap stolen from a blacksmith, can be reforged into useful materials."
+    },
+    "potion_recipe": {
+      "name": "Potion Recipe",
+      "description": "A recipe scroll stolen from an alchemist, teaches new potion formulas."
+    },
+    "primordial_essence": {
+      "name": "Primordial Essence",
+      "description": "Primordial essence stolen from an ancient keeper, contains power from the beginning of time."
+    },
+    "rare_component": {
+      "name": "Rare Component",
+      "description": "A rare component acquired from the Shadow Market, useful for advanced engineering."
+    },
+    "rare_crafting_material": {
+      "name": "Rare Crafting Material",
+      "description": "Rare material stolen from a master craftsman, essential for advanced crafting projects."
+    },
+    "rare_material": {
+      "name": "Rare Material",
+      "description": "A rare crafting material stolen from a merchant's warehouse, useful for advanced crafting."
+    },
+    "reforging_material": {
+      "name": "Reforging Material",
+      "description": "Special material stolen from a blacksmith, used for reforging weapons and armor."
+    },
+    "shadow_pass": {
+      "name": "Shadow Pass",
+      "description": "A pass granting access to the underground Shadow Market, required to enter."
+    },
+    "skill_book": {
+      "name": "Skill Book",
+      "description": "A skill book stolen from the Thieves' Guild, provides knowledge on thieving techniques."
+    },
+    "thief_tool": {
+      "name": "Thief Tool",
+      "description": "A specialized tool used by thieves, acquired from the Thieves' Guild."
+    },
+    "thieves_guild_token": {
+      "name": "Thieves' Guild Token",
+      "description": "A token proving membership in the Thieves' Guild, required to access the Thieves' Guild Vault."
+    },
+    "ultimate_component": {
+      "name": "Ultimate Component",
+      "description": "The ultimate crafting component, stolen from legendary sources."
+    },
+    "valuable_trinket": {
+      "name": "Valuable Trinket",
+      "description": "A valuable trinket stolen from a merchant, can be sold or used in crafting."
     },
     "spring": {
       "name": "Spring",
@@ -1968,17 +2240,69 @@
       "name": "Trapped Animal",
       "description": "An animal caught in a trap."
     },
+    "trapped_animal_premium": {
+      "name": "Premium Trapped Animal",
+      "description": "An exceptionally fine animal caught in a trap."
+    },
     "trapped_animal_quality": {
       "name": "Quality Trapped Animal",
       "description": "A higher quality animal caught in a trap."
+    },
+    "trapped_bird": {
+      "name": "Trapped Bird",
+      "description": "A bird caught in a trap."
     },
     "trapped_monster": {
       "name": "Trapped Monster",
       "description": "A dangerous monster caught in a trap."
     },
+    "trapped_rodent": {
+      "name": "Trapped Rodent",
+      "description": "A small rodent caught in a trap."
+    },
+    "trapping_advanced_schematics_I": {
+      "name": "Advanced Trap Schematics I",
+      "description": "Unlocks advanced trap designs. Requires materials: trapped_animal_quality x5, animal_pelt x10"
+    },
+    "trapping_advanced_schematics_II": {
+      "name": "Advanced Trap Schematics II",
+      "description": "Further enhances trap designs. Requires materials: trapped_monster x3, monster_pelt x8"
+    },
+    "trapping_advanced_schematics_III": {
+      "name": "Advanced Trap Schematics III",
+      "description": "Master-level trap designs. Requires materials: trapped_animal_premium x5, rare_pelt x5"
+    },
+    "trapping_advanced_schematics_IV": {
+      "name": "Advanced Trap Schematics IV",
+      "description": "Legendary trap designs. Requires materials: mythical_pelt x3, legendary_bone x2"
+    },
+    "trapping_beast_lure_recipe": {
+      "name": "Beast Lure Recipe",
+      "description": "Unlocks recipe to create consumable lures. Requires materials: animal_meat x10, uncommon_herb x5"
+    },
+    "trapping_legendary_blueprint": {
+      "name": "Legendary Trap Blueprint",
+      "description": "Unlocks secret trap nodes. Requires materials: mythical_pelt x5, legendary_bone x3, divine_fragment x1"
+    },
+    "trapping_master_manual": {
+      "name": "Master Trapper's Manual",
+      "description": "The ultimate guide to trapping. Requires materials: trapped_monster x10, monster_pelt x20"
+    },
     "treasure_chest": {
       "name": "Treasure Chest",
       "description": "A special chest that can be opened to reveal rare loot. Right-click to open."
+    },
+    "titan_hammer": {
+      "name": "Titan's Hammer",
+      "description": "A massive hammer once wielded by the ancient titans, required to access the Titan's Worksite."
+    },
+    "titanstone": {
+      "name": "Titanstone",
+      "description": "Massive stone blocks carved by the ancient titans."
+    },
+    "travertine": {
+      "name": "Travertine",
+      "description": "Beautiful travertine stone with unique patterns."
     },
     "tree_bark": {
       "name": "Tree Bark",
@@ -2035,6 +2359,14 @@
     "void_essence": {
       "name": "Void Essence",
       "description": "Essence drawn from the void, containing immense power."
+    },
+    "void_key": {
+      "name": "Void Key",
+      "description": "A key forged from the void itself, required to access the Void Stone Mine."
+    },
+    "void_stone": {
+      "name": "Void Stone",
+      "description": "Stone from the void between dimensions."
     },
     "void_shard": {
       "name": "Void Shard",

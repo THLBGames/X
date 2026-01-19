@@ -1,0 +1,12 @@
+{
+  "id": "divine_material",
+  "name": "Divine Material",
+  "description": "Divine material stolen from a divine agent, contains celestial power.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 900,
+  "nameKey": "item.divine_material.name",
+  "descriptionKey": "item.divine_material.description"
+}

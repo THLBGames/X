@@ -1,0 +1,12 @@
+{
+  "id": "medicinal_root",
+  "name": "Medicinal Root",
+  "description": "A root with healing properties. Essential for creating health potions.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8,
+  "nameKey": "item.medicinal_root.name",
+  "descriptionKey": "item.medicinal_root.description"
+}

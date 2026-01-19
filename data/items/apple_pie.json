@@ -1,0 +1,16 @@
+{
+  "id": "apple_pie",
+  "name": "Apple Pie",
+  "description": "A classic pie made with fresh apples.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 30,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 60
+  },
+  "nameKey": "item.apple_pie.name",
+  "descriptionKey": "item.apple_pie.description"
+}

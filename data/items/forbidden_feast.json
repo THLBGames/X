@@ -1,0 +1,16 @@
+{
+  "id": "forbidden_feast",
+  "name": "Forbidden Feast",
+  "description": "A feast of legendary power, made with forbidden fruit.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 500
+  },
+  "nameKey": "item.forbidden_feast.name",
+  "descriptionKey": "item.forbidden_feast.description"
+}

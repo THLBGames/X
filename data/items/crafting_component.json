@@ -1,0 +1,12 @@
+{
+  "id": "crafting_component",
+  "name": "Crafting Component",
+  "description": "A crafting component stolen from an apprentice, useful for various crafting skills.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 12,
+  "nameKey": "item.crafting_component.name",
+  "descriptionKey": "item.crafting_component.description"
+}

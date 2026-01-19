@@ -1,0 +1,12 @@
+{
+  "id": "jewelry_component",
+  "name": "Jewelry Component",
+  "description": "A component stolen from a jewelcrafter, useful for crafting jewelry.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 35,
+  "nameKey": "item.jewelry_component.name",
+  "descriptionKey": "item.jewelry_component.description"
+}

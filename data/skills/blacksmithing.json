@@ -8,6 +8,98 @@
   "experienceFormula": "baseExp * (level * 1.4)",
   "recipes": [
     {
+      "recipeId": "charcoal_smelting_fuel",
+      "name": "Charcoal Smelting Fuel",
+      "level": 3,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "oak_log",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel",
+        "quantity": 3
+      },
+      "experienceGain": 18,
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "quality_charcoal_fuel",
+      "name": "Quality Charcoal Fuel",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "maple_log",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel_quality",
+        "quantity": 4
+      },
+      "experienceGain": 55,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "premium_charcoal_fuel",
+      "name": "Premium Charcoal Fuel",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "yew_log",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel_premium",
+        "quantity": 5
+      },
+      "experienceGain": 100,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "magical_charcoal_fuel",
+      "name": "Magical Charcoal Fuel",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "magic_log",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel_magical",
+        "quantity": 6
+      },
+      "experienceGain": 180,
+      "timeRequired": 5500
+    },
+    {
       "recipeId": "copper_sword",
       "name": "Copper Sword",
       "level": 5,
@@ -27,6 +119,33 @@
       },
       "experienceGain": 30,
       "timeRequired": 8000
+    },
+    {
+      "recipeId": "copper_sword_charcoal",
+      "name": "Copper Sword (Charcoal)",
+      "level": 5,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "charcoal_fuel",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "copper_sword",
+        "quantity": 1
+      },
+      "experienceGain": 32,
+      "timeRequired": 7500
     },
     {
       "recipeId": "bronze_weapon",
@@ -380,6 +499,161 @@
       },
       "experienceGain": 900,
       "timeRequired": 30000
+    },
+    {
+      "recipeId": "stone_furnace",
+      "name": "Stone Furnace",
+      "level": 8,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 5
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "limestone",
+          "quantity": 10
+        },
+        {
+          "itemId": "sandstone",
+          "quantity": 8
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "stone_furnace",
+        "quantity": 1
+      },
+      "experienceGain": 45,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "reinforced_stone_anvil",
+      "name": "Reinforced Stone Anvil",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "granite",
+          "quantity": 15
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "reinforced_stone_anvil",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "marble_enhanced_armor",
+      "name": "Marble Enhanced Armor",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "marble",
+          "quantity": 12
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "marble_enhanced_armor",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "obsidian_blade",
+      "name": "Obsidian Blade",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "obsidian",
+          "quantity": 20
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "volcanic_stone",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "obsidian_blade",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "titanstone_weapon",
+      "name": "Titanstone Weapon",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "titanstone",
+          "quantity": 8
+        },
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "massive_stone_block",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "titanstone_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 700,
+      "timeRequired": 25000
     }
   ],
   "passiveBonuses": [

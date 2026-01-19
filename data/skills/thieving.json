@@ -25,6 +25,145 @@
           "itemId": "common_item",
           "chance": 0.3,
           "quantity": 1
+        },
+        {
+          "itemId": "stolen_herb_common",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "nodeId": "peasant",
+      "name": "Peasant",
+      "successRate": 0.80,
+      "experienceGain": 25,
+      "timeRequired": 4200,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 8,
+          "max": 20
+        },
+        {
+          "itemId": "common_herb",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_herb_common",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "simple_component",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "traveler",
+      "name": "Traveler",
+      "successRate": 0.78,
+      "experienceGain": 35,
+      "timeRequired": 4500,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 15,
+          "max": 35
+        },
+        {
+          "itemId": "trade_good",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "minor_essence",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_scroll_basic",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "apprentice",
+      "name": "Apprentice",
+      "successRate": 0.75,
+      "experienceGain": 42,
+      "timeRequired": 4800,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 20,
+          "max": 45
+        },
+        {
+          "itemId": "uncommon_herb",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_essence_minor",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "minor_essence",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_component",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "craftsman",
+      "name": "Craftsman",
+      "successRate": 0.73,
+      "experienceGain": 48,
+      "timeRequired": 5000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 25,
+          "max": 55
+        },
+        {
+          "itemId": "simple_tool",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "gears",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "engineering_component",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "metal_scrap",
+          "chance": 0.3,
+          "quantity": 1
         }
       ]
     },
@@ -49,7 +188,218 @@
         },
         {
           "itemId": "trade_good",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_gem_common",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "valuable_trinket",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "alchemist",
+      "name": "Alchemist",
+      "successRate": 0.72,
+      "experienceGain": 65,
+      "timeRequired": 5200,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 40,
+          "max": 80
+        },
+        {
+          "itemId": "rare_herb",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_herb_rare",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "moderate_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_essence_moderate",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "potion_recipe",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "blacksmith",
+      "name": "Blacksmith",
+      "successRate": 0.70,
+      "experienceGain": 75,
+      "timeRequired": 5400,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 50,
+          "max": 100
+        },
+        {
+          "itemId": "iron_ore",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "metal_scrap",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_ore",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "reforging_material",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_recipe",
           "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "thieves_guild_vault",
+      "name": "Thieves' Guild Vault",
+      "successRate": 0.68,
+      "experienceGain": 95,
+      "timeRequired": 5800,
+      "unlockRequirements": [
+        {
+          "itemId": "thieves_guild_token",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 80,
+          "max": 150
+        },
+        {
+          "itemId": "lockpick_rare",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "thief_tool",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "skill_book",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_item",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "noble",
+      "name": "Noble",
+      "successRate": 0.70,
+      "experienceGain": 90,
+      "timeRequired": 5600,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 70,
+          "max": 140
+        },
+        {
+          "itemId": "rare_item",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "jewelry",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_gem_uncommon",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "precious_metal",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "enchanter",
+      "name": "Enchanter",
+      "successRate": 0.68,
+      "experienceGain": 110,
+      "timeRequired": 6000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 90,
+          "max": 180
+        },
+        {
+          "itemId": "moderate_essence",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_essence_moderate",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_scroll",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanted_material",
+          "chance": 0.4,
           "quantity": 1
         }
       ]
@@ -75,7 +425,297 @@
         },
         {
           "itemId": "jewelry",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_uncommon",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "precious_metal",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "jewelcrafter",
+      "name": "Jewelcrafter",
+      "successRate": 0.66,
+      "experienceGain": 140,
+      "timeRequired": 6200,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 100,
+          "max": 200
+        },
+        {
+          "itemId": "gem_uncommon",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_gem_uncommon",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "jewelry",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "jewelry_component",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "silver_ore",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "merchant_secret_warehouse",
+      "name": "Merchant's Secret Warehouse",
+      "successRate": 0.64,
+      "experienceGain": 160,
+      "timeRequired": 6500,
+      "unlockRequirements": [
+        {
+          "itemId": "merchant_ledger",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 120,
+          "max": 250
+        },
+        {
+          "itemId": "trade_good",
+          "chance": 0.7,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "rare_material",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_recipe",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "exotic_goods",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "scholar",
+      "name": "Scholar",
+      "successRate": 0.64,
+      "experienceGain": 160,
+      "timeRequired": 6400,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 110,
+          "max": 220
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_scroll",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_papyrus",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "rune_stone",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "essence_crystal",
           "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "royal_guard",
+      "name": "Royal Guard",
+      "successRate": 0.62,
+      "experienceGain": 240,
+      "timeRequired": 6800,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 180,
+          "max": 350
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "royal_seal",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_material",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "precious_metal",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "archmage",
+      "name": "Archmage",
+      "successRate": 0.60,
+      "experienceGain": 280,
+      "timeRequired": 7200,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 200,
+          "max": 400
+        },
+        {
+          "itemId": "essence_crystal",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_essence_rare",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "magical_material",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_scroll_rare",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanting_recipe",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "ancient_vault",
+      "name": "Ancient Vault",
+      "successRate": 0.58,
+      "experienceGain": 320,
+      "timeRequired": 7500,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_key_thieving",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 250,
+          "max": 500
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_material",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_essence_rare",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "rune_stone",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "master_craftsman",
+      "name": "Master Craftsman",
+      "successRate": 0.58,
+      "experienceGain": 300,
+      "timeRequired": 7400,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 220,
+          "max": 450
+        },
+        {
+          "itemId": "rare_crafting_material",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "precision_gear",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "advanced_component",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "master_recipe",
+          "chance": 0.35,
           "quantity": 1
         }
       ]
@@ -101,7 +741,247 @@
         },
         {
           "itemId": "royal_seal",
-          "chance": 0.2,
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_material",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "ancient_keeper",
+      "name": "Ancient Keeper",
+      "successRate": 0.56,
+      "experienceGain": 380,
+      "timeRequired": 8000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 300,
+          "max": 600
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_material",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_scroll_ancient",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "shadow_market",
+      "name": "Shadow Market",
+      "successRate": 0.54,
+      "experienceGain": 420,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "shadow_pass",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 350,
+          "max": 700
+        },
+        {
+          "itemId": "illegal_goods",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_component",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "forbidden_material",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_artifact",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "legendary_thief",
+      "name": "Legendary Thief",
+      "successRate": 0.54,
+      "experienceGain": 480,
+      "timeRequired": 9000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 400,
+          "max": 800
+        },
+        {
+          "itemId": "legendary_material",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_artifact",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "divine_agent",
+      "name": "Divine Agent",
+      "successRate": 0.52,
+      "experienceGain": 550,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 500,
+          "max": 1000
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "void_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_material",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_essence",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "master_thief_cache",
+      "name": "Master Thief's Cache",
+      "successRate": 0.50,
+      "experienceGain": 600,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "master_thief_mark",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 600,
+          "max": 1200
+        },
+        {
+          "itemId": "legendary_material",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_artifact",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "master_recipe",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_thief",
+      "name": "Master Thief",
+      "successRate": 0.50,
+      "experienceGain": 650,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 500,
+          "max": 1000
+        },
+        {
+          "itemId": "legendary_material",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.8,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_artifact",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_material",
+          "chance": 0.4,
           "quantity": 1
         }
       ]
@@ -109,24 +989,71 @@
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 2
+        },
+        "goldGeneration": 0.03
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 5
+        },
+        "goldGeneration": 0.05,
+        "itemFindRate": 0.03
+      }
+    },
+    {
       "level": 40,
       "bonus": {
-        "goldGeneration": 0.12,
-        "dexterity": 3
+        "statBonus": {
+          "dexterity": 8
+        },
+        "goldGeneration": 0.12
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 10
+        },
+        "goldGeneration": 0.15,
+        "itemFindRate": 0.05
       }
     },
     {
       "level": 75,
       "bonus": {
-        "goldGeneration": 0.2,
-        "dexterity": 6
+        "statBonus": {
+          "dexterity": 12
+        },
+        "goldGeneration": 0.20
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 15
+        },
+        "goldGeneration": 0.25,
+        "itemFindRate": 0.10
       }
     },
     {
       "level": 99,
       "bonus": {
-        "goldGeneration": 0.3,
-        "dexterity": 10
+        "statBonus": {
+          "dexterity": 20,
+          "agility": 5
+        },
+        "goldGeneration": 0.30,
+        "itemFindRate": 0.15
       }
     }
   ],

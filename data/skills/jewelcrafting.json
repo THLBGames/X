@@ -678,6 +678,103 @@
         "goldGeneration": 0.3,
         "luck": 15
       }
+    },
+    {
+      "recipeId": "stolen_gem_jewelry",
+      "name": "Stolen Gem Jewelry",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_gem_common",
+          "quantity": 2
+        },
+        {
+          "itemId": "copper_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "jewelry_component",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "copper_ring",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "rare_stolen_jewelry",
+      "name": "Rare Stolen Jewelry",
+      "level": 45,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_gem_uncommon",
+          "quantity": 3
+        },
+        {
+          "itemId": "silver_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "jewelry_component",
+          "quantity": 2
+        },
+        {
+          "itemId": "valuable_trinket",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "pearl_necklace",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "master_stolen_jewelry",
+      "name": "Master Stolen Jewelry",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_artifact",
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_material",
+          "quantity": 2
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "dragonstone_jewelry",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 15000
     }
   ],
   "nameKey": "skill.jewelcrafting.name",

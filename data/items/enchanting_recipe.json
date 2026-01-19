@@ -1,0 +1,12 @@
+{
+  "id": "enchanting_recipe",
+  "name": "Enchanting Recipe",
+  "description": "A recipe scroll stolen from an archmage, teaches advanced enchanting techniques.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 200,
+  "nameKey": "item.enchanting_recipe.name",
+  "descriptionKey": "item.enchanting_recipe.description"
+}

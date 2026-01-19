@@ -1,0 +1,30 @@
+{
+  "id": "trapping_master_manual",
+  "name": "Master Trapper's Manual",
+  "description": "The ultimate guide to trapping. Requires materials: trapped_monster x10, monster_pelt x20",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Master",
+  "price": 15000,
+  "materialRequirements": [
+    {
+      "itemId": "trapped_monster",
+      "quantity": 10
+    },
+    {
+      "itemId": "monster_pelt",
+      "quantity": 20
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.15,
+    "yieldMultiplier": 1.2,
+    "experienceMultiplier": 1.2
+  },
+  "requirements": {
+    "skillLevel": 50
+  },
+  "nameKey": "upgrade.trapping_master_manual.name",
+  "descriptionKey": "upgrade.trapping_master_manual.description"
+}

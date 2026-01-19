@@ -1,0 +1,12 @@
+{
+  "id": "engineering_component",
+  "name": "Engineering Component",
+  "description": "A component stolen from a craftsman, useful for engineering projects.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20,
+  "nameKey": "item.engineering_component.name",
+  "descriptionKey": "item.engineering_component.description"
+}

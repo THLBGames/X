@@ -1,0 +1,12 @@
+{
+  "id": "master_trapper_badge",
+  "name": "Master Trapper's Badge",
+  "description": "The ultimate badge recognizing mastery of the trapping skill.",
+  "type": "quest",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 1,
+  "value": 15000,
+  "nameKey": "item.master_trapper_badge.name",
+  "descriptionKey": "item.master_trapper_badge.description"
+}

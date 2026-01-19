@@ -11,7 +11,8 @@
     "experienceMultiplier": 1.1,
     "speedMultiplier": 0.95,
     "yieldMultiplier": 1.05,
-    "successRateBonus": 0.05
+    "successRateBonus": 0.05,
+    "unlocksNodes": ["wild_apple_tree"]
   },
   "requirements": {},
   "nameKey": "upgrade.foraging_upgrade_I.name",

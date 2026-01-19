@@ -1,0 +1,12 @@
+{
+  "id": "crystalized_stone",
+  "name": "Crystalized Stone",
+  "description": "Stone that has crystallized with magical energy.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150,
+  "nameKey": "item.crystalized_stone.name",
+  "descriptionKey": "item.crystalized_stone.description"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "spiced_stew",
+  "name": "Spiced Stew",
+  "description": "A flavorful stew enhanced with wild spices.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 60,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 100
+  },
+  "nameKey": "item.spiced_stew.name",
+  "descriptionKey": "item.spiced_stew.description"
+}

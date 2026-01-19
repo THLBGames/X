@@ -1,0 +1,12 @@
+{
+  "id": "ultimate_component",
+  "name": "Ultimate Component",
+  "description": "The ultimate crafting component, stolen from legendary sources.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800,
+  "nameKey": "item.ultimate_component.name",
+  "descriptionKey": "item.ultimate_component.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "advanced_component",
+  "name": "Advanced Component",
+  "description": "An advanced engineering component stolen from a master craftsman.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 180,
+  "nameKey": "item.advanced_component.name",
+  "descriptionKey": "item.advanced_component.description"
+}

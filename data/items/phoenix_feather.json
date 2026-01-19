@@ -1,0 +1,12 @@
+{
+  "id": "phoenix_feather",
+  "name": "Phoenix Feather",
+  "description": "A feather from a phoenix, still warm and glowing with inner fire. Unlocks the Phoenix Garden.",
+  "type": "quest",
+  "rarity": "legendary",
+  "stackable": false,
+  "maxStack": 1,
+  "value": 3000,
+  "nameKey": "item.phoenix_feather.name",
+  "descriptionKey": "item.phoenix_feather.description"
+}

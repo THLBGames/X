@@ -29,6 +29,89 @@
       ]
     },
     {
+      "level": 5,
+      "nodeId": "willow_tree",
+      "name": "Willow Tree",
+      "successRate": 0.94,
+      "experienceGain": 18,
+      "timeRequired": 3600,
+      "resources": [
+        {
+          "itemId": "willow_log",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "oak_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "birch_tree",
+      "name": "Birch Tree",
+      "successRate": 0.93,
+      "experienceGain": 25,
+      "timeRequired": 3800,
+      "resources": [
+        {
+          "itemId": "birch_log",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "willow_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "pine_tree",
+      "name": "Pine Tree",
+      "successRate": 0.92,
+      "experienceGain": 32,
+      "timeRequired": 4000,
+      "resources": [
+        {
+          "itemId": "pine_log",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "birch_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "pine_resin",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 20,
       "nodeId": "maple_tree",
       "name": "Maple Tree",
@@ -50,6 +133,89 @@
         {
           "itemId": "maple_sap",
           "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "teak_tree",
+      "name": "Teak Tree",
+      "successRate": 0.88,
+      "experienceGain": 48,
+      "timeRequired": 4800,
+      "resources": [
+        {
+          "itemId": "teak_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "maple_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "mahogany_tree",
+      "name": "Mahogany Tree",
+      "successRate": 0.87,
+      "experienceGain": 58,
+      "timeRequired": 5000,
+      "resources": [
+        {
+          "itemId": "mahogany_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "teak_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "redwood_tree",
+      "name": "Redwood Tree",
+      "successRate": 0.86,
+      "experienceGain": 70,
+      "timeRequired": 5200,
+      "resources": [
+        {
+          "itemId": "redwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "mahogany_log",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_seed",
+          "chance": 0.1,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.45,
           "quantity": 1
         }
       ]
@@ -81,6 +247,210 @@
       ]
     },
     {
+      "level": 40,
+      "nodeId": "herb_infused_trees",
+      "name": "Herb-Infused Trees",
+      "successRate": 0.84,
+      "experienceGain": 95,
+      "timeRequired": 5600,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 35
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "yew_log",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "common_herb",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "root_herb",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "yew_berry",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "cedar_tree",
+      "name": "Cedar Tree",
+      "successRate": 0.84,
+      "experienceGain": 110,
+      "timeRequired": 5800,
+      "resources": [
+        {
+          "itemId": "cedar_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "yew_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "cedar_essence",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "ebony_tree",
+      "name": "Ebony Tree",
+      "successRate": 0.83,
+      "experienceGain": 130,
+      "timeRequired": 6000,
+      "resources": [
+        {
+          "itemId": "ebony_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "cedar_log",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "dark_essence",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "crafting_wood_grove",
+      "name": "Crafting Wood Grove",
+      "successRate": 0.82,
+      "experienceGain": 145,
+      "timeRequired": 6200,
+      "skillPrerequisites": [
+        {
+          "skillId": "engineering",
+          "level": 40
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ebony_log",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "cedar_log",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "refined_wood",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_material",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "cypress_tree",
+      "name": "Cypress Tree",
+      "successRate": 0.81,
+      "experienceGain": 160,
+      "timeRequired": 6300,
+      "resources": [
+        {
+          "itemId": "cypress_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ebony_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "swamp_essence",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "tree_bark",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "enchanted_grove",
+      "name": "Enchanted Grove",
+      "successRate": 0.78,
+      "experienceGain": 240,
+      "timeRequired": 7000,
+      "unlockRequirements": [
+        {
+          "itemId": "dryad_heart",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "cypress_log",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "magic_log",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "nature_essence",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "dryad_leaf",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_seed",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 60,
       "nodeId": "magic_tree",
       "name": "Magic Tree",
@@ -102,6 +472,290 @@
         {
           "itemId": "magic_essence",
           "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "ironwood_tree",
+      "name": "Ironwood Tree",
+      "successRate": 0.74,
+      "experienceGain": 210,
+      "timeRequired": 6800,
+      "resources": [
+        {
+          "itemId": "ironwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "magic_log",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "hardened_bark",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "metal_essence",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "mystical_timber",
+      "name": "Mystical Timber",
+      "successRate": 0.73,
+      "experienceGain": 280,
+      "timeRequired": 7200,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 50
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "ironwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "enchanted_wood",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "magic_essence",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "rune_fragment",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "bloodwood_tree",
+      "name": "Bloodwood Tree",
+      "successRate": 0.72,
+      "experienceGain": 240,
+      "timeRequired": 7000,
+      "resources": [
+        {
+          "itemId": "bloodwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "ironwood_log",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "blood_essence",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "dark_essence",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "druids_sanctuary",
+      "name": "Druid's Sanctuary",
+      "successRate": 0.75,
+      "experienceGain": 350,
+      "timeRequired": 8000,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_ritual_staff",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "bloodwood_log",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "ancient_wood",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "nature_essence",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "druid_blessing",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "shadowwood_tree",
+      "name": "Shadowwood Tree",
+      "successRate": 0.71,
+      "experienceGain": 270,
+      "timeRequired": 7200,
+      "resources": [
+        {
+          "itemId": "shadowwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "bloodwood_log",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "shadow_essence",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "corrupted_bark",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "rune_engraved_trees",
+      "name": "Rune-Engraved Trees",
+      "successRate": 0.72,
+      "experienceGain": 340,
+      "timeRequired": 7600,
+      "skillPrerequisites": [
+        {
+          "skillId": "runecrafting",
+          "level": 60
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "shadowwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rune_wood",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "rune_fragment",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_rune",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "titanwood_tree",
+      "name": "Titanwood Tree",
+      "successRate": 0.69,
+      "experienceGain": 300,
+      "timeRequired": 7500,
+      "resources": [
+        {
+          "itemId": "titanwood_log",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "shadowwood_log",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "titan_essence",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_wood",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "world_tree_branch",
+      "name": "World Tree Branch",
+      "successRate": 0.68,
+      "experienceGain": 380,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_seed",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "world_tree_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "titanwood_log",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "world_tree_essence",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.15,
           "quantity": 1
         }
       ]
@@ -131,13 +785,137 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 90,
+      "nodeId": "pandoras_copse",
+      "name": "Pandora's Copse",
+      "successRate": 0.7,
+      "experienceGain": 520,
+      "timeRequired": 9000,
+      "unlockRequirements": [
+        {
+          "itemId": "forbidden_axe",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "elder_log",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "forbidden_wood",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "chaos_essence",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "elder_essence",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_woodcutters_grove",
+      "name": "Master Woodcutter's Grove",
+      "successRate": 0.65,
+      "experienceGain": 450,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "world_tree_log",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "elder_log",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "titanwood_log",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "master_log",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "world_tree_essence",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
+      "level": 15,
+      "bonus": {
+        "statBonus": {
+          "strength": 3,
+          "vitality": 2
+        }
+      }
+    },
+    {
       "level": 25,
       "bonus": {
         "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 30,
+      "bonus": {
+        "statBonus": {
+          "strength": 5,
+          "vitality": 3
+        },
+        "combatStatBonus": {
+          "defense": 3
+        }
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "statBonus": {
+          "strength": 7,
+          "vitality": 5
+        },
+        "itemFindRate": 0.03
       }
     },
     {
@@ -147,9 +925,79 @@
       }
     },
     {
+      "level": 60,
+      "bonus": {
+        "statBonus": {
+          "strength": 10,
+          "vitality": 7,
+          "wisdom": 3
+        },
+        "combatStatBonus": {
+          "defense": 5,
+          "health": 30
+        },
+        "itemFindRate": 0.05
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "statBonus": {
+          "strength": 15,
+          "vitality": 10,
+          "wisdom": 5
+        },
+        "combatStatBonus": {
+          "defense": 8,
+          "health": 50
+        },
+        "itemFindRate": 0.08
+      }
+    },
+    {
+      "level": 85,
+      "bonus": {
+        "statBonus": {
+          "strength": 20,
+          "vitality": 15,
+          "wisdom": 7
+        },
+        "combatStatBonus": {
+          "defense": 12,
+          "health": 75
+        },
+        "itemFindRate": 0.12
+      }
+    },
+    {
+      "level": 95,
+      "bonus": {
+        "statBonus": {
+          "strength": 25,
+          "vitality": 18,
+          "wisdom": 10
+        },
+        "combatStatBonus": {
+          "defense": 15,
+          "health": 100
+        },
+        "itemFindRate": 0.15
+      }
+    },
+    {
       "level": 99,
       "bonus": {
-        "goldGeneration": 0.15
+        "goldGeneration": 0.15,
+        "itemFindRate": 0.2,
+        "statBonus": {
+          "strength": 30,
+          "vitality": 20,
+          "wisdom": 12
+        },
+        "combatStatBonus": {
+          "defense": 20,
+          "health": 150
+        }
       }
     }
   ],

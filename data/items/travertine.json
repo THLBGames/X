@@ -1,0 +1,12 @@
+{
+  "id": "travertine",
+  "name": "Travertine",
+  "description": "Beautiful travertine stone with unique patterns.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20,
+  "nameKey": "item.travertine.name",
+  "descriptionKey": "item.travertine.description"
+}

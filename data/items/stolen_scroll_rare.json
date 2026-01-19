@@ -1,0 +1,12 @@
+{
+  "id": "stolen_scroll_rare",
+  "name": "Stolen Rare Scroll",
+  "description": "A rare scroll stolen from an archmage, contains powerful magical knowledge.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 120,
+  "nameKey": "item.stolen_scroll_rare.name",
+  "descriptionKey": "item.stolen_scroll_rare.description"
+}

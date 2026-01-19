@@ -1,0 +1,16 @@
+{
+  "id": "primal_elixir",
+  "name": "Primal Elixir",
+  "description": "The ultimate elixir, containing the essence of primal power.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1000,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 1000
+  },
+  "nameKey": "item.primal_elixir.name",
+  "descriptionKey": "item.primal_elixir.description"
+}

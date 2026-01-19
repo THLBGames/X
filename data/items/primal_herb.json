@@ -1,0 +1,12 @@
+{
+  "id": "primal_herb",
+  "name": "Primal Herb",
+  "description": "An ancient herb containing the raw essence of nature itself.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 200,
+  "nameKey": "item.primal_herb.name",
+  "descriptionKey": "item.primal_herb.description"
+}

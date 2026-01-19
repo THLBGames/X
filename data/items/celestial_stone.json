@@ -1,0 +1,12 @@
+{
+  "id": "celestial_stone",
+  "name": "Celestial Stone",
+  "description": "Stone blessed by the celestial realms.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 350,
+  "nameKey": "item.celestial_stone.name",
+  "descriptionKey": "item.celestial_stone.description"
+}

@@ -8,6 +8,215 @@
   "experienceFormula": "baseExp * (level * 1.35)",
   "recipes": [
     {
+      "recipeId": "tree_bark_poultice",
+      "name": "Tree Bark Poultice",
+      "level": 4,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "tree_bark",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_small",
+        "quantity": 1
+      },
+      "experienceGain": 18,
+      "timeRequired": 3800
+    },
+    {
+      "recipeId": "maple_sap_elixir",
+      "name": "Maple Sap Elixir",
+      "level": 8,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "maple_sap",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "stamina_potion",
+        "quantity": 1
+      },
+      "experienceGain": 28,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "pine_resin_balm",
+      "name": "Pine Resin Balm",
+      "level": 7,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "pine_resin",
+          "quantity": 2
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_enhanced",
+        "quantity": 1
+      },
+      "experienceGain": 25,
+      "timeRequired": 4200
+    },
+    {
+      "recipeId": "cedar_essence_potion",
+      "name": "Cedar Essence Potion",
+      "level": 23,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "cedar_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 1
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "mana_potion_small",
+        "quantity": 1
+      },
+      "experienceGain": 65,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "nature_essence_brew",
+      "name": "Nature Essence Brew",
+      "level": 36,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 55
+        },
+        {
+          "skillId": "herbalism",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "nature_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "tree_bark",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_medium",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "ancient_wood_elixir",
+      "name": "Ancient Wood Elixir",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_wood",
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_large",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "world_tree_essence_potion",
+      "name": "World Tree Essence Potion",
+      "level": 76,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "mana_potion_large",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 8000
+    },
+    {
       "recipeId": "health_potion_basic",
       "name": "Basic Health Potion",
       "level": 1,
@@ -29,6 +238,27 @@
       "timeRequired": 4000
     },
     {
+      "recipeId": "berry_extract",
+      "name": "Berry Extract",
+      "level": 5,
+      "ingredients": [
+        {
+          "itemId": "berry",
+          "quantity": 5
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_enhanced",
+        "quantity": 1
+      },
+      "experienceGain": 20,
+      "timeRequired": 4200
+    },
+    {
       "recipeId": "mana_potion",
       "name": "Mana Potion",
       "level": 15,
@@ -48,6 +278,27 @@
       },
       "experienceGain": 50,
       "timeRequired": 5000
+    },
+    {
+      "recipeId": "fruit_elixir",
+      "name": "Fruit Elixir",
+      "level": 12,
+      "ingredients": [
+        {
+          "itemId": "fruit",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fruit_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 4800
     },
     {
       "recipeId": "pearl_elixir",
@@ -81,6 +332,27 @@
       "timeRequired": 5500
     },
     {
+      "recipeId": "mushroom_tonic",
+      "name": "Mushroom Tonic",
+      "level": 25,
+      "ingredients": [
+        {
+          "itemId": "mushroom",
+          "quantity": 4
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "stamina_potion",
+        "quantity": 1
+      },
+      "experienceGain": 75,
+      "timeRequired": 5800
+    },
+    {
       "recipeId": "ancient_relic_potion",
       "name": "Ancient Relic Potion",
       "level": 38,
@@ -112,6 +384,68 @@
       "timeRequired": 6500
     },
     {
+      "recipeId": "bone_meal_potion",
+      "name": "Bone Meal Potion",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_bone",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "defense_potion",
+        "quantity": 1
+      },
+      "experienceGain": 65,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "deer_antler_elixir",
+      "name": "Deer Antler Elixir",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "deer_antler",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "stamina_potion_enhanced",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 5800
+    },
+    {
       "recipeId": "strength_potion",
       "name": "Strength Potion",
       "level": 35,
@@ -135,6 +469,89 @@
       },
       "experienceGain": 120,
       "timeRequired": 6000
+    },
+    {
+      "recipeId": "boar_tusk_potion",
+      "name": "Boar Tusk Potion",
+      "level": 27,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "boar_tusk",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "attack_buff_potion_basic",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 5600
+    },
+    {
+      "recipeId": "claw_elixir",
+      "name": "Claw Elixir",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_claw",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "agility_potion",
+        "quantity": 1
+      },
+      "experienceGain": 135,
+      "timeRequired": 6300
+    },
+    {
+      "recipeId": "wild_spice_potion",
+      "name": "Wild Spice Potion",
+      "level": 40,
+      "ingredients": [
+        {
+          "itemId": "wild_spice",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "attack_buff_potion",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 6200
     },
     {
       "recipeId": "mana_scale_potion",
@@ -255,6 +672,31 @@
       "timeRequired": 8000
     },
     {
+      "recipeId": "ancient_essence_potion",
+      "name": "Ancient Essence Potion",
+      "level": 65,
+      "ingredients": [
+        {
+          "itemId": "ancient_mushroom",
+          "quantity": 2
+        },
+        {
+          "itemId": "mystical_spore",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_essence_potion",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 8200
+    },
+    {
       "recipeId": "abyssal_pearl_elixir",
       "name": "Abyssal Pearl Elixir",
       "level": 68,
@@ -317,6 +759,27 @@
       "timeRequired": 8500
     },
     {
+      "recipeId": "enchanted_fruit_elixir",
+      "name": "Enchanted Fruit Elixir",
+      "level": 75,
+      "ingredients": [
+        {
+          "itemId": "enchanted_fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "fruit_essence",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_fruit_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 8700
+    },
+    {
       "recipeId": "celestial_scale_elixir",
       "name": "Celestial Scale Elixir",
       "level": 82,
@@ -352,6 +815,31 @@
       "timeRequired": 9000
     },
     {
+      "recipeId": "legendary_berry_potion",
+      "name": "Legendary Berry Potion",
+      "level": 88,
+      "ingredients": [
+        {
+          "itemId": "legendary_berry",
+          "quantity": 2
+        },
+        {
+          "itemId": "berry_essence",
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "legendary_berry_potion",
+        "quantity": 1
+      },
+      "experienceGain": 580,
+      "timeRequired": 9200
+    },
+    {
       "recipeId": "primordial_essence_potion",
       "name": "Primordial Essence Potion",
       "level": 92,
@@ -385,6 +873,496 @@
       },
       "experienceGain": 680,
       "timeRequired": 10000
+    },
+    {
+      "recipeId": "primal_elixir",
+      "name": "Primal Elixir",
+      "level": 99,
+      "ingredients": [
+        {
+          "itemId": "forbidden_fruit",
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "primal_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 700,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "enhanced_health_potion",
+      "name": "Enhanced Health Potion",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "medicinal_root",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_medium",
+        "quantity": 1
+      },
+      "experienceGain": 60,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "moonlit_mana_potion",
+      "name": "Moonlit Mana Potion",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "moonlit_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "energy_wisp",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "mana_potion_medium",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 5800
+    },
+    {
+      "recipeId": "toxic_poison_potion",
+      "name": "Toxic Poison Potion",
+      "level": 47,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "toxic_bloom",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "poison_potion",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "enchanted_essence_potion",
+      "name": "Enchanted Essence Potion",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_leaf",
+          "quantity": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "essence_potion",
+        "quantity": 1
+      },
+      "experienceGain": 310,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "celestial_elixir",
+      "name": "Celestial Elixir",
+      "level": 87,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_petal",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_energy",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "celestial_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "primal_health_elixir",
+      "name": "Primal Health Elixir",
+      "level": 92,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "primal_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_herb_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "nature_core",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "primal_health_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 10500
+    },
+    {
+      "recipeId": "stolen_herb_potion",
+      "name": "Stolen Herb Potion",
+      "level": 18,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_herb_common",
+          "quantity": 3
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "health_potion_enhanced",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "rare_stolen_potion",
+      "name": "Rare Stolen Potion",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_herb_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "stolen_essence_moderate",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "stamina_potion_enhanced",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 7000
+    },
+    {
+      "recipeId": "master_stolen_elixir",
+      "name": "Master Stolen Elixir",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_herb_rare",
+          "quantity": 3
+        },
+        {
+          "itemId": "stolen_essence_rare",
+          "quantity": 2
+        },
+        {
+          "itemId": "magical_material",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "primal_health_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "trophy_elixir",
+      "name": "Trophy Elixir",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 70
+        },
+        {
+          "skillId": "alchemy",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rare_trophy",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "legendary_potion",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "ancient_trophy_elixir",
+      "name": "Ancient Trophy Elixir",
+      "level": 88,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 85
+        },
+        {
+          "skillId": "alchemy",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_trophy",
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "divine_potion",
+        "quantity": 1
+      },
+      "experienceGain": 620,
+      "timeRequired": 10500
+    },
+    {
+      "recipeId": "forbidden_elixir",
+      "name": "Forbidden Elixir",
+      "level": 97,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "forbidden_herb",
+          "quantity": 1
+        },
+        {
+          "itemId": "fire_herb",
+          "quantity": 1
+        },
+        {
+          "itemId": "dark_crystal",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "forbidden_elixir",
+        "quantity": 1
+      },
+      "experienceGain": 720,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "bone_powder",
+      "name": "Bone Powder",
+      "level": 15,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_bone",
+          "quantity": 5
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "bone_powder",
+        "quantity": 1
+      },
+      "experienceGain": 45,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "beast_essence_extract",
+      "name": "Beast Essence Extract",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "monster_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "beast_essence",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "beast_essence_extract",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "primal_potion",
+      "name": "Primal Potion",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "primal_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "primal_potion",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 8500
     }
   ],
   "passiveBonuses": [

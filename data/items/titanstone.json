@@ -1,0 +1,12 @@
+{
+  "id": "titanstone",
+  "name": "Titanstone",
+  "description": "Massive stone blocks carved by the ancient titans.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 400,
+  "nameKey": "item.titanstone.name",
+  "descriptionKey": "item.titanstone.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "reforging_material",
+  "name": "Reforging Material",
+  "description": "Special material stolen from a blacksmith, used for reforging weapons and armor.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.reforging_material.name",
+  "descriptionKey": "item.reforging_material.description"
+}

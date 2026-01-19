@@ -1,0 +1,12 @@
+{
+  "id": "premium_meat",
+  "name": "Premium Meat",
+  "description": "High-quality meat from a trapped creature.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 60,
+  "nameKey": "item.premium_meat.name",
+  "descriptionKey": "item.premium_meat.description"
+}

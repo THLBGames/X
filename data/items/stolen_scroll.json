@@ -1,0 +1,12 @@
+{
+  "id": "stolen_scroll",
+  "name": "Stolen Scroll",
+  "description": "A scroll stolen from an enchanter or scholar, useful for enchanting and runecrafting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 35,
+  "nameKey": "item.stolen_scroll.name",
+  "descriptionKey": "item.stolen_scroll.description"
+}
