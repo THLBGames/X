@@ -10,6 +10,7 @@ import { calculateExperienceForLevel } from '@/utils/experience';
 import { IdleSkillSystem } from '../skills/IdleSkillSystem';
 import { gameEventEmitter } from '../events/GameEventEmitter';
 import { ChronicleManager } from '../chronicle/ChronicleManager';
+import { CityManager } from '../city/CityManager';
 
 export class CharacterManager {
   /**

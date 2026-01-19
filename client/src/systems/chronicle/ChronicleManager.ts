@@ -464,7 +464,6 @@ export class ChronicleManager {
 
     // Check if first event
     if (trigger.isFirst) {
-      const chronicle = character.chronicle || this.initializeChronicle();
       // This is simplified - in practice, you'd check if this is truly the first
       // For now, we'll assume it's checked by the caller
     }

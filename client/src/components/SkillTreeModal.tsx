@@ -5,7 +5,7 @@ import { SkillManager } from '../systems/skills/SkillManager';
 import { AutoSkillManager } from '../systems/combat/AutoSkillManager';
 import { InventoryManager } from '../systems/inventory';
 import { getDataLoader } from '../data';
-import { MAX_SKILL_BAR_SLOTS } from '@idle-rpg/shared';
+import { MAX_SKILL_BAR_SLOTS, type Skill } from '@idle-rpg/shared';
 import { UI_MESSAGES } from '../constants/ui';
 import AutoSkillConfigModal from './AutoSkillConfigModal';
 import './SkillTreeModal.css';
@@ -175,7 +175,13 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                     </div>
                   </div>
                 ) : (
-                  filteredSkills.map(({ skill, level, canLearn, reason, prerequisitesMet }) => {
+                  filteredSkills.map(({ skill, level, canLearn, reason, prerequisitesMet }: {
+                    skill: Skill;
+                    level: number;
+                    canLearn: boolean;
+                    reason?: string;
+                    prerequisitesMet: boolean;
+                  }) => {
                     const isLearned = level > 0;
                     const isMaxLevel = level >= skill.maxLevel;
                     const cost = skill.unlockCost || 1;

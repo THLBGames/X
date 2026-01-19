@@ -459,7 +459,6 @@ export class CityManager {
     const buildings = await this.getAllBuildings();
     for (const building of buildings) {
       if (building.skillGates?.includes(skillId)) {
-        const currentLevel = this.getBuildingLevel(character.city, building.id);
         return {
           required: true,
           buildingId: building.id,

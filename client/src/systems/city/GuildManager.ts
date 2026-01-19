@@ -16,7 +16,8 @@ interface GuildsData {
 
 export class GuildManager {
   private static guildsCache: GuildsData | null = null;
-  private static readonly PRIMARY_GUILD_SWITCH_COOLDOWN = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+  // TODO: Implement primary guild switch cooldown feature
+  // private static readonly PRIMARY_GUILD_SWITCH_COOLDOWN = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   private static readonly SECONDARY_GUILD_BONUS_MULTIPLIER = 0.5; // 50% of primary benefits
 
   /**

@@ -64,18 +64,19 @@ export default function VendorPanel() {
     }
   };
 
-  const handleSell = async (item: Item, quantity: number) => {
-    if (!selectedVendor) return;
+  // TODO: Implement sell functionality when needed
+  // const handleSell = async (item: Item, quantity: number) => {
+  //   if (!selectedVendor) return;
 
-    const result = await VendorManager.sellToVendor(inventory, selectedVendor.id, item.id, quantity);
+  //   const result = await VendorManager.sellToVendor(inventory, selectedVendor.id, item.id, quantity);
 
-    if (result.success && result.inventory) {
-      setInventory(result.inventory);
-      alert(`Sold ${quantity}x ${dataLoader.getTranslatedName(item)} for ${result.goldEarned} gold`);
-    } else {
-      alert(result.reason || 'Sale failed');
-    }
-  };
+  //   if (result.success && result.inventory) {
+  //     setInventory(result.inventory);
+  //     alert(`Sold ${quantity}x ${dataLoader.getTranslatedName(item)} for ${result.goldEarned} gold`);
+  //   } else {
+  //     alert(result.reason || 'Sale failed');
+  //   }
+  // };
 
   const updateBuyQuantity = (itemId: string, delta: number) => {
     setBuyQuantities((prev) => {

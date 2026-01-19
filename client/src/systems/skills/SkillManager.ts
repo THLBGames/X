@@ -56,7 +56,7 @@ export class SkillManager {
 
     // Check building requirements
     const buildingRequirement = await CityManager.getSkillBuildingRequirement(character, skillId);
-    if (buildingRequirement.required) {
+    if (buildingRequirement.required && buildingRequirement.buildingId) {
       if (!character.city) {
         return {
           canLearn: false,
