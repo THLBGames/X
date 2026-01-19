@@ -50,6 +50,9 @@ export class EnchantingSystem {
     if (item.maxEnchantments !== undefined) {
       return item.maxEnchantments;
     }
+    if (item.enchantmentSlots !== undefined) {
+      return item.enchantmentSlots;
+    }
     // Default based on rarity
     const rarityMultiplier: Record<string, number> = {
       common: 1,
@@ -182,7 +185,7 @@ export class EnchantingSystem {
    */
   static getAvailableEnchantments(
     character: Character,
-    inventory?: Inventory
+    _inventory?: Inventory
   ): EnchantmentRecipe[] {
     const dataLoader = getDataLoader();
     const enchantingLevel = IdleSkillSystem.getSkillLevel(character, 'enchanting');
@@ -222,7 +225,7 @@ export class EnchantingSystem {
   static canCraftEnchantment(
     inventory: Inventory,
     recipe: EnchantmentRecipe,
-    character?: Character
+    _character?: Character
   ): { canCraft: boolean; missingMaterials?: Array<{ itemId: string; required: number; have: number }>; reason?: string } {
     const missingMaterials: Array<{ itemId: string; required: number; have: number }> = [];
 
@@ -262,8 +265,8 @@ export class EnchantingSystem {
   static calculateSuccessRate(
     character: Character,
     recipe: EnchantmentRecipe,
-    item: Item,
-    equipmentSlot: EquipmentSlot,
+    _item: Item,
+    _equipmentSlot: EquipmentSlot,
     existingEnchantments: ItemEnchantment[]
   ): number {
     const enchantingLevel = IdleSkillSystem.getSkillLevel(character, 'enchanting');

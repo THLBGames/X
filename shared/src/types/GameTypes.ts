@@ -118,6 +118,8 @@ export interface Item {
   equipmentSlot?: EquipmentSlot;
   statBonuses?: Partial<Stats>;
   combatStatBonuses?: Partial<CombatStats>;
+  maxEnchantments?: number; // Maximum number of enchantments this item can have
+  enchantmentSlots?: number; // Synonym for maxEnchantments
   // Consumable-specific
   consumableEffect?: ConsumableEffect;
 }
