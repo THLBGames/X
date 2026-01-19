@@ -162,8 +162,9 @@ export class IdleSkillSystem {
 
   /**
    * Get available recipes for a skill at current level
+   * @param inventory Optional inventory to check for unlock requirements (for secret recipes)
    */
-  static getAvailableRecipes(character: Character, skillId: string) {
+  static getAvailableRecipes(character: Character, skillId: string, inventory?: Inventory) {
     const dataLoader = getDataLoader();
     const skill = dataLoader.getSkill(skillId);
 
@@ -172,7 +173,27 @@ export class IdleSkillSystem {
     }
 
     const skillLevel = this.getSkillLevel(character, skillId);
-    return skill.recipes.filter((recipe) => skillLevel >= recipe.level);
+    return skill.recipes.filter((recipe) => {
+      // Check level requirement
+      if (skillLevel < recipe.level) {
+        return false;
+      }
+
+      // Check unlock requirements if inventory is provided
+      if (recipe.unlockRequirements && inventory) {
+        for (const requirement of recipe.unlockRequirements) {
+          const quantity = InventoryManager.getItemQuantity(inventory, requirement.itemId);
+          if (quantity < requirement.quantity) {
+            return false;
+          }
+        }
+      } else if (recipe.unlockRequirements && !inventory) {
+        // If recipe has unlock requirements but no inventory provided, hide it
+        return false;
+      }
+
+      return true;
+    });
   }
 
   /**

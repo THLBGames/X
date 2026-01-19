@@ -403,6 +403,10 @@ export interface Recipe {
     skillId: string;
     level: number;
   }>; // Additional skills required (beyond the primary skill)
+  unlockRequirements?: Array<{
+    itemId: string;
+    quantity: number;
+  }>; // Items required to unlock this recipe (for secret recipes)
 }
 
 export interface RecipeIngredient {
