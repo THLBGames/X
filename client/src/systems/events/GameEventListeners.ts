@@ -453,7 +453,7 @@ export function initializeEventListeners(): () => void {
         if (skill && (skill.level === 50 || skill.level === 99)) {
           const dataLoader = getDataLoader();
           const skillData = dataLoader.getSkill(event.skillId);
-          const isCrafting = skillData?.category === 'crafting' || skillData?.category === 'production';
+          const isCrafting = skillData?.category === 'production';
 
           state.recordChronicleMilestone('skill_mastery', isCrafting ? 'crafting' : 'general', {
             skillId: event.skillId,
