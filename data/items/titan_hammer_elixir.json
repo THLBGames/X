@@ -1,0 +1,17 @@
+{
+  "id": "titan_hammer_elixir",
+  "name": "Titan Hammer Elixir",
+  "description": "An alchemy-crafted titan hammer elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1450,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "titan_hammer_elixir_buff",
+    "duration": 1200
+  },
+  "nameKey": "item.titan_hammer_elixir.name",
+  "descriptionKey": "item.titan_hammer_elixir.description"
+}

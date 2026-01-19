@@ -8,6 +8,98 @@
   "experienceFormula": "baseExp * (level * 1.3)",
   "recipes": [
     {
+      "recipeId": "charcoal_basic",
+      "name": "Charcoal",
+      "level": 2,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "oak_log",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "charcoal",
+        "quantity": 2
+      },
+      "experienceGain": 12,
+      "timeRequired": 3500
+    },
+    {
+      "recipeId": "charcoal_quality",
+      "name": "Quality Charcoal",
+      "level": 12,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "maple_log",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_quality",
+        "quantity": 3
+      },
+      "experienceGain": 35,
+      "timeRequired": 4200
+    },
+    {
+      "recipeId": "charcoal_premium",
+      "name": "Premium Charcoal",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "yew_log",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_premium",
+        "quantity": 4
+      },
+      "experienceGain": 60,
+      "timeRequired": 4800
+    },
+    {
+      "recipeId": "charcoal_magical",
+      "name": "Magical Charcoal",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "magic_log",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_magical",
+        "quantity": 5
+      },
+      "experienceGain": 110,
+      "timeRequired": 5500
+    },
+    {
       "recipeId": "bread",
       "name": "Bread",
       "level": 1,
@@ -23,6 +115,27 @@
       },
       "experienceGain": 10,
       "timeRequired": 3000
+    },
+    {
+      "recipeId": "berry_pie",
+      "name": "Berry Pie",
+      "level": 3,
+      "ingredients": [
+        {
+          "itemId": "berry",
+          "quantity": 3
+        },
+        {
+          "itemId": "wheat",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "berry_pie",
+        "quantity": 1
+      },
+      "experienceGain": 15,
+      "timeRequired": 3200
     },
     {
       "recipeId": "health_food",
@@ -73,6 +186,27 @@
       "timeRequired": 4000
     },
     {
+      "recipeId": "fruit_salad",
+      "name": "Fruit Salad",
+      "level": 6,
+      "ingredients": [
+        {
+          "itemId": "fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "berry",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "fruit_salad",
+        "quantity": 1
+      },
+      "experienceGain": 20,
+      "timeRequired": 3500
+    },
+    {
       "recipeId": "fish_stew",
       "name": "Fish Stew",
       "level": 15,
@@ -104,6 +238,31 @@
       "timeRequired": 4500
     },
     {
+      "recipeId": "apple_pie",
+      "name": "Apple Pie",
+      "level": 10,
+      "ingredients": [
+        {
+          "itemId": "apple",
+          "quantity": 3
+        },
+        {
+          "itemId": "wheat",
+          "quantity": 2
+        },
+        {
+          "itemId": "berry",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "apple_pie",
+        "quantity": 1
+      },
+      "experienceGain": 30,
+      "timeRequired": 4000
+    },
+    {
       "recipeId": "quality_meal",
       "name": "Quality Meal",
       "level": 25,
@@ -127,6 +286,27 @@
       },
       "experienceGain": 75,
       "timeRequired": 5000
+    },
+    {
+      "recipeId": "mushroom_soup",
+      "name": "Mushroom Soup",
+      "level": 18,
+      "ingredients": [
+        {
+          "itemId": "mushroom",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "mushroom_soup",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 4500
     },
     {
       "recipeId": "sushi_platter",
@@ -189,6 +369,31 @@
       },
       "experienceGain": 130,
       "timeRequired": 5500
+    },
+    {
+      "recipeId": "spiced_stew",
+      "name": "Spiced Stew",
+      "level": 30,
+      "ingredients": [
+        {
+          "itemId": "wild_spice",
+          "quantity": 2
+        },
+        {
+          "itemId": "raw_meat",
+          "quantity": 2
+        },
+        {
+          "itemId": "vegetable",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "spiced_stew",
+        "quantity": 1
+      },
+      "experienceGain": 95,
+      "timeRequired": 5200
     },
     {
       "recipeId": "ancient_recipe_meal",
@@ -254,41 +459,6 @@
         "quantity": 1
       },
       "experienceGain": 200,
-      "timeRequired": 6000
-    },
-    {
-      "recipeId": "ancient_recipe_meal",
-      "name": "Ancient Recipe Meal",
-      "level": 44,
-      "skillPrerequisites": [
-        {
-          "skillId": "archaeology",
-          "level": 40
-        }
-      ],
-      "ingredients": [
-        {
-          "itemId": "ancient_papyrus",
-          "quantity": 2
-        },
-        {
-          "itemId": "ancient_scroll",
-          "quantity": 1
-        },
-        {
-          "itemId": "rare_herb",
-          "quantity": 3
-        },
-        {
-          "itemId": "raw_meat_quality",
-          "quantity": 2
-        }
-      ],
-      "result": {
-        "itemId": "ancient_recipe_meal",
-        "quantity": 1
-      },
-      "experienceGain": 160,
       "timeRequired": 6000
     },
     {
@@ -414,6 +584,27 @@
       "timeRequired": 6500
     },
     {
+      "recipeId": "ancient_mushroom_delight",
+      "name": "Ancient Mushroom Delight",
+      "level": 70,
+      "ingredients": [
+        {
+          "itemId": "ancient_mushroom",
+          "quantity": 2
+        },
+        {
+          "itemId": "enchanted_fruit",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "ancient_mushroom_delight",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 6800
+    },
+    {
       "recipeId": "leviathan_feast",
       "name": "Leviathan Feast",
       "level": 78,
@@ -480,6 +671,27 @@
       "timeRequired": 7500
     },
     {
+      "recipeId": "legendary_berry_jam",
+      "name": "Legendary Berry Jam",
+      "level": 85,
+      "ingredients": [
+        {
+          "itemId": "legendary_berry",
+          "quantity": 3
+        },
+        {
+          "itemId": "fruit_essence",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "legendary_berry_jam",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 7200
+    },
+    {
       "recipeId": "primordial_bouillabaisse",
       "name": "Primordial Bouillabaisse",
       "level": 97,
@@ -513,6 +725,1927 @@
       },
       "experienceGain": 650,
       "timeRequired": 8000
+    },
+    {
+      "recipeId": "forbidden_feast",
+      "name": "Forbidden Feast",
+      "level": 95,
+      "ingredients": [
+        {
+          "itemId": "forbidden_fruit",
+          "quantity": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_berry",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "forbidden_feast",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "herb_infused_stew",
+      "name": "Herb-Infused Stew",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "raw_meat",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "aromatic_spice",
+          "quantity": 2
+        },
+        {
+          "itemId": "vegetable",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "herb_infused_stew",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "medicinal_soup",
+      "name": "Medicinal Soup",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "medicinal_root",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "medicinal_soup",
+        "quantity": 1
+      },
+      "experienceGain": 45,
+      "timeRequired": 4200
+    },
+    {
+      "recipeId": "moonlit_tea",
+      "name": "Moonlit Tea",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "moonlit_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "fruit",
+          "quantity": 1
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "moonlit_tea",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "spiced_aromatic_bread",
+      "name": "Spiced Aromatic Bread",
+      "level": 27,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "wheat",
+          "quantity": 3
+        },
+        {
+          "itemId": "aromatic_spice",
+          "quantity": 2
+        },
+        {
+          "itemId": "berry",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "spiced_aromatic_bread",
+        "quantity": 1
+      },
+      "experienceGain": 50,
+      "timeRequired": 4100
+    },
+    {
+      "recipeId": "enchanted_fruit_salad",
+      "name": "Enchanted Fruit Salad",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "enchanted_leaf",
+          "quantity": 2
+        },
+        {
+          "itemId": "exotic_fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "berry",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_fruit_salad",
+        "quantity": 1
+      },
+      "experienceGain": 320,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "celestial_feast",
+      "name": "Celestial Feast",
+      "level": 87,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_petal",
+          "quantity": 2
+        },
+        {
+          "itemId": "raw_meat_premium",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "exotic_fruit",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "celestial_feast",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 8000
+    },
+    {
+      "recipeId": "exotic_beast_feast",
+      "name": "Exotic Beast Feast",
+      "level": 92,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 90
+        },
+        {
+          "skillId": "cooking",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "raw_meat_exotic",
+          "quantity": 3
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanted_fruit",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "exotic_beast_feast",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "stewed_trapped_game",
+      "name": "Stewed Trapped Game",
+      "level": 20,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "trapped_animal",
+          "quantity": 2
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "vegetable",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "stewed_trapped_game",
+        "quantity": 1
+      },
+      "experienceGain": 65,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "roasted_beast",
+      "name": "Roasted Beast",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "trapped_animal_quality",
+          "quantity": 1
+        },
+        {
+          "itemId": "aromatic_spice",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "roasted_beast",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "monster_meat_stew",
+      "name": "Monster Meat Stew",
+      "level": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "trapped_monster",
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "monster_meat_stew",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "health_food_small",
+      "name": "Small Health Food",
+      "level": 4,
+      "ingredients": [
+        {
+          "itemId": "raw_meat",
+          "quantity": 1
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "health_food_small",
+        "quantity": 1
+      },
+      "experienceGain": 18,
+      "timeRequired": 3800
+    },
+    {
+      "recipeId": "health_food_medium",
+      "name": "Medium Health Food",
+      "level": 12,
+      "ingredients": [
+        {
+          "itemId": "raw_meat",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "health_food_medium",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "health_food_large",
+      "name": "Large Health Food",
+      "level": 25,
+      "ingredients": [
+        {
+          "itemId": "raw_meat_quality",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "medicinal_root",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "health_food_large",
+        "quantity": 1
+      },
+      "experienceGain": 80,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "health_food_epic",
+      "name": "Epic Health Food",
+      "level": 50,
+      "ingredients": [
+        {
+          "itemId": "raw_meat_premium",
+          "quantity": 2
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "medicinal_root",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "health_food_epic",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 6200
+    },
+    {
+      "recipeId": "health_food_legendary",
+      "name": "Legendary Health Food",
+      "level": 75,
+      "ingredients": [
+        {
+          "itemId": "raw_meat_exotic",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "health_food_legendary",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 7200
+    },
+    {
+      "recipeId": "mana_food_small",
+      "name": "Small Mana Food",
+      "level": 7,
+      "ingredients": [
+        {
+          "itemId": "fruit",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "water",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "mana_food_small",
+        "quantity": 1
+      },
+      "experienceGain": 28,
+      "timeRequired": 4200
+    },
+    {
+      "recipeId": "mana_food_medium",
+      "name": "Medium Mana Food",
+      "level": 18,
+      "ingredients": [
+        {
+          "itemId": "fruit",
+          "quantity": 4
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "energy_wisp",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "mana_food_medium",
+        "quantity": 1
+      },
+      "experienceGain": 60,
+      "timeRequired": 4800
+    },
+    {
+      "recipeId": "mana_food_large",
+      "name": "Large Mana Food",
+      "level": 32,
+      "ingredients": [
+        {
+          "itemId": "exotic_fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "energy_wisp",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "mana_food_large",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 5600
+    },
+    {
+      "recipeId": "mana_food_epic",
+      "name": "Epic Mana Food",
+      "level": 55,
+      "ingredients": [
+        {
+          "itemId": "enchanted_fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "mana_food_epic",
+        "quantity": 1
+      },
+      "experienceGain": 220,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "mana_food_legendary",
+      "name": "Legendary Mana Food",
+      "level": 80,
+      "ingredients": [
+        {
+          "itemId": "legendary_berry",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "mana_food_legendary",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 7800
+    },
+    {
+      "recipeId": "combined_health_mana_food",
+      "name": "Combined Restoration Food",
+      "level": 20,
+      "ingredients": [
+        {
+          "itemId": "raw_meat",
+          "quantity": 2
+        },
+        {
+          "itemId": "fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "combined_health_mana_food",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "regen_health_food",
+      "name": "Health Regeneration Food",
+      "level": 16,
+      "ingredients": [
+        {
+          "itemId": "medicinal_root",
+          "quantity": 4
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "water",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "regen_health_food",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 4600
+    },
+    {
+      "recipeId": "regen_mana_food",
+      "name": "Mana Regeneration Food",
+      "level": 22,
+      "ingredients": [
+        {
+          "itemId": "energy_wisp",
+          "quantity": 5
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "regen_mana_food",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 5400
+    },
+    {
+      "recipeId": "cooking_mining_xp_food",
+      "name": "Mining Experience Food",
+      "level": 11,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "wheat",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_mining_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 38,
+      "timeRequired": 4400
+    },
+    {
+      "recipeId": "cooking_woodcutting_xp_food",
+      "name": "Woodcutting Experience Food",
+      "level": 11,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "oak_log",
+          "quantity": 5
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "wheat",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_woodcutting_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 38,
+      "timeRequired": 4400
+    },
+    {
+      "recipeId": "cooking_fishing_xp_food",
+      "name": "Fishing Experience Food",
+      "level": 13,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 12
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "freshwater_fish",
+          "quantity": 3
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "wheat",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "cooking_fishing_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 42,
+      "timeRequired": 4600
+    },
+    {
+      "recipeId": "cooking_herbalism_xp_food",
+      "name": "Herbalism Experience Food",
+      "level": 14,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 12
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "common_herb",
+          "quantity": 6
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 1
+        },
+        {
+          "itemId": "wheat",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_herbalism_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 48,
+      "timeRequired": 4700
+    },
+    {
+      "recipeId": "cooking_foraging_xp_food",
+      "name": "Foraging Experience Food",
+      "level": 12,
+      "skillPrerequisites": [
+        {
+          "skillId": "foraging",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "berry",
+          "quantity": 5
+        },
+        {
+          "itemId": "fruit",
+          "quantity": 2
+        },
+        {
+          "itemId": "common_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_foraging_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "cooking_hunting_xp_food",
+      "name": "Hunting Experience Food",
+      "level": 17,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 4
+        },
+        {
+          "itemId": "animal_bone",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_hunting_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 65,
+      "timeRequired": 4900
+    },
+    {
+      "recipeId": "cooking_trapping_xp_food",
+      "name": "Trapping Experience Food",
+      "level": 19,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "animal_pelt",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_fang",
+          "quantity": 1
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_trapping_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 75,
+      "timeRequired": 5100
+    },
+    {
+      "recipeId": "cooking_quarrying_xp_food",
+      "name": "Quarrying Experience Food",
+      "level": 21,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 18
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stone",
+          "quantity": 6
+        },
+        {
+          "itemId": "rough_stone",
+          "quantity": 3
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_quarrying_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 88,
+      "timeRequired": 5300
+    },
+    {
+      "recipeId": "cooking_treasure_hunting_xp_food",
+      "name": "Treasure Hunting Experience Food",
+      "level": 23,
+      "skillPrerequisites": [
+        {
+          "skillId": "treasure_hunting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_coin",
+          "quantity": 4
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "cooking_treasure_hunting_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 95,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "cooking_thieving_xp_food",
+      "name": "Thieving Experience Food",
+      "level": 24,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "stolen_gem_common",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "cooking_thieving_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 5600
+    },
+    {
+      "recipeId": "cooking_archaeology_xp_food",
+      "name": "Archaeology Experience Food",
+      "level": 26,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 22
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "cooking_archaeology_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 105,
+      "timeRequired": 5700
+    },
+    {
+      "recipeId": "cooking_blacksmithing_xp_food",
+      "name": "Blacksmithing Experience Food",
+      "level": 29,
+      "skillPrerequisites": [
+        {
+          "skillId": "blacksmithing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_blacksmithing_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 115,
+      "timeRequired": 5900
+    },
+    {
+      "recipeId": "cooking_engineering_xp_food",
+      "name": "Engineering Experience Food",
+      "level": 31,
+      "skillPrerequisites": [
+        {
+          "skillId": "engineering",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gears",
+          "quantity": 4
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_engineering_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 125,
+      "timeRequired": 6100
+    },
+    {
+      "recipeId": "cooking_tailoring_xp_food",
+      "name": "Tailoring Experience Food",
+      "level": 33,
+      "skillPrerequisites": [
+        {
+          "skillId": "tailoring",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "cloth",
+          "quantity": 6
+        },
+        {
+          "itemId": "leather",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_tailoring_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 135,
+      "timeRequired": 6300
+    },
+    {
+      "recipeId": "cooking_leatherworking_xp_food",
+      "name": "Leatherworking Experience Food",
+      "level": 34,
+      "skillPrerequisites": [
+        {
+          "skillId": "leatherworking",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "leather",
+          "quantity": 6
+        },
+        {
+          "itemId": "animal_hide",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_leatherworking_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 6400
+    },
+    {
+      "recipeId": "cooking_jewelcrafting_xp_food",
+      "name": "Jewelcrafting Experience Food",
+      "level": 36,
+      "skillPrerequisites": [
+        {
+          "skillId": "jewelcrafting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gem_common",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_jewelcrafting_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 150,
+      "timeRequired": 6600
+    },
+    {
+      "recipeId": "cooking_enchanting_xp_food",
+      "name": "Enchanting Experience Food",
+      "level": 37,
+      "skillPrerequisites": [
+        {
+          "skillId": "enchanting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "essence_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_enchanting_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 155,
+      "timeRequired": 6700
+    },
+    {
+      "recipeId": "cooking_runecrafting_xp_food",
+      "name": "Runecrafting Experience Food",
+      "level": 39,
+      "skillPrerequisites": [
+        {
+          "skillId": "runecrafting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "rune_stone",
+          "quantity": 4
+        },
+        {
+          "itemId": "moderate_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "cooking_runecrafting_xp_food",
+        "quantity": 1
+      },
+      "experienceGain": 165,
+      "timeRequired": 6900
+    },
+    {
+      "recipeId": "attack_boost_food",
+      "name": "Attack Boost Food",
+      "level": 15,
+      "ingredients": [
+        {
+          "itemId": "animal_fang",
+          "quantity": 3
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "raw_meat",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "attack_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 58,
+      "timeRequired": 4700
+    },
+    {
+      "recipeId": "defense_boost_food",
+      "name": "Defense Boost Food",
+      "level": 17,
+      "ingredients": [
+        {
+          "itemId": "animal_bone",
+          "quantity": 4
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "raw_meat",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "defense_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 62,
+      "timeRequired": 4800
+    },
+    {
+      "recipeId": "magic_attack_boost_food",
+      "name": "Magic Attack Boost Food",
+      "level": 19,
+      "ingredients": [
+        {
+          "itemId": "mana_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "magic_attack_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 78,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "magic_defense_boost_food",
+      "name": "Magic Defense Boost Food",
+      "level": 21,
+      "ingredients": [
+        {
+          "itemId": "energy_wisp",
+          "quantity": 4
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "magic_defense_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 90,
+      "timeRequired": 5400
+    },
+    {
+      "recipeId": "critical_chance_boost_food",
+      "name": "Critical Chance Boost Food",
+      "level": 23,
+      "ingredients": [
+        {
+          "itemId": "animal_claw",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "critical_chance_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 98,
+      "timeRequired": 5600
+    },
+    {
+      "recipeId": "speed_boost_food",
+      "name": "Speed Boost Food",
+      "level": 25,
+      "ingredients": [
+        {
+          "itemId": "energy_wisp",
+          "quantity": 4
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 1
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "speed_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 108,
+      "timeRequired": 5800
+    },
+    {
+      "recipeId": "multi_combat_stat_food",
+      "name": "Multi-Combat Stat Food",
+      "level": 45,
+      "ingredients": [
+        {
+          "itemId": "epic_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "multi_combat_stat_food",
+        "quantity": 1
+      },
+      "experienceGain": 190,
+      "timeRequired": 6400
+    },
+    {
+      "recipeId": "strength_boost_food",
+      "name": "Strength Boost Food",
+      "level": 20,
+      "ingredients": [
+        {
+          "itemId": "animal_fang",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "raw_meat",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "strength_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 72,
+      "timeRequired": 4900
+    },
+    {
+      "recipeId": "vitality_boost_food",
+      "name": "Vitality Boost Food",
+      "level": 22,
+      "ingredients": [
+        {
+          "itemId": "animal_hide",
+          "quantity": 3
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "medicinal_root",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "vitality_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 82,
+      "timeRequired": 5200
+    },
+    {
+      "recipeId": "dexterity_boost_food",
+      "name": "Dexterity Boost Food",
+      "level": 24,
+      "ingredients": [
+        {
+          "itemId": "animal_claw",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_fang",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "dexterity_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 92,
+      "timeRequired": 5500
+    },
+    {
+      "recipeId": "intelligence_boost_food",
+      "name": "Intelligence Boost Food",
+      "level": 26,
+      "ingredients": [
+        {
+          "itemId": "essence_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "mana_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "intelligence_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 102,
+      "timeRequired": 5700
+    },
+    {
+      "recipeId": "wisdom_boost_food",
+      "name": "Wisdom Boost Food",
+      "level": 28,
+      "ingredients": [
+        {
+          "itemId": "energy_wisp",
+          "quantity": 3
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "wisdom_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 112,
+      "timeRequired": 5900
+    },
+    {
+      "recipeId": "luck_boost_food",
+      "name": "Luck Boost Food",
+      "level": 30,
+      "ingredients": [
+        {
+          "itemId": "gem_common",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        },
+        {
+          "itemId": "fruit",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "luck_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 118,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "multi_stat_boost_food",
+      "name": "Multi-Stat Boost Food",
+      "level": 48,
+      "ingredients": [
+        {
+          "itemId": "epic_herb",
+          "quantity": 5
+        },
+        {
+          "itemId": "essence_crystal",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "multi_stat_boost_food",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 6800
+    },
+    {
+      "recipeId": "phoenix_feast_secret",
+      "name": "Phoenix Feast",
+      "level": 55,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "fire_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "raw_meat_premium",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_feast",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "dragon_heart_stew_secret",
+      "name": "Dragon Heart Stew",
+      "level": 78,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_heart",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "dragon_heart",
+          "quantity": 1
+        },
+        {
+          "itemId": "dragon_scale",
+          "quantity": 5
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 5
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "dragon_heart_stew",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "divine_banquet_secret",
+      "name": "Divine Banquet",
+      "level": 88,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_artifact",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_artifact",
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "divine_banquet",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "world_tree_nectar_secret",
+      "name": "World Tree Nectar",
+      "level": 85,
+      "unlockRequirements": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 3
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "world_tree_nectar",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "celestial_banquet_secret",
+      "name": "Celestial Banquet",
+      "level": 82,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_key",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "celestial_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_fragment",
+          "quantity": 3
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "celestial_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "celestial_banquet",
+        "quantity": 1
+      },
+      "experienceGain": 700,
+      "timeRequired": 11400
+    },
+    {
+      "recipeId": "primal_meal_secret",
+      "name": "Primal Meal",
+      "level": 65,
+      "unlockRequirements": [
+        {
+          "itemId": "primal_essence",
+          "quantity": 2
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "primal_essence",
+          "quantity": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 4
+        },
+        {
+          "itemId": "ancient_bone",
+          "quantity": 2
+        },
+        {
+          "itemId": "raw_meat_premium",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "primal_meal",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "omnipotence_meal_uber",
+      "name": "Omnipotence Meal",
+      "level": 92,
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "world_tree_sapling",
+          "quantity": 1
+        },
+        {
+          "itemId": "dragon_heart",
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_crystal",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "omnipotence_meal",
+        "quantity": 1
+      },
+      "experienceGain": 900,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "reality_breaking_soup_uber",
+      "name": "Reality-Breaking Soup",
+      "level": 98,
+      "ingredients": [
+        {
+          "itemId": "reality_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "cosmic_heart",
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "reality_breaking_soup",
+        "quantity": 1
+      },
+      "experienceGain": 1200,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "godlike_feast_uber",
+      "name": "Godlike Feast",
+      "level": 99,
+      "ingredients": [
+        {
+          "itemId": "eternal_essence",
+          "quantity": 1
+        },
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "world_ender_shard",
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 10
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 15
+        }
+      ],
+      "result": {
+        "itemId": "godlike_feast",
+        "quantity": 1
+      },
+      "experienceGain": 1500,
+      "timeRequired": 18000
     }
   ],
   "passiveBonuses": [
@@ -524,17 +2657,28 @@
       }
     },
     {
+      "level": 50,
+      "bonus": {
+        "health": 150,
+        "goldGeneration": 0.1,
+        "foodEffectiveness": 0.05
+      }
+    },
+    {
       "level": 70,
       "bonus": {
         "health": 200,
-        "goldGeneration": 0.1
+        "goldGeneration": 0.15,
+        "foodEffectiveness": 0.1
       }
     },
     {
       "level": 99,
       "bonus": {
         "health": 300,
-        "goldGeneration": 0.15
+        "goldGeneration": 0.2,
+        "foodEffectiveness": 0.15,
+        "cookingSpeed": 0.1
       }
     }
   ],

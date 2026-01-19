@@ -1,0 +1,17 @@
+{
+  "id": "merchant_ledger_elixir",
+  "name": "Merchant Ledger Elixir",
+  "description": "An alchemy-crafted merchant ledger elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 545,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "merchant_ledger_elixir_buff",
+    "duration": 890
+  },
+  "nameKey": "item.merchant_ledger_elixir.name",
+  "descriptionKey": "item.merchant_ledger_elixir.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "aromatic_spice",
+  "name": "Aromatic Spice",
+  "description": "A fragrant spice that enhances cooking recipes. Also useful in alchemy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10,
+  "nameKey": "item.aromatic_spice.name",
+  "descriptionKey": "item.aromatic_spice.description"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "trapping_advanced_schematics_III",
+  "name": "Advanced Trap Schematics III",
+  "description": "Master-level trap designs. Requires materials: trapped_animal_premium x5, rare_pelt x5",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Advanced_III",
+  "price": 10000,
+  "materialRequirements": [
+    {
+      "itemId": "trapped_animal_premium",
+      "quantity": 5
+    },
+    {
+      "itemId": "rare_pelt",
+      "quantity": 5
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.12,
+    "yieldMultiplier": 1.2,
+    "experienceMultiplier": 1.2
+  },
+  "requirements": {
+    "skillLevel": 65,
+    "previousTierId": "trapping_advanced_schematics_II"
+  },
+  "nameKey": "upgrade.trapping_advanced_schematics_III.name",
+  "descriptionKey": "upgrade.trapping_advanced_schematics_III.description"
+}

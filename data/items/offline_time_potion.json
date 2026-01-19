@@ -1,0 +1,17 @@
+{
+  "id": "offline_time_potion",
+  "name": "Offline Time Potion",
+  "description": "An alchemy-crafted offline time potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 280,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "offline_time_potion_buff",
+    "duration": 5760
+  },
+  "nameKey": "item.offline_time_potion.name",
+  "descriptionKey": "item.offline_time_potion.description"
+}

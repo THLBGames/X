@@ -1,0 +1,16 @@
+{
+  "id": "enchanted_fruit_elixir",
+  "name": "Enchanted Fruit Elixir",
+  "description": "An elixir made from enchanted fruits with magical properties.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 180,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 300
+  },
+  "nameKey": "item.enchanted_fruit_elixir.name",
+  "descriptionKey": "item.enchanted_fruit_elixir.description"
+}

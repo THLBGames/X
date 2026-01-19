@@ -1,0 +1,12 @@
+{
+  "id": "metal_scrap",
+  "name": "Metal Scrap",
+  "description": "Metal scrap stolen from a blacksmith, can be reforged into useful materials.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 6,
+  "nameKey": "item.metal_scrap.name",
+  "descriptionKey": "item.metal_scrap.description"
+}

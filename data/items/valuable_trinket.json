@@ -1,0 +1,12 @@
+{
+  "id": "valuable_trinket",
+  "name": "Valuable Trinket",
+  "description": "A valuable trinket stolen from a merchant, can be sold or used in crafting.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 45,
+  "nameKey": "item.valuable_trinket.name",
+  "descriptionKey": "item.valuable_trinket.description"
+}

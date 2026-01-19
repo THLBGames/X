@@ -1,0 +1,12 @@
+{
+  "id": "star_fragment",
+  "name": "Star Fragment",
+  "description": "A fragment of a fallen star, containing celestial energy.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 220,
+  "nameKey": "item.star_fragment.name",
+  "descriptionKey": "item.star_fragment.description"
+}

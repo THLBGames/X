@@ -1,0 +1,12 @@
+{
+  "id": "monster_trap_upgrade",
+  "name": "Monster Trap Upgrade",
+  "description": "A schematic for upgrading traps to catch monsters more effectively.",
+  "type": "quest",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 1,
+  "value": 500,
+  "nameKey": "item.monster_trap_upgrade.name",
+  "descriptionKey": "item.monster_trap_upgrade.description"
+}

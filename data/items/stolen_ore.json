@@ -1,0 +1,12 @@
+{
+  "id": "stolen_ore",
+  "name": "Stolen Ore",
+  "description": "Ore stolen from a blacksmith's stock, useful for blacksmithing and engineering.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.stolen_ore.name",
+  "descriptionKey": "item.stolen_ore.description"
+}

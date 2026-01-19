@@ -1,0 +1,17 @@
+{
+  "id": "legendary_hunter_elixir",
+  "name": "Legendary Hunter Elixir",
+  "description": "An alchemy-crafted legendary hunter elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 880,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "legendary_hunter_elixir_buff",
+    "duration": 1060
+  },
+  "nameKey": "item.legendary_hunter_elixir.name",
+  "descriptionKey": "item.legendary_hunter_elixir.description"
+}

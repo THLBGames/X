@@ -1,0 +1,17 @@
+{
+  "id": "celestial_insight_elixir",
+  "name": "Celestial Insight Elixir",
+  "description": "An alchemy-crafted celestial insight elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1405,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "celestial_insight_elixir_buff",
+    "duration": 1110
+  },
+  "nameKey": "item.celestial_insight_elixir.name",
+  "descriptionKey": "item.celestial_insight_elixir.description"
+}

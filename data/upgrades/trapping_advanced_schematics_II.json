@@ -1,0 +1,31 @@
+{
+  "id": "trapping_advanced_schematics_II",
+  "name": "Advanced Trap Schematics II",
+  "description": "Further enhances trap designs. Requires materials: trapped_monster x3, monster_pelt x8",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Advanced_II",
+  "price": 5000,
+  "materialRequirements": [
+    {
+      "itemId": "trapped_monster",
+      "quantity": 3
+    },
+    {
+      "itemId": "monster_pelt",
+      "quantity": 8
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.08,
+    "yieldMultiplier": 1.15,
+    "experienceMultiplier": 1.15
+  },
+  "requirements": {
+    "skillLevel": 45,
+    "previousTierId": "trapping_advanced_schematics_I"
+  },
+  "nameKey": "upgrade.trapping_advanced_schematics_II.name",
+  "descriptionKey": "upgrade.trapping_advanced_schematics_II.description"
+}

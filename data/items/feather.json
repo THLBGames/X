@@ -1,0 +1,12 @@
+{
+  "id": "feather",
+  "name": "Feather",
+  "description": "A feather from a trapped bird.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.feather.name",
+  "descriptionKey": "item.feather.description"
+}

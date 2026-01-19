@@ -1,0 +1,17 @@
+{
+  "id": "attack_buff_potion",
+  "name": "Attack Buff Potion",
+  "description": "A potion that temporarily increases attack power.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 80,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "attack_boost",
+    "duration": 300
+  },
+  "nameKey": "item.attack_buff_potion.name",
+  "descriptionKey": "item.attack_buff_potion.description"
+}

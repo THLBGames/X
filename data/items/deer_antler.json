@@ -1,0 +1,12 @@
+{
+  "id": "deer_antler",
+  "name": "Deer Antler",
+  "description": "An antler from a trapped deer.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.deer_antler.name",
+  "descriptionKey": "item.deer_antler.description"
+}

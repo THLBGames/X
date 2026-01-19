@@ -1,0 +1,17 @@
+{
+  "id": "attack_boost_food",
+  "name": "Attack Boost Food",
+  "description": "Increases attack power for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 45,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "attack_boost",
+    "duration": 600
+  },
+  "nameKey": "item.attack_boost_food.name",
+  "descriptionKey": "item.attack_boost_food.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "divine_potion",
+  "name": "Ancient Trophy Elixir",
+  "description": "An alchemy-crafted ancient trophy elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1440,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "divine_potion_buff",
+    "duration": 1180
+  },
+  "nameKey": "item.divine_potion.name",
+  "descriptionKey": "item.divine_potion.description"
+}

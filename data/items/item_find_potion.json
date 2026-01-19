@@ -1,0 +1,17 @@
+{
+  "id": "item_find_potion",
+  "name": "Item Find Potion",
+  "description": "An alchemy-crafted item find potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 270,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "item_find_potion_buff",
+    "duration": 5640
+  },
+  "nameKey": "item.item_find_potion.name",
+  "descriptionKey": "item.item_find_potion.description"
+}

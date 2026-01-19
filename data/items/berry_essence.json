@@ -1,0 +1,12 @@
+{
+  "id": "berry_essence",
+  "name": "Berry Essence",
+  "description": "Pure essence distilled from legendary berries.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 120,
+  "nameKey": "item.berry_essence.name",
+  "descriptionKey": "item.berry_essence.description"
+}

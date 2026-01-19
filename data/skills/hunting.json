@@ -29,6 +29,120 @@
       ]
     },
     {
+      "level": 5,
+      "nodeId": "rabbit_warren",
+      "name": "Rabbit Warren",
+      "successRate": 0.87,
+      "experienceGain": 20,
+      "timeRequired": 4800,
+      "resources": [
+        {
+          "itemId": "raw_meat",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "rabbit_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "deer_trail",
+      "name": "Deer Trail",
+      "successRate": 0.86,
+      "experienceGain": 28,
+      "timeRequired": 5200,
+      "resources": [
+        {
+          "itemId": "raw_meat",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.75,
+          "quantity": 1
+        },
+        {
+          "itemId": "deer_antler",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "boar_territory",
+      "name": "Boar Territory",
+      "successRate": 0.85,
+      "experienceGain": 35,
+      "timeRequired": 5500,
+      "resources": [
+        {
+          "itemId": "raw_meat",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.8,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "boar_tusk",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "wolf_pack_territory",
+      "name": "Wolf Pack Territory",
+      "successRate": 0.84,
+      "experienceGain": 42,
+      "timeRequired": 5800,
+      "resources": [
+        {
+          "itemId": "raw_meat",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.85,
+          "quantity": 1
+        },
+        {
+          "itemId": "wolf_pelt",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 25,
       "nodeId": "medium_game",
       "name": "Medium Game Trail",
@@ -50,6 +164,137 @@
         {
           "itemId": "animal_bone",
           "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "bear_cave",
+      "name": "Bear Cave",
+      "successRate": 0.82,
+      "experienceGain": 55,
+      "timeRequired": 6200,
+      "resources": [
+        {
+          "itemId": "raw_meat_quality",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.9,
+          "quantity": 1
+        },
+        {
+          "itemId": "bear_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_claw",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "nodeId": "elusive_prey",
+      "name": "Elusive Prey Grounds",
+      "successRate": 0.81,
+      "experienceGain": 65,
+      "timeRequired": 6400,
+      "skillPrerequisites": [
+        {
+          "skillId": "trapping",
+          "level": 25
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_quality",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.75,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_pelt",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "mountain_goat_territory",
+      "name": "Mountain Goat Territory",
+      "successRate": 0.8,
+      "experienceGain": 75,
+      "timeRequired": 6600,
+      "resources": [
+        {
+          "itemId": "raw_meat_quality",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide",
+          "chance": 0.8,
+          "quantity": 1
+        },
+        {
+          "itemId": "mountain_horn",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "forest_stag_grounds",
+      "name": "Forest Stag Grounds",
+      "successRate": 0.79,
+      "experienceGain": 85,
+      "timeRequired": 6800,
+      "skillPrerequisites": [
+        {
+          "skillId": "foraging",
+          "level": 40
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_quality",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide_quality",
+          "chance": 0.75,
+          "quantity": 1
+        },
+        {
+          "itemId": "deer_antler",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.45,
           "quantity": 1
         }
       ]
@@ -86,6 +331,230 @@
       ]
     },
     {
+      "level": 50,
+      "nodeId": "master_trophy_hunt",
+      "name": "Master Trophy Hunt",
+      "successRate": 0.75,
+      "experienceGain": 180,
+      "timeRequired": 7500,
+      "unlockRequirements": [
+        {
+          "itemId": "master_hunting_badge",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide_quality",
+          "chance": 0.9,
+          "quantity": 1
+        },
+        {
+          "itemId": "trophy_antler",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_trophy",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "sabertooth_territory",
+      "name": "Sabertooth Territory",
+      "successRate": 0.77,
+      "experienceGain": 140,
+      "timeRequired": 7200,
+      "resources": [
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide_quality",
+          "chance": 0.85,
+          "quantity": 1
+        },
+        {
+          "itemId": "sabertooth_fang",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_claw",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.45,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "dire_wolf_den",
+      "name": "Dire Wolf Den",
+      "successRate": 0.76,
+      "experienceGain": 160,
+      "timeRequired": 7400,
+      "resources": [
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide_quality",
+          "chance": 0.9,
+          "quantity": 1
+        },
+        {
+          "itemId": "dire_wolf_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.55,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "monster_hunt_grounds",
+      "name": "Monster Hunt Grounds",
+      "successRate": 0.75,
+      "experienceGain": 180,
+      "timeRequired": 7600,
+      "skillPrerequisites": [
+        {
+          "skillId": "cooking",
+          "level": 50
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "monster_pelt",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "monster_bone",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.45,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "ancient_beast_grounds",
+      "name": "Ancient Beast Grounds",
+      "successRate": 0.74,
+      "experienceGain": 200,
+      "timeRequired": 7800,
+      "resources": [
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "animal_hide_rare",
+          "chance": 0.85,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_horn",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_bone",
+          "chance": 0.6,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "legendary_hunter_grounds",
+      "name": "Legendary Hunter Grounds",
+      "successRate": 0.78,
+      "experienceGain": 300,
+      "timeRequired": 8500,
+      "unlockRequirements": [
+        {
+          "itemId": "legendary_hunter_medallion",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 1,
+          "min": 3,
+          "max": 4
+        },
+        {
+          "itemId": "animal_hide_rare",
+          "chance": 0.95,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_trophy",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 75,
       "nodeId": "rare_game",
       "name": "Rare Game Trail",
@@ -115,28 +584,396 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 80,
+      "nodeId": "mythical_beast_territory",
+      "name": "Mythical Beast Territory",
+      "successRate": 0.68,
+      "experienceGain": 320,
+      "timeRequired": 8500,
+      "skillPrerequisites": [
+        {
+          "skillId": "leatherworking",
+          "level": 75
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "mythical_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "mythical_horn",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "celestial_beast_grounds",
+      "name": "Celestial Beast Grounds",
+      "successRate": 0.67,
+      "experienceGain": 380,
+      "timeRequired": 9000,
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "celestial_pelt",
+          "chance": 0.65,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_horn",
+          "chance": 0.45,
+          "quantity": 1
+        },
+        {
+          "itemId": "animal_fang",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "primordial_hunt_grounds",
+      "name": "Primordial Hunt Grounds",
+      "successRate": 0.66,
+      "experienceGain": 450,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "primordial_pelt",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_fang",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_trophy",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "godslayer_hunting_grounds",
+      "name": "Godslayer Hunting Grounds",
+      "successRate": 0.72,
+      "experienceGain": 675,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "godslayer_hunting_license",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 1,
+          "min": 3,
+          "max": 4
+        },
+        {
+          "itemId": "primordial_pelt",
+          "chance": 0.9,
+          "quantity": 1
+        },
+        {
+          "itemId": "primordial_fang",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_trophy",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_beast_core",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "divine_beast_territory",
+      "name": "Divine Beast Territory",
+      "successRate": 0.65,
+      "experienceGain": 500,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "divine_pelt",
+          "chance": 0.75,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_beast_core",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_trophy",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "master_hunter_paradise",
+      "name": "Master Hunter's Paradise",
+      "successRate": 0.65,
+      "experienceGain": 550,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 0.6,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "raw_meat_premium",
+          "chance": 0.6,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "divine_pelt",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_pelt",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_trophy",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_beast_core",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "ultimate_hunter_sanctuary",
+      "name": "Ultimate Hunter's Sanctuary",
+      "successRate": 0.75,
+      "experienceGain": 825,
+      "timeRequired": 10000,
+      "unlockRequirements": [
+        {
+          "itemId": "ultimate_hunting_mastery_token",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "raw_meat_exotic",
+          "chance": 1,
+          "min": 4,
+          "max": 5
+        },
+        {
+          "itemId": "divine_pelt",
+          "chance": 0.9,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "primordial_pelt",
+          "chance": 0.9,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "ancient_trophy",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_beast_core",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "hunter_essence",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 5
+        },
+        "combatStatBonus": {
+          "attack": 3
+        }
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "goldGeneration": 0.05,
+        "statBonus": {
+          "dexterity": 8
+        }
+      }
+    },
+    {
       "level": 35,
       "bonus": {
         "goldGeneration": 0.05,
-        "attack": 5
+        "attack": 5,
+        "statBonus": {
+          "dexterity": 10
+        }
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "goldGeneration": 0.1,
+        "itemFindRate": 0.05,
+        "statBonus": {
+          "dexterity": 15
+        },
+        "combatStatBonus": {
+          "attack": 8
+        }
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "statBonus": {
+          "dexterity": 20,
+          "luck": 5
+        },
+        "combatStatBonus": {
+          "attack": 10,
+          "criticalChance": 0.02
+        }
       }
     },
     {
       "level": 70,
       "bonus": {
         "goldGeneration": 0.1,
-        "attack": 10
+        "attack": 10,
+        "statBonus": {
+          "dexterity": 25
+        }
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "itemFindRate": 0.1,
+        "statBonus": {
+          "dexterity": 28,
+          "luck": 8
+        },
+        "combatStatBonus": {
+          "attack": 12,
+          "criticalChance": 0.03
+        }
+      }
+    },
+    {
+      "level": 85,
+      "bonus": {
+        "goldGeneration": 0.12,
+        "statBonus": {
+          "dexterity": 32,
+          "luck": 10
+        },
+        "combatStatBonus": {
+          "attack": 15,
+          "criticalChance": 0.04
+        }
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "itemFindRate": 0.15,
+        "statBonus": {
+          "dexterity": 35,
+          "luck": 12
+        },
+        "combatStatBonus": {
+          "attack": 18,
+          "criticalChance": 0.05
+        }
       }
     },
     {
       "level": 99,
       "bonus": {
         "goldGeneration": 0.15,
-        "attack": 15
+        "itemFindRate": 0.2,
+        "statBonus": {
+          "dexterity": 40,
+          "luck": 15
+        },
+        "combatStatBonus": {
+          "attack": 20,
+          "criticalChance": 0.06
+        }
       }
     }
   ],

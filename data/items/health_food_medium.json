@@ -1,0 +1,16 @@
+{
+  "id": "health_food_medium",
+  "name": "Medium Health Food",
+  "description": "Restores 200 health.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 40,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 200
+  },
+  "nameKey": "item.health_food_medium.name",
+  "descriptionKey": "item.health_food_medium.description"
+}

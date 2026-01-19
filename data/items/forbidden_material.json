@@ -1,0 +1,12 @@
+{
+  "id": "forbidden_material",
+  "name": "Forbidden Material",
+  "description": "Forbidden material from the Shadow Market, used in dark crafting recipes.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 700,
+  "nameKey": "item.forbidden_material.name",
+  "descriptionKey": "item.forbidden_material.description"
+}

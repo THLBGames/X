@@ -1,0 +1,16 @@
+{
+  "id": "mana_food_medium",
+  "name": "Medium Mana Food",
+  "description": "Restores 150 mana.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 35,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 150
+  },
+  "nameKey": "item.mana_food_medium.name",
+  "descriptionKey": "item.mana_food_medium.description"
+}

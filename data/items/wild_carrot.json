@@ -1,0 +1,12 @@
+{
+  "id": "wild_carrot",
+  "name": "Wild Carrot",
+  "description": "A wild root vegetable with nutritional value.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5,
+  "nameKey": "item.wild_carrot.name",
+  "descriptionKey": "item.wild_carrot.description"
+}

@@ -1,7 +1,7 @@
 {
   "id": "treasure_hunting",
   "name": "Treasure Hunting",
-  "description": "Discover buried treasures and loot",
+  "description": "Discover buried treasures and loot hidden across the world. Find rare materials, equipment, and game-changing artifacts to support all your skills.",
   "type": "gathering",
   "category": "gathering",
   "maxLevel": 99,
@@ -9,58 +9,286 @@
   "resourceNodes": [
     {
       "level": 1,
-      "nodeId": "small_cache",
-      "name": "Small Treasure Cache",
-      "successRate": 0.8,
+      "nodeId": "abandoned_camp",
+      "name": "Abandoned Camp",
+      "successRate": 0.75,
       "experienceGain": 25,
       "timeRequired": 8000,
       "resources": [
         {
           "itemId": "gold",
           "chance": 1,
-          "min": 10,
-          "max": 30
+          "min": 15,
+          "max": 40
         },
         {
           "itemId": "common_trinket",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "copper_ore",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "common_herb",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "nodeId": "forgotten_grave",
+      "name": "Forgotten Grave",
+      "successRate": 0.73,
+      "experienceGain": 35,
+      "timeRequired": 8500,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 25,
+          "max": 60
+        },
+        {
+          "itemId": "common_trinket",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "common_herb",
           "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "stone",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_coin",
+          "chance": 0.1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "buried_cache",
+      "name": "Buried Cache",
+      "successRate": 0.72,
+      "experienceGain": 50,
+      "timeRequired": 9000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 40,
+          "max": 90
+        },
+        {
+          "itemId": "iron_ore",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_common",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "uncommon_trinket",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "tin_ore",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "nodeId": "shipwreck_debris",
+      "name": "Shipwreck Debris",
+      "successRate": 0.70,
+      "experienceGain": 65,
+      "timeRequired": 9500,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 60,
+          "max": 130
+        },
+        {
+          "itemId": "metal_scrap",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "engineering_component",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "bronze_ore",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_component",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "nodeId": "hidden_stash",
+      "name": "Hidden Stash",
+      "successRate": 0.68,
+      "experienceGain": 80,
+      "timeRequired": 10000,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 80,
+          "max": 160
+        },
+        {
+          "itemId": "uncommon_trinket",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "uncommon_herb",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_recipe",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "silver_ore",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_map",
+          "chance": 0.003,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "ruined_outpost",
+      "name": "Ruined Outpost",
+      "successRate": 0.66,
+      "experienceGain": 100,
+      "timeRequired": 10500,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 15
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 100,
+          "max": 200
+        },
+        {
+          "itemId": "ancient_shard",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rare_herb",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "steel_ore",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_uncommon",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_tool",
+          "chance": 0.25,
           "quantity": 1
         }
       ]
     },
     {
       "level": 30,
-      "nodeId": "medium_chest",
-      "name": "Medium Treasure Chest",
-      "successRate": 0.75,
-      "experienceGain": 85,
-      "timeRequired": 10000,
+      "nodeId": "bandit_hideout",
+      "name": "Bandit Hideout",
+      "successRate": 0.65,
+      "experienceGain": 120,
+      "timeRequired": 11000,
       "resources": [
         {
           "itemId": "gold",
           "chance": 1,
-          "min": 50,
-          "max": 100
+          "min": 120,
+          "max": 250
         },
         {
-          "itemId": "uncommon_trinket",
+          "itemId": "rare_item",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "crafting_component",
           "chance": 0.5,
           "quantity": 1
         },
         {
-          "itemId": "gem_common",
-          "chance": 0.2,
+          "itemId": "advanced_component",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "gold_ore",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "treasure_compass",
+          "chance": 0.005,
           "quantity": 1
         }
       ]
     },
     {
-      "level": 60,
-      "nodeId": "large_hoard",
-      "name": "Large Treasure Hoard",
-      "successRate": 0.68,
-      "experienceGain": 200,
-      "timeRequired": 12000,
+      "level": 35,
+      "nodeId": "ancient_burial_site",
+      "name": "Ancient Burial Site",
+      "successRate": 0.63,
+      "experienceGain": 140,
+      "timeRequired": 11500,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 20
+        }
+      ],
       "resources": [
         {
           "itemId": "gold",
@@ -69,49 +297,699 @@
           "max": 300
         },
         {
-          "itemId": "rare_trinket",
-          "chance": 0.6,
-          "quantity": 1
-        },
-        {
-          "itemId": "gem_rare",
-          "chance": 0.3,
+          "itemId": "ancient_artifact",
+          "chance": 0.4,
           "quantity": 1
         },
         {
           "itemId": "ancient_coin",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "moderate_essence",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "nodeId": "lost_mine_shaft",
+      "name": "Lost Mine Shaft",
+      "successRate": 0.62,
+      "experienceGain": 165,
+      "timeRequired": 12000,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 25
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 180,
+          "max": 360
+        },
+        {
+          "itemId": "mithril_ore",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_rare",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "platinum_ore",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "crystal_shard",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "runite_ore",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "material_cache",
+          "chance": 0.1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "nodeId": "wizards_secret_vault",
+      "name": "Wizard's Secret Vault",
+      "successRate": 0.60,
+      "experienceGain": 190,
+      "timeRequired": 12500,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 20
+        }
+      ],
+      "unlockRequirements": [
+        {
+          "itemId": "wizard_vault_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 220,
+          "max": 450
+        },
+        {
+          "itemId": "essence_crystal",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "magical_material",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_scroll",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "rune_stone",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanted_material",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "skill_tome",
+          "chance": 0.15,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "sunken_temple",
+      "name": "Sunken Temple",
+      "successRate": 0.58,
+      "experienceGain": 220,
+      "timeRequired": 13000,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 30
+        }
+      ],
+      "unlockRequirements": [
+        {
+          "itemId": "underwater_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 280,
+          "max": 550
+        },
+        {
+          "itemId": "ancient_relic",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "preserved_artifact",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ancient_artifact",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "pearl",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_material",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "nodeId": "dragons_hoard",
+      "name": "Dragon's Hoard",
+      "successRate": 0.57,
+      "experienceGain": 260,
+      "timeRequired": 13500,
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 350,
+          "max": 700
+        },
+        {
+          "itemId": "dragonstone",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "gem_epic",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "legendary_material",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "dragon_scale_ancient",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "nodeId": "demon_lords_vault",
+      "name": "Demon Lord's Vault",
+      "successRate": 0.55,
+      "experienceGain": 300,
+      "timeRequired": 14000,
+      "unlockRequirements": [
+        {
+          "itemId": "demon_seal",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 450,
+          "max": 900
+        },
+        {
+          "itemId": "legendary_material",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "forbidden_material",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "void_essence",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "nodeId": "celestial_cache",
+      "name": "Celestial Cache",
+      "successRate": 0.54,
+      "experienceGain": 350,
+      "timeRequired": 14200,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 50
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 550,
+          "max": 1100
+        },
+        {
+          "itemId": "celestial_essence",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "star_chart",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "prismatic_shard",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "void_crystal",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
           "chance": 0.2,
           "quantity": 1
         }
       ]
     },
     {
-      "level": 90,
-      "nodeId": "legendary_trove",
-      "name": "Legendary Treasure Trove",
-      "successRate": 0.6,
-      "experienceGain": 450,
-      "timeRequired": 15000,
+      "level": 70,
+      "nodeId": "primal_depths",
+      "name": "Primal Depths",
+      "successRate": 0.53,
+      "experienceGain": 400,
+      "timeRequired": 14500,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 60
+        },
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
       "resources": [
         {
           "itemId": "gold",
           "chance": 1,
-          "min": 500,
-          "max": 1000
+          "min": 650,
+          "max": 1300
         },
         {
-          "itemId": "legendary_trinket",
-          "chance": 0.7,
+          "itemId": "primal_essence",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ancient_treasure",
+          "chance": 0.5,
           "quantity": 1
         },
         {
-          "itemId": "gem_epic",
+          "itemId": "primordial_relic",
           "chance": 0.4,
           "quantity": 1
         },
         {
-          "itemId": "ancient_artifact",
+          "itemId": "orichalcum_ore",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_ore",
           "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "nodeId": "shadow_treasury",
+      "name": "Shadow Treasury",
+      "successRate": 0.52,
+      "experienceGain": 450,
+      "timeRequired": 14800,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 60
+        }
+      ],
+      "unlockRequirements": [
+        {
+          "itemId": "shadow_pass",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 800,
+          "max": 1600
+        },
+        {
+          "itemId": "shadow_material",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "illegal_goods",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "stolen_artifact",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.6,
+          "quantity": 1
+        },
+        {
+          "itemId": "forbidden_material",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "divine_sanctum",
+      "name": "Divine Sanctum",
+      "successRate": 0.51,
+      "experienceGain": 520,
+      "timeRequired": 15000,
+      "skillPrerequisites": [
+        {
+          "skillId": "divination",
+          "level": 70
+        },
+        {
+          "skillId": "archaeology",
+          "level": 70
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 1000,
+          "max": 2000
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "divine_material",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "celestial_essence",
+          "chance": 0.45,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "legendary_item",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 85,
+      "nodeId": "world_boss_cache",
+      "name": "World Boss Cache",
+      "successRate": 0.50,
+      "experienceGain": 580,
+      "timeRequired": 15200,
+      "unlockRequirements": [
+        {
+          "itemId": "world_boss_trophy",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 1200,
+          "max": 2400
+        },
+        {
+          "itemId": "legendary_item",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_material",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "mythic_component",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "epic_item",
+          "chance": 0.8,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "master_treasure_vault",
+      "name": "Master Treasure Vault",
+      "successRate": 0.50,
+      "experienceGain": 650,
+      "timeRequired": 15500,
+      "skillPrerequisites": [
+        {
+          "skillId": "treasure_hunting",
+          "level": 85
+        },
+        {
+          "skillId": "archaeology",
+          "level": 80
+        },
+        {
+          "skillId": "divination",
+          "level": 80
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 1500,
+          "max": 3000
+        },
+        {
+          "itemId": "mythic_material",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "legendary_item",
+          "chance": 0.8,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "primordial_relic",
+          "chance": 0.5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 95,
+      "nodeId": "godslayers_hoard",
+      "name": "Godslayer's Hoard",
+      "successRate": 0.50,
+      "experienceGain": 750,
+      "timeRequired": 15500,
+      "unlockRequirements": [
+        {
+          "itemId": "godslayer_badge",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 2000,
+          "max": 4000
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 0.8,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "mythic_material",
+          "chance": 0.9,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "legendary_item",
+          "chance": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_fragment",
+          "chance": 0.6,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 0.7,
+          "min": 1,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "ultimate_treasure",
+      "name": "Ultimate Treasure",
+      "successRate": 0.50,
+      "experienceGain": 850,
+      "timeRequired": 16000,
+      "unlockRequirements": [
+        {
+          "itemId": "treasure_master_key",
+          "quantity": 1
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "gold",
+          "chance": 1,
+          "min": 2500,
+          "max": 5000
+        },
+        {
+          "itemId": "mythic_item",
+          "chance": 0.7,
+          "quantity": 1
+        },
+        {
+          "itemId": "divine_artifact",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ultimate_component",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "legendary_item",
+          "chance": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": "game_changer_artifact",
+          "chance": 0.5,
           "quantity": 1
         }
       ]
@@ -119,24 +997,73 @@
   ],
   "passiveBonuses": [
     {
-      "level": 35,
+      "level": 10,
       "bonus": {
-        "goldGeneration": 0.15,
-        "itemFindRate": 0.05
+        "itemFindRate": 0.05,
+        "goldGeneration": 0.03
       }
     },
     {
-      "level": 70,
+      "level": 25,
       "bonus": {
+        "itemFindRate": 0.10,
+        "statBonus": {
+          "luck": 5
+        },
+        "goldGeneration": 0.05
+      }
+    },
+    {
+      "level": 40,
+      "bonus": {
+        "itemFindRate": 0.15,
+        "goldGeneration": 0.10,
+        "rareMaterialChance": 0.05
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "itemFindRate": 0.20,
+        "statBonus": {
+          "luck": 10
+        },
+        "equipmentFindChance": 0.05,
+        "goldGeneration": 0.12
+      }
+    },
+    {
+      "level": 60,
+      "bonus": {
+        "itemFindRate": 0.25,
+        "goldGeneration": 0.15
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "itemFindRate": 0.30,
+        "goldGeneration": 0.20,
+        "rareMaterialChance": 0.10
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "itemFindRate": 0.40,
         "goldGeneration": 0.25,
-        "itemFindRate": 0.1
+        "equipmentFindChance": 0.15
       }
     },
     {
       "level": 99,
       "bonus": {
-        "goldGeneration": 0.4,
-        "itemFindRate": 0.2
+        "itemFindRate": 0.50,
+        "goldGeneration": 0.30,
+        "rareMaterialChance": 0.20,
+        "statBonus": {
+          "luck": 10
+        }
       }
     }
   ],

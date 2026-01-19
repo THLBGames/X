@@ -8,6 +8,98 @@
   "experienceFormula": "baseExp * (level * 1.4)",
   "recipes": [
     {
+      "recipeId": "charcoal_smelting_fuel",
+      "name": "Charcoal Smelting Fuel",
+      "level": 3,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "oak_log",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel",
+        "quantity": 3
+      },
+      "experienceGain": 18,
+      "timeRequired": 4000
+    },
+    {
+      "recipeId": "quality_charcoal_fuel",
+      "name": "Quality Charcoal Fuel",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "maple_log",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel_quality",
+        "quantity": 4
+      },
+      "experienceGain": 55,
+      "timeRequired": 4500
+    },
+    {
+      "recipeId": "premium_charcoal_fuel",
+      "name": "Premium Charcoal Fuel",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "yew_log",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel_premium",
+        "quantity": 5
+      },
+      "experienceGain": 100,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "magical_charcoal_fuel",
+      "name": "Magical Charcoal Fuel",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "magic_log",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "charcoal_fuel_magical",
+        "quantity": 6
+      },
+      "experienceGain": 180,
+      "timeRequired": 5500
+    },
+    {
       "recipeId": "copper_sword",
       "name": "Copper Sword",
       "level": 5,
@@ -27,6 +119,33 @@
       },
       "experienceGain": 30,
       "timeRequired": 8000
+    },
+    {
+      "recipeId": "copper_sword_charcoal",
+      "name": "Copper Sword (Charcoal)",
+      "level": 5,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "charcoal_fuel",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "copper_sword",
+        "quantity": 1
+      },
+      "experienceGain": 32,
+      "timeRequired": 7500
     },
     {
       "recipeId": "bronze_weapon",
@@ -380,28 +499,1918 @@
       },
       "experienceGain": 900,
       "timeRequired": 30000
+    },
+    {
+      "recipeId": "stone_furnace",
+      "name": "Stone Furnace",
+      "level": 8,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 5
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "limestone",
+          "quantity": 10
+        },
+        {
+          "itemId": "sandstone",
+          "quantity": 8
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "stone_furnace",
+        "quantity": 1
+      },
+      "experienceGain": 45,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "reinforced_stone_anvil",
+      "name": "Reinforced Stone Anvil",
+      "level": 25,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "granite",
+          "quantity": 15
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "reinforced_stone_anvil",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "marble_enhanced_armor",
+      "name": "Marble Enhanced Armor",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "marble",
+          "quantity": 12
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "marble_enhanced_armor",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 15000
+    },
+    {
+      "recipeId": "obsidian_blade",
+      "name": "Obsidian Blade",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "obsidian",
+          "quantity": 20
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "volcanic_stone",
+          "quantity": 10
+        }
+      ],
+      "result": {
+        "itemId": "obsidian_blade",
+        "quantity": 1
+      },
+      "experienceGain": 550,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "titanstone_weapon",
+      "name": "Titanstone Weapon",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "titanstone",
+          "quantity": 8
+        },
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "massive_stone_block",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "titanstone_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 700,
+      "timeRequired": 25000
+    },
+    {
+      "recipeId": "copper_armor",
+      "name": "Copper Armor",
+      "level": 7,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 5
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        },
+        {
+          "itemId": "leather",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "copper_armor",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "copper_shield",
+      "name": "Copper Shield",
+      "level": 9,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 8
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "coal",
+          "quantity": 2
+        },
+        {
+          "itemId": "oak_log",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "copper_shield",
+        "quantity": 1
+      },
+      "experienceGain": 45,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "bronze_armor",
+      "name": "Bronze Armor",
+      "level": 15,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
+        },
+        {
+          "itemId": "leather",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "bronze_armor",
+        "quantity": 1
+      },
+      "experienceGain": 65,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "bronze_shield",
+      "name": "Bronze Shield",
+      "level": 18,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        },
+        {
+          "itemId": "maple_log",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "bronze_shield",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "iron_sword",
+      "name": "Iron Sword",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
+        },
+        {
+          "itemId": "orc_tooth",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "iron_sword",
+        "quantity": 1
+      },
+      "experienceGain": 95,
+      "timeRequired": 10500
+    },
+    {
+      "recipeId": "iron_shield",
+      "name": "Iron Shield",
+      "level": 24,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 18
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        },
+        {
+          "itemId": "yew_log",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "iron_shield",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "steel_armor",
+      "name": "Steel Armor",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        },
+        {
+          "itemId": "leather",
+          "quantity": 5
+        },
+        {
+          "itemId": "orc_tooth",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "steel_armor",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "steel_shield",
+      "name": "Steel Shield",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 32
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "steel_shield",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "silver_sword",
+      "name": "Silver Sword",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silver_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "silver_sword",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "silver_armor",
+      "name": "Silver Armor",
+      "level": 34,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 27
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "silver_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "coal",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_common",
+          "quantity": 4
+        },
+        {
+          "itemId": "leather",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "silver_armor",
+        "quantity": 1
+      },
+      "experienceGain": 170,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "gold_sword",
+      "name": "Gold Sword",
+      "level": 47,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 4
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gold_sword",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 13500
+    },
+    {
+      "recipeId": "gold_shield",
+      "name": "Gold Shield",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 42
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "gold_shield",
+        "quantity": 1
+      },
+      "experienceGain": 250,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "mithril_sword",
+      "name": "Mithril Sword",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "mithril_sword",
+        "quantity": 1
+      },
+      "experienceGain": 380,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "mithril_armor",
+      "name": "Mithril Armor",
+      "level": 64,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 57
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "mithril_armor",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 16500
+    },
+    {
+      "recipeId": "runite_armor",
+      "name": "Runite Armor",
+      "level": 67,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 20
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "runite_armor",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 17000
+    },
+    {
+      "recipeId": "runite_shield",
+      "name": "Runite Shield",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 62
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "runite_shield",
+        "quantity": 1
+      },
+      "experienceGain": 460,
+      "timeRequired": 17500
+    },
+    {
+      "recipeId": "adamantite_sword",
+      "name": "Adamantite Sword",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 20
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 6
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "adamantite_sword",
+        "quantity": 1
+      },
+      "experienceGain": 520,
+      "timeRequired": 19000
+    },
+    {
+      "recipeId": "adamantite_shield",
+      "name": "Adamantite Shield",
+      "level": 73,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 67
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "adamantite_shield",
+        "quantity": 1
+      },
+      "experienceGain": 530,
+      "timeRequired": 19500
+    },
+    {
+      "recipeId": "orichalcum_sword",
+      "name": "Orichalcum Sword",
+      "level": 82,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 25
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 4
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "orichalcum_sword",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 22000
+    },
+    {
+      "recipeId": "orichalcum_armor",
+      "name": "Orichalcum Armor",
+      "level": 84,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 77
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 30
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_legendary",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "orichalcum_armor",
+        "quantity": 1
+      },
+      "experienceGain": 680,
+      "timeRequired": 23000
+    },
+    {
+      "recipeId": "divine_sword",
+      "name": "Divine Sword",
+      "level": 96,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 30
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 6
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "divine_sword",
+        "quantity": 1
+      },
+      "experienceGain": 850,
+      "timeRequired": 26000
+    },
+    {
+      "recipeId": "divine_armor",
+      "name": "Divine Armor",
+      "level": 97,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 35
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 8
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_armor",
+        "quantity": 1
+      },
+      "experienceGain": 900,
+      "timeRequired": 27000
+    },
+    {
+      "recipeId": "gem_enhanced_iron_sword",
+      "name": "Gem-Enhanced Iron Sword",
+      "level": 28,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 20
+        },
+        {
+          "skillId": "jewelcrafting",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "gem_uncommon",
+          "quantity": 2
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "gem_enhanced_iron_sword",
+        "quantity": 1
+      },
+      "experienceGain": 110,
+      "timeRequired": 11200
+    },
+    {
+      "recipeId": "gem_enhanced_steel_armor",
+      "name": "Gem-Enhanced Steel Armor",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 35
+        },
+        {
+          "skillId": "jewelcrafting",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "gem_enhanced_steel_armor",
+        "quantity": 1
+      },
+      "experienceGain": 230,
+      "timeRequired": 13800
+    },
+    {
+      "recipeId": "gem_enhanced_mithril_weapon",
+      "name": "Gem-Enhanced Mithril Weapon",
+      "level": 66,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 58
+        },
+        {
+          "skillId": "jewelcrafting",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "gem_enhanced_mithril_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 430,
+      "timeRequired": 16800
+    },
+    {
+      "recipeId": "rune_inscribed_steel_sword",
+      "name": "Rune-Inscribed Steel Sword",
+      "level": 44,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 35
+        },
+        {
+          "skillId": "runecrafting",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "minor_rune",
+          "quantity": 2
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "rune_inscribed_steel_sword",
+        "quantity": 1
+      },
+      "experienceGain": 250,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "rune_inscribed_gold_armor",
+      "name": "Rune-Inscribed Gold Armor",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 42
+        },
+        {
+          "skillId": "runecrafting",
+          "level": 40
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "crystal_rune",
+          "quantity": 2
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "rune_inscribed_gold_armor",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 14500
+    },
+    {
+      "recipeId": "rune_inscribed_runite_weapon",
+      "name": "Rune-Inscribed Runite Weapon",
+      "level": 71,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 63
+        },
+        {
+          "skillId": "runecrafting",
+          "level": 60
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 22
+        },
+        {
+          "itemId": "enhanced_crystal_rune",
+          "quantity": 3
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "rune_inscribed_runite_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 540,
+      "timeRequired": 19200
+    },
+    {
+      "recipeId": "enchanted_mithril_sword",
+      "name": "Enchanted Mithril Sword",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        },
+        {
+          "skillId": "enchanting",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 14
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_mithril_sword",
+        "quantity": 1
+      },
+      "experienceGain": 370,
+      "timeRequired": 16200
+    },
+    {
+      "recipeId": "enchanted_adamantite_armor",
+      "name": "Enchanted Adamantite Armor",
+      "level": 76,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 68
+        },
+        {
+          "skillId": "enchanting",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 22
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 8
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "enchanted_adamantite_armor",
+        "quantity": 1
+      },
+      "experienceGain": 570,
+      "timeRequired": 20500
+    },
+    {
+      "recipeId": "scale_mail_armor",
+      "name": "Scale Mail Armor",
+      "level": 26,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "fish_scale",
+          "quantity": 15
+        },
+        {
+          "itemId": "coal",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "scale_mail_armor",
+        "quantity": 1
+      },
+      "experienceGain": 105,
+      "timeRequired": 10800
+    },
+    {
+      "recipeId": "ancient_artifact_sword",
+      "name": "Ancient Artifact Sword",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 18
+        },
+        {
+          "itemId": "ancient_artifact",
+          "quantity": 2
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "ancient_artifact_sword",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "ancient_artifact_armor",
+      "name": "Ancient Artifact Armor",
+      "level": 78,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 22
+        },
+        {
+          "itemId": "ancient_artifact",
+          "quantity": 3
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ancient_artifact_armor",
+        "quantity": 1
+      },
+      "experienceGain": 620,
+      "timeRequired": 24000
+    },
+    {
+      "recipeId": "divinely_blessed_weapon",
+      "name": "Divinely-Blessed Weapon",
+      "level": 88,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 85
+        },
+        {
+          "skillId": "divination",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 28
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 4
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "divinely_blessed_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 28000
+    },
+    {
+      "recipeId": "divinely_blessed_armor",
+      "name": "Divinely-Blessed Armor",
+      "level": 90,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 87
+        },
+        {
+          "skillId": "divination",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 28
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 6
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "divinely_blessed_armor",
+        "quantity": 1
+      },
+      "experienceGain": 780,
+      "timeRequired": 29000
+    },
+    {
+      "recipeId": "ancient_scroll_weapon",
+      "name": "Ancient Scroll Weapon",
+      "level": 28,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 22
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "coal",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ancient_scroll_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 120,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "druid_medallion_armor",
+      "name": "Druid Medallion Armor",
+      "level": 35,
+      "unlockRequirements": [
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 14
+        },
+        {
+          "itemId": "druid_medallion",
+          "quantity": 1
+        },
+        {
+          "itemId": "coal",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "druid_medallion_armor",
+        "quantity": 1
+      },
+      "experienceGain": 220,
+      "timeRequired": 13200
+    },
+    {
+      "recipeId": "master_key_sword",
+      "name": "Master Key Sword",
+      "level": 42,
+      "unlockRequirements": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 38
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 16
+        },
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "gem_rare",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_key_sword",
+        "quantity": 1
+      },
+      "experienceGain": 260,
+      "timeRequired": 14200
+    },
+    {
+      "recipeId": "phoenix_feather_blade",
+      "name": "Phoenix Feather Blade",
+      "level": 55,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 16
+        },
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_feather_blade",
+        "quantity": 1
+      },
+      "experienceGain": 420,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "dragon_scale_armor",
+      "name": "Dragon Scale Armor",
+      "level": 62,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 58
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 20
+        },
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "dragon_scale_armor",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 19000
+    },
+    {
+      "recipeId": "void_crystal_weapon",
+      "name": "Void Crystal Weapon",
+      "level": 72,
+      "unlockRequirements": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 68
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 22
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "gem_epic",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "void_crystal_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 560,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "prismatic_shard_armor",
+      "name": "Prismatic Shard Armor",
+      "level": 85,
+      "unlockRequirements": [
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 8
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 82
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 28
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "prismatic_shard_armor",
+        "quantity": 1
+      },
+      "experienceGain": 720,
+      "timeRequired": 30000
+    },
+    {
+      "recipeId": "divine_fragment_weapon",
+      "name": "Divine Fragment Weapon",
+      "level": 87,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 30
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "divine_fragment_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 800,
+      "timeRequired": 32000
+    },
+    {
+      "recipeId": "celestial_scale_armor",
+      "name": "Celestial Scale Armor",
+      "level": 89,
+      "unlockRequirements": [
+        {
+          "itemId": "celestial_scale",
+          "quantity": 10
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 86
+        },
+        {
+          "skillId": "fishing",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 32
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 7
+        }
+      ],
+      "result": {
+        "itemId": "celestial_scale_armor",
+        "quantity": 1
+      },
+      "experienceGain": 820,
+      "timeRequired": 33000
+    },
+    {
+      "recipeId": "ancient_relic_weapon",
+      "name": "Ancient Relic Weapon",
+      "level": 83,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_relic",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 70
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 26
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 5
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ancient_relic_weapon",
+        "quantity": 1
+      },
+      "experienceGain": 700,
+      "timeRequired": 28000
+    },
+    {
+      "recipeId": "godslayer_blade",
+      "name": "Godslayer Blade",
+      "level": 95,
+      "unlockRequirements": [
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "world_ender_shard",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 50
+        },
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 3
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 10
+        },
+        {
+          "itemId": "world_ender_shard",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "godslayer_blade",
+        "quantity": 1
+      },
+      "experienceGain": 1500,
+      "timeRequired": 40000
+    },
+    {
+      "recipeId": "cosmic_armor_set",
+      "name": "Cosmic Armor Set",
+      "level": 92,
+      "unlockRequirements": [
+        {
+          "itemId": "cosmic_heart",
+          "quantity": 2
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 20
+        },
+        {
+          "itemId": "cosmic_heart",
+          "quantity": 2
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 15
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "cosmic_armor_set",
+        "quantity": 1
+      },
+      "experienceGain": 1200,
+      "timeRequired": 38000
+    },
+    {
+      "recipeId": "reality_forge_hammer",
+      "name": "Reality Forge Hammer",
+      "level": 98,
+      "unlockRequirements": [
+        {
+          "itemId": "reality_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "cosmic_heart",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 96
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 20
+        },
+        {
+          "itemId": "reality_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 15
+        },
+        {
+          "itemId": "cosmic_heart",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "reality_forge_hammer",
+        "quantity": 1
+      },
+      "experienceGain": 1800,
+      "timeRequired": 42000
+    },
+    {
+      "recipeId": "eternal_anvil",
+      "name": "Eternal Anvil",
+      "level": 99,
+      "unlockRequirements": [
+        {
+          "itemId": "eternal_essence",
+          "quantity": 1
+        },
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 99
+        },
+        {
+          "skillId": "quarrying",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 100
+        },
+        {
+          "itemId": "eternal_essence",
+          "quantity": 1
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 25
+        },
+        {
+          "itemId": "godslayer_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "eternal_anvil",
+        "quantity": 1
+      },
+      "experienceGain": 2000,
+      "timeRequired": 45000
     }
   ],
   "passiveBonuses": [
     {
-      "level": 35,
+      "level": 10,
+      "bonus": {
+        "attack": 5,
+        "defense": 2
+      }
+    },
+    {
+      "level": 25,
       "bonus": {
         "attack": 10,
-        "defense": 5
+        "defense": 5,
+        "statBonus": {
+          "strength": 5
+        }
+      }
+    },
+    {
+      "level": 35,
+      "bonus": {
+        "attack": 15,
+        "defense": 8
+      }
+    },
+    {
+      "level": 50,
+      "bonus": {
+        "attack": 20,
+        "defense": 10,
+        "statBonus": {
+          "strength": 10
+        }
       }
     },
     {
       "level": 75,
       "bonus": {
-        "attack": 20,
-        "defense": 10
+        "attack": 25,
+        "defense": 12
+      }
+    },
+    {
+      "level": 90,
+      "bonus": {
+        "attack": 35,
+        "defense": 18,
+        "statBonus": {
+          "strength": 15
+        }
       }
     },
     {
       "level": 99,
       "bonus": {
-        "attack": 30,
-        "defense": 15
+        "attack": 40,
+        "defense": 20,
+        "statBonus": {
+          "strength": 20
+        }
       }
     }
   ],

@@ -1,0 +1,17 @@
+{
+  "id": "shadow_pass_elixir",
+  "name": "Shadow Pass Elixir",
+  "description": "An alchemy-crafted shadow pass elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 810,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "shadow_pass_elixir_buff",
+    "duration": 920
+  },
+  "nameKey": "item.shadow_pass_elixir.name",
+  "descriptionKey": "item.shadow_pass_elixir.description"
+}

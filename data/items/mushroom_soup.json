@@ -1,0 +1,16 @@
+{
+  "id": "mushroom_soup",
+  "name": "Mushroom Soup",
+  "description": "A hearty soup made from fresh mushrooms.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 45,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 80
+  },
+  "nameKey": "item.mushroom_soup.name",
+  "descriptionKey": "item.mushroom_soup.description"
+}

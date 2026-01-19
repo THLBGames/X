@@ -1,0 +1,17 @@
+{
+  "id": "critical_chance_potion",
+  "name": "Critical Chance Potion",
+  "description": "An alchemy-crafted critical chance potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 290,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "critical_chance_boost",
+    "duration": 680
+  },
+  "nameKey": "item.critical_chance_potion.name",
+  "descriptionKey": "item.critical_chance_potion.description"
+}

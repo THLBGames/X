@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_hunting_xp_potion",
+  "name": "Enhanced Hunting Experience Potion",
+  "description": "An alchemy-crafted enhanced hunting experience potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 860,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 920
+  },
+  "nameKey": "item.enhanced_hunting_xp_potion.name",
+  "descriptionKey": "item.enhanced_hunting_xp_potion.description"
+}

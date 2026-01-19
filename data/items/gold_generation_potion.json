@@ -1,0 +1,17 @@
+{
+  "id": "gold_generation_potion",
+  "name": "Gold Generation Potion",
+  "description": "An alchemy-crafted gold generation potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 260,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "gold_generation_potion_buff",
+    "duration": 5520
+  },
+  "nameKey": "item.gold_generation_potion.name",
+  "descriptionKey": "item.gold_generation_potion.description"
+}

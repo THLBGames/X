@@ -1,0 +1,12 @@
+{
+  "id": "lockpick_rare",
+  "name": "Rare Lockpick",
+  "description": "A high-quality lockpick stolen from the Thieves' Guild, improves lockpicking success.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 80,
+  "nameKey": "item.lockpick_rare.name",
+  "descriptionKey": "item.lockpick_rare.description"
+}

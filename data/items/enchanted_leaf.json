@@ -1,0 +1,12 @@
+{
+  "id": "enchanted_leaf",
+  "name": "Enchanted Leaf",
+  "description": "A leaf infused with magical energy. Highly valued by alchemists.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 60,
+  "nameKey": "item.enchanted_leaf.name",
+  "descriptionKey": "item.enchanted_leaf.description"
+}

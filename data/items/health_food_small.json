@@ -1,0 +1,16 @@
+{
+  "id": "health_food_small",
+  "name": "Small Health Food",
+  "description": "Restores 75 health.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 15,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 75
+  },
+  "nameKey": "item.health_food_small.name",
+  "descriptionKey": "item.health_food_small.description"
+}

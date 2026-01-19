@@ -45,6 +45,20 @@ export class CraftingSystem {
       }
     }
 
+    // Check unlock requirements (for secret recipes)
+    if (recipe.unlockRequirements) {
+      for (const requirement of recipe.unlockRequirements) {
+        const quantity = InventoryManager.getItemQuantity(inventory, requirement.itemId);
+        if (quantity < requirement.quantity) {
+          return {
+            success: false,
+            experience: 0,
+            reason: `Recipe requires ${requirement.quantity}x ${requirement.itemId} to unlock`,
+          };
+        }
+      }
+    }
+
     // Check if player has all ingredients
     for (const ingredient of recipe.ingredients) {
       const quantity = InventoryManager.getItemQuantity(inventory, ingredient.itemId);
@@ -89,8 +103,8 @@ export class CraftingSystem {
   /**
    * Get available recipes for a skill
    */
-  static getAvailableRecipes(character: Character, skillId: string): Recipe[] {
-    return IdleSkillSystem.getAvailableRecipes(character, skillId);
+  static getAvailableRecipes(character: Character, skillId: string, inventory?: Inventory): Recipe[] {
+    return IdleSkillSystem.getAvailableRecipes(character, skillId, inventory);
   }
 
   /**

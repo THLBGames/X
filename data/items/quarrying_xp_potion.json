@@ -1,0 +1,16 @@
+{
+  "id": "quarrying_xp_potion",
+  "name": "Quarrying Experience Potion",
+  "description": "An alchemy-crafted quarrying experience potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 275,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 550
+  },
+  "nameKey": "item.quarrying_xp_potion.name",
+  "descriptionKey": "item.quarrying_xp_potion.description"
+}

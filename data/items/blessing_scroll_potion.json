@@ -1,0 +1,17 @@
+{
+  "id": "blessing_scroll_potion",
+  "name": "Blessing Scroll Potion",
+  "description": "An alchemy-crafted blessing scroll potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 505,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "blessing_scroll_potion_buff",
+    "duration": 810
+  },
+  "nameKey": "item.blessing_scroll_potion.name",
+  "descriptionKey": "item.blessing_scroll_potion.description"
+}

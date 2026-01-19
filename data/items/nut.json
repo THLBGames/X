@@ -1,0 +1,12 @@
+{
+  "id": "nut",
+  "name": "Nut",
+  "description": "Edible nuts gathered from trees.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 3,
+  "nameKey": "item.nut.name",
+  "descriptionKey": "item.nut.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "root_herb",
+  "name": "Root Herb",
+  "description": "Medicinal herbs with roots, valued in alchemy.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 8,
+  "nameKey": "item.root_herb.name",
+  "descriptionKey": "item.root_herb.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "thief_tool",
+  "name": "Thief Tool",
+  "description": "A specialized tool used by thieves, acquired from the Thieves' Guild.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 70,
+  "nameKey": "item.thief_tool.name",
+  "descriptionKey": "item.thief_tool.description"
+}

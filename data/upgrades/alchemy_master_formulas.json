@@ -1,0 +1,40 @@
+{
+  "id": "alchemy_master_formulas",
+  "name": "Alchemy Master Formulas",
+  "description": "Unlocks 20 ultra-rare alchemy recipes requiring legendary components. Grants access to master-tier elixirs and potions.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "alchemy",
+  "tier": "VI",
+  "price": 25000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "celestial_scale_elixir",
+      "legendary_berry_potion",
+      "primordial_essence_potion",
+      "celestial_elixir",
+      "primal_health_elixir",
+      "ancient_trophy_elixir",
+      "forbidden_elixir",
+      "world_tree_sapling_elixir_secret",
+      "dragon_heart_elixir_secret",
+      "lich_phylactery_potion_secret",
+      "divine_artifact_elixir_secret",
+      "world_essence_elixir",
+      "primal_void_elixir",
+      "cosmic_essence_elixir",
+      "eternal_life_elixir",
+      "omnipotence_elixir",
+      "void_key_elixir_secret",
+      "godslayer_hunting_license_elixir_secret",
+      "godslayer_trapping_medallion_elixir_secret",
+      "ultimate_hunting_mastery_token_elixir_secret"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 85,
+    "previousTierId": "alchemy_upgrade_V"
+  },
+  "nameKey": "upgrade.alchemy_master_formulas.name",
+  "descriptionKey": "upgrade.alchemy_master_formulas.description"
+}

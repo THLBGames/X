@@ -1,0 +1,16 @@
+{
+  "id": "jewelcrafting_xp_potion",
+  "name": "Jewelcrafting Experience Potion",
+  "description": "An alchemy-crafted jewelcrafting experience potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 515,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 730
+  },
+  "nameKey": "item.jewelcrafting_xp_potion.name",
+  "descriptionKey": "item.jewelcrafting_xp_potion.description"
+}

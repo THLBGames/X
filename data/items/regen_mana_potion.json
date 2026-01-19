@@ -1,0 +1,16 @@
+{
+  "id": "regen_mana_potion",
+  "name": "Mana Regeneration Potion",
+  "description": "An alchemy-crafted mana regeneration potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 450,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 230
+  },
+  "nameKey": "item.regen_mana_potion.name",
+  "descriptionKey": "item.regen_mana_potion.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "world_tree_elixir",
+  "name": "World Tree Elixir",
+  "description": "An alchemy-crafted world tree elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1425,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "world_tree_elixir_buff",
+    "duration": 1150
+  },
+  "nameKey": "item.world_tree_elixir.name",
+  "descriptionKey": "item.world_tree_elixir.description"
+}

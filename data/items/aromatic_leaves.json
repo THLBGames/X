@@ -1,0 +1,12 @@
+{
+  "id": "aromatic_leaves",
+  "name": "Aromatic Leaves",
+  "description": "Fragrant leaves prized by alchemists for their properties.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 10,
+  "nameKey": "item.aromatic_leaves.name",
+  "descriptionKey": "item.aromatic_leaves.description"
+}

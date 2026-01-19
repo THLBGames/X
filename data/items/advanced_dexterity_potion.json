@@ -1,0 +1,17 @@
+{
+  "id": "advanced_dexterity_potion",
+  "name": "Advanced Dexterity Potion",
+  "description": "An alchemy-crafted advanced dexterity potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 530,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "advanced_dexterity_boost",
+    "duration": 860
+  },
+  "nameKey": "item.advanced_dexterity_potion.name",
+  "descriptionKey": "item.advanced_dexterity_potion.description"
+}

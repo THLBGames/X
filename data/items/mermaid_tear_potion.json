@@ -1,0 +1,17 @@
+{
+  "id": "mermaid_tear_potion",
+  "name": "Mermaid Tear Potion",
+  "description": "An alchemy-crafted mermaid tear potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 525,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "mermaid_tear_potion_buff",
+    "duration": 850
+  },
+  "nameKey": "item.mermaid_tear_potion.name",
+  "descriptionKey": "item.mermaid_tear_potion.description"
+}

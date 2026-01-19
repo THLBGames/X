@@ -1,0 +1,16 @@
+{
+  "id": "mana_food_small",
+  "name": "Small Mana Food",
+  "description": "Restores 50 mana.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 12,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 50
+  },
+  "nameKey": "item.mana_food_small.name",
+  "descriptionKey": "item.mana_food_small.description"
+}

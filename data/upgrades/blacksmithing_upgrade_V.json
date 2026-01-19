@@ -1,17 +1,17 @@
 {
   "id": "blacksmithing_upgrade_V",
   "name": "Blacksmithing Upgrade V",
-  "description": "Permanently increases blacksmithing XP gain by 30%, speed by 20%, and yield by 20%",
+  "description": "Permanently increases blacksmithing XP gain by 30%, speed by 20%, success rate by 20%, and yield by 20%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "blacksmithing",
   "tier": "V",
-  "price": 11180,
+  "price": 25000,
   "bonuses": {
     "experienceMultiplier": 1.3,
     "speedMultiplier": 0.8,
-    "yieldMultiplier": 1.2,
-    "successRateBonus": 0.2
+    "successRateBonus": 0.2,
+    "yieldMultiplier": 1.2
   },
   "requirements": {
     "previousTierId": "blacksmithing_upgrade_IV"

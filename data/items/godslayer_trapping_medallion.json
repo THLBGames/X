@@ -1,0 +1,12 @@
+{
+  "id": "godslayer_trapping_medallion",
+  "name": "Godslayer Trapping Medallion",
+  "description": "A legendary medallion granting access to godslayer trapping grounds.",
+  "type": "quest",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 1,
+  "value": 10000,
+  "nameKey": "item.godslayer_trapping_medallion.name",
+  "descriptionKey": "item.godslayer_trapping_medallion.description"
+}

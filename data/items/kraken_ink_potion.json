@@ -1,0 +1,17 @@
+{
+  "id": "kraken_ink_potion",
+  "name": "Kraken Ink Potion",
+  "description": "An alchemy-crafted kraken ink potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 875,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "kraken_ink_potion_buff",
+    "duration": 1050
+  },
+  "nameKey": "item.kraken_ink_potion.name",
+  "descriptionKey": "item.kraken_ink_potion.description"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "legendary_berry_jam",
+  "name": "Legendary Berry Jam",
+  "description": "A legendary jam with extraordinary healing properties.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 350,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 300
+  },
+  "nameKey": "item.legendary_berry_jam.name",
+  "descriptionKey": "item.legendary_berry_jam.description"
+}

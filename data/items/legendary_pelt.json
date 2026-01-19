@@ -1,0 +1,12 @@
+{
+  "id": "legendary_pelt",
+  "name": "Legendary Pelt",
+  "description": "A legendary pelt of exceptional quality.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 800,
+  "nameKey": "item.legendary_pelt.name",
+  "descriptionKey": "item.legendary_pelt.description"
+}

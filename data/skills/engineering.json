@@ -8,16 +8,64 @@
   "experienceFormula": "baseExp * (level * 1.4)",
   "recipes": [
     {
-      "recipeId": "simple_tool",
-      "name": "Simple Tool",
-      "level": 5,
+      "recipeId": "basic_gear",
+      "name": "Basic Gear",
+      "level": 1,
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 2
+        },
+        {
+          "itemId": "stone",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "gears",
+        "quantity": 1
+      },
+      "experienceGain": 25,
+      "timeRequired": 5000
+    },
+    {
+      "recipeId": "simple_spring",
+      "name": "Simple Spring",
+      "level": 3,
       "ingredients": [
         {
           "itemId": "iron_ore",
           "quantity": 3
         },
         {
-          "itemId": "wood",
+          "itemId": "copper_ore",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "spring",
+        "quantity": 1
+      },
+      "experienceGain": 28,
+      "timeRequired": 6000
+    },
+    {
+      "recipeId": "simple_tool",
+      "name": "Simple Tool",
+      "level": 5,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 1
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 3
+        },
+        {
+          "itemId": "oak_log",
           "quantity": 2
         }
       ],
@@ -27,6 +75,155 @@
       },
       "experienceGain": 30,
       "timeRequired": 7000
+    },
+    {
+      "recipeId": "basic_mining_pick",
+      "name": "Basic Mining Pick",
+      "level": 7,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 5
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "oak_log",
+          "quantity": 3
+        },
+        {
+          "itemId": "gears",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "basic_mining_pick",
+        "quantity": 1
+      },
+      "experienceGain": 40,
+      "timeRequired": 7500
+    },
+    {
+      "recipeId": "copper_wire",
+      "name": "Copper Wire",
+      "level": 8,
+      "ingredients": [
+        {
+          "itemId": "copper_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "coal",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "copper_wire",
+        "quantity": 2
+      },
+      "experienceGain": 35,
+      "timeRequired": 6500
+    },
+    {
+      "recipeId": "powered_axe",
+      "name": "Powered Axe",
+      "level": 12,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "maple_log",
+          "quantity": 3
+        },
+        {
+          "itemId": "gears",
+          "quantity": 2
+        },
+        {
+          "itemId": "spring",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "powered_axe",
+        "quantity": 1
+      },
+      "experienceGain": 55,
+      "timeRequired": 8200
+    },
+    {
+      "recipeId": "improved_tool",
+      "name": "Improved Tool",
+      "level": 18,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 4
+        },
+        {
+          "itemId": "maple_log",
+          "quantity": 3
+        },
+        {
+          "itemId": "gears",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "improved_tool",
+        "quantity": 1
+      },
+      "experienceGain": 100,
+      "timeRequired": 8500
+    },
+    {
+      "recipeId": "precision_wooden_mechanism",
+      "name": "Precision Wooden Mechanism",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "yew_log",
+          "quantity": 4
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "precision_wooden_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 140,
+      "timeRequired": 9500
     },
     {
       "recipeId": "coal_powered_device",
@@ -58,6 +255,115 @@
       },
       "experienceGain": 60,
       "timeRequired": 8000
+    },
+    {
+      "recipeId": "enhanced_mining_pick",
+      "name": "Enhanced Mining Pick",
+      "level": 15,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 12
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "yew_log",
+          "quantity": 3
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        },
+        {
+          "itemId": "spring",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "enhanced_mining_pick",
+        "quantity": 1
+      },
+      "experienceGain": 75,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "precision_harvesting_tool",
+      "name": "Precision Harvesting Tool",
+      "level": 18,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "bronze_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "maple_log",
+          "quantity": 4
+        },
+        {
+          "itemId": "gears",
+          "quantity": 2
+        },
+        {
+          "itemId": "spring",
+          "quantity": 1
+        }
+      ],
+      "result": {
+        "itemId": "precision_harvesting_tool",
+        "quantity": 1
+      },
+      "experienceGain": 85,
+      "timeRequired": 8800
+    },
+    {
+      "recipeId": "advanced_powered_axe",
+      "name": "Advanced Powered Axe",
+      "level": 32,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 28
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "yew_log",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 3
+        },
+        {
+          "itemId": "spring",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "advanced_powered_axe",
+        "quantity": 1
+      },
+      "experienceGain": 160,
+      "timeRequired": 10800
     },
     {
       "recipeId": "steel_mechanism",
@@ -97,6 +403,160 @@
       },
       "experienceGain": 150,
       "timeRequired": 10000
+    },
+    {
+      "recipeId": "master_mining_pick",
+      "name": "Master Mining Pick",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 30
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 4
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 4
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "master_mining_pick",
+        "quantity": 1
+      },
+      "experienceGain": 200,
+      "timeRequired": 12000
+    },
+    {
+      "recipeId": "advanced_harvesting_tool",
+      "name": "Advanced Harvesting Tool",
+      "level": 38,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 4
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "advanced_harvesting_tool",
+        "quantity": 1
+      },
+      "experienceGain": 190,
+      "timeRequired": 11500
+    },
+    {
+      "recipeId": "enhanced_fishing_rod",
+      "name": "Enhanced Fishing Rod",
+      "level": 40,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 4
+        },
+        {
+          "itemId": "fish_scale",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "enhanced_fishing_rod",
+        "quantity": 1
+      },
+      "experienceGain": 210,
+      "timeRequired": 12500
+    },
+    {
+      "recipeId": "master_engineer_blueprint",
+      "name": "Master Engineer's Blueprint",
+      "level": 45,
+      "unlockRequirements": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 40
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 35
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "master_key",
+          "quantity": 1
+        },
+        {
+          "itemId": "gold_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "master_engineer_blueprint",
+        "quantity": 1
+      },
+      "experienceGain": 350,
+      "timeRequired": 15000
     },
     {
       "recipeId": "mechanical_device",
@@ -169,6 +629,111 @@
       "timeRequired": 12000
     },
     {
+      "recipeId": "master_fishing_rod",
+      "name": "Master Fishing Rod",
+      "level": 60,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 55
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        },
+        {
+          "itemId": "rainbow_pearl",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_fishing_rod",
+        "quantity": 1
+      },
+      "experienceGain": 360,
+      "timeRequired": 17000
+    },
+    {
+      "recipeId": "legendary_tracking_device",
+      "name": "Legendary Tracking Device",
+      "level": 62,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 58
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        },
+        {
+          "itemId": "rare_trophy",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "legendary_tracking_device",
+        "quantity": 1
+      },
+      "experienceGain": 400,
+      "timeRequired": 17500
+    },
+    {
+      "recipeId": "legendary_excavation_tool",
+      "name": "Legendary Excavation Tool",
+      "level": 68,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 62
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "obsidian",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        },
+        {
+          "itemId": "ancient_artifact",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "legendary_excavation_tool",
+        "quantity": 1
+      },
+      "experienceGain": 450,
+      "timeRequired": 18500
+    },
+    {
       "recipeId": "advanced_gadget",
       "name": "Advanced Gadget",
       "level": 70,
@@ -204,6 +769,121 @@
       "timeRequired": 13000
     },
     {
+      "recipeId": "divine_powered_axe",
+      "name": "Divine Powered Axe",
+      "level": 72,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 68
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 4
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_powered_axe",
+        "quantity": 1
+      },
+      "experienceGain": 480,
+      "timeRequired": 19000
+    },
+    {
+      "recipeId": "divine_harvesting_tool",
+      "name": "Divine Harvesting Tool",
+      "level": 78,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 72
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "divine_harvesting_tool",
+        "quantity": 1
+      },
+      "experienceGain": 520,
+      "timeRequired": 20000
+    },
+    {
+      "recipeId": "dragon_scale_mechanism",
+      "name": "Dragon Scale Mechanism",
+      "level": 75,
+      "unlockRequirements": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 70
+        },
+        {
+          "skillId": "hunting",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "dragon_scale",
+          "quantity": 3
+        },
+        {
+          "itemId": "runite_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 7
+        }
+      ],
+      "result": {
+        "itemId": "dragon_scale_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 600,
+      "timeRequired": 21000
+    },
+    {
       "recipeId": "runite_automaton",
       "name": "Runite Automaton",
       "level": 68,
@@ -233,6 +913,86 @@
       },
       "experienceGain": 420,
       "timeRequired": 14000
+    },
+    {
+      "recipeId": "ultimate_mining_pick",
+      "name": "Ultimate Mining Pick",
+      "level": 75,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 70
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 65
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "runite_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 7
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "ultimate_mining_pick",
+        "quantity": 1
+      },
+      "experienceGain": 580,
+      "timeRequired": 20500
+    },
+    {
+      "recipeId": "void_crystal_construct",
+      "name": "Void Crystal Construct",
+      "level": 85,
+      "unlockRequirements": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_crystal",
+          "quantity": 5
+        },
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 8
+        }
+      ],
+      "result": {
+        "itemId": "void_crystal_construct",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 24000
     },
     {
       "recipeId": "void_powered_device",
@@ -268,6 +1028,199 @@
       },
       "experienceGain": 550,
       "timeRequired": 16000
+    },
+    {
+      "recipeId": "ultimate_fishing_rod",
+      "name": "Ultimate Fishing Rod",
+      "level": 80,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 75
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 14
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 7
+        },
+        {
+          "itemId": "celestial_scale",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ultimate_fishing_rod",
+        "quantity": 1
+      },
+      "experienceGain": 620,
+      "timeRequired": 22000
+    },
+    {
+      "recipeId": "ultimate_excavation_tool",
+      "name": "Ultimate Excavation Tool",
+      "level": 88,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 82
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 14
+        },
+        {
+          "itemId": "titanstone",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 8
+        },
+        {
+          "itemId": "ancient_artifact",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ultimate_excavation_tool",
+        "quantity": 1
+      },
+      "experienceGain": 720,
+      "timeRequired": 26000
+    },
+    {
+      "recipeId": "divine_engineering_core",
+      "name": "Divine Engineering Core",
+      "level": 95,
+      "unlockRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 90
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 85
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 5
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "divine_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 10
+        },
+        {
+          "itemId": "void_crystal",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "divine_engineering_core",
+        "quantity": 1
+      },
+      "experienceGain": 900,
+      "timeRequired": 30000
+    },
+    {
+      "recipeId": "ultimate_powered_axe",
+      "name": "Ultimate Powered Axe",
+      "level": 92,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 88
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 15
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 7
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 8
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "ultimate_powered_axe",
+        "quantity": 1
+      },
+      "experienceGain": 780,
+      "timeRequired": 28000
+    },
+    {
+      "recipeId": "ultimate_harvesting_tool",
+      "name": "Ultimate Harvesting Tool",
+      "level": 98,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 92
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "divine_ore",
+          "quantity": 16
+        },
+        {
+          "itemId": "world_tree_essence",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 9
+        },
+        {
+          "itemId": "legendary_herb",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "ultimate_harvesting_tool",
+        "quantity": 1
+      },
+      "experienceGain": 850,
+      "timeRequired": 29000
     },
     {
       "recipeId": "prismatic_engine",
@@ -338,28 +1291,681 @@
       },
       "experienceGain": 800,
       "timeRequired": 20000
+    },
+    {
+      "recipeId": "stone_mechanism",
+      "name": "Stone Mechanism",
+      "level": 15,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 10
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "slate",
+          "quantity": 8
+        },
+        {
+          "itemId": "bronze_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "stone_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 70,
+      "timeRequired": 10000
+    },
+    {
+      "recipeId": "basalt_gears",
+      "name": "Basalt Gears",
+      "level": 35,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 30
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "basalt",
+          "quantity": 12
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "basalt_gears",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 13000
+    },
+    {
+      "recipeId": "crystalized_stone_device",
+      "name": "Crystalized Stone Device",
+      "level": 85,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 80
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "crystalized_stone",
+          "quantity": 15
+        },
+        {
+          "itemId": "adamantite_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        }
+      ],
+      "result": {
+        "itemId": "crystalized_stone_device",
+        "quantity": 1
+      },
+      "experienceGain": 650,
+      "timeRequired": 22000
+    },
+    {
+      "recipeId": "void_stone_engine",
+      "name": "Void Stone Engine",
+      "level": 95,
+      "skillPrerequisites": [
+        {
+          "skillId": "quarrying",
+          "level": 95
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "void_stone",
+          "quantity": 10
+        },
+        {
+          "itemId": "divine_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "null_fragment",
+          "quantity": 6
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "void_stone_engine",
+        "quantity": 1
+      },
+      "experienceGain": 850,
+      "timeRequired": 28000
+    },
+    {
+      "recipeId": "mechanical_fishing_rod",
+      "name": "Mechanical Fishing Rod",
+      "level": 20,
+      "skillPrerequisites": [
+        {
+          "skillId": "fishing",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 5
+        },
+        {
+          "itemId": "yew_log",
+          "quantity": 4
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        },
+        {
+          "itemId": "spring",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "mechanical_fishing_rod",
+        "quantity": 1
+      },
+      "experienceGain": 90,
+      "timeRequired": 9200
+    },
+    {
+      "recipeId": "stolen_component_device",
+      "name": "Stolen Component Device",
+      "level": 20,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 15
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "engineering_component",
+          "quantity": 4
+        },
+        {
+          "itemId": "simple_component",
+          "quantity": 3
+        },
+        {
+          "itemId": "iron_ore",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "simple_tool",
+        "quantity": 1
+      },
+      "experienceGain": 80,
+      "timeRequired": 9000
+    },
+    {
+      "recipeId": "tracking_device",
+      "name": "Tracking Device",
+      "level": 22,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 18
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 2
+        },
+        {
+          "itemId": "gears",
+          "quantity": 3
+        },
+        {
+          "itemId": "animal_bone",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "tracking_device",
+        "quantity": 1
+      },
+      "experienceGain": 95,
+      "timeRequired": 9500
+    },
+    {
+      "recipeId": "ancient_scroll_device",
+      "name": "Ancient Scroll Device",
+      "level": 25,
+      "unlockRequirements": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 2
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 20
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ancient_scroll",
+          "quantity": 1
+        },
+        {
+          "itemId": "silver_ore",
+          "quantity": 6
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "ancient_scroll_device",
+        "quantity": 1
+      },
+      "experienceGain": 180,
+      "timeRequired": 11000
+    },
+    {
+      "recipeId": "excavation_tool",
+      "name": "Excavation Tool",
+      "level": 28,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 25
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "granite",
+          "quantity": 5
+        },
+        {
+          "itemId": "gears",
+          "quantity": 4
+        },
+        {
+          "itemId": "spring",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "excavation_tool",
+        "quantity": 1
+      },
+      "experienceGain": 130,
+      "timeRequired": 10500
+    },
+    {
+      "recipeId": "advanced_tracking_device",
+      "name": "Advanced Tracking Device",
+      "level": 42,
+      "skillPrerequisites": [
+        {
+          "skillId": "hunting",
+          "level": 38
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 4
+        },
+        {
+          "itemId": "animal_claw",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "advanced_tracking_device",
+        "quantity": 1
+      },
+      "experienceGain": 240,
+      "timeRequired": 13200
+    },
+    {
+      "recipeId": "advanced_excavation_tool",
+      "name": "Advanced Excavation Tool",
+      "level": 48,
+      "skillPrerequisites": [
+        {
+          "skillId": "archaeology",
+          "level": 42
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "gold_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "marble",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        },
+        {
+          "itemId": "ancient_relic",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "advanced_excavation_tool",
+        "quantity": 1
+      },
+      "experienceGain": 280,
+      "timeRequired": 14500
+    },
+    {
+      "recipeId": "rare_stolen_mechanism",
+      "name": "Rare Stolen Mechanism",
+      "level": 50,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "advanced_component",
+          "quantity": 3
+        },
+        {
+          "itemId": "rare_component",
+          "quantity": 2
+        },
+        {
+          "itemId": "steel_ore",
+          "quantity": 8
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 2
+        }
+      ],
+      "result": {
+        "itemId": "steel_mechanism",
+        "quantity": 1
+      },
+      "experienceGain": 220,
+      "timeRequired": 14000
+    },
+    {
+      "recipeId": "legendary_mining_pick",
+      "name": "Legendary Mining Pick",
+      "level": 55,
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 50
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 45
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 4
+        }
+      ],
+      "result": {
+        "itemId": "legendary_mining_pick",
+        "quantity": 1
+      },
+      "experienceGain": 320,
+      "timeRequired": 16000
+    },
+    {
+      "recipeId": "master_powered_axe",
+      "name": "Master Powered Axe",
+      "level": 52,
+      "skillPrerequisites": [
+        {
+          "skillId": "woodcutting",
+          "level": 48
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_powered_axe",
+        "quantity": 1
+      },
+      "experienceGain": 300,
+      "timeRequired": 15500
+    },
+    {
+      "recipeId": "master_harvesting_tool",
+      "name": "Master Harvesting Tool",
+      "level": 58,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 52
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "mithril_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "magic_log",
+          "quantity": 5
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        },
+        {
+          "itemId": "epic_herb",
+          "quantity": 3
+        }
+      ],
+      "result": {
+        "itemId": "master_harvesting_tool",
+        "quantity": 1
+      },
+      "experienceGain": 340,
+      "timeRequired": 16500
+    },
+    {
+      "recipeId": "phoenix_core_engine",
+      "name": "Phoenix Core Engine",
+      "level": 60,
+      "unlockRequirements": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        }
+      ],
+      "skillPrerequisites": [
+        {
+          "skillId": "mining",
+          "level": 55
+        },
+        {
+          "skillId": "blacksmithing",
+          "level": 50
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "phoenix_feather",
+          "quantity": 1
+        },
+        {
+          "itemId": "mithril_ore",
+          "quantity": 12
+        },
+        {
+          "itemId": "crystal_shard",
+          "quantity": 6
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 6
+        },
+        {
+          "itemId": "magic_essence",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "phoenix_core_engine",
+        "quantity": 1
+      },
+      "experienceGain": 500,
+      "timeRequired": 18000
+    },
+    {
+      "recipeId": "ultimate_stolen_engine",
+      "name": "Ultimate Stolen Engine",
+      "level": 90,
+      "skillPrerequisites": [
+        {
+          "skillId": "thieving",
+          "level": 90
+        }
+      ],
+      "ingredients": [
+        {
+          "itemId": "ultimate_component",
+          "quantity": 2
+        },
+        {
+          "itemId": "legendary_material",
+          "quantity": 3
+        },
+        {
+          "itemId": "orichalcum_ore",
+          "quantity": 10
+        },
+        {
+          "itemId": "precision_gear",
+          "quantity": 5
+        }
+      ],
+      "result": {
+        "itemId": "divine_construct",
+        "quantity": 1
+      },
+      "experienceGain": 750,
+      "timeRequired": 25000
     }
   ],
   "passiveBonuses": [
     {
+      "level": 10,
+      "bonus": {
+        "itemFindRate": 0.05,
+        "statBonus": {
+          "intelligence": 5
+        }
+      }
+    },
+    {
+      "level": 25,
+      "bonus": {
+        "statBonus": {
+          "intelligence": 10
+        },
+        "skillMultiplier": {
+          "speed": 0.1
+        }
+      }
+    },
+    {
       "level": 50,
       "bonus": {
         "itemFindRate": 0.1,
-        "intelligence": 5
+        "statBonus": {
+          "intelligence": 15
+        },
+        "successRateBonus": 0.05
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "statBonus": {
+          "intelligence": 20
+        },
+        "skillMultiplier": {
+          "speed": 0.15,
+          "yield": 0.1
+        }
       }
     },
     {
       "level": 90,
       "bonus": {
-        "itemFindRate": 0.2,
-        "intelligence": 10
+        "itemFindRate": 0.15,
+        "statBonus": {
+          "intelligence": 25
+        },
+        "skillMultiplier": {
+          "speed": 0.05
+        }
       }
     },
     {
       "level": 99,
       "bonus": {
-        "itemFindRate": 0.3,
-        "intelligence": 15
+        "itemFindRate": 0.15,
+        "statBonus": {
+          "intelligence": 30
+        },
+        "successRateBonus": 0.1,
+        "skillMultiplier": {
+          "yield": 0.15
+        }
       }
     }
   ],

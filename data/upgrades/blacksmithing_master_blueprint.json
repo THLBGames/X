@@ -1,0 +1,22 @@
+{
+  "id": "blacksmithing_master_blueprint",
+  "name": "Master Blacksmith's Blueprint",
+  "description": "Unlocks secret blacksmithing recipes for advanced equipment. Requires blacksmithing level 70.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "blacksmithing",
+  "tier": "Master",
+  "price": 50000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "dragon_scale_armor",
+      "void_crystal_weapon",
+      "ancient_relic_weapon"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 70
+  },
+  "nameKey": "upgrade.blacksmithing_master_blueprint.name",
+  "descriptionKey": "upgrade.blacksmithing_master_blueprint.description"
+}

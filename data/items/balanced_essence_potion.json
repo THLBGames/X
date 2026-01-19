@@ -1,0 +1,17 @@
+{
+  "id": "balanced_essence_potion",
+  "name": "Balanced Essence Potion",
+  "description": "An alchemy-crafted balanced essence potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 805,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "balanced_essence_potion_buff",
+    "duration": 910
+  },
+  "nameKey": "item.balanced_essence_potion.name",
+  "descriptionKey": "item.balanced_essence_potion.description"
+}

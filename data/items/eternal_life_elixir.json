@@ -1,0 +1,17 @@
+{
+  "id": "eternal_life_elixir",
+  "name": "Eternal Life Elixir",
+  "description": "An alchemy-crafted eternal life elixir.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2980,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "eternal_life_elixir_buff",
+    "duration": 1260
+  },
+  "nameKey": "item.eternal_life_elixir.name",
+  "descriptionKey": "item.eternal_life_elixir.description"
+}

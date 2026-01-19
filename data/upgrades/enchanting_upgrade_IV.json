@@ -1,20 +1,20 @@
 {
   "id": "enchanting_upgrade_IV",
   "name": "Enchanting Upgrade IV",
-  "description": "Permanently increases enchanting XP gain by 25%, speed by 15%, and yield by 15%",
+  "description": "Permanently increases enchanting success rate by 20% and allows multiple enchantments per item",
   "type": "permanent",
   "scope": "skill",
   "skillId": "enchanting",
   "tier": "IV",
-  "price": 8000,
+  "price": 12000,
   "bonuses": {
     "experienceMultiplier": 1.25,
-    "speedMultiplier": 0.85,
-    "yieldMultiplier": 1.15,
-    "successRateBonus": 0.15
+    "speedMultiplier": 0.90,
+    "successRateBonus": 0.20
   },
   "requirements": {
-    "previousTierId": "enchanting_upgrade_III"
+    "previousTierId": "enchanting_upgrade_III",
+    "skillLevel": 65
   },
   "nameKey": "upgrade.enchanting_upgrade_IV.name",
   "descriptionKey": "upgrade.enchanting_upgrade_IV.description"

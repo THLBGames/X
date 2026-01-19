@@ -11,7 +11,9 @@
     "experienceMultiplier": 1.2,
     "speedMultiplier": 0.88,
     "yieldMultiplier": 1.12,
-    "successRateBonus": 0.12
+    "successRateBonus": 0.12,
+    "unlocksNodes": ["berry_grove"],
+    "unlocksRecipes": ["berry_extract"]
   },
   "requirements": {
     "previousTierId": "foraging_upgrade_II"

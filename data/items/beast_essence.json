@@ -1,0 +1,12 @@
+{
+  "id": "beast_essence",
+  "name": "Beast Essence",
+  "description": "The concentrated essence of a trapped beast.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.beast_essence.name",
+  "descriptionKey": "item.beast_essence.description"
+}

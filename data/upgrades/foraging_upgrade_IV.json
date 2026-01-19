@@ -11,7 +11,9 @@
     "experienceMultiplier": 1.25,
     "speedMultiplier": 0.85,
     "yieldMultiplier": 1.15,
-    "successRateBonus": 0.15
+    "successRateBonus": 0.15,
+    "unlocksNodes": ["spice_bush"],
+    "unlocksRecipes": ["spiced_stew"]
   },
   "requirements": {
     "previousTierId": "foraging_upgrade_III"

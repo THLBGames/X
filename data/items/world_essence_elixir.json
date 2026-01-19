@@ -1,0 +1,17 @@
+{
+  "id": "world_essence_elixir",
+  "name": "World Essence Elixir",
+  "description": "An alchemy-crafted world essence elixir.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2975,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "world_essence_elixir_buff",
+    "duration": 1250
+  },
+  "nameKey": "item.world_essence_elixir.name",
+  "descriptionKey": "item.world_essence_elixir.description"
+}

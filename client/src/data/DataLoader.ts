@@ -9,6 +9,8 @@ import type {
   Mercenary,
   SkillUpgrade,
   Achievement,
+  ItemEnchantment,
+  EnchantmentRecipe,
 } from '@idle-rpg/shared';
 import i18n from '../i18n/config';
 
@@ -40,6 +42,8 @@ export class DataLoader {
   private mercenariesCache: DataCache<Mercenary> = new Map();
   private upgradesCache: DataCache<SkillUpgrade> = new Map();
   private achievementsCache: DataCache<Achievement> = new Map();
+  private enchantmentsCache: DataCache<any> = new Map();
+  private enchantmentRecipesCache: DataCache<EnchantmentRecipe> = new Map();
   private configCache: GameConfig | null = null;
   private patchNotesCache: PatchNotes | null = null;
   private loaded = false;
@@ -70,6 +74,8 @@ export class DataLoader {
       this.loadMercenaries(),
       this.loadUpgrades(),
       this.loadAchievements(),
+      this.loadEnchantments(),
+      this.loadEnchantmentRecipes(),
       this.loadConfig(),
       this.loadPatchNotes(),
     ]);
@@ -359,6 +365,72 @@ export class DataLoader {
     }
   }
 
+  private async loadEnchantments(): Promise<void> {
+    try {
+      const combinedData = await this.loadJsonFile<{
+        version?: string;
+        total_enchantments?: number;
+        enchantments: { [key: string]: any };
+      }>('/data/enchantments/enchantments.json');
+
+      if (!combinedData || !combinedData.enchantments || typeof combinedData.enchantments !== 'object') {
+        console.warn('Failed to load enchantments.json - file not found or invalid format');
+        return;
+      }
+
+      console.log(`Loading ${Object.keys(combinedData.enchantments).length} enchantments from combined file...`);
+
+      let loadedCount = 0;
+      for (const [enchantmentId, enchantmentData] of Object.entries(combinedData.enchantments)) {
+        try {
+          if (this.validateEnchantment(enchantmentData)) {
+            this.enchantmentsCache.set(enchantmentId, enchantmentData);
+            loadedCount++;
+          }
+        } catch (error) {
+          console.warn(`Failed to validate enchantment ${enchantmentId}:`, error);
+        }
+      }
+
+      console.log(`Loaded ${loadedCount} enchantments from combined file`);
+    } catch (error) {
+      console.warn('Failed to load enchantments:', error);
+    }
+  }
+
+  private async loadEnchantmentRecipes(): Promise<void> {
+    try {
+      const combinedData = await this.loadJsonFile<{
+        version?: string;
+        total_recipes?: number;
+        recipes: { [key: string]: EnchantmentRecipe };
+      }>('/data/enchantments/recipes.json');
+
+      if (!combinedData || !combinedData.recipes || typeof combinedData.recipes !== 'object') {
+        console.warn('Failed to load enchantment recipes.json - file not found or invalid format');
+        return;
+      }
+
+      console.log(`Loading ${Object.keys(combinedData.recipes).length} enchantment recipes from combined file...`);
+
+      let loadedCount = 0;
+      for (const [recipeId, recipeData] of Object.entries(combinedData.recipes)) {
+        try {
+          if (this.validateEnchantmentRecipe(recipeData)) {
+            this.enchantmentRecipesCache.set(recipeId, recipeData);
+            loadedCount++;
+          }
+        } catch (error) {
+          console.warn(`Failed to validate enchantment recipe ${recipeId}:`, error);
+        }
+      }
+
+      console.log(`Loaded ${loadedCount} enchantment recipes from combined file`);
+    } catch (error) {
+      console.warn('Failed to load enchantment recipes:', error);
+    }
+  }
+
   private async loadPatchNotes(): Promise<void> {
     try {
       const data = await this.loadJsonFile<PatchNotes>('/data/config/patch_notes.json');
@@ -574,6 +646,22 @@ export class DataLoader {
     );
   }
 
+  getEnchantment(id: string): any | undefined {
+    return this.enchantmentsCache.get(id);
+  }
+
+  getAllEnchantments(): any[] {
+    return Array.from(this.enchantmentsCache.values());
+  }
+
+  getEnchantmentRecipe(id: string): EnchantmentRecipe | undefined {
+    return this.enchantmentRecipesCache.get(id);
+  }
+
+  getAllEnchantmentRecipes(): EnchantmentRecipe[] {
+    return Array.from(this.enchantmentRecipesCache.values());
+  }
+
   getAchievement(id: string): Achievement | undefined {
     return this.achievementsCache.get(id);
   }
@@ -749,6 +837,28 @@ export class DataLoader {
     );
   }
 
+  private validateEnchantment(data: any): boolean {
+    return (
+      data &&
+      typeof data.id === 'string' &&
+      typeof data.name === 'string' &&
+      typeof data.description === 'string'
+    );
+  }
+
+  private validateEnchantmentRecipe(data: any): data is EnchantmentRecipe {
+    return (
+      data &&
+      typeof data.id === 'string' &&
+      typeof data.enchantmentId === 'string' &&
+      typeof data.name === 'string' &&
+      typeof data.description === 'string' &&
+      typeof data.requiredEnchantingLevel === 'number' &&
+      Array.isArray(data.materials) &&
+      typeof data.experienceGain === 'number'
+    );
+  }
+
   private getDefaultConfig(): GameConfig {
     return {
       experience: {
@@ -783,6 +893,8 @@ export class DataLoader {
     this.skillsCache.clear();
     this.dungeonsCache.clear();
     this.questsCache.clear();
+    this.enchantmentsCache.clear();
+    this.enchantmentRecipesCache.clear();
     this.configCache = null;
     this.patchNotesCache = null;
     this.loaded = false;

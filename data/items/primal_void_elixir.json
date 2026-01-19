@@ -1,0 +1,17 @@
+{
+  "id": "primal_void_elixir",
+  "name": "Primal Void Elixir",
+  "description": "An alchemy-crafted primal void elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1455,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "primal_void_elixir_buff",
+    "duration": 1210
+  },
+  "nameKey": "item.primal_void_elixir.name",
+  "descriptionKey": "item.primal_void_elixir.description"
+}

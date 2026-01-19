@@ -1,0 +1,17 @@
+{
+  "id": "celestial_banquet",
+  "name": "Celestial Banquet",
+  "description": "A celestial feast that provides divine blessings and powerful effects.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 3500,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "celestial_banquet_boost",
+    "duration": 6000
+  },
+  "nameKey": "item.celestial_banquet.name",
+  "descriptionKey": "item.celestial_banquet.description"
+}

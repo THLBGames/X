@@ -1,0 +1,12 @@
+{
+  "id": "slate",
+  "name": "Slate",
+  "description": "Flat slate stone used for roofing and flooring.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5,
+  "nameKey": "item.slate.name",
+  "descriptionKey": "item.slate.description"
+}

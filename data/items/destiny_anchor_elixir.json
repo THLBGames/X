@@ -1,0 +1,17 @@
+{
+  "id": "destiny_anchor_elixir",
+  "name": "Destiny Anchor Elixir",
+  "description": "An alchemy-crafted destiny anchor elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 860,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "destiny_anchor_elixir_buff",
+    "duration": 1020
+  },
+  "nameKey": "item.destiny_anchor_elixir.name",
+  "descriptionKey": "item.destiny_anchor_elixir.description"
+}

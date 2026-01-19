@@ -1,0 +1,17 @@
+{
+  "id": "vitality_potion",
+  "name": "Vitality Potion",
+  "description": "An alchemy-crafted vitality potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 200,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "vitality_boost",
+    "duration": 500
+  },
+  "nameKey": "item.vitality_potion.name",
+  "descriptionKey": "item.vitality_potion.description"
+}

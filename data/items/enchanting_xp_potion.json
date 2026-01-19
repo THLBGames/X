@@ -1,0 +1,16 @@
+{
+  "id": "enchanting_xp_potion",
+  "name": "Enchanting Experience Potion",
+  "description": "An alchemy-crafted enchanting experience potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 525,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 750
+  },
+  "nameKey": "item.enchanting_xp_potion.name",
+  "descriptionKey": "item.enchanting_xp_potion.description"
+}

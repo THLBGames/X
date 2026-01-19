@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_items": 622,
+  "total_items": 776,
   "items": {
     "abyssal_fish": {
       "id": "abyssal_fish",
@@ -274,6 +274,18 @@
       },
       "nameKey": "item.adamantite_sword.name",
       "descriptionKey": "item.adamantite_sword.description"
+    },
+    "advanced_component": {
+      "id": "advanced_component",
+      "name": "Advanced Component",
+      "description": "An advanced engineering component stolen from a master craftsman.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 180,
+      "nameKey": "item.advanced_component.name",
+      "descriptionKey": "item.advanced_component.description"
     },
     "advanced_gadget": {
       "id": "advanced_gadget",
@@ -701,6 +713,18 @@
       "nameKey": "item.ancient_artifact.name",
       "descriptionKey": "item.ancient_artifact.description"
     },
+    "ancient_bone": {
+      "id": "ancient_bone",
+      "name": "Ancient Bone",
+      "description": "A bone from an ancient creature.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 180,
+      "nameKey": "item.ancient_bone.name",
+      "descriptionKey": "item.ancient_bone.description"
+    },
     "ancient_coin": {
       "id": "ancient_coin",
       "name": "Ancient Coin",
@@ -725,6 +749,22 @@
       "nameKey": "item.ancient_essence.name",
       "descriptionKey": "item.ancient_essence.description"
     },
+    "ancient_essence_potion": {
+      "id": "ancient_essence_potion",
+      "name": "Ancient Essence Potion",
+      "description": "A powerful potion infused with ancient mushroom essence.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 150,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 250
+      },
+      "nameKey": "item.ancient_essence_potion.name",
+      "descriptionKey": "item.ancient_essence_potion.description"
+    },
     "ancient_fish": {
       "id": "ancient_fish",
       "name": "Ancient Fish",
@@ -736,6 +776,18 @@
       "value": 45,
       "nameKey": "item.ancient_fish.name",
       "descriptionKey": "item.ancient_fish.description"
+    },
+    "ancient_fragment": {
+      "id": "ancient_fragment",
+      "name": "Ancient Fragment",
+      "description": "A fragment of ancient stone imbued with forgotten power.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 180,
+      "nameKey": "item.ancient_fragment.name",
+      "descriptionKey": "item.ancient_fragment.description"
     },
     "ancient_gem": {
       "id": "ancient_gem",
@@ -749,6 +801,30 @@
       "nameKey": "item.ancient_gem.name",
       "descriptionKey": "item.ancient_gem.description"
     },
+    "ancient_herb_essence": {
+      "id": "ancient_herb_essence",
+      "name": "Ancient Herb Essence",
+      "description": "The essence of herbs that have survived through the ages. Contains incredible power.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 80,
+      "nameKey": "item.ancient_herb_essence.name",
+      "descriptionKey": "item.ancient_herb_essence.description"
+    },
+    "ancient_key_thieving": {
+      "id": "ancient_key_thieving",
+      "name": "Ancient Key",
+      "description": "An ancient key discovered through thieving, required to access the Ancient Vault.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1500,
+      "nameKey": "item.ancient_key_thieving.name",
+      "descriptionKey": "item.ancient_key_thieving.description"
+    },
     "ancient_map": {
       "id": "ancient_map",
       "name": "Ancient Map",
@@ -761,6 +837,46 @@
       "nameKey": "item.ancient_map.name",
       "descriptionKey": "item.ancient_map.description"
     },
+    "ancient_material": {
+      "id": "ancient_material",
+      "name": "Ancient Material",
+      "description": "Material stolen from ancient sources, preserved through the ages.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 380,
+      "nameKey": "item.ancient_material.name",
+      "descriptionKey": "item.ancient_material.description"
+    },
+    "ancient_mushroom": {
+      "id": "ancient_mushroom",
+      "name": "Ancient Mushroom",
+      "description": "Ancient mushrooms with mystical properties, rare and valuable.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.ancient_mushroom.name",
+      "descriptionKey": "item.ancient_mushroom.description"
+    },
+    "ancient_mushroom_delight": {
+      "id": "ancient_mushroom_delight",
+      "name": "Ancient Mushroom Delight",
+      "description": "A rare dish made from ancient mushrooms.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 200,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 200
+      },
+      "nameKey": "item.ancient_mushroom_delight.name",
+      "descriptionKey": "item.ancient_mushroom_delight.description"
+    },
     "ancient_papyrus": {
       "id": "ancient_papyrus",
       "name": "Ancient Papyrus",
@@ -772,6 +888,18 @@
       "value": 30,
       "nameKey": "item.ancient_papyrus.name",
       "descriptionKey": "item.ancient_papyrus.description"
+    },
+    "ancient_pelt": {
+      "id": "ancient_pelt",
+      "name": "Ancient Pelt",
+      "description": "An ancient pelt from a creature of old.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.ancient_pelt.name",
+      "descriptionKey": "item.ancient_pelt.description"
     },
     "ancient_relic": {
       "id": "ancient_relic",
@@ -820,6 +948,18 @@
       "value": 10,
       "nameKey": "item.ancient_shard.name",
       "descriptionKey": "item.ancient_shard.description"
+    },
+    "ancient_stone_tablet": {
+      "id": "ancient_stone_tablet",
+      "name": "Ancient Stone Tablet",
+      "description": "A mysterious tablet covered in ancient runes, required to access the Ancient Stone Circle.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 750,
+      "nameKey": "item.ancient_stone_tablet.name",
+      "descriptionKey": "item.ancient_stone_tablet.description"
     },
     "ancient_tome": {
       "id": "ancient_tome",
@@ -994,18 +1134,30 @@
     "apple": {
       "id": "apple",
       "name": "Apple",
-      "description": "A fresh apple that restores a small amount of health.",
+      "description": "A crisp apple found on wild trees.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2,
+      "nameKey": "item.apple.name",
+      "descriptionKey": "item.apple.description"
+    },
+    "apple_pie": {
+      "id": "apple_pie",
+      "name": "Apple Pie",
+      "description": "A classic pie made with fresh apples.",
       "type": "consumable",
       "rarity": "common",
       "stackable": true,
       "maxStack": 99,
-      "value": 5,
+      "value": 30,
       "consumableEffect": {
         "type": "heal",
-        "amount": 30
+        "amount": 60
       },
-      "nameKey": "item.apple.name",
-      "descriptionKey": "item.apple.description"
+      "nameKey": "item.apple_pie.name",
+      "descriptionKey": "item.apple_pie.description"
     },
     "apprentice_boots": {
       "id": "apprentice_boots",
@@ -1481,6 +1633,30 @@
       "nameKey": "item.arcane_wisp.name",
       "descriptionKey": "item.arcane_wisp.description"
     },
+    "aromatic_leaves": {
+      "id": "aromatic_leaves",
+      "name": "Aromatic Leaves",
+      "description": "Fragrant leaves prized by alchemists for their properties.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 10,
+      "nameKey": "item.aromatic_leaves.name",
+      "descriptionKey": "item.aromatic_leaves.description"
+    },
+    "aromatic_spice": {
+      "id": "aromatic_spice",
+      "name": "Aromatic Spice",
+      "description": "A fragrant spice that enhances cooking recipes. Also useful in alchemy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 10,
+      "nameKey": "item.aromatic_spice.name",
+      "descriptionKey": "item.aromatic_spice.description"
+    },
     "assassin_blade": {
       "id": "assassin_blade",
       "name": "Assassin Blade",
@@ -1569,6 +1745,23 @@
       "nameKey": "item.atlantis_key.name",
       "descriptionKey": "item.atlantis_key.description"
     },
+    "attack_buff_potion": {
+      "id": "attack_buff_potion",
+      "name": "Attack Buff Potion",
+      "description": "A potion that temporarily increases attack power.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 80,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "attack_boost",
+        "duration": 300
+      },
+      "nameKey": "item.attack_buff_potion.name",
+      "descriptionKey": "item.attack_buff_potion.description"
+    },
     "balrog_horn": {
       "id": "balrog_horn",
       "name": "Balrog Horn",
@@ -1580,6 +1773,18 @@
       "value": 600,
       "nameKey": "item.balrog_horn.name",
       "descriptionKey": "item.balrog_horn.description"
+    },
+    "basalt": {
+      "id": "basalt",
+      "name": "Basalt",
+      "description": "Dense volcanic basalt stone, excellent for durability.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.basalt.name",
+      "descriptionKey": "item.basalt.description"
     },
     "basic_boots": {
       "id": "basic_boots",
@@ -1769,6 +1974,30 @@
       "nameKey": "item.basic_wand.name",
       "descriptionKey": "item.basic_wand.description"
     },
+    "bear_pelt": {
+      "id": "bear_pelt",
+      "name": "Bear Pelt",
+      "description": "A thick pelt from a trapped bear.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.bear_pelt.name",
+      "descriptionKey": "item.bear_pelt.description"
+    },
+    "beast_essence": {
+      "id": "beast_essence",
+      "name": "Beast Essence",
+      "description": "The concentrated essence of a trapped beast.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.beast_essence.name",
+      "descriptionKey": "item.beast_essence.description"
+    },
     "berry": {
       "id": "berry",
       "name": "Berry",
@@ -1780,6 +2009,34 @@
       "value": 1,
       "nameKey": "item.berry.name",
       "descriptionKey": "item.berry.description"
+    },
+    "berry_essence": {
+      "id": "berry_essence",
+      "name": "Berry Essence",
+      "description": "Pure essence distilled from legendary berries.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.berry_essence.name",
+      "descriptionKey": "item.berry_essence.description"
+    },
+    "berry_pie": {
+      "id": "berry_pie",
+      "name": "Berry Pie",
+      "description": "A delicious pie made from fresh berries.",
+      "type": "consumable",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 20,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 40
+      },
+      "nameKey": "item.berry_pie.name",
+      "descriptionKey": "item.berry_pie.description"
     },
     "berry_seed": {
       "id": "berry_seed",
@@ -1844,6 +2101,18 @@
       "value": 200,
       "nameKey": "item.blood_crystal.name",
       "descriptionKey": "item.blood_crystal.description"
+    },
+    "boar_tusk": {
+      "id": "boar_tusk",
+      "name": "Boar Tusk",
+      "description": "A tusk from a trapped boar.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.boar_tusk.name",
+      "descriptionKey": "item.boar_tusk.description"
     },
     "bone_fragment": {
       "id": "bone_fragment",
@@ -2125,6 +2394,18 @@
       "nameKey": "item.celestial_chart.name",
       "descriptionKey": "item.celestial_chart.description"
     },
+    "celestial_essence": {
+      "id": "celestial_essence",
+      "name": "Celestial Essence",
+      "description": "Celestial essence stolen from a divine agent, contains pure divine energy.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 750,
+      "nameKey": "item.celestial_essence.name",
+      "descriptionKey": "item.celestial_essence.description"
+    },
     "celestial_fish": {
       "id": "celestial_fish",
       "name": "Celestial Fish",
@@ -2136,6 +2417,18 @@
       "value": 350,
       "nameKey": "item.celestial_fish.name",
       "descriptionKey": "item.celestial_fish.description"
+    },
+    "celestial_fragment": {
+      "id": "celestial_fragment",
+      "name": "Celestial Fragment",
+      "description": "A fragment of pure celestial energy, required to access the Celestial Quarry.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1200,
+      "nameKey": "item.celestial_fragment.name",
+      "descriptionKey": "item.celestial_fragment.description"
     },
     "celestial_insight": {
       "id": "celestial_insight",
@@ -2161,6 +2454,30 @@
       "nameKey": "item.celestial_key.name",
       "descriptionKey": "item.celestial_key.description"
     },
+    "celestial_pelt": {
+      "id": "celestial_pelt",
+      "name": "Celestial Pelt",
+      "description": "A pelt infused with celestial energy.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 450,
+      "nameKey": "item.celestial_pelt.name",
+      "descriptionKey": "item.celestial_pelt.description"
+    },
+    "celestial_petal": {
+      "id": "celestial_petal",
+      "name": "Celestial Petal",
+      "description": "A petal from a herb touched by divine energy. Radiates with celestial power.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.celestial_petal.name",
+      "descriptionKey": "item.celestial_petal.description"
+    },
     "celestial_scale": {
       "id": "celestial_scale",
       "name": "Celestial Scale",
@@ -2172,6 +2489,18 @@
       "value": 400,
       "nameKey": "item.celestial_scale.name",
       "descriptionKey": "item.celestial_scale.description"
+    },
+    "celestial_stone": {
+      "id": "celestial_stone",
+      "name": "Celestial Stone",
+      "description": "Stone blessed by the celestial realms.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 350,
+      "nameKey": "item.celestial_stone.name",
+      "descriptionKey": "item.celestial_stone.description"
     },
     "chain": {
       "id": "chain",
@@ -2261,6 +2590,18 @@
       "value": 1,
       "nameKey": "item.coal.name",
       "descriptionKey": "item.coal.description"
+    },
+    "cobblestone": {
+      "id": "cobblestone",
+      "name": "Cobblestone",
+      "description": "Rounded stones used for paving and construction.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4,
+      "nameKey": "item.cobblestone.name",
+      "descriptionKey": "item.cobblestone.description"
     },
     "common_herb": {
       "id": "common_herb",
@@ -2454,6 +2795,42 @@
       "nameKey": "item.cosmic_energy.name",
       "descriptionKey": "item.cosmic_energy.description"
     },
+    "crafting_component": {
+      "id": "crafting_component",
+      "name": "Crafting Component",
+      "description": "A crafting component stolen from an apprentice, useful for various crafting skills.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 12,
+      "nameKey": "item.crafting_component.name",
+      "descriptionKey": "item.crafting_component.description"
+    },
+    "crafting_recipe": {
+      "id": "crafting_recipe",
+      "name": "Crafting Recipe",
+      "description": "A recipe scroll stolen from a craftsman or merchant, teaches new crafting formulas.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.crafting_recipe.name",
+      "descriptionKey": "item.crafting_recipe.description"
+    },
+    "crystal_herb": {
+      "id": "crystal_herb",
+      "name": "Crystal Herb",
+      "description": "An herb that has grown around crystal formations. Contains concentrated essence.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 70,
+      "nameKey": "item.crystal_herb.name",
+      "descriptionKey": "item.crystal_herb.description"
+    },
     "crystal_shard": {
       "id": "crystal_shard",
       "name": "Crystal Shard",
@@ -2477,6 +2854,18 @@
       "value": 25,
       "nameKey": "item.crystal_shard_divination.name",
       "descriptionKey": "item.crystal_shard_divination.description"
+    },
+    "crystalized_stone": {
+      "id": "crystalized_stone",
+      "name": "Crystalized Stone",
+      "description": "Stone that has crystallized with magical energy.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.crystalized_stone.name",
+      "descriptionKey": "item.crystalized_stone.description"
     },
     "curse_removal_scroll": {
       "id": "curse_removal_scroll",
@@ -2553,6 +2942,30 @@
       "value": 15,
       "nameKey": "item.deep_sea_fish.name",
       "descriptionKey": "item.deep_sea_fish.description"
+    },
+    "deer_antler": {
+      "id": "deer_antler",
+      "name": "Deer Antler",
+      "description": "An antler from a trapped deer.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.deer_antler.name",
+      "descriptionKey": "item.deer_antler.description"
+    },
+    "deer_hide": {
+      "id": "deer_hide",
+      "name": "Deer Hide",
+      "description": "A hide from a trapped deer.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 20,
+      "nameKey": "item.deer_hide.name",
+      "descriptionKey": "item.deer_hide.description"
     },
     "defense_potion": {
       "id": "defense_potion",
@@ -2696,6 +3109,18 @@
       "nameKey": "item.dexterity_ring_t3.name",
       "descriptionKey": "item.dexterity_ring_t3.description"
     },
+    "dire_pelt": {
+      "id": "dire_pelt",
+      "name": "Dire Pelt",
+      "description": "A fearsome pelt from a dire beast.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.dire_pelt.name",
+      "descriptionKey": "item.dire_pelt.description"
+    },
     "divination_fragment": {
       "id": "divination_fragment",
       "name": "Divination Fragment",
@@ -2719,6 +3144,18 @@
       "value": 2000,
       "nameKey": "item.divine_artifact.name",
       "descriptionKey": "item.divine_artifact.description"
+    },
+    "divine_bone": {
+      "id": "divine_bone",
+      "name": "Divine Bone",
+      "description": "A bone infused with divine power.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1000,
+      "nameKey": "item.divine_bone.name",
+      "descriptionKey": "item.divine_bone.description"
     },
     "divine_boots": {
       "id": "divine_boots",
@@ -2851,6 +3288,18 @@
       "nameKey": "item.divine_hood.name",
       "descriptionKey": "item.divine_hood.description"
     },
+    "divine_material": {
+      "id": "divine_material",
+      "name": "Divine Material",
+      "description": "Divine material stolen from a divine agent, contains celestial power.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 900,
+      "nameKey": "item.divine_material.name",
+      "descriptionKey": "item.divine_material.description"
+    },
     "divine_meal": {
       "id": "divine_meal",
       "name": "Divine Meal",
@@ -2981,6 +3430,18 @@
       "value": 800,
       "nameKey": "item.diviner_scroll.name",
       "descriptionKey": "item.diviner_scroll.description"
+    },
+    "draconic_essence": {
+      "id": "draconic_essence",
+      "name": "Draconic Essence",
+      "description": "The powerful essence extracted from a dragon's remains.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.draconic_essence.name",
+      "descriptionKey": "item.draconic_essence.description"
     },
     "dragon_blood": {
       "id": "dragon_blood",
@@ -3273,6 +3734,18 @@
       "nameKey": "item.dragonstone.name",
       "descriptionKey": "item.dragonstone.description"
     },
+    "druid_medallion": {
+      "id": "druid_medallion",
+      "name": "Druid Medallion",
+      "description": "An ancient medallion blessed by the druids. Unlocks access to their sacred groves.",
+      "type": "quest",
+      "rarity": "rare",
+      "stackable": false,
+      "maxStack": 1,
+      "value": 500,
+      "nameKey": "item.druid_medallion.name",
+      "descriptionKey": "item.druid_medallion.description"
+    },
     "dwarven_ale": {
       "id": "dwarven_ale",
       "name": "Dwarven Ale",
@@ -3462,6 +3935,34 @@
       "nameKey": "item.enchanted_cloth.name",
       "descriptionKey": "item.enchanted_cloth.description"
     },
+    "enchanted_fruit": {
+      "id": "enchanted_fruit",
+      "name": "Enchanted Fruit",
+      "description": "Fruit imbued with magical energy, sought after by alchemists.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 60,
+      "nameKey": "item.enchanted_fruit.name",
+      "descriptionKey": "item.enchanted_fruit.description"
+    },
+    "enchanted_fruit_elixir": {
+      "id": "enchanted_fruit_elixir",
+      "name": "Enchanted Fruit Elixir",
+      "description": "An elixir made from enchanted fruits with magical properties.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 180,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 300
+      },
+      "nameKey": "item.enchanted_fruit_elixir.name",
+      "descriptionKey": "item.enchanted_fruit_elixir.description"
+    },
     "enchanted_gloves": {
       "id": "enchanted_gloves",
       "name": "Enchanted Gloves",
@@ -3560,6 +4061,30 @@
       "nameKey": "item.enchanted_item_supreme.name",
       "descriptionKey": "item.enchanted_item_supreme.description"
     },
+    "enchanted_leaf": {
+      "id": "enchanted_leaf",
+      "name": "Enchanted Leaf",
+      "description": "A leaf infused with magical energy. Highly valued by alchemists.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 60,
+      "nameKey": "item.enchanted_leaf.name",
+      "descriptionKey": "item.enchanted_leaf.description"
+    },
+    "enchanted_material": {
+      "id": "enchanted_material",
+      "name": "Enchanted Material",
+      "description": "Material stolen from an enchanter, already imbued with magical properties.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 90,
+      "nameKey": "item.enchanted_material.name",
+      "descriptionKey": "item.enchanted_material.description"
+    },
     "enchanted_robes_bottom": {
       "id": "enchanted_robes_bottom",
       "name": "Enchanted Robe Bottom",
@@ -3624,6 +4149,18 @@
       "nameKey": "item.enchanted_thread.name",
       "descriptionKey": "item.enchanted_thread.description"
     },
+    "enchanting_recipe": {
+      "id": "enchanting_recipe",
+      "name": "Enchanting Recipe",
+      "description": "A recipe scroll stolen from an archmage, teaches advanced enchanting techniques.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.enchanting_recipe.name",
+      "descriptionKey": "item.enchanting_recipe.description"
+    },
     "energy_wisp": {
       "id": "energy_wisp",
       "name": "Energy Wisp",
@@ -3635,6 +4172,18 @@
       "value": 8,
       "nameKey": "item.energy_wisp.name",
       "descriptionKey": "item.energy_wisp.description"
+    },
+    "engineering_component": {
+      "id": "engineering_component",
+      "name": "Engineering Component",
+      "description": "A component stolen from a craftsman, useful for engineering projects.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 20,
+      "nameKey": "item.engineering_component.name",
+      "descriptionKey": "item.engineering_component.description"
     },
     "epic_amulet_4_0": {
       "id": "epic_amulet_4_0",
@@ -3902,6 +4451,30 @@
       "nameKey": "item.essence_of_death.name",
       "descriptionKey": "item.essence_of_death.description"
     },
+    "ethereal_essence": {
+      "id": "ethereal_essence",
+      "name": "Ethereal Essence",
+      "description": "A mystical essence from ethereal beings.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.ethereal_essence.name",
+      "descriptionKey": "item.ethereal_essence.description"
+    },
+    "exotic_berry": {
+      "id": "exotic_berry",
+      "name": "Exotic Berry",
+      "description": "Rare berries with exotic flavors and properties.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.exotic_berry.name",
+      "descriptionKey": "item.exotic_berry.description"
+    },
     "exotic_fruit": {
       "id": "exotic_fruit",
       "name": "Exotic Fruit",
@@ -3913,6 +4486,34 @@
       "value": 50,
       "nameKey": "item.exotic_fruit.name",
       "descriptionKey": "item.exotic_fruit.description"
+    },
+    "exotic_fruit_cake": {
+      "id": "exotic_fruit_cake",
+      "name": "Exotic Fruit Cake",
+      "description": "A decadent cake made with exotic fruits.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 120,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 150
+      },
+      "nameKey": "item.exotic_fruit_cake.name",
+      "descriptionKey": "item.exotic_fruit_cake.description"
+    },
+    "exotic_goods": {
+      "id": "exotic_goods",
+      "name": "Exotic Goods",
+      "description": "Exotic goods stolen from a merchant's secret warehouse, valuable and rare.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 300,
+      "nameKey": "item.exotic_goods.name",
+      "descriptionKey": "item.exotic_goods.description"
     },
     "experience_potion_epic": {
       "id": "experience_potion_epic",
@@ -4013,6 +4614,18 @@
       "value": 2500,
       "nameKey": "item.fate_weaver_key.name",
       "descriptionKey": "item.fate_weaver_key.description"
+    },
+    "feather": {
+      "id": "feather",
+      "name": "Feather",
+      "description": "A feather from a trapped bird.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.feather.name",
+      "descriptionKey": "item.feather.description"
     },
     "fertilizer": {
       "id": "fertilizer",
@@ -4226,6 +4839,18 @@
       "nameKey": "item.fire_fish.name",
       "descriptionKey": "item.fire_fish.description"
     },
+    "fire_herb": {
+      "id": "fire_herb",
+      "name": "Fire Herb",
+      "description": "An herb infused with phoenix fire. Burns with inner flame but remains intact.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 180,
+      "nameKey": "item.fire_herb.name",
+      "descriptionKey": "item.fire_herb.description"
+    },
     "fish_bone": {
       "id": "fish_bone",
       "name": "Fish Bone",
@@ -4278,6 +4903,58 @@
       "nameKey": "item.fishing_bait.name",
       "descriptionKey": "item.fishing_bait.description"
     },
+    "forbidden_feast": {
+      "id": "forbidden_feast",
+      "name": "Forbidden Feast",
+      "description": "A feast of legendary power, made with forbidden fruit.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 500
+      },
+      "nameKey": "item.forbidden_feast.name",
+      "descriptionKey": "item.forbidden_feast.description"
+    },
+    "forbidden_fruit": {
+      "id": "forbidden_fruit",
+      "name": "Forbidden Fruit",
+      "description": "Forbidden fruit of ancient legends, containing primal power.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.forbidden_fruit.name",
+      "descriptionKey": "item.forbidden_fruit.description"
+    },
+    "forbidden_herb": {
+      "id": "forbidden_herb",
+      "name": "Forbidden Herb",
+      "description": "A dark herb known only to master herbalists. Contains dangerous but powerful properties.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 250,
+      "nameKey": "item.forbidden_herb.name",
+      "descriptionKey": "item.forbidden_herb.description"
+    },
+    "forbidden_material": {
+      "id": "forbidden_material",
+      "name": "Forbidden Material",
+      "description": "Forbidden material from the Shadow Market, used in dark crafting recipes.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 700,
+      "nameKey": "item.forbidden_material.name",
+      "descriptionKey": "item.forbidden_material.description"
+    },
     "fossil_fragment": {
       "id": "fossil_fragment",
       "name": "Fossil Fragment",
@@ -4289,6 +4966,18 @@
       "value": 60,
       "nameKey": "item.fossil_fragment.name",
       "descriptionKey": "item.fossil_fragment.description"
+    },
+    "fox_pelt": {
+      "id": "fox_pelt",
+      "name": "Fox Pelt",
+      "description": "A fine pelt from a trapped fox.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.fox_pelt.name",
+      "descriptionKey": "item.fox_pelt.description"
     },
     "freshwater_fish": {
       "id": "freshwater_fish",
@@ -4337,6 +5026,50 @@
       "value": 2,
       "nameKey": "item.fruit.name",
       "descriptionKey": "item.fruit.description"
+    },
+    "fruit_elixir": {
+      "id": "fruit_elixir",
+      "name": "Fruit Elixir",
+      "description": "A refreshing elixir made from fresh fruits.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 30,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 80
+      },
+      "nameKey": "item.fruit_elixir.name",
+      "descriptionKey": "item.fruit_elixir.description"
+    },
+    "fruit_essence": {
+      "id": "fruit_essence",
+      "name": "Fruit Essence",
+      "description": "Concentrated essence extracted from enchanted fruits.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 45,
+      "nameKey": "item.fruit_essence.name",
+      "descriptionKey": "item.fruit_essence.description"
+    },
+    "fruit_salad": {
+      "id": "fruit_salad",
+      "name": "Fruit Salad",
+      "description": "A refreshing mix of fresh fruits.",
+      "type": "consumable",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 25,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 50
+      },
+      "nameKey": "item.fruit_salad.name",
+      "descriptionKey": "item.fruit_salad.description"
     },
     "gears": {
       "id": "gears",
@@ -4445,6 +5178,30 @@
       "value": 3,
       "nameKey": "item.goblin_bone.name",
       "descriptionKey": "item.goblin_bone.description"
+    },
+    "godslayer_hunting_license": {
+      "id": "godslayer_hunting_license",
+      "name": "Godslayer Hunting License",
+      "description": "A legendary license granting permission to hunt divine beasts. Unlocks access to the Godslayer Hunting Grounds.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 10000,
+      "nameKey": "item.godslayer_hunting_license.name",
+      "descriptionKey": "item.godslayer_hunting_license.description"
+    },
+    "godslayer_trapping_medallion": {
+      "id": "godslayer_trapping_medallion",
+      "name": "Godslayer Trapping Medallion",
+      "description": "A legendary medallion granting access to godslayer trapping grounds.",
+      "type": "quest",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 1,
+      "value": 10000,
+      "nameKey": "item.godslayer_trapping_medallion.name",
+      "descriptionKey": "item.godslayer_trapping_medallion.description"
     },
     "gold": {
       "id": "gold",
@@ -4631,6 +5388,22 @@
       "nameKey": "item.health_food.name",
       "descriptionKey": "item.health_food.description"
     },
+    "health_potion_enhanced": {
+      "id": "health_potion_enhanced",
+      "name": "Enhanced Health Potion",
+      "description": "A health potion enhanced with berry extract.",
+      "type": "consumable",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 15,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 70
+      },
+      "nameKey": "item.health_potion_enhanced.name",
+      "descriptionKey": "item.health_potion_enhanced.description"
+    },
     "health_potion_epic": {
       "id": "health_potion_epic",
       "name": "Epic Health Potion",
@@ -4786,6 +5559,18 @@
       },
       "nameKey": "item.identification_scroll.name",
       "descriptionKey": "item.identification_scroll.description"
+    },
+    "illegal_goods": {
+      "id": "illegal_goods",
+      "name": "Illegal Goods",
+      "description": "Illegal goods acquired from the Shadow Market, valuable but dangerous to possess.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 400,
+      "nameKey": "item.illegal_goods.name",
+      "descriptionKey": "item.illegal_goods.description"
     },
     "imp_essence": {
       "id": "imp_essence",
@@ -5214,6 +5999,18 @@
       "nameKey": "item.iron_sword.name",
       "descriptionKey": "item.iron_sword.description"
     },
+    "jadeite": {
+      "id": "jadeite",
+      "name": "Jadeite",
+      "description": "Precious jadeite stone with mystical properties.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 80,
+      "nameKey": "item.jadeite.name",
+      "descriptionKey": "item.jadeite.description"
+    },
     "jewelry": {
       "id": "jewelry",
       "name": "Jewelry",
@@ -5225,6 +6022,18 @@
       "value": 150,
       "nameKey": "item.jewelry.name",
       "descriptionKey": "item.jewelry.description"
+    },
+    "jewelry_component": {
+      "id": "jewelry_component",
+      "name": "Jewelry Component",
+      "description": "A component stolen from a jewelcrafter, useful for crafting jewelry.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.jewelry_component.name",
+      "descriptionKey": "item.jewelry_component.description"
     },
     "kraken_ink": {
       "id": "kraken_ink",
@@ -5543,6 +6352,74 @@
       "nameKey": "item.legendary_amulet_4.name",
       "descriptionKey": "item.legendary_amulet_4.description"
     },
+    "legendary_berry": {
+      "id": "legendary_berry",
+      "name": "Legendary Berry",
+      "description": "Legendary berries of immense power and rarity.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.legendary_berry.name",
+      "descriptionKey": "item.legendary_berry.description"
+    },
+    "legendary_berry_jam": {
+      "id": "legendary_berry_jam",
+      "name": "Legendary Berry Jam",
+      "description": "A legendary jam with extraordinary healing properties.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 350,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 300
+      },
+      "nameKey": "item.legendary_berry_jam.name",
+      "descriptionKey": "item.legendary_berry_jam.description"
+    },
+    "legendary_berry_potion": {
+      "id": "legendary_berry_potion",
+      "name": "Legendary Berry Potion",
+      "description": "A legendary potion crafted from rare berries.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 400,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 500
+      },
+      "nameKey": "item.legendary_berry_potion.name",
+      "descriptionKey": "item.legendary_berry_potion.description"
+    },
+    "legendary_bone": {
+      "id": "legendary_bone",
+      "name": "Legendary Bone",
+      "description": "A bone from a legendary creature.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 750,
+      "nameKey": "item.legendary_bone.name",
+      "descriptionKey": "item.legendary_bone.description"
+    },
+    "legendary_essence": {
+      "id": "legendary_essence",
+      "name": "Legendary Essence",
+      "description": "The concentrated essence of a legendary being.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 900,
+      "nameKey": "item.legendary_essence.name",
+      "descriptionKey": "item.legendary_essence.description"
+    },
     "legendary_fish": {
       "id": "legendary_fish",
       "name": "Legendary Fish",
@@ -5566,6 +6443,42 @@
       "value": 400,
       "nameKey": "item.legendary_herb.name",
       "descriptionKey": "item.legendary_herb.description"
+    },
+    "legendary_hunter_medallion": {
+      "id": "legendary_hunter_medallion",
+      "name": "Legendary Hunter Medallion",
+      "description": "An ancient medallion bestowed upon legendary hunters. Unlocks access to the Legendary Hunter Grounds.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 5000,
+      "nameKey": "item.legendary_hunter_medallion.name",
+      "descriptionKey": "item.legendary_hunter_medallion.description"
+    },
+    "legendary_material": {
+      "id": "legendary_material",
+      "name": "Legendary Material",
+      "description": "Legendary material stolen from high-value targets, extremely valuable for crafting.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 600,
+      "nameKey": "item.legendary_material.name",
+      "descriptionKey": "item.legendary_material.description"
+    },
+    "legendary_pelt": {
+      "id": "legendary_pelt",
+      "name": "Legendary Pelt",
+      "description": "A legendary pelt of exceptional quality.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 800,
+      "nameKey": "item.legendary_pelt.name",
+      "descriptionKey": "item.legendary_pelt.description"
     },
     "legendary_ring_0": {
       "id": "legendary_ring_0",
@@ -5747,6 +6660,18 @@
       "value": 2,
       "nameKey": "item.limestone.name",
       "descriptionKey": "item.limestone.description"
+    },
+    "lockpick_rare": {
+      "id": "lockpick_rare",
+      "name": "Rare Lockpick",
+      "description": "A high-quality lockpick stolen from the Thieves' Guild, improves lockpicking success.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 80,
+      "nameKey": "item.lockpick_rare.name",
+      "descriptionKey": "item.lockpick_rare.description"
     },
     "luck_potion": {
       "id": "luck_potion",
@@ -6077,6 +7002,18 @@
       "nameKey": "item.magic_log.name",
       "descriptionKey": "item.magic_log.description"
     },
+    "magical_material": {
+      "id": "magical_material",
+      "name": "Magical Material",
+      "description": "Material stolen from an archmage, infused with powerful magical energy.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 280,
+      "nameKey": "item.magical_material.name",
+      "descriptionKey": "item.magical_material.description"
+    },
     "mana_crystal": {
       "id": "mana_crystal",
       "name": "Mana Crystal",
@@ -6217,6 +7154,18 @@
       "nameKey": "item.marble.name",
       "descriptionKey": "item.marble.description"
     },
+    "massive_stone_block": {
+      "id": "massive_stone_block",
+      "name": "Massive Stone Block",
+      "description": "An enormous block of stone, perfect for grand constructions.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 250,
+      "nameKey": "item.massive_stone_block.name",
+      "descriptionKey": "item.massive_stone_block.description"
+    },
     "master_archaeologist_badge": {
       "id": "master_archaeologist_badge",
       "name": "Master Archaeologist Badge",
@@ -6241,6 +7190,78 @@
       "nameKey": "item.master_diviner_seal.name",
       "descriptionKey": "item.master_diviner_seal.description"
     },
+    "master_herb": {
+      "id": "master_herb",
+      "name": "Master Herb",
+      "description": "A perfectly cultivated herb grown in the Master Herbalist's Laboratory. Exceptional quality.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 90,
+      "nameKey": "item.master_herb.name",
+      "descriptionKey": "item.master_herb.description"
+    },
+    "master_herbalist_key": {
+      "id": "master_herbalist_key",
+      "name": "Master Herbalist Key",
+      "description": "A key to the Master Herbalist's Laboratory. Earned through dedication to the herbalist's craft.",
+      "type": "quest",
+      "rarity": "epic",
+      "stackable": false,
+      "maxStack": 1,
+      "value": 1000,
+      "nameKey": "item.master_herbalist_key.name",
+      "descriptionKey": "item.master_herbalist_key.description"
+    },
+    "master_hunting_badge": {
+      "id": "master_hunting_badge",
+      "name": "Master Hunting Badge",
+      "description": "A prestigious badge awarded to master hunters. Unlocks access to the Master Trophy Hunt grounds.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 3000,
+      "nameKey": "item.master_hunting_badge.name",
+      "descriptionKey": "item.master_hunting_badge.description"
+    },
+    "master_recipe": {
+      "id": "master_recipe",
+      "name": "Master Recipe",
+      "description": "A master recipe scroll stolen from a master craftsman, contains the most advanced crafting knowledge.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.master_recipe.name",
+      "descriptionKey": "item.master_recipe.description"
+    },
+    "master_thief_mark": {
+      "id": "master_thief_mark",
+      "name": "Master Thief's Mark",
+      "description": "The ultimate mark of a master thief, required to access the Master Thief's Cache.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 3000,
+      "nameKey": "item.master_thief_mark.name",
+      "descriptionKey": "item.master_thief_mark.description"
+    },
+    "master_trapper_badge": {
+      "id": "master_trapper_badge",
+      "name": "Master Trapper's Badge",
+      "description": "The ultimate badge recognizing mastery of the trapping skill.",
+      "type": "quest",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 1,
+      "value": 15000,
+      "nameKey": "item.master_trapper_badge.name",
+      "descriptionKey": "item.master_trapper_badge.description"
+    },
     "mechanical_device": {
       "id": "mechanical_device",
       "name": "Mechanical Device",
@@ -6253,6 +7274,18 @@
       "nameKey": "item.mechanical_device.name",
       "descriptionKey": "item.mechanical_device.description"
     },
+    "medicinal_root": {
+      "id": "medicinal_root",
+      "name": "Medicinal Root",
+      "description": "A root with healing properties. Essential for creating health potions.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 8,
+      "nameKey": "item.medicinal_root.name",
+      "descriptionKey": "item.medicinal_root.description"
+    },
     "medium_fish": {
       "id": "medium_fish",
       "name": "Medium Fish",
@@ -6264,6 +7297,18 @@
       "value": 8,
       "nameKey": "item.medium_fish.name",
       "descriptionKey": "item.medium_fish.description"
+    },
+    "merchant_ledger": {
+      "id": "merchant_ledger",
+      "name": "Merchant's Ledger",
+      "description": "A stolen ledger revealing the location of a merchant's secret warehouse, required to access it.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1200,
+      "nameKey": "item.merchant_ledger.name",
+      "descriptionKey": "item.merchant_ledger.description"
     },
     "mermaid_scale": {
       "id": "mermaid_scale",
@@ -6300,6 +7345,18 @@
       "value": 5,
       "nameKey": "item.metal_ring.name",
       "descriptionKey": "item.metal_ring.description"
+    },
+    "metal_scrap": {
+      "id": "metal_scrap",
+      "name": "Metal Scrap",
+      "description": "Metal scrap stolen from a blacksmith, can be reforged into useful materials.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 6,
+      "nameKey": "item.metal_scrap.name",
+      "descriptionKey": "item.metal_scrap.description"
     },
     "minor_essence": {
       "id": "minor_essence",
@@ -6801,6 +7858,18 @@
       "nameKey": "item.monster_pelt.name",
       "descriptionKey": "item.monster_pelt.description"
     },
+    "monster_trap_upgrade": {
+      "id": "monster_trap_upgrade",
+      "name": "Monster Trap Upgrade",
+      "description": "A schematic for upgrading traps to catch monsters more effectively.",
+      "type": "quest",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 1,
+      "value": 500,
+      "nameKey": "item.monster_trap_upgrade.name",
+      "descriptionKey": "item.monster_trap_upgrade.description"
+    },
     "moon_essence": {
       "id": "moon_essence",
       "name": "Moon Essence",
@@ -6812,6 +7881,18 @@
       "value": 30,
       "nameKey": "item.moon_essence.name",
       "descriptionKey": "item.moon_essence.description"
+    },
+    "moonlit_herb": {
+      "id": "moonlit_herb",
+      "name": "Moonlit Herb",
+      "description": "An herb that glows softly in moonlight. Contains mana-enhancing properties.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.moonlit_herb.name",
+      "descriptionKey": "item.moonlit_herb.description"
     },
     "mummy_wrapping": {
       "id": "mummy_wrapping",
@@ -6836,6 +7917,22 @@
       "value": 2,
       "nameKey": "item.mushroom.name",
       "descriptionKey": "item.mushroom.description"
+    },
+    "mushroom_soup": {
+      "id": "mushroom_soup",
+      "name": "Mushroom Soup",
+      "description": "A hearty soup made from fresh mushrooms.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 45,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 80
+      },
+      "nameKey": "item.mushroom_soup.name",
+      "descriptionKey": "item.mushroom_soup.description"
     },
     "mushroom_spore": {
       "id": "mushroom_spore",
@@ -6876,6 +7973,18 @@
       "value": 550,
       "nameKey": "item.mystic_relic.name",
       "descriptionKey": "item.mystic_relic.description"
+    },
+    "mystical_spore": {
+      "id": "mystical_spore",
+      "name": "Mystical Spore",
+      "description": "Spores from ancient mushrooms, containing magical essence.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.mystical_spore.name",
+      "descriptionKey": "item.mystical_spore.description"
     },
     "mythic_staff": {
       "id": "mythic_staff",
@@ -6930,6 +8039,30 @@
       "nameKey": "item.mythic_wand.name",
       "descriptionKey": "item.mythic_wand.description"
     },
+    "mythical_bone": {
+      "id": "mythical_bone",
+      "name": "Mythical Bone",
+      "description": "A bone from a mythical creature.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 350,
+      "nameKey": "item.mythical_bone.name",
+      "descriptionKey": "item.mythical_bone.description"
+    },
+    "mythical_pelt": {
+      "id": "mythical_pelt",
+      "name": "Mythical Pelt",
+      "description": "A pelt from a mythical creature.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 400,
+      "nameKey": "item.mythical_pelt.name",
+      "descriptionKey": "item.mythical_pelt.description"
+    },
     "nature_core": {
       "id": "nature_core",
       "name": "Nature Core",
@@ -6941,6 +8074,54 @@
       "value": 180,
       "nameKey": "item.nature_core.name",
       "descriptionKey": "item.nature_core.description"
+    },
+    "nature_imbued_herb": {
+      "id": "nature_imbued_herb",
+      "name": "Nature-Imbued Herb",
+      "description": "An herb blessed by druidic magic. Contains the essence of the natural world.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.nature_imbued_herb.name",
+      "descriptionKey": "item.nature_imbued_herb.description"
+    },
+    "null_fragment": {
+      "id": "null_fragment",
+      "name": "Null Fragment",
+      "description": "A fragment of pure nothingness from the void.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 450,
+      "nameKey": "item.null_fragment.name",
+      "descriptionKey": "item.null_fragment.description"
+    },
+    "nut": {
+      "id": "nut",
+      "name": "Nut",
+      "description": "Edible nuts gathered from trees.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.nut.name",
+      "descriptionKey": "item.nut.description"
+    },
+    "nut_shell": {
+      "id": "nut_shell",
+      "name": "Nut Shell",
+      "description": "Hard shells from nuts, useful for crafting.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1,
+      "nameKey": "item.nut_shell.name",
+      "descriptionKey": "item.nut_shell.description"
     },
     "oak_log": {
       "id": "oak_log",
@@ -7030,6 +8211,18 @@
       "value": 25,
       "nameKey": "item.ogre_essence.name",
       "descriptionKey": "item.ogre_essence.description"
+    },
+    "onyx": {
+      "id": "onyx",
+      "name": "Onyx",
+      "description": "Deep black onyx stone, prized for its elegance.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.onyx.name",
+      "descriptionKey": "item.onyx.description"
     },
     "orc_tooth": {
       "id": "orc_tooth",
@@ -7197,6 +8390,18 @@
       "nameKey": "item.phantom_pants.name",
       "descriptionKey": "item.phantom_pants.description"
     },
+    "phantom_pelt": {
+      "id": "phantom_pelt",
+      "name": "Phantom Pelt",
+      "description": "An ethereal pelt from a phantom creature.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 550,
+      "nameKey": "item.phantom_pelt.name",
+      "descriptionKey": "item.phantom_pelt.description"
+    },
     "pharaoh_gold": {
       "id": "pharaoh_gold",
       "name": "Pharaoh Gold",
@@ -7232,6 +8437,18 @@
       "value": 2500,
       "nameKey": "item.phoenix_ash.name",
       "descriptionKey": "item.phoenix_ash.description"
+    },
+    "phoenix_feather": {
+      "id": "phoenix_feather",
+      "name": "Phoenix Feather",
+      "description": "A feather from a phoenix, still warm and glowing with inner fire. Unlocks the Phoenix Garden.",
+      "type": "quest",
+      "rarity": "legendary",
+      "stackable": false,
+      "maxStack": 1,
+      "value": 3000,
+      "nameKey": "item.phoenix_feather.name",
+      "descriptionKey": "item.phoenix_feather.description"
     },
     "phoenix_staff": {
       "id": "phoenix_staff",
@@ -7335,6 +8552,18 @@
       "nameKey": "item.potion_meal.name",
       "descriptionKey": "item.potion_meal.description"
     },
+    "potion_recipe": {
+      "id": "potion_recipe",
+      "name": "Potion Recipe",
+      "description": "A recipe scroll stolen from an alchemist, teaches new potion formulas.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 100,
+      "nameKey": "item.potion_recipe.name",
+      "descriptionKey": "item.potion_recipe.description"
+    },
     "pottery_shard": {
       "id": "pottery_shard",
       "name": "Pottery Shard",
@@ -7371,6 +8600,18 @@
       "nameKey": "item.precision_gear.name",
       "descriptionKey": "item.precision_gear.description"
     },
+    "premium_meat": {
+      "id": "premium_meat",
+      "name": "Premium Meat",
+      "description": "High-quality meat from a trapped creature.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 60,
+      "nameKey": "item.premium_meat.name",
+      "descriptionKey": "item.premium_meat.description"
+    },
     "preserved_artifact": {
       "id": "preserved_artifact",
       "name": "Preserved Artifact",
@@ -7383,17 +8624,81 @@
       "nameKey": "item.preserved_artifact.name",
       "descriptionKey": "item.preserved_artifact.description"
     },
+    "primal_elixir": {
+      "id": "primal_elixir",
+      "name": "Primal Elixir",
+      "description": "The ultimate elixir, containing the essence of primal power.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1000,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 1000
+      },
+      "nameKey": "item.primal_elixir.name",
+      "descriptionKey": "item.primal_elixir.description"
+    },
     "primal_essence": {
       "id": "primal_essence",
       "name": "Primal Essence",
-      "description": "Essence from the beginning of time.",
+      "description": "The most powerful essence, extracted from forbidden fruit.",
       "type": "material",
       "rarity": "legendary",
       "stackable": true,
       "maxStack": 999,
-      "value": 2000,
+      "value": 400,
       "nameKey": "item.primal_essence.name",
       "descriptionKey": "item.primal_essence.description"
+    },
+    "primal_herb": {
+      "id": "primal_herb",
+      "name": "Primal Herb",
+      "description": "An ancient herb containing the raw essence of nature itself.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.primal_herb.name",
+      "descriptionKey": "item.primal_herb.description"
+    },
+    "primal_stone": {
+      "id": "primal_stone",
+      "name": "Primal Stone",
+      "description": "Ancient stone from the dawn of creation.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 200,
+      "nameKey": "item.primal_stone.name",
+      "descriptionKey": "item.primal_stone.description"
+    },
+    "primordial_bone": {
+      "id": "primordial_bone",
+      "name": "Primordial Bone",
+      "description": "A bone from a primordial creature.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 650,
+      "nameKey": "item.primordial_bone.name",
+      "descriptionKey": "item.primordial_bone.description"
+    },
+    "primordial_essence": {
+      "id": "primordial_essence",
+      "name": "Primordial Essence",
+      "description": "Primordial essence stolen from an ancient keeper, contains power from the beginning of time.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 320,
+      "nameKey": "item.primordial_essence.name",
+      "descriptionKey": "item.primordial_essence.description"
     },
     "primordial_fish": {
       "id": "primordial_fish",
@@ -7406,6 +8711,18 @@
       "value": 800,
       "nameKey": "item.primordial_fish.name",
       "descriptionKey": "item.primordial_fish.description"
+    },
+    "primordial_pelt": {
+      "id": "primordial_pelt",
+      "name": "Primordial Pelt",
+      "description": "A pelt from a primordial beast.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 700,
+      "nameKey": "item.primordial_pelt.name",
+      "descriptionKey": "item.primordial_pelt.description"
     },
     "primordial_relic": {
       "id": "primordial_relic",
@@ -8021,6 +9338,18 @@
       "nameKey": "item.quest_item_50.name",
       "descriptionKey": "item.quest_item_50.description"
     },
+    "rabbit_pelt": {
+      "id": "rabbit_pelt",
+      "name": "Rabbit Pelt",
+      "description": "A soft pelt from a rabbit caught in a trap.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.rabbit_pelt.name",
+      "descriptionKey": "item.rabbit_pelt.description"
+    },
     "rainbow_pearl": {
       "id": "rainbow_pearl",
       "name": "Rainbow Pearl",
@@ -8044,6 +9373,42 @@
       "value": 30,
       "nameKey": "item.rare_berry.name",
       "descriptionKey": "item.rare_berry.description"
+    },
+    "rare_component": {
+      "id": "rare_component",
+      "name": "Rare Component",
+      "description": "A rare component acquired from the Shadow Market, useful for advanced engineering.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 350,
+      "nameKey": "item.rare_component.name",
+      "descriptionKey": "item.rare_component.description"
+    },
+    "rare_crafting_material": {
+      "id": "rare_crafting_material",
+      "name": "Rare Crafting Material",
+      "description": "Rare material stolen from a master craftsman, essential for advanced crafting projects.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 250,
+      "nameKey": "item.rare_crafting_material.name",
+      "descriptionKey": "item.rare_crafting_material.description"
+    },
+    "rare_essence": {
+      "id": "rare_essence",
+      "name": "Rare Essence",
+      "description": "A rare essence from trapped creatures.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 250,
+      "nameKey": "item.rare_essence.name",
+      "descriptionKey": "item.rare_essence.description"
     },
     "rare_fish": {
       "id": "rare_fish",
@@ -8080,6 +9445,18 @@
       "value": 80,
       "nameKey": "item.rare_item.name",
       "descriptionKey": "item.rare_item.description"
+    },
+    "rare_material": {
+      "id": "rare_material",
+      "name": "Rare Material",
+      "description": "A rare crafting material stolen from a merchant's warehouse, useful for advanced crafting.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.rare_material.name",
+      "descriptionKey": "item.rare_material.description"
     },
     "rare_trinket": {
       "id": "rare_trinket",
@@ -8152,6 +9529,18 @@
       "value": 2000,
       "nameKey": "item.reality_shard.name",
       "descriptionKey": "item.reality_shard.description"
+    },
+    "reforging_material": {
+      "id": "reforging_material",
+      "name": "Reforging Material",
+      "description": "Special material stolen from a blacksmith, used for reforging weapons and armor.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.reforging_material.name",
+      "descriptionKey": "item.reforging_material.description"
     },
     "reinforced_leather_armor": {
       "id": "reinforced_leather_armor",
@@ -8638,6 +10027,18 @@
       "nameKey": "item.roasted_meat.name",
       "descriptionKey": "item.roasted_meat.description"
     },
+    "root_herb": {
+      "id": "root_herb",
+      "name": "Root Herb",
+      "description": "Medicinal herbs with roots, valued in alchemy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 8,
+      "nameKey": "item.root_herb.name",
+      "descriptionKey": "item.root_herb.description"
+    },
     "rotten_flesh": {
       "id": "rotten_flesh",
       "name": "Rotten Flesh",
@@ -8749,6 +10150,18 @@
       "value": 6,
       "nameKey": "item.saltwater_fish.name",
       "descriptionKey": "item.saltwater_fish.description"
+    },
+    "sandstone": {
+      "id": "sandstone",
+      "name": "Sandstone",
+      "description": "Soft sandstone used in early construction.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.sandstone.name",
+      "descriptionKey": "item.sandstone.description"
     },
     "sapphire_amulet": {
       "id": "sapphire_amulet",
@@ -8983,6 +10396,18 @@
       "nameKey": "item.shadow_mask.name",
       "descriptionKey": "item.shadow_mask.description"
     },
+    "shadow_pass": {
+      "id": "shadow_pass",
+      "name": "Shadow Pass",
+      "description": "A pass granting access to the underground Shadow Market, required to enter.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2000,
+      "nameKey": "item.shadow_pass.name",
+      "descriptionKey": "item.shadow_pass.description"
+    },
     "shadow_slippers": {
       "id": "shadow_slippers",
       "name": "Shadow Slippers",
@@ -9175,6 +10600,18 @@
       "nameKey": "item.silver_ore.name",
       "descriptionKey": "item.silver_ore.description"
     },
+    "simple_component": {
+      "id": "simple_component",
+      "name": "Simple Component",
+      "description": "A simple crafting component acquired through thieving, useful for engineering.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 8,
+      "nameKey": "item.simple_component.name",
+      "descriptionKey": "item.simple_component.description"
+    },
     "simple_tool": {
       "id": "simple_tool",
       "name": "Simple Tool",
@@ -9186,6 +10623,42 @@
       "value": 25,
       "nameKey": "item.simple_tool.name",
       "descriptionKey": "item.simple_tool.description"
+    },
+    "skill_book": {
+      "id": "skill_book",
+      "name": "Skill Book",
+      "description": "A skill book stolen from the Thieves' Guild, provides knowledge on thieving techniques.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 150,
+      "nameKey": "item.skill_book.name",
+      "descriptionKey": "item.skill_book.description"
+    },
+    "slate": {
+      "id": "slate",
+      "name": "Slate",
+      "description": "Flat slate stone used for roofing and flooring.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.slate.name",
+      "descriptionKey": "item.slate.description"
+    },
+    "small_bone": {
+      "id": "small_bone",
+      "name": "Small Bone",
+      "description": "A small bone from a trapped creature.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 2,
+      "nameKey": "item.small_bone.name",
+      "descriptionKey": "item.small_bone.description"
     },
     "small_fish": {
       "id": "small_fish",
@@ -9251,6 +10724,22 @@
       "nameKey": "item.sphinx_statue.name",
       "descriptionKey": "item.sphinx_statue.description"
     },
+    "spiced_stew": {
+      "id": "spiced_stew",
+      "name": "Spiced Stew",
+      "description": "A flavorful stew enhanced with wild spices.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 60,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 100
+      },
+      "nameKey": "item.spiced_stew.name",
+      "descriptionKey": "item.spiced_stew.description"
+    },
     "spider_silk": {
       "id": "spider_silk",
       "name": "Spider Silk",
@@ -9262,6 +10751,18 @@
       "value": 10,
       "nameKey": "item.spider_silk.name",
       "descriptionKey": "item.spider_silk.description"
+    },
+    "spirit_bone": {
+      "id": "spirit_bone",
+      "name": "Spirit Bone",
+      "description": "A bone infused with spiritual energy.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.spirit_bone.name",
+      "descriptionKey": "item.spirit_bone.description"
     },
     "spirit_essence": {
       "id": "spirit_essence",
@@ -9286,6 +10787,22 @@
       "value": 12,
       "nameKey": "item.spring.name",
       "descriptionKey": "item.spring.description"
+    },
+    "stamina_potion": {
+      "id": "stamina_potion",
+      "name": "Stamina Potion",
+      "description": "A potion that restores stamina and energy.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 40,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 100
+      },
+      "nameKey": "item.stamina_potion.name",
+      "descriptionKey": "item.stamina_potion.description"
     },
     "star_chart": {
       "id": "star_chart",
@@ -9322,6 +10839,18 @@
       "value": 3,
       "nameKey": "item.star_dust.name",
       "descriptionKey": "item.star_dust.description"
+    },
+    "star_fragment": {
+      "id": "star_fragment",
+      "name": "Star Fragment",
+      "description": "A fragment of a fallen star, containing celestial energy.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 220,
+      "nameKey": "item.star_fragment.name",
+      "descriptionKey": "item.star_fragment.description"
     },
     "steel": {
       "id": "steel",
@@ -9761,6 +11290,162 @@
       "nameKey": "item.steel_weapon.name",
       "descriptionKey": "item.steel_weapon.description"
     },
+    "stolen_artifact": {
+      "id": "stolen_artifact",
+      "name": "Stolen Artifact",
+      "description": "An artifact stolen from legendary sources, extremely valuable and powerful.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 1000,
+      "nameKey": "item.stolen_artifact.name",
+      "descriptionKey": "item.stolen_artifact.description"
+    },
+    "stolen_essence_minor": {
+      "id": "stolen_essence_minor",
+      "name": "Stolen Minor Essence",
+      "description": "A minor essence stolen from an apprentice, useful for enchanting and alchemy.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 10,
+      "nameKey": "item.stolen_essence_minor.name",
+      "descriptionKey": "item.stolen_essence_minor.description"
+    },
+    "stolen_essence_moderate": {
+      "id": "stolen_essence_moderate",
+      "name": "Stolen Moderate Essence",
+      "description": "A moderate essence stolen from an enchanter, useful for advanced enchanting.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.stolen_essence_moderate.name",
+      "descriptionKey": "item.stolen_essence_moderate.description"
+    },
+    "stolen_essence_rare": {
+      "id": "stolen_essence_rare",
+      "name": "Stolen Rare Essence",
+      "description": "A rare essence stolen from an archmage, powerful for advanced enchanting and runecrafting.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 100,
+      "nameKey": "item.stolen_essence_rare.name",
+      "descriptionKey": "item.stolen_essence_rare.description"
+    },
+    "stolen_gem_common": {
+      "id": "stolen_gem_common",
+      "name": "Stolen Common Gem",
+      "description": "A common gem acquired through thieving, useful for jewelcrafting.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 15,
+      "nameKey": "item.stolen_gem_common.name",
+      "descriptionKey": "item.stolen_gem_common.description"
+    },
+    "stolen_gem_uncommon": {
+      "id": "stolen_gem_uncommon",
+      "name": "Stolen Uncommon Gem",
+      "description": "An uncommon gem stolen from a noble or merchant, useful for crafting jewelry.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 40,
+      "nameKey": "item.stolen_gem_uncommon.name",
+      "descriptionKey": "item.stolen_gem_uncommon.description"
+    },
+    "stolen_herb_common": {
+      "id": "stolen_herb_common",
+      "name": "Stolen Common Herb",
+      "description": "A common herb acquired through thieving, useful for alchemy.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.stolen_herb_common.name",
+      "descriptionKey": "item.stolen_herb_common.description"
+    },
+    "stolen_herb_rare": {
+      "id": "stolen_herb_rare",
+      "name": "Stolen Rare Herb",
+      "description": "A rare herb stolen from an alchemist, highly valued for potion making.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 50,
+      "nameKey": "item.stolen_herb_rare.name",
+      "descriptionKey": "item.stolen_herb_rare.description"
+    },
+    "stolen_ore": {
+      "id": "stolen_ore",
+      "name": "Stolen Ore",
+      "description": "Ore stolen from a blacksmith's stock, useful for blacksmithing and engineering.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 25,
+      "nameKey": "item.stolen_ore.name",
+      "descriptionKey": "item.stolen_ore.description"
+    },
+    "stolen_scroll": {
+      "id": "stolen_scroll",
+      "name": "Stolen Scroll",
+      "description": "A scroll stolen from an enchanter or scholar, useful for enchanting and runecrafting.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 35,
+      "nameKey": "item.stolen_scroll.name",
+      "descriptionKey": "item.stolen_scroll.description"
+    },
+    "stolen_scroll_ancient": {
+      "id": "stolen_scroll_ancient",
+      "name": "Stolen Ancient Scroll",
+      "description": "An ancient scroll stolen from an ancient keeper, contains forgotten knowledge.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 250,
+      "nameKey": "item.stolen_scroll_ancient.name",
+      "descriptionKey": "item.stolen_scroll_ancient.description"
+    },
+    "stolen_scroll_basic": {
+      "id": "stolen_scroll_basic",
+      "name": "Stolen Basic Scroll",
+      "description": "A basic scroll stolen from a traveler, contains simple knowledge.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 12,
+      "nameKey": "item.stolen_scroll_basic.name",
+      "descriptionKey": "item.stolen_scroll_basic.description"
+    },
+    "stolen_scroll_rare": {
+      "id": "stolen_scroll_rare",
+      "name": "Stolen Rare Scroll",
+      "description": "A rare scroll stolen from an archmage, contains powerful magical knowledge.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 120,
+      "nameKey": "item.stolen_scroll_rare.name",
+      "descriptionKey": "item.stolen_scroll_rare.description"
+    },
     "stone": {
       "id": "stone",
       "name": "Stone",
@@ -9905,6 +11590,30 @@
       "nameKey": "item.teleport_scroll.name",
       "descriptionKey": "item.teleport_scroll.description"
     },
+    "thief_tool": {
+      "id": "thief_tool",
+      "name": "Thief Tool",
+      "description": "A specialized tool used by thieves, acquired from the Thieves' Guild.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 70,
+      "nameKey": "item.thief_tool.name",
+      "descriptionKey": "item.thief_tool.description"
+    },
+    "thieves_guild_token": {
+      "id": "thieves_guild_token",
+      "name": "Thieves' Guild Token",
+      "description": "A token proving membership in the Thieves' Guild, required to access the Thieves' Guild Vault.",
+      "type": "material",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "nameKey": "item.thieves_guild_token.name",
+      "descriptionKey": "item.thieves_guild_token.description"
+    },
     "thread": {
       "id": "thread",
       "name": "Thread",
@@ -9977,6 +11686,42 @@
       "nameKey": "item.tin_ore.name",
       "descriptionKey": "item.tin_ore.description"
     },
+    "titan_hammer": {
+      "id": "titan_hammer",
+      "name": "Titan's Hammer",
+      "description": "A massive hammer once wielded by the ancient titans, required to access the Titan's Worksite.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1500,
+      "nameKey": "item.titan_hammer.name",
+      "descriptionKey": "item.titan_hammer.description"
+    },
+    "titanstone": {
+      "id": "titanstone",
+      "name": "Titanstone",
+      "description": "Massive stone blocks carved by the ancient titans.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 400,
+      "nameKey": "item.titanstone.name",
+      "descriptionKey": "item.titanstone.description"
+    },
+    "toxic_bloom": {
+      "id": "toxic_bloom",
+      "name": "Toxic Bloom",
+      "description": "A deadly flower with potent poison. Used in combat potions and alchemy.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 30,
+      "nameKey": "item.toxic_bloom.name",
+      "descriptionKey": "item.toxic_bloom.description"
+    },
     "trade_good": {
       "id": "trade_good",
       "name": "Trade Good",
@@ -10001,6 +11746,18 @@
       "nameKey": "item.trapped_animal.name",
       "descriptionKey": "item.trapped_animal.description"
     },
+    "trapped_animal_premium": {
+      "id": "trapped_animal_premium",
+      "name": "Premium Trapped Animal",
+      "description": "An exceptionally fine animal caught in a trap.",
+      "type": "material",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 75,
+      "nameKey": "item.trapped_animal_premium.name",
+      "descriptionKey": "item.trapped_animal_premium.description"
+    },
     "trapped_animal_quality": {
       "id": "trapped_animal_quality",
       "name": "Quality Trapped Animal",
@@ -10013,6 +11770,18 @@
       "nameKey": "item.trapped_animal_quality.name",
       "descriptionKey": "item.trapped_animal_quality.description"
     },
+    "trapped_bird": {
+      "id": "trapped_bird",
+      "name": "Trapped Bird",
+      "description": "A bird caught in a trap.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 6,
+      "nameKey": "item.trapped_bird.name",
+      "descriptionKey": "item.trapped_bird.description"
+    },
     "trapped_monster": {
       "id": "trapped_monster",
       "name": "Trapped Monster",
@@ -10024,6 +11793,30 @@
       "value": 300,
       "nameKey": "item.trapped_monster.name",
       "descriptionKey": "item.trapped_monster.description"
+    },
+    "trapped_rodent": {
+      "id": "trapped_rodent",
+      "name": "Trapped Rodent",
+      "description": "A small rodent caught in a trap.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 4,
+      "nameKey": "item.trapped_rodent.name",
+      "descriptionKey": "item.trapped_rodent.description"
+    },
+    "travertine": {
+      "id": "travertine",
+      "name": "Travertine",
+      "description": "Beautiful travertine stone with unique patterns.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 20,
+      "nameKey": "item.travertine.name",
+      "descriptionKey": "item.travertine.description"
     },
     "treasure_chest": {
       "id": "treasure_chest",
@@ -10077,6 +11870,18 @@
       "nameKey": "item.troll_hide.name",
       "descriptionKey": "item.troll_hide.description"
     },
+    "trophy_hunter_license": {
+      "id": "trophy_hunter_license",
+      "name": "Trophy Hunter's License",
+      "description": "A license allowing access to elite trophy hunting grounds.",
+      "type": "quest",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 1,
+      "value": 2000,
+      "nameKey": "item.trophy_hunter_license.name",
+      "descriptionKey": "item.trophy_hunter_license.description"
+    },
     "tropical_fish": {
       "id": "tropical_fish",
       "name": "Tropical Fish",
@@ -10088,6 +11893,30 @@
       "value": 12,
       "nameKey": "item.tropical_fish.name",
       "descriptionKey": "item.tropical_fish.description"
+    },
+    "ultimate_component": {
+      "id": "ultimate_component",
+      "name": "Ultimate Component",
+      "description": "The ultimate crafting component, stolen from legendary sources.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 800,
+      "nameKey": "item.ultimate_component.name",
+      "descriptionKey": "item.ultimate_component.description"
+    },
+    "ultimate_hunting_mastery_token": {
+      "id": "ultimate_hunting_mastery_token",
+      "name": "Ultimate Hunting Mastery Token",
+      "description": "The ultimate symbol of hunting mastery. Unlocks access to the Ultimate Hunter's Sanctuary.",
+      "type": "material",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 15000,
+      "nameKey": "item.ultimate_hunting_mastery_token.name",
+      "descriptionKey": "item.ultimate_hunting_mastery_token.description"
     },
     "uncommon_herb": {
       "id": "uncommon_herb",
@@ -10136,6 +11965,18 @@
       "value": 1000,
       "nameKey": "item.unicorn_horn.name",
       "descriptionKey": "item.unicorn_horn.description"
+    },
+    "valuable_trinket": {
+      "id": "valuable_trinket",
+      "name": "Valuable Trinket",
+      "description": "A valuable trinket stolen from a merchant, can be sold or used in crafting.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 45,
+      "nameKey": "item.valuable_trinket.name",
+      "descriptionKey": "item.valuable_trinket.description"
     },
     "vampire_fang": {
       "id": "vampire_fang",
@@ -10317,6 +12158,18 @@
       "nameKey": "item.void_fish.name",
       "descriptionKey": "item.void_fish.description"
     },
+    "void_key": {
+      "id": "void_key",
+      "name": "Void Key",
+      "description": "A key forged from the void itself, required to access the Void Stone Mine.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2500,
+      "nameKey": "item.void_key.name",
+      "descriptionKey": "item.void_key.description"
+    },
     "void_shard": {
       "id": "void_shard",
       "name": "Void Shard",
@@ -10328,6 +12181,18 @@
       "value": 1500,
       "nameKey": "item.void_shard.name",
       "descriptionKey": "item.void_shard.description"
+    },
+    "void_stone": {
+      "id": "void_stone",
+      "name": "Void Stone",
+      "description": "Stone from the void between dimensions.",
+      "type": "material",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 500,
+      "nameKey": "item.void_stone.name",
+      "descriptionKey": "item.void_stone.description"
     },
     "volcanic_stone": {
       "id": "volcanic_stone",
@@ -10389,6 +12254,42 @@
       "nameKey": "item.wheat_seed.name",
       "descriptionKey": "item.wheat_seed.description"
     },
+    "wild_carrot": {
+      "id": "wild_carrot",
+      "name": "Wild Carrot",
+      "description": "A wild root vegetable with nutritional value.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 5,
+      "nameKey": "item.wild_carrot.name",
+      "descriptionKey": "item.wild_carrot.description"
+    },
+    "wild_spice": {
+      "id": "wild_spice",
+      "name": "Wild Spice",
+      "description": "Aromatic spices that enhance cooking and alchemy.",
+      "type": "material",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 12,
+      "nameKey": "item.wild_spice.name",
+      "descriptionKey": "item.wild_spice.description"
+    },
+    "wildflower": {
+      "id": "wildflower",
+      "name": "Wildflower",
+      "description": "A beautiful wildflower found in meadows. Used in early alchemy recipes.",
+      "type": "material",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 999,
+      "value": 3,
+      "nameKey": "item.wildflower.name",
+      "descriptionKey": "item.wildflower.description"
+    },
     "wolf_pelt": {
       "id": "wolf_pelt",
       "name": "Wolf Pelt",
@@ -10433,6 +12334,18 @@
       },
       "nameKey": "item.wooden_shield.name",
       "descriptionKey": "item.wooden_shield.description"
+    },
+    "world_tree_sapling": {
+      "id": "world_tree_sapling",
+      "name": "World Tree Sapling",
+      "description": "A sapling from the World Tree itself. Radiates with primal life force. Unlocks the World Tree Nexus.",
+      "type": "quest",
+      "rarity": "legendary",
+      "stackable": false,
+      "maxStack": 1,
+      "value": 5000,
+      "nameKey": "item.world_tree_sapling.name",
+      "descriptionKey": "item.world_tree_sapling.description"
     },
     "yew_berry": {
       "id": "yew_berry",

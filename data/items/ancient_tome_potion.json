@@ -1,0 +1,17 @@
+{
+  "id": "ancient_tome_potion",
+  "name": "Ancient Tome Potion",
+  "description": "An alchemy-crafted ancient tome potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "ancient_tome_potion_buff",
+    "duration": 900
+  },
+  "nameKey": "item.ancient_tome_potion.name",
+  "descriptionKey": "item.ancient_tome_potion.description"
+}

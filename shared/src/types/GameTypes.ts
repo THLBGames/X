@@ -403,11 +403,58 @@ export interface Recipe {
     skillId: string;
     level: number;
   }>; // Additional skills required (beyond the primary skill)
+  unlockRequirements?: Array<{
+    itemId: string;
+    quantity: number;
+  }>; // Items required to unlock this recipe (for secret recipes)
 }
 
 export interface RecipeIngredient {
   itemId: string;
   quantity: number;
+}
+
+// Enchantment system
+export interface EnchantmentEffect {
+  id: string;
+  name: string;
+  description: string;
+  effectType: 'lifesteal' | 'mana_on_hit' | 'critical_boost' | 'experience_gain' | 'gold_gain' | 'item_find' | 'damage_reduction' | 'mana_cost_reduction' | 'cooldown_reduction' | 'health_regeneration' | 'mana_regeneration';
+  value: number; // Effect strength (percentage, flat amount, etc. depending on type)
+  stacking?: boolean; // Whether multiple of this effect stack
+}
+
+export interface ItemEnchantment {
+  enchantmentId: string;
+  name: string;
+  statBonus?: Partial<Stats>;
+  combatStatBonus?: Partial<CombatStats>;
+  effects?: EnchantmentEffect[];
+  appliedAt: number; // Timestamp when enchantment was applied
+  appliedBy?: string; // Enchanter level when applied
+}
+
+export interface EnchantmentRecipe {
+  id: string;
+  enchantmentId: string;
+  name: string;
+  description: string;
+  requiredEnchantingLevel: number;
+  materials: Array<{
+    itemId: string;
+    quantity: number;
+  }>;
+  skillPrerequisites?: Array<{
+    skillId: string;
+    level: number;
+  }>;
+  unlockRequirements?: Array<{
+    itemId: string;
+    quantity: number;
+  }>; // Secret unlock items
+  baseSuccessRate?: number; // 0-1, defaults to 0.85
+  experienceGain: number;
+  goldCost?: number; // Optional gold cost in addition to materials
 }
 
 export interface SkillPassiveBonus {
@@ -529,6 +576,8 @@ export interface Character {
   autoConsumableSettings?: AutoConsumableSetting[]; // Automatic consumable usage settings
   divinationUnlocks?: string[]; // Array of unlocked divination unlock tree node IDs
   divinationUnlockBonuses?: DivinationUnlockBonuses; // Aggregated bonuses from all unlocked nodes
+  itemEnchantments?: Record<string, ItemEnchantment[]>; // Key: "${equipmentSlot}_${itemId}", Value: array of enchantments on that item
+  unlockedEnchantments?: string[]; // Array of unlocked enchantment recipe IDs (for secret unlocks)
 }
 
 export interface LearnedSkill {

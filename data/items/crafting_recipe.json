@@ -1,0 +1,12 @@
+{
+  "id": "crafting_recipe",
+  "name": "Crafting Recipe",
+  "description": "A recipe scroll stolen from a craftsman or merchant, teaches new crafting formulas.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 120,
+  "nameKey": "item.crafting_recipe.name",
+  "descriptionKey": "item.crafting_recipe.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "wisdom_potion",
+  "name": "Wisdom Potion",
+  "description": "An alchemy-crafted wisdom potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 230,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "wisdom_boost",
+    "duration": 560
+  },
+  "nameKey": "item.wisdom_potion.name",
+  "descriptionKey": "item.wisdom_potion.description"
+}

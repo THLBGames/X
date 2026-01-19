@@ -1,0 +1,17 @@
+{
+  "id": "curse_removal_potion",
+  "name": "Curse Removal Potion",
+  "description": "An alchemy-crafted curse removal potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 495,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "curse_removal_potion_buff",
+    "duration": 790
+  },
+  "nameKey": "item.curse_removal_potion.name",
+  "descriptionKey": "item.curse_removal_potion.description"
+}

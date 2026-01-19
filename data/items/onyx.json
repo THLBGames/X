@@ -1,0 +1,12 @@
+{
+  "id": "onyx",
+  "name": "Onyx",
+  "description": "Deep black onyx stone, prized for its elegance.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50,
+  "nameKey": "item.onyx.name",
+  "descriptionKey": "item.onyx.description"
+}

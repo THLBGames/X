@@ -1,0 +1,16 @@
+{
+  "id": "fruit_elixir",
+  "name": "Fruit Elixir",
+  "description": "A refreshing elixir made from fresh fruits.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 30,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 80
+  },
+  "nameKey": "item.fruit_elixir.name",
+  "descriptionKey": "item.fruit_elixir.description"
+}

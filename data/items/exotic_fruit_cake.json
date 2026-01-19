@@ -1,0 +1,16 @@
+{
+  "id": "exotic_fruit_cake",
+  "name": "Exotic Fruit Cake",
+  "description": "A decadent cake made with exotic fruits.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 120,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 150
+  },
+  "nameKey": "item.exotic_fruit_cake.name",
+  "descriptionKey": "item.exotic_fruit_cake.description"
+}

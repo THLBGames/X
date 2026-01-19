@@ -1,0 +1,12 @@
+{
+  "id": "trapped_bird",
+  "name": "Trapped Bird",
+  "description": "A bird caught in a trap.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 6,
+  "nameKey": "item.trapped_bird.name",
+  "descriptionKey": "item.trapped_bird.description"
+}

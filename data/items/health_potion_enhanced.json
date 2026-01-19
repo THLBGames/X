@@ -1,0 +1,16 @@
+{
+  "id": "health_potion_enhanced",
+  "name": "Enhanced Health Potion",
+  "description": "A health potion enhanced with berry extract.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 15,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 70
+  },
+  "nameKey": "item.health_potion_enhanced.name",
+  "descriptionKey": "item.health_potion_enhanced.description"
+}

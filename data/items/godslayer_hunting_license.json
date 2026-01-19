@@ -1,0 +1,12 @@
+{
+  "id": "godslayer_hunting_license",
+  "name": "Godslayer Hunting License",
+  "description": "A legendary license granting permission to hunt divine beasts. Unlocks access to the Godslayer Hunting Grounds.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 10000,
+  "nameKey": "item.godslayer_hunting_license.name",
+  "descriptionKey": "item.godslayer_hunting_license.description"
+}

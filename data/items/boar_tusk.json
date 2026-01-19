@@ -1,0 +1,12 @@
+{
+  "id": "boar_tusk",
+  "name": "Boar Tusk",
+  "description": "A tusk from a trapped boar.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 30,
+  "nameKey": "item.boar_tusk.name",
+  "descriptionKey": "item.boar_tusk.description"
+}

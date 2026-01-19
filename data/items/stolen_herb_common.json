@@ -1,0 +1,12 @@
+{
+  "id": "stolen_herb_common",
+  "name": "Stolen Common Herb",
+  "description": "A common herb acquired through thieving, useful for alchemy.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 5,
+  "nameKey": "item.stolen_herb_common.name",
+  "descriptionKey": "item.stolen_herb_common.description"
+}

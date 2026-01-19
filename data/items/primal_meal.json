@@ -1,0 +1,17 @@
+{
+  "id": "primal_meal",
+  "name": "Primal Meal",
+  "description": "A primal meal infused with ancient power that provides significant stat boosts.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "primal_meal_boost",
+    "duration": 3600
+  },
+  "nameKey": "item.primal_meal.name",
+  "descriptionKey": "item.primal_meal.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "magic_attack_boost_food",
+  "name": "Magic Attack Boost Food",
+  "description": "Increases magic attack power for a duration.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 65,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "magic_attack_boost",
+    "duration": 600
+  },
+  "nameKey": "item.magic_attack_boost_food.name",
+  "descriptionKey": "item.magic_attack_boost_food.description"
+}

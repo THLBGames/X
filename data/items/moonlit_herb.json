@@ -1,0 +1,12 @@
+{
+  "id": "moonlit_herb",
+  "name": "Moonlit Herb",
+  "description": "An herb that glows softly in moonlight. Contains mana-enhancing properties.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 25,
+  "nameKey": "item.moonlit_herb.name",
+  "descriptionKey": "item.moonlit_herb.description"
+}

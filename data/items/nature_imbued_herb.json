@@ -1,0 +1,12 @@
+{
+  "id": "nature_imbued_herb",
+  "name": "Nature-Imbued Herb",
+  "description": "An herb blessed by druidic magic. Contains the essence of the natural world.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 35,
+  "nameKey": "item.nature_imbued_herb.name",
+  "descriptionKey": "item.nature_imbued_herb.description"
+}

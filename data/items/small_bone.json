@@ -1,0 +1,12 @@
+{
+  "id": "small_bone",
+  "name": "Small Bone",
+  "description": "A small bone from a trapped creature.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 2,
+  "nameKey": "item.small_bone.name",
+  "descriptionKey": "item.small_bone.description"
+}

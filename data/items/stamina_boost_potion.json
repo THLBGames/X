@@ -1,0 +1,17 @@
+{
+  "id": "stamina_boost_potion",
+  "name": "Stamina Boost Potion",
+  "description": "An alchemy-crafted stamina boost potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 460,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "stamina_boost_potion_buff",
+    "duration": 720
+  },
+  "nameKey": "item.stamina_boost_potion.name",
+  "descriptionKey": "item.stamina_boost_potion.description"
+}

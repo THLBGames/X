@@ -1,0 +1,12 @@
+{
+  "id": "enchanted_material",
+  "name": "Enchanted Material",
+  "description": "Material stolen from an enchanter, already imbued with magical properties.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 90,
+  "nameKey": "item.enchanted_material.name",
+  "descriptionKey": "item.enchanted_material.description"
+}

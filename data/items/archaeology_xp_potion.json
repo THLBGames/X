@@ -1,0 +1,16 @@
+{
+  "id": "archaeology_xp_potion",
+  "name": "Archaeology Experience Potion",
+  "description": "An alchemy-crafted archaeology experience potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 455,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 610
+  },
+  "nameKey": "item.archaeology_xp_potion.name",
+  "descriptionKey": "item.archaeology_xp_potion.description"
+}

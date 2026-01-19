@@ -1,0 +1,12 @@
+{
+  "id": "nut_shell",
+  "name": "Nut Shell",
+  "description": "Hard shells from nuts, useful for crafting.",
+  "type": "material",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1,
+  "nameKey": "item.nut_shell.name",
+  "descriptionKey": "item.nut_shell.description"
+}

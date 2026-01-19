@@ -1,0 +1,17 @@
+{
+  "id": "attack_buff_potion_basic",
+  "name": "Boar Tusk Potion",
+  "description": "An alchemy-crafted boar tusk potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 235,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "attack_buff_basic_boost",
+    "duration": 570
+  },
+  "nameKey": "item.attack_buff_potion_basic.name",
+  "descriptionKey": "item.attack_buff_potion_basic.description"
+}

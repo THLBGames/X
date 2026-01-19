@@ -1,0 +1,17 @@
+{
+  "id": "defense_boost_food",
+  "name": "Defense Boost Food",
+  "description": "Increases defense for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 48,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "defense_boost",
+    "duration": 600
+  },
+  "nameKey": "item.defense_boost_food.name",
+  "descriptionKey": "item.defense_boost_food.description"
+}

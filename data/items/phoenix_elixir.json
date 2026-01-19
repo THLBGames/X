@@ -1,0 +1,17 @@
+{
+  "id": "phoenix_elixir",
+  "name": "Phoenix Elixir",
+  "description": "An alchemy-crafted phoenix elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 525,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "phoenix_elixir_buff",
+    "duration": 850
+  },
+  "nameKey": "item.phoenix_elixir.name",
+  "descriptionKey": "item.phoenix_elixir.description"
+}

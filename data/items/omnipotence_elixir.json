@@ -1,0 +1,17 @@
+{
+  "id": "omnipotence_elixir",
+  "name": "Omnipotence Elixir",
+  "description": "An alchemy-crafted omnipotence elixir.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2990,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "omnipotence_elixir_buff",
+    "duration": 1280
+  },
+  "nameKey": "item.omnipotence_elixir.name",
+  "descriptionKey": "item.omnipotence_elixir.description"
+}

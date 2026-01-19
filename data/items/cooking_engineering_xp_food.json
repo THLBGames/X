@@ -1,0 +1,17 @@
+{
+  "id": "cooking_engineering_xp_food",
+  "name": "Engineering Experience Food",
+  "description": "Increases engineering experience gain.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 105,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "engineering_xp_boost"
+  },
+  "nameKey": "item.cooking_engineering_xp_food.name",
+  "descriptionKey": "item.cooking_engineering_xp_food.description"
+}

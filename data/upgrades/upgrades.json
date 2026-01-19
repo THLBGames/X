@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_upgrades": 150,
+  "total_upgrades": 161,
   "upgrades": {
     "alchemy_boost_consumable": {
       "id": "alchemy_boost_consumable",
@@ -245,14 +245,15 @@
     "blacksmithing_boost_consumable": {
       "id": "blacksmithing_boost_consumable",
       "name": "Blacksmithing Boost",
-      "description": "Temporarily increases blacksmithing speed by 30% for 50 actions",
+      "description": "Temporarily increases blacksmithing XP by 50%, speed by 30%, and success rate by 25% for 50 actions",
       "type": "consumable",
       "scope": "skill",
       "skillId": "blacksmithing",
-      "price": 500,
+      "price": 800,
       "bonuses": {
         "speedMultiplier": 0.7,
-        "experienceMultiplier": 1.2
+        "experienceMultiplier": 1.5,
+        "successRateBonus": 0.25
       },
       "actionDuration": 50,
       "requirements": {},
@@ -262,17 +263,17 @@
     "blacksmithing_upgrade_I": {
       "id": "blacksmithing_upgrade_I",
       "name": "Blacksmithing Upgrade I",
-      "description": "Permanently increases blacksmithing XP gain by 10%, speed by 5%, and yield by 5%",
+      "description": "Permanently increases blacksmithing XP gain by 10%, speed by 5%, success rate by 5%, and yield by 5%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "blacksmithing",
       "tier": "I",
-      "price": 1000,
+      "price": 1500,
       "bonuses": {
         "experienceMultiplier": 1.1,
         "speedMultiplier": 0.95,
-        "yieldMultiplier": 1.05,
-        "successRateBonus": 0.05
+        "successRateBonus": 0.05,
+        "yieldMultiplier": 1.05
       },
       "requirements": {},
       "nameKey": "upgrade.blacksmithing_upgrade_I.name",
@@ -281,17 +282,17 @@
     "blacksmithing_upgrade_II": {
       "id": "blacksmithing_upgrade_II",
       "name": "Blacksmithing Upgrade II",
-      "description": "Permanently increases blacksmithing XP gain by 15%, speed by 8%, and yield by 8%",
+      "description": "Permanently increases blacksmithing XP gain by 15%, speed by 8%, success rate by 8%, and yield by 8%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "blacksmithing",
       "tier": "II",
-      "price": 2828,
+      "price": 3000,
       "bonuses": {
         "experienceMultiplier": 1.15,
         "speedMultiplier": 0.92,
-        "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
+        "successRateBonus": 0.08,
+        "yieldMultiplier": 1.08
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_I"
@@ -302,17 +303,17 @@
     "blacksmithing_upgrade_III": {
       "id": "blacksmithing_upgrade_III",
       "name": "Blacksmithing Upgrade III",
-      "description": "Permanently increases blacksmithing XP gain by 20%, speed by 12%, and yield by 12%",
+      "description": "Permanently increases blacksmithing XP gain by 20%, speed by 12%, success rate by 12%, and yield by 12%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "blacksmithing",
       "tier": "III",
-      "price": 5196,
+      "price": 6000,
       "bonuses": {
         "experienceMultiplier": 1.2,
         "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "successRateBonus": 0.12,
+        "yieldMultiplier": 1.12
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_II"
@@ -323,17 +324,17 @@
     "blacksmithing_upgrade_IV": {
       "id": "blacksmithing_upgrade_IV",
       "name": "Blacksmithing Upgrade IV",
-      "description": "Permanently increases blacksmithing XP gain by 25%, speed by 15%, and yield by 15%",
+      "description": "Permanently increases blacksmithing XP gain by 25%, speed by 15%, success rate by 15%, and yield by 15%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "blacksmithing",
       "tier": "IV",
-      "price": 8000,
+      "price": 12000,
       "bonuses": {
         "experienceMultiplier": 1.25,
         "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "successRateBonus": 0.15,
+        "yieldMultiplier": 1.15
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_III"
@@ -344,23 +345,81 @@
     "blacksmithing_upgrade_V": {
       "id": "blacksmithing_upgrade_V",
       "name": "Blacksmithing Upgrade V",
-      "description": "Permanently increases blacksmithing XP gain by 30%, speed by 20%, and yield by 20%",
+      "description": "Permanently increases blacksmithing XP gain by 30%, speed by 20%, success rate by 20%, and yield by 20%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "blacksmithing",
       "tier": "V",
-      "price": 11180,
+      "price": 25000,
       "bonuses": {
         "experienceMultiplier": 1.3,
         "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "successRateBonus": 0.2,
+        "yieldMultiplier": 1.2
       },
       "requirements": {
         "previousTierId": "blacksmithing_upgrade_IV"
       },
       "nameKey": "upgrade.blacksmithing_upgrade_V.name",
       "descriptionKey": "upgrade.blacksmithing_upgrade_V.description"
+    },
+    "blacksmithing_legendary_forge": {
+      "id": "blacksmithing_legendary_forge",
+      "name": "Legendary Forge",
+      "description": "Unlocks the most powerful blacksmithing recipes for legendary equipment. Requires blacksmithing level 90, divine_fragment x10, and prismatic_shard x5.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "Legendary",
+      "price": 200000,
+      "materialRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        }
+      ],
+      "bonuses": {
+        "unlocksRecipes": [
+          "prismatic_shard_armor",
+          "divine_fragment_weapon",
+          "celestial_scale_armor",
+          "godslayer_blade",
+          "cosmic_armor_set",
+          "reality_forge_hammer",
+          "eternal_anvil"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 90
+      },
+      "nameKey": "upgrade.blacksmithing_legendary_forge.name",
+      "descriptionKey": "upgrade.blacksmithing_legendary_forge.description"
+    },
+    "blacksmithing_master_blueprint": {
+      "id": "blacksmithing_master_blueprint",
+      "name": "Master Blacksmith's Blueprint",
+      "description": "Unlocks secret blacksmithing recipes for advanced equipment. Requires blacksmithing level 70.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "Master",
+      "price": 50000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "dragon_scale_armor",
+          "void_crystal_weapon",
+          "ancient_relic_weapon"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 70
+      },
+      "nameKey": "upgrade.blacksmithing_master_blueprint.name",
+      "descriptionKey": "upgrade.blacksmithing_master_blueprint.description"
     },
     "cooking_boost_consumable": {
       "id": "cooking_boost_consumable",
@@ -481,6 +540,35 @@
       },
       "nameKey": "upgrade.cooking_upgrade_V.name",
       "descriptionKey": "upgrade.cooking_upgrade_V.description"
+    },
+    "cooking_master_chef": {
+      "id": "cooking_master_chef",
+      "name": "Master Chef",
+      "description": "Unlocks 15 ultra-rare cooking recipes requiring legendary components. Grants access to master-tier feasts and meals.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "VI",
+      "price": 25000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "phoenix_feast_secret",
+          "dragon_heart_stew_secret",
+          "divine_banquet_secret",
+          "world_tree_nectar_secret",
+          "celestial_banquet_secret",
+          "primal_meal_secret",
+          "omnipotence_meal_uber",
+          "reality_breaking_soup_uber",
+          "godlike_feast_uber"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 85,
+        "previousTierId": "cooking_upgrade_V"
+      },
+      "nameKey": "upgrade.cooking_master_chef.name",
+      "descriptionKey": "upgrade.cooking_master_chef.description"
     },
     "divination_boost_consumable": {
       "id": "divination_boost_consumable",
@@ -842,6 +930,31 @@
       "nameKey": "upgrade.engineering_upgrade_V.name",
       "descriptionKey": "upgrade.engineering_upgrade_V.description"
     },
+    "engineering_master_blueprint": {
+      "id": "engineering_master_blueprint",
+      "name": "Master Engineer's Blueprint",
+      "description": "Unlocks secret engineering recipes for advanced devices. Requires engineering level 70.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "Master",
+      "price": 50000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "ancient_scroll_device",
+          "master_engineer_blueprint",
+          "phoenix_core_engine",
+          "dragon_scale_mechanism",
+          "void_crystal_construct",
+          "divine_engineering_core"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 70
+      },
+      "nameKey": "upgrade.engineering_master_blueprint.name",
+      "descriptionKey": "upgrade.engineering_master_blueprint.description"
+    },
     "farming_boost_consumable": {
       "id": "farming_boost_consumable",
       "name": "Farming Boost",
@@ -1112,7 +1225,10 @@
         "experienceMultiplier": 1.1,
         "speedMultiplier": 0.95,
         "yieldMultiplier": 1.05,
-        "successRateBonus": 0.05
+        "successRateBonus": 0.05,
+        "unlocksNodes": [
+          "wild_apple_tree"
+        ]
       },
       "requirements": {},
       "nameKey": "upgrade.foraging_upgrade_I.name",
@@ -1131,7 +1247,13 @@
         "experienceMultiplier": 1.15,
         "speedMultiplier": 0.92,
         "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
+        "successRateBonus": 0.08,
+        "unlocksNodes": [
+          "common_nut_tree"
+        ],
+        "unlocksRecipes": [
+          "berry_pie"
+        ]
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_I"
@@ -1152,7 +1274,13 @@
         "experienceMultiplier": 1.2,
         "speedMultiplier": 0.88,
         "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "successRateBonus": 0.12,
+        "unlocksNodes": [
+          "berry_grove"
+        ],
+        "unlocksRecipes": [
+          "berry_extract"
+        ]
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_II"
@@ -1173,7 +1301,13 @@
         "experienceMultiplier": 1.25,
         "speedMultiplier": 0.85,
         "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "successRateBonus": 0.15,
+        "unlocksNodes": [
+          "spice_bush"
+        ],
+        "unlocksRecipes": [
+          "spiced_stew"
+        ]
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_III"
@@ -1194,7 +1328,13 @@
         "experienceMultiplier": 1.3,
         "speedMultiplier": 0.8,
         "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "successRateBonus": 0.2,
+        "unlocksNodes": [
+          "ancient_mushroom_grove"
+        ],
+        "unlocksRecipes": [
+          "ancient_essence_potion"
+        ]
       },
       "requirements": {
         "previousTierId": "foraging_upgrade_IV"
@@ -1368,10 +1508,9 @@
       "tier": "II",
       "price": 2828,
       "bonuses": {
-        "experienceMultiplier": 1.15,
-        "speedMultiplier": 0.92,
-        "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.9,
+        "yieldMultiplier": 1.1
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_I"
@@ -1389,10 +1528,10 @@
       "tier": "III",
       "price": 5196,
       "bonuses": {
-        "experienceMultiplier": 1.2,
-        "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.05
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_II"
@@ -1410,10 +1549,10 @@
       "tier": "IV",
       "price": 8000,
       "bonuses": {
-        "experienceMultiplier": 1.25,
-        "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "experienceMultiplier": 1.4,
+        "speedMultiplier": 0.8,
+        "yieldMultiplier": 1.2,
+        "successRateBonus": 0.08
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_III"
@@ -1431,10 +1570,10 @@
       "tier": "V",
       "price": 11180,
       "bonuses": {
-        "experienceMultiplier": 1.3,
-        "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "experienceMultiplier": 1.5,
+        "speedMultiplier": 0.75,
+        "yieldMultiplier": 1.25,
+        "successRateBonus": 0.1
       },
       "requirements": {
         "previousTierId": "herbalism_upgrade_IV"
@@ -2642,6 +2781,163 @@
       "nameKey": "upgrade.thieving_upgrade_V.name",
       "descriptionKey": "upgrade.thieving_upgrade_V.description"
     },
+    "trapping_advanced_schematics_I": {
+      "id": "trapping_advanced_schematics_I",
+      "name": "Advanced Trap Schematics I",
+      "description": "Unlocks advanced trap designs. Requires materials: trapped_animal_quality x5, animal_pelt x10",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Advanced_I",
+      "price": 2500,
+      "materialRequirements": [
+        {
+          "itemId": "trapped_animal_quality",
+          "quantity": 5
+        },
+        {
+          "itemId": "animal_pelt",
+          "quantity": 10
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.05,
+        "yieldMultiplier": 1.1,
+        "experienceMultiplier": 1.1
+      },
+      "requirements": {
+        "skillLevel": 25
+      },
+      "nameKey": "upgrade.trapping_advanced_schematics_I.name",
+      "descriptionKey": "upgrade.trapping_advanced_schematics_I.description"
+    },
+    "trapping_advanced_schematics_II": {
+      "id": "trapping_advanced_schematics_II",
+      "name": "Advanced Trap Schematics II",
+      "description": "Further enhances trap designs. Requires materials: trapped_monster x3, monster_pelt x8",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Advanced_II",
+      "price": 5000,
+      "materialRequirements": [
+        {
+          "itemId": "trapped_monster",
+          "quantity": 3
+        },
+        {
+          "itemId": "monster_pelt",
+          "quantity": 8
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.08,
+        "yieldMultiplier": 1.15,
+        "experienceMultiplier": 1.15
+      },
+      "requirements": {
+        "skillLevel": 45,
+        "previousTierId": "trapping_advanced_schematics_I"
+      },
+      "nameKey": "upgrade.trapping_advanced_schematics_II.name",
+      "descriptionKey": "upgrade.trapping_advanced_schematics_II.description"
+    },
+    "trapping_advanced_schematics_III": {
+      "id": "trapping_advanced_schematics_III",
+      "name": "Advanced Trap Schematics III",
+      "description": "Master-level trap designs. Requires materials: trapped_animal_premium x5, rare_pelt x5",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Advanced_III",
+      "price": 10000,
+      "materialRequirements": [
+        {
+          "itemId": "trapped_animal_premium",
+          "quantity": 5
+        },
+        {
+          "itemId": "rare_pelt",
+          "quantity": 5
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.12,
+        "yieldMultiplier": 1.2,
+        "experienceMultiplier": 1.2
+      },
+      "requirements": {
+        "skillLevel": 65,
+        "previousTierId": "trapping_advanced_schematics_II"
+      },
+      "nameKey": "upgrade.trapping_advanced_schematics_III.name",
+      "descriptionKey": "upgrade.trapping_advanced_schematics_III.description"
+    },
+    "trapping_advanced_schematics_IV": {
+      "id": "trapping_advanced_schematics_IV",
+      "name": "Advanced Trap Schematics IV",
+      "description": "Legendary trap designs. Requires materials: mythical_pelt x3, legendary_bone x2",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Advanced_IV",
+      "price": 20000,
+      "materialRequirements": [
+        {
+          "itemId": "mythical_pelt",
+          "quantity": 3
+        },
+        {
+          "itemId": "legendary_bone",
+          "quantity": 2
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.15,
+        "yieldMultiplier": 1.25,
+        "experienceMultiplier": 1.25
+      },
+      "requirements": {
+        "skillLevel": 85,
+        "previousTierId": "trapping_advanced_schematics_III"
+      },
+      "nameKey": "upgrade.trapping_advanced_schematics_IV.name",
+      "descriptionKey": "upgrade.trapping_advanced_schematics_IV.description"
+    },
+    "trapping_beast_lure_recipe": {
+      "id": "trapping_beast_lure_recipe",
+      "name": "Beast Lure Recipe",
+      "description": "Unlocks recipe to create consumable lures. Requires materials: animal_meat x10, uncommon_herb x5",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Special",
+      "price": 3500,
+      "materialRequirements": [
+        {
+          "itemId": "animal_meat",
+          "quantity": 10
+        },
+        {
+          "itemId": "uncommon_herb",
+          "quantity": 5
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.1
+      },
+      "requirements": {
+        "skillLevel": 35,
+        "skillPrerequisites": [
+          {
+            "skillId": "alchemy",
+            "level": 30
+          }
+        ]
+      },
+      "nameKey": "upgrade.trapping_beast_lure_recipe.name",
+      "descriptionKey": "upgrade.trapping_beast_lure_recipe.description"
+    },
     "trapping_boost_consumable": {
       "id": "trapping_boost_consumable",
       "name": "Trapping Boost",
@@ -2658,6 +2954,70 @@
       "requirements": {},
       "nameKey": "upgrade.trapping_boost_consumable.name",
       "descriptionKey": "upgrade.trapping_boost_consumable.description"
+    },
+    "trapping_legendary_blueprint": {
+      "id": "trapping_legendary_blueprint",
+      "name": "Legendary Trap Blueprint",
+      "description": "Unlocks secret trap nodes. Requires materials: mythical_pelt x5, legendary_bone x3, divine_fragment x1",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Legendary",
+      "price": 30000,
+      "materialRequirements": [
+        {
+          "itemId": "mythical_pelt",
+          "quantity": 5
+        },
+        {
+          "itemId": "legendary_bone",
+          "quantity": 3
+        },
+        {
+          "itemId": "divine_fragment",
+          "quantity": 1
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.25,
+        "yieldMultiplier": 1.3,
+        "experienceMultiplier": 1.3
+      },
+      "requirements": {
+        "skillLevel": 75
+      },
+      "nameKey": "upgrade.trapping_legendary_blueprint.name",
+      "descriptionKey": "upgrade.trapping_legendary_blueprint.description"
+    },
+    "trapping_master_manual": {
+      "id": "trapping_master_manual",
+      "name": "Master Trapper's Manual",
+      "description": "The ultimate guide to trapping. Requires materials: trapped_monster x10, monster_pelt x20",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "trapping",
+      "tier": "Master",
+      "price": 15000,
+      "materialRequirements": [
+        {
+          "itemId": "trapped_monster",
+          "quantity": 10
+        },
+        {
+          "itemId": "monster_pelt",
+          "quantity": 20
+        }
+      ],
+      "bonuses": {
+        "successRateBonus": 0.15,
+        "yieldMultiplier": 1.2,
+        "experienceMultiplier": 1.2
+      },
+      "requirements": {
+        "skillLevel": 50
+      },
+      "nameKey": "upgrade.trapping_master_manual.name",
+      "descriptionKey": "upgrade.trapping_master_manual.description"
     },
     "trapping_upgrade_I": {
       "id": "trapping_upgrade_I",

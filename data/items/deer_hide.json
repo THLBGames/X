@@ -1,0 +1,12 @@
+{
+  "id": "deer_hide",
+  "name": "Deer Hide",
+  "description": "A hide from a trapped deer.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 20,
+  "nameKey": "item.deer_hide.name",
+  "descriptionKey": "item.deer_hide.description"
+}

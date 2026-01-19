@@ -1,0 +1,17 @@
+{
+  "id": "master_hunting_elixir",
+  "name": "Master Hunting Elixir",
+  "description": "An alchemy-crafted master hunting elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 870,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "master_hunting_elixir_buff",
+    "duration": 1040
+  },
+  "nameKey": "item.master_hunting_elixir.name",
+  "descriptionKey": "item.master_hunting_elixir.description"
+}

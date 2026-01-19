@@ -1,0 +1,12 @@
+{
+  "id": "primordial_essence",
+  "name": "Primordial Essence",
+  "description": "Primordial essence stolen from an ancient keeper, contains power from the beginning of time.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 320,
+  "nameKey": "item.primordial_essence.name",
+  "descriptionKey": "item.primordial_essence.description"
+}

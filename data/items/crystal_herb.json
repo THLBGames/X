@@ -1,0 +1,12 @@
+{
+  "id": "crystal_herb",
+  "name": "Crystal Herb",
+  "description": "An herb that has grown around crystal formations. Contains concentrated essence.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 70,
+  "nameKey": "item.crystal_herb.name",
+  "descriptionKey": "item.crystal_herb.description"
+}

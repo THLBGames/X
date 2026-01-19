@@ -1,0 +1,17 @@
+{
+  "id": "abyssal_pearl_elixir",
+  "name": "Abyssal Pearl Elixir",
+  "description": "An alchemy-crafted abyssal pearl elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 840,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "abyssal_pearl_elixir_buff",
+    "duration": 980
+  },
+  "nameKey": "item.abyssal_pearl_elixir.name",
+  "descriptionKey": "item.abyssal_pearl_elixir.description"
+}

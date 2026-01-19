@@ -1,0 +1,17 @@
+{
+  "id": "cooking_leatherworking_xp_food",
+  "name": "Leatherworking Experience Food",
+  "description": "Increases leatherworking experience gain.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 120,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "leatherworking_xp_boost"
+  },
+  "nameKey": "item.cooking_leatherworking_xp_food.name",
+  "descriptionKey": "item.cooking_leatherworking_xp_food.description"
+}

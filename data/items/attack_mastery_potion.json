@@ -1,0 +1,17 @@
+{
+  "id": "attack_mastery_potion",
+  "name": "Attack Mastery Potion",
+  "description": "An alchemy-crafted attack mastery potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 470,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "attack_boost",
+    "duration": 740
+  },
+  "nameKey": "item.attack_mastery_potion.name",
+  "descriptionKey": "item.attack_mastery_potion.description"
+}

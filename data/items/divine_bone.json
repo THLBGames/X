@@ -1,0 +1,12 @@
+{
+  "id": "divine_bone",
+  "name": "Divine Bone",
+  "description": "A bone infused with divine power.",
+  "type": "material",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 1000,
+  "nameKey": "item.divine_bone.name",
+  "descriptionKey": "item.divine_bone.description"
+}

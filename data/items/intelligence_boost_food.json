@@ -1,0 +1,17 @@
+{
+  "id": "intelligence_boost_food",
+  "name": "Intelligence Boost Food",
+  "description": "Increases intelligence for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 70,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "intelligence_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.intelligence_boost_food.name",
+  "descriptionKey": "item.intelligence_boost_food.description"
+}

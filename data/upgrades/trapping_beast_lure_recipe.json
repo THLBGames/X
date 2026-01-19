@@ -1,0 +1,34 @@
+{
+  "id": "trapping_beast_lure_recipe",
+  "name": "Beast Lure Recipe",
+  "description": "Unlocks recipe to create consumable lures. Requires materials: animal_meat x10, uncommon_herb x5",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Special",
+  "price": 3500,
+  "materialRequirements": [
+    {
+      "itemId": "animal_meat",
+      "quantity": 10
+    },
+    {
+      "itemId": "uncommon_herb",
+      "quantity": 5
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.1
+  },
+  "requirements": {
+    "skillLevel": 35,
+    "skillPrerequisites": [
+      {
+        "skillId": "alchemy",
+        "level": 30
+      }
+    ]
+  },
+  "nameKey": "upgrade.trapping_beast_lure_recipe.name",
+  "descriptionKey": "upgrade.trapping_beast_lure_recipe.description"
+}

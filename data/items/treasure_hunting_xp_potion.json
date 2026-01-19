@@ -1,0 +1,16 @@
+{
+  "id": "treasure_hunting_xp_potion",
+  "name": "Treasure Hunting Experience Potion",
+  "description": "An alchemy-crafted treasure hunting experience potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 285,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 570
+  },
+  "nameKey": "item.treasure_hunting_xp_potion.name",
+  "descriptionKey": "item.treasure_hunting_xp_potion.description"
+}

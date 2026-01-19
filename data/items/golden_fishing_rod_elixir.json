@@ -1,0 +1,17 @@
+{
+  "id": "golden_fishing_rod_elixir",
+  "name": "Golden Fishing Rod Elixir",
+  "description": "An alchemy-crafted golden fishing rod elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 530,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "golden_fishing_rod_elixir_buff",
+    "duration": 6960
+  },
+  "nameKey": "item.golden_fishing_rod_elixir.name",
+  "descriptionKey": "item.golden_fishing_rod_elixir.description"
+}

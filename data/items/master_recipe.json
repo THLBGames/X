@@ -1,0 +1,12 @@
+{
+  "id": "master_recipe",
+  "name": "Master Recipe",
+  "description": "A master recipe scroll stolen from a master craftsman, contains the most advanced crafting knowledge.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 500,
+  "nameKey": "item.master_recipe.name",
+  "descriptionKey": "item.master_recipe.description"
+}

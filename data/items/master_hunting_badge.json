@@ -1,0 +1,12 @@
+{
+  "id": "master_hunting_badge",
+  "name": "Master Hunting Badge",
+  "description": "A prestigious badge awarded to master hunters. Unlocks access to the Master Trophy Hunt grounds.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 3000,
+  "nameKey": "item.master_hunting_badge.name",
+  "descriptionKey": "item.master_hunting_badge.description"
+}

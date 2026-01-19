@@ -1,0 +1,12 @@
+{
+  "id": "phantom_pelt",
+  "name": "Phantom Pelt",
+  "description": "An ethereal pelt from a phantom creature.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 550,
+  "nameKey": "item.phantom_pelt.name",
+  "descriptionKey": "item.phantom_pelt.description"
+}

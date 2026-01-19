@@ -1,0 +1,17 @@
+{
+  "id": "multi_combat_stat_food",
+  "name": "Multi-Combat Stat Food",
+  "description": "Increases all combat stats for a duration.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 180,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "multi_combat_boost",
+    "duration": 900
+  },
+  "nameKey": "item.multi_combat_stat_food.name",
+  "descriptionKey": "item.multi_combat_stat_food.description"
+}

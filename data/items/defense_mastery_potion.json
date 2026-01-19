@@ -1,0 +1,17 @@
+{
+  "id": "defense_mastery_potion",
+  "name": "Defense Mastery Potion",
+  "description": "An alchemy-crafted defense mastery potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 460,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "defense_boost",
+    "duration": 720
+  },
+  "nameKey": "item.defense_mastery_potion.name",
+  "descriptionKey": "item.defense_mastery_potion.description"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "blacksmithing_legendary_forge",
+  "name": "Legendary Forge",
+  "description": "Unlocks the most powerful blacksmithing recipes for legendary equipment. Requires blacksmithing level 90, divine_fragment x10, and prismatic_shard x5.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "blacksmithing",
+  "tier": "Legendary",
+  "price": 200000,
+  "materialRequirements": [
+    {
+      "itemId": "divine_fragment",
+      "quantity": 10
+    },
+    {
+      "itemId": "prismatic_shard",
+      "quantity": 5
+    }
+  ],
+  "bonuses": {
+    "unlocksRecipes": [
+      "prismatic_shard_armor",
+      "divine_fragment_weapon",
+      "celestial_scale_armor",
+      "godslayer_blade",
+      "cosmic_armor_set",
+      "reality_forge_hammer",
+      "eternal_anvil"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 90
+  },
+  "nameKey": "upgrade.blacksmithing_legendary_forge.name",
+  "descriptionKey": "upgrade.blacksmithing_legendary_forge.description"
+}

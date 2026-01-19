@@ -1,0 +1,16 @@
+{
+  "id": "legendary_berry_potion",
+  "name": "Legendary Berry Potion",
+  "description": "A legendary potion crafted from rare berries.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 400,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 500
+  },
+  "nameKey": "item.legendary_berry_potion.name",
+  "descriptionKey": "item.legendary_berry_potion.description"
+}

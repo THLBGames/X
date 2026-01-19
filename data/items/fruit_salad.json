@@ -1,0 +1,16 @@
+{
+  "id": "fruit_salad",
+  "name": "Fruit Salad",
+  "description": "A refreshing mix of fresh fruits.",
+  "type": "consumable",
+  "rarity": "common",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 25,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 50
+  },
+  "nameKey": "item.fruit_salad.name",
+  "descriptionKey": "item.fruit_salad.description"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "tailoring_xp_potion",
+  "name": "Tailoring Experience Potion",
+  "description": "An alchemy-crafted tailoring experience potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 495,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 690
+  },
+  "nameKey": "item.tailoring_xp_potion.name",
+  "descriptionKey": "item.tailoring_xp_potion.description"
+}

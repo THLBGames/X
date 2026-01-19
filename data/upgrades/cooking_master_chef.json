@@ -1,0 +1,29 @@
+{
+  "id": "cooking_master_chef",
+  "name": "Master Chef",
+  "description": "Unlocks 15 ultra-rare cooking recipes requiring legendary components. Grants access to master-tier feasts and meals.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "cooking",
+  "tier": "VI",
+  "price": 25000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "phoenix_feast_secret",
+      "dragon_heart_stew_secret",
+      "divine_banquet_secret",
+      "world_tree_nectar_secret",
+      "celestial_banquet_secret",
+      "primal_meal_secret",
+      "omnipotence_meal_uber",
+      "reality_breaking_soup_uber",
+      "godlike_feast_uber"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 85,
+    "previousTierId": "cooking_upgrade_V"
+  },
+  "nameKey": "upgrade.cooking_master_chef.name",
+  "descriptionKey": "upgrade.cooking_master_chef.description"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mana_food_large",
+  "name": "Large Mana Food",
+  "description": "Restores 400 mana.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 90,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 400
+  },
+  "nameKey": "item.mana_food_large.name",
+  "descriptionKey": "item.mana_food_large.description"
+}

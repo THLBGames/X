@@ -1,0 +1,17 @@
+{
+  "id": "celestial_chart_elixir",
+  "name": "Celestial Chart Elixir",
+  "description": "An alchemy-crafted celestial chart elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 865,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "celestial_chart_elixir_buff",
+    "duration": 1030
+  },
+  "nameKey": "item.celestial_chart_elixir.name",
+  "descriptionKey": "item.celestial_chart_elixir.description"
+}

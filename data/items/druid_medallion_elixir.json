@@ -1,0 +1,17 @@
+{
+  "id": "druid_medallion_elixir",
+  "name": "Druid Medallion Elixir",
+  "description": "An alchemy-crafted druid medallion elixir.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 510,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "druid_medallion_elixir_buff",
+    "duration": 820
+  },
+  "nameKey": "item.druid_medallion_elixir.name",
+  "descriptionKey": "item.druid_medallion_elixir.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "luck_boost_food",
+  "name": "Luck Boost Food",
+  "description": "Increases luck for a duration.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 90,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "luck_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.luck_boost_food.name",
+  "descriptionKey": "item.luck_boost_food.description"
+}

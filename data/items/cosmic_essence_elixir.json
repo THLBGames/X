@@ -1,0 +1,17 @@
+{
+  "id": "cosmic_essence_elixir",
+  "name": "Cosmic Essence Elixir",
+  "description": "An alchemy-crafted cosmic essence elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1465,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "cosmic_essence_elixir_buff",
+    "duration": 1230
+  },
+  "nameKey": "item.cosmic_essence_elixir.name",
+  "descriptionKey": "item.cosmic_essence_elixir.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "stolen_gem_uncommon",
+  "name": "Stolen Uncommon Gem",
+  "description": "An uncommon gem stolen from a noble or merchant, useful for crafting jewelry.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 40,
+  "nameKey": "item.stolen_gem_uncommon.name",
+  "descriptionKey": "item.stolen_gem_uncommon.description"
+}

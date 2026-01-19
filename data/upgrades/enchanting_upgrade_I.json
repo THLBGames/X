@@ -1,16 +1,14 @@
 {
   "id": "enchanting_upgrade_I",
   "name": "Enchanting Upgrade I",
-  "description": "Permanently increases enchanting XP gain by 10%, speed by 5%, and yield by 5%",
+  "description": "Permanently increases enchanting success rate by 5% and XP gain by 10%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "enchanting",
   "tier": "I",
-  "price": 1000,
+  "price": 1500,
   "bonuses": {
     "experienceMultiplier": 1.1,
-    "speedMultiplier": 0.95,
-    "yieldMultiplier": 1.05,
     "successRateBonus": 0.05
   },
   "requirements": {},

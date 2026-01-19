@@ -1,0 +1,16 @@
+{
+  "id": "blacksmithing_xp_potion",
+  "name": "Blacksmithing Experience Potion",
+  "description": "An alchemy-crafted blacksmithing experience potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 475,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 650
+  },
+  "nameKey": "item.blacksmithing_xp_potion.name",
+  "descriptionKey": "item.blacksmithing_xp_potion.description"
+}

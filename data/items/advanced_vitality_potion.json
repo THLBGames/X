@@ -1,0 +1,17 @@
+{
+  "id": "advanced_vitality_potion",
+  "name": "Advanced Vitality Potion",
+  "description": "An alchemy-crafted advanced vitality potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 520,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "advanced_vitality_boost",
+    "duration": 840
+  },
+  "nameKey": "item.advanced_vitality_potion.name",
+  "descriptionKey": "item.advanced_vitality_potion.description"
+}

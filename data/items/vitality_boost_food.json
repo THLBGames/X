@@ -1,0 +1,17 @@
+{
+  "id": "vitality_boost_food",
+  "name": "Vitality Boost Food",
+  "description": "Increases vitality for a duration.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 60,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "vitality_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.vitality_boost_food.name",
+  "descriptionKey": "item.vitality_boost_food.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "exotic_berry",
+  "name": "Exotic Berry",
+  "description": "Rare berries with exotic flavors and properties.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 15,
+  "nameKey": "item.exotic_berry.name",
+  "descriptionKey": "item.exotic_berry.description"
+}

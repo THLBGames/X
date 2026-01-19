@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_engineering_xp_potion",
+  "name": "Enhanced Engineering Experience Potion",
+  "description": "An alchemy-crafted enhanced engineering experience potion.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1440,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 1080
+  },
+  "nameKey": "item.enhanced_engineering_xp_potion.name",
+  "descriptionKey": "item.enhanced_engineering_xp_potion.description"
+}

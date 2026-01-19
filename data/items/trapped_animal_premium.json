@@ -1,0 +1,12 @@
+{
+  "id": "trapped_animal_premium",
+  "name": "Premium Trapped Animal",
+  "description": "An exceptionally fine animal caught in a trap.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 75,
+  "nameKey": "item.trapped_animal_premium.name",
+  "descriptionKey": "item.trapped_animal_premium.description"
+}

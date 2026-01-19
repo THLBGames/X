@@ -1,0 +1,16 @@
+{
+  "id": "combined_health_mana_food",
+  "name": "Combined Restoration Food",
+  "description": "Restores 150 health and 100 mana.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 50,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 150
+  },
+  "nameKey": "item.combined_health_mana_food.name",
+  "descriptionKey": "item.combined_health_mana_food.description"
+}

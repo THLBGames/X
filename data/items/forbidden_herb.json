@@ -1,0 +1,12 @@
+{
+  "id": "forbidden_herb",
+  "name": "Forbidden Herb",
+  "description": "A dark herb known only to master herbalists. Contains dangerous but powerful properties.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 250,
+  "nameKey": "item.forbidden_herb.name",
+  "descriptionKey": "item.forbidden_herb.description"
+}

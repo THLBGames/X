@@ -1,0 +1,12 @@
+{
+  "id": "void_stone",
+  "name": "Void Stone",
+  "description": "Stone from the void between dimensions.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 500,
+  "nameKey": "item.void_stone.name",
+  "descriptionKey": "item.void_stone.description"
+}

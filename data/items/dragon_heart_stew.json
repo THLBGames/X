@@ -1,0 +1,17 @@
+{
+  "id": "dragon_heart_stew",
+  "name": "Dragon Heart Stew",
+  "description": "An incredibly powerful stew that provides massive stat boosts and combat bonuses.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2500,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "dragon_heart_boost",
+    "duration": 3600
+  },
+  "nameKey": "item.dragon_heart_stew.name",
+  "descriptionKey": "item.dragon_heart_stew.description"
+}

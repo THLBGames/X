@@ -1,0 +1,12 @@
+{
+  "id": "shadow_pass",
+  "name": "Shadow Pass",
+  "description": "A pass granting access to the underground Shadow Market, required to enter.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2000,
+  "nameKey": "item.shadow_pass.name",
+  "descriptionKey": "item.shadow_pass.description"
+}

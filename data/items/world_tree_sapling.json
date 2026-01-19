@@ -1,0 +1,12 @@
+{
+  "id": "world_tree_sapling",
+  "name": "World Tree Sapling",
+  "description": "A sapling from the World Tree itself. Radiates with primal life force. Unlocks the World Tree Nexus.",
+  "type": "quest",
+  "rarity": "legendary",
+  "stackable": false,
+  "maxStack": 1,
+  "value": 5000,
+  "nameKey": "item.world_tree_sapling.name",
+  "descriptionKey": "item.world_tree_sapling.description"
+}

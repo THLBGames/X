@@ -1,0 +1,17 @@
+{
+  "id": "magic_defense_boost_food",
+  "name": "Magic Defense Boost Food",
+  "description": "Increases magic defense for a duration.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 70,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "magic_defense_boost",
+    "duration": 600
+  },
+  "nameKey": "item.magic_defense_boost_food.name",
+  "descriptionKey": "item.magic_defense_boost_food.description"
+}

@@ -1,17 +1,16 @@
 {
   "id": "enchanting_upgrade_II",
   "name": "Enchanting Upgrade II",
-  "description": "Permanently increases enchanting XP gain by 15%, speed by 8%, and yield by 8%",
+  "description": "Permanently increases enchanting success rate by 10% and material efficiency by 5%",
   "type": "permanent",
   "scope": "skill",
   "skillId": "enchanting",
   "tier": "II",
-  "price": 2828,
+  "price": 3000,
   "bonuses": {
     "experienceMultiplier": 1.15,
-    "speedMultiplier": 0.92,
-    "yieldMultiplier": 1.08,
-    "successRateBonus": 0.08
+    "speedMultiplier": 0.95,
+    "successRateBonus": 0.10
   },
   "requirements": {
     "previousTierId": "enchanting_upgrade_I"

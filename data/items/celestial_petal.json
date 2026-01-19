@@ -1,0 +1,12 @@
+{
+  "id": "celestial_petal",
+  "name": "Celestial Petal",
+  "description": "A petal from a herb touched by divine energy. Radiates with celestial power.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150,
+  "nameKey": "item.celestial_petal.name",
+  "descriptionKey": "item.celestial_petal.description"
+}

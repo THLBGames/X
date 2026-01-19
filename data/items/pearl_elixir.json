@@ -1,0 +1,17 @@
+{
+  "id": "pearl_elixir",
+  "name": "Pearl Elixir",
+  "description": "An alchemy-crafted pearl elixir.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 250,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "pearl_elixir_buff",
+    "duration": 600
+  },
+  "nameKey": "item.pearl_elixir.name",
+  "descriptionKey": "item.pearl_elixir.description"
+}

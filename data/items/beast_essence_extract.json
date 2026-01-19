@@ -1,0 +1,17 @@
+{
+  "id": "beast_essence_extract",
+  "name": "Beast Essence Extract",
+  "description": "An alchemy-crafted beast essence extract.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 275,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "beast_essence_extract_buff",
+    "duration": 650
+  },
+  "nameKey": "item.beast_essence_extract.name",
+  "descriptionKey": "item.beast_essence_extract.description"
+}

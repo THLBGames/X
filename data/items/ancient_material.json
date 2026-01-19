@@ -1,0 +1,12 @@
+{
+  "id": "ancient_material",
+  "name": "Ancient Material",
+  "description": "Material stolen from ancient sources, preserved through the ages.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 380,
+  "nameKey": "item.ancient_material.name",
+  "descriptionKey": "item.ancient_material.description"
+}

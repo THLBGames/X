@@ -1,0 +1,17 @@
+{
+  "id": "celestial_scale_elixir",
+  "name": "Celestial Scale Elixir",
+  "description": "An alchemy-crafted celestial scale elixir.",
+  "type": "consumable",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1410,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "celestial_scale_elixir_buff",
+    "duration": 1120
+  },
+  "nameKey": "item.celestial_scale_elixir.name",
+  "descriptionKey": "item.celestial_scale_elixir.description"
+}

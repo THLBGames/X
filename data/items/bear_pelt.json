@@ -1,0 +1,12 @@
+{
+  "id": "bear_pelt",
+  "name": "Bear Pelt",
+  "description": "A thick pelt from a trapped bear.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 50,
+  "nameKey": "item.bear_pelt.name",
+  "descriptionKey": "item.bear_pelt.description"
+}

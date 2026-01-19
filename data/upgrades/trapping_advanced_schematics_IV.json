@@ -1,0 +1,31 @@
+{
+  "id": "trapping_advanced_schematics_IV",
+  "name": "Advanced Trap Schematics IV",
+  "description": "Legendary trap designs. Requires materials: mythical_pelt x3, legendary_bone x2",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "trapping",
+  "tier": "Advanced_IV",
+  "price": 20000,
+  "materialRequirements": [
+    {
+      "itemId": "mythical_pelt",
+      "quantity": 3
+    },
+    {
+      "itemId": "legendary_bone",
+      "quantity": 2
+    }
+  ],
+  "bonuses": {
+    "successRateBonus": 0.15,
+    "yieldMultiplier": 1.25,
+    "experienceMultiplier": 1.25
+  },
+  "requirements": {
+    "skillLevel": 85,
+    "previousTierId": "trapping_advanced_schematics_III"
+  },
+  "nameKey": "upgrade.trapping_advanced_schematics_IV.name",
+  "descriptionKey": "upgrade.trapping_advanced_schematics_IV.description"
+}

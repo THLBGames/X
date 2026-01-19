@@ -1,0 +1,16 @@
+{
+  "id": "stamina_potion",
+  "name": "Stamina Potion",
+  "description": "A potion that restores stamina and energy.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 40,
+  "consumableEffect": {
+    "type": "heal",
+    "amount": 100
+  },
+  "nameKey": "item.stamina_potion.name",
+  "descriptionKey": "item.stamina_potion.description"
+}

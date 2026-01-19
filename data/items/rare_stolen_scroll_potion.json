@@ -1,0 +1,17 @@
+{
+  "id": "rare_stolen_scroll_potion",
+  "name": "Rare Stolen Scroll Potion",
+  "description": "An alchemy-crafted rare stolen scroll potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 535,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "rare_stolen_scroll_potion_buff",
+    "duration": 870
+  },
+  "nameKey": "item.rare_stolen_scroll_potion.name",
+  "descriptionKey": "item.rare_stolen_scroll_potion.description"
+}

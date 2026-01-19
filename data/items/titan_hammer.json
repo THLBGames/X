@@ -1,0 +1,12 @@
+{
+  "id": "titan_hammer",
+  "name": "Titan's Hammer",
+  "description": "A massive hammer once wielded by the ancient titans, required to access the Titan's Worksite.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1500,
+  "nameKey": "item.titan_hammer.name",
+  "descriptionKey": "item.titan_hammer.description"
+}

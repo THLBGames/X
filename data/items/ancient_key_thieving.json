@@ -1,0 +1,12 @@
+{
+  "id": "ancient_key_thieving",
+  "name": "Ancient Key",
+  "description": "An ancient key discovered through thieving, required to access the Ancient Vault.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 1500,
+  "nameKey": "item.ancient_key_thieving.name",
+  "descriptionKey": "item.ancient_key_thieving.description"
+}

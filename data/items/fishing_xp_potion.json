@@ -1,0 +1,16 @@
+{
+  "id": "fishing_xp_potion",
+  "name": "Fishing Experience Potion",
+  "description": "An alchemy-crafted fishing experience potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 225,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 450
+  },
+  "nameKey": "item.fishing_xp_potion.name",
+  "descriptionKey": "item.fishing_xp_potion.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cooking_treasure_hunting_xp_food",
+  "name": "Treasure Hunting Experience Food",
+  "description": "Increases treasure hunting experience gain.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 75,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "treasure_hunting_xp_boost"
+  },
+  "nameKey": "item.cooking_treasure_hunting_xp_food.name",
+  "descriptionKey": "item.cooking_treasure_hunting_xp_food.description"
+}

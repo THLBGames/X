@@ -1,0 +1,12 @@
+{
+  "id": "enchanted_fruit",
+  "name": "Enchanted Fruit",
+  "description": "Fruit imbued with magical energy, sought after by alchemists.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 60,
+  "nameKey": "item.enchanted_fruit.name",
+  "descriptionKey": "item.enchanted_fruit.description"
+}

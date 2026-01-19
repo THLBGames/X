@@ -1,0 +1,12 @@
+{
+  "id": "ethereal_essence",
+  "name": "Ethereal Essence",
+  "description": "A mystical essence from ethereal beings.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 600,
+  "nameKey": "item.ethereal_essence.name",
+  "descriptionKey": "item.ethereal_essence.description"
+}

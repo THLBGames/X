@@ -1,0 +1,17 @@
+{
+  "id": "intelligence_potion",
+  "name": "Intelligence Potion",
+  "description": "An alchemy-crafted intelligence potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 210,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "intelligence_boost",
+    "duration": 520
+  },
+  "nameKey": "item.intelligence_potion.name",
+  "descriptionKey": "item.intelligence_potion.description"
+}

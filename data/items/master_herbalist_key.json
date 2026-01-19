@@ -1,0 +1,12 @@
+{
+  "id": "master_herbalist_key",
+  "name": "Master Herbalist Key",
+  "description": "A key to the Master Herbalist's Laboratory. Earned through dedication to the herbalist's craft.",
+  "type": "quest",
+  "rarity": "epic",
+  "stackable": false,
+  "maxStack": 1,
+  "value": 1000,
+  "nameKey": "item.master_herbalist_key.name",
+  "descriptionKey": "item.master_herbalist_key.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "draconic_essence",
+  "name": "Draconic Essence",
+  "description": "The powerful essence extracted from a dragon's remains.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 500,
+  "nameKey": "item.draconic_essence.name",
+  "descriptionKey": "item.draconic_essence.description"
+}

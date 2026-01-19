@@ -1,0 +1,12 @@
+{
+  "id": "void_key",
+  "name": "Void Key",
+  "description": "A key forged from the void itself, required to access the Void Stone Mine.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 2500,
+  "nameKey": "item.void_key.name",
+  "descriptionKey": "item.void_key.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "dexterity_potion",
+  "name": "Dexterity Potion",
+  "description": "An alchemy-crafted dexterity potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 220,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "dexterity_boost",
+    "duration": 540
+  },
+  "nameKey": "item.dexterity_potion.name",
+  "descriptionKey": "item.dexterity_potion.description"
+}

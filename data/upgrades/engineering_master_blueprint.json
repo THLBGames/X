@@ -1,0 +1,25 @@
+{
+  "id": "engineering_master_blueprint",
+  "name": "Master Engineer's Blueprint",
+  "description": "Unlocks secret engineering recipes for advanced devices. Requires engineering level 70.",
+  "type": "permanent",
+  "scope": "skill",
+  "skillId": "engineering",
+  "tier": "Master",
+  "price": 50000,
+  "bonuses": {
+    "unlocksRecipes": [
+      "ancient_scroll_device",
+      "master_engineer_blueprint",
+      "phoenix_core_engine",
+      "dragon_scale_mechanism",
+      "void_crystal_construct",
+      "divine_engineering_core"
+    ]
+  },
+  "requirements": {
+    "skillLevel": 70
+  },
+  "nameKey": "upgrade.engineering_master_blueprint.name",
+  "descriptionKey": "upgrade.engineering_master_blueprint.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "world_tree_nectar",
+  "name": "World Tree Nectar",
+  "description": "Sacred nectar from the World Tree that provides incredible restoration and bonuses.",
+  "type": "consumable",
+  "rarity": "mythic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 4000,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "world_tree_boost",
+    "duration": 5400
+  },
+  "nameKey": "item.world_tree_nectar.name",
+  "descriptionKey": "item.world_tree_nectar.description"
+}

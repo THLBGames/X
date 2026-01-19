@@ -29,6 +29,53 @@
       ]
     },
     {
+      "level": 5,
+      "nodeId": "wild_apple_tree",
+      "name": "Wild Apple Tree",
+      "successRate": 0.93,
+      "experienceGain": 12,
+      "timeRequired": 2800,
+      "resources": [
+        {
+          "itemId": "apple",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "berry",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "nodeId": "common_nut_tree",
+      "name": "Common Nut Tree",
+      "successRate": 0.92,
+      "experienceGain": 18,
+      "timeRequired": 3200,
+      "resources": [
+        {
+          "itemId": "nut",
+          "chance": 1,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "itemId": "nut_shell",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "apple",
+          "chance": 0.2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 15,
       "nodeId": "fruit_tree",
       "name": "Fruit Tree",
@@ -45,6 +92,96 @@
         {
           "itemId": "berry",
           "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "root_vegetable_patch",
+      "name": "Root Vegetable Patch",
+      "successRate": 0.88,
+      "experienceGain": 38,
+      "timeRequired": 3800,
+      "resources": [
+        {
+          "itemId": "wild_carrot",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "root_herb",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "fruit",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "nodeId": "medicinal_plant_patch",
+      "name": "Medicinal Plant Patch",
+      "successRate": 0.87,
+      "experienceGain": 48,
+      "timeRequired": 3900,
+      "skillPrerequisites": [
+        {
+          "skillId": "herbalism",
+          "level": 30
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "root_herb",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "common_herb",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "wild_carrot",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "nodeId": "cultivated_berry_patch",
+      "name": "Cultivated Berry Patch",
+      "successRate": 0.89,
+      "experienceGain": 42,
+      "timeRequired": 3700,
+      "skillPrerequisites": [
+        {
+          "skillId": "farming",
+          "level": 25
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "berry",
+          "chance": 1,
+          "min": 3,
+          "max": 5
+        },
+        {
+          "itemId": "rare_berry",
+          "chance": 0.2,
+          "quantity": 1
+        },
+        {
+          "itemId": "berry_seed",
+          "chance": 0.4,
           "quantity": 1
         }
       ]
@@ -76,6 +213,90 @@
       ]
     },
     {
+      "level": 45,
+      "nodeId": "berry_grove",
+      "name": "Berry Grove",
+      "successRate": 0.82,
+      "experienceGain": 85,
+      "timeRequired": 4500,
+      "resources": [
+        {
+          "itemId": "rare_berry",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "exotic_berry",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "berry",
+          "chance": 0.4,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "spice_bush",
+      "name": "Spice Bush",
+      "successRate": 0.8,
+      "experienceGain": 105,
+      "timeRequired": 4800,
+      "resources": [
+        {
+          "itemId": "wild_spice",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "aromatic_leaves",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_berry",
+          "chance": 0.25,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "nodeId": "alchemical_garden",
+      "name": "Alchemical Garden",
+      "successRate": 0.78,
+      "experienceGain": 115,
+      "timeRequired": 4900,
+      "skillPrerequisites": [
+        {
+          "skillId": "alchemy",
+          "level": 50
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "aromatic_leaves",
+          "chance": 1,
+          "min": 2,
+          "max": 3
+        },
+        {
+          "itemId": "wild_spice",
+          "chance": 0.5,
+          "quantity": 1
+        },
+        {
+          "itemId": "uncommon_herb",
+          "chance": 0.4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
       "level": 60,
       "nodeId": "exotic_grove",
       "name": "Exotic Grove",
@@ -100,27 +321,190 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "level": 60,
+      "nodeId": "expert_foragers_grove",
+      "name": "Expert Forager's Grove",
+      "successRate": 0.75,
+      "experienceGain": 145,
+      "timeRequired": 5200,
+      "skillPrerequisites": [
+        {
+          "skillId": "foraging",
+          "level": 60
+        },
+        {
+          "skillId": "herbalism",
+          "level": 50
+        }
+      ],
+      "resources": [
+        {
+          "itemId": "exotic_fruit",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "itemId": "rare_herb",
+          "chance": 0.4,
+          "quantity": 1
+        },
+        {
+          "itemId": "wild_spice",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "nodeId": "ancient_mushroom_grove",
+      "name": "Ancient Mushroom Grove",
+      "successRate": 0.72,
+      "experienceGain": 180,
+      "timeRequired": 6000,
+      "resources": [
+        {
+          "itemId": "ancient_mushroom",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "mystical_spore",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "mushroom",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "nodeId": "enchanted_fruit_tree",
+      "name": "Enchanted Fruit Tree",
+      "successRate": 0.68,
+      "experienceGain": 240,
+      "timeRequired": 6500,
+      "resources": [
+        {
+          "itemId": "enchanted_fruit",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "fruit_essence",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "exotic_fruit",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 90,
+      "nodeId": "legendary_berry_patch",
+      "name": "Legendary Berry Patch",
+      "successRate": 0.65,
+      "experienceGain": 300,
+      "timeRequired": 7000,
+      "resources": [
+        {
+          "itemId": "legendary_berry",
+          "chance": 1,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "berry_essence",
+          "chance": 0.3,
+          "quantity": 1
+        },
+        {
+          "itemId": "rare_berry",
+          "chance": 0.35,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "level": 99,
+      "nodeId": "forbidden_garden",
+      "name": "Forbidden Garden",
+      "successRate": 0.65,
+      "experienceGain": 380,
+      "timeRequired": 8000,
+      "resources": [
+        {
+          "itemId": "forbidden_fruit",
+          "chance": 1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "primal_essence",
+          "chance": 0.35,
+          "quantity": 1
+        },
+        {
+          "itemId": "legendary_berry",
+          "chance": 0.25,
+          "quantity": 1
+        },
+        {
+          "itemId": "enchanted_fruit",
+          "chance": 0.3,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "passiveBonuses": [
     {
-      "level": 25,
+      "level": 10,
       "bonus": {
-        "health": 30
+        "cookingSuccessRate": 0.05
       }
     },
     {
-      "level": 55,
+      "level": 25,
+      "bonus": {
+        "health": 30,
+        "alchemyYieldBonus": 0.05
+      }
+    },
+    {
+      "level": 50,
       "bonus": {
         "health": 60,
-        "goldGeneration": 0.05
+        "alchemyYieldBonus": 0.1,
+        "cookingYieldBonus": 0.1
+      }
+    },
+    {
+      "level": 75,
+      "bonus": {
+        "health": 100,
+        "alchemyYieldBonus": 0.15,
+        "rareMaterialChance": 0.05
       }
     },
     {
       "level": 99,
       "bonus": {
-        "health": 120,
-        "goldGeneration": 0.1
+        "health": 200,
+        "alchemyYieldBonus": 0.2,
+        "rareMaterialChance": 0.1,
+        "goldGeneration": 0.15
       }
     }
   ],

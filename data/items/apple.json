@@ -1,16 +1,12 @@
 {
   "id": "apple",
   "name": "Apple",
-  "description": "A fresh apple that restores a small amount of health.",
-  "type": "consumable",
+  "description": "A crisp apple found on wild trees.",
+  "type": "material",
   "rarity": "common",
   "stackable": true,
-  "maxStack": 99,
-  "value": 5,
-  "consumableEffect": {
-    "type": "heal",
-    "amount": 30
-  },
+  "maxStack": 999,
+  "value": 2,
   "nameKey": "item.apple.name",
   "descriptionKey": "item.apple.description"
 }

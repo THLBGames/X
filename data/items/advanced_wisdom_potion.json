@@ -1,0 +1,17 @@
+{
+  "id": "advanced_wisdom_potion",
+  "name": "Advanced Wisdom Potion",
+  "description": "An alchemy-crafted advanced wisdom potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 800,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "advanced_wisdom_boost",
+    "duration": 900
+  },
+  "nameKey": "item.advanced_wisdom_potion.name",
+  "descriptionKey": "item.advanced_wisdom_potion.description"
+}

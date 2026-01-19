@@ -1,0 +1,12 @@
+{
+  "id": "skill_book",
+  "name": "Skill Book",
+  "description": "A skill book stolen from the Thieves' Guild, provides knowledge on thieving techniques.",
+  "type": "material",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 150,
+  "nameKey": "item.skill_book.name",
+  "descriptionKey": "item.skill_book.description"
+}

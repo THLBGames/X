@@ -1,0 +1,17 @@
+{
+  "id": "speed_boost_food",
+  "name": "Speed Boost Food",
+  "description": "Increases speed for a duration.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 85,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "speed_boost",
+    "duration": 600
+  },
+  "nameKey": "item.speed_boost_food.name",
+  "descriptionKey": "item.speed_boost_food.description"
+}

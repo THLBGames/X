@@ -1,0 +1,17 @@
+{
+  "id": "diviner_scroll_elixir",
+  "name": "Diviner Scroll Elixir",
+  "description": "An alchemy-crafted diviner scroll elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 815,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "diviner_scroll_elixir_buff",
+    "duration": 930
+  },
+  "nameKey": "item.diviner_scroll_elixir.name",
+  "descriptionKey": "item.diviner_scroll_elixir.description"
+}

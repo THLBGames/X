@@ -1,0 +1,12 @@
+{
+  "id": "potion_recipe",
+  "name": "Potion Recipe",
+  "description": "A recipe scroll stolen from an alchemist, teaches new potion formulas.",
+  "type": "material",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 100,
+  "nameKey": "item.potion_recipe.name",
+  "descriptionKey": "item.potion_recipe.description"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "druid_medallion",
+  "name": "Druid Medallion",
+  "description": "An ancient medallion blessed by the druids. Unlocks access to their sacred groves.",
+  "type": "quest",
+  "rarity": "rare",
+  "stackable": false,
+  "maxStack": 1,
+  "value": 500,
+  "nameKey": "item.druid_medallion.name",
+  "descriptionKey": "item.druid_medallion.description"
+}

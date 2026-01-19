@@ -1,0 +1,16 @@
+{
+  "id": "mana_scale_potion",
+  "name": "Mana Scale Potion",
+  "description": "An alchemy-crafted mana scale potion.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 290,
+  "consumableEffect": {
+    "type": "mana",
+    "amount": 220
+  },
+  "nameKey": "item.mana_scale_potion.name",
+  "descriptionKey": "item.mana_scale_potion.description"
+}

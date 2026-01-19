@@ -1,0 +1,17 @@
+{
+  "id": "multi_stat_boost_food",
+  "name": "Multi-Stat Boost Food",
+  "description": "Increases all stats for a duration.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 200,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "multi_stat_boost",
+    "duration": 1800
+  },
+  "nameKey": "item.multi_stat_boost_food.name",
+  "descriptionKey": "item.multi_stat_boost_food.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cooking_mining_xp_food",
+  "name": "Mining Experience Food",
+  "description": "Increases mining experience gain.",
+  "type": "consumable",
+  "rarity": "uncommon",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 30,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 0,
+    "buffId": "mining_xp_boost"
+  },
+  "nameKey": "item.cooking_mining_xp_food.name",
+  "descriptionKey": "item.cooking_mining_xp_food.description"
+}

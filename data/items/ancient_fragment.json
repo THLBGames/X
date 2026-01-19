@@ -1,0 +1,12 @@
+{
+  "id": "ancient_fragment",
+  "name": "Ancient Fragment",
+  "description": "A fragment of ancient stone imbued with forgotten power.",
+  "type": "material",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 999,
+  "value": 180,
+  "nameKey": "item.ancient_fragment.name",
+  "descriptionKey": "item.ancient_fragment.description"
+}

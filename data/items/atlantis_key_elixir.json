@@ -1,0 +1,17 @@
+{
+  "id": "atlantis_key_elixir",
+  "name": "Atlantis Key Elixir",
+  "description": "An alchemy-crafted atlantis key elixir.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 820,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "atlantis_key_elixir_buff",
+    "duration": 940
+  },
+  "nameKey": "item.atlantis_key_elixir.name",
+  "descriptionKey": "item.atlantis_key_elixir.description"
+}

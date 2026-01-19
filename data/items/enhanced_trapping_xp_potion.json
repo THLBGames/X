@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_trapping_xp_potion",
+  "name": "Enhanced Trapping Experience Potion",
+  "description": "An alchemy-crafted enhanced trapping experience potion.",
+  "type": "consumable",
+  "rarity": "epic",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 870,
+  "consumableEffect": {
+    "type": "experience",
+    "amount": 940
+  },
+  "nameKey": "item.enhanced_trapping_xp_potion.name",
+  "descriptionKey": "item.enhanced_trapping_xp_potion.description"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "magic_attack_potion",
+  "name": "Magic Attack Potion",
+  "description": "An alchemy-crafted magic attack potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 480,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "magic_attack_boost",
+    "duration": 760
+  },
+  "nameKey": "item.magic_attack_potion.name",
+  "descriptionKey": "item.magic_attack_potion.description"
+}

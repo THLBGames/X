@@ -1,0 +1,12 @@
+{
+  "id": "master_thief_mark",
+  "name": "Master Thief's Mark",
+  "description": "The ultimate mark of a master thief, required to access the Master Thief's Cache.",
+  "type": "material",
+  "rarity": "legendary",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 3000,
+  "nameKey": "item.master_thief_mark.name",
+  "descriptionKey": "item.master_thief_mark.description"
+}

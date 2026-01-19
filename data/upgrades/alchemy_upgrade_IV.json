@@ -11,7 +11,19 @@
     "experienceMultiplier": 1.25,
     "speedMultiplier": 0.85,
     "yieldMultiplier": 1.15,
-    "successRateBonus": 0.15
+    "successRateBonus": 0.15,
+    "unlocksRecipes": [
+      "phoenix_elixir_secret",
+      "druid_medallion_elixir_secret",
+      "ancient_scroll_potion_secret",
+      "golden_fishing_rod_elixir_secret",
+      "thieves_guild_token_elixir_secret",
+      "master_herbalist_key_elixir_secret",
+      "ancient_tome_potion_secret",
+      "trophy_hunter_license_elixir_secret",
+      "trapping_beast_lure_recipe_elixir_secret",
+      "ancient_map_potion_secret"
+    ]
   },
   "requirements": {
     "previousTierId": "alchemy_upgrade_III"

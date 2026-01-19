@@ -1,0 +1,17 @@
+{
+  "id": "ancient_papyrus_potion",
+  "name": "Ancient Papyrus Potion",
+  "description": "An alchemy-crafted ancient papyrus potion.",
+  "type": "consumable",
+  "rarity": "rare",
+  "stackable": true,
+  "maxStack": 99,
+  "value": 500,
+  "consumableEffect": {
+    "type": "buff",
+    "buffId": "ancient_papyrus_potion_buff",
+    "duration": 800
+  },
+  "nameKey": "item.ancient_papyrus_potion.name",
+  "descriptionKey": "item.ancient_papyrus_potion.description"
+}
