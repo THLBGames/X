@@ -384,7 +384,7 @@ export class CharacterManager {
         }
 
         // Apply enchantments from this item
-        if (character.itemEnchantments) {
+        if (character?.itemEnchantments) {
           const key = `${slot}_${itemId}`;
           const enchantments = character.itemEnchantments[key] || [];
           for (const enchantment of enchantments) {

@@ -9,7 +9,6 @@ import type {
   Mercenary,
   SkillUpgrade,
   Achievement,
-  ItemEnchantment,
   EnchantmentRecipe,
 } from '@idle-rpg/shared';
 import i18n from '../i18n/config';

@@ -1,16 +1,13 @@
 import { useState, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { getDataLoader } from '../data';
 import { EnchantingSystem } from '../systems/skills/EnchantingSystem';
 import { IdleSkillSystem } from '../systems/skills/IdleSkillSystem';
 import { InventoryManager } from '../systems/inventory';
-import { UpgradeManager } from '../systems/upgrade/UpgradeManager';
-import type { Item, EquipmentSlot, EnchantmentRecipe, ItemEnchantment } from '@idle-rpg/shared';
+import { EquipmentSlot } from '@idle-rpg/shared';
 import './EnchantingPanel.css';
 
 export default function EnchantingPanel() {
-  const { t } = useTranslation('ui');
   const character = useGameState((state) => state.character);
   const inventory = useGameState((state) => state.inventory);
   const setCharacter = useGameState((state) => state.setCharacter);
@@ -21,16 +18,9 @@ export default function EnchantingPanel() {
   const [selectedEquipmentSlot, setSelectedEquipmentSlot] = useState<EquipmentSlot | null>(null);
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
 
-  if (!character) {
-    return <div className="enchanting-panel">No character loaded</div>;
-  }
-
-  const enchantingLevel = IdleSkillSystem.getSkillLevel(character, 'enchanting');
-  const availableRecipes = EnchantingSystem.getAvailableEnchantments(character, inventory);
-  const upgradeBonuses = UpgradeManager.getUpgradeBonuses(character, 'enchanting');
-
   // Get equippable items from inventory
   const equippableItems = useMemo(() => {
+    if (!character) return [];
     return inventory.items
       .filter((invItem) => {
         const item = dataLoader.getItem(invItem.itemId);
@@ -40,22 +30,23 @@ export default function EnchantingPanel() {
         const item = dataLoader.getItem(invItem.itemId)!;
         return { item, quantity: invItem.quantity };
       });
-  }, [inventory, dataLoader]);
+  }, [inventory, dataLoader, character]);
 
   // Get equipped items
   const equippedItems = useMemo(() => {
+    if (!character) return [];
     const slots: Array<{ slot: EquipmentSlot; itemId: string }> = [];
     const equipment = character.equipment;
-    if (equipment.weapon) slots.push({ slot: 'weapon', itemId: equipment.weapon });
-    if (equipment.offhand) slots.push({ slot: 'offhand', itemId: equipment.offhand });
-    if (equipment.helmet) slots.push({ slot: 'helmet', itemId: equipment.helmet });
-    if (equipment.chest) slots.push({ slot: 'chest', itemId: equipment.chest });
-    if (equipment.legs) slots.push({ slot: 'legs', itemId: equipment.legs });
-    if (equipment.boots) slots.push({ slot: 'boots', itemId: equipment.boots });
-    if (equipment.gloves) slots.push({ slot: 'gloves', itemId: equipment.gloves });
-    if (equipment.ring1) slots.push({ slot: 'ring1', itemId: equipment.ring1 });
-    if (equipment.ring2) slots.push({ slot: 'ring2', itemId: equipment.ring2 });
-    if (equipment.amulet) slots.push({ slot: 'amulet', itemId: equipment.amulet });
+    if (equipment.weapon) slots.push({ slot: EquipmentSlot.WEAPON, itemId: equipment.weapon });
+    if (equipment.offhand) slots.push({ slot: EquipmentSlot.OFFHAND, itemId: equipment.offhand });
+    if (equipment.helmet) slots.push({ slot: EquipmentSlot.HELMET, itemId: equipment.helmet });
+    if (equipment.chest) slots.push({ slot: EquipmentSlot.CHEST, itemId: equipment.chest });
+    if (equipment.legs) slots.push({ slot: EquipmentSlot.LEGS, itemId: equipment.legs });
+    if (equipment.boots) slots.push({ slot: EquipmentSlot.BOOTS, itemId: equipment.boots });
+    if (equipment.gloves) slots.push({ slot: EquipmentSlot.GLOVES, itemId: equipment.gloves });
+    if (equipment.ring1) slots.push({ slot: EquipmentSlot.RING1, itemId: equipment.ring1 });
+    if (equipment.ring2) slots.push({ slot: EquipmentSlot.RING2, itemId: equipment.ring2 });
+    if (equipment.amulet) slots.push({ slot: EquipmentSlot.AMULET, itemId: equipment.amulet });
     return slots.map(({ slot, itemId }) => ({
       slot,
       item: dataLoader.getItem(itemId)!,
@@ -63,6 +54,13 @@ export default function EnchantingPanel() {
       enchantments: EnchantingSystem.getItemEnchantments(character, slot, itemId),
     }));
   }, [character, dataLoader]);
+
+  if (!character) {
+    return <div className="enchanting-panel">No character loaded</div>;
+  }
+
+  const enchantingLevel = IdleSkillSystem.getSkillLevel(character, 'enchanting');
+  const availableRecipes = EnchantingSystem.getAvailableEnchantments(character, inventory);
 
   const selectedItem = selectedItemId
     ? dataLoader.getItem(selectedItemId)
@@ -206,7 +204,6 @@ export default function EnchantingPanel() {
                 <h3>Available Enchantments</h3>
                 <div className="recipes-list">
                   {availableRecipes.map((recipe) => {
-                    const enchantment = dataLoader.getEnchantment(recipe.enchantmentId);
                     const needsUnlock = recipe.unlockRequirements && recipe.unlockRequirements.length > 0;
                     const isUnlocked = character.unlockedEnchantments?.includes(recipe.id);
                     const canUnlock = EnchantingSystem.canUnlockEnchantment(character, inventory, recipe);

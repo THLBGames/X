@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_upgrades": 161,
+  "total_upgrades": 162,
   "upgrades": {
     "alchemy_boost_consumable": {
       "id": "alchemy_boost_consumable",
@@ -18,6 +18,46 @@
       "requirements": {},
       "nameKey": "upgrade.alchemy_boost_consumable.name",
       "descriptionKey": "upgrade.alchemy_boost_consumable.description"
+    },
+    "alchemy_master_formulas": {
+      "id": "alchemy_master_formulas",
+      "name": "Alchemy Master Formulas",
+      "description": "Unlocks 20 ultra-rare alchemy recipes requiring legendary components. Grants access to master-tier elixirs and potions.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "alchemy",
+      "tier": "VI",
+      "price": 25000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "celestial_scale_elixir",
+          "legendary_berry_potion",
+          "primordial_essence_potion",
+          "celestial_elixir",
+          "primal_health_elixir",
+          "ancient_trophy_elixir",
+          "forbidden_elixir",
+          "world_tree_sapling_elixir_secret",
+          "dragon_heart_elixir_secret",
+          "lich_phylactery_potion_secret",
+          "divine_artifact_elixir_secret",
+          "world_essence_elixir",
+          "primal_void_elixir",
+          "cosmic_essence_elixir",
+          "eternal_life_elixir",
+          "omnipotence_elixir",
+          "void_key_elixir_secret",
+          "godslayer_hunting_license_elixir_secret",
+          "godslayer_trapping_medallion_elixir_secret",
+          "ultimate_hunting_mastery_token_elixir_secret"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 85,
+        "previousTierId": "alchemy_upgrade_V"
+      },
+      "nameKey": "upgrade.alchemy_master_formulas.name",
+      "descriptionKey": "upgrade.alchemy_master_formulas.description"
     },
     "alchemy_upgrade_I": {
       "id": "alchemy_upgrade_I",
@@ -72,7 +112,14 @@
         "experienceMultiplier": 1.2,
         "speedMultiplier": 0.88,
         "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "successRateBonus": 0.12,
+        "unlocksRecipes": [
+          "ancient_papyrus_potion_secret",
+          "identification_scroll_potion_secret",
+          "curse_removal_scroll_potion_secret",
+          "blessing_scroll_potion_secret",
+          "trapping_advanced_schematics_elixir_secret"
+        ]
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_II"
@@ -93,7 +140,19 @@
         "experienceMultiplier": 1.25,
         "speedMultiplier": 0.85,
         "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "successRateBonus": 0.15,
+        "unlocksRecipes": [
+          "phoenix_elixir_secret",
+          "druid_medallion_elixir_secret",
+          "ancient_scroll_potion_secret",
+          "golden_fishing_rod_elixir_secret",
+          "thieves_guild_token_elixir_secret",
+          "master_herbalist_key_elixir_secret",
+          "ancient_tome_potion_secret",
+          "trophy_hunter_license_elixir_secret",
+          "trapping_beast_lure_recipe_elixir_secret",
+          "ancient_map_potion_secret"
+        ]
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_III"
@@ -114,7 +173,24 @@
         "experienceMultiplier": 1.3,
         "speedMultiplier": 0.8,
         "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "successRateBonus": 0.2,
+        "unlocksRecipes": [
+          "celestial_key_elixir_secret",
+          "destiny_anchor_elixir_secret",
+          "fate_weaver_elixir_secret",
+          "atlantis_key_elixir_secret",
+          "shadow_pass_elixir_secret",
+          "ancient_key_thieving_elixir_secret",
+          "master_thief_mark_elixir_secret",
+          "legendary_hunter_medallion_elixir_secret",
+          "master_hunting_badge_elixir_secret",
+          "master_trapper_badge_elixir_secret",
+          "diviner_scroll_elixir_secret",
+          "celestial_chart_elixir_secret",
+          "trapping_legendary_blueprint_elixir_secret",
+          "trapping_master_manual_elixir_secret",
+          "merchant_ledger_elixir_secret"
+        ]
       },
       "requirements": {
         "previousTierId": "alchemy_upgrade_IV"
@@ -260,6 +336,64 @@
       "nameKey": "upgrade.blacksmithing_boost_consumable.name",
       "descriptionKey": "upgrade.blacksmithing_boost_consumable.description"
     },
+    "blacksmithing_legendary_forge": {
+      "id": "blacksmithing_legendary_forge",
+      "name": "Legendary Forge",
+      "description": "Unlocks the most powerful blacksmithing recipes for legendary equipment. Requires blacksmithing level 90, divine_fragment x10, and prismatic_shard x5.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "Legendary",
+      "price": 200000,
+      "materialRequirements": [
+        {
+          "itemId": "divine_fragment",
+          "quantity": 10
+        },
+        {
+          "itemId": "prismatic_shard",
+          "quantity": 5
+        }
+      ],
+      "bonuses": {
+        "unlocksRecipes": [
+          "prismatic_shard_armor",
+          "divine_fragment_weapon",
+          "celestial_scale_armor",
+          "godslayer_blade",
+          "cosmic_armor_set",
+          "reality_forge_hammer",
+          "eternal_anvil"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 90
+      },
+      "nameKey": "upgrade.blacksmithing_legendary_forge.name",
+      "descriptionKey": "upgrade.blacksmithing_legendary_forge.description"
+    },
+    "blacksmithing_master_blueprint": {
+      "id": "blacksmithing_master_blueprint",
+      "name": "Master Blacksmith's Blueprint",
+      "description": "Unlocks secret blacksmithing recipes for advanced equipment. Requires blacksmithing level 70.",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "blacksmithing",
+      "tier": "Master",
+      "price": 50000,
+      "bonuses": {
+        "unlocksRecipes": [
+          "dragon_scale_armor",
+          "void_crystal_weapon",
+          "ancient_relic_weapon"
+        ]
+      },
+      "requirements": {
+        "skillLevel": 70
+      },
+      "nameKey": "upgrade.blacksmithing_master_blueprint.name",
+      "descriptionKey": "upgrade.blacksmithing_master_blueprint.description"
+    },
     "blacksmithing_upgrade_I": {
       "id": "blacksmithing_upgrade_I",
       "name": "Blacksmithing Upgrade I",
@@ -363,64 +497,6 @@
       "nameKey": "upgrade.blacksmithing_upgrade_V.name",
       "descriptionKey": "upgrade.blacksmithing_upgrade_V.description"
     },
-    "blacksmithing_legendary_forge": {
-      "id": "blacksmithing_legendary_forge",
-      "name": "Legendary Forge",
-      "description": "Unlocks the most powerful blacksmithing recipes for legendary equipment. Requires blacksmithing level 90, divine_fragment x10, and prismatic_shard x5.",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "blacksmithing",
-      "tier": "Legendary",
-      "price": 200000,
-      "materialRequirements": [
-        {
-          "itemId": "divine_fragment",
-          "quantity": 10
-        },
-        {
-          "itemId": "prismatic_shard",
-          "quantity": 5
-        }
-      ],
-      "bonuses": {
-        "unlocksRecipes": [
-          "prismatic_shard_armor",
-          "divine_fragment_weapon",
-          "celestial_scale_armor",
-          "godslayer_blade",
-          "cosmic_armor_set",
-          "reality_forge_hammer",
-          "eternal_anvil"
-        ]
-      },
-      "requirements": {
-        "skillLevel": 90
-      },
-      "nameKey": "upgrade.blacksmithing_legendary_forge.name",
-      "descriptionKey": "upgrade.blacksmithing_legendary_forge.description"
-    },
-    "blacksmithing_master_blueprint": {
-      "id": "blacksmithing_master_blueprint",
-      "name": "Master Blacksmith's Blueprint",
-      "description": "Unlocks secret blacksmithing recipes for advanced equipment. Requires blacksmithing level 70.",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "blacksmithing",
-      "tier": "Master",
-      "price": 50000,
-      "bonuses": {
-        "unlocksRecipes": [
-          "dragon_scale_armor",
-          "void_crystal_weapon",
-          "ancient_relic_weapon"
-        ]
-      },
-      "requirements": {
-        "skillLevel": 70
-      },
-      "nameKey": "upgrade.blacksmithing_master_blueprint.name",
-      "descriptionKey": "upgrade.blacksmithing_master_blueprint.description"
-    },
     "cooking_boost_consumable": {
       "id": "cooking_boost_consumable",
       "name": "Cooking Boost",
@@ -437,109 +513,6 @@
       "requirements": {},
       "nameKey": "upgrade.cooking_boost_consumable.name",
       "descriptionKey": "upgrade.cooking_boost_consumable.description"
-    },
-    "cooking_upgrade_I": {
-      "id": "cooking_upgrade_I",
-      "name": "Cooking Upgrade I",
-      "description": "Permanently increases cooking XP gain by 10%, speed by 5%, and yield by 5%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "cooking",
-      "tier": "I",
-      "price": 1000,
-      "bonuses": {
-        "experienceMultiplier": 1.1,
-        "speedMultiplier": 0.95,
-        "yieldMultiplier": 1.05,
-        "successRateBonus": 0.05
-      },
-      "requirements": {},
-      "nameKey": "upgrade.cooking_upgrade_I.name",
-      "descriptionKey": "upgrade.cooking_upgrade_I.description"
-    },
-    "cooking_upgrade_II": {
-      "id": "cooking_upgrade_II",
-      "name": "Cooking Upgrade II",
-      "description": "Permanently increases cooking XP gain by 15%, speed by 8%, and yield by 8%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "cooking",
-      "tier": "II",
-      "price": 2828,
-      "bonuses": {
-        "experienceMultiplier": 1.15,
-        "speedMultiplier": 0.92,
-        "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
-      },
-      "requirements": {
-        "previousTierId": "cooking_upgrade_I"
-      },
-      "nameKey": "upgrade.cooking_upgrade_II.name",
-      "descriptionKey": "upgrade.cooking_upgrade_II.description"
-    },
-    "cooking_upgrade_III": {
-      "id": "cooking_upgrade_III",
-      "name": "Cooking Upgrade III",
-      "description": "Permanently increases cooking XP gain by 20%, speed by 12%, and yield by 12%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "cooking",
-      "tier": "III",
-      "price": 5196,
-      "bonuses": {
-        "experienceMultiplier": 1.2,
-        "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
-      },
-      "requirements": {
-        "previousTierId": "cooking_upgrade_II"
-      },
-      "nameKey": "upgrade.cooking_upgrade_III.name",
-      "descriptionKey": "upgrade.cooking_upgrade_III.description"
-    },
-    "cooking_upgrade_IV": {
-      "id": "cooking_upgrade_IV",
-      "name": "Cooking Upgrade IV",
-      "description": "Permanently increases cooking XP gain by 25%, speed by 15%, and yield by 15%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "cooking",
-      "tier": "IV",
-      "price": 8000,
-      "bonuses": {
-        "experienceMultiplier": 1.25,
-        "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
-      },
-      "requirements": {
-        "previousTierId": "cooking_upgrade_III"
-      },
-      "nameKey": "upgrade.cooking_upgrade_IV.name",
-      "descriptionKey": "upgrade.cooking_upgrade_IV.description"
-    },
-    "cooking_upgrade_V": {
-      "id": "cooking_upgrade_V",
-      "name": "Cooking Upgrade V",
-      "description": "Permanently increases cooking XP gain by 30%, speed by 20%, and yield by 20%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "cooking",
-      "tier": "V",
-      "price": 11180,
-      "bonuses": {
-        "experienceMultiplier": 1.3,
-        "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
-      },
-      "requirements": {
-        "previousTierId": "cooking_upgrade_IV"
-      },
-      "nameKey": "upgrade.cooking_upgrade_V.name",
-      "descriptionKey": "upgrade.cooking_upgrade_V.description"
     },
     "cooking_master_chef": {
       "id": "cooking_master_chef",
@@ -569,6 +542,109 @@
       },
       "nameKey": "upgrade.cooking_master_chef.name",
       "descriptionKey": "upgrade.cooking_master_chef.description"
+    },
+    "cooking_upgrade_I": {
+      "id": "cooking_upgrade_I",
+      "name": "Cooking Upgrade I",
+      "description": "Permanently increases cooking XP gain by 10%, speed by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "I",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "yieldMultiplier": 1.05,
+        "successRateBonus": 0.05
+      },
+      "requirements": {},
+      "nameKey": "upgrade.cooking_upgrade_I.name",
+      "descriptionKey": "upgrade.cooking_upgrade_I.description"
+    },
+    "cooking_upgrade_II": {
+      "id": "cooking_upgrade_II",
+      "name": "Cooking Upgrade II",
+      "description": "Permanently increases cooking XP gain by 15%, speed by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "II",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "yieldMultiplier": 1.08,
+        "successRateBonus": 0.08
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_I"
+      },
+      "nameKey": "upgrade.cooking_upgrade_II.name",
+      "descriptionKey": "upgrade.cooking_upgrade_II.description"
+    },
+    "cooking_upgrade_III": {
+      "id": "cooking_upgrade_III",
+      "name": "Cooking Upgrade III",
+      "description": "Permanently increases cooking XP gain by 20%, speed by 10%, and yield by 10%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "III",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.9,
+        "yieldMultiplier": 1.1,
+        "successRateBonus": 0.1
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_II"
+      },
+      "nameKey": "upgrade.cooking_upgrade_III.name",
+      "descriptionKey": "upgrade.cooking_upgrade_III.description"
+    },
+    "cooking_upgrade_IV": {
+      "id": "cooking_upgrade_IV",
+      "name": "Cooking Upgrade IV",
+      "description": "Permanently increases cooking XP gain by 25%, speed by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "IV",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.88,
+        "yieldMultiplier": 1.12,
+        "successRateBonus": 0.12
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_III"
+      },
+      "nameKey": "upgrade.cooking_upgrade_IV.name",
+      "descriptionKey": "upgrade.cooking_upgrade_IV.description"
+    },
+    "cooking_upgrade_V": {
+      "id": "cooking_upgrade_V",
+      "name": "Cooking Upgrade V",
+      "description": "Permanently increases cooking XP gain by 30%, speed by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "cooking",
+      "tier": "V",
+      "price": 1000,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.85,
+        "yieldMultiplier": 1.15,
+        "successRateBonus": 0.15
+      },
+      "requirements": {
+        "previousTierId": "cooking_upgrade_IV"
+      },
+      "nameKey": "upgrade.cooking_upgrade_V.name",
+      "descriptionKey": "upgrade.cooking_upgrade_V.description"
     },
     "divination_boost_consumable": {
       "id": "divination_boost_consumable",
@@ -692,34 +768,33 @@
     },
     "enchanting_boost_consumable": {
       "id": "enchanting_boost_consumable",
-      "name": "Enchanting Boost",
-      "description": "Temporarily increases enchanting speed by 30% for 50 actions",
+      "name": "Enchanting Elixir",
+      "description": "Temporarily increases enchanting success rate by 50% for 100 enchanting actions",
       "type": "consumable",
       "scope": "skill",
       "skillId": "enchanting",
-      "price": 500,
+      "price": 5000,
+      "actionDuration": 100,
       "bonuses": {
-        "speedMultiplier": 0.7,
-        "experienceMultiplier": 1.2
+        "successRateBonus": 0.5
       },
-      "actionDuration": 50,
-      "requirements": {},
+      "requirements": {
+        "skillLevel": 25
+      },
       "nameKey": "upgrade.enchanting_boost_consumable.name",
       "descriptionKey": "upgrade.enchanting_boost_consumable.description"
     },
     "enchanting_upgrade_I": {
       "id": "enchanting_upgrade_I",
       "name": "Enchanting Upgrade I",
-      "description": "Permanently increases enchanting XP gain by 10%, speed by 5%, and yield by 5%",
+      "description": "Permanently increases enchanting success rate by 5% and XP gain by 10%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "enchanting",
       "tier": "I",
-      "price": 1000,
+      "price": 1500,
       "bonuses": {
         "experienceMultiplier": 1.1,
-        "speedMultiplier": 0.95,
-        "yieldMultiplier": 1.05,
         "successRateBonus": 0.05
       },
       "requirements": {},
@@ -729,17 +804,16 @@
     "enchanting_upgrade_II": {
       "id": "enchanting_upgrade_II",
       "name": "Enchanting Upgrade II",
-      "description": "Permanently increases enchanting XP gain by 15%, speed by 8%, and yield by 8%",
+      "description": "Permanently increases enchanting success rate by 10% and material efficiency by 5%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "enchanting",
       "tier": "II",
-      "price": 2828,
+      "price": 3000,
       "bonuses": {
         "experienceMultiplier": 1.15,
-        "speedMultiplier": 0.92,
-        "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
+        "speedMultiplier": 0.95,
+        "successRateBonus": 0.1
       },
       "requirements": {
         "previousTierId": "enchanting_upgrade_I"
@@ -750,20 +824,26 @@
     "enchanting_upgrade_III": {
       "id": "enchanting_upgrade_III",
       "name": "Enchanting Upgrade III",
-      "description": "Permanently increases enchanting XP gain by 20%, speed by 12%, and yield by 12%",
+      "description": "Permanently increases enchanting success rate by 15% and unlocks advanced enchantments",
       "type": "permanent",
       "scope": "skill",
       "skillId": "enchanting",
       "tier": "III",
-      "price": 5196,
+      "price": 6000,
       "bonuses": {
         "experienceMultiplier": 1.2,
-        "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "speedMultiplier": 0.93,
+        "successRateBonus": 0.15,
+        "unlocksRecipes": [
+          "recipe_greater_strength",
+          "recipe_greater_attack",
+          "recipe_lifesteal_minor",
+          "recipe_mana_on_hit_minor"
+        ]
       },
       "requirements": {
-        "previousTierId": "enchanting_upgrade_II"
+        "previousTierId": "enchanting_upgrade_II",
+        "skillLevel": 50
       },
       "nameKey": "upgrade.enchanting_upgrade_III.name",
       "descriptionKey": "upgrade.enchanting_upgrade_III.description"
@@ -771,20 +851,20 @@
     "enchanting_upgrade_IV": {
       "id": "enchanting_upgrade_IV",
       "name": "Enchanting Upgrade IV",
-      "description": "Permanently increases enchanting XP gain by 25%, speed by 15%, and yield by 15%",
+      "description": "Permanently increases enchanting success rate by 20% and allows multiple enchantments per item",
       "type": "permanent",
       "scope": "skill",
       "skillId": "enchanting",
       "tier": "IV",
-      "price": 8000,
+      "price": 12000,
       "bonuses": {
         "experienceMultiplier": 1.25,
-        "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "speedMultiplier": 0.9,
+        "successRateBonus": 0.2
       },
       "requirements": {
-        "previousTierId": "enchanting_upgrade_III"
+        "previousTierId": "enchanting_upgrade_III",
+        "skillLevel": 65
       },
       "nameKey": "upgrade.enchanting_upgrade_IV.name",
       "descriptionKey": "upgrade.enchanting_upgrade_IV.description"
@@ -792,20 +872,26 @@
     "enchanting_upgrade_V": {
       "id": "enchanting_upgrade_V",
       "name": "Enchanting Upgrade V",
-      "description": "Permanently increases enchanting XP gain by 30%, speed by 20%, and yield by 20%",
+      "description": "Permanently increases enchanting success rate by 25% and unlocks legendary enchantments",
       "type": "permanent",
       "scope": "skill",
       "skillId": "enchanting",
       "tier": "V",
-      "price": 11180,
+      "price": 25000,
       "bonuses": {
         "experienceMultiplier": 1.3,
-        "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "speedMultiplier": 0.88,
+        "successRateBonus": 0.25,
+        "unlocksRecipes": [
+          "recipe_supreme_strength",
+          "recipe_supreme_attack",
+          "recipe_prismatic_enchant",
+          "recipe_divine_enchant"
+        ]
       },
       "requirements": {
-        "previousTierId": "enchanting_upgrade_IV"
+        "previousTierId": "enchanting_upgrade_IV",
+        "skillLevel": 85
       },
       "nameKey": "upgrade.enchanting_upgrade_V.name",
       "descriptionKey": "upgrade.enchanting_upgrade_V.description"
@@ -826,109 +912,6 @@
       "requirements": {},
       "nameKey": "upgrade.engineering_boost_consumable.name",
       "descriptionKey": "upgrade.engineering_boost_consumable.description"
-    },
-    "engineering_upgrade_I": {
-      "id": "engineering_upgrade_I",
-      "name": "Engineering Upgrade I",
-      "description": "Permanently increases engineering XP gain by 10%, speed by 5%, and yield by 5%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "engineering",
-      "tier": "I",
-      "price": 1000,
-      "bonuses": {
-        "experienceMultiplier": 1.1,
-        "speedMultiplier": 0.95,
-        "yieldMultiplier": 1.05,
-        "successRateBonus": 0.05
-      },
-      "requirements": {},
-      "nameKey": "upgrade.engineering_upgrade_I.name",
-      "descriptionKey": "upgrade.engineering_upgrade_I.description"
-    },
-    "engineering_upgrade_II": {
-      "id": "engineering_upgrade_II",
-      "name": "Engineering Upgrade II",
-      "description": "Permanently increases engineering XP gain by 15%, speed by 8%, and yield by 8%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "engineering",
-      "tier": "II",
-      "price": 2828,
-      "bonuses": {
-        "experienceMultiplier": 1.15,
-        "speedMultiplier": 0.92,
-        "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
-      },
-      "requirements": {
-        "previousTierId": "engineering_upgrade_I"
-      },
-      "nameKey": "upgrade.engineering_upgrade_II.name",
-      "descriptionKey": "upgrade.engineering_upgrade_II.description"
-    },
-    "engineering_upgrade_III": {
-      "id": "engineering_upgrade_III",
-      "name": "Engineering Upgrade III",
-      "description": "Permanently increases engineering XP gain by 20%, speed by 12%, and yield by 12%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "engineering",
-      "tier": "III",
-      "price": 5196,
-      "bonuses": {
-        "experienceMultiplier": 1.2,
-        "speedMultiplier": 0.88,
-        "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
-      },
-      "requirements": {
-        "previousTierId": "engineering_upgrade_II"
-      },
-      "nameKey": "upgrade.engineering_upgrade_III.name",
-      "descriptionKey": "upgrade.engineering_upgrade_III.description"
-    },
-    "engineering_upgrade_IV": {
-      "id": "engineering_upgrade_IV",
-      "name": "Engineering Upgrade IV",
-      "description": "Permanently increases engineering XP gain by 25%, speed by 15%, and yield by 15%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "engineering",
-      "tier": "IV",
-      "price": 8000,
-      "bonuses": {
-        "experienceMultiplier": 1.25,
-        "speedMultiplier": 0.85,
-        "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
-      },
-      "requirements": {
-        "previousTierId": "engineering_upgrade_III"
-      },
-      "nameKey": "upgrade.engineering_upgrade_IV.name",
-      "descriptionKey": "upgrade.engineering_upgrade_IV.description"
-    },
-    "engineering_upgrade_V": {
-      "id": "engineering_upgrade_V",
-      "name": "Engineering Upgrade V",
-      "description": "Permanently increases engineering XP gain by 30%, speed by 20%, and yield by 20%",
-      "type": "permanent",
-      "scope": "skill",
-      "skillId": "engineering",
-      "tier": "V",
-      "price": 11180,
-      "bonuses": {
-        "experienceMultiplier": 1.3,
-        "speedMultiplier": 0.8,
-        "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
-      },
-      "requirements": {
-        "previousTierId": "engineering_upgrade_IV"
-      },
-      "nameKey": "upgrade.engineering_upgrade_V.name",
-      "descriptionKey": "upgrade.engineering_upgrade_V.description"
     },
     "engineering_master_blueprint": {
       "id": "engineering_master_blueprint",
@@ -954,6 +937,109 @@
       },
       "nameKey": "upgrade.engineering_master_blueprint.name",
       "descriptionKey": "upgrade.engineering_master_blueprint.description"
+    },
+    "engineering_upgrade_I": {
+      "id": "engineering_upgrade_I",
+      "name": "Engineering Upgrade I",
+      "description": "Permanently increases engineering XP gain by 10%, speed by 5%, success rate by 5%, and yield by 5%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "I",
+      "price": 1500,
+      "bonuses": {
+        "experienceMultiplier": 1.1,
+        "speedMultiplier": 0.95,
+        "successRateBonus": 0.05,
+        "yieldMultiplier": 1.05
+      },
+      "requirements": {},
+      "nameKey": "upgrade.engineering_upgrade_I.name",
+      "descriptionKey": "upgrade.engineering_upgrade_I.description"
+    },
+    "engineering_upgrade_II": {
+      "id": "engineering_upgrade_II",
+      "name": "Engineering Upgrade II",
+      "description": "Permanently increases engineering XP gain by 15%, speed by 8%, success rate by 8%, and yield by 8%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "II",
+      "price": 2828,
+      "bonuses": {
+        "experienceMultiplier": 1.15,
+        "speedMultiplier": 0.92,
+        "successRateBonus": 0.08,
+        "yieldMultiplier": 1.08
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_I"
+      },
+      "nameKey": "upgrade.engineering_upgrade_II.name",
+      "descriptionKey": "upgrade.engineering_upgrade_II.description"
+    },
+    "engineering_upgrade_III": {
+      "id": "engineering_upgrade_III",
+      "name": "Engineering Upgrade III",
+      "description": "Permanently increases engineering XP gain by 20%, speed by 12%, success rate by 12%, and yield by 12%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "III",
+      "price": 5196,
+      "bonuses": {
+        "experienceMultiplier": 1.2,
+        "speedMultiplier": 0.88,
+        "successRateBonus": 0.12,
+        "yieldMultiplier": 1.12
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_II"
+      },
+      "nameKey": "upgrade.engineering_upgrade_III.name",
+      "descriptionKey": "upgrade.engineering_upgrade_III.description"
+    },
+    "engineering_upgrade_IV": {
+      "id": "engineering_upgrade_IV",
+      "name": "Engineering Upgrade IV",
+      "description": "Permanently increases engineering XP gain by 25%, speed by 15%, success rate by 15%, and yield by 15%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "IV",
+      "price": 8000,
+      "bonuses": {
+        "experienceMultiplier": 1.25,
+        "speedMultiplier": 0.85,
+        "successRateBonus": 0.15,
+        "yieldMultiplier": 1.15
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_III"
+      },
+      "nameKey": "upgrade.engineering_upgrade_IV.name",
+      "descriptionKey": "upgrade.engineering_upgrade_IV.description"
+    },
+    "engineering_upgrade_V": {
+      "id": "engineering_upgrade_V",
+      "name": "Engineering Upgrade V",
+      "description": "Permanently increases engineering XP gain by 30%, speed by 18%, success rate by 18%, and yield by 18%",
+      "type": "permanent",
+      "scope": "skill",
+      "skillId": "engineering",
+      "tier": "V",
+      "price": 12000,
+      "bonuses": {
+        "experienceMultiplier": 1.3,
+        "speedMultiplier": 0.82,
+        "successRateBonus": 0.18,
+        "yieldMultiplier": 1.18
+      },
+      "requirements": {
+        "previousTierId": "engineering_upgrade_IV"
+      },
+      "nameKey": "upgrade.engineering_upgrade_V.name",
+      "descriptionKey": "upgrade.engineering_upgrade_V.description"
     },
     "farming_boost_consumable": {
       "id": "farming_boost_consumable",
@@ -3161,7 +3247,7 @@
     "treasure_hunting_upgrade_II": {
       "id": "treasure_hunting_upgrade_II",
       "name": "Treasure hunting Upgrade II",
-      "description": "Permanently increases treasure hunting XP gain by 15%, speed by 8%, and yield by 8%",
+      "description": "Permanently increases treasure hunting XP gain by 15%, speed by 8%, yield by 8%, and rare material chance by 3%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "treasure_hunting",
@@ -3171,7 +3257,8 @@
         "experienceMultiplier": 1.15,
         "speedMultiplier": 0.92,
         "yieldMultiplier": 1.08,
-        "successRateBonus": 0.08
+        "successRateBonus": 0.08,
+        "rareMaterialChance": 0.03
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_I"
@@ -3182,7 +3269,7 @@
     "treasure_hunting_upgrade_III": {
       "id": "treasure_hunting_upgrade_III",
       "name": "Treasure hunting Upgrade III",
-      "description": "Permanently increases treasure hunting XP gain by 20%, speed by 12%, and yield by 12%",
+      "description": "Permanently increases treasure hunting XP gain by 20%, speed by 12%, yield by 12%, and rare material chance by 5%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "treasure_hunting",
@@ -3192,7 +3279,8 @@
         "experienceMultiplier": 1.2,
         "speedMultiplier": 0.88,
         "yieldMultiplier": 1.12,
-        "successRateBonus": 0.12
+        "successRateBonus": 0.12,
+        "rareMaterialChance": 0.05
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_II"
@@ -3203,7 +3291,7 @@
     "treasure_hunting_upgrade_IV": {
       "id": "treasure_hunting_upgrade_IV",
       "name": "Treasure hunting Upgrade IV",
-      "description": "Permanently increases treasure hunting XP gain by 25%, speed by 15%, and yield by 15%",
+      "description": "Permanently increases treasure hunting XP gain by 25%, speed by 15%, yield by 15%, and rare material chance by 8%",
       "type": "permanent",
       "scope": "skill",
       "skillId": "treasure_hunting",
@@ -3213,7 +3301,8 @@
         "experienceMultiplier": 1.25,
         "speedMultiplier": 0.85,
         "yieldMultiplier": 1.15,
-        "successRateBonus": 0.15
+        "successRateBonus": 0.15,
+        "rareMaterialChance": 0.08
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_III"
@@ -3224,7 +3313,7 @@
     "treasure_hunting_upgrade_V": {
       "id": "treasure_hunting_upgrade_V",
       "name": "Treasure hunting Upgrade V",
-      "description": "Permanently increases treasure hunting XP gain by 30%, speed by 20%, and yield by 20%",
+      "description": "Permanently increases treasure hunting XP gain by 30%, speed by 20%, yield by 20%, rare material chance by 12%, and grants a 5% chance to find double treasure",
       "type": "permanent",
       "scope": "skill",
       "skillId": "treasure_hunting",
@@ -3234,7 +3323,9 @@
         "experienceMultiplier": 1.3,
         "speedMultiplier": 0.8,
         "yieldMultiplier": 1.2,
-        "successRateBonus": 0.2
+        "successRateBonus": 0.2,
+        "rareMaterialChance": 0.12,
+        "doubleTreasureChance": 0.05
       },
       "requirements": {
         "previousTierId": "treasure_hunting_upgrade_IV"

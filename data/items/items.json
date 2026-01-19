@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "total_items": 776,
+  "total_items": 962,
   "items": {
     "abyssal_fish": {
       "id": "abyssal_fish",
@@ -25,6 +25,23 @@
       "value": 100,
       "nameKey": "item.abyssal_pearl.name",
       "descriptionKey": "item.abyssal_pearl.description"
+    },
+    "abyssal_pearl_elixir": {
+      "id": "abyssal_pearl_elixir",
+      "name": "Abyssal Pearl Elixir",
+      "description": "An alchemy-crafted abyssal pearl elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 840,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "abyssal_pearl_elixir_buff",
+        "duration": 980
+      },
+      "nameKey": "item.abyssal_pearl_elixir.name",
+      "descriptionKey": "item.abyssal_pearl_elixir.description"
     },
     "adamantite_armor": {
       "id": "adamantite_armor",
@@ -287,6 +304,23 @@
       "nameKey": "item.advanced_component.name",
       "descriptionKey": "item.advanced_component.description"
     },
+    "advanced_dexterity_potion": {
+      "id": "advanced_dexterity_potion",
+      "name": "Advanced Dexterity Potion",
+      "description": "An alchemy-crafted advanced dexterity potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 530,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "advanced_dexterity_boost",
+        "duration": 860
+      },
+      "nameKey": "item.advanced_dexterity_potion.name",
+      "descriptionKey": "item.advanced_dexterity_potion.description"
+    },
     "advanced_gadget": {
       "id": "advanced_gadget",
       "name": "Advanced Gadget",
@@ -298,6 +332,108 @@
       "value": 1000,
       "nameKey": "item.advanced_gadget.name",
       "descriptionKey": "item.advanced_gadget.description"
+    },
+    "advanced_intelligence_potion": {
+      "id": "advanced_intelligence_potion",
+      "name": "Advanced Intelligence Potion",
+      "description": "An alchemy-crafted advanced intelligence potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 540,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "advanced_intelligence_boost",
+        "duration": 880
+      },
+      "nameKey": "item.advanced_intelligence_potion.name",
+      "descriptionKey": "item.advanced_intelligence_potion.description"
+    },
+    "advanced_strength_potion": {
+      "id": "advanced_strength_potion",
+      "name": "Advanced Strength Potion",
+      "description": "An alchemy-crafted advanced strength potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 510,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "advanced_strength_boost",
+        "duration": 820
+      },
+      "nameKey": "item.advanced_strength_potion.name",
+      "descriptionKey": "item.advanced_strength_potion.description"
+    },
+    "advanced_trapping_elixir": {
+      "id": "advanced_trapping_elixir",
+      "name": "Advanced Trapping Elixir",
+      "description": "An alchemy-crafted advanced trapping elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 530,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "advanced_trapping_elixir_buff",
+        "duration": 860
+      },
+      "nameKey": "item.advanced_trapping_elixir.name",
+      "descriptionKey": "item.advanced_trapping_elixir.description"
+    },
+    "advanced_vitality_potion": {
+      "id": "advanced_vitality_potion",
+      "name": "Advanced Vitality Potion",
+      "description": "An alchemy-crafted advanced vitality potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 520,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "advanced_vitality_boost",
+        "duration": 840
+      },
+      "nameKey": "item.advanced_vitality_potion.name",
+      "descriptionKey": "item.advanced_vitality_potion.description"
+    },
+    "advanced_wisdom_potion": {
+      "id": "advanced_wisdom_potion",
+      "name": "Advanced Wisdom Potion",
+      "description": "An alchemy-crafted advanced wisdom potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "advanced_wisdom_boost",
+        "duration": 900
+      },
+      "nameKey": "item.advanced_wisdom_potion.name",
+      "descriptionKey": "item.advanced_wisdom_potion.description"
+    },
+    "agility_potion": {
+      "id": "agility_potion",
+      "name": "Claw Elixir",
+      "description": "An alchemy-crafted claw elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 460,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "agility_potion_buff",
+        "duration": 720
+      },
+      "nameKey": "item.agility_potion.name",
+      "descriptionKey": "item.agility_potion.description"
     },
     "air_core": {
       "id": "air_core",
@@ -813,6 +949,23 @@
       "nameKey": "item.ancient_herb_essence.name",
       "descriptionKey": "item.ancient_herb_essence.description"
     },
+    "ancient_key_elixir": {
+      "id": "ancient_key_elixir",
+      "name": "Ancient Key Elixir",
+      "description": "An alchemy-crafted ancient key elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 830,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ancient_key_elixir_buff",
+        "duration": 960
+      },
+      "nameKey": "item.ancient_key_elixir.name",
+      "descriptionKey": "item.ancient_key_elixir.description"
+    },
     "ancient_key_thieving": {
       "id": "ancient_key_thieving",
       "name": "Ancient Key",
@@ -836,6 +989,23 @@
       "value": 800,
       "nameKey": "item.ancient_map.name",
       "descriptionKey": "item.ancient_map.description"
+    },
+    "ancient_map_potion": {
+      "id": "ancient_map_potion",
+      "name": "Ancient Map Potion",
+      "description": "An alchemy-crafted ancient map potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 805,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ancient_map_potion_buff",
+        "duration": 910
+      },
+      "nameKey": "item.ancient_map_potion.name",
+      "descriptionKey": "item.ancient_map_potion.description"
     },
     "ancient_material": {
       "id": "ancient_material",
@@ -889,6 +1059,23 @@
       "nameKey": "item.ancient_papyrus.name",
       "descriptionKey": "item.ancient_papyrus.description"
     },
+    "ancient_papyrus_potion": {
+      "id": "ancient_papyrus_potion",
+      "name": "Ancient Papyrus Potion",
+      "description": "An alchemy-crafted ancient papyrus potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 500,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ancient_papyrus_potion_buff",
+        "duration": 800
+      },
+      "nameKey": "item.ancient_papyrus_potion.name",
+      "descriptionKey": "item.ancient_papyrus_potion.description"
+    },
     "ancient_pelt": {
       "id": "ancient_pelt",
       "name": "Ancient Pelt",
@@ -913,6 +1100,23 @@
       "nameKey": "item.ancient_relic.name",
       "descriptionKey": "item.ancient_relic.description"
     },
+    "ancient_relic_potion": {
+      "id": "ancient_relic_potion",
+      "name": "Ancient Relic Potion",
+      "description": "An alchemy-crafted ancient relic potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 290,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ancient_relic_potion_buff",
+        "duration": 680
+      },
+      "nameKey": "item.ancient_relic_potion.name",
+      "descriptionKey": "item.ancient_relic_potion.description"
+    },
     "ancient_scale": {
       "id": "ancient_scale",
       "name": "Ancient Scale",
@@ -936,6 +1140,23 @@
       "value": 150,
       "nameKey": "item.ancient_scroll.name",
       "descriptionKey": "item.ancient_scroll.description"
+    },
+    "ancient_scroll_potion": {
+      "id": "ancient_scroll_potion",
+      "name": "Ancient Scroll Potion",
+      "description": "An alchemy-crafted ancient scroll potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 490,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ancient_scroll_potion_buff",
+        "duration": 780
+      },
+      "nameKey": "item.ancient_scroll_potion.name",
+      "descriptionKey": "item.ancient_scroll_potion.description"
     },
     "ancient_shard": {
       "id": "ancient_shard",
@@ -998,6 +1219,23 @@
       "value": 200,
       "nameKey": "item.ancient_tome_material.name",
       "descriptionKey": "item.ancient_tome_material.description"
+    },
+    "ancient_tome_potion": {
+      "id": "ancient_tome_potion",
+      "name": "Ancient Tome Potion",
+      "description": "An alchemy-crafted ancient tome potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ancient_tome_potion_buff",
+        "duration": 900
+      },
+      "nameKey": "item.ancient_tome_potion.name",
+      "descriptionKey": "item.ancient_tome_potion.description"
     },
     "ancient_tool": {
       "id": "ancient_tool",
@@ -1633,6 +1871,22 @@
       "nameKey": "item.arcane_wisp.name",
       "descriptionKey": "item.arcane_wisp.description"
     },
+    "archaeology_xp_potion": {
+      "id": "archaeology_xp_potion",
+      "name": "Archaeology Experience Potion",
+      "description": "An alchemy-crafted archaeology experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 455,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 610
+      },
+      "nameKey": "item.archaeology_xp_potion.name",
+      "descriptionKey": "item.archaeology_xp_potion.description"
+    },
     "aromatic_leaves": {
       "id": "aromatic_leaves",
       "name": "Aromatic Leaves",
@@ -1745,6 +1999,40 @@
       "nameKey": "item.atlantis_key.name",
       "descriptionKey": "item.atlantis_key.description"
     },
+    "atlantis_key_elixir": {
+      "id": "atlantis_key_elixir",
+      "name": "Atlantis Key Elixir",
+      "description": "An alchemy-crafted atlantis key elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 820,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "atlantis_key_elixir_buff",
+        "duration": 940
+      },
+      "nameKey": "item.atlantis_key_elixir.name",
+      "descriptionKey": "item.atlantis_key_elixir.description"
+    },
+    "attack_boost_food": {
+      "id": "attack_boost_food",
+      "name": "Attack Boost Food",
+      "description": "Increases attack power for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 45,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "attack_boost",
+        "duration": 600
+      },
+      "nameKey": "item.attack_boost_food.name",
+      "descriptionKey": "item.attack_boost_food.description"
+    },
     "attack_buff_potion": {
       "id": "attack_buff_potion",
       "name": "Attack Buff Potion",
@@ -1761,6 +2049,57 @@
       },
       "nameKey": "item.attack_buff_potion.name",
       "descriptionKey": "item.attack_buff_potion.description"
+    },
+    "attack_buff_potion_basic": {
+      "id": "attack_buff_potion_basic",
+      "name": "Boar Tusk Potion",
+      "description": "An alchemy-crafted boar tusk potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 235,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "attack_buff_basic_boost",
+        "duration": 570
+      },
+      "nameKey": "item.attack_buff_potion_basic.name",
+      "descriptionKey": "item.attack_buff_potion_basic.description"
+    },
+    "attack_mastery_potion": {
+      "id": "attack_mastery_potion",
+      "name": "Attack Mastery Potion",
+      "description": "An alchemy-crafted attack mastery potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 470,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "attack_boost",
+        "duration": 740
+      },
+      "nameKey": "item.attack_mastery_potion.name",
+      "descriptionKey": "item.attack_mastery_potion.description"
+    },
+    "balanced_essence_potion": {
+      "id": "balanced_essence_potion",
+      "name": "Balanced Essence Potion",
+      "description": "An alchemy-crafted balanced essence potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 805,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "balanced_essence_potion_buff",
+        "duration": 910
+      },
+      "nameKey": "item.balanced_essence_potion.name",
+      "descriptionKey": "item.balanced_essence_potion.description"
     },
     "balrog_horn": {
       "id": "balrog_horn",
@@ -1998,6 +2337,40 @@
       "nameKey": "item.beast_essence.name",
       "descriptionKey": "item.beast_essence.description"
     },
+    "beast_essence_extract": {
+      "id": "beast_essence_extract",
+      "name": "Beast Essence Extract",
+      "description": "An alchemy-crafted beast essence extract.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 275,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "beast_essence_extract_buff",
+        "duration": 650
+      },
+      "nameKey": "item.beast_essence_extract.name",
+      "descriptionKey": "item.beast_essence_extract.description"
+    },
+    "beast_lure_elixir": {
+      "id": "beast_lure_elixir",
+      "name": "Beast Lure Elixir",
+      "description": "An alchemy-crafted beast lure elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 840,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "beast_lure_elixir_buff",
+        "duration": 980
+      },
+      "nameKey": "item.beast_lure_elixir.name",
+      "descriptionKey": "item.beast_lure_elixir.description"
+    },
     "berry": {
       "id": "berry",
       "name": "Berry",
@@ -2062,6 +2435,22 @@
       "nameKey": "item.black_pearl.name",
       "descriptionKey": "item.black_pearl.description"
     },
+    "blacksmithing_xp_potion": {
+      "id": "blacksmithing_xp_potion",
+      "name": "Blacksmithing Experience Potion",
+      "description": "An alchemy-crafted blacksmithing experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 475,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 650
+      },
+      "nameKey": "item.blacksmithing_xp_potion.name",
+      "descriptionKey": "item.blacksmithing_xp_potion.description"
+    },
     "blessed_water": {
       "id": "blessed_water",
       "name": "Blessed Water",
@@ -2089,6 +2478,23 @@
       },
       "nameKey": "item.blessing_scroll.name",
       "descriptionKey": "item.blessing_scroll.description"
+    },
+    "blessing_scroll_potion": {
+      "id": "blessing_scroll_potion",
+      "name": "Blessing Scroll Potion",
+      "description": "An alchemy-crafted blessing scroll potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 505,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "blessing_scroll_potion_buff",
+        "duration": 810
+      },
+      "nameKey": "item.blessing_scroll_potion.name",
+      "descriptionKey": "item.blessing_scroll_potion.description"
     },
     "blood_crystal": {
       "id": "blood_crystal",
@@ -2137,6 +2543,23 @@
       "value": 2,
       "nameKey": "item.bone_meal.name",
       "descriptionKey": "item.bone_meal.description"
+    },
+    "bone_powder": {
+      "id": "bone_powder",
+      "name": "Bone Powder",
+      "description": "An alchemy-crafted bone powder.",
+      "type": "consumable",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 125,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "bone_powder_buff",
+        "duration": 450
+      },
+      "nameKey": "item.bone_powder.name",
+      "descriptionKey": "item.bone_powder.description"
     },
     "bread": {
       "id": "bread",
@@ -2382,6 +2805,23 @@
       "nameKey": "item.bronze_sword.name",
       "descriptionKey": "item.bronze_sword.description"
     },
+    "celestial_banquet": {
+      "id": "celestial_banquet",
+      "name": "Celestial Banquet",
+      "description": "A celestial feast that provides divine blessings and powerful effects.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 3500,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "celestial_banquet_boost",
+        "duration": 6000
+      },
+      "nameKey": "item.celestial_banquet.name",
+      "descriptionKey": "item.celestial_banquet.description"
+    },
     "celestial_chart": {
       "id": "celestial_chart",
       "name": "Celestial Chart",
@@ -2393,6 +2833,40 @@
       "value": 1800,
       "nameKey": "item.celestial_chart.name",
       "descriptionKey": "item.celestial_chart.description"
+    },
+    "celestial_chart_elixir": {
+      "id": "celestial_chart_elixir",
+      "name": "Celestial Chart Elixir",
+      "description": "An alchemy-crafted celestial chart elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 865,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "celestial_chart_elixir_buff",
+        "duration": 1030
+      },
+      "nameKey": "item.celestial_chart_elixir.name",
+      "descriptionKey": "item.celestial_chart_elixir.description"
+    },
+    "celestial_elixir": {
+      "id": "celestial_elixir",
+      "name": "Celestial Elixir",
+      "description": "An alchemy-crafted celestial elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1435,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "celestial_elixir_buff",
+        "duration": 1170
+      },
+      "nameKey": "item.celestial_elixir.name",
+      "descriptionKey": "item.celestial_elixir.description"
     },
     "celestial_essence": {
       "id": "celestial_essence",
@@ -2442,6 +2916,23 @@
       "nameKey": "item.celestial_insight.name",
       "descriptionKey": "item.celestial_insight.description"
     },
+    "celestial_insight_elixir": {
+      "id": "celestial_insight_elixir",
+      "name": "Celestial Insight Elixir",
+      "description": "An alchemy-crafted celestial insight elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1405,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "celestial_insight_elixir_buff",
+        "duration": 1110
+      },
+      "nameKey": "item.celestial_insight_elixir.name",
+      "descriptionKey": "item.celestial_insight_elixir.description"
+    },
     "celestial_key": {
       "id": "celestial_key",
       "name": "Celestial Key",
@@ -2453,6 +2944,23 @@
       "value": 2000,
       "nameKey": "item.celestial_key.name",
       "descriptionKey": "item.celestial_key.description"
+    },
+    "celestial_key_elixir": {
+      "id": "celestial_key_elixir",
+      "name": "Celestial Key Elixir",
+      "description": "An alchemy-crafted celestial key elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 840,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "celestial_key_elixir_buff",
+        "duration": 980
+      },
+      "nameKey": "item.celestial_key_elixir.name",
+      "descriptionKey": "item.celestial_key_elixir.description"
     },
     "celestial_pelt": {
       "id": "celestial_pelt",
@@ -2489,6 +2997,23 @@
       "value": 400,
       "nameKey": "item.celestial_scale.name",
       "descriptionKey": "item.celestial_scale.description"
+    },
+    "celestial_scale_elixir": {
+      "id": "celestial_scale_elixir",
+      "name": "Celestial Scale Elixir",
+      "description": "An alchemy-crafted celestial scale elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1410,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "celestial_scale_elixir_buff",
+        "duration": 1120
+      },
+      "nameKey": "item.celestial_scale_elixir.name",
+      "descriptionKey": "item.celestial_scale_elixir.description"
     },
     "celestial_stone": {
       "id": "celestial_stone",
@@ -2603,6 +3128,39 @@
       "nameKey": "item.cobblestone.name",
       "descriptionKey": "item.cobblestone.description"
     },
+    "combat_mastery_elixir": {
+      "id": "combat_mastery_elixir",
+      "name": "Combat Mastery Elixir",
+      "description": "An alchemy-crafted combat mastery elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 545,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "combat_mastery_elixir_buff",
+        "duration": 890
+      },
+      "nameKey": "item.combat_mastery_elixir.name",
+      "descriptionKey": "item.combat_mastery_elixir.description"
+    },
+    "combined_health_mana_food": {
+      "id": "combined_health_mana_food",
+      "name": "Combined Restoration Food",
+      "description": "Restores 150 health and 100 mana.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 50,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 150
+      },
+      "nameKey": "item.combined_health_mana_food.name",
+      "descriptionKey": "item.combined_health_mana_food.description"
+    },
     "common_herb": {
       "id": "common_herb",
       "name": "Common Herb",
@@ -2650,6 +3208,328 @@
       "value": 1,
       "nameKey": "item.compost.name",
       "descriptionKey": "item.compost.description"
+    },
+    "cooking_archaeology_xp_food": {
+      "id": "cooking_archaeology_xp_food",
+      "name": "Archaeology Experience Food",
+      "description": "Increases archaeology experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 85,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "archaeology_xp_boost"
+      },
+      "nameKey": "item.cooking_archaeology_xp_food.name",
+      "descriptionKey": "item.cooking_archaeology_xp_food.description"
+    },
+    "cooking_blacksmithing_xp_food": {
+      "id": "cooking_blacksmithing_xp_food",
+      "name": "Blacksmithing Experience Food",
+      "description": "Increases blacksmithing experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 95,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "blacksmithing_xp_boost"
+      },
+      "nameKey": "item.cooking_blacksmithing_xp_food.name",
+      "descriptionKey": "item.cooking_blacksmithing_xp_food.description"
+    },
+    "cooking_enchanting_xp_food": {
+      "id": "cooking_enchanting_xp_food",
+      "name": "Enchanting Experience Food",
+      "description": "Increases enchanting experience gain.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 135,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "enchanting_xp_boost"
+      },
+      "nameKey": "item.cooking_enchanting_xp_food.name",
+      "descriptionKey": "item.cooking_enchanting_xp_food.description"
+    },
+    "cooking_engineering_xp_food": {
+      "id": "cooking_engineering_xp_food",
+      "name": "Engineering Experience Food",
+      "description": "Increases engineering experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 105,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "engineering_xp_boost"
+      },
+      "nameKey": "item.cooking_engineering_xp_food.name",
+      "descriptionKey": "item.cooking_engineering_xp_food.description"
+    },
+    "cooking_fishing_xp_food": {
+      "id": "cooking_fishing_xp_food",
+      "name": "Fishing Experience Food",
+      "description": "Increases fishing experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 35,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "fishing_xp_boost"
+      },
+      "nameKey": "item.cooking_fishing_xp_food.name",
+      "descriptionKey": "item.cooking_fishing_xp_food.description"
+    },
+    "cooking_foraging_xp_food": {
+      "id": "cooking_foraging_xp_food",
+      "name": "Foraging Experience Food",
+      "description": "Increases foraging experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 32,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "foraging_xp_boost"
+      },
+      "nameKey": "item.cooking_foraging_xp_food.name",
+      "descriptionKey": "item.cooking_foraging_xp_food.description"
+    },
+    "cooking_herbalism_xp_food": {
+      "id": "cooking_herbalism_xp_food",
+      "name": "Herbalism Experience Food",
+      "description": "Increases herbalism experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 38,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "herbalism_xp_boost"
+      },
+      "nameKey": "item.cooking_herbalism_xp_food.name",
+      "descriptionKey": "item.cooking_herbalism_xp_food.description"
+    },
+    "cooking_hunting_xp_food": {
+      "id": "cooking_hunting_xp_food",
+      "name": "Hunting Experience Food",
+      "description": "Increases hunting experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 48,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "hunting_xp_boost"
+      },
+      "nameKey": "item.cooking_hunting_xp_food.name",
+      "descriptionKey": "item.cooking_hunting_xp_food.description"
+    },
+    "cooking_jewelcrafting_xp_food": {
+      "id": "cooking_jewelcrafting_xp_food",
+      "name": "Jewelcrafting Experience Food",
+      "description": "Increases jewelcrafting experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 130,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "jewelcrafting_xp_boost"
+      },
+      "nameKey": "item.cooking_jewelcrafting_xp_food.name",
+      "descriptionKey": "item.cooking_jewelcrafting_xp_food.description"
+    },
+    "cooking_leatherworking_xp_food": {
+      "id": "cooking_leatherworking_xp_food",
+      "name": "Leatherworking Experience Food",
+      "description": "Increases leatherworking experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 120,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "leatherworking_xp_boost"
+      },
+      "nameKey": "item.cooking_leatherworking_xp_food.name",
+      "descriptionKey": "item.cooking_leatherworking_xp_food.description"
+    },
+    "cooking_mining_xp_food": {
+      "id": "cooking_mining_xp_food",
+      "name": "Mining Experience Food",
+      "description": "Increases mining experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 30,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "mining_xp_boost"
+      },
+      "nameKey": "item.cooking_mining_xp_food.name",
+      "descriptionKey": "item.cooking_mining_xp_food.description"
+    },
+    "cooking_quarrying_xp_food": {
+      "id": "cooking_quarrying_xp_food",
+      "name": "Quarrying Experience Food",
+      "description": "Increases quarrying experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 68,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "quarrying_xp_boost"
+      },
+      "nameKey": "item.cooking_quarrying_xp_food.name",
+      "descriptionKey": "item.cooking_quarrying_xp_food.description"
+    },
+    "cooking_runecrafting_xp_food": {
+      "id": "cooking_runecrafting_xp_food",
+      "name": "Runecrafting Experience Food",
+      "description": "Increases runecrafting experience gain.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 145,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "runecrafting_xp_boost"
+      },
+      "nameKey": "item.cooking_runecrafting_xp_food.name",
+      "descriptionKey": "item.cooking_runecrafting_xp_food.description"
+    },
+    "cooking_tailoring_xp_food": {
+      "id": "cooking_tailoring_xp_food",
+      "name": "Tailoring Experience Food",
+      "description": "Increases tailoring experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 115,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "tailoring_xp_boost"
+      },
+      "nameKey": "item.cooking_tailoring_xp_food.name",
+      "descriptionKey": "item.cooking_tailoring_xp_food.description"
+    },
+    "cooking_thieving_xp_food": {
+      "id": "cooking_thieving_xp_food",
+      "name": "Thieving Experience Food",
+      "description": "Increases thieving experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 80,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "thieving_xp_boost"
+      },
+      "nameKey": "item.cooking_thieving_xp_food.name",
+      "descriptionKey": "item.cooking_thieving_xp_food.description"
+    },
+    "cooking_trapping_xp_food": {
+      "id": "cooking_trapping_xp_food",
+      "name": "Trapping Experience Food",
+      "description": "Increases trapping experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 55,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "trapping_xp_boost"
+      },
+      "nameKey": "item.cooking_trapping_xp_food.name",
+      "descriptionKey": "item.cooking_trapping_xp_food.description"
+    },
+    "cooking_treasure_hunting_xp_food": {
+      "id": "cooking_treasure_hunting_xp_food",
+      "name": "Treasure Hunting Experience Food",
+      "description": "Increases treasure hunting experience gain.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 75,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "treasure_hunting_xp_boost"
+      },
+      "nameKey": "item.cooking_treasure_hunting_xp_food.name",
+      "descriptionKey": "item.cooking_treasure_hunting_xp_food.description"
+    },
+    "cooking_woodcutting_xp_food": {
+      "id": "cooking_woodcutting_xp_food",
+      "name": "Woodcutting Experience Food",
+      "description": "Increases woodcutting experience gain.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 30,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 0,
+        "buffId": "woodcutting_xp_boost"
+      },
+      "nameKey": "item.cooking_woodcutting_xp_food.name",
+      "descriptionKey": "item.cooking_woodcutting_xp_food.description"
+    },
+    "cooking_xp_potion": {
+      "id": "cooking_xp_potion",
+      "name": "Cooking Experience Potion",
+      "description": "An alchemy-crafted cooking experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 465,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 630
+      },
+      "nameKey": "item.cooking_xp_potion.name",
+      "descriptionKey": "item.cooking_xp_potion.description"
     },
     "copper_axe": {
       "id": "copper_axe",
@@ -2795,6 +3675,23 @@
       "nameKey": "item.cosmic_energy.name",
       "descriptionKey": "item.cosmic_energy.description"
     },
+    "cosmic_essence_elixir": {
+      "id": "cosmic_essence_elixir",
+      "name": "Cosmic Essence Elixir",
+      "description": "An alchemy-crafted cosmic essence elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1465,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "cosmic_essence_elixir_buff",
+        "duration": 1230
+      },
+      "nameKey": "item.cosmic_essence_elixir.name",
+      "descriptionKey": "item.cosmic_essence_elixir.description"
+    },
     "crafting_component": {
       "id": "crafting_component",
       "name": "Crafting Component",
@@ -2818,6 +3715,40 @@
       "value": 120,
       "nameKey": "item.crafting_recipe.name",
       "descriptionKey": "item.crafting_recipe.description"
+    },
+    "critical_chance_boost_food": {
+      "id": "critical_chance_boost_food",
+      "name": "Critical Chance Boost Food",
+      "description": "Increases critical hit chance for a duration.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 80,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "critical_chance_boost",
+        "duration": 600
+      },
+      "nameKey": "item.critical_chance_boost_food.name",
+      "descriptionKey": "item.critical_chance_boost_food.description"
+    },
+    "critical_chance_potion": {
+      "id": "critical_chance_potion",
+      "name": "Critical Chance Potion",
+      "description": "An alchemy-crafted critical chance potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 290,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "critical_chance_boost",
+        "duration": 680
+      },
+      "nameKey": "item.critical_chance_potion.name",
+      "descriptionKey": "item.critical_chance_potion.description"
     },
     "crystal_herb": {
       "id": "crystal_herb",
@@ -2866,6 +3797,23 @@
       "value": 150,
       "nameKey": "item.crystalized_stone.name",
       "descriptionKey": "item.crystalized_stone.description"
+    },
+    "curse_removal_potion": {
+      "id": "curse_removal_potion",
+      "name": "Curse Removal Potion",
+      "description": "An alchemy-crafted curse removal potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 495,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "curse_removal_potion_buff",
+        "duration": 790
+      },
+      "nameKey": "item.curse_removal_potion.name",
+      "descriptionKey": "item.curse_removal_potion.description"
     },
     "curse_removal_scroll": {
       "id": "curse_removal_scroll",
@@ -2967,6 +3915,40 @@
       "nameKey": "item.deer_hide.name",
       "descriptionKey": "item.deer_hide.description"
     },
+    "defense_boost_food": {
+      "id": "defense_boost_food",
+      "name": "Defense Boost Food",
+      "description": "Increases defense for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 48,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "defense_boost",
+        "duration": 600
+      },
+      "nameKey": "item.defense_boost_food.name",
+      "descriptionKey": "item.defense_boost_food.description"
+    },
+    "defense_mastery_potion": {
+      "id": "defense_mastery_potion",
+      "name": "Defense Mastery Potion",
+      "description": "An alchemy-crafted defense mastery potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 460,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "defense_boost",
+        "duration": 720
+      },
+      "nameKey": "item.defense_mastery_potion.name",
+      "descriptionKey": "item.defense_mastery_potion.description"
+    },
     "defense_potion": {
       "id": "defense_potion",
       "name": "Defense Potion",
@@ -3019,6 +4001,23 @@
       "nameKey": "item.destiny_anchor.name",
       "descriptionKey": "item.destiny_anchor.description"
     },
+    "destiny_anchor_elixir": {
+      "id": "destiny_anchor_elixir",
+      "name": "Destiny Anchor Elixir",
+      "description": "An alchemy-crafted destiny anchor elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 860,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "destiny_anchor_elixir_buff",
+        "duration": 1020
+      },
+      "nameKey": "item.destiny_anchor_elixir.name",
+      "descriptionKey": "item.destiny_anchor_elixir.description"
+    },
     "destiny_anchor_key": {
       "id": "destiny_anchor_key",
       "name": "Destiny Anchor Key",
@@ -3042,6 +4041,40 @@
       "value": 550,
       "nameKey": "item.destiny_fragment.name",
       "descriptionKey": "item.destiny_fragment.description"
+    },
+    "dexterity_boost_food": {
+      "id": "dexterity_boost_food",
+      "name": "Dexterity Boost Food",
+      "description": "Increases dexterity for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 65,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "dexterity_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.dexterity_boost_food.name",
+      "descriptionKey": "item.dexterity_boost_food.description"
+    },
+    "dexterity_potion": {
+      "id": "dexterity_potion",
+      "name": "Dexterity Potion",
+      "description": "An alchemy-crafted dexterity potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 220,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "dexterity_boost",
+        "duration": 540
+      },
+      "nameKey": "item.dexterity_potion.name",
+      "descriptionKey": "item.dexterity_potion.description"
     },
     "dexterity_ring_t1": {
       "id": "dexterity_ring_t1",
@@ -3144,6 +4177,40 @@
       "value": 2000,
       "nameKey": "item.divine_artifact.name",
       "descriptionKey": "item.divine_artifact.description"
+    },
+    "divine_artifact_elixir": {
+      "id": "divine_artifact_elixir",
+      "name": "Divine Artifact Elixir",
+      "description": "An alchemy-crafted divine artifact elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1440,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "divine_artifact_elixir_buff",
+        "duration": 1180
+      },
+      "nameKey": "item.divine_artifact_elixir.name",
+      "descriptionKey": "item.divine_artifact_elixir.description"
+    },
+    "divine_banquet": {
+      "id": "divine_banquet",
+      "name": "Divine Banquet",
+      "description": "A divine feast that provides massive skill XP bonuses and combat stat increases.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 5000,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "divine_banquet_boost",
+        "duration": 7200
+      },
+      "nameKey": "item.divine_banquet.name",
+      "descriptionKey": "item.divine_banquet.description"
     },
     "divine_bone": {
       "id": "divine_bone",
@@ -3354,6 +4421,23 @@
       "nameKey": "item.divine_ore.name",
       "descriptionKey": "item.divine_ore.description"
     },
+    "divine_potion": {
+      "id": "divine_potion",
+      "name": "Ancient Trophy Elixir",
+      "description": "An alchemy-crafted ancient trophy elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1440,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "divine_potion_buff",
+        "duration": 1180
+      },
+      "nameKey": "item.divine_potion.name",
+      "descriptionKey": "item.divine_potion.description"
+    },
     "divine_prophecy": {
       "id": "divine_prophecy",
       "name": "Divine Prophecy",
@@ -3365,6 +4449,23 @@
       "value": 2200,
       "nameKey": "item.divine_prophecy.name",
       "descriptionKey": "item.divine_prophecy.description"
+    },
+    "divine_prophecy_elixir": {
+      "id": "divine_prophecy_elixir",
+      "name": "Divine Prophecy Elixir",
+      "description": "An alchemy-crafted divine prophecy elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1415,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "divine_prophecy_elixir_buff",
+        "duration": 1130
+      },
+      "nameKey": "item.divine_prophecy_elixir.name",
+      "descriptionKey": "item.divine_prophecy_elixir.description"
     },
     "divine_robes": {
       "id": "divine_robes",
@@ -3431,6 +4532,23 @@
       "nameKey": "item.diviner_scroll.name",
       "descriptionKey": "item.diviner_scroll.description"
     },
+    "diviner_scroll_elixir": {
+      "id": "diviner_scroll_elixir",
+      "name": "Diviner Scroll Elixir",
+      "description": "An alchemy-crafted diviner scroll elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 815,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "diviner_scroll_elixir_buff",
+        "duration": 930
+      },
+      "nameKey": "item.diviner_scroll_elixir.name",
+      "descriptionKey": "item.diviner_scroll_elixir.description"
+    },
     "draconic_essence": {
       "id": "draconic_essence",
       "name": "Draconic Essence",
@@ -3466,6 +4584,40 @@
       "value": 1500,
       "nameKey": "item.dragon_bone.name",
       "descriptionKey": "item.dragon_bone.description"
+    },
+    "dragon_heart_elixir": {
+      "id": "dragon_heart_elixir",
+      "name": "Dragon Heart Elixir",
+      "description": "An alchemy-crafted dragon heart elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 890,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "dragon_heart_elixir_buff",
+        "duration": 1080
+      },
+      "nameKey": "item.dragon_heart_elixir.name",
+      "descriptionKey": "item.dragon_heart_elixir.description"
+    },
+    "dragon_heart_stew": {
+      "id": "dragon_heart_stew",
+      "name": "Dragon Heart Stew",
+      "description": "An incredibly powerful stew that provides massive stat boosts and combat bonuses.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2500,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "dragon_heart_boost",
+        "duration": 3600
+      },
+      "nameKey": "item.dragon_heart_stew.name",
+      "descriptionKey": "item.dragon_heart_stew.description"
     },
     "dragon_scale": {
       "id": "dragon_scale",
@@ -3745,6 +4897,23 @@
       "value": 500,
       "nameKey": "item.druid_medallion.name",
       "descriptionKey": "item.druid_medallion.description"
+    },
+    "druid_medallion_elixir": {
+      "id": "druid_medallion_elixir",
+      "name": "Druid Medallion Elixir",
+      "description": "An alchemy-crafted druid medallion elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 510,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "druid_medallion_elixir_buff",
+        "duration": 820
+      },
+      "nameKey": "item.druid_medallion_elixir.name",
+      "descriptionKey": "item.druid_medallion_elixir.description"
     },
     "dwarven_ale": {
       "id": "dwarven_ale",
@@ -4161,6 +5330,22 @@
       "nameKey": "item.enchanting_recipe.name",
       "descriptionKey": "item.enchanting_recipe.description"
     },
+    "enchanting_xp_potion": {
+      "id": "enchanting_xp_potion",
+      "name": "Enchanting Experience Potion",
+      "description": "An alchemy-crafted enchanting experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 525,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 750
+      },
+      "nameKey": "item.enchanting_xp_potion.name",
+      "descriptionKey": "item.enchanting_xp_potion.description"
+    },
     "energy_wisp": {
       "id": "energy_wisp",
       "name": "Energy Wisp",
@@ -4184,6 +5369,326 @@
       "value": 20,
       "nameKey": "item.engineering_component.name",
       "descriptionKey": "item.engineering_component.description"
+    },
+    "engineering_xp_potion": {
+      "id": "engineering_xp_potion",
+      "name": "Engineering Experience Potion",
+      "description": "An alchemy-crafted engineering experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 485,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 670
+      },
+      "nameKey": "item.engineering_xp_potion.name",
+      "descriptionKey": "item.engineering_xp_potion.description"
+    },
+    "enhanced_archaeology_xp_potion": {
+      "id": "enhanced_archaeology_xp_potion",
+      "name": "Enhanced Archaeology Experience Potion",
+      "description": "An alchemy-crafted enhanced archaeology experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1410,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1020
+      },
+      "nameKey": "item.enhanced_archaeology_xp_potion.name",
+      "descriptionKey": "item.enhanced_archaeology_xp_potion.description"
+    },
+    "enhanced_blacksmithing_xp_potion": {
+      "id": "enhanced_blacksmithing_xp_potion",
+      "name": "Enhanced Blacksmithing Experience Potion",
+      "description": "An alchemy-crafted enhanced blacksmithing experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1430,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1060
+      },
+      "nameKey": "item.enhanced_blacksmithing_xp_potion.name",
+      "descriptionKey": "item.enhanced_blacksmithing_xp_potion.description"
+    },
+    "enhanced_cooking_xp_potion": {
+      "id": "enhanced_cooking_xp_potion",
+      "name": "Enhanced Cooking Experience Potion",
+      "description": "An alchemy-crafted enhanced cooking experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1420,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1040
+      },
+      "nameKey": "item.enhanced_cooking_xp_potion.name",
+      "descriptionKey": "item.enhanced_cooking_xp_potion.description"
+    },
+    "enhanced_enchanting_xp_potion": {
+      "id": "enhanced_enchanting_xp_potion",
+      "name": "Enhanced Enchanting Experience Potion",
+      "description": "An alchemy-crafted enhanced enchanting experience potion.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2980,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1160
+      },
+      "nameKey": "item.enhanced_enchanting_xp_potion.name",
+      "descriptionKey": "item.enhanced_enchanting_xp_potion.description"
+    },
+    "enhanced_engineering_xp_potion": {
+      "id": "enhanced_engineering_xp_potion",
+      "name": "Enhanced Engineering Experience Potion",
+      "description": "An alchemy-crafted enhanced engineering experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1440,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1080
+      },
+      "nameKey": "item.enhanced_engineering_xp_potion.name",
+      "descriptionKey": "item.enhanced_engineering_xp_potion.description"
+    },
+    "enhanced_fishing_xp_potion": {
+      "id": "enhanced_fishing_xp_potion",
+      "name": "Enhanced Fishing Experience Potion",
+      "description": "An alchemy-crafted enhanced fishing experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 830,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 860
+      },
+      "nameKey": "item.enhanced_fishing_xp_potion.name",
+      "descriptionKey": "item.enhanced_fishing_xp_potion.description"
+    },
+    "enhanced_foraging_xp_potion": {
+      "id": "enhanced_foraging_xp_potion",
+      "name": "Enhanced Foraging Experience Potion",
+      "description": "An alchemy-crafted enhanced foraging experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 850,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 900
+      },
+      "nameKey": "item.enhanced_foraging_xp_potion.name",
+      "descriptionKey": "item.enhanced_foraging_xp_potion.description"
+    },
+    "enhanced_herbalism_xp_potion": {
+      "id": "enhanced_herbalism_xp_potion",
+      "name": "Enhanced Herbalism Experience Potion",
+      "description": "An alchemy-crafted enhanced herbalism experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 840,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 880
+      },
+      "nameKey": "item.enhanced_herbalism_xp_potion.name",
+      "descriptionKey": "item.enhanced_herbalism_xp_potion.description"
+    },
+    "enhanced_hunting_xp_potion": {
+      "id": "enhanced_hunting_xp_potion",
+      "name": "Enhanced Hunting Experience Potion",
+      "description": "An alchemy-crafted enhanced hunting experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 860,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 920
+      },
+      "nameKey": "item.enhanced_hunting_xp_potion.name",
+      "descriptionKey": "item.enhanced_hunting_xp_potion.description"
+    },
+    "enhanced_jewelcrafting_xp_potion": {
+      "id": "enhanced_jewelcrafting_xp_potion",
+      "name": "Enhanced Jewelcrafting Experience Potion",
+      "description": "An alchemy-crafted enhanced jewelcrafting experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1470,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1140
+      },
+      "nameKey": "item.enhanced_jewelcrafting_xp_potion.name",
+      "descriptionKey": "item.enhanced_jewelcrafting_xp_potion.description"
+    },
+    "enhanced_leatherworking_xp_potion": {
+      "id": "enhanced_leatherworking_xp_potion",
+      "name": "Enhanced Leatherworking Experience Potion",
+      "description": "An alchemy-crafted enhanced leatherworking experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1460,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1120
+      },
+      "nameKey": "item.enhanced_leatherworking_xp_potion.name",
+      "descriptionKey": "item.enhanced_leatherworking_xp_potion.description"
+    },
+    "enhanced_mining_xp_potion": {
+      "id": "enhanced_mining_xp_potion",
+      "name": "Enhanced Mining Experience Potion",
+      "description": "An alchemy-crafted enhanced mining experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 810,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 820
+      },
+      "nameKey": "item.enhanced_mining_xp_potion.name",
+      "descriptionKey": "item.enhanced_mining_xp_potion.description"
+    },
+    "enhanced_quarrying_xp_potion": {
+      "id": "enhanced_quarrying_xp_potion",
+      "name": "Enhanced Quarrying Experience Potion",
+      "description": "An alchemy-crafted enhanced quarrying experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 880,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 960
+      },
+      "nameKey": "item.enhanced_quarrying_xp_potion.name",
+      "descriptionKey": "item.enhanced_quarrying_xp_potion.description"
+    },
+    "enhanced_runecrafting_xp_potion": {
+      "id": "enhanced_runecrafting_xp_potion",
+      "name": "Enhanced Runecrafting Experience Potion",
+      "description": "An alchemy-crafted enhanced runecrafting experience potion.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2985,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1170
+      },
+      "nameKey": "item.enhanced_runecrafting_xp_potion.name",
+      "descriptionKey": "item.enhanced_runecrafting_xp_potion.description"
+    },
+    "enhanced_tailoring_xp_potion": {
+      "id": "enhanced_tailoring_xp_potion",
+      "name": "Enhanced Tailoring Experience Potion",
+      "description": "An alchemy-crafted enhanced tailoring experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1450,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1100
+      },
+      "nameKey": "item.enhanced_tailoring_xp_potion.name",
+      "descriptionKey": "item.enhanced_tailoring_xp_potion.description"
+    },
+    "enhanced_thieving_xp_potion": {
+      "id": "enhanced_thieving_xp_potion",
+      "name": "Enhanced Thieving Experience Potion",
+      "description": "An alchemy-crafted enhanced thieving experience potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1400,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 1000
+      },
+      "nameKey": "item.enhanced_thieving_xp_potion.name",
+      "descriptionKey": "item.enhanced_thieving_xp_potion.description"
+    },
+    "enhanced_trapping_xp_potion": {
+      "id": "enhanced_trapping_xp_potion",
+      "name": "Enhanced Trapping Experience Potion",
+      "description": "An alchemy-crafted enhanced trapping experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 870,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 940
+      },
+      "nameKey": "item.enhanced_trapping_xp_potion.name",
+      "descriptionKey": "item.enhanced_trapping_xp_potion.description"
+    },
+    "enhanced_treasure_hunting_xp_potion": {
+      "id": "enhanced_treasure_hunting_xp_potion",
+      "name": "Enhanced Treasure Hunting Experience Potion",
+      "description": "An alchemy-crafted enhanced treasure hunting experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 890,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 980
+      },
+      "nameKey": "item.enhanced_treasure_hunting_xp_potion.name",
+      "descriptionKey": "item.enhanced_treasure_hunting_xp_potion.description"
+    },
+    "enhanced_woodcutting_xp_potion": {
+      "id": "enhanced_woodcutting_xp_potion",
+      "name": "Enhanced Woodcutting Experience Potion",
+      "description": "An alchemy-crafted enhanced woodcutting experience potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 820,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 840
+      },
+      "nameKey": "item.enhanced_woodcutting_xp_potion.name",
+      "descriptionKey": "item.enhanced_woodcutting_xp_potion.description"
     },
     "epic_amulet_4_0": {
       "id": "epic_amulet_4_0",
@@ -4451,6 +5956,40 @@
       "nameKey": "item.essence_of_death.name",
       "descriptionKey": "item.essence_of_death.description"
     },
+    "essence_potion": {
+      "id": "essence_potion",
+      "name": "Enchanted Essence Potion",
+      "description": "An alchemy-crafted enchanted essence potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 810,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "essence_potion_buff",
+        "duration": 920
+      },
+      "nameKey": "item.essence_potion.name",
+      "descriptionKey": "item.essence_potion.description"
+    },
+    "eternal_life_elixir": {
+      "id": "eternal_life_elixir",
+      "name": "Eternal Life Elixir",
+      "description": "An alchemy-crafted eternal life elixir.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2980,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "eternal_life_elixir_buff",
+        "duration": 1260
+      },
+      "nameKey": "item.eternal_life_elixir.name",
+      "descriptionKey": "item.eternal_life_elixir.description"
+    },
     "ethereal_essence": {
       "id": "ethereal_essence",
       "name": "Ethereal Essence",
@@ -4602,6 +6141,23 @@
       "value": 4000,
       "nameKey": "item.fate_weaver.name",
       "descriptionKey": "item.fate_weaver.description"
+    },
+    "fate_weaver_elixir": {
+      "id": "fate_weaver_elixir",
+      "name": "Fate Weaver Elixir",
+      "description": "An alchemy-crafted fate weaver elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 870,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "fate_weaver_elixir_buff",
+        "duration": 1040
+      },
+      "nameKey": "item.fate_weaver_elixir.name",
+      "descriptionKey": "item.fate_weaver_elixir.description"
     },
     "fate_weaver_key": {
       "id": "fate_weaver_key",
@@ -4903,6 +6459,55 @@
       "nameKey": "item.fishing_bait.name",
       "descriptionKey": "item.fishing_bait.description"
     },
+    "fishing_xp_potion": {
+      "id": "fishing_xp_potion",
+      "name": "Fishing Experience Potion",
+      "description": "An alchemy-crafted fishing experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 225,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 450
+      },
+      "nameKey": "item.fishing_xp_potion.name",
+      "descriptionKey": "item.fishing_xp_potion.description"
+    },
+    "foraging_xp_potion": {
+      "id": "foraging_xp_potion",
+      "name": "Foraging Experience Potion",
+      "description": "An alchemy-crafted foraging experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 245,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 490
+      },
+      "nameKey": "item.foraging_xp_potion.name",
+      "descriptionKey": "item.foraging_xp_potion.description"
+    },
+    "forbidden_elixir": {
+      "id": "forbidden_elixir",
+      "name": "Forbidden Elixir",
+      "description": "An alchemy-crafted forbidden elixir.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2985,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "forbidden_elixir_buff",
+        "duration": 1270
+      },
+      "nameKey": "item.forbidden_elixir.name",
+      "descriptionKey": "item.forbidden_elixir.description"
+    },
     "forbidden_feast": {
       "id": "forbidden_feast",
       "name": "Forbidden Feast",
@@ -5002,6 +6607,23 @@
       "value": 30,
       "nameKey": "item.freshwater_pearl.name",
       "descriptionKey": "item.freshwater_pearl.description"
+    },
+    "freshwater_pearl_potion": {
+      "id": "freshwater_pearl_potion",
+      "name": "Freshwater Pearl Potion",
+      "description": "An alchemy-crafted freshwater pearl potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 475,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "freshwater_pearl_potion_buff",
+        "duration": 750
+      },
+      "nameKey": "item.freshwater_pearl_potion.name",
+      "descriptionKey": "item.freshwater_pearl_potion.description"
     },
     "frost_crystal": {
       "id": "frost_crystal",
@@ -5179,6 +6801,40 @@
       "nameKey": "item.goblin_bone.name",
       "descriptionKey": "item.goblin_bone.description"
     },
+    "godlike_feast": {
+      "id": "godlike_feast",
+      "name": "Godlike Feast",
+      "description": "The ultimate feast that grants temporary godlike powers across all skills and combat.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 25000,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "godlike_boost",
+        "duration": 18000
+      },
+      "nameKey": "item.godlike_feast.name",
+      "descriptionKey": "item.godlike_feast.description"
+    },
+    "godslayer_hunting_elixir": {
+      "id": "godslayer_hunting_elixir",
+      "name": "Godslayer Hunting Elixir",
+      "description": "An alchemy-crafted godslayer hunting elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1420,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "godslayer_hunting_elixir_buff",
+        "duration": 1140
+      },
+      "nameKey": "item.godslayer_hunting_elixir.name",
+      "descriptionKey": "item.godslayer_hunting_elixir.description"
+    },
     "godslayer_hunting_license": {
       "id": "godslayer_hunting_license",
       "name": "Godslayer Hunting License",
@@ -5190,6 +6846,23 @@
       "value": 10000,
       "nameKey": "item.godslayer_hunting_license.name",
       "descriptionKey": "item.godslayer_hunting_license.description"
+    },
+    "godslayer_trapping_elixir": {
+      "id": "godslayer_trapping_elixir",
+      "name": "Godslayer Trapping Elixir",
+      "description": "An alchemy-crafted godslayer trapping elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1430,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "godslayer_trapping_elixir_buff",
+        "duration": 1160
+      },
+      "nameKey": "item.godslayer_trapping_elixir.name",
+      "descriptionKey": "item.godslayer_trapping_elixir.description"
     },
     "godslayer_trapping_medallion": {
       "id": "godslayer_trapping_medallion",
@@ -5214,6 +6887,23 @@
       "value": 1,
       "nameKey": "item.gold.name",
       "descriptionKey": "item.gold.description"
+    },
+    "gold_generation_potion": {
+      "id": "gold_generation_potion",
+      "name": "Gold Generation Potion",
+      "description": "An alchemy-crafted gold generation potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 260,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "gold_generation_potion_buff",
+        "duration": 5520
+      },
+      "nameKey": "item.gold_generation_potion.name",
+      "descriptionKey": "item.gold_generation_potion.description"
     },
     "gold_ingot": {
       "id": "gold_ingot",
@@ -5287,6 +6977,23 @@
       "value": 5000,
       "nameKey": "item.golden_fishing_rod.name",
       "descriptionKey": "item.golden_fishing_rod.description"
+    },
+    "golden_fishing_rod_elixir": {
+      "id": "golden_fishing_rod_elixir",
+      "name": "Golden Fishing Rod Elixir",
+      "description": "An alchemy-crafted golden fishing rod elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 530,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "golden_fishing_rod_elixir_buff",
+        "duration": 6960
+      },
+      "nameKey": "item.golden_fishing_rod_elixir.name",
+      "descriptionKey": "item.golden_fishing_rod_elixir.description"
     },
     "grand_feast": {
       "id": "grand_feast",
@@ -5387,6 +7094,86 @@
       },
       "nameKey": "item.health_food.name",
       "descriptionKey": "item.health_food.description"
+    },
+    "health_food_epic": {
+      "id": "health_food_epic",
+      "name": "Epic Health Food",
+      "description": "Restores 1000 health.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 250,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 1000
+      },
+      "nameKey": "item.health_food_epic.name",
+      "descriptionKey": "item.health_food_epic.description"
+    },
+    "health_food_large": {
+      "id": "health_food_large",
+      "name": "Large Health Food",
+      "description": "Restores 500 health.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 100,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 500
+      },
+      "nameKey": "item.health_food_large.name",
+      "descriptionKey": "item.health_food_large.description"
+    },
+    "health_food_legendary": {
+      "id": "health_food_legendary",
+      "name": "Legendary Health Food",
+      "description": "Restores 2000 health.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 500,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 2000
+      },
+      "nameKey": "item.health_food_legendary.name",
+      "descriptionKey": "item.health_food_legendary.description"
+    },
+    "health_food_medium": {
+      "id": "health_food_medium",
+      "name": "Medium Health Food",
+      "description": "Restores 200 health.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 40,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 200
+      },
+      "nameKey": "item.health_food_medium.name",
+      "descriptionKey": "item.health_food_medium.description"
+    },
+    "health_food_small": {
+      "id": "health_food_small",
+      "name": "Small Health Food",
+      "description": "Restores 75 health.",
+      "type": "consumable",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 15,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 75
+      },
+      "nameKey": "item.health_food_small.name",
+      "descriptionKey": "item.health_food_small.description"
     },
     "health_potion_enhanced": {
       "id": "health_potion_enhanced",
@@ -5520,6 +7307,22 @@
       "nameKey": "item.herb_seed.name",
       "descriptionKey": "item.herb_seed.description"
     },
+    "herbalism_xp_potion": {
+      "id": "herbalism_xp_potion",
+      "name": "Herbalism Experience Potion",
+      "description": "An alchemy-crafted herbalism experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 235,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 470
+      },
+      "nameKey": "item.herbalism_xp_potion.name",
+      "descriptionKey": "item.herbalism_xp_potion.description"
+    },
     "holy_relic": {
       "id": "holy_relic",
       "name": "Holy Relic",
@@ -5532,6 +7335,22 @@
       "nameKey": "item.holy_relic.name",
       "descriptionKey": "item.holy_relic.description"
     },
+    "hunting_xp_potion": {
+      "id": "hunting_xp_potion",
+      "name": "Hunting Experience Potion",
+      "description": "An alchemy-crafted hunting experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 255,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 510
+      },
+      "nameKey": "item.hunting_xp_potion.name",
+      "descriptionKey": "item.hunting_xp_potion.description"
+    },
     "ice_fish": {
       "id": "ice_fish",
       "name": "Ice Fish",
@@ -5543,6 +7362,23 @@
       "value": 100,
       "nameKey": "item.ice_fish.name",
       "descriptionKey": "item.ice_fish.description"
+    },
+    "identification_potion": {
+      "id": "identification_potion",
+      "name": "Identification Potion",
+      "description": "An alchemy-crafted identification potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 485,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "identification_potion_buff",
+        "duration": 770
+      },
+      "nameKey": "item.identification_potion.name",
+      "descriptionKey": "item.identification_potion.description"
     },
     "identification_scroll": {
       "id": "identification_scroll",
@@ -5583,6 +7419,40 @@
       "value": 12,
       "nameKey": "item.imp_essence.name",
       "descriptionKey": "item.imp_essence.description"
+    },
+    "intelligence_boost_food": {
+      "id": "intelligence_boost_food",
+      "name": "Intelligence Boost Food",
+      "description": "Increases intelligence for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 70,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "intelligence_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.intelligence_boost_food.name",
+      "descriptionKey": "item.intelligence_boost_food.description"
+    },
+    "intelligence_potion": {
+      "id": "intelligence_potion",
+      "name": "Intelligence Potion",
+      "description": "An alchemy-crafted intelligence potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 210,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "intelligence_boost",
+        "duration": 520
+      },
+      "nameKey": "item.intelligence_potion.name",
+      "descriptionKey": "item.intelligence_potion.description"
     },
     "intelligence_ring_t1": {
       "id": "intelligence_ring_t1",
@@ -5999,6 +7869,23 @@
       "nameKey": "item.iron_sword.name",
       "descriptionKey": "item.iron_sword.description"
     },
+    "item_find_potion": {
+      "id": "item_find_potion",
+      "name": "Item Find Potion",
+      "description": "An alchemy-crafted item find potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 270,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "item_find_potion_buff",
+        "duration": 5640
+      },
+      "nameKey": "item.item_find_potion.name",
+      "descriptionKey": "item.item_find_potion.description"
+    },
     "jadeite": {
       "id": "jadeite",
       "name": "Jadeite",
@@ -6010,6 +7897,22 @@
       "value": 80,
       "nameKey": "item.jadeite.name",
       "descriptionKey": "item.jadeite.description"
+    },
+    "jewelcrafting_xp_potion": {
+      "id": "jewelcrafting_xp_potion",
+      "name": "Jewelcrafting Experience Potion",
+      "description": "An alchemy-crafted jewelcrafting experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 515,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 730
+      },
+      "nameKey": "item.jewelcrafting_xp_potion.name",
+      "descriptionKey": "item.jewelcrafting_xp_potion.description"
     },
     "jewelry": {
       "id": "jewelry",
@@ -6046,6 +7949,23 @@
       "value": 750,
       "nameKey": "item.kraken_ink.name",
       "descriptionKey": "item.kraken_ink.description"
+    },
+    "kraken_ink_potion": {
+      "id": "kraken_ink_potion",
+      "name": "Kraken Ink Potion",
+      "description": "An alchemy-crafted kraken ink potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 875,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "kraken_ink_potion_buff",
+        "duration": 1050
+      },
+      "nameKey": "item.kraken_ink_potion.name",
+      "descriptionKey": "item.kraken_ink_potion.description"
     },
     "kraken_tentacle": {
       "id": "kraken_tentacle",
@@ -6242,6 +8162,22 @@
       "value": 3,
       "nameKey": "item.leather_scraps.name",
       "descriptionKey": "item.leather_scraps.description"
+    },
+    "leatherworking_xp_potion": {
+      "id": "leatherworking_xp_potion",
+      "name": "Leatherworking Experience Potion",
+      "description": "An alchemy-crafted leatherworking experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 505,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 710
+      },
+      "nameKey": "item.leatherworking_xp_potion.name",
+      "descriptionKey": "item.leatherworking_xp_potion.description"
     },
     "legendary_amulet_0": {
       "id": "legendary_amulet_0",
@@ -6444,6 +8380,23 @@
       "nameKey": "item.legendary_herb.name",
       "descriptionKey": "item.legendary_herb.description"
     },
+    "legendary_hunter_elixir": {
+      "id": "legendary_hunter_elixir",
+      "name": "Legendary Hunter Elixir",
+      "description": "An alchemy-crafted legendary hunter elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 880,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "legendary_hunter_elixir_buff",
+        "duration": 1060
+      },
+      "nameKey": "item.legendary_hunter_elixir.name",
+      "descriptionKey": "item.legendary_hunter_elixir.description"
+    },
     "legendary_hunter_medallion": {
       "id": "legendary_hunter_medallion",
       "name": "Legendary Hunter Medallion",
@@ -6479,6 +8432,23 @@
       "value": 800,
       "nameKey": "item.legendary_pelt.name",
       "descriptionKey": "item.legendary_pelt.description"
+    },
+    "legendary_potion": {
+      "id": "legendary_potion",
+      "name": "Trophy Elixir",
+      "description": "An alchemy-crafted trophy elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 860,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "legendary_potion_buff",
+        "duration": 1020
+      },
+      "nameKey": "item.legendary_potion.name",
+      "descriptionKey": "item.legendary_potion.description"
     },
     "legendary_ring_0": {
       "id": "legendary_ring_0",
@@ -6589,6 +8559,23 @@
       "nameKey": "item.legendary_ring_4.name",
       "descriptionKey": "item.legendary_ring_4.description"
     },
+    "legendary_trapping_elixir": {
+      "id": "legendary_trapping_elixir",
+      "name": "Legendary Trapping Elixir",
+      "description": "An alchemy-crafted legendary trapping elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 885,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "legendary_trapping_elixir_buff",
+        "duration": 1070
+      },
+      "nameKey": "item.legendary_trapping_elixir.name",
+      "descriptionKey": "item.legendary_trapping_elixir.description"
+    },
     "legendary_trinket": {
       "id": "legendary_trinket",
       "name": "Legendary Trinket",
@@ -6624,6 +8611,23 @@
       "value": 500,
       "nameKey": "item.lich_phylactery.name",
       "descriptionKey": "item.lich_phylactery.description"
+    },
+    "lich_phylactery_potion": {
+      "id": "lich_phylactery_potion",
+      "name": "Lich Phylactery Potion",
+      "description": "An alchemy-crafted lich phylactery potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1410,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "lich_phylactery_potion_buff",
+        "duration": 1120
+      },
+      "nameKey": "item.lich_phylactery_potion.name",
+      "descriptionKey": "item.lich_phylactery_potion.description"
     },
     "lich_soul_fragment": {
       "id": "lich_soul_fragment",
@@ -6672,6 +8676,23 @@
       "value": 80,
       "nameKey": "item.lockpick_rare.name",
       "descriptionKey": "item.lockpick_rare.description"
+    },
+    "luck_boost_food": {
+      "id": "luck_boost_food",
+      "name": "Luck Boost Food",
+      "description": "Increases luck for a duration.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 90,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "luck_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.luck_boost_food.name",
+      "descriptionKey": "item.luck_boost_food.description"
     },
     "luck_potion": {
       "id": "luck_potion",
@@ -6934,6 +8955,40 @@
       "nameKey": "item.magic_amulet_t3.name",
       "descriptionKey": "item.magic_amulet_t3.description"
     },
+    "magic_attack_boost_food": {
+      "id": "magic_attack_boost_food",
+      "name": "Magic Attack Boost Food",
+      "description": "Increases magic attack power for a duration.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 65,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "magic_attack_boost",
+        "duration": 600
+      },
+      "nameKey": "item.magic_attack_boost_food.name",
+      "descriptionKey": "item.magic_attack_boost_food.description"
+    },
+    "magic_attack_potion": {
+      "id": "magic_attack_potion",
+      "name": "Magic Attack Potion",
+      "description": "An alchemy-crafted magic attack potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 480,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "magic_attack_boost",
+        "duration": 760
+      },
+      "nameKey": "item.magic_attack_potion.name",
+      "descriptionKey": "item.magic_attack_potion.description"
+    },
     "magic_cake": {
       "id": "magic_cake",
       "name": "Magic Cake",
@@ -6949,6 +9004,40 @@
       },
       "nameKey": "item.magic_cake.name",
       "descriptionKey": "item.magic_cake.description"
+    },
+    "magic_defense_boost_food": {
+      "id": "magic_defense_boost_food",
+      "name": "Magic Defense Boost Food",
+      "description": "Increases magic defense for a duration.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 70,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "magic_defense_boost",
+        "duration": 600
+      },
+      "nameKey": "item.magic_defense_boost_food.name",
+      "descriptionKey": "item.magic_defense_boost_food.description"
+    },
+    "magic_defense_potion": {
+      "id": "magic_defense_potion",
+      "name": "Magic Defense Potion",
+      "description": "An alchemy-crafted magic defense potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 490,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "magic_defense_boost",
+        "duration": 780
+      },
+      "nameKey": "item.magic_defense_potion.name",
+      "descriptionKey": "item.magic_defense_potion.description"
     },
     "magic_essence": {
       "id": "magic_essence",
@@ -7025,6 +9114,86 @@
       "value": 250,
       "nameKey": "item.mana_crystal.name",
       "descriptionKey": "item.mana_crystal.description"
+    },
+    "mana_food_epic": {
+      "id": "mana_food_epic",
+      "name": "Epic Mana Food",
+      "description": "Restores 800 mana.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 220,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 800
+      },
+      "nameKey": "item.mana_food_epic.name",
+      "descriptionKey": "item.mana_food_epic.description"
+    },
+    "mana_food_large": {
+      "id": "mana_food_large",
+      "name": "Large Mana Food",
+      "description": "Restores 400 mana.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 90,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 400
+      },
+      "nameKey": "item.mana_food_large.name",
+      "descriptionKey": "item.mana_food_large.description"
+    },
+    "mana_food_legendary": {
+      "id": "mana_food_legendary",
+      "name": "Legendary Mana Food",
+      "description": "Restores 1500 mana.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 450,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 1500
+      },
+      "nameKey": "item.mana_food_legendary.name",
+      "descriptionKey": "item.mana_food_legendary.description"
+    },
+    "mana_food_medium": {
+      "id": "mana_food_medium",
+      "name": "Medium Mana Food",
+      "description": "Restores 150 mana.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 35,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 150
+      },
+      "nameKey": "item.mana_food_medium.name",
+      "descriptionKey": "item.mana_food_medium.description"
+    },
+    "mana_food_small": {
+      "id": "mana_food_small",
+      "name": "Small Mana Food",
+      "description": "Restores 50 mana.",
+      "type": "consumable",
+      "rarity": "common",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 12,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 50
+      },
+      "nameKey": "item.mana_food_small.name",
+      "descriptionKey": "item.mana_food_small.description"
     },
     "mana_potion_epic": {
       "id": "mana_potion_epic",
@@ -7118,6 +9287,22 @@
       "nameKey": "item.mana_scale.name",
       "descriptionKey": "item.mana_scale.description"
     },
+    "mana_scale_potion": {
+      "id": "mana_scale_potion",
+      "name": "Mana Scale Potion",
+      "description": "An alchemy-crafted mana scale potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 290,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 220
+      },
+      "nameKey": "item.mana_scale_potion.name",
+      "descriptionKey": "item.mana_scale_potion.description"
+    },
     "maple_log": {
       "id": "maple_log",
       "name": "Maple Log",
@@ -7202,6 +9387,23 @@
       "nameKey": "item.master_herb.name",
       "descriptionKey": "item.master_herb.description"
     },
+    "master_herbalist_elixir": {
+      "id": "master_herbalist_elixir",
+      "name": "Master Herbalist Elixir",
+      "description": "An alchemy-crafted master herbalist elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 540,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "master_herbalist_elixir_buff",
+        "duration": 880
+      },
+      "nameKey": "item.master_herbalist_elixir.name",
+      "descriptionKey": "item.master_herbalist_elixir.description"
+    },
     "master_herbalist_key": {
       "id": "master_herbalist_key",
       "name": "Master Herbalist Key",
@@ -7226,6 +9428,23 @@
       "nameKey": "item.master_hunting_badge.name",
       "descriptionKey": "item.master_hunting_badge.description"
     },
+    "master_hunting_elixir": {
+      "id": "master_hunting_elixir",
+      "name": "Master Hunting Elixir",
+      "description": "An alchemy-crafted master hunting elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 870,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "master_hunting_elixir_buff",
+        "duration": 1040
+      },
+      "nameKey": "item.master_hunting_elixir.name",
+      "descriptionKey": "item.master_hunting_elixir.description"
+    },
     "master_recipe": {
       "id": "master_recipe",
       "name": "Master Recipe",
@@ -7237,6 +9456,23 @@
       "value": 500,
       "nameKey": "item.master_recipe.name",
       "descriptionKey": "item.master_recipe.description"
+    },
+    "master_thief_elixir": {
+      "id": "master_thief_elixir",
+      "name": "Master Thief Elixir",
+      "description": "An alchemy-crafted master thief elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 850,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "master_thief_elixir_buff",
+        "duration": 1000
+      },
+      "nameKey": "item.master_thief_elixir.name",
+      "descriptionKey": "item.master_thief_elixir.description"
     },
     "master_thief_mark": {
       "id": "master_thief_mark",
@@ -7261,6 +9497,23 @@
       "value": 15000,
       "nameKey": "item.master_trapper_badge.name",
       "descriptionKey": "item.master_trapper_badge.description"
+    },
+    "master_trapper_elixir": {
+      "id": "master_trapper_elixir",
+      "name": "Master Trapper Elixir",
+      "description": "An alchemy-crafted master trapper elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 860,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "master_trapper_elixir_buff",
+        "duration": 1020
+      },
+      "nameKey": "item.master_trapper_elixir.name",
+      "descriptionKey": "item.master_trapper_elixir.description"
     },
     "mechanical_device": {
       "id": "mechanical_device",
@@ -7310,6 +9563,23 @@
       "nameKey": "item.merchant_ledger.name",
       "descriptionKey": "item.merchant_ledger.description"
     },
+    "merchant_ledger_elixir": {
+      "id": "merchant_ledger_elixir",
+      "name": "Merchant Ledger Elixir",
+      "description": "An alchemy-crafted merchant ledger elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 545,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "merchant_ledger_elixir_buff",
+        "duration": 890
+      },
+      "nameKey": "item.merchant_ledger_elixir.name",
+      "descriptionKey": "item.merchant_ledger_elixir.description"
+    },
     "mermaid_scale": {
       "id": "mermaid_scale",
       "name": "Mermaid Scale",
@@ -7334,6 +9604,23 @@
       "nameKey": "item.mermaid_tear.name",
       "descriptionKey": "item.mermaid_tear.description"
     },
+    "mermaid_tear_potion": {
+      "id": "mermaid_tear_potion",
+      "name": "Mermaid Tear Potion",
+      "description": "An alchemy-crafted mermaid tear potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 525,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "mermaid_tear_potion_buff",
+        "duration": 850
+      },
+      "nameKey": "item.mermaid_tear_potion.name",
+      "descriptionKey": "item.mermaid_tear_potion.description"
+    },
     "metal_ring": {
       "id": "metal_ring",
       "name": "Metal Ring",
@@ -7357,6 +9644,22 @@
       "value": 6,
       "nameKey": "item.metal_scrap.name",
       "descriptionKey": "item.metal_scrap.description"
+    },
+    "mining_xp_potion": {
+      "id": "mining_xp_potion",
+      "name": "Mining Experience Potion",
+      "description": "An alchemy-crafted mining experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 205,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 410
+      },
+      "nameKey": "item.mining_xp_potion.name",
+      "descriptionKey": "item.mining_xp_potion.description"
     },
     "minor_essence": {
       "id": "minor_essence",
@@ -7894,6 +10197,57 @@
       "nameKey": "item.moonlit_herb.name",
       "descriptionKey": "item.moonlit_herb.description"
     },
+    "multi_combat_stat_food": {
+      "id": "multi_combat_stat_food",
+      "name": "Multi-Combat Stat Food",
+      "description": "Increases all combat stats for a duration.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 180,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "multi_combat_boost",
+        "duration": 900
+      },
+      "nameKey": "item.multi_combat_stat_food.name",
+      "descriptionKey": "item.multi_combat_stat_food.description"
+    },
+    "multi_stat_boost_food": {
+      "id": "multi_stat_boost_food",
+      "name": "Multi-Stat Boost Food",
+      "description": "Increases all stats for a duration.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 200,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "multi_stat_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.multi_stat_boost_food.name",
+      "descriptionKey": "item.multi_stat_boost_food.description"
+    },
+    "multi_stat_potion": {
+      "id": "multi_stat_potion",
+      "name": "Multi-Stat Potion",
+      "description": "An alchemy-crafted multi-stat potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 500,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "multi_stat_potion_buff",
+        "duration": 800
+      },
+      "nameKey": "item.multi_stat_potion.name",
+      "descriptionKey": "item.multi_stat_potion.description"
+    },
     "mummy_wrapping": {
       "id": "mummy_wrapping",
       "name": "Mummy Wrapping",
@@ -8147,6 +10501,23 @@
       "nameKey": "item.obsidian.name",
       "descriptionKey": "item.obsidian.description"
     },
+    "offline_time_potion": {
+      "id": "offline_time_potion",
+      "name": "Offline Time Potion",
+      "description": "An alchemy-crafted offline time potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 280,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "offline_time_potion_buff",
+        "duration": 5760
+      },
+      "nameKey": "item.offline_time_potion.name",
+      "descriptionKey": "item.offline_time_potion.description"
+    },
     "offline_time_upgrade_24h": {
       "id": "offline_time_upgrade_24h",
       "name": "Offline Time Upgrade (+24 Hours)",
@@ -8212,6 +10583,40 @@
       "nameKey": "item.ogre_essence.name",
       "descriptionKey": "item.ogre_essence.description"
     },
+    "omnipotence_elixir": {
+      "id": "omnipotence_elixir",
+      "name": "Omnipotence Elixir",
+      "description": "An alchemy-crafted omnipotence elixir.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2990,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "omnipotence_elixir_buff",
+        "duration": 1280
+      },
+      "nameKey": "item.omnipotence_elixir.name",
+      "descriptionKey": "item.omnipotence_elixir.description"
+    },
+    "omnipotence_meal": {
+      "id": "omnipotence_meal",
+      "name": "Omnipotence Meal",
+      "description": "A meal of ultimate power that provides godlike bonuses to all aspects of gameplay.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 10000,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "omnipotence_boost",
+        "duration": 10800
+      },
+      "nameKey": "item.omnipotence_meal.name",
+      "descriptionKey": "item.omnipotence_meal.description"
+    },
     "onyx": {
       "id": "onyx",
       "name": "Onyx",
@@ -8271,6 +10676,23 @@
       "value": 25,
       "nameKey": "item.pearl.name",
       "descriptionKey": "item.pearl.description"
+    },
+    "pearl_elixir": {
+      "id": "pearl_elixir",
+      "name": "Pearl Elixir",
+      "description": "An alchemy-crafted pearl elixir.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 250,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "pearl_elixir_buff",
+        "duration": 600
+      },
+      "nameKey": "item.pearl_elixir.name",
+      "descriptionKey": "item.pearl_elixir.description"
     },
     "pearl_rare": {
       "id": "pearl_rare",
@@ -8438,6 +10860,39 @@
       "nameKey": "item.phoenix_ash.name",
       "descriptionKey": "item.phoenix_ash.description"
     },
+    "phoenix_elixir": {
+      "id": "phoenix_elixir",
+      "name": "Phoenix Elixir",
+      "description": "An alchemy-crafted phoenix elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 525,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "phoenix_elixir_buff",
+        "duration": 850
+      },
+      "nameKey": "item.phoenix_elixir.name",
+      "descriptionKey": "item.phoenix_elixir.description"
+    },
+    "phoenix_feast": {
+      "id": "phoenix_feast",
+      "name": "Phoenix Feast",
+      "description": "A legendary feast that restores massive health and mana, and provides powerful combat bonuses.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1000,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 5000
+      },
+      "nameKey": "item.phoenix_feast.name",
+      "descriptionKey": "item.phoenix_feast.description"
+    },
     "phoenix_feather": {
       "id": "phoenix_feather",
       "name": "Phoenix Feather",
@@ -8511,6 +10966,23 @@
       "value": 25,
       "nameKey": "item.poison_gland.name",
       "descriptionKey": "item.poison_gland.description"
+    },
+    "poison_potion": {
+      "id": "poison_potion",
+      "name": "Toxic Poison Potion",
+      "description": "An alchemy-crafted toxic poison potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 485,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "poison_potion_buff",
+        "duration": 770
+      },
+      "nameKey": "item.poison_potion.name",
+      "descriptionKey": "item.poison_potion.description"
     },
     "polished_stone": {
       "id": "polished_stone",
@@ -8652,6 +11124,22 @@
       "nameKey": "item.primal_essence.name",
       "descriptionKey": "item.primal_essence.description"
     },
+    "primal_health_elixir": {
+      "id": "primal_health_elixir",
+      "name": "Master Stolen Elixir",
+      "description": "An alchemy-crafted master stolen elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 875,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 800
+      },
+      "nameKey": "item.primal_health_elixir.name",
+      "descriptionKey": "item.primal_health_elixir.description"
+    },
     "primal_herb": {
       "id": "primal_herb",
       "name": "Primal Herb",
@@ -8664,6 +11152,40 @@
       "nameKey": "item.primal_herb.name",
       "descriptionKey": "item.primal_herb.description"
     },
+    "primal_meal": {
+      "id": "primal_meal",
+      "name": "Primal Meal",
+      "description": "A primal meal infused with ancient power that provides significant stat boosts.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 800,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "primal_meal_boost",
+        "duration": 3600
+      },
+      "nameKey": "item.primal_meal.name",
+      "descriptionKey": "item.primal_meal.description"
+    },
+    "primal_potion": {
+      "id": "primal_potion",
+      "name": "Primal Potion",
+      "description": "An alchemy-crafted primal potion.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 875,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "primal_potion_buff",
+        "duration": 1050
+      },
+      "nameKey": "item.primal_potion.name",
+      "descriptionKey": "item.primal_potion.description"
+    },
     "primal_stone": {
       "id": "primal_stone",
       "name": "Primal Stone",
@@ -8675,6 +11197,23 @@
       "value": 200,
       "nameKey": "item.primal_stone.name",
       "descriptionKey": "item.primal_stone.description"
+    },
+    "primal_void_elixir": {
+      "id": "primal_void_elixir",
+      "name": "Primal Void Elixir",
+      "description": "An alchemy-crafted primal void elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1455,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "primal_void_elixir_buff",
+        "duration": 1210
+      },
+      "nameKey": "item.primal_void_elixir.name",
+      "descriptionKey": "item.primal_void_elixir.description"
     },
     "primordial_bone": {
       "id": "primordial_bone",
@@ -8699,6 +11238,23 @@
       "value": 320,
       "nameKey": "item.primordial_essence.name",
       "descriptionKey": "item.primordial_essence.description"
+    },
+    "primordial_essence_potion": {
+      "id": "primordial_essence_potion",
+      "name": "Primordial Essence Potion",
+      "description": "An alchemy-crafted primordial essence potion.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1460,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "primordial_essence_potion_buff",
+        "duration": 1220
+      },
+      "nameKey": "item.primordial_essence_potion.name",
+      "descriptionKey": "item.primordial_essence_potion.description"
     },
     "primordial_fish": {
       "id": "primordial_fish",
@@ -8787,6 +11343,22 @@
       },
       "nameKey": "item.quality_meal.name",
       "descriptionKey": "item.quality_meal.description"
+    },
+    "quarrying_xp_potion": {
+      "id": "quarrying_xp_potion",
+      "name": "Quarrying Experience Potion",
+      "description": "An alchemy-crafted quarrying experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 275,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 550
+      },
+      "nameKey": "item.quarrying_xp_potion.name",
+      "descriptionKey": "item.quarrying_xp_potion.description"
     },
     "quest_item_01": {
       "id": "quest_item_01",
@@ -9458,6 +12030,23 @@
       "nameKey": "item.rare_material.name",
       "descriptionKey": "item.rare_material.description"
     },
+    "rare_stolen_scroll_potion": {
+      "id": "rare_stolen_scroll_potion",
+      "name": "Rare Stolen Scroll Potion",
+      "description": "An alchemy-crafted rare stolen scroll potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 535,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "rare_stolen_scroll_potion_buff",
+        "duration": 870
+      },
+      "nameKey": "item.rare_stolen_scroll_potion.name",
+      "descriptionKey": "item.rare_stolen_scroll_potion.description"
+    },
     "rare_trinket": {
       "id": "rare_trinket",
       "name": "Rare Trinket",
@@ -9518,6 +12107,23 @@
       "nameKey": "item.raw_meat_quality.name",
       "descriptionKey": "item.raw_meat_quality.description"
     },
+    "reality_breaking_soup": {
+      "id": "reality_breaking_soup",
+      "name": "Reality-Breaking Soup",
+      "description": "A soup that breaks the boundaries of reality, providing unimaginable power.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 15000,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "reality_breaking_boost",
+        "duration": 14400
+      },
+      "nameKey": "item.reality_breaking_soup.name",
+      "descriptionKey": "item.reality_breaking_soup.description"
+    },
     "reality_shard": {
       "id": "reality_shard",
       "name": "Reality Shard",
@@ -9541,6 +12147,72 @@
       "value": 30,
       "nameKey": "item.reforging_material.name",
       "descriptionKey": "item.reforging_material.description"
+    },
+    "regen_health_food": {
+      "id": "regen_health_food",
+      "name": "Health Regeneration Food",
+      "description": "Gradually restores health over time.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 45,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "health_regen",
+        "duration": 300
+      },
+      "nameKey": "item.regen_health_food.name",
+      "descriptionKey": "item.regen_health_food.description"
+    },
+    "regen_health_potion": {
+      "id": "regen_health_potion",
+      "name": "Health Regeneration Potion",
+      "description": "An alchemy-crafted health regeneration potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 290,
+      "consumableEffect": {
+        "type": "heal",
+        "amount": 430
+      },
+      "nameKey": "item.regen_health_potion.name",
+      "descriptionKey": "item.regen_health_potion.description"
+    },
+    "regen_mana_food": {
+      "id": "regen_mana_food",
+      "name": "Mana Regeneration Food",
+      "description": "Gradually restores mana over time.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 50,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "mana_regen",
+        "duration": 300
+      },
+      "nameKey": "item.regen_mana_food.name",
+      "descriptionKey": "item.regen_mana_food.description"
+    },
+    "regen_mana_potion": {
+      "id": "regen_mana_potion",
+      "name": "Mana Regeneration Potion",
+      "description": "An alchemy-crafted mana regeneration potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 450,
+      "consumableEffect": {
+        "type": "mana",
+        "amount": 230
+      },
+      "nameKey": "item.regen_mana_potion.name",
+      "descriptionKey": "item.regen_mana_potion.description"
     },
     "reinforced_leather_armor": {
       "id": "reinforced_leather_armor",
@@ -9608,6 +12280,40 @@
       },
       "nameKey": "item.rejuvenation_potion.name",
       "descriptionKey": "item.rejuvenation_potion.description"
+    },
+    "resist_fire_potion": {
+      "id": "resist_fire_potion",
+      "name": "Fire Resistance Potion",
+      "description": "An alchemy-crafted fire resistance potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 470,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "resist_fire_potion_buff",
+        "duration": 740
+      },
+      "nameKey": "item.resist_fire_potion.name",
+      "descriptionKey": "item.resist_fire_potion.description"
+    },
+    "resist_frost_potion": {
+      "id": "resist_frost_potion",
+      "name": "Frost Resistance Potion",
+      "description": "An alchemy-crafted frost resistance potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 480,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "resist_frost_potion_buff",
+        "duration": 760
+      },
+      "nameKey": "item.resist_frost_potion.name",
+      "descriptionKey": "item.resist_frost_potion.description"
     },
     "ring_tier1_1": {
       "id": "ring_tier1_1",
@@ -10127,6 +12833,22 @@
       "nameKey": "item.rune_stone_rare.name",
       "descriptionKey": "item.rune_stone_rare.description"
     },
+    "runecrafting_xp_potion": {
+      "id": "runecrafting_xp_potion",
+      "name": "Runecrafting Experience Potion",
+      "description": "An alchemy-crafted runecrafting experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 535,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 770
+      },
+      "nameKey": "item.runecrafting_xp_potion.name",
+      "descriptionKey": "item.runecrafting_xp_potion.description"
+    },
     "runite_ore": {
       "id": "runite_ore",
       "name": "Runite Ore",
@@ -10408,6 +13130,23 @@
       "nameKey": "item.shadow_pass.name",
       "descriptionKey": "item.shadow_pass.description"
     },
+    "shadow_pass_elixir": {
+      "id": "shadow_pass_elixir",
+      "name": "Shadow Pass Elixir",
+      "description": "An alchemy-crafted shadow pass elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 810,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "shadow_pass_elixir_buff",
+        "duration": 920
+      },
+      "nameKey": "item.shadow_pass_elixir.name",
+      "descriptionKey": "item.shadow_pass_elixir.description"
+    },
     "shadow_slippers": {
       "id": "shadow_slippers",
       "name": "Shadow Slippers",
@@ -10684,6 +13423,23 @@
       "nameKey": "item.soul_gem.name",
       "descriptionKey": "item.soul_gem.description"
     },
+    "speed_boost_food": {
+      "id": "speed_boost_food",
+      "name": "Speed Boost Food",
+      "description": "Increases speed for a duration.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 85,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "speed_boost",
+        "duration": 600
+      },
+      "nameKey": "item.speed_boost_food.name",
+      "descriptionKey": "item.speed_boost_food.description"
+    },
     "speed_potion": {
       "id": "speed_potion",
       "name": "Speed Potion",
@@ -10788,6 +13544,23 @@
       "nameKey": "item.spring.name",
       "descriptionKey": "item.spring.description"
     },
+    "stamina_boost_potion": {
+      "id": "stamina_boost_potion",
+      "name": "Stamina Boost Potion",
+      "description": "An alchemy-crafted stamina boost potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 460,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "stamina_boost_potion_buff",
+        "duration": 720
+      },
+      "nameKey": "item.stamina_boost_potion.name",
+      "descriptionKey": "item.stamina_boost_potion.description"
+    },
     "stamina_potion": {
       "id": "stamina_potion",
       "name": "Stamina Potion",
@@ -10803,6 +13576,23 @@
       },
       "nameKey": "item.stamina_potion.name",
       "descriptionKey": "item.stamina_potion.description"
+    },
+    "stamina_potion_enhanced": {
+      "id": "stamina_potion_enhanced",
+      "name": "Rare Stolen Potion",
+      "description": "An alchemy-crafted rare stolen potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 275,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "stamina_potion_enhanced_buff",
+        "duration": 650
+      },
+      "nameKey": "item.stamina_potion_enhanced.name",
+      "descriptionKey": "item.stamina_potion_enhanced.description"
     },
     "star_chart": {
       "id": "star_chart",
@@ -11470,6 +14260,23 @@
       "nameKey": "item.stone_fragment.name",
       "descriptionKey": "item.stone_fragment.description"
     },
+    "strength_boost_food": {
+      "id": "strength_boost_food",
+      "name": "Strength Boost Food",
+      "description": "Increases strength for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 55,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "strength_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.strength_boost_food.name",
+      "descriptionKey": "item.strength_boost_food.description"
+    },
     "strength_potion": {
       "id": "strength_potion",
       "name": "Strength Potion",
@@ -11574,6 +14381,22 @@
       "nameKey": "item.supreme_rune.name",
       "descriptionKey": "item.supreme_rune.description"
     },
+    "tailoring_xp_potion": {
+      "id": "tailoring_xp_potion",
+      "name": "Tailoring Experience Potion",
+      "description": "An alchemy-crafted tailoring experience potion.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 495,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 690
+      },
+      "nameKey": "item.tailoring_xp_potion.name",
+      "descriptionKey": "item.tailoring_xp_potion.description"
+    },
     "teleport_scroll": {
       "id": "teleport_scroll",
       "name": "Scroll of Teleportation",
@@ -11602,6 +14425,23 @@
       "nameKey": "item.thief_tool.name",
       "descriptionKey": "item.thief_tool.description"
     },
+    "thieves_guild_elixir": {
+      "id": "thieves_guild_elixir",
+      "name": "Thieves Guild Elixir",
+      "description": "An alchemy-crafted thieves guild elixir.",
+      "type": "consumable",
+      "rarity": "rare",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 520,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "thieves_guild_elixir_buff",
+        "duration": 840
+      },
+      "nameKey": "item.thieves_guild_elixir.name",
+      "descriptionKey": "item.thieves_guild_elixir.description"
+    },
     "thieves_guild_token": {
       "id": "thieves_guild_token",
       "name": "Thieves' Guild Token",
@@ -11613,6 +14453,22 @@
       "value": 800,
       "nameKey": "item.thieves_guild_token.name",
       "descriptionKey": "item.thieves_guild_token.description"
+    },
+    "thieving_xp_potion": {
+      "id": "thieving_xp_potion",
+      "name": "Thieving Experience Potion",
+      "description": "An alchemy-crafted thieving experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 295,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 590
+      },
+      "nameKey": "item.thieving_xp_potion.name",
+      "descriptionKey": "item.thieving_xp_potion.description"
     },
     "thread": {
       "id": "thread",
@@ -11697,6 +14553,23 @@
       "value": 1500,
       "nameKey": "item.titan_hammer.name",
       "descriptionKey": "item.titan_hammer.description"
+    },
+    "titan_hammer_elixir": {
+      "id": "titan_hammer_elixir",
+      "name": "Titan Hammer Elixir",
+      "description": "An alchemy-crafted titan hammer elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1450,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "titan_hammer_elixir_buff",
+        "duration": 1200
+      },
+      "nameKey": "item.titan_hammer_elixir.name",
+      "descriptionKey": "item.titan_hammer_elixir.description"
     },
     "titanstone": {
       "id": "titanstone",
@@ -11806,6 +14679,39 @@
       "nameKey": "item.trapped_rodent.name",
       "descriptionKey": "item.trapped_rodent.description"
     },
+    "trapping_master_elixir": {
+      "id": "trapping_master_elixir",
+      "name": "Trapping Master Elixir",
+      "description": "An alchemy-crafted trapping master elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 895,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "trapping_master_elixir_buff",
+        "duration": 1090
+      },
+      "nameKey": "item.trapping_master_elixir.name",
+      "descriptionKey": "item.trapping_master_elixir.description"
+    },
+    "trapping_xp_potion": {
+      "id": "trapping_xp_potion",
+      "name": "Trapping Experience Potion",
+      "description": "An alchemy-crafted trapping experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 265,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 530
+      },
+      "nameKey": "item.trapping_xp_potion.name",
+      "descriptionKey": "item.trapping_xp_potion.description"
+    },
     "travertine": {
       "id": "travertine",
       "name": "Travertine",
@@ -11833,6 +14739,22 @@
       },
       "nameKey": "item.treasure_chest.name",
       "descriptionKey": "item.treasure_chest.description"
+    },
+    "treasure_hunting_xp_potion": {
+      "id": "treasure_hunting_xp_potion",
+      "name": "Treasure Hunting Experience Potion",
+      "description": "An alchemy-crafted treasure hunting experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 285,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 570
+      },
+      "nameKey": "item.treasure_hunting_xp_potion.name",
+      "descriptionKey": "item.treasure_hunting_xp_potion.description"
     },
     "tree_bark": {
       "id": "tree_bark",
@@ -11870,6 +14792,23 @@
       "nameKey": "item.troll_hide.name",
       "descriptionKey": "item.troll_hide.description"
     },
+    "trophy_hunter_elixir": {
+      "id": "trophy_hunter_elixir",
+      "name": "Trophy Hunter Elixir",
+      "description": "An alchemy-crafted trophy hunter elixir.",
+      "type": "consumable",
+      "rarity": "epic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 830,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "trophy_hunter_elixir_buff",
+        "duration": 960
+      },
+      "nameKey": "item.trophy_hunter_elixir.name",
+      "descriptionKey": "item.trophy_hunter_elixir.description"
+    },
     "trophy_hunter_license": {
       "id": "trophy_hunter_license",
       "name": "Trophy Hunter's License",
@@ -11905,6 +14844,23 @@
       "value": 800,
       "nameKey": "item.ultimate_component.name",
       "descriptionKey": "item.ultimate_component.description"
+    },
+    "ultimate_hunting_elixir": {
+      "id": "ultimate_hunting_elixir",
+      "name": "Ultimate Hunting Elixir",
+      "description": "An alchemy-crafted ultimate hunting elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1460,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "ultimate_hunting_elixir_buff",
+        "duration": 1220
+      },
+      "nameKey": "item.ultimate_hunting_elixir.name",
+      "descriptionKey": "item.ultimate_hunting_elixir.description"
     },
     "ultimate_hunting_mastery_token": {
       "id": "ultimate_hunting_mastery_token",
@@ -12122,6 +15078,40 @@
       "nameKey": "item.vitality_amulet_t3.name",
       "descriptionKey": "item.vitality_amulet_t3.description"
     },
+    "vitality_boost_food": {
+      "id": "vitality_boost_food",
+      "name": "Vitality Boost Food",
+      "description": "Increases vitality for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 60,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "vitality_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.vitality_boost_food.name",
+      "descriptionKey": "item.vitality_boost_food.description"
+    },
+    "vitality_potion": {
+      "id": "vitality_potion",
+      "name": "Vitality Potion",
+      "description": "An alchemy-crafted vitality potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 200,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "vitality_boost",
+        "duration": 500
+      },
+      "nameKey": "item.vitality_potion.name",
+      "descriptionKey": "item.vitality_potion.description"
+    },
     "void_crystal": {
       "id": "void_crystal",
       "name": "Void Crystal",
@@ -12169,6 +15159,23 @@
       "value": 2500,
       "nameKey": "item.void_key.name",
       "descriptionKey": "item.void_key.description"
+    },
+    "void_key_elixir": {
+      "id": "void_key_elixir",
+      "name": "Void Key Elixir",
+      "description": "An alchemy-crafted void key elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1400,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "void_key_elixir_buff",
+        "duration": 1100
+      },
+      "nameKey": "item.void_key_elixir.name",
+      "descriptionKey": "item.void_key_elixir.description"
     },
     "void_shard": {
       "id": "void_shard",
@@ -12290,6 +15297,40 @@
       "nameKey": "item.wildflower.name",
       "descriptionKey": "item.wildflower.description"
     },
+    "wisdom_boost_food": {
+      "id": "wisdom_boost_food",
+      "name": "Wisdom Boost Food",
+      "description": "Increases wisdom for a duration.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 75,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "wisdom_boost",
+        "duration": 1800
+      },
+      "nameKey": "item.wisdom_boost_food.name",
+      "descriptionKey": "item.wisdom_boost_food.description"
+    },
+    "wisdom_potion": {
+      "id": "wisdom_potion",
+      "name": "Wisdom Potion",
+      "description": "An alchemy-crafted wisdom potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 230,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "wisdom_boost",
+        "duration": 560
+      },
+      "nameKey": "item.wisdom_potion.name",
+      "descriptionKey": "item.wisdom_potion.description"
+    },
     "wolf_pelt": {
       "id": "wolf_pelt",
       "name": "Wolf Pelt",
@@ -12314,6 +15355,22 @@
       "nameKey": "item.wood.name",
       "descriptionKey": "item.wood.description"
     },
+    "woodcutting_xp_potion": {
+      "id": "woodcutting_xp_potion",
+      "name": "Woodcutting Experience Potion",
+      "description": "An alchemy-crafted woodcutting experience potion.",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 215,
+      "consumableEffect": {
+        "type": "experience",
+        "amount": 430
+      },
+      "nameKey": "item.woodcutting_xp_potion.name",
+      "descriptionKey": "item.woodcutting_xp_potion.description"
+    },
     "wooden_shield": {
       "id": "wooden_shield",
       "name": "Wooden Shield",
@@ -12334,6 +15391,57 @@
       },
       "nameKey": "item.wooden_shield.name",
       "descriptionKey": "item.wooden_shield.description"
+    },
+    "world_essence_elixir": {
+      "id": "world_essence_elixir",
+      "name": "World Essence Elixir",
+      "description": "An alchemy-crafted world essence elixir.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 2975,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "world_essence_elixir_buff",
+        "duration": 1250
+      },
+      "nameKey": "item.world_essence_elixir.name",
+      "descriptionKey": "item.world_essence_elixir.description"
+    },
+    "world_tree_elixir": {
+      "id": "world_tree_elixir",
+      "name": "World Tree Elixir",
+      "description": "An alchemy-crafted world tree elixir.",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 1425,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "world_tree_elixir_buff",
+        "duration": 1150
+      },
+      "nameKey": "item.world_tree_elixir.name",
+      "descriptionKey": "item.world_tree_elixir.description"
+    },
+    "world_tree_nectar": {
+      "id": "world_tree_nectar",
+      "name": "World Tree Nectar",
+      "description": "Sacred nectar from the World Tree that provides incredible restoration and bonuses.",
+      "type": "consumable",
+      "rarity": "mythic",
+      "stackable": true,
+      "maxStack": 99,
+      "value": 4000,
+      "consumableEffect": {
+        "type": "buff",
+        "buffId": "world_tree_boost",
+        "duration": 5400
+      },
+      "nameKey": "item.world_tree_nectar.name",
+      "descriptionKey": "item.world_tree_nectar.description"
     },
     "world_tree_sapling": {
       "id": "world_tree_sapling",
