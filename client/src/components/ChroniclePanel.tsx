@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useGameState } from '../systems';
 import { ChronicleManager } from '../systems/chronicle/ChronicleManager';
-import type { ChronicleEntry, ChronicleCategory, LegendTitle } from '@idle-rpg/shared';
+import type { ChronicleCategory, LegendTitle } from '@idle-rpg/shared';
 import './ChroniclePanel.css';
 
 export default function ChroniclePanel() {
@@ -45,11 +45,7 @@ export default function ChroniclePanel() {
     checkForChoices();
   }, [character]);
 
-  if (!character) {
-    return <div className="chronicle-panel">No character loaded</div>;
-  }
-
-  const chronicle = character.chronicle || ChronicleManager.initializeChronicle();
+  const chronicle = character?.chronicle || ChronicleManager.initializeChronicle();
   const entries = chronicle.entries || [];
   const activeTitleId = chronicle.activeTitleId;
   const unlockedTitles = chronicle.unlockedTitles || [];
@@ -71,6 +67,10 @@ export default function ChroniclePanel() {
       .map((titleId) => legendTitles[titleId])
       .filter((title): title is LegendTitle => title !== undefined);
   }, [unlockedTitles, legendTitles]);
+
+  if (!character) {
+    return <div className="chronicle-panel">No character loaded</div>;
+  }
 
   const handleSelectTitle = (titleId: string | undefined) => {
     setActiveTitle(titleId);

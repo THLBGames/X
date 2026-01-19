@@ -20,6 +20,71 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
   const setCharacter = useGameState((state) => state.setCharacter);
   const setInventory = useGameState((state) => state.setInventory);
   const { startGathering, stopTraining, activeSkills } = useIdleSkills();
+  const [canLearnResult, setCanLearnResult] = useState<{ canLearn: boolean; reason?: string } | null>(null);
+  const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
+  const activeSkillsRef = useRef(activeSkills);
+
+  // Update activeSkillsRef when activeSkills changes
+  useEffect(() => {
+    activeSkillsRef.current = activeSkills;
+  }, [activeSkills]);
+
+  // Load canLearn result for combat skills
+  useEffect(() => {
+    if (!character) {
+      setCanLearnResult(null);
+      return;
+    }
+
+    const dataLoader = getDataLoader();
+    const skill = dataLoader.getSkill(skillId);
+    if (!skill) {
+      setCanLearnResult(null);
+      return;
+    }
+
+    const isCombatSkill = skill.type === 'active' || skill.type === 'passive';
+    const skillLevel = SkillManager.getSkillLevel(character, skillId);
+
+    if (isCombatSkill && skillLevel < skill.maxLevel) {
+      SkillManager.canLearnSkill(character, skillId, skillLevel + 1).then((result) => {
+        setCanLearnResult(result);
+      });
+    } else {
+      setCanLearnResult(null);
+    }
+  }, [character, skillId]);
+
+  // Update countdown timer for active training
+  useEffect(() => {
+    const currentTraining = activeSkills.find((s) => s.skillId === skillId && s.nodeId);
+    if (!currentTraining || !currentTraining.lastActionTime || !currentTraining.timeRequired) {
+      setTimeRemaining(null);
+      return;
+    }
+
+    // Store the nodeId to track which node we're timing
+    const trackingNodeId = currentTraining.nodeId;
+
+    const updateTimer = () => {
+      // Always get the current activeSkills from the ref - this ensures we get the latest value
+      const latestTraining = activeSkillsRef.current.find((s) => s.skillId === skillId && s.nodeId === trackingNodeId);
+      if (!latestTraining || !latestTraining.lastActionTime || !latestTraining.timeRequired) {
+        setTimeRemaining(null);
+        return;
+      }
+
+      const now = Date.now();
+      const elapsed = now - latestTraining.lastActionTime;
+      const remaining = Math.max(0, latestTraining.timeRequired - elapsed);
+      setTimeRemaining(remaining);
+    };
+
+    updateTimer();
+    const interval = setInterval(updateTimer, 50); // Update more frequently for smoother animation
+
+    return () => clearInterval(interval);
+  }, [activeSkills, skillId]);
 
   if (!character) {
     return null;
@@ -82,7 +147,6 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
     : [];
 
   // Combat skill specific data
-  const canLearnResult = isCombatSkill && skillLevel < skill.maxLevel ? SkillManager.canLearnSkill(character, skillId, skillLevel + 1) : null;
   const canLearn = canLearnResult?.canLearn ?? false;
   const learnReason = canLearnResult?.reason;
 
@@ -95,45 +159,6 @@ export default function SkillDetailView({ skillId }: SkillDetailViewProps) {
   };
 
   const activeTraining = getActiveTraining();
-
-  // Countdown timer state for active training
-  const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
-  
-  // Use a ref to always get the latest activeSkills value in the interval
-  const activeSkillsRef = useRef(activeSkills);
-  useEffect(() => {
-    activeSkillsRef.current = activeSkills;
-  }, [activeSkills]);
-
-  // Update countdown timer for active training
-  useEffect(() => {
-    if (!activeTraining || !activeTraining.lastActionTime || !activeTraining.timeRequired) {
-      setTimeRemaining(null);
-      return;
-    }
-
-    // Store the nodeId to track which node we're timing
-    const trackingNodeId = activeTraining.nodeId;
-
-    const updateTimer = () => {
-      // Always get the current activeSkills from the ref - this ensures we get the latest value
-      const currentTraining = activeSkillsRef.current.find((s) => s.skillId === skillId && s.nodeId === trackingNodeId);
-      if (!currentTraining || !currentTraining.lastActionTime || !currentTraining.timeRequired) {
-        setTimeRemaining(null);
-        return;
-      }
-
-      const now = Date.now();
-      const elapsed = now - currentTraining.lastActionTime;
-      const remaining = Math.max(0, currentTraining.timeRequired - elapsed);
-      setTimeRemaining(remaining);
-    };
-
-    updateTimer();
-    const interval = setInterval(updateTimer, 50); // Update more frequently for smoother animation
-
-    return () => clearInterval(interval);
-  }, [activeTraining?.lastActionTime, activeTraining?.nodeId, skillId]);
 
   const handleStartGathering = (nodeId: string) => {
     startGathering(skillId, nodeId);
