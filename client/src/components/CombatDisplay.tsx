@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
-// import { getDataLoader } from '../data';
+import { getDataLoader } from '../data';
 import { audioManager } from '../systems/audio/AudioManager';
 import { gameEventEmitter, type GameEvent } from '../systems/events/GameEventEmitter';
 import CombatArena from './CombatArena';
@@ -14,6 +14,7 @@ interface CombatStats {
   combatsCompleted: number;
   totalExperience: number;
   totalGold: number;
+  items: Array<{ itemId: string; quantity: number }>;
 }
 
 export default function CombatDisplay() {
@@ -32,6 +33,7 @@ export default function CombatDisplay() {
     combatsCompleted: 0,
     totalExperience: 0,
     totalGold: 0,
+    items: [],
   });
   const [levelUpMessage, setLevelUpMessage] = useState<string | null>(null);
   const [showCombatGuide, setShowCombatGuide] = useState(false);
@@ -41,7 +43,12 @@ export default function CombatDisplay() {
   useEffect(() => {
     const handleStatsUpdate = (event: Event) => {
       const customEvent = event as CustomEvent<CombatStats>;
-      setCombatStats(customEvent.detail);
+      setCombatStats({
+        combatsCompleted: customEvent.detail.combatsCompleted || 0,
+        totalExperience: customEvent.detail.totalExperience || 0,
+        totalGold: customEvent.detail.totalGold || 0,
+        items: customEvent.detail.items || [],
+      });
     };
 
     window.addEventListener('combatStatsUpdate', handleStatsUpdate);
@@ -109,14 +116,13 @@ export default function CombatDisplay() {
         combatsCompleted: 0,
         totalExperience: 0,
         totalGold: 0,
+        items: [],
       });
       previousLevelRef.current = character?.level || 1;
     }
   }, [isCombatActive, character?.level]);
 
-  // const dataLoader = getDataLoader();
-  // Dungeon data available if needed
-  // const dungeon = currentDungeonId ? dataLoader.getDungeon(currentDungeonId) : null;
+  const dataLoader = getDataLoader();
 
   const handleSkillUse = (skillId: string) => {
     queueSkill(skillId);
@@ -173,6 +179,33 @@ export default function CombatDisplay() {
                       <div className="stat-value">+{combatStats.totalGold}</div>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {(combatStats.items.length > 0 || combatStats.totalGold > 0) && (
+                <div className="combat-loot">
+                  <h3>{t('combat.lootReceived', { defaultValue: 'Loot Received' })}</h3>
+                  {combatStats.totalGold > 0 && (
+                    <div className="loot-gold">
+                      <span className="gold-icon">💰</span>
+                      <span className="gold-amount">+{combatStats.totalGold} Gold</span>
+                    </div>
+                  )}
+                  {combatStats.items.length > 0 && (
+                    <div className="loot-items">
+                      {combatStats.items.map((item, idx) => {
+                        const itemData = dataLoader.getItem(item.itemId);
+                        const itemName = itemData ? dataLoader.getTranslatedName(itemData) : item.itemId;
+                        const itemRarity = itemData?.rarity || 'common';
+                        return (
+                          <div key={idx} className={`loot-item rarity-${itemRarity}`}>
+                            <span className="loot-item-name">{itemName}</span>
+                            <span className="loot-item-quantity">x{item.quantity}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               )}
             </>

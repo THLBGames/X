@@ -1,4 +1,4 @@
-import type { LootEntry, Item, ConsumableEffect } from '@idle-rpg/shared';
+import type { LootEntry, Item } from '@idle-rpg/shared';
 import { ConsumableEffectType } from '@idle-rpg/shared';
 import { DungeonManager } from '../dungeon/DungeonManager';
 
@@ -95,7 +95,7 @@ export interface ChestResult {
 export function generateChestLoot(item: Item): ChestResult {
   const effect = item.consumableEffect;
   
-  if (!effect || (effect.type !== ConsumableEffectType.CUSTOM && effect.type !== 'custom')) {
+  if (!effect || (effect.type !== ConsumableEffectType.CUSTOM)) {
     throw new Error('Item does not have a custom consumable effect');
   }
 

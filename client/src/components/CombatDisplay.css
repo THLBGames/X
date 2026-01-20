@@ -173,6 +173,101 @@
   color: #4a9eff;
 }
 
+.combat-loot {
+  background: #333;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.combat-loot h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.loot-gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 215, 0, 0.15);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.loot-gold .gold-icon {
+  font-size: 1.3rem;
+}
+
+.loot-gold .gold-amount {
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.loot-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.loot-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #2a2a2a;
+  border: 2px solid #444;
+  transition: all 0.2s;
+}
+
+.loot-item:hover {
+  background: #3a3a3a;
+  border-color: #555;
+}
+
+.loot-item.rarity-common {
+  border-color: #9d9d9d;
+}
+
+.loot-item.rarity-uncommon {
+  border-color: #1eff00;
+}
+
+.loot-item.rarity-rare {
+  border-color: #0070dd;
+}
+
+.loot-item.rarity-epic {
+  border-color: #a335ee;
+}
+
+.loot-item.rarity-legendary {
+  border-color: #ff8000;
+}
+
+.loot-item.rarity-mythic {
+  border-color: #e6cc80;
+  box-shadow: 0 0 6px rgba(230, 204, 128, 0.4);
+}
+
+.loot-item-name {
+  color: #fff;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.loot-item-quantity {
+  color: #4a9eff;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
 .last-combat-result {
   background: #1a3a1a;
   border: 1px solid #4a9e4a;
@@ -324,6 +419,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .loot-items {
+    max-height: 150px;
+  }
+
   .level-up-notification {
     top: 10px;
     right: 10px;
@@ -346,6 +445,10 @@
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .loot-items {
+    max-height: 120px;
   }
 
   .stat-item {

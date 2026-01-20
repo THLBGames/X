@@ -172,7 +172,7 @@ export default function InventoryPanel() {
       // For now, just show a notification
       showNotification(UI_MESSAGES.BUFF_APPLIED(effect.buffId), 'info', 3000);
       audioManager.playSound('/audio/sfx/buff.mp3', 0.6);
-    } else if (effect.type === ConsumableEffectType.CUSTOM || effect.type === 'custom') {
+    } else if (effect.type === ConsumableEffectType.CUSTOM) {
       // Handle chest-style items (treasure chests, loot boxes, etc.)
       try {
         const lootResult = generateChestLoot(item);

@@ -15,6 +15,7 @@ const combatStatsRef = {
   combatsCompleted: 0,
   totalExperience: 0,
   totalGold: 0,
+  items: new Map<string, number>(), // Track items by itemId with aggregated quantities
 };
 
 export function useGameLoop() {
@@ -92,6 +93,7 @@ export function useGameLoop() {
       combatStatsRef.combatsCompleted = 0;
       combatStatsRef.totalExperience = 0;
       combatStatsRef.totalGold = 0;
+      combatStatsRef.items.clear();
       CombatManager.endCombat(); // Clear any existing combat
     } else {
       CombatManager.endCombat();
@@ -117,6 +119,9 @@ export function useGameLoop() {
       // Add items
       for (const item of rewards.items || []) {
         addItem(item.itemId, item.quantity || 1);
+        // Track items for combat stats
+        const currentQuantity = combatStatsRef.items.get(item.itemId) || 0;
+        combatStatsRef.items.set(item.itemId, currentQuantity + (item.quantity || 1));
       }
 
       // Update combat stats
@@ -124,10 +129,19 @@ export function useGameLoop() {
       combatStatsRef.combatsCompleted += 1;
       combatStatsRef.totalExperience += rewards.experience || 0;
 
+      // Convert items Map to array for event dispatch
+      const itemsArray = Array.from(combatStatsRef.items.entries()).map(([itemId, quantity]) => ({
+        itemId,
+        quantity,
+      }));
+
       // Dispatch custom event for combat stats update
       window.dispatchEvent(
         new CustomEvent('combatStatsUpdate', {
-          detail: { ...combatStatsRef },
+          detail: {
+            ...combatStatsRef,
+            items: itemsArray,
+          },
         })
       );
 
@@ -741,6 +755,9 @@ export function useGameLoop() {
               continue;
             }
             addItem(item.itemId, item.quantity || 1);
+            // Track items for combat stats
+            const currentQuantity = combatStatsRef.items.get(item.itemId) || 0;
+            combatStatsRef.items.set(item.itemId, currentQuantity + (item.quantity || 1));
           } catch (error) {
             console.error(`Failed to add item ${item.itemId} to inventory:`, error);
             // Continue with other items even if one fails
@@ -750,7 +767,16 @@ export function useGameLoop() {
         // Add chests (special loot)
         for (const chest of combatLog.rewards.chests || []) {
           addItem(chest.itemId, chest.quantity || 1);
+          // Track chests for combat stats
+          const currentQuantity = combatStatsRef.items.get(chest.itemId) || 0;
+          combatStatsRef.items.set(chest.itemId, currentQuantity + (chest.quantity || 1));
         }
+
+        // Convert items Map to array for event dispatch
+        const itemsArray = Array.from(combatStatsRef.items.entries()).map(([itemId, quantity]) => ({
+          itemId,
+          quantity,
+        }));
 
         // Achievements will be checked automatically by event listeners
         // No need to manually call checkAchievements() here
@@ -796,7 +822,10 @@ export function useGameLoop() {
         // Dispatch custom event for combat stats update
         window.dispatchEvent(
           new CustomEvent('combatStatsUpdate', {
-            detail: { ...combatStatsRef },
+            detail: {
+              ...combatStatsRef,
+              items: itemsArray,
+            },
           })
         );
 
