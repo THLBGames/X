@@ -1,0 +1,40 @@
+// Client → Server Events
+export const CLIENT_EVENTS = {
+  JOIN: 'labyrinth:join',
+  CREATE_PARTY: 'labyrinth:create_party',
+  JOIN_PARTY: 'labyrinth:join_party',
+  LEAVE_PARTY: 'labyrinth:leave_party',
+  MOVE: 'labyrinth:move',
+  MOVEMENT_REQUEST: 'labyrinth:movement_request',
+  MOVEMENT_CONFIRMED: 'labyrinth:movement_confirmed',
+  INITIATE_COMBAT: 'labyrinth:initiate_combat',
+  JOIN_COMBAT: 'labyrinth:join_combat',
+  COMBAT_ACTION: 'labyrinth:combat_action',
+  CLAIM_REWARDS: 'labyrinth:claim_rewards',
+  REQUEST_MAP_DATA: 'labyrinth:request_map_data',
+} as const;
+
+// Server → Client Events
+export const SERVER_EVENTS = {
+  JOINED: 'labyrinth:joined',
+  PLAYER_JOINED: 'labyrinth:player_joined',
+  PLAYER_LEFT: 'labyrinth:player_left',
+  FLOOR_CHANGED: 'labyrinth:floor_changed',
+  PLAYER_DISCOVERED: 'labyrinth:player_discovered',
+  COMBAT_PREPARED: 'labyrinth:combat_prepared',
+  COMBAT_INITIATED: 'labyrinth:combat_initiated',
+  COMBAT_UPDATE: 'labyrinth:combat_update',
+  COMBAT_STATE: 'labyrinth:combat_state',
+  COMBAT_ENDED: 'labyrinth:combat_ended',
+  ELIMINATED: 'labyrinth:eliminated',
+  COMPLETED: 'labyrinth:completed',
+  REWARD_EARNED: 'labyrinth:reward_earned',
+  PLAYER_MOVED: 'labyrinth:player_moved',
+  MOVE_RESULT: 'labyrinth:move_result',
+  MAP_DATA: 'labyrinth:map_data',
+  MAP_UPDATE: 'labyrinth:map_update',
+  VISIBILITY_UPDATE: 'labyrinth:visibility_update',
+  BOSS_ROOM_LOCKED: 'labyrinth:boss_room_locked',
+  TIME_WARNING: 'labyrinth:time_warning',
+  ERROR: 'labyrinth:error',
+} as const;

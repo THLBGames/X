@@ -1,0 +1,50 @@
+.floor-editor {
+  background: #252536;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.floor-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.floor-editor-header h4 {
+  margin: 0;
+  color: #6c5ce7;
+}
+
+.btn-remove {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-remove:hover {
+  background: #c0392b;
+}
+
+.btn-toggle-json {
+  margin-left: 12px;
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.json-preview {
+  background: #1e1e2e;
+  padding: 12px;
+  border-radius: 4px;
+  color: #aaa;
+  border: 1px solid #3a3a4e;
+}

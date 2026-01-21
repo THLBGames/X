@@ -1,0 +1,67 @@
+.export-import-modal {
+  max-width: 500px;
+}
+
+.export-import-content {
+  padding: 20px;
+}
+
+.export-section,
+.import-section {
+  margin-bottom: 30px;
+}
+
+.export-section h4,
+.import-section h4 {
+  margin: 0 0 8px 0;
+  color: #6c5ce7;
+}
+
+.export-section p,
+.import-section p {
+  margin: 0 0 12px 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.btn-export {
+  padding: 10px 20px;
+  background: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-export:hover:not(:disabled) {
+  background: #5a4cd9;
+}
+
+.btn-export:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.file-input-label {
+  display: inline-block;
+}
+
+.file-input-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.file-input-button:hover {
+  background: #2980b9;
+}
+
+.file-input-label input:disabled + .file-input-button {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

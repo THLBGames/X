@@ -1,0 +1,122 @@
+.party-management {
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.party-management h3 {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.party-message {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-style: italic;
+}
+
+.current-party {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.party-info h4 {
+  margin: 0 0 8px 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.party-members {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.party-member-label {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.party-member {
+  padding: 6px 10px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.party-member.leader {
+  border-left: 3px solid #ffd700;
+  font-weight: bold;
+}
+
+.party-leave-button {
+  padding: 8px 16px;
+  background: #ff4444;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.party-leave-button:hover {
+  background: #ff3333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
+.party-creation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.party-create-form {
+  display: flex;
+  gap: 10px;
+}
+
+.party-name-input {
+  flex: 1;
+  padding: 8px 12px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.party-name-input::placeholder {
+  color: #666;
+}
+
+.party-create-button {
+  padding: 8px 16px;
+  background: #4a9eff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.party-create-button:hover:not(:disabled) {
+  background: #3a8eef;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
+}
+
+.party-create-button:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+}

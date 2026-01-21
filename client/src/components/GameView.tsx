@@ -19,6 +19,7 @@ import ChroniclePanel from './ChroniclePanel';
 import CityPanel from './CityPanel';
 import GuildPanel from './GuildPanel';
 import VendorPanel from './VendorPanel';
+import LabyrinthPanel from './LabyrinthPanel';
 import SettingsPanel from './SettingsPanel';
 import PatchNotesModal from './PatchNotesModal';
 import OnboardingModal from './OnboardingModal';
@@ -30,7 +31,7 @@ export default function GameView() {
   const isCombatActive = useGameState((state) => state.isCombatActive);
   const settings = useGameState((state) => state.settings);
   const [activeRightPanel, setActiveRightPanel] = useState<
-    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression' | 'chronicle' | 'city' | 'guilds' | 'vendors'
+    'character' | 'equipment' | 'inventory' | 'skills' | 'shop' | 'quests' | 'statistics' | 'progression' | 'chronicle' | 'city' | 'guilds' | 'vendors' | 'labyrinth'
   >('character');
   const [showSettings, setShowSettings] = useState(false);
   const [showPatchNotes, setShowPatchNotes] = useState(false);
@@ -103,6 +104,8 @@ export default function GameView() {
           <GuildPanel />
         ) : activeRightPanel === 'vendors' ? (
           <VendorPanel />
+        ) : activeRightPanel === 'labyrinth' ? (
+          <LabyrinthPanel />
         ) : activeRightPanel === 'inventory' ? (
           <InventoryPanel />
         ) : (
@@ -210,6 +213,14 @@ export default function GameView() {
               Vendors
             </button>
           </TooltipWrapper>
+          <TooltipWrapper content="Join multiplayer labyrinth challenges">
+            <button
+              className={`panel-tab ${activeRightPanel === 'labyrinth' ? 'active' : ''}`}
+              onClick={() => setActiveRightPanel('labyrinth')}
+            >
+              Labyrinth
+            </button>
+          </TooltipWrapper>
           <TooltipWrapper content="Game settings and preferences">
             <button className="panel-tab" onClick={() => setShowSettings(true)}>
               Settings
@@ -232,6 +243,7 @@ export default function GameView() {
               {activeRightPanel === 'city' && <p>City management is displayed in the center area.</p>}
               {activeRightPanel === 'guilds' && <p>Guilds are displayed in the center area.</p>}
               {activeRightPanel === 'vendors' && <p>Vendors are displayed in the center area.</p>}
+              {activeRightPanel === 'labyrinth' && <p>Labyrinth is displayed in the center area.</p>}
               {activeRightPanel === 'inventory' && <p>Inventory is displayed in the center area.</p>}
             </div>
           )}

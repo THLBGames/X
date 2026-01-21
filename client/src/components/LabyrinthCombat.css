@@ -1,0 +1,29 @@
+.labyrinth-combat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.labyrinth-combat h3 {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.combat-content {
+  flex: 1;
+  background: #333;
+  border-radius: 6px;
+  border: 1px solid #444;
+  padding: 20px;
+}
+
+.combat-active {
+  text-align: center;
+}
+
+.combat-message {
+  color: #aaa;
+  font-size: 1rem;
+}

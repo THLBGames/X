@@ -1,0 +1,17 @@
+.floor-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.floor-canvas {
+  display: block;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.floor-canvas:active {
+  cursor: grabbing;
+}

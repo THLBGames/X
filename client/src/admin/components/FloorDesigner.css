@@ -1,0 +1,183 @@
+.floor-designer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  background: #1a1a2e;
+}
+
+.floor-designer-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #2a2a3e;
+  border-bottom: 1px solid #3a3a4e;
+}
+
+.floor-designer-toolbar h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.toolbar-tools {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.toolbar-tools button {
+  padding: 6px 12px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.toolbar-tools button:hover:not(:disabled) {
+  background: #555;
+}
+
+.toolbar-tools button.active {
+  background: #6c5ce7;
+}
+
+.toolbar-tools button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background: #555;
+  margin: 0 8px;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-actions button {
+  padding: 8px 16px;
+  background: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.toolbar-actions button:hover {
+  background: #5a4cd9;
+}
+
+.floor-designer-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.floor-designer-sidebar {
+  width: 250px;
+  background: #252536;
+  border-right: 1px solid #3a3a4e;
+  overflow-y: auto;
+}
+
+.floor-designer-main {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.floor-designer-inspector {
+  width: 300px;
+  background: #252536;
+  border-left: 1px solid #3a3a4e;
+  overflow-y: auto;
+}
+
+.no-selection {
+  padding: 20px;
+  color: #aaa;
+  text-align: center;
+}
+
+.start-points-panel {
+  padding: 16px;
+  border-top: 1px solid #3a3a4e;
+  margin-top: 16px;
+}
+
+.start-points-panel h4 {
+  margin: 0 0 12px 0;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.start-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.start-point-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: #2a2a3e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.start-point-item:hover {
+  background: #3a3a4e;
+}
+
+.start-point-item.selected {
+  background: #6c5ce7;
+}
+
+.start-point-icon {
+  font-size: 1.2rem;
+}
+
+.start-point-name {
+  flex: 1;
+  color: #fff;
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.start-point-type {
+  color: #aaa;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.no-start-points {
+  padding: 12px;
+  color: #888;
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.tool-hint {
+  margin-top: 12px;
+  padding: 8px;
+  background: #2a3a4e;
+  border-left: 3px solid #6c5ce7;
+  color: #aaa;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}

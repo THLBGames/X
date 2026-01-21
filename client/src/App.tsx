@@ -11,6 +11,7 @@ import DebugPanel from './components/DebugPanel';
 import OfflineProgressModal from './components/OfflineProgressModal';
 import NotificationManager, { showNotification } from './components/NotificationManager';
 import LandingScreen from './components/LandingScreen';
+import AdminRouter from './admin/AdminRouter';
 
 // Declare global window interface for debug panel
 declare global {
@@ -335,6 +336,13 @@ function App() {
         </div>
       </div>
     );
+  }
+
+  // Check if we're on an admin route
+  const isAdminRoute = window.location.pathname.startsWith('/admin');
+
+  if (isAdminRoute) {
+    return <AdminRouter />;
   }
 
   // Show landing screen if no character exists

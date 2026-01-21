@@ -1,0 +1,9 @@
+.stair-dialog {
+  max-width: 400px;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}

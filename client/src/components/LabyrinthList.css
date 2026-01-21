@@ -1,0 +1,129 @@
+.labyrinth-list {
+  flex: 1;
+}
+
+.labyrinth-list h3 {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.labyrinth-list-loading,
+.labyrinth-list-empty {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+  font-style: italic;
+}
+
+.labyrinth-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.labyrinth-item {
+  background: #333;
+  border: 2px solid #444;
+  border-radius: 6px;
+  padding: 15px;
+  transition: all 0.2s;
+}
+
+.labyrinth-item:hover {
+  border-color: #555;
+  background: #3a3a3a;
+}
+
+.labyrinth-item.status-active {
+  border-color: #4a9eff;
+}
+
+.labyrinth-item.status-scheduled {
+  border-color: #ffd700;
+}
+
+.labyrinth-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.labyrinth-item-header h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.labyrinth-status {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.labyrinth-status.status-active {
+  background: rgba(74, 158, 255, 0.2);
+  color: #4a9eff;
+  border: 1px solid #4a9eff;
+}
+
+.labyrinth-status.status-scheduled {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border: 1px solid #ffd700;
+}
+
+.labyrinth-status.status-completed {
+  background: rgba(128, 128, 128, 0.2);
+  color: #888;
+  border: 1px solid #888;
+}
+
+.labyrinth-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.labyrinth-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  color: #aaa;
+}
+
+.detail-value {
+  color: #fff;
+  font-weight: bold;
+}
+
+.labyrinth-join-button {
+  width: 100%;
+  padding: 10px;
+  background: #4a9eff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.labyrinth-join-button:hover:not(:disabled) {
+  background: #3a8eef;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
+}
+
+.labyrinth-join-button:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+}
