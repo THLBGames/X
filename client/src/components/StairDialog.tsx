@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './StairDialog.css';
 
 interface StairDialogProps {

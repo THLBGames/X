@@ -10,17 +10,17 @@ import { SkillManager } from '../skills/SkillManager';
 export class ClientCombatDataProvider implements ICombatDataProvider {
   getMonster(monsterId: string): Monster | null {
     const dataLoader = getDataLoader();
-    return dataLoader.getMonster(monsterId);
+    return dataLoader.getMonster(monsterId) || null;
   }
 
   getSkill(skillId: string): Skill | null {
     const dataLoader = getDataLoader();
-    return dataLoader.getSkill(skillId);
+    return dataLoader.getSkill(skillId) || null;
   }
 
   getItem(itemId: string): Item | null {
     const dataLoader = getDataLoader();
-    return dataLoader.getItem(itemId);
+    return dataLoader.getItem(itemId) || null;
   }
 
   getDungeon(dungeonId: string): Dungeon | null {

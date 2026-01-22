@@ -24,6 +24,7 @@ export default function PartyManagement({ labyrinthClient }: PartyManagementProp
     setPartyName('');
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleJoinParty = (partyId: string) => {
     if (!character) return;
 

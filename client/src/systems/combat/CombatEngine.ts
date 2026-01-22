@@ -17,12 +17,6 @@ import { audioManager } from '../audio/AudioManager';
  * Handles audio playback and provides client-specific data providers
  */
 export class CombatEngine extends SharedCombatEngine {
-  private character: Character | null = null;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  private _inventory: Inventory | null = null;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  private _dungeonId?: string;
-
   constructor(options: CombatOptions = {}) {
     super(new ClientCombatDataProvider(), options);
   }
@@ -40,9 +34,6 @@ export class CombatEngine extends SharedCombatEngine {
     currentMana?: number,
     inventory?: Inventory
   ): void {
-    this.character = character;
-    this.inventory = inventory || null;
-    this.dungeonId = dungeonId;
 
     // Get combat mercenaries and convert to CombatParticipant[]
     const combatMercenaries = MercenaryManager.getCombatMercenaries(character);
