@@ -1,4 +1,5 @@
 import type { Monster, Skill, Item, Dungeon, LootEntry } from '@idle-rpg/shared';
+import { MonsterAbilityType } from '@idle-rpg/shared';
 import type { CombatDataProvider as ICombatDataProvider } from '@idle-rpg/shared';
 import { MonsterModel } from '../models/Monster.js';
 import { SkillModel } from '../models/Skill.js';
@@ -51,11 +52,11 @@ export class ServerCombatDataProvider implements ICombatDataProvider {
         criticalDamage: dbMonster.stats.criticalDamage || 1.5,
       },
       abilities: dbMonster.abilities
-        ?.filter((a) => a.type !== 'boss') // Filter out 'boss' type as it's not a valid ability type
+        ?.filter((a) => (a.type as string) !== 'boss') // Filter out 'boss' type as it's not a valid ability type
         .map((a) => ({
           id: a.id,
           name: a.name,
-          type: a.type as 'attack' | 'heal' | 'buff' | 'debuff',
+          type: a.type as MonsterAbilityType,
           chance: a.chance,
           effect: a.effect as any,
         })),
@@ -89,9 +90,8 @@ export class ServerCombatDataProvider implements ICombatDataProvider {
     const skill: Skill = {
       id: dbSkill.id,
       name: dbSkill.name,
-      description: dbSkill.description || undefined,
-      type: dbSkill.type,
-      level: dbSkill.level || 1,
+      description: dbSkill.description || '',
+      type: dbSkill.type as any, // SkillType enum
       maxLevel: dbSkill.max_level || 1,
       manaCost: dbSkill.mana_cost || 0,
       cooldown: dbSkill.cooldown || 0,
@@ -99,8 +99,8 @@ export class ServerCombatDataProvider implements ICombatDataProvider {
       effect: dbSkill.effect as any,
       requirements: dbSkill.requirements as any,
       prerequisites: dbSkill.prerequisites || [],
-      unlockCost: dbSkill.unlock_cost || 1,
-      unlockLevel: dbSkill.unlock_level || 1,
+      unlockCost: 1, // Default unlock cost
+      unlockLevel: 1, // Default unlock level
       passiveBonus: dbSkill.passive_bonus as any,
     };
 
@@ -162,7 +162,7 @@ export class ServerCombatDataProvider implements ICombatDataProvider {
     const rules = GameRulesService.getGlobalRules();
     return {
       combat: {
-        criticalDamageMultiplier: rules?.combat?.criticalDamageMultiplier || 2.0,
+        criticalDamageMultiplier: 2.0, // Default critical damage multiplier
       },
     };
   }

@@ -268,7 +268,8 @@ export class MovementService {
     // Check if target node is a combat area and prepare combat if needed
     if (targetNode.node_type === 'monster_spawn' || targetNode.node_type === 'boss') {
       const { CombatService } = await import('./CombatService.js');
-      const preparedCombat = await CombatService.prepareCombatForNode(
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _preparedCombat = await CombatService.prepareCombatForNode(
         target_node_id,
         floor_id,
         participant_id

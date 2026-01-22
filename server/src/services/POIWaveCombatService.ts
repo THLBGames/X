@@ -1,9 +1,8 @@
-import type { Character, Monster, CombatParticipant, CombatLog } from '@idle-rpg/shared';
+import type { Character, Monster } from '@idle-rpg/shared';
 import { ServerCombatEngine } from './ServerCombatEngine.js';
 import { ServerCombatDataProvider } from './ServerCombatDataProvider.js';
 import { MonsterSpawnService } from './MonsterSpawnService.js';
 import { FloorNodeModel } from '../models/FloorNode.js';
-import { LabyrinthParticipantModel } from '../models/LabyrinthParticipant.js';
 
 export interface POIWaveCombatInstance {
   combatInstanceId: string;
@@ -85,7 +84,8 @@ export class POIWaveCombatService {
     const combatEngine = new ServerCombatEngine(dataProvider);
 
     // Create player participant
-    const playerParticipant = {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const _playerParticipant = {
       id: participantId,
       name: character.name,
       isPlayer: true,
@@ -296,7 +296,7 @@ export class POIWaveCombatService {
   /**
    * Check if node has wave combat enabled
    */
-  static async hasWaveCombat(nodeId: string, floorId: string): Promise<boolean> {
+  static async hasWaveCombat(nodeId: string, _floorId: string): Promise<boolean> {
     const node = await FloorNodeModel.findById(nodeId);
     if (!node) return false;
 

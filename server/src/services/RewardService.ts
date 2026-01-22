@@ -1,4 +1,4 @@
-import { LabyrinthRewardModel, type LabyrinthReward, type RewardType } from '../models/LabyrinthReward.js';
+import { LabyrinthRewardModel, type LabyrinthReward } from '../models/LabyrinthReward.js';
 import type { LabyrinthParticipant } from '../models/LabyrinthParticipant.js';
 
 export interface RewardConfig {

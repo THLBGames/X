@@ -1,4 +1,4 @@
-import { Server, Socket } from 'socket.io';
+import { Server } from 'socket.io';
 import { LabyrinthParticipantModel } from '../models/LabyrinthParticipant.js';
 
 // In-memory storage for player positions and state

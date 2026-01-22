@@ -1,5 +1,4 @@
 import { FloorNodeModel, type FloorNode } from '../models/FloorNode.js';
-import { ParticipantPositionModel } from '../models/ParticipantPosition.js';
 import { pool } from '../config/database.js';
 import { GameRulesService } from './GameRulesService.js';
 
@@ -161,9 +160,9 @@ export class StartPointService {
    * Record assignment of a start point to a participant
    */
   private static async recordAssignment(
-    floorId: string,
-    nodeId: string,
-    participantId: string
+    _floorId: string,
+    _nodeId: string,
+    _participantId: string
   ): Promise<void> {
     // The assignment is recorded when ParticipantPosition is created
     // This method exists for future tracking/extensions

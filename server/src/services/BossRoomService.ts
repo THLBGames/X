@@ -1,6 +1,5 @@
 import { FloorNodeModel } from '../models/FloorNode.js';
 import { ParticipantPositionModel } from '../models/ParticipantPosition.js';
-import { pool } from '../config/database.js';
 import { GameRulesService } from './GameRulesService.js';
 
 interface BossRoomLock {

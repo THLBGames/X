@@ -5,6 +5,7 @@ import { LabyrinthFloorModel } from '../models/LabyrinthFloor.js';
 import { LabyrinthManager } from '../services/LabyrinthManager.js';
 import { FloorNodeModel } from '../models/FloorNode.js';
 import { FloorConnectionModel } from '../models/FloorConnection.js';
+import { ProceduralGenerator } from '../services/ProceduralGenerator.js';
 import { pool } from '../config/database.js';
 
 export function setupAdminRoutes(app: Express) {
@@ -877,7 +878,11 @@ export function setupAdminRoutes(app: Express) {
       const { AdminUserModel } = await import('../models/AdminUser.js');
       const users = await AdminUserModel.listAll();
       // Remove password hashes from response
-      const safeUsers = users.map(({ password_hash: _password_hash, ...user }) => user);
+      const safeUsers = users.map(({ password_hash, ...user }) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        void password_hash; // Explicitly ignore unused variable
+        return user;
+      });
       res.json({ success: true, users: safeUsers });
     } catch (error) {
       res.status(500).json({
@@ -901,7 +906,9 @@ export function setupAdminRoutes(app: Express) {
       }
       const { AdminUserModel } = await import('../models/AdminUser.js');
       const user = await AdminUserModel.create({ username, password, email });
-      const { password_hash: _password_hash, ...safeUser } = user;
+      const { password_hash, ...safeUser } = user;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      void password_hash; // Explicitly ignore unused variable
       res.json({ success: true, user: safeUser });
     } catch (error) {
       res.status(500).json({
@@ -923,7 +930,9 @@ export function setupAdminRoutes(app: Express) {
       if (!user) {
         return res.status(404).json({ success: false, message: 'User not found' });
       }
-      const { password_hash: _password_hash, ...safeUser } = user;
+      const { password_hash, ...safeUser } = user;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      void password_hash; // Explicitly ignore unused variable
       res.json({ success: true, user: safeUser });
     } catch (error) {
       res.status(500).json({
@@ -1273,6 +1282,7 @@ export function setupAdminRoutes(app: Express) {
       
       // Get existing connection IDs for this floor
       const existingConnections = await FloorConnectionModel.findByFloorId(floorId);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _existingConnectionIds = new Set(existingConnections.map(c => c.id));
       const newConnectionIds = new Set(connectionsArray.filter(c => c && c.id).map(c => c.id));
 

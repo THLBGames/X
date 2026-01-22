@@ -1,7 +1,8 @@
 import type { Monster } from '@idle-rpg/shared';
+import { MonsterAbilityType } from '@idle-rpg/shared';
 import { FloorNodeModel } from '../models/FloorNode.js';
 import { LabyrinthFloorModel } from '../models/LabyrinthFloor.js';
-import { MonsterModel, type Monster as DbMonster } from '../models/Monster.js';
+import { MonsterModel } from '../models/Monster.js';
 
 interface MonsterPool {
   monsterId: string;
@@ -78,7 +79,7 @@ export class MonsterSpawnService {
   private static async spawnMonsterFromPool(
     pool: MonsterPool[],
     characterLevel: number,
-    isBoss: boolean = false
+    _isBoss: boolean = false
   ): Promise<Monster | null> {
     if (pool.length === 0) {
       return null;
@@ -155,11 +156,11 @@ export class MonsterSpawnService {
         criticalDamage: dbMonster.stats.criticalDamage || 1.5,
       },
       abilities: dbMonster.abilities
-        ?.filter((a) => a.type !== 'boss') // Filter out 'boss' type as it's not a valid ability type
+        ?.filter((a) => (a.type as string) !== 'boss') // Filter out 'boss' type as it's not a valid ability type
         .map((a) => ({
           id: a.id,
           name: a.name,
-          type: a.type as 'attack' | 'heal' | 'buff' | 'debuff',
+          type: a.type as MonsterAbilityType,
           chance: a.chance,
           effect: a.effect as any,
         })),

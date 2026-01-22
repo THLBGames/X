@@ -57,7 +57,6 @@ export class CombatService {
     // Get character level for monster spawning (use first player's level)
     let characterLevel = 1;
     if (playersOnNode.length > 0) {
-      const firstParticipant = await LabyrinthParticipantModel.findById(playersOnNode[0]);
       // TODO: Get character level from participant or character data
       // For now, use default level
       characterLevel = 1; // Placeholder

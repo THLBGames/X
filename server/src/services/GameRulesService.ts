@@ -1,6 +1,5 @@
 import { GlobalRulesModel } from '../models/GlobalRules.js';
 import { LabyrinthModel } from '../models/Labyrinth.js';
-import type { Labyrinth } from '../models/Labyrinth.js';
 
 export interface GameRules {
   movement: {

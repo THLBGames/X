@@ -1,7 +1,7 @@
 import { LabyrinthModel, type Labyrinth, type CreateLabyrinthInput } from '../models/Labyrinth.js';
 import { LabyrinthFloorModel, type LabyrinthFloor } from '../models/LabyrinthFloor.js';
 import { LabyrinthParticipantModel, type LabyrinthParticipant } from '../models/LabyrinthParticipant.js';
-import { LabyrinthPartyModel, type LabyrinthParty } from '../models/LabyrinthParty.js';
+import { LabyrinthPartyModel } from '../models/LabyrinthParty.js';
 import { pool } from '../config/database.js';
 
 export class LabyrinthManager {

@@ -1,4 +1,4 @@
-import { ParticipantPositionModel, type ParticipantPosition } from '../models/ParticipantPosition.js';
+import { ParticipantPositionModel } from '../models/ParticipantPosition.js';
 import { FloorConnectionModel } from '../models/FloorConnection.js';
 import { MapService } from './MapService.js';
 import { GameRulesService } from './GameRulesService.js';
@@ -137,7 +137,7 @@ export class FogOfWarService {
     // Check equipment for visibility modifiers
     // Equipment items might have metadata with visibility bonuses
     if (character.equipment) {
-      for (const [slot, itemId] of Object.entries(character.equipment)) {
+      for (const [_slot, itemId] of Object.entries(character.equipment)) {
         if (!itemId) continue;
 
         // Check for scouting items (would need to be defined in item metadata)
@@ -256,7 +256,8 @@ export class FogOfWarService {
     if (character) {
       // Example: Check if player has required item
       if (connection.visibility_requirement.requiredItem) {
-        const requiredItem = connection.visibility_requirement.requiredItem;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const _requiredItem = connection.visibility_requirement.requiredItem;
         // Check if character has this item (would need to check inventory)
         // This is simplified - would need actual inventory checking
       }

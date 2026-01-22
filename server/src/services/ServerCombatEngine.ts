@@ -1,11 +1,6 @@
 import { CombatEngine as SharedCombatEngine, type CombatOptions } from '@idle-rpg/shared';
-import type {
-  Character,
-  Monster,
-  CombatParticipant,
-  CombatLog,
-  Inventory,
-} from '@idle-rpg/shared';
+// Types imported from shared but not directly used in this file
+// They are used via CombatEngine from shared package
 import { ServerCombatDataProvider } from './ServerCombatDataProvider.js';
 
 /**

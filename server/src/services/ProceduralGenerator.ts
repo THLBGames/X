@@ -1,4 +1,4 @@
-import { FloorNodeModel, type FloorNode, type NodeType } from '../models/FloorNode.js';
+import { FloorNodeModel, type FloorNode } from '../models/FloorNode.js';
 import { FloorConnectionModel, type FloorConnection } from '../models/FloorConnection.js';
 
 export interface ProceduralGenerationConfig {
@@ -176,7 +176,7 @@ export class ProceduralGenerator {
       if (nodePositions[i].id) continue;
 
       // Determine if this node should have POI waves
-      let metadata: Record<string, any> = {};
+      const metadata: Record<string, any> = {};
       if (poiWaveCombatEnabled && Math.random() < poiWaveCombatPercentage) {
         // Generate POI wave config for this node
         metadata.poi_combat = this.generatePOIWaveConfig(
