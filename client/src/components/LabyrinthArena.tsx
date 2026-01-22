@@ -25,7 +25,7 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
   const poiCombatActive = useLabyrinthState((state) => state.poiCombatActive);
   const poiCombatInstanceId = useLabyrinthState((state) => state.poiCombatInstanceId);
   // POI combat state - kept for potential future use
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // @ts-expect-error - poiCombatState kept for future display/use
   const poiCombatState = useLabyrinthState((state) => state.poiCombatState);
   const poiCombatWaveNumber = useLabyrinthState((state) => state.poiCombatWaveNumber);
   const poiCombatTotalWaves = useLabyrinthState((state) => state.poiCombatTotalWaves);
@@ -219,7 +219,7 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
   }, [currentParticipant, character, labyrinthClient, setPOICombatActive, setPOICombatWave, setPOICombatState, setCombatActive, updateCombatState, startCombatWithMonsters]);
 
   // Handle POI combat actions (skills, items) - kept for future implementation
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // @ts-expect-error - handlePOICombatAction kept for future UI implementation
   const handlePOICombatAction = (actionType: 'skill' | 'item' | 'attack', skillId?: string, itemId?: string) => {
     if (!poiCombatInstanceId || !currentParticipant) return;
 

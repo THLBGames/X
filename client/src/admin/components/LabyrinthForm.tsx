@@ -23,7 +23,7 @@ interface Floor {
 export default function LabyrinthForm({ labyrinthId, onSave, onCancel }: LabyrinthFormProps) {
   const [name, setName] = useState('');
   const [scheduledStart, setScheduledStart] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // @ts-expect-error - totalFloors is set from API but not currently displayed (kept for future use)
   const [totalFloors, setTotalFloors] = useState(1);
   const [maxInitialPlayers, setMaxInitialPlayers] = useState(100);
   const [rulesConfig, setRulesConfig] = useState<Record<string, any>>({});
