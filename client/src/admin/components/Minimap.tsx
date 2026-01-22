@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import type { FloorNode, FloorConnection } from '@idle-rpg/shared';
-import type { Transform } from '../hooks/useCanvasRenderer';
+import type { Transform } from '../utils/canvasUtils';
 import './Minimap.css';
 
 interface MinimapProps {

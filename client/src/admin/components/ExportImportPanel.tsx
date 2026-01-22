@@ -49,7 +49,7 @@ export default function ExportImportPanel({ floorId, labyrinthId, onClose }: Exp
       const text = await file.text();
       const data = JSON.parse(text);
 
-      const result = await AuthService.apiRequest(
+      const result = await AuthService.apiRequest<{ success?: boolean }>(
         `/api/admin/labyrinths/${labyrinthId}/floors/${floorId}/import`,
         {
           method: 'POST',

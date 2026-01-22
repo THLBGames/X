@@ -31,7 +31,6 @@ export default function FloorCanvas({
   const {
     canvasRef,
     transform,
-    setTransform,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,

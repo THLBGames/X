@@ -1,4 +1,3 @@
-import { AuthService } from '../AuthService';
 import type { FloorNode, FloorConnection } from '@idle-rpg/shared';
 import './ConnectionEditor.css';
 

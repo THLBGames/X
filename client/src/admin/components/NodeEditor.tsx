@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import type { FloorNode, NodeType } from '@idle-rpg/shared';
+import type { FloorNode } from '@idle-rpg/shared';
 import './NodeEditor.css';
 
 interface NodeEditorProps {
