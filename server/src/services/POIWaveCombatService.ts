@@ -1,4 +1,4 @@
-import type { Character, Monster } from '@idle-rpg/shared';
+import type { Character, Monster, CombatLog } from '@idle-rpg/shared';
 import { ServerCombatEngine } from './ServerCombatEngine.js';
 import { ServerCombatDataProvider } from './ServerCombatDataProvider.js';
 import { MonsterSpawnService } from './MonsterSpawnService.js';

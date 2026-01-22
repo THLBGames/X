@@ -160,8 +160,8 @@ export class StartPointService {
    * Record assignment of a start point to a participant
    */
   private static async recordAssignment(
-    _floorId: string,
-    _nodeId: string,
+    floorId: string,
+    nodeId: string,
     _participantId: string
   ): Promise<void> {
     // The assignment is recorded when ParticipantPosition is created
