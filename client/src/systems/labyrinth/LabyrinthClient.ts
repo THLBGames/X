@@ -31,7 +31,7 @@ export interface LabyrinthClientCallbacks {
 
 export class LabyrinthClient {
   private socket: Socket | null = null;
-  private callbacks: LabyrinthClientCallbacks = {};
+  public callbacks: LabyrinthClientCallbacks = {};
   private connected: boolean = false;
 
   constructor(callbacks: LabyrinthClientCallbacks = {}) {

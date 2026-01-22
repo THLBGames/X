@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { LabyrinthClient } from '../systems/labyrinth/LabyrinthClient';
 import { useLabyrinthState } from '../systems/labyrinth/LabyrinthState';
-import type { LabyrinthParty } from '@idle-rpg/shared';
 import './PartyManagement.css';
 
 interface PartyManagementProps {

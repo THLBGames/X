@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { Character } from '@idle-rpg/shared';
 import { LabyrinthClient } from '../systems/labyrinth/LabyrinthClient';
 import { useLabyrinthState } from '../systems/labyrinth/LabyrinthState';
 import { useGameState } from '../systems/GameState';

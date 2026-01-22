@@ -217,6 +217,7 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
   }, [currentParticipant, character, labyrinthClient, setPOICombatActive, setPOICombatWave, setPOICombatState, setCombatActive, updateCombatState, startCombatWithMonsters]);
 
   // Handle POI combat actions (skills, items)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handlePOICombatAction = (actionType: 'skill' | 'item' | 'attack', skillId?: string, itemId?: string) => {
     if (!poiCombatInstanceId || !currentParticipant) return;
 
