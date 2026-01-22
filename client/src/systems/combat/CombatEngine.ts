@@ -1,4 +1,7 @@
 import { CombatEngine as SharedCombatEngine, type CombatOptions, type CombatAction, type CombatLog } from '@idle-rpg/shared';
+
+// Re-export CombatOptions for convenience
+export type { CombatOptions };
 import type {
   Character,
   Monster,
@@ -15,8 +18,10 @@ import { audioManager } from '../audio/AudioManager';
  */
 export class CombatEngine extends SharedCombatEngine {
   private character: Character | null = null;
-  private inventory: Inventory | null = null;
-  private dungeonId?: string;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  private _inventory: Inventory | null = null;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  private _dungeonId?: string;
 
   constructor(options: CombatOptions = {}) {
     super(new ClientCombatDataProvider(), options);

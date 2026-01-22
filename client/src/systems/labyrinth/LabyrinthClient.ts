@@ -370,19 +370,19 @@ export class LabyrinthClient {
       this.callbacks.onRewardEarned?.(data);
     });
 
-    this.socket.on(SERVER_EVENTS.MAP_DATA, (data) => {
+    this.socket.on(SERVER_EVENTS.MAP_DATA, (data: any) => {
       this.callbacks.onMapData?.(data);
     });
 
-    this.socket.on(SERVER_EVENTS.MAP_UPDATE, (data) => {
+    this.socket.on(SERVER_EVENTS.MAP_UPDATE, (data: any) => {
       this.callbacks.onMapUpdate?.(data);
     });
 
-    this.socket.on(SERVER_EVENTS.VISIBILITY_UPDATE, (data) => {
+    this.socket.on(SERVER_EVENTS.VISIBILITY_UPDATE, (data: any) => {
       this.callbacks.onVisibilityUpdate?.(data);
     });
 
-    this.socket.on(SERVER_EVENTS.BOSS_ROOM_LOCKED, (data) => {
+    this.socket.on(SERVER_EVENTS.BOSS_ROOM_LOCKED, (data: any) => {
       this.callbacks.onBossRoomLocked?.(data);
     });
 
