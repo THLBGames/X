@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import type { FloorNode, FloorConnection } from '@idle-rpg/shared';
-import { applyTransform, applyInverseTransform, getVisibleChunks, snapToGrid, type Transform, type Point } from '../utils/canvasUtils';
+import { applyInverseTransform, type Transform, type Point } from '../utils/canvasUtils';
 
 interface UseCanvasRendererOptions {
   nodes: FloorNode[];

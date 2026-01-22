@@ -5,6 +5,7 @@ import './UserManager.css';
 interface User extends Omit<AdminUser, 'password_hash'> {
   last_login: string | null;
   is_active: boolean;
+  created_at: string;
 }
 
 export default function UserManager() {

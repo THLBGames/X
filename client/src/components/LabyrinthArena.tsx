@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { LabyrinthClient } from '../systems/labyrinth/LabyrinthClient';
 import { useLabyrinthState } from '../systems/labyrinth/LabyrinthState';
-import type { Labyrinth, LabyrinthParticipant } from '@idle-rpg/shared';
+import type { Labyrinth } from '@idle-rpg/shared';
 import LabyrinthCombat from './LabyrinthCombat';
 import LabyrinthMapView from './LabyrinthMapView';
 import PartyManagement from './PartyManagement';
@@ -24,7 +24,8 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
   const combatPrepared = useLabyrinthState((state) => state.combatPrepared);
   const poiCombatActive = useLabyrinthState((state) => state.poiCombatActive);
   const poiCombatInstanceId = useLabyrinthState((state) => state.poiCombatInstanceId);
-  const poiCombatState = useLabyrinthState((state) => state.poiCombatState);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _poiCombatState = useLabyrinthState((state) => state.poiCombatState);
   const poiCombatWaveNumber = useLabyrinthState((state) => state.poiCombatWaveNumber);
   const poiCombatTotalWaves = useLabyrinthState((state) => state.poiCombatTotalWaves);
   const setFloorPlayers = useLabyrinthState((state) => state.setFloorPlayers);
@@ -142,7 +143,7 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
       setPOICombatWave(data.wave_number, data.total_waves);
     };
 
-    const onPOICombatWaveComplete = (data: any) => {
+    const onPOICombatWaveComplete = (_data: any) => {
       // Wave completed, next wave will start
     };
 

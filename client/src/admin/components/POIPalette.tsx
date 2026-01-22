@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './POIPalette.css';
 
 export type POIType = 

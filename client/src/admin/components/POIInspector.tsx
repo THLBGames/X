@@ -93,7 +93,7 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
     };
 
     const handleRemoveWave = (index: number) => {
-      const updatedWaves = waves.filter((_, i) => i !== index).map((w, i) => ({
+      const updatedWaves = waves.filter((_: any, i: number) => i !== index).map((w: any, i: number) => ({
         ...w,
         waveNumber: i + 1,
       }));
@@ -158,7 +158,7 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
               </div>
             )}
 
-            {waves.map((wave, index) => (
+            {waves.map((wave: any, index: number) => (
               <div key={index} className="wave-item">
                 <div className="wave-header">
                   <span className="wave-number">Wave {wave.waveNumber}</span>
