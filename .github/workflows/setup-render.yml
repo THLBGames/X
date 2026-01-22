@@ -1,0 +1,36 @@
+name: Setup Render Infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to setup'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+          - both
+
+jobs:
+  setup-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Render Infrastructure
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          echo "Setting up Render infrastructure..."
+          echo "This workflow uses render.yaml blueprint"
+          echo "Please import render.yaml in Render Dashboard instead"
+          echo ""
+          echo "Steps:"
+          echo "1. Go to Render Dashboard → New → Blueprint"
+          echo "2. Connect your GitHub repository"
+          echo "3. Render will automatically create all services and databases"
+          echo ""
+          echo "Alternatively, you can use Render CLI:"
+          echo "  render blueprint launch render.yaml"
