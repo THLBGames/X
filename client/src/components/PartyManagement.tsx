@@ -25,7 +25,7 @@ export default function PartyManagement({ labyrinthClient }: PartyManagementProp
 
   // Handle joining a party - kept for future use
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleJoinParty = (_partyId: string) => {
+  const handleJoinParty = (partyId: string) => {
     if (!character) return;
 
     labyrinthClient.joinParty(partyId, character.id);
