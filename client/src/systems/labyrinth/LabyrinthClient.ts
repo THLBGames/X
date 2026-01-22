@@ -14,6 +14,11 @@ export interface LabyrinthClientCallbacks {
   onCombatUpdate?: (data: any) => void;
   onCombatState?: (data: any) => void;
   onCombatEnded?: (data: any) => void;
+  onPOICombatStarted?: (data: any) => void;
+  onPOICombatWaveStarted?: (data: any) => void;
+  onPOICombatWaveComplete?: (data: any) => void;
+  onPOICombatEnded?: (data: any) => void;
+  onPOICombatState?: (data: any) => void;
   onEliminated?: (data: any) => void;
   onCompleted?: (data: any) => void;
   onRewardEarned?: (data: any) => void;
@@ -228,6 +233,46 @@ export class LabyrinthClient {
   }
 
   /**
+   * Start POI wave combat
+   */
+  startPOICombat(participant_id: string, node_id: string, character_data: any): void {
+    if (!this.socket?.connected) {
+      this.callbacks.onError?.({ message: 'Not connected to server' });
+      return;
+    }
+
+    this.socket.emit(CLIENT_EVENTS.START_POI_COMBAT, {
+      participant_id,
+      node_id,
+      character_data,
+    });
+  }
+
+  /**
+   * Send POI combat action
+   */
+  sendPOICombatAction(
+    participant_id: string,
+    combat_instance_id: string,
+    action_type: 'skill' | 'item' | 'attack',
+    skill_id?: string,
+    item_id?: string
+  ): void {
+    if (!this.socket?.connected) {
+      this.callbacks.onError?.({ message: 'Not connected to server' });
+      return;
+    }
+
+    this.socket.emit(CLIENT_EVENTS.POI_COMBAT_ACTION, {
+      participant_id,
+      combat_instance_id,
+      action_type,
+      skill_id,
+      item_id,
+    });
+  }
+
+  /**
    * Claim rewards
    */
   claimRewards(character_id: string, reward_ids: string[]): void {
@@ -273,6 +318,7 @@ export class LabyrinthClient {
     });
 
     this.socket.on(SERVER_EVENTS.COMBAT_PREPARED, (data) => {
+      console.log('[LabyrinthClient] Received COMBAT_PREPARED event:', data);
       this.callbacks.onCombatPrepared?.(data);
     });
 
@@ -290,6 +336,26 @@ export class LabyrinthClient {
 
     this.socket.on(SERVER_EVENTS.COMBAT_ENDED, (data) => {
       this.callbacks.onCombatEnded?.(data);
+    });
+
+    this.socket.on(SERVER_EVENTS.POI_COMBAT_STARTED, (data) => {
+      this.callbacks.onPOICombatStarted?.(data);
+    });
+
+    this.socket.on(SERVER_EVENTS.POI_COMBAT_WAVE_STARTED, (data) => {
+      this.callbacks.onPOICombatWaveStarted?.(data);
+    });
+
+    this.socket.on(SERVER_EVENTS.POI_COMBAT_WAVE_COMPLETE, (data) => {
+      this.callbacks.onPOICombatWaveComplete?.(data);
+    });
+
+    this.socket.on(SERVER_EVENTS.POI_COMBAT_ENDED, (data) => {
+      this.callbacks.onPOICombatEnded?.(data);
+    });
+
+    this.socket.on(SERVER_EVENTS.POI_COMBAT_STATE, (data) => {
+      this.callbacks.onPOICombatState?.(data);
     });
 
     this.socket.on(SERVER_EVENTS.ELIMINATED, (data) => {

@@ -1,9 +1,9 @@
 /**
  * Constants exports
  */
-export * from './enums';
-export * from './combat';
-export * from './items';
-export * from './inventory';
-export * from './autoActions';
+export * from './enums.js';
+export * from './combat.js';
+export * from './items.js';
+export * from './inventory.js';
+export * from './autoActions.js';
 

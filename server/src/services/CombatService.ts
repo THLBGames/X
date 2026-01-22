@@ -69,6 +69,7 @@ export class CombatService {
       floorId,
       characterLevel
     );
+    console.log(`[CombatService] Spawned ${monsters.length} monsters for node ${nodeId}`);
 
     // Get all participants (players on node + their party members)
     const participants: CombatParticipant[] = [];
@@ -82,18 +83,30 @@ export class CombatService {
       // Add party members on the same node
       const party = await LabyrinthPartyModel.findByParticipant(playerPosition.participant_id);
       if (party) {
-        for (const memberId of party.members) {
-          if (memberId === playerPosition.participant_id) continue; // Already added
+        // Get the current participant to get their character_id
+        const currentParticipant = await LabyrinthParticipantModel.findById(playerPosition.participant_id);
+        if (!currentParticipant) continue;
+
+        for (const memberCharacterId of party.members) {
+          // Skip if this is the current player (already added)
+          if (memberCharacterId === currentParticipant.character_id) continue;
+
+          // Find the participant for this character_id in this labyrinth
+          const memberParticipant = await LabyrinthParticipantModel.findByLabyrinthAndCharacter(
+            currentParticipant.labyrinth_id,
+            memberCharacterId
+          );
+          if (!memberParticipant) continue;
 
           // Check if party member is on the same node
           const memberPosition = await ParticipantPositionModel.findByParticipantAndFloor(
-            memberId,
+            memberParticipant.id,
             floorId
           );
           if (memberPosition?.current_node_id === nodeId) {
-            const memberParticipant = await this.createCombatParticipant(memberId);
-            if (memberParticipant && !participants.find((p) => p.id === memberId)) {
-              participants.push(memberParticipant);
+            const combatParticipant = await this.createCombatParticipant(memberParticipant.id);
+            if (combatParticipant && !participants.find((p) => p.id === memberParticipant.id)) {
+              participants.push(combatParticipant);
             }
           }
         }
@@ -117,6 +130,7 @@ export class CombatService {
       preparedAt: new Date(),
     };
 
+    console.log(`[CombatService] Prepared combat ${combatInstanceId} with ${monsters.length} monsters and ${participants.length} participants`);
     this.activeCombatInstances.set(combatInstanceId, preparedCombat);
 
     return preparedCombat;
@@ -167,7 +181,13 @@ export class CombatService {
     }
 
     const party = await LabyrinthPartyModel.findByParticipant(firstParticipantId);
-    if (!party || !party.members.includes(participantId)) {
+    if (!party) {
+      return false; // No party found
+    }
+
+    // Get character_id for the participant trying to join
+    const joiningParticipant = await LabyrinthParticipantModel.findById(participantId);
+    if (!joiningParticipant || !party.members.includes(joiningParticipant.character_id)) {
       return false; // Not in the same party
     }
 
@@ -181,9 +201,9 @@ export class CombatService {
     }
 
     // Add participant to combat
-    const participant = await this.createCombatParticipant(participantId);
-    if (participant) {
-      combat.participants.push(participant);
+    const combatParticipant = await this.createCombatParticipant(participantId);
+    if (combatParticipant) {
+      combat.participants.push(combatParticipant);
       return true;
     }
 

@@ -1,7 +1,7 @@
 /**
  * Item-related constants
  */
-import { ConsumableEffectType } from './enums';
+import { ConsumableEffectType } from './enums.js';
 
 /**
  * Consumable effect types that are valid for use in combat (consumable bar)

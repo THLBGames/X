@@ -20,6 +20,7 @@ export interface FloorNode {
 }
 
 export interface CreateFloorNodeInput {
+  id?: string; // Optional: if provided, use this ID instead of generating a new one
   floor_id: string;
   node_type: NodeType;
   x_coordinate: number;
@@ -36,28 +37,68 @@ export interface CreateFloorNodeInput {
 
 export class FloorNodeModel {
   static async create(input: CreateFloorNodeInput): Promise<FloorNode> {
-    const result = await pool.query(
-      `INSERT INTO labyrinth_floor_nodes 
-       (floor_id, node_type, x_coordinate, y_coordinate, name, description, metadata, 
-        required_boss_defeated, is_revealed, is_start_point, leads_to_floor_number, capacity_limit)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
-       RETURNING *`,
-      [
-        input.floor_id,
-        input.node_type,
-        input.x_coordinate,
-        input.y_coordinate,
-        input.name || null,
-        input.description || null,
-        JSON.stringify(input.metadata || {}),
-        input.required_boss_defeated || null,
-        input.is_revealed ?? false,
-        input.is_start_point ?? false,
-        input.leads_to_floor_number || null,
-        input.capacity_limit || null,
-      ]
-    );
-    return this.mapRowToNode(result.rows[0]);
+    // If ID is provided, use it; otherwise let the database generate one
+    if (input.id) {
+      const result = await pool.query(
+        `INSERT INTO labyrinth_floor_nodes 
+         (id, floor_id, node_type, x_coordinate, y_coordinate, name, description, metadata, 
+          required_boss_defeated, is_revealed, is_start_point, leads_to_floor_number, capacity_limit)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+         ON CONFLICT (id) DO UPDATE SET
+           floor_id = EXCLUDED.floor_id,
+           node_type = EXCLUDED.node_type,
+           x_coordinate = EXCLUDED.x_coordinate,
+           y_coordinate = EXCLUDED.y_coordinate,
+           name = EXCLUDED.name,
+           description = EXCLUDED.description,
+           metadata = EXCLUDED.metadata,
+           required_boss_defeated = EXCLUDED.required_boss_defeated,
+           is_revealed = EXCLUDED.is_revealed,
+           is_start_point = EXCLUDED.is_start_point,
+           leads_to_floor_number = EXCLUDED.leads_to_floor_number,
+           capacity_limit = EXCLUDED.capacity_limit
+         RETURNING *`,
+        [
+          input.id,
+          input.floor_id,
+          input.node_type,
+          input.x_coordinate,
+          input.y_coordinate,
+          input.name || null,
+          input.description || null,
+          JSON.stringify(input.metadata || {}),
+          input.required_boss_defeated || null,
+          input.is_revealed ?? false,
+          input.is_start_point ?? false,
+          input.leads_to_floor_number || null,
+          input.capacity_limit || null,
+        ]
+      );
+      return this.mapRowToNode(result.rows[0]);
+    } else {
+      const result = await pool.query(
+        `INSERT INTO labyrinth_floor_nodes 
+         (floor_id, node_type, x_coordinate, y_coordinate, name, description, metadata, 
+          required_boss_defeated, is_revealed, is_start_point, leads_to_floor_number, capacity_limit)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+         RETURNING *`,
+        [
+          input.floor_id,
+          input.node_type,
+          input.x_coordinate,
+          input.y_coordinate,
+          input.name || null,
+          input.description || null,
+          JSON.stringify(input.metadata || {}),
+          input.required_boss_defeated || null,
+          input.is_revealed ?? false,
+          input.is_start_point ?? false,
+          input.leads_to_floor_number || null,
+          input.capacity_limit || null,
+        ]
+      );
+      return this.mapRowToNode(result.rows[0]);
+    }
   }
 
   static async findById(id: string): Promise<FloorNode | null> {

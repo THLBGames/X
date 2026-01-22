@@ -17,7 +17,7 @@ import {
   MercenaryType,
   QuestType,
   CombatResult,
-} from '../constants/enums';
+} from '../constants/enums.js';
 
 // Base stats that characters and monsters have
 export interface Stats {

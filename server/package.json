@@ -10,6 +10,9 @@
     "start": "node dist/server.js",
     "lint": "eslint src --ext .ts",
     "migrate": "node scripts/migrate.js",
+    "migrate:tracked": "node scripts/migrate-with-tracking.js",
+    "migrate:dry-run": "node scripts/migrate-with-tracking.js --dry-run",
+    "migrate:rollback": "node scripts/rollback-migration.js",
     "import-monsters": "node scripts/import-monsters.js",
     "import-all-data": "node scripts/import-all-data.js"
   },

@@ -1,8 +1,8 @@
 /**
  * Combat-related constants
  */
-import { CombatActionType, ConsumableEffectType } from './enums';
-import { VALID_COMBAT_CONSUMABLE_EFFECTS } from './items';
+import { CombatActionType, ConsumableEffectType } from './enums.js';
+import { VALID_COMBAT_CONSUMABLE_EFFECTS } from './items.js';
 
 /**
  * Re-export valid combat consumable effects for convenience

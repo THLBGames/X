@@ -46,6 +46,31 @@ export class LabyrinthPartyModel {
     return result.rows.map((row) => this.mapRowToParty(row));
   }
 
+  static async findByParticipant(participant_id: string): Promise<LabyrinthParty | null> {
+    // First, get the character_id for this participant_id
+    const participantResult = await pool.query(
+      'SELECT character_id FROM labyrinth_participants WHERE id = $1',
+      [participant_id]
+    );
+    
+    if (participantResult.rows.length === 0) {
+      return null; // Participant not found
+    }
+    
+    const character_id = participantResult.rows[0].character_id;
+    
+    // Find a party where the character is a member (checking the members JSON array)
+    const result = await pool.query(
+      `SELECT * FROM labyrinth_parties 
+       WHERE status = $1 
+       AND (members::jsonb ? $2 OR leader_character_id = $2)
+       LIMIT 1`,
+      ['active', character_id]
+    );
+    if (result.rows.length === 0) return null;
+    return this.mapRowToParty(result.rows[0]);
+  }
+
   static async addMember(id: string, character_id: string): Promise<void> {
     const party = await this.findById(id);
     if (!party) throw new Error('Party not found');

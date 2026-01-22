@@ -1,6 +1,6 @@
-export * from './types/GameTypes';
-export * from './types/LabyrinthTypes';
-export * from './constants';
-export * from './systems/combat/CombatEngine';
-export * from './systems/combat/CombatDataProvider';
+export * from './types/GameTypes.js';
+export * from './types/LabyrinthTypes.js';
+export * from './constants/index.js';
+export * from './systems/combat/CombatEngine.js';
+export * from './systems/combat/CombatDataProvider.js';
 

@@ -3,6 +3,7 @@ import { CLIENT_EVENTS, SERVER_EVENTS } from './events.js';
 import { LabyrinthManager } from '../services/LabyrinthManager.js';
 import { FloorManager } from '../services/FloorManager.js';
 import { CombatService } from '../services/CombatService.js';
+import { POIWaveCombatService } from '../services/POIWaveCombatService.js';
 import { playerSyncService } from '../services/PlayerSyncService.js';
 import { LabyrinthParticipantModel } from '../models/LabyrinthParticipant.js';
 import { LabyrinthPartyModel } from '../models/LabyrinthParty.js';
@@ -505,6 +506,183 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
     } catch (error) {
       socket.emit(SERVER_EVENTS.ERROR, {
         message: error instanceof Error ? error.message : 'Failed to process combat action',
+      });
+    }
+  });
+
+  // Start POI wave combat
+  socket.on(CLIENT_EVENTS.START_POI_COMBAT, async (data: {
+    participant_id: string;
+    node_id: string;
+    character_data: any;
+  }) => {
+    try {
+      const { participant_id, node_id, character_data } = data;
+
+      const participant = await LabyrinthParticipantModel.findById(participant_id);
+      if (!participant) {
+        throw new Error('Participant not found');
+      }
+
+      const floor = await LabyrinthFloorModel.findByLabyrinthAndFloor(
+        participant.labyrinth_id,
+        participant.floor_number
+      );
+      if (!floor) {
+        throw new Error('Floor not found');
+      }
+
+      // Start POI combat
+      const combatInstance = await POIWaveCombatService.startPOICombat(
+        node_id,
+        floor.id,
+        participant_id,
+        character_data
+      );
+
+      // Emit combat started event
+      socket.emit(SERVER_EVENTS.POI_COMBAT_STARTED, {
+        combat_instance_id: combatInstance.combatInstanceId,
+        wave_number: combatInstance.currentWave,
+        total_waves: combatInstance.totalWaves,
+        monsters: combatInstance.waveMonsters,
+      });
+
+      // Process automatic turns until player turn or combat ends
+      const autoResult = await POIWaveCombatService.processAutomaticTurns(
+        combatInstance.combatInstanceId
+      );
+
+      // Emit initial combat state
+      const participants = combatInstance.combatEngine.getParticipants();
+      const currentActor = combatInstance.combatEngine.getCurrentActor();
+      const recentActions = combatInstance.combatEngine.getRecentActions(10);
+
+      socket.emit(SERVER_EVENTS.POI_COMBAT_STATE, {
+        combat_instance_id: combatInstance.combatInstanceId,
+        participants,
+        current_actor: currentActor,
+        recent_actions: recentActions,
+        wave_number: combatInstance.currentWave,
+        total_waves: combatInstance.totalWaves,
+      });
+
+      // If combat ended during automatic processing
+      if (autoResult.combatLog) {
+        socket.emit(SERVER_EVENTS.POI_COMBAT_ENDED, {
+          combat_instance_id: combatInstance.combatInstanceId,
+          result: autoResult.combatLog.result,
+          rewards: autoResult.combatLog.rewards,
+          duration: autoResult.combatLog.duration,
+        });
+        POIWaveCombatService.endPOICombat(combatInstance.combatInstanceId);
+      }
+    } catch (error) {
+      socket.emit(SERVER_EVENTS.ERROR, {
+        message: error instanceof Error ? error.message : 'Failed to start POI combat',
+      });
+    }
+  });
+
+  // POI combat action
+  socket.on(CLIENT_EVENTS.POI_COMBAT_ACTION, async (data: {
+    participant_id: string;
+    combat_instance_id: string;
+    action_type: 'skill' | 'item' | 'attack';
+    skill_id?: string;
+    item_id?: string;
+  }) => {
+    try {
+      const { participant_id, combat_instance_id, action_type, skill_id, item_id } = data;
+
+      const instance = POIWaveCombatService.getCombatInstance(combat_instance_id);
+      if (!instance || !instance.isActive) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'Combat instance not found or not active',
+        });
+        return;
+      }
+
+      if (instance.participantId !== participant_id) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'Participant mismatch',
+        });
+        return;
+      }
+
+      // Process player turn
+      const previousWave = instance.currentWave;
+      const combatLog = await POIWaveCombatService.processCombatTurn(
+        combat_instance_id,
+        action_type === 'skill' ? skill_id : null,
+        action_type === 'item' ? item_id : null
+      );
+
+      // If combat ended (all waves complete or player died)
+      if (combatLog) {
+        socket.emit(SERVER_EVENTS.POI_COMBAT_ENDED, {
+          combat_instance_id,
+          result: combatLog.result,
+          rewards: combatLog.rewards,
+          duration: combatLog.duration,
+        });
+
+        // Clean up
+        POIWaveCombatService.endPOICombat(combat_instance_id);
+        return;
+      }
+
+      // Check if wave completed and next wave started
+      const updatedInstance = POIWaveCombatService.getCombatInstance(combat_instance_id);
+      if (updatedInstance && updatedInstance.currentWave > previousWave) {
+        // Wave completed, next wave started
+        socket.emit(SERVER_EVENTS.POI_COMBAT_WAVE_COMPLETE, {
+          combat_instance_id,
+          completed_wave: previousWave,
+        });
+        socket.emit(SERVER_EVENTS.POI_COMBAT_WAVE_STARTED, {
+          combat_instance_id,
+          wave_number: updatedInstance.currentWave,
+          total_waves: updatedInstance.totalWaves,
+          monsters: updatedInstance.waveMonsters,
+        });
+      }
+
+      // Process automatic turns until player turn or combat ends
+      const autoResult = await POIWaveCombatService.processAutomaticTurns(combat_instance_id);
+
+      // Get updated state
+      const finalInstance = POIWaveCombatService.getCombatInstance(combat_instance_id);
+      if (!finalInstance || !finalInstance.isActive) {
+        // Combat ended during automatic processing
+        if (autoResult.combatLog) {
+          socket.emit(SERVER_EVENTS.POI_COMBAT_ENDED, {
+            combat_instance_id,
+            result: autoResult.combatLog.result,
+            rewards: autoResult.combatLog.rewards,
+            duration: autoResult.combatLog.duration,
+          });
+          POIWaveCombatService.endPOICombat(combat_instance_id);
+        }
+        return;
+      }
+
+      const participants = finalInstance.combatEngine.getParticipants();
+      const currentActor = finalInstance.combatEngine.getCurrentActor();
+      const recentActions = finalInstance.combatEngine.getRecentActions(10);
+
+      // Emit combat state update
+      socket.emit(SERVER_EVENTS.POI_COMBAT_STATE, {
+        combat_instance_id,
+        participants,
+        current_actor: currentActor,
+        recent_actions: recentActions,
+        wave_number: finalInstance.currentWave,
+        total_waves: finalInstance.totalWaves,
+      });
+    } catch (error) {
+      socket.emit(SERVER_EVENTS.ERROR, {
+        message: error instanceof Error ? error.message : 'Failed to process POI combat action',
       });
     }
   });

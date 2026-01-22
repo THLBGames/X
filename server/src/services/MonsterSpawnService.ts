@@ -32,6 +32,7 @@ export class MonsterSpawnService {
     }
 
     const monsterPool = floor.monster_pool || [];
+    console.log(`[MonsterSpawnService] Floor ${floorId} monster pool size: ${monsterPool.length}, node type: ${node.node_type}`);
 
     // Determine if this is a boss node
     const isBossNode = node.node_type === 'boss';
@@ -166,6 +167,44 @@ export class MonsterSpawnService {
     };
 
     return monster;
+  }
+
+  /**
+   * Spawn monsters for a specific wave configuration
+   */
+  static async spawnWaveMonsters(
+    waveConfig: { monsterCount: number; monsterPool?: MonsterPool[] },
+    characterLevel: number,
+    floorId: string
+  ): Promise<Monster[]> {
+    // Use wave-specific monster pool if provided, otherwise use floor monster pool
+    let pool: MonsterPool[];
+    if (waveConfig.monsterPool && waveConfig.monsterPool.length > 0) {
+      pool = waveConfig.monsterPool;
+    } else {
+      // Get floor to access monster pool
+      const floor = await LabyrinthFloorModel.findById(floorId);
+      if (!floor) {
+        throw new Error(`Floor ${floorId} not found`);
+      }
+      pool = floor.monster_pool || [];
+    }
+
+    if (pool.length === 0) {
+      console.warn(`No monster pool available for wave on floor ${floorId}`);
+      return [];
+    }
+
+    const monsters: Monster[] = [];
+
+    for (let i = 0; i < waveConfig.monsterCount; i++) {
+      const monster = await this.spawnMonsterFromPool(pool, characterLevel, false);
+      if (monster) {
+        monsters.push(monster);
+      }
+    }
+
+    return monsters;
   }
 
   /**

@@ -11,6 +11,14 @@ export interface ProceduralGenerationConfig {
   startPointCount?: number; // Number of start points to create (default: 1)
   layoutType: 'maze' | 'hub_spoke' | 'linear' | 'random';
   connectionDensity: number; // 0-1, higher = more connections
+  poiWaveCombatEnabled?: boolean; // Enable POI wave combat generation (default: false)
+  poiWaveCombatPercentage?: number; // Percentage of monster_spawn nodes that get waves (0-1, default: 0.5)
+  poiWaveConfig?: {
+    minWaves: number;
+    maxWaves: number;
+    minMonstersPerWave: number;
+    maxMonstersPerWave: number;
+  }; // Wave configuration ranges (default: { minWaves: 2, maxWaves: 4, minMonstersPerWave: 2, maxMonstersPerWave: 5 })
 }
 
 export interface GeneratedLayout {
@@ -153,8 +161,31 @@ export class ProceduralGenerator {
     }
 
     // Fill remaining with monster spawns
+    // Determine POI wave config defaults
+    const poiWaveCombatEnabled = config.poiWaveCombatEnabled ?? false;
+    const poiWaveCombatPercentage = config.poiWaveCombatPercentage ?? 0.5;
+    const defaultWaveConfig = {
+      minWaves: 2,
+      maxWaves: 4,
+      minMonstersPerWave: 2,
+      maxMonstersPerWave: 5,
+    };
+    const waveConfig = config.poiWaveConfig ?? defaultWaveConfig;
+
     for (let i = 1; i < config.totalNodes; i++) {
       if (nodePositions[i].id) continue;
+
+      // Determine if this node should have POI waves
+      let metadata: Record<string, any> = {};
+      if (poiWaveCombatEnabled && Math.random() < poiWaveCombatPercentage) {
+        // Generate POI wave config for this node
+        metadata.poi_combat = this.generatePOIWaveConfig(
+          waveConfig.minWaves,
+          waveConfig.maxWaves,
+          waveConfig.minMonstersPerWave,
+          waveConfig.maxMonstersPerWave
+        );
+      }
 
       const node = await FloorNodeModel.create({
         floor_id: config.floor_id,
@@ -163,6 +194,7 @@ export class ProceduralGenerator {
         y_coordinate: nodePositions[i].y,
         name: `Room ${i}`,
         is_revealed: false,
+        metadata: Object.keys(metadata).length > 0 ? metadata : undefined,
       });
       nodes.push(node);
       nodePositions[i].id = node.id;
@@ -281,5 +313,35 @@ export class ProceduralGenerator {
     }
     
     return selected;
+  }
+
+  /**
+   * Generate POI wave combat configuration
+   */
+  private static generatePOIWaveConfig(
+    minWaves: number,
+    maxWaves: number,
+    minMonstersPerWave: number,
+    maxMonstersPerWave: number
+  ): { enabled: true; waves: Array<{ waveNumber: number; monsterCount: number }> } {
+    // Generate random number of waves within range
+    const numWaves = Math.floor(Math.random() * (maxWaves - minWaves + 1)) + minWaves;
+    
+    const waves: Array<{ waveNumber: number; monsterCount: number }> = [];
+    
+    // Generate each wave
+    for (let i = 1; i <= numWaves; i++) {
+      // Generate random monster count for this wave
+      const monsterCount = Math.floor(Math.random() * (maxMonstersPerWave - minMonstersPerWave + 1)) + minMonstersPerWave;
+      waves.push({
+        waveNumber: i,
+        monsterCount,
+      });
+    }
+    
+    return {
+      enabled: true,
+      waves,
+    };
   }
 }

@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop, feature/**]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint shared package
+        run: npm run lint --workspace=shared
+        continue-on-error: true
+
+      - name: Lint server package
+        run: npm run lint --workspace=server
+        continue-on-error: true
+
+      - name: Build shared package
+        run: npm run build --workspace=shared
+
+      - name: Build server package
+        run: npm run build --workspace=server
+
+      - name: Verify migration scripts
+        run: |
+          if [ ! -d "server/migrations" ]; then
+            echo "Error: migrations directory not found"
+            exit 1
+          fi
+          echo "Found $(ls -1 server/migrations/*.sql | wc -l) migration files"
+        working-directory: ${{ github.workspace }}

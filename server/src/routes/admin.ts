@@ -1151,9 +1151,12 @@ export function setupAdminRoutes(app: Express) {
     try {
       const { id: labyrinth_id, floorId } = req.params;
 
+      console.log(`[Load Layout] Loading floor ${floorId} for labyrinth ${labyrinth_id}`);
+
       // Verify floor belongs to labyrinth
       const floor = await LabyrinthFloorModel.findById(floorId);
       if (!floor || floor.labyrinth_id !== labyrinth_id) {
+        console.log(`[Load Layout] Floor ${floorId} not found or doesn't belong to labyrinth ${labyrinth_id}`);
         return res.status(404).json({ success: false, message: 'Floor not found' });
       }
 
@@ -1161,14 +1164,16 @@ export function setupAdminRoutes(app: Express) {
       const nodes = await FloorNodeModel.findByFloorId(floorId);
       const connections = await FloorConnectionModel.findByFloorId(floorId);
 
+      console.log(`[Load Layout] Loaded ${nodes.length} nodes, ${connections.length} connections for floor ${floorId}`);
+
       res.json({
         success: true,
         floor,
-        nodes,
-        connections,
+        nodes: nodes || [],
+        connections: connections || [],
       });
     } catch (error) {
-      console.error('Get floor layout error:', error);
+      console.error('[Load Layout] Error:', error);
       res.status(500).json({
         success: false,
         message: error instanceof Error ? error.message : 'Failed to fetch floor layout',
@@ -1183,6 +1188,8 @@ export function setupAdminRoutes(app: Express) {
     try {
       const { id: labyrinth_id, floorId } = req.params;
       const { nodes, connections, settings } = req.body;
+
+      console.log(`[Save Layout] Floor ${floorId}: Saving ${nodes?.length || 0} nodes, ${connections?.length || 0} connections`);
 
       // Verify floor belongs to labyrinth
       const floor = await LabyrinthFloorModel.findById(floorId);
@@ -1218,78 +1225,113 @@ export function setupAdminRoutes(app: Express) {
       // Handle bulk node operations
       let nodeIdMap = new Map<string, string>(); // old_id -> new_id
       
-      if (nodes && Array.isArray(nodes)) {
-        // Delete existing nodes
-        await FloorNodeModel.deleteByFloorId(floorId);
+      // Always process nodes array (even if empty) to ensure consistency
+      const nodesArray = Array.isArray(nodes) ? nodes : [];
+      
+      // Get existing node IDs for this floor
+      const existingNodes = await FloorNodeModel.findByFloorId(floorId);
+      const existingNodeIds = new Set(existingNodes.map(n => n.id));
+      const newNodeIds = new Set(nodesArray.filter(n => n && n.id).map(n => n.id));
 
-        // Create new nodes and map old IDs to new IDs
-        for (const nodeData of nodes) {
-          const newNode = await FloorNodeModel.create({
-            floor_id: floorId,
-            node_type: nodeData.node_type,
-            x_coordinate: nodeData.x_coordinate,
-            y_coordinate: nodeData.y_coordinate,
-            name: nodeData.name,
-            description: nodeData.description,
-            metadata: nodeData.metadata || {},
-            required_boss_defeated: nodeData.required_boss_defeated || null,
-            is_revealed: nodeData.is_revealed ?? false,
-            is_start_point: nodeData.is_start_point ?? false,
-            leads_to_floor_number: nodeData.leads_to_floor_number || null,
-            capacity_limit: nodeData.capacity_limit || null,
-          });
-          
-          // Map old ID to new ID if old ID exists
-          if (nodeData.id) {
-            nodeIdMap.set(nodeData.id, newNode.id);
-          }
+      console.log(`[Save Layout] Existing nodes: ${existingNodes.length}, New nodes: ${nodesArray.length}`);
+
+      // Delete nodes that are not in the new list
+      const nodesToDelete = existingNodes.filter(n => !newNodeIds.has(n.id));
+      console.log(`[Save Layout] Deleting ${nodesToDelete.length} nodes`);
+      for (const nodeToDelete of nodesToDelete) {
+        await FloorNodeModel.delete(nodeToDelete.id);
+      }
+
+      // Create/update nodes, preserving IDs when provided
+      for (const nodeData of nodesArray) {
+        if (!nodeData) continue; // Skip null/undefined entries
+        
+        const newNode = await FloorNodeModel.create({
+          id: nodeData.id, // Preserve existing ID if provided
+          floor_id: floorId,
+          node_type: nodeData.node_type,
+          x_coordinate: nodeData.x_coordinate,
+          y_coordinate: nodeData.y_coordinate,
+          name: nodeData.name,
+          description: nodeData.description,
+          metadata: nodeData.metadata || {},
+          required_boss_defeated: nodeData.required_boss_defeated || null,
+          is_revealed: nodeData.is_revealed ?? false,
+          is_start_point: nodeData.is_start_point ?? false,
+          leads_to_floor_number: nodeData.leads_to_floor_number || null,
+          capacity_limit: nodeData.capacity_limit || null,
+        });
+        
+        // Map old ID to new ID (should be same if ID was preserved)
+        if (nodeData.id) {
+          nodeIdMap.set(nodeData.id, newNode.id);
         }
       }
 
       // Handle bulk connection operations
-      if (connections && Array.isArray(connections)) {
-        // Delete existing connections
-        await FloorConnectionModel.deleteByFloorId(floorId);
+      // Always process connections array (even if empty) to ensure consistency
+      const connectionsArray = Array.isArray(connections) ? connections : [];
+      
+      // Get existing connection IDs for this floor
+      const existingConnections = await FloorConnectionModel.findByFloorId(floorId);
+      const existingConnectionIds = new Set(existingConnections.map(c => c.id));
+      const newConnectionIds = new Set(connectionsArray.filter(c => c && c.id).map(c => c.id));
 
-        // Create new connections with mapped node IDs
-        for (const connData of connections) {
-          // Map old node IDs to new node IDs
-          const newFromId = nodeIdMap.get(connData.from_node_id) || connData.from_node_id;
-          const newToId = nodeIdMap.get(connData.to_node_id) || connData.to_node_id;
-          
-          // Verify both nodes exist (in case mapping failed)
-          const fromNode = await FloorNodeModel.findById(newFromId);
-          const toNode = await FloorNodeModel.findById(newToId);
-          
-          if (!fromNode || fromNode.floor_id !== floorId) {
-            console.warn(`Skipping connection: invalid from_node_id ${newFromId}`);
-            continue;
-          }
-          
-          if (!toNode || toNode.floor_id !== floorId) {
-            console.warn(`Skipping connection: invalid to_node_id ${newToId}`);
-            continue;
-          }
-          
-          await FloorConnectionModel.create({
-            floor_id: floorId,
-            from_node_id: newFromId,
-            to_node_id: newToId,
-            movement_cost: connData.movement_cost || 1,
-            is_bidirectional: connData.is_bidirectional ?? true,
-            required_item: connData.required_item || null,
-            visibility_requirement: connData.visibility_requirement || null,
-          });
-        }
+      console.log(`[Save Layout] Existing connections: ${existingConnections.length}, New connections: ${connectionsArray.length}`);
+
+      // Delete connections that are not in the new list
+      const connectionsToDelete = existingConnections.filter(c => !newConnectionIds.has(c.id));
+      console.log(`[Save Layout] Deleting ${connectionsToDelete.length} connections`);
+      for (const connToDelete of connectionsToDelete) {
+        await FloorConnectionModel.delete(connToDelete.id);
       }
 
-      // Start points are now handled via is_start_point flag on nodes
-      // No need to update floor.start_node_id anymore
+      // Create/update connections with mapped node IDs, preserving IDs when provided
+      for (const connData of connectionsArray) {
+        if (!connData) continue; // Skip null/undefined entries
+        
+        // Map old node IDs to new node IDs
+        const newFromId = nodeIdMap.get(connData.from_node_id) || connData.from_node_id;
+        const newToId = nodeIdMap.get(connData.to_node_id) || connData.to_node_id;
+        
+        // Verify both nodes exist (in case mapping failed)
+        const fromNode = await FloorNodeModel.findById(newFromId);
+        const toNode = await FloorNodeModel.findById(newToId);
+        
+        if (!fromNode || fromNode.floor_id !== floorId) {
+          console.warn(`[Save Layout] Skipping connection: invalid from_node_id ${newFromId}`);
+          continue;
+        }
+        
+        if (!toNode || toNode.floor_id !== floorId) {
+          console.warn(`[Save Layout] Skipping connection: invalid to_node_id ${newToId}`);
+          continue;
+        }
+        
+        await FloorConnectionModel.create({
+          id: connData.id, // Preserve existing ID if provided
+          floor_id: floorId,
+          from_node_id: newFromId,
+          to_node_id: newToId,
+          movement_cost: connData.movement_cost || 1,
+          is_bidirectional: connData.is_bidirectional ?? true,
+          required_item: connData.required_item || null,
+          visibility_requirement: connData.visibility_requirement || null,
+        });
+      }
 
-      // Reload updated layout
+      console.log(`[Save Layout] Successfully saved floor ${floorId}`);
+
+      // Reload updated layout to verify persistence
       const updatedNodes = await FloorNodeModel.findByFloorId(floorId);
       const updatedConnections = await FloorConnectionModel.findByFloorId(floorId);
       const updatedFloor = await LabyrinthFloorModel.findById(floorId);
+
+      console.log(`[Save Layout] Reloaded: ${updatedNodes.length} nodes, ${updatedConnections.length} connections`);
+
+      if (updatedNodes.length === 0 && nodesArray.length > 0) {
+        console.error(`[Save Layout] WARNING: Saved ${nodesArray.length} nodes but reloaded 0!`);
+      }
 
       res.json({
         success: true,
@@ -1298,7 +1340,7 @@ export function setupAdminRoutes(app: Express) {
         connections: updatedConnections,
       });
     } catch (error) {
-      console.error('Save floor layout error:', error);
+      console.error('[Save Layout] Error:', error);
       res.status(500).json({
         success: false,
         message: error instanceof Error ? error.message : 'Failed to save floor layout',
@@ -1337,6 +1379,9 @@ export function setupAdminRoutes(app: Express) {
         startPointCount: config.startPointCount,
         layoutType: config.layoutType || 'maze',
         connectionDensity: config.connectionDensity || 0.5,
+        poiWaveCombatEnabled: config.poiWaveCombatEnabled,
+        poiWaveCombatPercentage: config.poiWaveCombatPercentage,
+        poiWaveConfig: config.poiWaveConfig,
       });
 
       res.json({

@@ -134,6 +134,59 @@
   border: 2px solid #1e1e2e;
 }
 
+.poi-combat-panel {
+  position: absolute;
+  z-index: 30;
+  background: rgba(30, 30, 46, 0.95);
+  border: 2px solid #4a9eff;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.poi-combat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.poi-combat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.poi-combat-title {
+  font-weight: bold;
+  color: #4a9eff;
+  font-size: 0.9rem;
+}
+
+.poi-combat-waves {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.btn-start-poi-combat {
+  background: #4a9eff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-start-poi-combat:hover {
+  background: #3a8eef;
+}
+
+.btn-start-poi-combat:active {
+  background: #2a7edf;
+}
+
 .movement-confirmation {
   position: absolute;
   z-index: 100;

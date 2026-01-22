@@ -65,7 +65,7 @@ setupAuthRoutes(app);
 setupAdminRoutes(app);
 
 // Labyrinth routes
-setupLabyrinthRoutes(app);
+setupLabyrinthRoutes(app, io);
 
 // Socket.IO setup
 io.on('connection', (socket) => {

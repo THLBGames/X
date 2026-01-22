@@ -298,6 +298,162 @@ For production deployment:
 4. Configure firewall rules to expose the necessary ports
 5. Set up database backups and monitoring
 
+## CI/CD Pipeline
+
+The project includes automated CI/CD pipelines using GitHub Actions and Render for deployment.
+
+### Overview
+
+- **CI Workflow**: Runs on every push/PR to validate code quality and build
+- **Staging Deployment**: Automatically deploys to staging on merge to `main` or `develop`
+- **Production Deployment**: Deploys to production on release publication
+
+### Setup
+
+#### 1. Render Configuration
+
+The project uses Render for hosting. Infrastructure is defined in `render.yaml` at the project root.
+
+**Services:**
+- `idle-rpg-server-staging` - Staging web service
+- `idle-rpg-server-production` - Production web service
+
+**Databases:**
+- `idle-rpg-db-staging` - Staging PostgreSQL database
+- `idle-rpg-db-production` - Production PostgreSQL database
+
+To set up Render services:
+1. Connect your GitHub repository to Render
+2. Import the `render.yaml` blueprint
+3. Render will create the services and databases automatically
+
+#### 2. GitHub Secrets
+
+Configure the following secrets in your GitHub repository settings:
+
+**Required Secrets:**
+- `RENDER_API_KEY` - Render API key (found in Render dashboard)
+- `RENDER_SERVICE_ID_STAGING` - Staging service ID from Render
+- `RENDER_SERVICE_ID_PRODUCTION` - Production service ID from Render
+- `RENDER_SERVICE_URL_STAGING` - Staging service URL (e.g., `https://idle-rpg-server-staging.onrender.com`)
+- `RENDER_SERVICE_URL_PRODUCTION` - Production service URL
+
+**Database Secrets (for migrations):**
+- `RENDER_DB_HOST_STAGING` - Staging database host
+- `RENDER_DB_PORT_STAGING` - Staging database port (usually 5432)
+- `RENDER_DB_NAME_STAGING` - Staging database name
+- `RENDER_DB_USER_STAGING` - Staging database user
+- `RENDER_DB_PASSWORD_STAGING` - Staging database password
+- `RENDER_DB_HOST_PRODUCTION` - Production database host
+- `RENDER_DB_PORT_PRODUCTION` - Production database port
+- `RENDER_DB_NAME_PRODUCTION` - Production database name
+- `RENDER_DB_USER_PRODUCTION` - Production database user
+- `RENDER_DB_PASSWORD_PRODUCTION` - Production database password
+
+#### 3. Environment Variables in Render
+
+Set the following environment variables in the Render dashboard for each service:
+
+- `NODE_ENV` - `staging` or `production`
+- `PORT` - `3001`
+- `CLIENT_URL` - Your client application URL
+- `JWT_SECRET` - Strong random string for JWT signing
+
+Database connection variables are automatically set by Render when using the blueprint.
+
+### Migration System
+
+The project uses a tracked migration system that prevents running migrations multiple times.
+
+#### Migration Scripts
+
+- `npm run migrate` - Run all migrations (legacy, runs all migrations)
+- `npm run migrate:tracked` - Run pending migrations with tracking (recommended)
+- `npm run migrate:dry-run` - Preview pending migrations without executing
+- `npm run migrate:rollback` - Rollback last migration (requires `--confirm` flag)
+
+#### Migration Tracking
+
+Migrations are tracked in the `schema_migrations` table:
+- Only pending migrations are executed
+- Each migration is recorded with timestamp
+- Safe to run multiple times (idempotent)
+
+#### Running Migrations Manually
+
+For local development:
+```bash
+cd server
+npm run migrate:tracked
+```
+
+For staging/production (via CI/CD):
+Migrations run automatically after deployment in the GitHub Actions workflows.
+
+### Deployment Flow
+
+#### Staging Deployment
+
+1. Push to `main` or `develop` branch
+2. CI workflow validates code
+3. Staging deployment workflow:
+   - Builds server and shared packages
+   - Deploys to Render staging service
+   - Runs database migrations on staging database
+   - Verifies health checks
+
+#### Production Deployment
+
+1. Create a GitHub release
+2. Production deployment workflow:
+   - Builds server and shared packages
+   - Deploys to Render production service
+   - Runs database migrations on production database
+   - Verifies health checks
+   - Rolls back on failure
+
+**Manual Production Deployment:**
+You can also trigger production deployment manually via GitHub Actions:
+1. Go to Actions → Deploy to Production
+2. Click "Run workflow"
+3. Type "deploy" to confirm
+
+### Health Checks
+
+The deployment pipelines verify service health:
+
+- `GET /health` - Basic server health check
+- `GET /health/db` - Database connection health check
+
+Both endpoints must return 200 OK for deployment to succeed.
+
+### Rollback
+
+If a production deployment fails health checks:
+- The workflow automatically attempts to rollback the Render service
+- Database migrations are idempotent and safe to re-run
+- Manual rollback can be performed via Render dashboard
+
+### Troubleshooting CI/CD
+
+**Deployment fails:**
+1. Check GitHub Actions logs for error details
+2. Verify all required secrets are set
+3. Ensure Render services are running
+4. Check database connectivity
+
+**Migrations fail:**
+1. Verify database credentials in GitHub Secrets
+2. Check migration SQL syntax
+3. Ensure database user has necessary permissions
+4. Review migration tracking table state
+
+**Health checks fail:**
+1. Verify service is running in Render dashboard
+2. Check service logs in Render
+3. Verify environment variables are set correctly
+4. Check database connection health
+
 ## Admin Panel
 
 The server includes a comprehensive admin panel accessible at `/admin` route in the client application.

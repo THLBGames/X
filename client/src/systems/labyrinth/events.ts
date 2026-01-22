@@ -8,6 +8,8 @@ export const CLIENT_EVENTS = {
   INITIATE_COMBAT: 'labyrinth:initiate_combat',
   JOIN_COMBAT: 'labyrinth:join_combat',
   COMBAT_ACTION: 'labyrinth:combat_action',
+  START_POI_COMBAT: 'labyrinth:start_poi_combat',
+  POI_COMBAT_ACTION: 'labyrinth:poi_combat_action',
   CLAIM_REWARDS: 'labyrinth:claim_rewards',
 } as const;
 
@@ -23,6 +25,11 @@ export const SERVER_EVENTS = {
   COMBAT_UPDATE: 'labyrinth:combat_update',
   COMBAT_STATE: 'labyrinth:combat_state',
   COMBAT_ENDED: 'labyrinth:combat_ended',
+  POI_COMBAT_STARTED: 'labyrinth:poi_combat_started',
+  POI_COMBAT_WAVE_STARTED: 'labyrinth:poi_combat_wave_started',
+  POI_COMBAT_WAVE_COMPLETE: 'labyrinth:poi_combat_wave_complete',
+  POI_COMBAT_ENDED: 'labyrinth:poi_combat_ended',
+  POI_COMBAT_STATE: 'labyrinth:poi_combat_state',
   ELIMINATED: 'labyrinth:eliminated',
   COMPLETED: 'labyrinth:completed',
   REWARD_EARNED: 'labyrinth:reward_earned',

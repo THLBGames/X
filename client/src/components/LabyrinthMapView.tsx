@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useGameState } from '../systems';
 import { LabyrinthClient } from '../systems/labyrinth/LabyrinthClient';
 import { useLabyrinthState } from '../systems/labyrinth/LabyrinthState';
 import type { FloorNode, FloorConnection, ParticipantPosition } from '@idle-rpg/shared';
@@ -44,7 +45,10 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
   const [loading, setLoading] = useState(true);
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const [movementPoints, setMovementPoints] = useState<number>(0);
+  const [currentNodeHasWaveCombat, setCurrentNodeHasWaveCombat] = useState<boolean>(false);
+  const [waveCombatInfo, setWaveCombatInfo] = useState<{ totalWaves: number } | null>(null);
   const currentParticipant = useLabyrinthState((state) => state.currentParticipant);
+  const character = useGameState((state) => state.character);
 
   useEffect(() => {
     loadMapData();
@@ -119,6 +123,25 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
       if (positionResult.success) {
         setPosition(positionResult.position);
         setMovementPoints(positionResult.movementPoints || 0);
+        
+        // Check if current node has wave combat enabled
+        if (positionResult.position?.current_node_id && mapResult.success && mapResult.map) {
+          const currentNode = mapResult.map.nodes.find(
+            (n: FloorNode) => n.id === positionResult.position.current_node_id
+          );
+          if (currentNode?.metadata?.poi_combat?.enabled) {
+            setCurrentNodeHasWaveCombat(true);
+            setWaveCombatInfo({
+              totalWaves: currentNode.metadata.poi_combat.waves?.length || 0,
+            });
+          } else {
+            setCurrentNodeHasWaveCombat(false);
+            setWaveCombatInfo(null);
+          }
+        } else {
+          setCurrentNodeHasWaveCombat(false);
+          setWaveCombatInfo(null);
+        }
       }
 
       setLoading(false);
@@ -165,6 +188,22 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
 
   const handleCancelMove = () => {
     setSelectedNode(null);
+  };
+
+  const handleStartPOICombat = async () => {
+    if (!currentParticipant || !position?.current_node_id || !character) return;
+
+    try {
+      // Use socket to start POI combat (more efficient than REST)
+      labyrinthClient.startPOICombat(
+        currentParticipant.id,
+        position.current_node_id,
+        character
+      );
+    } catch (err) {
+      console.error('Failed to start POI combat:', err);
+      alert('Failed to start combat');
+    }
   };
 
   const getNodeVisibility = (nodeId: string): 'explored' | 'adjacent' | 'hidden' | 'revealed' => {
@@ -335,6 +374,33 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
                   {t('labyrinth.cancelMove', { defaultValue: 'Cancel' })}
                 </button>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* POI Combat Start Button */}
+        {currentNodeHasWaveCombat && position?.current_node_id && (
+          <div
+            className="poi-combat-panel"
+            style={{
+              left: `${mapData.nodes.find((n) => n.id === position.current_node_id)!.x_coordinate - mapData.metadata.bounds.minX + padding}px`,
+              top: `${mapData.nodes.find((n) => n.id === position.current_node_id)!.y_coordinate - mapData.metadata.bounds.minY + padding + 50}px`,
+            }}
+          >
+            <div className="poi-combat-content">
+              <div className="poi-combat-info">
+                <div className="poi-combat-title">
+                  {t('labyrinth.poiCombat', { defaultValue: 'Wave Combat Available' })}
+                </div>
+                {waveCombatInfo && (
+                  <div className="poi-combat-waves">
+                    {t('labyrinth.totalWaves', { defaultValue: 'Total Waves' })}: {waveCombatInfo.totalWaves}
+                  </div>
+                )}
+              </div>
+              <button onClick={handleStartPOICombat} className="btn-start-poi-combat">
+                {t('labyrinth.startCombat', { defaultValue: 'Start Combat' })}
+              </button>
             </div>
           </div>
         )}

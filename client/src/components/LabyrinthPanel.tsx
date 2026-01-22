@@ -75,6 +75,12 @@ export default function LabyrinthPanel() {
             useLabyrinthState.getState().setCurrentLabyrinth(labyrinth);
             useLabyrinthState.getState().setCurrentParticipant(participant);
             setActiveView('arena');
+            
+            // Rejoin the socket room so we can receive events
+            if (client.isConnected()) {
+              console.log('[LabyrinthPanel] Rejoining labyrinth socket room:', labyrinth.id);
+              client.joinLabyrinth(labyrinth.id, character.id);
+            }
           }
         }
       } catch (error) {
@@ -83,7 +89,21 @@ export default function LabyrinthPanel() {
     };
 
     // Wait a bit for the client to connect before checking
-    const timeoutId = setTimeout(checkActiveLabyrinths, 1000);
+    const timeoutId = setTimeout(() => {
+      // Wait for socket to be fully connected
+      if (client.isConnected()) {
+        checkActiveLabyrinths();
+      } else {
+        // If not connected yet, wait for connection
+        const checkConnection = setInterval(() => {
+          if (client.isConnected()) {
+            clearInterval(checkConnection);
+            checkActiveLabyrinths();
+          }
+        }, 100);
+        setTimeout(() => clearInterval(checkConnection), 5000); // Give up after 5 seconds
+      }
+    }, 1000);
     
     // Also refresh active labyrinths periodically
     const interval = setInterval(checkActiveLabyrinths, 30000); // Every 30 seconds
@@ -107,6 +127,12 @@ export default function LabyrinthPanel() {
     useLabyrinthState.getState().setCurrentLabyrinth(labyrinth);
     useLabyrinthState.getState().setCurrentParticipant(participant);
     setActiveView('arena');
+    
+    // Rejoin the socket room for the new labyrinth
+    if (labyrinthClient && labyrinthClient.isConnected() && character) {
+      console.log('[LabyrinthPanel] Switching to labyrinth, rejoining socket room:', labyrinth.id);
+      labyrinthClient.joinLabyrinth(labyrinth.id, character.id);
+    }
   };
 
   return (

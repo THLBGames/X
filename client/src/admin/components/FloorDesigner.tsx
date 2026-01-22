@@ -41,13 +41,28 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
         connections: FloorConnection[];
       }>(`/api/admin/labyrinths/${labyrinthId}/floors/${floorId}/layout`);
       
+      console.log('[FloorDesigner] Loaded layout data:', {
+        success: data.success,
+        nodesCount: data.nodes?.length || 0,
+        connectionsCount: data.connections?.length || 0,
+      });
+      
       if (data.success) {
-        setNodes(data.nodes || []);
-        setConnections(data.connections || []);
+        const loadedNodes = Array.isArray(data.nodes) ? data.nodes : [];
+        const loadedConnections = Array.isArray(data.connections) ? data.connections : [];
+        setNodes(loadedNodes);
+        setConnections(loadedConnections);
+        console.log('[FloorDesigner] Set nodes:', loadedNodes.length, 'connections:', loadedConnections.length);
+      } else {
+        console.warn('[FloorDesigner] Load failed or returned success:false');
+        setNodes([]);
+        setConnections([]);
       }
       setLoading(false);
     } catch (err) {
-      console.error('Failed to load floor layout:', err);
+      console.error('[FloorDesigner] Failed to load floor layout:', err);
+      setNodes([]);
+      setConnections([]);
       setLoading(false);
     }
   };
@@ -203,11 +218,23 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
     }
 
     try {
-      await AuthService.apiRequest(`/api/admin/labyrinths/${labyrinthId}/floors/${floorId}/layout`, {
+      const result = await AuthService.apiRequest<{
+        success: boolean;
+        nodes: FloorNode[];
+        connections: FloorConnection[];
+      }>(`/api/admin/labyrinths/${labyrinthId}/floors/${floorId}/layout`, {
         method: 'POST',
         body: JSON.stringify({ nodes, connections }),
       });
-      alert('Layout saved successfully!');
+      
+      if (result.success) {
+        // Update local state with the saved nodes and connections (which may have updated IDs)
+        setNodes(result.nodes || nodes);
+        setConnections(result.connections || connections);
+        alert('Layout saved successfully!');
+      } else {
+        alert('Failed to save layout');
+      }
     } catch (err) {
       alert('Failed to save layout: ' + (err instanceof Error ? err.message : 'Unknown error'));
     }

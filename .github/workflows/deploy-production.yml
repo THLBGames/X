@@ -1,0 +1,118 @@
+name: Deploy to Production
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "deploy" to confirm production deployment'
+        required: true
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.service-url }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify manual deployment confirmation
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "deploy" ]; then
+            echo "Error: Deployment not confirmed. Please type 'deploy' to confirm."
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build shared package
+        run: npm run build --workspace=shared
+
+      - name: Build server package
+        run: npm run build --workspace=server
+
+      - name: Deploy to Render (Production)
+        id: deploy
+        uses: johnbeynon/render-deploy@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID_PRODUCTION }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+
+      - name: Wait for service to be ready
+        run: |
+          echo "Waiting for service to be ready..."
+          sleep 30
+        continue-on-error: true
+
+      - name: Run database migrations (Production)
+        env:
+          DB_HOST: ${{ secrets.RENDER_DB_HOST_PRODUCTION }}
+          DB_PORT: ${{ secrets.RENDER_DB_PORT_PRODUCTION }}
+          DB_NAME: ${{ secrets.RENDER_DB_NAME_PRODUCTION }}
+          DB_USER: ${{ secrets.RENDER_DB_USER_PRODUCTION }}
+          DB_PASSWORD: ${{ secrets.RENDER_DB_PASSWORD_PRODUCTION }}
+        run: |
+          cd server
+          npm run migrate:tracked
+
+      - name: Health check
+        id: health-check
+        run: |
+          PROD_URL="${{ secrets.RENDER_SERVICE_URL_PRODUCTION }}"
+          if [ -z "$PROD_URL" ]; then
+            echo "Warning: RENDER_SERVICE_URL_PRODUCTION not set, skipping health check"
+            exit 0
+          fi
+          
+          echo "Checking health endpoint..."
+          for i in {1..10}; do
+            if curl -f -s "$PROD_URL/health" > /dev/null; then
+              echo "✓ Health check passed"
+              exit 0
+            fi
+            echo "Attempt $i failed, retrying in 10 seconds..."
+            sleep 10
+          done
+          
+          echo "✗ Health check failed after 10 attempts"
+          exit 1
+
+      - name: Database health check
+        run: |
+          PROD_URL="${{ secrets.RENDER_SERVICE_URL_PRODUCTION }}"
+          if [ -z "$PROD_URL" ]; then
+            echo "Warning: RENDER_SERVICE_URL_PRODUCTION not set, skipping DB health check"
+            exit 0
+          fi
+          
+          echo "Checking database health endpoint..."
+          if curl -f -s "$PROD_URL/health/db" > /dev/null; then
+            echo "✓ Database health check passed"
+          else
+            echo "✗ Database health check failed"
+            exit 1
+          fi
+
+      - name: Rollback on failure
+        if: failure()
+        uses: johnbeynon/render-deploy@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID_PRODUCTION }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+          rollback: true
+        continue-on-error: true

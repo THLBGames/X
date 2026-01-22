@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AuthService } from '../AuthService';
 import type { FloorNode } from '@idle-rpg/shared';
 import './POIInspector.css';
 
@@ -16,6 +15,10 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
   const [isStartPoint, setIsStartPoint] = useState(node.is_start_point || false);
   const [showJsonEditor, setShowJsonEditor] = useState(false);
   const [jsonText, setJsonText] = useState(JSON.stringify(metadata, null, 2));
+  
+  // Wave combat state - derived from metadata
+  const poiCombat = metadata.poi_combat || { enabled: false, waves: [] };
+  const [waves, setWaves] = useState(poiCombat.waves || []);
 
   useEffect(() => {
     setName(node.name || '');
@@ -23,6 +26,14 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
     setMetadata(node.metadata || {});
     setIsStartPoint(node.is_start_point || false);
     setJsonText(JSON.stringify(node.metadata || {}, null, 2));
+    
+    // Sync waves state with metadata
+    const poiCombatFromNode = node.metadata?.poi_combat;
+    if (poiCombatFromNode?.waves) {
+      setWaves(poiCombatFromNode.waves);
+    } else {
+      setWaves([]);
+    }
   }, [node]);
 
   const handleSave = () => {
@@ -42,6 +53,176 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
       metadata: finalMetadata,
       is_start_point: isStartPoint,
     });
+  };
+
+  // Wave combat configuration component
+  const renderWaveCombatConfig = () => {
+    const handleEnableWaveCombat = (enabled: boolean) => {
+      if (enabled) {
+        const initialWaves = waves.length > 0 ? waves : [{ waveNumber: 1, monsterCount: 3 }];
+        setWaves(initialWaves);
+        setMetadata({
+          ...metadata,
+          poi_combat: {
+            enabled: true,
+            waves: initialWaves,
+          },
+        });
+      } else {
+        const newMetadata = { ...metadata };
+        delete newMetadata.poi_combat;
+        setMetadata(newMetadata);
+        setWaves([]);
+      }
+    };
+
+    const handleAddWave = () => {
+      const newWave = {
+        waveNumber: waves.length + 1,
+        monsterCount: 3,
+      };
+      const updatedWaves = [...waves, newWave];
+      setWaves(updatedWaves);
+      setMetadata({
+        ...metadata,
+        poi_combat: {
+          enabled: true,
+          waves: updatedWaves,
+        },
+      });
+    };
+
+    const handleRemoveWave = (index: number) => {
+      const updatedWaves = waves.filter((_, i) => i !== index).map((w, i) => ({
+        ...w,
+        waveNumber: i + 1,
+      }));
+      setWaves(updatedWaves);
+      if (updatedWaves.length > 0) {
+        setMetadata({
+          ...metadata,
+          poi_combat: {
+            enabled: true,
+            waves: updatedWaves,
+          },
+        });
+      } else {
+        const newMetadata = { ...metadata };
+        delete newMetadata.poi_combat;
+        setMetadata(newMetadata);
+      }
+    };
+
+    const handleWaveChange = (index: number, field: 'monsterCount', value: number) => {
+      const updatedWaves = [...waves];
+      updatedWaves[index] = { ...updatedWaves[index], [field]: value };
+      setWaves(updatedWaves);
+      setMetadata({
+        ...metadata,
+        poi_combat: {
+          enabled: true,
+          waves: updatedWaves,
+        },
+      });
+    };
+
+    return (
+      <div className="wave-combat-config">
+        <h5>Wave Combat Configuration</h5>
+        <div className="form-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={poiCombat.enabled || false}
+              onChange={(e) => handleEnableWaveCombat(e.target.checked)}
+            />
+            Enable Wave Combat
+          </label>
+          <div className="form-hint">
+            When enabled, players can start wave-based combat at this node. Combat will automatically progress through waves until all enemies are defeated or the player dies.
+          </div>
+        </div>
+
+        {poiCombat.enabled && (
+          <div className="waves-config">
+            <div className="waves-header">
+              <label>Waves</label>
+              <button type="button" className="btn-add-wave" onClick={handleAddWave}>
+                + Add Wave
+              </button>
+            </div>
+
+            {waves.length === 0 && (
+              <div className="no-waves-message">
+                No waves configured. Click "Add Wave" to create the first wave.
+              </div>
+            )}
+
+            {waves.map((wave, index) => (
+              <div key={index} className="wave-item">
+                <div className="wave-header">
+                  <span className="wave-number">Wave {wave.waveNumber}</span>
+                  <button
+                    type="button"
+                    className="btn-remove-wave"
+                    onClick={() => handleRemoveWave(index)}
+                  >
+                    Remove
+                  </button>
+                </div>
+                <div className="wave-fields">
+                  <div className="form-group">
+                    <label>Monster Count</label>
+                    <input
+                      type="number"
+                      min="1"
+                      value={wave.monsterCount || 3}
+                      onChange={(e) =>
+                        handleWaveChange(index, 'monsterCount', parseInt(e.target.value) || 1)
+                      }
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Monster Pool (Optional - JSON array)</label>
+                    <textarea
+                      value={
+                        wave.monsterPool
+                          ? JSON.stringify(wave.monsterPool, null, 2)
+                          : ''
+                      }
+                      onChange={(e) => {
+                        try {
+                          const pool = e.target.value.trim()
+                            ? JSON.parse(e.target.value)
+                            : undefined;
+                          const updatedWaves = [...waves];
+                          updatedWaves[index] = { ...updatedWaves[index], monsterPool: pool };
+                          setWaves(updatedWaves);
+                          setMetadata({
+                            ...metadata,
+                            poi_combat: {
+                              enabled: true,
+                              waves: updatedWaves,
+                            },
+                          });
+                        } catch (err) {
+                          // Invalid JSON, ignore
+                        }
+                      }}
+                      rows={2}
+                      placeholder='[{"monsterId": "goblin", "weight": 1}]'
+                    />
+                    <div className="form-hint">
+                      Leave empty to use floor monster pool. Format: [&#123;&quot;monsterId&quot;: &quot;id&quot;, &quot;weight&quot;: 1&#125;]
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
   };
 
   // Type-specific configuration forms
@@ -104,6 +285,15 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
                 }
               />
             </div>
+            {renderWaveCombatConfig()}
+          </div>
+        );
+
+      case 'monster_spawn':
+        return (
+          <div className="type-config">
+            <h5>Monster Spawn Configuration</h5>
+            {renderWaveCombatConfig()}
           </div>
         );
 

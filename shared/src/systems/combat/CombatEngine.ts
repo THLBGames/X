@@ -6,9 +6,13 @@ import type {
   CombatLog,
   CombatRewards,
   Inventory,
+  InventoryItem,
   Skill,
-} from '../types/GameTypes.js';
-import { CombatActionType, ConsumableEffectType, ItemType, CombatResult } from '../constants/enums.js';
+  LearnedSkill,
+  MonsterAbility,
+  ActiveStatusEffect,
+} from '../../types/GameTypes.js';
+import { CombatActionType, ConsumableEffectType, ItemType, CombatResult } from '../../constants/enums.js';
 import type { CombatDataProvider } from './CombatDataProvider.js';
 
 export interface CombatOptions {
@@ -159,7 +163,7 @@ export class CombatEngine {
     // Try to use skill if one is queued
     if (queuedSkillId && this.character) {
       const skill = this.dataProvider.getSkill(queuedSkillId);
-      const learnedSkill = this.character.learnedSkills.find((ls) => ls.skillId === queuedSkillId);
+      const learnedSkill = this.character.learnedSkills.find((ls: LearnedSkill) => ls.skillId === queuedSkillId);
 
       // Validate skill
       if (skill && learnedSkill && learnedSkill.level > 0) {
@@ -326,7 +330,7 @@ export class CombatEngine {
     }
 
     // Check if player has the item in inventory
-    const inventoryItem = this.inventory.items.find((invItem) => invItem.itemId === itemId);
+    const inventoryItem = this.inventory.items.find((invItem: InventoryItem) => invItem.itemId === itemId);
     if (!inventoryItem || inventoryItem.quantity === 0) {
       return null;
     }
@@ -441,7 +445,7 @@ export class CombatEngine {
     // Use monster abilities if available
     if (monsterData.abilities && monsterData.abilities.length > 0) {
       // Select random ability based on chance
-      const abilities = monsterData.abilities.filter((ability) => Math.random() <= ability.chance);
+      const abilities = monsterData.abilities.filter((ability: MonsterAbility) => Math.random() <= ability.chance);
 
       if (abilities.length > 0) {
         const ability = abilities[Math.floor(Math.random() * abilities.length)];
@@ -523,7 +527,7 @@ export class CombatEngine {
   private updateStatusEffects(): void {
     const now = Date.now();
     for (const participant of this.participants) {
-      participant.statusEffects = participant.statusEffects.filter((effect) => {
+      participant.statusEffects = participant.statusEffects.filter((effect: ActiveStatusEffect) => {
         const elapsed = (now - effect.appliedAt) / 1000; // Convert to seconds
         return effect.remainingDuration === -1 || elapsed < effect.remainingDuration;
       });

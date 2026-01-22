@@ -3,6 +3,34 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  position: relative;
+}
+
+.poi-combat-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.poi-combat-header {
+  padding: 10px 20px;
+  background: rgba(30, 30, 46, 0.95);
+  border-bottom: 2px solid #4a9eff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poi-combat-wave-info {
+  color: #4a9eff;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .labyrinth-arena-header {

@@ -13,6 +13,7 @@ export interface FloorConnection {
 }
 
 export interface CreateFloorConnectionInput {
+  id?: string; // Optional: if provided, use this ID instead of generating a new one
   floor_id: string;
   from_node_id: string;
   to_node_id: string;
@@ -24,22 +25,51 @@ export interface CreateFloorConnectionInput {
 
 export class FloorConnectionModel {
   static async create(input: CreateFloorConnectionInput): Promise<FloorConnection> {
-    const result = await pool.query(
-      `INSERT INTO labyrinth_floor_connections 
-       (floor_id, from_node_id, to_node_id, movement_cost, is_bidirectional, required_item, visibility_requirement)
-       VALUES ($1, $2, $3, $4, $5, $6, $7)
-       RETURNING *`,
-      [
-        input.floor_id,
-        input.from_node_id,
-        input.to_node_id,
-        input.movement_cost ?? 1,
-        input.is_bidirectional ?? true,
-        input.required_item || null,
-        input.visibility_requirement ? JSON.stringify(input.visibility_requirement) : null,
-      ]
-    );
-    return this.mapRowToConnection(result.rows[0]);
+    // If ID is provided, use it; otherwise let the database generate one
+    if (input.id) {
+      const result = await pool.query(
+        `INSERT INTO labyrinth_floor_connections 
+         (id, floor_id, from_node_id, to_node_id, movement_cost, is_bidirectional, required_item, visibility_requirement)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         ON CONFLICT (id) DO UPDATE SET
+           floor_id = EXCLUDED.floor_id,
+           from_node_id = EXCLUDED.from_node_id,
+           to_node_id = EXCLUDED.to_node_id,
+           movement_cost = EXCLUDED.movement_cost,
+           is_bidirectional = EXCLUDED.is_bidirectional,
+           required_item = EXCLUDED.required_item,
+           visibility_requirement = EXCLUDED.visibility_requirement
+         RETURNING *`,
+        [
+          input.id,
+          input.floor_id,
+          input.from_node_id,
+          input.to_node_id,
+          input.movement_cost ?? 1,
+          input.is_bidirectional ?? true,
+          input.required_item || null,
+          input.visibility_requirement ? JSON.stringify(input.visibility_requirement) : null,
+        ]
+      );
+      return this.mapRowToConnection(result.rows[0]);
+    } else {
+      const result = await pool.query(
+        `INSERT INTO labyrinth_floor_connections 
+         (floor_id, from_node_id, to_node_id, movement_cost, is_bidirectional, required_item, visibility_requirement)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
+         RETURNING *`,
+        [
+          input.floor_id,
+          input.from_node_id,
+          input.to_node_id,
+          input.movement_cost ?? 1,
+          input.is_bidirectional ?? true,
+          input.required_item || null,
+          input.visibility_requirement ? JSON.stringify(input.visibility_requirement) : null,
+        ]
+      );
+      return this.mapRowToConnection(result.rows[0]);
+    }
   }
 
   static async findById(id: string): Promise<FloorConnection | null> {

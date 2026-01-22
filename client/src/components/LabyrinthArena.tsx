@@ -7,6 +7,7 @@ import type { Labyrinth, LabyrinthParticipant } from '@idle-rpg/shared';
 import LabyrinthCombat from './LabyrinthCombat';
 import LabyrinthMapView from './LabyrinthMapView';
 import PartyManagement from './PartyManagement';
+import CombatDisplay from './CombatDisplay';
 import './LabyrinthArena.css';
 
 interface LabyrinthArenaProps {
@@ -20,7 +21,24 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
   const currentParticipant = useLabyrinthState((state) => state.currentParticipant);
   const floorPlayers = useLabyrinthState((state) => state.floorPlayers);
   const inCombat = useLabyrinthState((state) => state.inCombat);
+  const combatPrepared = useLabyrinthState((state) => state.combatPrepared);
+  const poiCombatActive = useLabyrinthState((state) => state.poiCombatActive);
+  const poiCombatInstanceId = useLabyrinthState((state) => state.poiCombatInstanceId);
+  const poiCombatState = useLabyrinthState((state) => state.poiCombatState);
+  const poiCombatWaveNumber = useLabyrinthState((state) => state.poiCombatWaveNumber);
+  const poiCombatTotalWaves = useLabyrinthState((state) => state.poiCombatTotalWaves);
   const setFloorPlayers = useLabyrinthState((state) => state.setFloorPlayers);
+  const setPOICombatActive = useLabyrinthState((state) => state.setPOICombatActive);
+  const setPOICombatWave = useLabyrinthState((state) => state.setPOICombatWave);
+  const setPOICombatState = useLabyrinthState((state) => state.setPOICombatState);
+  const setCombatPrepared = useLabyrinthState((state) => state.setCombatPrepared);
+  const setInCombat = useLabyrinthState((state) => state.setInCombat);
+  const setCombatState = useLabyrinthState((state) => state.setCombatState);
+  const setCombatActive = useGameState((state) => state.setCombatActive);
+  const updateCombatState = useGameState((state) => state.updateCombatState);
+  const startCombatWithMonsters = useGameState((state) => state.startCombatWithMonsters);
+  const queueSkill = useGameState((state) => state.queueSkill);
+  const queueConsumable = useGameState((state) => state.queueConsumable);
 
   useEffect(() => {
     if (!currentParticipant) return;
@@ -46,6 +64,188 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
     return () => clearInterval(interval);
   }, [labyrinth.id, currentParticipant?.floor_number, setFloorPlayers]);
 
+  // Setup regular combat event handlers (always active, not just when component is rendered)
+  const [preparedCombatData, setPreparedCombatData] = useState<any>(null);
+
+  useEffect(() => {
+    if (!currentParticipant) return;
+
+    const onCombatPrepared = (data: any) => {
+      console.log('[LabyrinthArena] Combat prepared event received:', data);
+      setCombatPrepared(true, data.combat_instance_id);
+      setPreparedCombatData(data); // Store the combat data
+    };
+
+    const onCombatInitiated = (data: any) => {
+      console.log('[LabyrinthArena] Combat initiated:', data);
+      setInCombat(true, data.combat_instance_id);
+      setCombatPrepared(false, null);
+    };
+
+    const onCombatState = (data: any) => {
+      setCombatState(data);
+    };
+
+    const onCombatEnded = (data: any) => {
+      console.log('[LabyrinthArena] Combat ended:', data);
+      setInCombat(false, null);
+      setCombatPrepared(false, null);
+      setCombatState(null);
+    };
+
+    labyrinthClient.callbacks.onCombatPrepared = onCombatPrepared;
+    labyrinthClient.callbacks.onCombatInitiated = onCombatInitiated;
+    labyrinthClient.callbacks.onCombatState = onCombatState;
+    labyrinthClient.callbacks.onCombatEnded = onCombatEnded;
+
+    return () => {
+      delete labyrinthClient.callbacks.onCombatPrepared;
+      delete labyrinthClient.callbacks.onCombatInitiated;
+      delete labyrinthClient.callbacks.onCombatState;
+      delete labyrinthClient.callbacks.onCombatEnded;
+    };
+  }, [currentParticipant, labyrinthClient, setCombatPrepared, setInCombat, setCombatState]);
+
+  // Setup POI combat event handlers
+  useEffect(() => {
+    if (!currentParticipant) return;
+
+    const onPOICombatStarted = (data: any) => {
+      setPOICombatActive(true, data.combat_instance_id);
+      setPOICombatWave(data.wave_number, data.total_waves);
+      // Set GameState combat active so CombatDisplay shows
+      setCombatActive(true);
+      
+      // Initialize combat state with first wave monsters
+      if (data.monsters && character) {
+        startCombatWithMonsters(
+          data.monsters.map((m: any) => ({
+            id: m.id,
+            name: m.name,
+            stats: m.stats,
+            currentHealth: m.stats.health,
+            currentMana: m.stats.mana || 0,
+            statusEffects: [],
+            isAlive: true,
+          })),
+          data.wave_number - 1,
+          false, // isBossRound
+          character.combatStats.health,
+          character.combatStats.health,
+          character.combatStats.mana,
+          character.combatStats.mana
+        );
+      }
+    };
+
+    const onPOICombatWaveStarted = (data: any) => {
+      setPOICombatWave(data.wave_number, data.total_waves);
+    };
+
+    const onPOICombatWaveComplete = (data: any) => {
+      // Wave completed, next wave will start
+    };
+
+    const onPOICombatState = (data: any) => {
+      setPOICombatState(data);
+      
+      // Convert POI combat state to GameState combat state format
+      if (data.participants && character) {
+        const playerParticipant = data.participants.find((p: any) => p.isPlayer);
+        const monsterParticipants = data.participants.filter((p: any) => !p.isPlayer);
+        
+        if (playerParticipant) {
+          // Update combat state
+          updateCombatState({
+            playerHealth: playerParticipant.currentHealth,
+            playerMaxHealth: playerParticipant.stats.maxHealth,
+            playerMana: playerParticipant.currentMana,
+            playerMaxMana: playerParticipant.stats.maxMana,
+            playerParty: [{
+              id: playerParticipant.id,
+              name: playerParticipant.name,
+              isSummoned: false,
+              currentHealth: playerParticipant.currentHealth,
+              maxHealth: playerParticipant.stats.maxHealth,
+              currentMana: playerParticipant.currentMana,
+              maxMana: playerParticipant.stats.maxMana,
+              level: character.level,
+            }],
+            monsters: monsterParticipants.map((m: any) => ({
+              id: m.id,
+              name: m.name,
+              currentHealth: m.currentHealth,
+              maxHealth: m.stats.maxHealth,
+              level: 1, // TODO: Get from monster data
+            })),
+            recentActions: data.recent_actions || [],
+            roundNumber: data.wave_number - 1,
+            currentActor: data.current_actor?.isPlayer ? 'player' : 'monster',
+            currentMonsterIndex: 0,
+            turnNumber: data.recent_actions?.length || 0,
+            isBossRound: false,
+          });
+        }
+      }
+    };
+
+    const onPOICombatEnded = (data: any) => {
+      setPOICombatActive(false, null);
+      setPOICombatState(null);
+      setCombatActive(false);
+      
+      // Process rewards if victory
+      if (data.result === 'victory' && data.rewards) {
+        // TODO: Apply rewards to character
+        console.log('POI Combat rewards:', data.rewards);
+      }
+    };
+
+    labyrinthClient.callbacks.onPOICombatStarted = onPOICombatStarted;
+    labyrinthClient.callbacks.onPOICombatWaveStarted = onPOICombatWaveStarted;
+    labyrinthClient.callbacks.onPOICombatWaveComplete = onPOICombatWaveComplete;
+    labyrinthClient.callbacks.onPOICombatState = onPOICombatState;
+    labyrinthClient.callbacks.onPOICombatEnded = onPOICombatEnded;
+
+    return () => {
+      delete labyrinthClient.callbacks.onPOICombatStarted;
+      delete labyrinthClient.callbacks.onPOICombatWaveStarted;
+      delete labyrinthClient.callbacks.onPOICombatWaveComplete;
+      delete labyrinthClient.callbacks.onPOICombatState;
+      delete labyrinthClient.callbacks.onPOICombatEnded;
+    };
+  }, [currentParticipant, character, labyrinthClient, setPOICombatActive, setPOICombatWave, setPOICombatState, setCombatActive, updateCombatState, startCombatWithMonsters]);
+
+  // Handle POI combat actions (skills, items)
+  const handlePOICombatAction = (actionType: 'skill' | 'item' | 'attack', skillId?: string, itemId?: string) => {
+    if (!poiCombatInstanceId || !currentParticipant) return;
+
+    if (actionType === 'skill' && skillId) {
+      queueSkill(skillId);
+      labyrinthClient.sendPOICombatAction(
+        currentParticipant.id,
+        poiCombatInstanceId,
+        'skill',
+        skillId
+      );
+    } else if (actionType === 'item' && itemId) {
+      queueConsumable(itemId);
+      labyrinthClient.sendPOICombatAction(
+        currentParticipant.id,
+        poiCombatInstanceId,
+        'item',
+        undefined,
+        itemId
+      );
+    } else if (actionType === 'attack') {
+      labyrinthClient.sendPOICombatAction(
+        currentParticipant.id,
+        poiCombatInstanceId,
+        'attack'
+      );
+    }
+  };
+
   if (!currentParticipant) {
     return (
       <div className="labyrinth-arena">
@@ -54,12 +254,24 @@ export default function LabyrinthArena({ labyrinth, labyrinthClient }: Labyrinth
     );
   }
 
-  if (inCombat) {
-    return <LabyrinthCombat labyrinthClient={labyrinthClient} />;
+  // Show regular labyrinth combat (party combat) - either active or prepared
+  if ((inCombat || combatPrepared) && !poiCombatActive) {
+    return <LabyrinthCombat labyrinthClient={labyrinthClient} preparedCombatData={preparedCombatData} />;
   }
 
   return (
     <div className="labyrinth-arena">
+      {/* POI Combat Display Overlay */}
+      {poiCombatActive && (
+        <div className="poi-combat-overlay">
+          <div className="poi-combat-header">
+            <div className="poi-combat-wave-info">
+              {t('labyrinth.wave', { defaultValue: 'Wave' })} {poiCombatWaveNumber} / {poiCombatTotalWaves}
+            </div>
+          </div>
+          <CombatDisplay />
+        </div>
+      )}
       <div className="labyrinth-arena-header">
         <h3>{labyrinth.name}</h3>
         <div className="labyrinth-floor-info">

@@ -1,7 +1,7 @@
 /**
  * Auto-action (skill/consumable) constants
  */
-import { AutoCondition } from './enums';
+import { AutoCondition } from './enums.js';
 
 /**
  * Priority limits

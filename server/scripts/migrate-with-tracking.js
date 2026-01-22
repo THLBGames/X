@@ -31,35 +31,27 @@ async function ensureMigrationsTable() {
 }
 
 async function getAppliedMigrations() {
-  try {
-    const result = await client.query('SELECT filename FROM schema_migrations ORDER BY filename');
-    return result.rows.map(row => row.filename);
-  } catch (error) {
-    // Table doesn't exist yet, return empty array
-    return [];
-  }
+  const result = await client.query('SELECT filename FROM schema_migrations ORDER BY filename');
+  return result.rows.map(row => row.filename);
 }
 
 async function recordMigration(filename) {
-  try {
-    await client.query(
-      'INSERT INTO schema_migrations (filename) VALUES ($1) ON CONFLICT (filename) DO NOTHING',
-      [filename]
-    );
-  } catch (error) {
-    // If table doesn't exist, that's okay - we'll create it
-    if (error.code !== '42P01') {
-      throw error;
-    }
-  }
+  await client.query(
+    'INSERT INTO schema_migrations (filename) VALUES ($1) ON CONFLICT (filename) DO NOTHING',
+    [filename]
+  );
 }
 
 async function runMigrations() {
-  const useTracking = !process.argv.includes('--no-tracking');
+  const dryRun = process.argv.includes('--dry-run');
   
   try {
     await client.connect();
     console.log('Connected to database');
+
+    // Ensure migrations table exists
+    await ensureMigrationsTable();
+    console.log('Migration tracking table ready');
 
     // Get all migration files in order
     const migrationsDir = path.join(__dirname, '..', 'migrations');
@@ -67,15 +59,12 @@ async function runMigrations() {
       .filter(file => file.endsWith('.sql'))
       .sort(); // Sort alphabetically to run in order
 
-    let pendingMigrations = files;
+    // Get already applied migrations
+    const appliedMigrations = await getAppliedMigrations();
+    console.log(`Found ${appliedMigrations.length} previously applied migration(s)`);
 
-    // If using tracking, filter out already applied migrations
-    if (useTracking) {
-      await ensureMigrationsTable();
-      const appliedMigrations = await getAppliedMigrations();
-      console.log(`Found ${appliedMigrations.length} previously applied migration(s)`);
-      pendingMigrations = files.filter(file => !appliedMigrations.includes(file));
-    }
+    // Filter out already applied migrations
+    const pendingMigrations = files.filter(file => !appliedMigrations.includes(file));
 
     if (pendingMigrations.length === 0) {
       console.log('No pending migrations. Database is up to date.');
@@ -83,34 +72,40 @@ async function runMigrations() {
       return;
     }
 
-    console.log(`Found ${pendingMigrations.length} migration(s) to run`);
+    console.log(`Found ${pendingMigrations.length} pending migration(s) to run`);
 
-    // Run each migration
+    if (dryRun) {
+      console.log('\n[DRY RUN] Would run the following migrations:');
+      pendingMigrations.forEach(file => console.log(`  - ${file}`));
+      await client.end();
+      return;
+    }
+
+    // Run each pending migration
     for (const file of pendingMigrations) {
       const migrationPath = path.join(migrationsDir, file);
-      console.log(`Running migration: ${file}...`);
+      console.log(`\nRunning migration: ${file}...`);
       
       try {
         const sql = fs.readFileSync(migrationPath, 'utf8');
+        await client.query('BEGIN');
         await client.query(sql);
-        
-        // Record migration if tracking is enabled
-        if (useTracking) {
-          await recordMigration(file);
-        }
+        await recordMigration(file);
+        await client.query('COMMIT');
         
         console.log(`✓ Completed: ${file}`);
       } catch (error) {
+        await client.query('ROLLBACK');
         console.error(`✗ Failed: ${file}`);
         throw error;
       }
     }
 
-    console.log('\nAll migrations completed successfully!');
+    console.log('\n✓ All migrations completed successfully!');
 
     await client.end();
   } catch (error) {
-    console.error('Migration failed:', error);
+    console.error('\n✗ Migration failed:', error.message);
     await client.end();
     process.exit(1);
   }

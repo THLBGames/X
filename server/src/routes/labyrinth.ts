@@ -1,10 +1,12 @@
 import { Express } from 'express';
+import { Server } from 'socket.io';
 import { LabyrinthManager } from '../services/LabyrinthManager.js';
 import { FloorManager } from '../services/FloorManager.js';
 import { RewardService } from '../services/RewardService.js';
 import { MovementService } from '../services/MovementService.js';
 import { MapService } from '../services/MapService.js';
 import { FogOfWarService } from '../services/FogOfWarService.js';
+import { CombatService } from '../services/CombatService.js';
 import { LabyrinthModel } from '../models/Labyrinth.js';
 import { LabyrinthFloorModel } from '../models/LabyrinthFloor.js';
 import { LabyrinthParticipantModel } from '../models/LabyrinthParticipant.js';
@@ -12,9 +14,11 @@ import { ParticipantPositionModel } from '../models/ParticipantPosition.js';
 import { FloorNodeModel } from '../models/FloorNode.js';
 import { FloorConnectionModel } from '../models/FloorConnection.js';
 import { ProceduralGenerator } from '../services/ProceduralGenerator.js';
+import { POIWaveCombatService } from '../services/POIWaveCombatService.js';
+import { SERVER_EVENTS } from '../sockets/events.js';
 import { pool } from '../config/database.js';
 
-export function setupLabyrinthRoutes(app: Express) {
+export function setupLabyrinthRoutes(app: Express, io?: Server) {
   // Get all available labyrinths
   app.get('/api/labyrinth/list', async (req, res) => {
     try {
@@ -295,6 +299,25 @@ export function setupLabyrinthRoutes(app: Express) {
 
       if (!result.success) {
         return res.status(400).json(result);
+      }
+
+      // Check if combat was prepared at the target node and emit event
+      if (io) {
+        const preparedCombat = CombatService.getPreparedCombat(target_node_id, floor.id);
+        console.log(`[Move REST] Combat prepared check for node ${target_node_id}:`, preparedCombat ? 'YES' : 'NO');
+        if (preparedCombat) {
+          const roomName = `labyrinth:${labyrinth_id}:floor:${participant.floor_number}`;
+          const eventData = {
+            combat_instance_id: preparedCombat.combatInstanceId,
+            node_id: preparedCombat.nodeId,
+            floor_id: preparedCombat.floorId,
+            monsters: preparedCombat.monsters,
+            participant_ids: preparedCombat.participants.map((p) => p.id),
+          };
+          console.log(`[Move REST] Emitting COMBAT_PREPARED to room ${roomName}:`, eventData);
+          // Emit combat prepared event to all players on the floor
+          io.to(roomName).emit(SERVER_EVENTS.COMBAT_PREPARED, eventData);
+        }
       }
 
       res.json(result);
@@ -634,6 +657,153 @@ export function setupLabyrinthRoutes(app: Express) {
       res.status(500).json({
         success: false,
         message: error instanceof Error ? error.message : 'Failed to fetch nodes',
+      });
+    }
+  });
+
+  // Start POI wave combat
+  app.post('/api/labyrinth/:id/poi-combat/start', async (req, res) => {
+    try {
+      const { participant_id, node_id, character_data } = req.body;
+
+      if (!participant_id || !node_id || !character_data) {
+        return res.status(400).json({
+          success: false,
+          message: 'participant_id, node_id, and character_data are required',
+        });
+      }
+
+      // Get participant to get floor_id
+      const participant = await LabyrinthParticipantModel.findById(participant_id);
+      if (!participant) {
+        return res.status(404).json({ success: false, message: 'Participant not found' });
+      }
+
+      // Get floor
+      const floor = await LabyrinthFloorModel.findByLabyrinthAndFloor(
+        req.params.id,
+        participant.floor_number
+      );
+      if (!floor) {
+        return res.status(404).json({ success: false, message: 'Floor not found' });
+      }
+
+      // Verify participant is on the node
+      const position = await ParticipantPositionModel.findByParticipantAndFloor(
+        participant_id,
+        floor.id
+      );
+      if (!position || position.current_node_id !== node_id) {
+        return res.status(400).json({
+          success: false,
+          message: 'Participant is not on the specified node',
+        });
+      }
+
+      // Start POI combat
+      const combatInstance = await POIWaveCombatService.startPOICombat(
+        node_id,
+        floor.id,
+        participant_id,
+        character_data
+      );
+
+      res.json({
+        success: true,
+        combat_instance_id: combatInstance.combatInstanceId,
+        wave_number: combatInstance.currentWave,
+        total_waves: combatInstance.totalWaves,
+        monsters: combatInstance.waveMonsters,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: error instanceof Error ? error.message : 'Failed to start POI combat',
+      });
+    }
+  });
+
+  // Get POI combat status
+  app.get('/api/labyrinth/:id/poi-combat/:combat_instance_id/status', async (req, res) => {
+    try {
+      const { combat_instance_id } = req.params;
+
+      const instance = POIWaveCombatService.getCombatInstance(combat_instance_id);
+      if (!instance) {
+        return res.status(404).json({ success: false, message: 'Combat instance not found' });
+      }
+
+      const waveStatus = POIWaveCombatService.getCurrentWave(combat_instance_id);
+      const participants = instance.combatEngine.getParticipants();
+      const currentActor = instance.combatEngine.getCurrentActor();
+
+      res.json({
+        success: true,
+        combat_instance_id: instance.combatInstanceId,
+        wave_number: instance.currentWave,
+        total_waves: instance.totalWaves,
+        is_active: instance.isActive,
+        participants,
+        current_actor: currentActor,
+        wave_status: waveStatus,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: error instanceof Error ? error.message : 'Failed to get combat status',
+      });
+    }
+  });
+
+  // Process POI combat action
+  app.post('/api/labyrinth/:id/poi-combat/:combat_instance_id/action', async (req, res) => {
+    try {
+      const { combat_instance_id } = req.params;
+      const { participant_id, action_type, skill_id, item_id } = req.body;
+
+      if (!participant_id || !action_type) {
+        return res.status(400).json({
+          success: false,
+          message: 'participant_id and action_type are required',
+        });
+      }
+
+      const instance = POIWaveCombatService.getCombatInstance(combat_instance_id);
+      if (!instance || !instance.isActive) {
+        return res.status(404).json({ success: false, message: 'Combat instance not found or not active' });
+      }
+
+      // Verify participant matches
+      if (instance.participantId !== participant_id) {
+        return res.status(403).json({ success: false, message: 'Participant mismatch' });
+      }
+
+      // Process combat turn
+      const combatLog = await POIWaveCombatService.processCombatTurn(
+        combat_instance_id,
+        action_type === 'skill' ? skill_id : null,
+        action_type === 'item' ? item_id : null
+      );
+
+      // Get updated combat state
+      const participants = instance.combatEngine.getParticipants();
+      const currentActor = instance.combatEngine.getCurrentActor();
+      const recentActions = instance.combatEngine.getRecentActions(10);
+
+      res.json({
+        success: true,
+        combat_log: combatLog,
+        participants,
+        current_actor: currentActor,
+        recent_actions: recentActions,
+        wave_number: instance.currentWave,
+        total_waves: instance.totalWaves,
+        is_complete: !!combatLog,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: error instanceof Error ? error.message : 'Failed to process combat action',
       });
     }
   });

@@ -1,0 +1,94 @@
+services:
+  # Staging Server
+  - type: web
+    name: idle-rpg-server-staging
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install && npm run build --workspace=shared && npm run build --workspace=server
+    startCommand: npm start --workspace=server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: staging
+      - key: PORT
+        value: 3001
+      - key: DB_HOST
+        fromDatabase:
+          name: idle-rpg-db-staging
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: idle-rpg-db-staging
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: idle-rpg-db-staging
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: idle-rpg-db-staging
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: idle-rpg-db-staging
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false  # Set manually in Render dashboard
+
+  # Production Server
+  - type: web
+    name: idle-rpg-server-production
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install && npm run build --workspace=shared && npm run build --workspace=server
+    startCommand: npm start --workspace=server
+    healthCheckPath: /health
+    autoDeploy: false  # Only deploy via GitHub Actions
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: DB_HOST
+        fromDatabase:
+          name: idle-rpg-db-production
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: idle-rpg-db-production
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: idle-rpg-db-production
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: idle-rpg-db-production
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: idle-rpg-db-production
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false  # Set manually in Render dashboard
+
+databases:
+  # Staging Database
+  - name: idle-rpg-db-staging
+    databaseName: idle_rpg_staging
+    user: idle_rpg_staging_user
+    plan: starter
+    region: oregon
+
+  # Production Database
+  - name: idle-rpg-db-production
+    databaseName: idle_rpg_production
+    user: idle_rpg_production_user
+    plan: starter
+    region: oregon

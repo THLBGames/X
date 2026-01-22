@@ -1,4 +1,4 @@
-import type { Monster, Skill, Item, Dungeon, LootEntry } from '../types/GameTypes.js';
+import type { Monster, Skill, Item, Dungeon, LootEntry } from '../../types/GameTypes.js';
 
 export interface CombatDataProvider {
   getMonster(monsterId: string): Monster | null;

@@ -1,0 +1,96 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [main, develop]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: ${{ steps.deploy.outputs.service-url }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build shared package
+        run: npm run build --workspace=shared
+
+      - name: Build server package
+        run: npm run build --workspace=server
+
+      - name: Deploy to Render (Staging)
+        id: deploy
+        uses: johnbeynon/render-deploy@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID_STAGING }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+
+      - name: Wait for service to be ready
+        run: |
+          echo "Waiting for service to be ready..."
+          sleep 30
+        continue-on-error: true
+
+      - name: Run database migrations (Staging)
+        env:
+          DB_HOST: ${{ secrets.RENDER_DB_HOST_STAGING }}
+          DB_PORT: ${{ secrets.RENDER_DB_PORT_STAGING }}
+          DB_NAME: ${{ secrets.RENDER_DB_NAME_STAGING }}
+          DB_USER: ${{ secrets.RENDER_DB_USER_STAGING }}
+          DB_PASSWORD: ${{ secrets.RENDER_DB_PASSWORD_STAGING }}
+        run: |
+          cd server
+          npm run migrate:tracked
+
+      - name: Health check
+        run: |
+          STAGING_URL="${{ secrets.RENDER_SERVICE_URL_STAGING }}"
+          if [ -z "$STAGING_URL" ]; then
+            echo "Warning: RENDER_SERVICE_URL_STAGING not set, skipping health check"
+            exit 0
+          fi
+          
+          echo "Checking health endpoint..."
+          for i in {1..10}; do
+            if curl -f -s "$STAGING_URL/health" > /dev/null; then
+              echo "✓ Health check passed"
+              exit 0
+            fi
+            echo "Attempt $i failed, retrying in 10 seconds..."
+            sleep 10
+          done
+          
+          echo "✗ Health check failed after 10 attempts"
+          exit 1
+
+      - name: Database health check
+        run: |
+          STAGING_URL="${{ secrets.RENDER_SERVICE_URL_STAGING }}"
+          if [ -z "$STAGING_URL" ]; then
+            echo "Warning: RENDER_SERVICE_URL_STAGING not set, skipping DB health check"
+            exit 0
+          fi
+          
+          echo "Checking database health endpoint..."
+          if curl -f -s "$STAGING_URL/health/db" > /dev/null; then
+            echo "✓ Database health check passed"
+          else
+            echo "✗ Database health check failed"
+            exit 1
+          fi

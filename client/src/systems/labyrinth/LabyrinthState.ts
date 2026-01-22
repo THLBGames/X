@@ -14,6 +14,11 @@ interface LabyrinthState {
   combatPrepared: boolean;
   preparedCombatId: string | null;
   combatState: any | null;
+  poiCombatActive: boolean;
+  poiCombatInstanceId: string | null;
+  poiCombatWaveNumber: number;
+  poiCombatTotalWaves: number;
+  poiCombatState: any | null;
   mapNodes: FloorNode[];
   mapConnections: FloorConnection[];
   visibleNodes: string[];
@@ -28,6 +33,9 @@ interface LabyrinthState {
   setInCombat: (inCombat: boolean, combatId?: string | null) => void;
   setCombatPrepared: (prepared: boolean, combatId?: string | null) => void;
   setCombatState: (state: any | null) => void;
+  setPOICombatActive: (active: boolean, instanceId?: string | null) => void;
+  setPOICombatWave: (waveNumber: number, totalWaves: number) => void;
+  setPOICombatState: (state: any | null) => void;
   setMapData: (nodes: FloorNode[], connections: FloorConnection[]) => void;
   setVisibleNodes: (nodes: string[]) => void;
   setCurrentPosition: (position: ParticipantPosition | null) => void;
@@ -46,6 +54,11 @@ export const useLabyrinthState = create<LabyrinthState>((set) => ({
   combatPrepared: false,
   preparedCombatId: null,
   combatState: null,
+  poiCombatActive: false,
+  poiCombatInstanceId: null,
+  poiCombatWaveNumber: 1,
+  poiCombatTotalWaves: 1,
+  poiCombatState: null,
   mapNodes: [],
   mapConnections: [],
   visibleNodes: [],
@@ -60,6 +73,9 @@ export const useLabyrinthState = create<LabyrinthState>((set) => ({
   setInCombat: (inCombat, combatId = null) => set({ inCombat, combatId }),
   setCombatPrepared: (prepared, combatId = null) => set({ combatPrepared: prepared, preparedCombatId: combatId }),
   setCombatState: (state) => set({ combatState: state }),
+  setPOICombatActive: (active, instanceId = null) => set({ poiCombatActive: active, poiCombatInstanceId: instanceId }),
+  setPOICombatWave: (waveNumber, totalWaves) => set({ poiCombatWaveNumber: waveNumber, poiCombatTotalWaves: totalWaves }),
+  setPOICombatState: (state) => set({ poiCombatState: state }),
   setMapData: (nodes, connections) => set({ mapNodes: nodes, mapConnections: connections }),
   setVisibleNodes: (nodes) => set({ visibleNodes: nodes }),
   setCurrentPosition: (position) => set({ currentPosition: position }),
@@ -76,6 +92,11 @@ export const useLabyrinthState = create<LabyrinthState>((set) => ({
       combatPrepared: false,
       preparedCombatId: null,
       combatState: null,
+      poiCombatActive: false,
+      poiCombatInstanceId: null,
+      poiCombatWaveNumber: 1,
+      poiCombatTotalWaves: 1,
+      poiCombatState: null,
       mapNodes: [],
       mapConnections: [],
       visibleNodes: [],
