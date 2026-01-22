@@ -140,7 +140,7 @@ export class MonsterSpawnService {
       description: dbMonster.description || undefined,
       tier: dbMonster.tier,
       level: targetLevel, // Use target level instead of monster's base level
-      isBoss: dbMonster.abilities?.some((a) => a.type === 'boss') || false,
+      isBoss: dbMonster.abilities?.some((a) => (a.type as string) === 'boss') || false,
       stats: {
         health: this.scaleStat(dbMonster.stats.health, dbMonster.level, targetLevel),
         maxHealth: this.scaleStat(dbMonster.stats.maxHealth, dbMonster.level, targetLevel),
@@ -154,13 +154,15 @@ export class MonsterSpawnService {
         criticalChance: dbMonster.stats.criticalChance || 0,
         criticalDamage: dbMonster.stats.criticalDamage || 1.5,
       },
-      abilities: dbMonster.abilities?.map((a) => ({
-        id: a.id,
-        name: a.name,
-        type: a.type as 'attack' | 'heal' | 'buff' | 'debuff',
-        chance: a.chance,
-        effect: a.effect as any,
-      })),
+      abilities: dbMonster.abilities
+        ?.filter((a) => a.type !== 'boss') // Filter out 'boss' type as it's not a valid ability type
+        .map((a) => ({
+          id: a.id,
+          name: a.name,
+          type: a.type as 'attack' | 'heal' | 'buff' | 'debuff',
+          chance: a.chance,
+          effect: a.effect as any,
+        })),
       lootTable: dbMonster.loot_table || [],
       experienceReward: Math.floor(dbMonster.experience_reward * (1 + (targetLevel - dbMonster.level) * 0.1)),
       goldReward: dbMonster.gold_reward || { min: 0, max: 0 },

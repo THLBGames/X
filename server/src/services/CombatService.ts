@@ -57,7 +57,7 @@ export class CombatService {
     // Get character level for monster spawning (use first player's level)
     let characterLevel = 1;
     if (playersOnNode.length > 0) {
-      const firstParticipant = await LabyrinthParticipantModel.findById(playersOnNode[0].participant_id);
+      const firstParticipant = await LabyrinthParticipantModel.findById(playersOnNode[0]);
       // TODO: Get character level from participant or character data
       // For now, use default level
       characterLevel = 1; // Placeholder
@@ -74,17 +74,17 @@ export class CombatService {
     // Get all participants (players on node + their party members)
     const participants: CombatParticipant[] = [];
 
-    for (const playerPosition of playersOnNode) {
-      const participant = await this.createCombatParticipant(playerPosition.participant_id);
+    for (const participantId of playersOnNode) {
+      const participant = await this.createCombatParticipant(participantId);
       if (participant) {
         participants.push(participant);
       }
 
       // Add party members on the same node
-      const party = await LabyrinthPartyModel.findByParticipant(playerPosition.participant_id);
+      const party = await LabyrinthPartyModel.findByParticipant(participantId);
       if (party) {
         // Get the current participant to get their character_id
-        const currentParticipant = await LabyrinthParticipantModel.findById(playerPosition.participant_id);
+        const currentParticipant = await LabyrinthParticipantModel.findById(participantId);
         if (!currentParticipant) continue;
 
         for (const memberCharacterId of party.members) {

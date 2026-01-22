@@ -36,7 +36,7 @@ export class ServerCombatDataProvider implements ICombatDataProvider {
       description: dbMonster.description || undefined,
       tier: dbMonster.tier,
       level: dbMonster.level,
-      isBoss: dbMonster.abilities?.some((a) => a.type === 'boss') || false,
+      isBoss: dbMonster.abilities?.some((a) => (a.type as string) === 'boss') || false,
       stats: {
         health: dbMonster.stats.health,
         maxHealth: dbMonster.stats.maxHealth,
@@ -50,13 +50,15 @@ export class ServerCombatDataProvider implements ICombatDataProvider {
         criticalChance: dbMonster.stats.criticalChance || 0,
         criticalDamage: dbMonster.stats.criticalDamage || 1.5,
       },
-      abilities: dbMonster.abilities?.map((a) => ({
-        id: a.id,
-        name: a.name,
-        type: a.type as 'attack' | 'heal' | 'buff' | 'debuff',
-        chance: a.chance,
-        effect: a.effect as any,
-      })),
+      abilities: dbMonster.abilities
+        ?.filter((a) => a.type !== 'boss') // Filter out 'boss' type as it's not a valid ability type
+        .map((a) => ({
+          id: a.id,
+          name: a.name,
+          type: a.type as 'attack' | 'heal' | 'buff' | 'debuff',
+          chance: a.chance,
+          effect: a.effect as any,
+        })),
       lootTable: dbMonster.loot_table || [],
       experienceReward: dbMonster.experience_reward,
       goldReward: dbMonster.gold_reward || { min: 0, max: 0 },

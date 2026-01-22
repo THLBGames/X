@@ -5,7 +5,6 @@ import { LabyrinthFloorModel } from '../models/LabyrinthFloor.js';
 import { LabyrinthManager } from '../services/LabyrinthManager.js';
 import { FloorNodeModel } from '../models/FloorNode.js';
 import { FloorConnectionModel } from '../models/FloorConnection.js';
-import { ProceduralGenerator } from '../services/ProceduralGenerator.js';
 import { pool } from '../config/database.js';
 
 export function setupAdminRoutes(app: Express) {
@@ -878,7 +877,7 @@ export function setupAdminRoutes(app: Express) {
       const { AdminUserModel } = await import('../models/AdminUser.js');
       const users = await AdminUserModel.listAll();
       // Remove password hashes from response
-      const safeUsers = users.map(({ password_hash, ...user }) => user);
+      const safeUsers = users.map(({ password_hash: _password_hash, ...user }) => user);
       res.json({ success: true, users: safeUsers });
     } catch (error) {
       res.status(500).json({
@@ -902,7 +901,7 @@ export function setupAdminRoutes(app: Express) {
       }
       const { AdminUserModel } = await import('../models/AdminUser.js');
       const user = await AdminUserModel.create({ username, password, email });
-      const { password_hash, ...safeUser } = user;
+      const { password_hash: _password_hash, ...safeUser } = user;
       res.json({ success: true, user: safeUser });
     } catch (error) {
       res.status(500).json({
@@ -924,7 +923,7 @@ export function setupAdminRoutes(app: Express) {
       if (!user) {
         return res.status(404).json({ success: false, message: 'User not found' });
       }
-      const { password_hash, ...safeUser } = user;
+      const { password_hash: _password_hash, ...safeUser } = user;
       res.json({ success: true, user: safeUser });
     } catch (error) {
       res.status(500).json({
@@ -1223,14 +1222,14 @@ export function setupAdminRoutes(app: Express) {
       }
 
       // Handle bulk node operations
-      let nodeIdMap = new Map<string, string>(); // old_id -> new_id
+      const nodeIdMap = new Map<string, string>(); // old_id -> new_id
       
       // Always process nodes array (even if empty) to ensure consistency
       const nodesArray = Array.isArray(nodes) ? nodes : [];
       
       // Get existing node IDs for this floor
       const existingNodes = await FloorNodeModel.findByFloorId(floorId);
-      const existingNodeIds = new Set(existingNodes.map(n => n.id));
+      const _existingNodeIds = new Set(existingNodes.map(n => n.id));
       const newNodeIds = new Set(nodesArray.filter(n => n && n.id).map(n => n.id));
 
       console.log(`[Save Layout] Existing nodes: ${existingNodes.length}, New nodes: ${nodesArray.length}`);
@@ -1274,7 +1273,7 @@ export function setupAdminRoutes(app: Express) {
       
       // Get existing connection IDs for this floor
       const existingConnections = await FloorConnectionModel.findByFloorId(floorId);
-      const existingConnectionIds = new Set(existingConnections.map(c => c.id));
+      const _existingConnectionIds = new Set(existingConnections.map(c => c.id));
       const newConnectionIds = new Set(connectionsArray.filter(c => c && c.id).map(c => c.id));
 
       console.log(`[Save Layout] Existing connections: ${existingConnections.length}, New connections: ${connectionsArray.length}`);

@@ -1,7 +1,6 @@
 import { Express } from 'express';
 import { Server } from 'socket.io';
 import { LabyrinthManager } from '../services/LabyrinthManager.js';
-import { FloorManager } from '../services/FloorManager.js';
 import { RewardService } from '../services/RewardService.js';
 import { MovementService } from '../services/MovementService.js';
 import { MapService } from '../services/MapService.js';
@@ -13,7 +12,6 @@ import { LabyrinthParticipantModel } from '../models/LabyrinthParticipant.js';
 import { ParticipantPositionModel } from '../models/ParticipantPosition.js';
 import { FloorNodeModel } from '../models/FloorNode.js';
 import { FloorConnectionModel } from '../models/FloorConnection.js';
-import { ProceduralGenerator } from '../services/ProceduralGenerator.js';
 import { POIWaveCombatService } from '../services/POIWaveCombatService.js';
 import { SERVER_EVENTS } from '../sockets/events.js';
 import { pool } from '../config/database.js';

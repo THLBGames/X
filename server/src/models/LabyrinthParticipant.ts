@@ -79,6 +79,33 @@ export class LabyrinthParticipantModel {
     );
   }
 
+  static async updateStatusWithElimination(
+    id: string,
+    status: ParticipantStatus,
+    eliminationData?: { eliminated_at?: Date; eliminated_by?: string },
+    final_stats?: Record<string, any>
+  ): Promise<void> {
+    const eliminated_at = status === 'eliminated' 
+      ? (eliminationData?.eliminated_at || new Date())
+      : null;
+    const eliminated_by = status === 'eliminated'
+      ? (eliminationData?.eliminated_by || null)
+      : null;
+
+    await pool.query(
+      `UPDATE labyrinth_participants 
+       SET status = $1, eliminated_at = $2, eliminated_by = $3, final_stats = $4, last_seen = CURRENT_TIMESTAMP
+       WHERE id = $5`,
+      [
+        status,
+        eliminated_at,
+        eliminated_by,
+        final_stats ? JSON.stringify(final_stats) : null,
+        id
+      ]
+    );
+  }
+
   static async updateLastSeen(id: string): Promise<void> {
     await pool.query('UPDATE labyrinth_participants SET last_seen = CURRENT_TIMESTAMP WHERE id = $1', [id]);
   }

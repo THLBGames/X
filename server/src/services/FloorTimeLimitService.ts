@@ -34,7 +34,7 @@ export class FloorTimeLimitService {
 
         if (timeElapsed >= timeLimitMs) {
           // Time limit exceeded - eliminate participant
-          await LabyrinthParticipantModel.updateStatus(
+          await LabyrinthParticipantModel.updateStatusWithElimination(
             row.id,
             'eliminated',
             {

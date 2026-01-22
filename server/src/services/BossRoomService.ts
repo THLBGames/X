@@ -1,5 +1,4 @@
-import { FloorNodeModel, type FloorNode } from '../models/FloorNode.js';
-import { FloorConnectionModel } from '../models/FloorConnection.js';
+import { FloorNodeModel } from '../models/FloorNode.js';
 import { ParticipantPositionModel } from '../models/ParticipantPosition.js';
 import { pool } from '../config/database.js';
 import { GameRulesService } from './GameRulesService.js';

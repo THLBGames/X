@@ -73,9 +73,6 @@ io.on('connection', (socket) => {
   setupLabyrinthSocket(io, socket);
 });
 
-// Start time limit checking service
-import { FloorTimeLimitService } from './services/FloorTimeLimitService.js';
-
 httpServer.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Socket.IO server ready for connections`);
