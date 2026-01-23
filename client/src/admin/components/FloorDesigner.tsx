@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AuthService } from '../AuthService';
 import type { FloorNode, FloorConnection } from '@idle-rpg/shared';
 import FloorCanvas from './FloorCanvas';
@@ -28,13 +28,15 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [connectingFrom, setConnectingFrom] = useState<string | null>(null);
 
-  useEffect(() => {
-    loadFloorLayout();
-  }, [floorId, labyrinthId]);
-
-  const loadFloorLayout = async () => {
+  const loadFloorLayout = useCallback(async () => {
+    if (!floorId || !labyrinthId) {
+      console.warn('[FloorDesigner] Cannot load layout - missing floorId or labyrinthId', { floorId, labyrinthId });
+      return;
+    }
+    
     try {
       setLoading(true);
+      console.log('[FloorDesigner] Loading layout for floor:', floorId, 'labyrinth:', labyrinthId);
       const data = await AuthService.apiRequest<{
         success: boolean;
         nodes: FloorNode[];
@@ -45,14 +47,33 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
         success: data.success,
         nodesCount: data.nodes?.length || 0,
         connectionsCount: data.connections?.length || 0,
+        floorId,
+        labyrinthId,
       });
       
       if (data.success) {
         const loadedNodes = Array.isArray(data.nodes) ? data.nodes : [];
         const loadedConnections = Array.isArray(data.connections) ? data.connections : [];
-        setNodes(loadedNodes);
+        
+        // Ensure all loaded nodes have metadata as objects (not null/undefined)
+        const normalizedNodes = loadedNodes.map(node => ({
+          ...node,
+          metadata: node.metadata && typeof node.metadata === 'object' ? node.metadata : {},
+        }));
+        
+        const nodesWithPOICombat = normalizedNodes.filter(n => n.metadata?.poi_combat?.enabled);
+        console.log('[FloorDesigner] Loaded nodes:', normalizedNodes.length, 'connections:', loadedConnections.length);
+        console.log('[FloorDesigner] Nodes with POI combat:', nodesWithPOICombat.length);
+        if (nodesWithPOICombat.length > 0) {
+          console.log('[FloorDesigner] Sample POI combat node:', {
+            id: nodesWithPOICombat[0].id,
+            metadataKeys: Object.keys(nodesWithPOICombat[0].metadata || {}),
+            poiCombat: nodesWithPOICombat[0].metadata?.poi_combat,
+          });
+        }
+        
+        setNodes(normalizedNodes);
         setConnections(loadedConnections);
-        console.log('[FloorDesigner] Set nodes:', loadedNodes.length, 'connections:', loadedConnections.length);
       } else {
         console.warn('[FloorDesigner] Load failed or returned success:false');
         setNodes([]);
@@ -65,7 +86,20 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
       setConnections([]);
       setLoading(false);
     }
-  };
+  }, [floorId, labyrinthId]);
+
+  useEffect(() => {
+    console.log('[FloorDesigner] useEffect triggered', { floorId, labyrinthId });
+    if (floorId && labyrinthId) {
+      console.log('[FloorDesigner] Calling loadFloorLayout');
+      loadFloorLayout();
+    } else {
+      console.warn('[FloorDesigner] Missing floorId or labyrinthId, not loading layout');
+      setNodes([]);
+      setConnections([]);
+      setLoading(false);
+    }
+  }, [floorId, labyrinthId, loadFloorLayout]);
 
   const handleNodeClick = async (node: FloorNode) => {
     if (tool === 'start_point') {
@@ -217,6 +251,44 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
       if (!proceed) return;
     }
 
+    // Ensure all nodes have complete data including metadata
+    // CRITICAL: Always include metadata in the save payload, even if it appears empty in client state
+    // The server will merge with existing database metadata to preserve POI combat configs
+    const nodesToSave = nodes.map(node => {
+      const nodeCopy: any = {
+        ...node,
+      };
+      
+      // Always include metadata field - ensure it's an object
+      // Even if it's empty in client state, include it so server can merge with existing
+      nodeCopy.metadata = node.metadata && typeof node.metadata === 'object' 
+        ? node.metadata 
+        : {};
+      
+      return nodeCopy;
+    });
+
+    // Log metadata info for debugging
+    const nodesWithMetadata = nodesToSave.filter(n => n.metadata && Object.keys(n.metadata).length > 0);
+    const nodesWithPOICombat = nodesToSave.filter(n => n.metadata?.poi_combat?.enabled);
+    console.log('[FloorDesigner] Saving layout:', {
+      totalNodes: nodesToSave.length,
+      nodesWithMetadata: nodesWithMetadata.length,
+      nodesWithPOICombat: nodesWithPOICombat.length,
+      nodesInStateWithMetadata: nodes.filter(n => n.metadata && Object.keys(n.metadata).length > 0).length,
+    });
+    
+    // Log a sample node to see what we're sending
+    if (nodesToSave.length > 0) {
+      const sample = nodesToSave[0];
+      console.log('[FloorDesigner] Sample node being saved:', {
+        id: sample.id,
+        hasMetadata: !!sample.metadata,
+        metadataKeys: sample.metadata ? Object.keys(sample.metadata).length : 0,
+        nodeType: sample.node_type,
+      });
+    }
+
     try {
       const result = await AuthService.apiRequest<{
         success: boolean;
@@ -224,12 +296,21 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
         connections: FloorConnection[];
       }>(`/api/admin/labyrinths/${labyrinthId}/floors/${floorId}/layout`, {
         method: 'POST',
-        body: JSON.stringify({ nodes, connections }),
+        body: JSON.stringify({ nodes: nodesToSave, connections }),
       });
       
       if (result.success) {
         // Update local state with the saved nodes and connections (which may have updated IDs)
-        setNodes(result.nodes || nodes);
+        // Normalize nodes to ensure metadata is preserved
+        const savedNodes = (result.nodes || nodesToSave).map(node => ({
+          ...node,
+          metadata: node.metadata && typeof node.metadata === 'object' ? node.metadata : {},
+        }));
+        
+        const savedNodesWithPOICombat = savedNodes.filter(n => n.metadata?.poi_combat?.enabled);
+        console.log('[FloorDesigner] After save, nodes with POI combat:', savedNodesWithPOICombat.length);
+        
+        setNodes(savedNodes);
         setConnections(result.connections || connections);
         alert('Layout saved successfully!');
       } else {
@@ -367,16 +448,36 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
                 node={selectedNode}
                 onSave={async (updates) => {
                   try {
+                    // Ensure metadata is properly included in updates
+                    const updatesWithMetadata = {
+                      ...updates,
+                      metadata: updates.metadata || selectedNode.metadata || {},
+                    };
+                    
                     const result = await AuthService.apiRequest<{ success: boolean; node: FloorNode }>(
                       `/api/admin/floors/nodes/${selectedNode.id}`,
                       {
                         method: 'PUT',
-                        body: JSON.stringify(updates),
+                        body: JSON.stringify(updatesWithMetadata),
                       }
                     );
                     if (result.success) {
                       saveToHistory();
-                      setNodes(nodes.map(n => n.id === selectedNode.id ? result.node : n));
+                      // Update the node in local state, preserving all fields including metadata
+                      setNodes(nodes.map(n => {
+                        if (n.id === selectedNode.id) {
+                          return {
+                            ...result.node,
+                            // Ensure metadata is preserved
+                            metadata: result.node.metadata || {},
+                          };
+                        }
+                        return n;
+                      }));
+                      // Update selected node reference if it changed
+                      if (result.node.id === selectedNode.id) {
+                        setSelectedNodeId(result.node.id);
+                      }
                     }
                   } catch (err) {
                     alert('Failed to update node: ' + (err instanceof Error ? err.message : 'Unknown error'));
@@ -412,9 +513,29 @@ export default function FloorDesigner({ floorId, labyrinthId }: FloorDesignerPro
         <ProceduralGenerator
           floorId={floorId}
           labyrinthId={labyrinthId}
-          onGenerate={(generatedNodes, generatedConnections) => {
-            setNodes(generatedNodes);
+          onGenerate={async (generatedNodes, generatedConnections) => {
+            // Normalize nodes to ensure metadata is preserved
+            const normalizedNodes = generatedNodes.map(node => ({
+              ...node,
+              metadata: node.metadata && typeof node.metadata === 'object' ? node.metadata : {},
+            }));
+            
+            const nodesWithPOICombat = normalizedNodes.filter(n => n.metadata?.poi_combat?.enabled);
+            console.log('[FloorDesigner] Generated nodes:', {
+              total: normalizedNodes.length,
+              withPOICombat: nodesWithPOICombat.length,
+            });
+            if (nodesWithPOICombat.length > 0) {
+              console.log('[FloorDesigner] Sample POI combat node:', {
+                id: nodesWithPOICombat[0].id,
+                metadataKeys: Object.keys(nodesWithPOICombat[0].metadata || {}),
+              });
+            }
+            
+            setNodes(normalizedNodes);
             setConnections(generatedConnections);
+            // Reload from server to ensure we have all metadata including monster pools
+            await loadFloorLayout();
           }}
           onClose={() => setShowGenerator(false)}
         />

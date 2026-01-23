@@ -16,11 +16,33 @@ export default function LabyrinthList({ labyrinthClient, characterId }: Labyrint
   const { t } = useTranslation('ui');
   const [labyrinths, setLabyrinths] = useState<Labyrinth[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isConnected, setIsConnected] = useState(labyrinthClient.isConnected());
   const setCurrentLabyrinth = useLabyrinthState((state) => state.setCurrentLabyrinth);
 
   useEffect(() => {
     fetchLabyrinths();
   }, []);
+
+  // Track connection status changes
+  useEffect(() => {
+    // Store original callbacks
+    const originalOnConnectionChange = labyrinthClient.callbacks.onConnectionChange;
+    
+    // Add our connection change handler
+    labyrinthClient.callbacks.onConnectionChange = (connected: boolean) => {
+      setIsConnected(connected);
+      // Call original if it exists
+      originalOnConnectionChange?.(connected);
+    };
+
+    // Check initial connection status
+    setIsConnected(labyrinthClient.isConnected());
+
+    // Cleanup: restore original callback
+    return () => {
+      labyrinthClient.callbacks.onConnectionChange = originalOnConnectionChange;
+    };
+  }, [labyrinthClient]);
 
   const fetchLabyrinths = async () => {
     try {
@@ -102,7 +124,8 @@ export default function LabyrinthList({ labyrinthClient, characterId }: Labyrint
                 <button
                   className="labyrinth-join-button"
                   onClick={() => handleJoinLabyrinth(labyrinth)}
-                  disabled={!labyrinthClient.isConnected()}
+                  disabled={!isConnected}
+                  title={!isConnected ? 'Connecting to server...' : 'Join this labyrinth'}
                 >
                   {t('labyrinth.join', { defaultValue: 'Join Labyrinth' })}
                 </button>

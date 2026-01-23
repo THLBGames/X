@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AuthService } from '../AuthService';
 import FloorEditor from './FloorEditor';
 import FloorDesigner from './FloorDesigner';
@@ -33,6 +33,37 @@ export default function LabyrinthForm({ labyrinthId, onSave, onCancel }: Labyrin
   const [error, setError] = useState<string | null>(null);
   const [designingFloorId, setDesigningFloorId] = useState<string | null>(null);
 
+  const loadLabyrinth = useCallback(async () => {
+    try {
+      setLoading(true);
+      const data = await AuthService.apiRequest<{ success: boolean; labyrinth: any; floors: any[] }>(`/api/admin/labyrinths/${labyrinthId}`);
+      if (data.success) {
+        const lab = data.labyrinth;
+        setName(lab.name);
+        setScheduledStart(new Date(lab.scheduled_start).toISOString().slice(0, 16));
+        setTotalFloors(lab.total_floors);
+        setMaxInitialPlayers(lab.max_initial_players);
+        setRulesConfig(lab.rules_config || {});
+        setMetadata(lab.metadata || {});
+        const loadedFloors = data.floors.map(f => ({
+          id: f.id, // Store floor ID for designer access
+          floor_number: f.floor_number,
+          max_players: f.max_players,
+          monster_pool: f.monster_pool || [],
+          loot_table: f.loot_table || [],
+          environment_type: f.environment_type || 'dungeon',
+          rules: f.rules || {},
+        }));
+        console.log('[LabyrinthForm] Loaded floors:', loadedFloors.length, 'floors with IDs:', loadedFloors.filter(f => f.id).length);
+        setFloors(loadedFloors);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load labyrinth');
+    } finally {
+      setLoading(false);
+    }
+  }, [labyrinthId]);
+
   useEffect(() => {
     if (labyrinthId && labyrinthId !== 'new') {
       loadLabyrinth();
@@ -47,36 +78,7 @@ export default function LabyrinthForm({ labyrinthId, onSave, onCancel }: Labyrin
         rules: {},
       }]);
     }
-  }, [labyrinthId]);
-
-  const loadLabyrinth = async () => {
-    try {
-      setLoading(true);
-      const data = await AuthService.apiRequest<{ success: boolean; labyrinth: any; floors: any[] }>(`/api/admin/labyrinths/${labyrinthId}`);
-      if (data.success) {
-        const lab = data.labyrinth;
-        setName(lab.name);
-        setScheduledStart(new Date(lab.scheduled_start).toISOString().slice(0, 16));
-        setTotalFloors(lab.total_floors);
-        setMaxInitialPlayers(lab.max_initial_players);
-        setRulesConfig(lab.rules_config || {});
-        setMetadata(lab.metadata || {});
-        setFloors(data.floors.map(f => ({
-          id: f.id, // Store floor ID for designer access
-          floor_number: f.floor_number,
-          max_players: f.max_players,
-          monster_pool: f.monster_pool || [],
-          loot_table: f.loot_table || [],
-          environment_type: f.environment_type || 'dungeon',
-          rules: f.rules || {},
-        })));
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load labyrinth');
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [labyrinthId, loadLabyrinth]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -190,11 +192,21 @@ export default function LabyrinthForm({ labyrinthId, onSave, onCancel }: Labyrin
             <div key={index} className="floor-editor-wrapper">
               <div className="floor-header">
                 <h4>Floor {floor.floor_number}</h4>
-                {labyrinthId && labyrinthId !== 'new' && floor.id && (
+                {labyrinthId && labyrinthId !== 'new' && (
                   <button
                     type="button"
                     className="btn-design-floor"
-                    onClick={() => setDesigningFloorId(floor.id!)}
+                    onClick={() => {
+                      if (!floor.id) {
+                        console.error('[LabyrinthForm] Cannot open floor designer - floor has no ID:', floor);
+                        alert('Error: Floor has no ID. Please save the labyrinth first.');
+                        return;
+                      }
+                      console.log('[LabyrinthForm] Opening floor designer for floor:', floor.id, 'labyrinth:', labyrinthId);
+                      setDesigningFloorId(floor.id);
+                    }}
+                    disabled={!floor.id}
+                    title={!floor.id ? 'Save the labyrinth first to get a floor ID' : 'Design floor layout'}
                   >
                     🗺️ Design Floor Layout
                   </button>
@@ -231,6 +243,7 @@ export default function LabyrinthForm({ labyrinthId, onSave, onCancel }: Labyrin
               <button className="close-button" onClick={() => setDesigningFloorId(null)}>×</button>
             </div>
             <FloorDesigner
+              key={`${labyrinthId}-${designingFloorId}`}
               floorId={designingFloorId}
               labyrinthId={labyrinthId}
             />

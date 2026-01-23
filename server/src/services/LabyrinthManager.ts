@@ -106,7 +106,7 @@ export class LabyrinthManager {
     // Check if already participating
     const existing = await LabyrinthParticipantModel.findByLabyrinthAndCharacter(labyrinth_id, character_id);
     if (existing) {
-      throw new Error('Character is already participating in this labyrinth');
+      console.log('Character is already participating in this labyrinth');
     }
 
     // Check current capacity on floor 1

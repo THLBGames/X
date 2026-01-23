@@ -46,8 +46,10 @@ export class CombatService {
     }
 
     // Check if node is a combat area
+    // Skip if node has POI combat enabled (POI combat is handled separately)
+    const hasPOICombat = node.metadata?.poi_combat?.enabled === true;
     const isCombatArea = node.node_type === 'monster_spawn' || node.node_type === 'boss';
-    if (!isCombatArea) {
+    if (!isCombatArea || hasPOICombat) {
       return null;
     }
 
@@ -69,6 +71,13 @@ export class CombatService {
       characterLevel
     );
     console.log(`[CombatService] Spawned ${monsters.length} monsters for node ${nodeId}`);
+
+    // If no monsters were spawned, combat cannot proceed
+    // This can happen if the floor has no monster pool configured
+    if (monsters.length === 0) {
+      console.log(`[CombatService] Cannot prepare combat for node ${nodeId} - no monsters spawned (floor may not have monster pool configured)`);
+      return null;
+    }
 
     // Get all participants (players on node + their party members)
     const participants: CombatParticipant[] = [];
@@ -153,41 +162,46 @@ export class CombatService {
 
   /**
    * Add party member to prepared combat
+   * Returns an object with success status and error message if failed
    */
   static async addPartyMemberToCombat(
     combatInstanceId: string,
     participantId: string
-  ): Promise<boolean> {
+  ): Promise<{ success: boolean; error?: string }> {
     const combat = this.activeCombatInstances.get(combatInstanceId);
     if (!combat) {
-      return false;
+      return { success: false, error: 'Combat instance not found' };
     }
 
     // Check party size limit
     if (combat.participants.length >= 5) {
-      return false;
+      return { success: false, error: 'Combat party is full (maximum 5 players)' };
     }
 
     // Check if already in combat
     if (combat.participants.find((p) => p.id === participantId)) {
-      return true; // Already added
+      return { success: true }; // Already added
     }
 
     // Verify party membership
     const firstParticipantId = combat.participants[0]?.id;
     if (!firstParticipantId) {
-      return false;
+      return { success: false, error: 'No participants in combat instance' };
     }
 
     const party = await LabyrinthPartyModel.findByParticipant(firstParticipantId);
     if (!party) {
-      return false; // No party found
+      return { success: false, error: 'You must be in a party to join this combat' };
     }
 
     // Get character_id for the participant trying to join
     const joiningParticipant = await LabyrinthParticipantModel.findById(participantId);
-    if (!joiningParticipant || !party.members.includes(joiningParticipant.character_id)) {
-      return false; // Not in the same party
+    if (!joiningParticipant) {
+      return { success: false, error: 'Participant not found' };
+    }
+    
+    if (!party.members.includes(joiningParticipant.character_id)) {
+      return { success: false, error: 'You must be in the same party as the combat initiator' };
     }
 
     // Verify participant is on the same node
@@ -196,17 +210,17 @@ export class CombatService {
       combat.floorId
     );
     if (participantPosition?.current_node_id !== combat.nodeId) {
-      return false; // Not on the same node
+      return { success: false, error: 'You must be on the same node to join combat' };
     }
 
     // Add participant to combat
     const combatParticipant = await this.createCombatParticipant(participantId);
     if (combatParticipant) {
       combat.participants.push(combatParticipant);
-      return true;
+      return { success: true };
     }
 
-    return false;
+    return { success: false, error: 'Failed to create combat participant (character data required)' };
   }
 
   /**

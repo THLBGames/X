@@ -34,7 +34,6 @@ export default function FloorCanvas({
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-    handleWheel,
   } = useCanvasRenderer({
     nodes,
     connections,
@@ -64,7 +63,6 @@ export default function FloorCanvas({
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={(e) => handleMouseUp(e)}
-        onWheel={handleWheel}
         className="floor-canvas"
       />
     </div>

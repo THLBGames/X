@@ -14,9 +14,19 @@ dotenv.config();
 
 const app = express();
 const httpServer = createServer(app);
+
+// Parse CLIENT_URL - support single URL or comma-separated list
+const getCorsOrigin = (): string | string[] => {
+  const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000';
+  if (clientUrl.includes(',')) {
+    return clientUrl.split(',').map(url => url.trim());
+  }
+  return clientUrl;
+};
+
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: getCorsOrigin(),
     methods: ['GET', 'POST'],
   },
 });
@@ -24,7 +34,8 @@ const io = new Server(httpServer, {
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
-app.use(express.json());
+// Increase JSON body parser limit to handle large labyrinth layouts (10MB)
+app.use(express.json({ limit: '10mb' }));
 
 // Health check endpoint
 app.get('/health', (req, res) => {

@@ -141,3 +141,148 @@
 .btn-cancel:hover {
   background: #666;
 }
+
+/* Wave Combat Styles */
+.wave-combat-config {
+  margin-top: 16px;
+}
+
+.wave-combat-config h5 {
+  margin: 0 0 12px 0;
+  color: #6c5ce7;
+  font-size: 0.95rem;
+}
+
+.waves-config {
+  margin-top: 12px;
+}
+
+.waves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn-add-wave {
+  padding: 6px 12px;
+  background: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-add-wave:hover {
+  background: #5a4cd9;
+}
+
+.no-waves-message {
+  padding: 12px;
+  background: #2a2a3e;
+  border: 1px dashed #3a3a4e;
+  border-radius: 4px;
+  color: #888;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.wave-item {
+  background: #2a2a3e;
+  border: 1px solid #3a3a4e;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.wave-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.wave-number {
+  font-weight: 600;
+  color: #6c5ce7;
+  font-size: 0.95rem;
+}
+
+.btn-remove-wave {
+  padding: 4px 8px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.btn-remove-wave:hover {
+  background: #c0392b;
+}
+
+.wave-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-hint {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Monster Pool Preview Styles */
+.monster-pool-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.monster-pool-preview {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #1e1e2e;
+  border: 1px solid #3a3a4e;
+  border-radius: 4px;
+}
+
+.monster-pool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.monster-pool-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 8px;
+  background: #2a2a3e;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.monster-id {
+  font-weight: 600;
+  color: #4a9eff;
+  flex: 1;
+}
+
+.monster-weight,
+.monster-level {
+  padding: 2px 6px;
+  background: #3a3a4e;
+  border-radius: 3px;
+  color: #ccc;
+  font-size: 0.75rem;
+}

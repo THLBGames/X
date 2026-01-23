@@ -37,6 +37,19 @@ export interface CreateFloorNodeInput {
 
 export class FloorNodeModel {
   static async create(input: CreateFloorNodeInput): Promise<FloorNode> {
+    // Ensure metadata is always an object
+    const metadata = input.metadata && typeof input.metadata === 'object' ? input.metadata : {};
+    const metadataJson = JSON.stringify(metadata);
+    
+    // Log if metadata has POI combat
+    if (metadata.poi_combat?.enabled) {
+      console.log(`[FloorNodeModel] Creating node with POI combat metadata:`, {
+        nodeType: input.node_type,
+        metadataKeys: Object.keys(metadata),
+        wavesCount: metadata.poi_combat.waves?.length || 0,
+      });
+    }
+    
     // If ID is provided, use it; otherwise let the database generate one
     if (input.id) {
       const result = await pool.query(
@@ -66,7 +79,7 @@ export class FloorNodeModel {
           input.y_coordinate,
           input.name || null,
           input.description || null,
-          JSON.stringify(input.metadata || {}),
+          metadataJson,
           input.required_boss_defeated || null,
           input.is_revealed ?? false,
           input.is_start_point ?? false,
@@ -74,7 +87,14 @@ export class FloorNodeModel {
           input.capacity_limit || null,
         ]
       );
-      return this.mapRowToNode(result.rows[0]);
+      const createdNode = this.mapRowToNode(result.rows[0]);
+      
+      // Verify metadata was saved correctly
+      if (metadata.poi_combat?.enabled && !createdNode.metadata?.poi_combat?.enabled) {
+        console.warn(`[FloorNodeModel] WARNING: Node ${createdNode.id} was created with POI combat but loaded without it!`);
+      }
+      
+      return createdNode;
     } else {
       const result = await pool.query(
         `INSERT INTO labyrinth_floor_nodes 
@@ -89,7 +109,7 @@ export class FloorNodeModel {
           input.y_coordinate,
           input.name || null,
           input.description || null,
-          JSON.stringify(input.metadata || {}),
+          metadataJson,
           input.required_boss_defeated || null,
           input.is_revealed ?? false,
           input.is_start_point ?? false,
@@ -97,7 +117,14 @@ export class FloorNodeModel {
           input.capacity_limit || null,
         ]
       );
-      return this.mapRowToNode(result.rows[0]);
+      const createdNode = this.mapRowToNode(result.rows[0]);
+      
+      // Verify metadata was saved correctly
+      if (metadata.poi_combat?.enabled && !createdNode.metadata?.poi_combat?.enabled) {
+        console.warn(`[FloorNodeModel] WARNING: Node ${createdNode.id} was created with POI combat but loaded without it!`);
+      }
+      
+      return createdNode;
     }
   }
 
@@ -205,6 +232,26 @@ export class FloorNodeModel {
   }
 
   private static mapRowToNode(row: any): FloorNode {
+    // Parse metadata - handle both string and object formats
+    let parsedMetadata: Record<string, any> = {};
+    if (row.metadata) {
+      if (typeof row.metadata === 'string') {
+        try {
+          parsedMetadata = JSON.parse(row.metadata);
+        } catch (e) {
+          console.warn(`[FloorNodeModel] Failed to parse metadata for node ${row.id}:`, e);
+          parsedMetadata = {};
+        }
+      } else if (typeof row.metadata === 'object') {
+        parsedMetadata = row.metadata;
+      }
+    }
+    
+    // Ensure metadata is always an object (not null/undefined)
+    if (!parsedMetadata || typeof parsedMetadata !== 'object') {
+      parsedMetadata = {};
+    }
+    
     return {
       id: row.id,
       floor_id: row.floor_id,
@@ -213,7 +260,7 @@ export class FloorNodeModel {
       y_coordinate: parseFloat(row.y_coordinate),
       name: row.name,
       description: row.description,
-      metadata: typeof row.metadata === 'string' ? JSON.parse(row.metadata) : row.metadata,
+      metadata: parsedMetadata,
       required_boss_defeated: row.required_boss_defeated,
       is_revealed: row.is_revealed,
       is_start_point: row.is_start_point ?? false,

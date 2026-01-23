@@ -81,7 +81,38 @@ export default function FloorEditor({ floor, onChange, onRemove, canRemove }: Fl
           />
         ) : (
           <div className="json-preview">
-            {floor.monster_pool.length} monsters configured
+            {floor.monster_pool.length > 0 ? (
+              <div>
+                <div style={{ marginBottom: '8px', fontWeight: 600 }}>
+                  {floor.monster_pool.length} monster{floor.monster_pool.length !== 1 ? 's' : ''} configured
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.85rem' }}>
+                  {floor.monster_pool.slice(0, 5).map((monster: any, index: number) => (
+                    <div key={index} style={{ padding: '4px 8px', background: '#2a2a3e', borderRadius: '4px' }}>
+                      <span style={{ fontWeight: 600, color: '#4a9eff' }}>
+                        {monster.monsterId || monster.id || 'Unknown'}
+                      </span>
+                      {monster.weight !== undefined && (
+                        <span style={{ marginLeft: '8px', color: '#aaa' }}>Weight: {monster.weight}</span>
+                      )}
+                      {monster.minLevel !== undefined && (
+                        <span style={{ marginLeft: '8px', color: '#aaa' }}>Lv {monster.minLevel}</span>
+                      )}
+                      {monster.maxLevel !== undefined && (
+                        <span style={{ marginLeft: '4px', color: '#aaa' }}>- {monster.maxLevel}</span>
+                      )}
+                    </div>
+                  ))}
+                  {floor.monster_pool.length > 5 && (
+                    <div style={{ color: '#888', fontStyle: 'italic', fontSize: '0.8rem' }}>
+                      ... and {floor.monster_pool.length - 5} more
+                    </div>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div style={{ color: '#888', fontStyle: 'italic' }}>No monsters configured</div>
+            )}
           </div>
         )}
       </div>

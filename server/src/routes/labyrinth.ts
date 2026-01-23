@@ -300,10 +300,11 @@ export function setupLabyrinthRoutes(app: Express, io?: Server) {
       }
 
       // Check if combat was prepared at the target node and emit event
+      // Only emit if combat has monsters and participants (valid combat state)
       if (io) {
         const preparedCombat = CombatService.getPreparedCombat(target_node_id, floor.id);
         console.log(`[Move REST] Combat prepared check for node ${target_node_id}:`, preparedCombat ? 'YES' : 'NO');
-        if (preparedCombat) {
+        if (preparedCombat && preparedCombat.monsters.length > 0 && preparedCombat.participants.length > 0) {
           const roomName = `labyrinth:${labyrinth_id}:floor:${participant.floor_number}`;
           const eventData = {
             combat_instance_id: preparedCombat.combatInstanceId,
@@ -315,6 +316,8 @@ export function setupLabyrinthRoutes(app: Express, io?: Server) {
           console.log(`[Move REST] Emitting COMBAT_PREPARED to room ${roomName}:`, eventData);
           // Emit combat prepared event to all players on the floor
           io.to(roomName).emit(SERVER_EVENTS.COMBAT_PREPARED, eventData);
+        } else if (preparedCombat) {
+          console.log(`[Move REST] Skipping COMBAT_PREPARED emit - invalid combat state (monsters: ${preparedCombat.monsters.length}, participants: ${preparedCombat.participants.length})`);
         }
       }
 

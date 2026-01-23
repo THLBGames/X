@@ -127,7 +127,7 @@ export function useCanvasRenderer({
     setHasMoved(false);
   }, [isDragging, hasMoved, clickStart, transform, onCanvasClick, currentTool, canvasRef]);
 
-  const handleWheel = useCallback((e: React.WheelEvent<HTMLCanvasElement>) => {
+  const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? 0.9 : 1.1;
     const newScale = Math.max(0.1, Math.min(5, transform.scale * delta));
@@ -147,6 +147,18 @@ export function useCanvasRenderer({
       });
     }
   }, [transform]);
+
+  // Attach wheel event listener directly to canvas with passive: false
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    canvas.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      canvas.removeEventListener('wheel', handleWheel);
+    };
+  }, [handleWheel]);
 
   // Render function
   const render = useCallback(() => {
@@ -296,7 +308,6 @@ export function useCanvasRenderer({
     handleMouseDown,
     handleMouseMove,
     handleMouseUp: (e?: React.MouseEvent<HTMLCanvasElement>) => handleMouseUp(e),
-    handleWheel,
     render,
   };
 }

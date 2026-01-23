@@ -74,6 +74,12 @@ Or directly using Node:
 node scripts/migrate.js
 ```
 
+**For tracked migrations (recommended):**
+
+```bash
+npm run migrate:tracked
+```
+
 This will create all the required tables:
 - `labyrinths` - Labyrinth definitions and state
 - `labyrinth_floors` - Floor definitions per labyrinth
@@ -85,6 +91,7 @@ This will create all the required tables:
 - `admin_users` - Admin user accounts
 - `global_monster_rewards` - Global monster reward configuration
 - `floor_monster_rewards` - Floor-specific monster reward overrides
+- `schema_migrations` - Migration tracking table
 
 ## Installation
 
@@ -298,6 +305,103 @@ For production deployment:
 4. Configure firewall rules to expose the necessary ports
 5. Set up database backups and monitoring
 
+## Running Migrations in Render
+
+### Method 1: Render Shell (Recommended for Manual Runs)
+
+1. Go to your Render service dashboard
+2. Click **"Shell"** button (top right)
+3. Run the migration:
+   ```bash
+   cd server
+   npm run migrate:tracked
+   ```
+
+The environment variables are automatically available in the shell, so no additional configuration is needed.
+
+### Method 2: GitHub Actions (Automated)
+
+Migrations run automatically after deployment via GitHub Actions workflows. Make sure you have the following GitHub Secrets configured:
+
+**For Staging:**
+- `RENDER_DB_HOST_STAGING`
+- `RENDER_DB_PORT_STAGING`
+- `RENDER_DB_NAME_STAGING`
+- `RENDER_DB_USER_STAGING`
+- `RENDER_DB_PASSWORD_STAGING`
+
+**For Production:**
+- `RENDER_DB_HOST_PRODUCTION`
+- `RENDER_DB_PORT_PRODUCTION`
+- `RENDER_DB_NAME_PRODUCTION`
+- `RENDER_DB_USER_PRODUCTION`
+- `RENDER_DB_PASSWORD_PRODUCTION`
+
+### Method 3: Using Render Database Connection String
+
+If you have the database connection string, you can also run migrations locally:
+
+```bash
+# Set environment variables from Render database connection string
+export DB_HOST=your-db-host
+export DB_PORT=5432
+export DB_NAME=idle_rpg_staging
+export DB_USER=your-db-user
+export DB_PASSWORD=your-db-password
+
+# Run migration
+cd server
+npm run migrate:tracked
+```
+
+### Migration Commands
+
+- `npm run migrate` - Run all migrations (legacy, runs all migrations)
+- `npm run migrate:tracked` - Run pending migrations with tracking (recommended)
+- `npm run migrate:dry-run` - Preview pending migrations without executing
+- `npm run migrate:rollback` - Rollback last migration (requires `--confirm` flag)
+
+## Admin Panel
+
+The server includes a comprehensive admin panel accessible at `/admin` route in the client application.
+
+### Admin Authentication
+
+1. **Default Admin Account**
+   - After running migrations, a default admin user is created:
+     - Username: `admin`
+     - Password: `admin123` (must be changed!)
+   - **Important**: The password hash in the migration is a placeholder. You should:
+     - Generate a proper bcrypt hash for `admin123` before running migrations, OR
+     - Change the password immediately after first login through the admin panel
+
+2. **Accessing the Admin Panel**
+   - Navigate to `http://localhost:3000/admin/login` (or your client URL)
+   - Log in with admin credentials
+   - Access the dashboard for managing labyrinths, monster rewards, achievements, and rules
+
+3. **Admin Features**
+   - **Labyrinth Management**: Create, edit, delete, start, and cancel labyrinths
+   - **Monster Rewards**: Configure global and floor-specific monster rewards
+   - **Achievements**: Manage labyrinth achievements
+   - **Rules Configuration**: Set global labyrinth rules and defaults
+   - **User Management**: Create and manage admin user accounts
+
+### Creating Additional Admin Users
+
+1. Log in to the admin panel
+2. Navigate to the "Users" section
+3. Click "Create New User"
+4. Enter username, password, and optional email
+5. The new user will be able to access the admin panel
+
+### Security Notes
+
+- Change the default admin password immediately
+- Use a strong `JWT_SECRET` in your `.env` file
+- Regularly review admin user accounts and remove unused ones
+- Admin actions are authenticated via JWT tokens stored in localStorage
+
 ## CI/CD Pipeline
 
 The project includes automated CI/CD pipelines using GitHub Actions and Render for deployment.
@@ -453,47 +557,6 @@ If a production deployment fails health checks:
 2. Check service logs in Render
 3. Verify environment variables are set correctly
 4. Check database connection health
-
-## Admin Panel
-
-The server includes a comprehensive admin panel accessible at `/admin` route in the client application.
-
-### Admin Authentication
-
-1. **Default Admin Account**
-   - After running migrations, a default admin user is created:
-     - Username: `admin`
-     - Password: `admin123` (must be changed!)
-   - **Important**: The password hash in the migration is a placeholder. You should:
-     - Generate a proper bcrypt hash for `admin123` before running migrations, OR
-     - Change the password immediately after first login through the admin panel
-
-2. **Accessing the Admin Panel**
-   - Navigate to `http://localhost:3000/admin/login` (or your client URL)
-   - Log in with admin credentials
-   - Access the dashboard for managing labyrinths, monster rewards, achievements, and rules
-
-3. **Admin Features**
-   - **Labyrinth Management**: Create, edit, delete, start, and cancel labyrinths
-   - **Monster Rewards**: Configure global and floor-specific monster rewards
-   - **Achievements**: Manage labyrinth achievements
-   - **Rules Configuration**: Set global labyrinth rules and defaults
-   - **User Management**: Create and manage admin user accounts
-
-### Creating Additional Admin Users
-
-1. Log in to the admin panel
-2. Navigate to the "Users" section
-3. Click "Create New User"
-4. Enter username, password, and optional email
-5. The new user will be able to access the admin panel
-
-### Security Notes
-
-- Change the default admin password immediately
-- Use a strong `JWT_SECRET` in your `.env` file
-- Regularly review admin user accounts and remove unused ones
-- Admin actions are authenticated via JWT tokens stored in localStorage
 
 ## Support
 

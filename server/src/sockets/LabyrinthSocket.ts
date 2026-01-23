@@ -279,8 +279,9 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
       }
 
       // Check if combat was prepared at the target node
+      // Only emit if combat has monsters and participants (valid combat state)
       const preparedCombat = CombatService.getPreparedCombat(target_node_id, floor.id);
-      if (preparedCombat) {
+      if (preparedCombat && preparedCombat.monsters.length > 0 && preparedCombat.participants.length > 0) {
         // Emit combat prepared event to all players on the node
         io.to(`labyrinth:${participant.labyrinth_id}:floor:${participant.floor_number}`).emit(
           SERVER_EVENTS.COMBAT_PREPARED,
@@ -292,6 +293,8 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
             participant_ids: preparedCombat.participants.map((p) => p.id),
           }
         );
+      } else if (preparedCombat) {
+        console.log(`[LabyrinthSocket] Skipping COMBAT_PREPARED emit - invalid combat state (monsters: ${preparedCombat.monsters.length}, participants: ${preparedCombat.participants.length})`);
       }
 
       // Update visibility and map data
@@ -451,9 +454,9 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _character_data = data.character_data;
 
-      const success = await CombatService.addPartyMemberToCombat(combat_instance_id, participant_id);
-      if (!success) {
-        throw new Error('Failed to join combat');
+      const result = await CombatService.addPartyMemberToCombat(combat_instance_id, participant_id);
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to join combat');
       }
 
       const preparedCombat = CombatService.getPreparedCombatById(combat_instance_id);

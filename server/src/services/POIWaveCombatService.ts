@@ -54,6 +54,22 @@ export class POIWaveCombatService {
     const waves = poiCombat.waves;
     const firstWave = waves[0];
 
+    // Validate that we have a monster pool available
+    const hasWaveMonsterPool = firstWave.monsterPool && firstWave.monsterPool.length > 0;
+    if (!hasWaveMonsterPool) {
+      // Check floor's monster pool as fallback
+      const { LabyrinthFloorModel } = await import('../models/LabyrinthFloor.js');
+      const floor = await LabyrinthFloorModel.findById(floorId);
+      const hasFloorMonsterPool = floor?.monster_pool && floor.monster_pool.length > 0;
+      
+      if (!hasFloorMonsterPool) {
+        throw new Error(
+          `Cannot start POI combat: No monster pool configured. ` +
+          `Please configure a monster pool for floor ${floorId} in the admin panel.`
+        );
+      }
+    }
+
     // Create data provider and preload monster data
     const dataProvider = new ServerCombatDataProvider();
     
@@ -65,7 +81,12 @@ export class POIWaveCombatService {
     );
 
     if (firstWaveMonsters.length === 0) {
-      throw new Error('Failed to spawn monsters for first wave');
+      const poolSource = hasWaveMonsterPool ? 'wave configuration' : 'floor configuration';
+      throw new Error(
+        `Failed to spawn monsters for first wave. ` +
+        `The monster pool from ${poolSource} appears to be empty or invalid. ` +
+        `Please check the floor's monster pool configuration in the admin panel.`
+      );
     }
 
     // Preload monster data
@@ -245,7 +266,13 @@ export class POIWaveCombatService {
     );
 
     if (nextWaveMonsters.length === 0) {
-      throw new Error(`Failed to spawn monsters for wave ${nextWaveNumber}`);
+      const hasWaveMonsterPool = nextWave.monsterPool && nextWave.monsterPool.length > 0;
+      const poolSource = hasWaveMonsterPool ? 'wave configuration' : 'floor configuration';
+      throw new Error(
+        `Failed to spawn monsters for wave ${nextWaveNumber}. ` +
+        `The monster pool from ${poolSource} appears to be empty or invalid. ` +
+        `Please check the floor's monster pool configuration in the admin panel.`
+      );
     }
 
     // Preload monster data

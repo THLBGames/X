@@ -266,7 +266,9 @@ export class MovementService {
     }
 
     // Check if target node is a combat area and prepare combat if needed
-    if (targetNode.node_type === 'monster_spawn' || targetNode.node_type === 'boss') {
+    // Skip regular combat preparation if node has POI combat enabled (POI combat is handled separately)
+    const hasPOICombat = targetNode.metadata?.poi_combat?.enabled === true;
+    if ((targetNode.node_type === 'monster_spawn' || targetNode.node_type === 'boss') && !hasPOICombat) {
       const { CombatService } = await import('./CombatService.js');
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _preparedCombat = await CombatService.prepareCombatForNode(

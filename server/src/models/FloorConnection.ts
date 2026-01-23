@@ -134,6 +134,18 @@ export class FloorConnectionModel {
     const values: any[] = [];
     let paramCount = 1;
 
+    if (updates.floor_id !== undefined) {
+      updatesList.push(`floor_id = $${paramCount++}`);
+      values.push(updates.floor_id);
+    }
+    if (updates.from_node_id !== undefined) {
+      updatesList.push(`from_node_id = $${paramCount++}`);
+      values.push(updates.from_node_id);
+    }
+    if (updates.to_node_id !== undefined) {
+      updatesList.push(`to_node_id = $${paramCount++}`);
+      values.push(updates.to_node_id);
+    }
     if (updates.movement_cost !== undefined) {
       updatesList.push(`movement_cost = $${paramCount++}`);
       values.push(updates.movement_cost);

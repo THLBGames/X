@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
 import { LabyrinthClient } from '../systems/labyrinth/LabyrinthClient';
@@ -47,8 +47,41 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
   const [movementPoints, setMovementPoints] = useState<number>(0);
   const [currentNodeHasWaveCombat, setCurrentNodeHasWaveCombat] = useState<boolean>(false);
   const [waveCombatInfo, setWaveCombatInfo] = useState<{ totalWaves: number } | null>(null);
+  const [combatPOINode, setCombatPOINode] = useState<string | null>(null);
   const currentParticipant = useLabyrinthState((state) => state.currentParticipant);
   const character = useGameState((state) => state.character);
+
+  // Helper function to update POI combat state based on current position and map data
+  const updatePOICombatState = useCallback((currentPosition: ParticipantPosition | null, currentMapData: MapData | null) => {
+    if (currentPosition?.current_node_id && currentMapData?.nodes) {
+      const currentNode = currentMapData.nodes.find(
+        (n: FloorNode) => n.id === currentPosition.current_node_id
+      );
+      if (currentNode?.metadata?.poi_combat?.enabled) {
+        console.log('[LabyrinthMapView] Current node has POI combat enabled:', {
+          nodeId: currentNode.id,
+          waves: currentNode.metadata.poi_combat.waves?.length || 0,
+        });
+        setCurrentNodeHasWaveCombat(true);
+        setWaveCombatInfo({
+          totalWaves: currentNode.metadata.poi_combat.waves?.length || 0,
+        });
+      } else {
+        setCurrentNodeHasWaveCombat(false);
+        setWaveCombatInfo(null);
+      }
+    } else {
+      setCurrentNodeHasWaveCombat(false);
+      setWaveCombatInfo(null);
+    }
+  }, []);
+
+  // Update POI combat state whenever position or mapData changes
+  useEffect(() => {
+    if (position && mapData) {
+      updatePOICombatState(position, mapData);
+    }
+  }, [position, mapData, updatePOICombatState]);
 
   useEffect(() => {
     loadMapData();
@@ -60,7 +93,12 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
 
     labyrinthClient.callbacks.onMapData = (data: any) => {
       if (data.map) {
-        setMapData(data.map);
+        setMapData((prevMap) => {
+          const newMap = data.map;
+          // Update POI combat state when map data is received
+          updatePOICombatState(position, newMap);
+          return newMap;
+        });
       }
       if (data.visibility) {
         setVisibility(data.visibility);
@@ -73,7 +111,12 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
 
     labyrinthClient.callbacks.onMapUpdate = (data: any) => {
       if (data.map) {
-        setMapData((prev) => ({ ...prev!, ...data.map }));
+        setMapData((prev) => {
+          const updated = { ...prev!, ...data.map };
+          // Update POI combat state when map updates
+          updatePOICombatState(position, updated);
+          return updated;
+        });
       }
       if (data.visibility) {
         setVisibility((prev) => ({ ...prev!, ...data.visibility }));
@@ -101,7 +144,7 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
       labyrinthClient.callbacks.onMapUpdate = originalOnMapUpdate;
       labyrinthClient.callbacks.onVisibilityUpdate = originalOnVisibilityUpdate;
     };
-  }, [labyrinthId, characterId, labyrinthClient]);
+  }, [labyrinthId, characterId, labyrinthClient, position, updatePOICombatState]);
 
   const loadMapData = async () => {
     try {
@@ -126,18 +169,7 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
         
         // Check if current node has wave combat enabled
         if (positionResult.position?.current_node_id && mapResult.success && mapResult.map) {
-          const currentNode = mapResult.map.nodes.find(
-            (n: FloorNode) => n.id === positionResult.position.current_node_id
-          );
-          if (currentNode?.metadata?.poi_combat?.enabled) {
-            setCurrentNodeHasWaveCombat(true);
-            setWaveCombatInfo({
-              totalWaves: currentNode.metadata.poi_combat.waves?.length || 0,
-            });
-          } else {
-            setCurrentNodeHasWaveCombat(false);
-            setWaveCombatInfo(null);
-          }
+          updatePOICombatState(positionResult.position, mapResult.map);
         } else {
           setCurrentNodeHasWaveCombat(false);
           setWaveCombatInfo(null);
@@ -152,10 +184,28 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
   };
 
   const handleNodeClick = (nodeId: string) => {
+    // Check if clicking on current node with POI combat enabled
+    if (position?.current_node_id === nodeId && mapData) {
+      const clickedNode = mapData.nodes.find((n) => n.id === nodeId);
+      if (clickedNode?.metadata?.poi_combat?.enabled) {
+        // Show combat start option for this node
+        if (combatPOINode === nodeId) {
+          setCombatPOINode(null);
+        } else {
+          setCombatPOINode(nodeId);
+          setSelectedNode(null); // Clear movement selection if any
+        }
+        return;
+      }
+    }
+
+    // Default behavior: handle movement selection
     if (selectedNode === nodeId) {
       setSelectedNode(null);
+      setCombatPOINode(null);
     } else {
       setSelectedNode(nodeId);
+      setCombatPOINode(null);
     }
   };
 
@@ -175,6 +225,16 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
         setPosition(data.newPosition);
         setMovementPoints(data.movementPointsRemaining || 0);
         setSelectedNode(null);
+        setCombatPOINode(null); // Clear combat POI selection when moving
+        
+        // Update POI combat state for new position
+        if (data.newPosition?.current_node_id && mapData) {
+          updatePOICombatState(data.newPosition, mapData);
+        } else {
+          setCurrentNodeHasWaveCombat(false);
+          setWaveCombatInfo(null);
+        }
+        
         // Reload map to get updated visibility
         loadMapData();
       } else {
@@ -190,16 +250,23 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
     setSelectedNode(null);
   };
 
-  const handleStartPOICombat = async () => {
-    if (!currentParticipant || !position?.current_node_id || !character) return;
+  const handleCancelCombat = () => {
+    setCombatPOINode(null);
+  };
+
+  const handleStartPOICombat = async (nodeId?: string) => {
+    const targetNodeId = nodeId || position?.current_node_id;
+    if (!currentParticipant || !targetNodeId || !character) return;
 
     try {
       // Use socket to start POI combat (more efficient than REST)
       labyrinthClient.startPOICombat(
         currentParticipant.id,
-        position.current_node_id,
+        targetNodeId,
         character
       );
+      // Clear combat POI selection after starting
+      setCombatPOINode(null);
     } catch (err) {
       console.error('Failed to start POI combat:', err);
       alert('Failed to start combat');
@@ -325,6 +392,11 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
             return null; // Don't render hidden nodes
           }
 
+          const hasPOICombat = node.metadata?.poi_combat?.enabled === true;
+          const isCombatPOISelected = combatPOINode === node.id;
+          const canClickForCombat = isCurrent && hasPOICombat;
+          const canClick = canMove || canClickForCombat;
+
           return (
             <div
               key={node.id}
@@ -332,8 +404,10 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
                 ${isCurrent ? 'current' : ''} 
                 ${isSelected ? 'selected' : ''}
                 ${canMove ? 'can-move' : ''}
+                ${hasPOICombat ? 'has-poi-combat' : ''}
+                ${isCombatPOISelected ? 'combat-poi-selected' : ''}
                 visibility-${nodeVisibility}`}
-              onClick={() => canMove && handleNodeClick(node.id)}
+              onClick={() => canClick && handleNodeClick(node.id)}
               style={{
                 left: `${(node.x_coordinate - mapData.metadata.bounds.minX + padding)}px`,
                 top: `${(node.y_coordinate - mapData.metadata.bounds.minY + padding)}px`,
@@ -344,10 +418,14 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
                                 node.node_type === 'monster_spawn' ? '#95a5a6' :
                                 node.node_type === 'monster_spawner' ? '#8e44ad' :
                                 isStartPoint ? '#27ae60' : '#555',
+                cursor: canClick ? 'pointer' : 'default',
               }}
               title={node.name || node.node_type}
             >
               <div className="node-icon">{getNodeIcon(node.node_type)}</div>
+              {hasPOICombat && isCurrent && (
+                <div className="node-poi-combat-indicator">⚔️</div>
+              )}
               {playerCount > 0 && <div className="node-players">{playerCount}</div>}
             </div>
           );
@@ -378,8 +456,44 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
           </div>
         )}
 
-        {/* POI Combat Start Button */}
-        {currentNodeHasWaveCombat && position?.current_node_id && (
+        {/* POI Combat Start Button - shown when clicking on combat POI node */}
+        {combatPOINode && (
+          <div
+            className="poi-combat-panel"
+            style={{
+              left: `${mapData.nodes.find((n) => n.id === combatPOINode)!.x_coordinate - mapData.metadata.bounds.minX + padding}px`,
+              top: `${mapData.nodes.find((n) => n.id === combatPOINode)!.y_coordinate - mapData.metadata.bounds.minY + padding + 50}px`,
+            }}
+          >
+            <div className="poi-combat-content">
+              <div className="poi-combat-info">
+                <div className="poi-combat-title">
+                  {t('labyrinth.poiCombat', { defaultValue: 'Wave Combat Available' })}
+                </div>
+                {(() => {
+                  const node = mapData.nodes.find((n) => n.id === combatPOINode);
+                  const totalWaves = node?.metadata?.poi_combat?.waves?.length || 0;
+                  return totalWaves > 0 ? (
+                    <div className="poi-combat-waves">
+                      {t('labyrinth.totalWaves', { defaultValue: 'Total Waves' })}: {totalWaves}
+                    </div>
+                  ) : null;
+                })()}
+              </div>
+              <div className="poi-combat-actions">
+                <button onClick={() => handleStartPOICombat(combatPOINode)} className="btn-start-poi-combat">
+                  {t('labyrinth.startCombat', { defaultValue: 'Start Combat' })}
+                </button>
+                <button onClick={handleCancelCombat} className="btn-cancel-poi-combat">
+                  {t('labyrinth.cancel', { defaultValue: 'Cancel' })}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Legacy POI Combat Start Button - kept for backward compatibility */}
+        {currentNodeHasWaveCombat && position?.current_node_id && !combatPOINode && mapData && (
           <div
             className="poi-combat-panel"
             style={{
@@ -398,7 +512,7 @@ export default function LabyrinthMapView({ labyrinthId, characterId, labyrinthCl
                   </div>
                 )}
               </div>
-              <button onClick={handleStartPOICombat} className="btn-start-poi-combat">
+              <button onClick={() => handleStartPOICombat()} className="btn-start-poi-combat">
                 {t('labyrinth.startCombat', { defaultValue: 'Start Combat' })}
               </button>
             </div>

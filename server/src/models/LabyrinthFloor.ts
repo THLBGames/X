@@ -68,6 +68,58 @@ export class LabyrinthFloorModel {
     return this.mapRowToFloor(result.rows[0]);
   }
 
+  static async update(id: string, input: Partial<CreateFloorInput>): Promise<LabyrinthFloor> {
+    const updates: string[] = [];
+    const values: any[] = [];
+    let paramCount = 1;
+
+    if (input.floor_number !== undefined) {
+      updates.push(`floor_number = $${paramCount++}`);
+      values.push(input.floor_number);
+    }
+    if (input.max_players !== undefined) {
+      updates.push(`max_players = $${paramCount++}`);
+      values.push(input.max_players);
+    }
+    if (input.monster_pool !== undefined) {
+      updates.push(`monster_pool = $${paramCount++}`);
+      values.push(JSON.stringify(input.monster_pool));
+    }
+    if (input.loot_table !== undefined) {
+      updates.push(`loot_table = $${paramCount++}`);
+      values.push(JSON.stringify(input.loot_table));
+    }
+    if (input.environment_type !== undefined) {
+      updates.push(`environment_type = $${paramCount++}`);
+      values.push(input.environment_type);
+    }
+    if (input.rules !== undefined) {
+      updates.push(`rules = $${paramCount++}`);
+      values.push(JSON.stringify(input.rules));
+    }
+
+    if (updates.length === 0) {
+      // No updates, just return existing
+      const existing = await this.findById(id);
+      if (!existing) {
+        throw new Error(`Floor with id ${id} not found`);
+      }
+      return existing;
+    }
+
+    values.push(id);
+    const result = await pool.query(
+      `UPDATE labyrinth_floors SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
+      values
+    );
+
+    if (result.rows.length === 0) {
+      throw new Error(`Floor with id ${id} not found`);
+    }
+
+    return this.mapRowToFloor(result.rows[0]);
+  }
+
   static async markCompleted(id: string): Promise<void> {
     await pool.query('UPDATE labyrinth_floors SET completed_at = CURRENT_TIMESTAMP WHERE id = $1', [id]);
   }

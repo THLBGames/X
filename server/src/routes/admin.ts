@@ -170,15 +170,41 @@ export function setupAdminRoutes(app: Express) {
 
       // Update floors if provided
       if (floors && Array.isArray(floors)) {
-        // Delete existing floors
-        await pool.query('DELETE FROM labyrinth_floors WHERE labyrinth_id = $1', [labyrinthId]);
+        // Get existing floors to preserve IDs
+        const existingFloors = await LabyrinthFloorModel.findByLabyrinthId(labyrinthId);
+        const existingFloorIds = new Set(existingFloors.map(f => f.id));
+        const updatedFloorIds = new Set<string>();
 
-        // Create new floors
+        // Update or create floors
         for (const floorInput of floors) {
-          await LabyrinthFloorModel.create({
-            ...floorInput,
-            labyrinth_id: labyrinthId,
-          });
+          if (floorInput.id && existingFloorIds.has(floorInput.id)) {
+            // Update existing floor
+            await LabyrinthFloorModel.update(floorInput.id, {
+              floor_number: floorInput.floor_number,
+              max_players: floorInput.max_players,
+              monster_pool: floorInput.monster_pool,
+              loot_table: floorInput.loot_table,
+              environment_type: floorInput.environment_type,
+              rules: floorInput.rules,
+            });
+            updatedFloorIds.add(floorInput.id);
+            console.log(`[Update Labyrinth] Updated floor ${floorInput.id} (floor_number: ${floorInput.floor_number})`);
+          } else {
+            // Create new floor
+            const newFloor = await LabyrinthFloorModel.create({
+              ...floorInput,
+              labyrinth_id: labyrinthId,
+            });
+            updatedFloorIds.add(newFloor.id);
+            console.log(`[Update Labyrinth] Created new floor ${newFloor.id} (floor_number: ${floorInput.floor_number})`);
+          }
+        }
+
+        // Delete floors that are no longer in the list
+        const floorsToDelete = existingFloors.filter(f => !updatedFloorIds.has(f.id));
+        for (const floorToDelete of floorsToDelete) {
+          console.log(`[Update Labyrinth] Deleting floor ${floorToDelete.id} (floor_number: ${floorToDelete.floor_number})`);
+          await pool.query('DELETE FROM labyrinth_floors WHERE id = $1', [floorToDelete.id]);
         }
       }
 
@@ -1172,7 +1198,31 @@ export function setupAdminRoutes(app: Express) {
       const nodes = await FloorNodeModel.findByFloorId(floorId);
       const connections = await FloorConnectionModel.findByFloorId(floorId);
 
+      // Log metadata info for debugging
+      const nodesWithPOICombat = nodes.filter(n => n.metadata?.poi_combat?.enabled);
+      const nodesWithAnyMetadata = nodes.filter(n => n.metadata && Object.keys(n.metadata).length > 0);
       console.log(`[Load Layout] Loaded ${nodes.length} nodes, ${connections.length} connections for floor ${floorId}`);
+      console.log(`[Load Layout] Nodes with POI combat: ${nodesWithPOICombat.length}`);
+      console.log(`[Load Layout] Nodes with any metadata: ${nodesWithAnyMetadata.length} out of ${nodes.length}`);
+      
+      if (nodesWithPOICombat.length > 0) {
+        const sample = nodesWithPOICombat[0];
+        console.log(`[Load Layout] Sample POI combat node:`, {
+          id: sample.id,
+          metadataKeys: Object.keys(sample.metadata || {}),
+          poiCombatWaves: sample.metadata?.poi_combat?.waves?.length || 0,
+        });
+      } else if (nodes.length > 0) {
+        // Log a sample node to see what metadata looks like
+        const sample = nodes[0];
+        console.log(`[Load Layout] Sample node (no POI combat):`, {
+          id: sample.id,
+          hasMetadata: !!sample.metadata,
+          metadataType: typeof sample.metadata,
+          metadataKeys: sample.metadata ? Object.keys(sample.metadata).length : 0,
+          metadataValue: sample.metadata,
+        });
+      }
 
       res.json({
         success: true,
@@ -1198,6 +1248,17 @@ export function setupAdminRoutes(app: Express) {
       const { nodes, connections, settings } = req.body;
 
       console.log(`[Save Layout] Floor ${floorId}: Saving ${nodes?.length || 0} nodes, ${connections?.length || 0} connections`);
+      
+      // Log sample of incoming nodes to debug metadata
+      if (nodes && nodes.length > 0) {
+        const sampleNode = nodes[0];
+        console.log(`[Save Layout] Sample incoming node:`, {
+          id: sampleNode?.id,
+          hasMetadata: !!sampleNode?.metadata,
+          metadataKeys: sampleNode?.metadata ? Object.keys(sampleNode.metadata).length : 0,
+          metadataType: typeof sampleNode?.metadata,
+        });
+      }
 
       // Verify floor belongs to labyrinth
       const floor = await LabyrinthFloorModel.findById(floorId);
@@ -1238,42 +1299,141 @@ export function setupAdminRoutes(app: Express) {
       
       // Get existing node IDs for this floor
       const existingNodes = await FloorNodeModel.findByFloorId(floorId);
-      const _existingNodeIds = new Set(existingNodes.map(n => n.id));
+      const existingNodeIds = new Set(existingNodes.map(n => n.id));
       const newNodeIds = new Set(nodesArray.filter(n => n && n.id).map(n => n.id));
 
       console.log(`[Save Layout] Existing nodes: ${existingNodes.length}, New nodes: ${nodesArray.length}`);
+      
+      // Log sample of existing nodes' metadata
+      const existingNodesWithMetadata = existingNodes.filter(n => n.metadata && Object.keys(n.metadata).length > 0);
+      console.log(`[Save Layout] Existing nodes with metadata: ${existingNodesWithMetadata.length} out of ${existingNodes.length}`);
+      if (existingNodesWithMetadata.length > 0) {
+        const sample = existingNodesWithMetadata[0];
+        console.log(`[Save Layout] Sample existing node with metadata:`, {
+          id: sample.id,
+          metadataKeys: Object.keys(sample.metadata),
+          hasPOICombat: !!sample.metadata?.poi_combat?.enabled,
+        });
+      }
 
-      // Delete nodes that are not in the new list
+      // Process each node: update existing or create new
+      for (const nodeData of nodesArray) {
+        if (!nodeData) continue; // Skip null/undefined entries
+        
+        // Ensure metadata is an object (not null/undefined)
+        // If node exists, merge with existing metadata to preserve data
+        let nodeMetadata: Record<string, any> = {};
+        if (nodeData.id && existingNodeIds.has(nodeData.id)) {
+          const existingNode = existingNodes.find(n => n.id === nodeData.id);
+          const existingMetadata = existingNode?.metadata || {};
+          const newMetadata = nodeData.metadata && typeof nodeData.metadata === 'object' ? nodeData.metadata : {};
+          
+          // Log what we're working with
+          const existingKeys = Object.keys(existingMetadata).length;
+          const newKeys = Object.keys(newMetadata).length;
+          
+          // CRITICAL FIX: Always preserve existing metadata if client sends empty metadata
+          // If client sends non-empty metadata, merge it with existing (new overrides existing)
+          if (newKeys === 0 && existingKeys > 0) {
+            // Client sent empty metadata but database has metadata - preserve existing completely
+            nodeMetadata = existingMetadata;
+            console.log(`[Save Layout] Node ${nodeData.id}: Preserving existing metadata (${existingKeys} keys) because client sent empty metadata`);
+          } else if (newKeys > 0) {
+            // Client sent non-empty metadata - merge with existing (new overrides existing)
+            nodeMetadata = { ...existingMetadata, ...newMetadata };
+            console.log(`[Save Layout] Node ${nodeData.id}: Merging metadata (existing: ${existingKeys} keys, new: ${newKeys} keys)`);
+          } else {
+            // Both are empty - use empty object
+            nodeMetadata = {};
+          }
+        } else {
+          // New node - use metadata from client
+          nodeMetadata = nodeData.metadata && typeof nodeData.metadata === 'object' 
+            ? nodeData.metadata 
+            : {};
+        }
+        
+        if (nodeData.id && existingNodeIds.has(nodeData.id)) {
+          // Update existing node
+          const finalMetadataKeys = Object.keys(nodeMetadata).length;
+          console.log(`[Save Layout] Updating existing node ${nodeData.id}, final metadata keys: ${finalMetadataKeys}`);
+          
+          // Build update object - only include metadata if it's non-empty OR if client explicitly sent non-empty metadata
+          const updateData: any = {
+            floor_id: floorId,
+            node_type: nodeData.node_type,
+            x_coordinate: nodeData.x_coordinate,
+            y_coordinate: nodeData.y_coordinate,
+            name: nodeData.name || null,
+            description: nodeData.description || null,
+            required_boss_defeated: nodeData.required_boss_defeated || null,
+            is_revealed: nodeData.is_revealed ?? false,
+            is_start_point: nodeData.is_start_point ?? false,
+            leads_to_floor_number: nodeData.leads_to_floor_number || null,
+            capacity_limit: nodeData.capacity_limit || null,
+          };
+          
+          // Always update metadata if we have any (either from client or preserved from database)
+          // This ensures metadata is always saved correctly
+          if (finalMetadataKeys > 0) {
+            updateData.metadata = nodeMetadata;
+            const clientMetadataKeys = nodeData.metadata && typeof nodeData.metadata === 'object' 
+              ? Object.keys(nodeData.metadata).length 
+              : 0;
+            if (clientMetadataKeys === 0 && finalMetadataKeys > 0) {
+              console.log(`[Save Layout] Node ${nodeData.id}: Updating metadata (preserved from database: ${finalMetadataKeys} keys)`);
+            } else {
+              console.log(`[Save Layout] Node ${nodeData.id}: Updating metadata (client sent ${clientMetadataKeys} keys, final: ${finalMetadataKeys} keys)`);
+            }
+          } else {
+            // Both client and database have empty metadata - skip update
+            console.log(`[Save Layout] Node ${nodeData.id}: Skipping metadata update (both client and database have empty metadata)`);
+          }
+          
+          const updatedNode = await FloorNodeModel.update(nodeData.id, updateData);
+          
+          if (updatedNode) {
+            nodeIdMap.set(nodeData.id, updatedNode.id);
+            console.log(`[Save Layout] Updated node ${nodeData.id}, has POI combat: ${!!updatedNode.metadata?.poi_combat?.enabled}`);
+          } else {
+            console.warn(`[Save Layout] Failed to update node ${nodeData.id}`);
+          }
+        } else {
+          // Create new node (or update if ID provided but doesn't exist yet - handles ON CONFLICT)
+          const metadataKeys = Object.keys(nodeMetadata).length;
+          console.log(`[Save Layout] Creating new node ${nodeData.id || 'without ID'}, metadata keys: ${metadataKeys}`);
+          if (metadataKeys === 0 && nodeData.metadata && typeof nodeData.metadata === 'object' && Object.keys(nodeData.metadata).length > 0) {
+            console.warn(`[Save Layout] WARNING: Node ${nodeData.id} has metadata in request but normalized to empty!`);
+          }
+          const newNode = await FloorNodeModel.create({
+            id: nodeData.id, // Preserve existing ID if provided
+            floor_id: floorId,
+            node_type: nodeData.node_type,
+            x_coordinate: nodeData.x_coordinate,
+            y_coordinate: nodeData.y_coordinate,
+            name: nodeData.name || null,
+            description: nodeData.description || null,
+            metadata: nodeMetadata,
+            required_boss_defeated: nodeData.required_boss_defeated || null,
+            is_revealed: nodeData.is_revealed ?? false,
+            is_start_point: nodeData.is_start_point ?? false,
+            leads_to_floor_number: nodeData.leads_to_floor_number || null,
+            capacity_limit: nodeData.capacity_limit || null,
+          });
+          
+          // Map old ID to new ID (should be same if ID was preserved)
+          if (nodeData.id) {
+            nodeIdMap.set(nodeData.id, newNode.id);
+          }
+          console.log(`[Save Layout] Created node ${newNode.id}, has POI combat: ${!!newNode.metadata?.poi_combat?.enabled}`);
+        }
+      }
+
+      // Delete nodes that are not in the new list (after creating/updating to avoid foreign key issues)
       const nodesToDelete = existingNodes.filter(n => !newNodeIds.has(n.id));
       console.log(`[Save Layout] Deleting ${nodesToDelete.length} nodes`);
       for (const nodeToDelete of nodesToDelete) {
         await FloorNodeModel.delete(nodeToDelete.id);
-      }
-
-      // Create/update nodes, preserving IDs when provided
-      for (const nodeData of nodesArray) {
-        if (!nodeData) continue; // Skip null/undefined entries
-        
-        const newNode = await FloorNodeModel.create({
-          id: nodeData.id, // Preserve existing ID if provided
-          floor_id: floorId,
-          node_type: nodeData.node_type,
-          x_coordinate: nodeData.x_coordinate,
-          y_coordinate: nodeData.y_coordinate,
-          name: nodeData.name,
-          description: nodeData.description,
-          metadata: nodeData.metadata || {},
-          required_boss_defeated: nodeData.required_boss_defeated || null,
-          is_revealed: nodeData.is_revealed ?? false,
-          is_start_point: nodeData.is_start_point ?? false,
-          leads_to_floor_number: nodeData.leads_to_floor_number || null,
-          capacity_limit: nodeData.capacity_limit || null,
-        });
-        
-        // Map old ID to new ID (should be same if ID was preserved)
-        if (nodeData.id) {
-          nodeIdMap.set(nodeData.id, newNode.id);
-        }
       }
 
       // Handle bulk connection operations
@@ -1282,20 +1442,12 @@ export function setupAdminRoutes(app: Express) {
       
       // Get existing connection IDs for this floor
       const existingConnections = await FloorConnectionModel.findByFloorId(floorId);
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _existingConnectionIds = new Set(existingConnections.map(c => c.id));
+      const existingConnectionIds = new Set(existingConnections.map(c => c.id));
       const newConnectionIds = new Set(connectionsArray.filter(c => c && c.id).map(c => c.id));
 
       console.log(`[Save Layout] Existing connections: ${existingConnections.length}, New connections: ${connectionsArray.length}`);
 
-      // Delete connections that are not in the new list
-      const connectionsToDelete = existingConnections.filter(c => !newConnectionIds.has(c.id));
-      console.log(`[Save Layout] Deleting ${connectionsToDelete.length} connections`);
-      for (const connToDelete of connectionsToDelete) {
-        await FloorConnectionModel.delete(connToDelete.id);
-      }
-
-      // Create/update connections with mapped node IDs, preserving IDs when provided
+      // Process each connection: update existing or create new
       for (const connData of connectionsArray) {
         if (!connData) continue; // Skip null/undefined entries
         
@@ -1317,16 +1469,37 @@ export function setupAdminRoutes(app: Express) {
           continue;
         }
         
-        await FloorConnectionModel.create({
-          id: connData.id, // Preserve existing ID if provided
-          floor_id: floorId,
-          from_node_id: newFromId,
-          to_node_id: newToId,
-          movement_cost: connData.movement_cost || 1,
-          is_bidirectional: connData.is_bidirectional ?? true,
-          required_item: connData.required_item || null,
-          visibility_requirement: connData.visibility_requirement || null,
-        });
+        if (connData.id && existingConnectionIds.has(connData.id)) {
+          // Update existing connection
+          await FloorConnectionModel.update(connData.id, {
+            floor_id: floorId,
+            from_node_id: newFromId,
+            to_node_id: newToId,
+            movement_cost: connData.movement_cost || 1,
+            is_bidirectional: connData.is_bidirectional ?? true,
+            required_item: connData.required_item || null,
+            visibility_requirement: connData.visibility_requirement || null,
+          });
+        } else {
+          // Create new connection (or update if ID provided but doesn't exist yet - handles ON CONFLICT)
+          await FloorConnectionModel.create({
+            id: connData.id, // Preserve existing ID if provided
+            floor_id: floorId,
+            from_node_id: newFromId,
+            to_node_id: newToId,
+            movement_cost: connData.movement_cost || 1,
+            is_bidirectional: connData.is_bidirectional ?? true,
+            required_item: connData.required_item || null,
+            visibility_requirement: connData.visibility_requirement || null,
+          });
+        }
+      }
+
+      // Delete connections that are not in the new list (after creating/updating)
+      const connectionsToDelete = existingConnections.filter(c => !newConnectionIds.has(c.id));
+      console.log(`[Save Layout] Deleting ${connectionsToDelete.length} connections`);
+      for (const connToDelete of connectionsToDelete) {
+        await FloorConnectionModel.delete(connToDelete.id);
       }
 
       console.log(`[Save Layout] Successfully saved floor ${floorId}`);
@@ -1337,9 +1510,19 @@ export function setupAdminRoutes(app: Express) {
       const updatedFloor = await LabyrinthFloorModel.findById(floorId);
 
       console.log(`[Save Layout] Reloaded: ${updatedNodes.length} nodes, ${updatedConnections.length} connections`);
+      
+      // Verify metadata was preserved
+      const reloadedNodesWithPOICombat = updatedNodes.filter(n => n.metadata?.poi_combat?.enabled);
+      const reloadedNodesWithMetadata = updatedNodes.filter(n => n.metadata && Object.keys(n.metadata).length > 0);
+      console.log(`[Save Layout] After reload - Nodes with POI combat: ${reloadedNodesWithPOICombat.length}`);
+      console.log(`[Save Layout] After reload - Nodes with any metadata: ${reloadedNodesWithMetadata.length} out of ${updatedNodes.length}`);
 
       if (updatedNodes.length === 0 && nodesArray.length > 0) {
         console.error(`[Save Layout] WARNING: Saved ${nodesArray.length} nodes but reloaded 0!`);
+      }
+      
+      if (reloadedNodesWithPOICombat.length === 0 && existingNodesWithMetadata.length > 0) {
+        console.error(`[Save Layout] WARNING: Had ${existingNodesWithMetadata.length} nodes with metadata before save, but 0 after reload!`);
       }
 
       res.json({
@@ -1373,6 +1556,22 @@ export function setupAdminRoutes(app: Express) {
 
       // If config.replace is true, clear existing layout first
       if (config.replace) {
+        // Check if there are active participants on this floor
+        const { ParticipantPositionModel } = await import('../models/ParticipantPosition.js');
+        const participantsOnFloor = await pool.query(
+          'SELECT participant_id FROM labyrinth_participant_positions WHERE floor_id = $1 AND current_node_id IS NOT NULL',
+          [floorId]
+        );
+        
+        if (participantsOnFloor.rows.length > 0) {
+          console.log(`[Generate Layout] Clearing ${participantsOnFloor.rows.length} participant positions before deleting nodes`);
+          // Clear current_node_id for all participants on this floor to avoid foreign key constraint violations
+          await pool.query(
+            'UPDATE labyrinth_participant_positions SET current_node_id = NULL WHERE floor_id = $1',
+            [floorId]
+          );
+        }
+        
         await FloorNodeModel.deleteByFloorId(floorId);
         await FloorConnectionModel.deleteByFloorId(floorId);
       }
@@ -1645,7 +1844,13 @@ export function setupAdminRoutes(app: Express) {
       const updateData: any = {};
       if (updates.name !== undefined) updateData.name = updates.name;
       if (updates.description !== undefined) updateData.description = updates.description;
-      if (updates.metadata !== undefined) updateData.metadata = updates.metadata;
+      if (updates.metadata !== undefined) {
+        // Ensure metadata is always an object, merge with existing if needed
+        const existingMetadata = existingNode.metadata || {};
+        const newMetadata = updates.metadata && typeof updates.metadata === 'object' ? updates.metadata : {};
+        // Merge metadata to preserve existing keys that aren't being updated
+        updateData.metadata = { ...existingMetadata, ...newMetadata };
+      }
       if (updates.is_revealed !== undefined) updateData.is_revealed = updates.is_revealed;
       if (updates.is_start_point !== undefined) updateData.is_start_point = updates.is_start_point;
       if (updates.leads_to_floor_number !== undefined) updateData.leads_to_floor_number = updates.leads_to_floor_number;

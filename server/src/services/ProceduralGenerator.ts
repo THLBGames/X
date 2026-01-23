@@ -1,5 +1,7 @@
 import { FloorNodeModel, type FloorNode } from '../models/FloorNode.js';
 import { FloorConnectionModel, type FloorConnection } from '../models/FloorConnection.js';
+import { LabyrinthFloorModel } from '../models/LabyrinthFloor.js';
+import { MonsterModel } from '../models/Monster.js';
 
 export interface ProceduralGenerationConfig {
   floor_id: string;
@@ -160,10 +162,23 @@ export class ProceduralGenerator {
       nodePositions[idx].id = craftingNode.id;
     }
 
+    // Get floor monster pool for POI combat generation
+    const floor = await LabyrinthFloorModel.findById(config.floor_id);
+    const floorMonsterPool = floor?.monster_pool || [];
+    const floorNumber = floor?.floor_number || 1;
+
     // Fill remaining with monster spawns
     // Determine POI wave config defaults
     const poiWaveCombatEnabled = config.poiWaveCombatEnabled ?? false;
     const poiWaveCombatPercentage = config.poiWaveCombatPercentage ?? 0.5;
+    
+    // Log if POI combat is enabled but floor has no monster pool (we'll generate a default one)
+    if (poiWaveCombatEnabled && floorMonsterPool.length === 0) {
+      console.log(
+        `[ProceduralGenerator] POI combat is enabled but floor ${config.floor_id} has no monster pool. ` +
+        `Will generate default monster pool from available monsters in database.`
+      );
+    }
     const defaultWaveConfig = {
       minWaves: 2,
       maxWaves: 4,
@@ -177,16 +192,41 @@ export class ProceduralGenerator {
 
       // Determine if this node should have POI waves
       const metadata: Record<string, any> = {};
+      let nodeMonsterPool: any[] | null = null;
+      
       if (poiWaveCombatEnabled && Math.random() < poiWaveCombatPercentage) {
-        // Generate POI wave config for this node
-        metadata.poi_combat = this.generatePOIWaveConfig(
+        // Generate POI wave config for this node with monster pools
+        metadata.poi_combat = await this.generatePOIWaveConfig(
           waveConfig.minWaves,
           waveConfig.maxWaves,
           waveConfig.minMonstersPerWave,
-          waveConfig.maxMonstersPerWave
+          waveConfig.maxMonstersPerWave,
+          floorMonsterPool,
+          floorNumber
         );
+        
+        // Extract monster pool from first wave if available (for display purposes)
+        if (metadata.poi_combat?.waves?.[0]?.monsterPool) {
+          nodeMonsterPool = metadata.poi_combat.waves[0].monsterPool;
+        }
+      } else {
+        // For non-POI combat nodes, ensure they have a monster pool in metadata
+        // Use floor's pool if available, otherwise generate default
+        if (floorMonsterPool.length > 0) {
+          nodeMonsterPool = floorMonsterPool;
+        } else {
+          nodeMonsterPool = await this.generateDefaultMonsterPool(floorNumber);
+        }
+        
+        // Add monster pool to metadata for regular combat nodes
+        if (nodeMonsterPool.length > 0) {
+          metadata.monster_pool = nodeMonsterPool;
+        }
       }
 
+      // Create node with metadata - ensure metadata is always an object
+      const nodeMetadata = Object.keys(metadata).length > 0 ? metadata : {};
+      
       const node = await FloorNodeModel.create({
         floor_id: config.floor_id,
         node_type: 'monster_spawn',
@@ -194,8 +234,29 @@ export class ProceduralGenerator {
         y_coordinate: nodePositions[i].y,
         name: `Room ${i}`,
         is_revealed: false,
-        metadata: Object.keys(metadata).length > 0 ? metadata : undefined,
+        metadata: nodeMetadata,
       });
+      
+      // Log node creation with combat type
+      if (nodeMetadata.poi_combat?.enabled) {
+        const wavesCount = nodeMetadata.poi_combat.waves?.length || 0;
+        const wavesWithMonsterPool = nodeMetadata.poi_combat.waves?.filter(w => w.monsterPool && w.monsterPool.length > 0).length || 0;
+        console.log(`[ProceduralGenerator] Created node ${node.id} with POI combat: ${wavesCount} waves (${wavesWithMonsterPool} with monster pools)`);
+        // Log a sample wave to verify monsterPool is included
+        if (nodeMetadata.poi_combat.waves && nodeMetadata.poi_combat.waves.length > 0) {
+          const sampleWave = nodeMetadata.poi_combat.waves[0];
+          console.log(`[ProceduralGenerator] Sample wave:`, {
+            waveNumber: sampleWave.waveNumber,
+            monsterCount: sampleWave.monsterCount,
+            hasMonsterPool: !!sampleWave.monsterPool,
+            monsterPoolSize: sampleWave.monsterPool?.length || 0,
+          });
+        }
+      } else if (nodeMetadata.monster_pool) {
+        console.log(`[ProceduralGenerator] Created node ${node.id} with regular combat pool: ${nodeMetadata.monster_pool.length} monsters`);
+      } else {
+        console.warn(`[ProceduralGenerator] Created node ${node.id} without any monster pool!`);
+      }
       nodes.push(node);
       nodePositions[i].id = node.id;
     }
@@ -316,26 +377,95 @@ export class ProceduralGenerator {
   }
 
   /**
-   * Generate POI wave combat configuration
+   * Generate a default monster pool from available monsters in the database
    */
-  private static generatePOIWaveConfig(
+  private static async generateDefaultMonsterPool(floorNumber: number = 1): Promise<any[]> {
+    try {
+      // Try to get monsters by tier (lower tier for lower floors)
+      // Floor 1 = tier 1, Floor 2 = tier 1-2, Floor 3+ = tier 1-3
+      const maxTier = Math.min(3, Math.max(1, Math.floor(floorNumber / 2) + 1));
+      
+      let monsters;
+      if (maxTier === 1) {
+        monsters = await MonsterModel.listByTier(1);
+      } else {
+        // Get monsters from multiple tiers
+        const allMonsters = await MonsterModel.listAll();
+        monsters = allMonsters.filter(m => m.tier <= maxTier);
+      }
+      
+      if (monsters.length === 0) {
+        // Fallback: get all monsters if tier filtering returns nothing
+        monsters = await MonsterModel.listAll();
+      }
+      
+      if (monsters.length === 0) {
+        console.warn('[ProceduralGenerator] No monsters found in database for default pool');
+        return [];
+      }
+      
+      // Create a monster pool from available monsters
+      // Use a subset of monsters (5-10 monsters) with equal weights
+      const poolSize = Math.min(10, Math.max(5, monsters.length));
+      const selectedMonsters = monsters.slice(0, poolSize);
+      
+      const monsterPool = selectedMonsters.map(monster => ({
+        monsterId: monster.id, // Use monsterId to match MonsterSpawnService interface
+        weight: 1, // Equal weight for all monsters
+        minLevel: Math.max(1, monster.level - 2), // Allow some level variation
+        maxLevel: monster.level + 2,
+      }));
+      
+      console.log(`[ProceduralGenerator] Generated default monster pool with ${monsterPool.length} monsters (tier <= ${maxTier})`);
+      return monsterPool;
+    } catch (error) {
+      console.error('[ProceduralGenerator] Error generating default monster pool:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Generate POI wave combat configuration with monster pools
+   */
+  private static async generatePOIWaveConfig(
     minWaves: number,
     maxWaves: number,
     minMonstersPerWave: number,
-    maxMonstersPerWave: number
-  ): { enabled: true; waves: Array<{ waveNumber: number; monsterCount: number }> } {
+    maxMonstersPerWave: number,
+    floorMonsterPool: any[],
+    floorNumber: number = 1
+  ): Promise<{ enabled: true; waves: Array<{ waveNumber: number; monsterCount: number; monsterPool?: any[] }> }> {
     // Generate random number of waves within range
     const numWaves = Math.floor(Math.random() * (maxWaves - minWaves + 1)) + minWaves;
     
-    const waves: Array<{ waveNumber: number; monsterCount: number }> = [];
+    const waves: Array<{ waveNumber: number; monsterCount: number; monsterPool?: any[] }> = [];
+    
+    // Determine monster pool to use
+    let baseMonsterPool: any[];
+    if (floorMonsterPool.length > 0) {
+      baseMonsterPool = floorMonsterPool;
+      console.log(`[ProceduralGenerator] Using floor's monster pool (${baseMonsterPool.length} monsters)`);
+    } else {
+      // Generate default monster pool from database
+      baseMonsterPool = await this.generateDefaultMonsterPool(floorNumber);
+      if (baseMonsterPool.length === 0) {
+        console.warn('[ProceduralGenerator] Could not generate default monster pool, POI combat may fail');
+      } else {
+        console.log(`[ProceduralGenerator] Generated default monster pool (${baseMonsterPool.length} monsters) for floor ${floorNumber}`);
+      }
+    }
     
     // Generate each wave
     for (let i = 1; i <= numWaves; i++) {
       // Generate random monster count for this wave
       const monsterCount = Math.floor(Math.random() * (maxMonstersPerWave - minMonstersPerWave + 1)) + minMonstersPerWave;
+      
+      // Use the base monster pool for all waves
+      // Could also create variations (e.g., harder monsters in later waves) but for now use the same pool
       waves.push({
         waveNumber: i,
         monsterCount,
+        monsterPool: baseMonsterPool.length > 0 ? baseMonsterPool : undefined,
       });
     }
     

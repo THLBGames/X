@@ -27,6 +27,7 @@ export interface LabyrinthClientCallbacks {
   onVisibilityUpdate?: (data: any) => void;
   onBossRoomLocked?: (data: any) => void;
   onError?: (data: any) => void;
+  onConnectionChange?: (connected: boolean) => void;
 }
 
 export class LabyrinthClient {
@@ -57,11 +58,13 @@ export class LabyrinthClient {
       console.log('Connected to labyrinth server');
       this.connected = true;
       this.setupEventListeners();
+      this.callbacks.onConnectionChange?.(true);
     });
 
     this.socket.on('disconnect', () => {
       console.log('Disconnected from labyrinth server');
       this.connected = false;
+      this.callbacks.onConnectionChange?.(false);
     });
 
     this.socket.on('connect_error', (error) => {
@@ -288,7 +291,9 @@ export class LabyrinthClient {
    * Check if connected
    */
   isConnected(): boolean {
-    return this.connected;
+    // Check both the flag and the actual socket connection status
+    // This handles race conditions where socket connects before the event fires
+    return this.connected || (this.socket?.connected ?? false);
   }
 
   /**

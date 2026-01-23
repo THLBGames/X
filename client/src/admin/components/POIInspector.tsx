@@ -181,9 +181,39 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
                         handleWaveChange(index, 'monsterCount', parseInt(e.target.value) || 1)
                       }
                     />
+                    <div className="form-hint">
+                      Number of monsters that will spawn in this wave
+                    </div>
                   </div>
                   <div className="form-group">
-                    <label>Monster Pool (Optional - JSON array)</label>
+                    <label>
+                      Monster Pool (Optional - JSON array)
+                      {wave.monsterPool && wave.monsterPool.length > 0 && (
+                        <span className="monster-pool-badge">
+                          {wave.monsterPool.length} monster{wave.monsterPool.length !== 1 ? 's' : ''}
+                        </span>
+                      )}
+                    </label>
+                    {wave.monsterPool && wave.monsterPool.length > 0 && (
+                      <div className="monster-pool-preview">
+                        <div className="monster-pool-list">
+                          {wave.monsterPool.map((monster: any, poolIndex: number) => (
+                            <div key={poolIndex} className="monster-pool-item">
+                              <span className="monster-id">{monster.monsterId || monster.id || 'Unknown'}</span>
+                              {monster.weight !== undefined && (
+                                <span className="monster-weight">Weight: {monster.weight}</span>
+                              )}
+                              {monster.minLevel !== undefined && (
+                                <span className="monster-level">Min Level: {monster.minLevel}</span>
+                              )}
+                              {monster.maxLevel !== undefined && (
+                                <span className="monster-level">Max Level: {monster.maxLevel}</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     <textarea
                       value={
                         wave.monsterPool
@@ -209,11 +239,11 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
                           // Invalid JSON, ignore
                         }
                       }}
-                      rows={2}
+                      rows={4}
                       placeholder='[{"monsterId": "goblin", "weight": 1}]'
                     />
                     <div className="form-hint">
-                      Leave empty to use floor monster pool. Format: [&#123;&quot;monsterId&quot;: &quot;id&quot;, &quot;weight&quot;: 1&#125;]
+                      Leave empty to use floor monster pool. Format: [&#123;&quot;monsterId&quot;: &quot;id&quot;, &quot;weight&quot;: 1, &quot;minLevel&quot;: 1, &quot;maxLevel&quot;: 10&#125;]
                     </div>
                   </div>
                 </div>
@@ -293,6 +323,54 @@ export default function POIInspector({ node, onSave, onCancel }: POIInspectorPro
         return (
           <div className="type-config">
             <h5>Monster Spawn Configuration</h5>
+            {/* Show regular monster pool if present (for non-POI combat nodes) */}
+            {metadata.monster_pool && metadata.monster_pool.length > 0 && !metadata.poi_combat?.enabled && (
+              <div className="form-group">
+                <label>
+                  Monster Pool (Regular Combat)
+                  <span className="monster-pool-badge">
+                    {metadata.monster_pool.length} monster{metadata.monster_pool.length !== 1 ? 's' : ''}
+                  </span>
+                </label>
+                <div className="monster-pool-preview">
+                  <div className="monster-pool-list">
+                    {metadata.monster_pool.map((monster: any, poolIndex: number) => (
+                      <div key={poolIndex} className="monster-pool-item">
+                        <span className="monster-id">{monster.monsterId || monster.id || 'Unknown'}</span>
+                        {monster.weight !== undefined && (
+                          <span className="monster-weight">Weight: {monster.weight}</span>
+                        )}
+                        {monster.minLevel !== undefined && (
+                          <span className="monster-level">Min Level: {monster.minLevel}</span>
+                        )}
+                        {monster.maxLevel !== undefined && (
+                          <span className="monster-level">Max Level: {monster.maxLevel}</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <textarea
+                  value={JSON.stringify(metadata.monster_pool, null, 2)}
+                  onChange={(e) => {
+                    try {
+                      const pool = e.target.value.trim() ? JSON.parse(e.target.value) : undefined;
+                      setMetadata({
+                        ...metadata,
+                        monster_pool: pool,
+                      });
+                    } catch (err) {
+                      // Invalid JSON, ignore
+                    }
+                  }}
+                  rows={4}
+                  placeholder='[{"monsterId": "goblin", "weight": 1}]'
+                />
+                <div className="form-hint">
+                  Monster pool for regular combat at this node. Format: [&#123;&quot;monsterId&quot;: &quot;id&quot;, &quot;weight&quot;: 1, &quot;minLevel&quot;: 1, &quot;maxLevel&quot;: 10&#125;]
+                </div>
+              </div>
+            )}
             {renderWaveCombatConfig()}
           </div>
         );

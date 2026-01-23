@@ -26,6 +26,14 @@ export default function ProceduralGenerator({
     layoutType: 'maze' as 'maze' | 'hub_spoke' | 'linear' | 'random',
     connectionDensity: 0.5,
     replace: true,
+    poiWaveCombatEnabled: true, // Enable POI combat by default
+    poiWaveCombatPercentage: 0.3, // 30% of monster_spawn nodes get POI combat
+    poiWaveConfig: {
+      minWaves: 2,
+      maxWaves: 4,
+      minMonstersPerWave: 2,
+      maxMonstersPerWave: 5,
+    },
   });
   const [generating, setGenerating] = useState(false);
 
@@ -165,6 +173,101 @@ export default function ProceduralGenerator({
               Replace existing layout
             </label>
           </div>
+
+          <div className="form-section-divider">
+            <h4>POI Combat Settings</h4>
+          </div>
+
+          <div className="form-group">
+            <label>
+              <input
+                type="checkbox"
+                checked={config.poiWaveCombatEnabled}
+                onChange={(e) => setConfig({ ...config, poiWaveCombatEnabled: e.target.checked })}
+              />
+              Enable POI Wave Combat
+            </label>
+            <div className="form-hint">
+              When enabled, some monster spawn nodes will have wave-based combat instead of regular combat.
+            </div>
+          </div>
+
+          {config.poiWaveCombatEnabled && (
+            <>
+              <div className="form-group">
+                <label>POI Combat Percentage (0-1)</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  value={config.poiWaveCombatPercentage}
+                  onChange={(e) => setConfig({ ...config, poiWaveCombatPercentage: parseFloat(e.target.value) || 0.3 })}
+                  min="0"
+                  max="1"
+                />
+                <div className="form-hint">
+                  Percentage of monster_spawn nodes that will have POI wave combat (e.g., 0.3 = 30%).
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Min Waves</label>
+                  <input
+                    type="number"
+                    value={config.poiWaveConfig.minWaves}
+                    onChange={(e) => setConfig({
+                      ...config,
+                      poiWaveConfig: { ...config.poiWaveConfig, minWaves: parseInt(e.target.value) || 2 }
+                    })}
+                    min="1"
+                    max="10"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Max Waves</label>
+                  <input
+                    type="number"
+                    value={config.poiWaveConfig.maxWaves}
+                    onChange={(e) => setConfig({
+                      ...config,
+                      poiWaveConfig: { ...config.poiWaveConfig, maxWaves: parseInt(e.target.value) || 4 }
+                    })}
+                    min="1"
+                    max="10"
+                  />
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Min Monsters/Wave</label>
+                  <input
+                    type="number"
+                    value={config.poiWaveConfig.minMonstersPerWave}
+                    onChange={(e) => setConfig({
+                      ...config,
+                      poiWaveConfig: { ...config.poiWaveConfig, minMonstersPerWave: parseInt(e.target.value) || 2 }
+                    })}
+                    min="1"
+                    max="20"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Max Monsters/Wave</label>
+                  <input
+                    type="number"
+                    value={config.poiWaveConfig.maxMonstersPerWave}
+                    onChange={(e) => setConfig({
+                      ...config,
+                      poiWaveConfig: { ...config.poiWaveConfig, maxMonstersPerWave: parseInt(e.target.value) || 5 }
+                    })}
+                    min="1"
+                    max="20"
+                  />
+                </div>
+              </div>
+            </>
+          )}
 
           <div className="form-actions">
             <button className="btn-generate" onClick={handleGenerate} disabled={generating}>
