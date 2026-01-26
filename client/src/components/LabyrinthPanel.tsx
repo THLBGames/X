@@ -44,19 +44,30 @@ export default function LabyrinthPanel() {
         const activeResponse = await fetch(`${SERVER_URL}/api/labyrinth/character/${character.id}/active`);
         const activeResult = await activeResponse.json();
         if (activeResult.success && activeResult.labyrinths) {
-          setActiveLabyrinths(activeResult.labyrinths);
+          // Deduplicate by labyrinth.id to prevent duplicate entries
+          const uniqueLabyrinths = activeResult.labyrinths.filter(
+            (item, index, self) => index === self.findIndex((t) => t.labyrinth.id === item.labyrinth.id)
+          );
+          setActiveLabyrinths(uniqueLabyrinths);
         }
         
         setActiveView('arena');
       },
       onError: (error) => {
         console.error('Labyrinth error:', error);
+        // Don't show alert for "combat already active" - server will automatically resume it
+        if (error.message && error.message.includes('Combat already active')) {
+          console.log('[LabyrinthPanel] Combat already active, server will resume it automatically');
+          return;
+        }
         alert(error.message || 'An error occurred');
       },
     });
 
     client.connect();
     setLabyrinthClient(client);
+    // Store client in LabyrinthState for access from other components
+    useLabyrinthState.getState().setLabyrinthClient(client);
 
     // Check if player is already in a labyrinth
     const checkActiveLabyrinths = async () => {
@@ -66,10 +77,14 @@ export default function LabyrinthPanel() {
         
         if (result.success && result.labyrinths && result.labyrinths.length > 0) {
           // Player is in at least one labyrinth
-          setActiveLabyrinths(result.labyrinths);
+          // Deduplicate by labyrinth.id to prevent duplicate entries
+          const uniqueLabyrinths = result.labyrinths.filter(
+            (item, index, self) => index === self.findIndex((t) => t.labyrinth.id === item.labyrinth.id)
+          );
+          setActiveLabyrinths(uniqueLabyrinths);
           
           // Use the first one (most recent) as current
-          const { labyrinth, participant } = result.labyrinths[0];
+          const { labyrinth, participant } = uniqueLabyrinths[0];
           
           if (labyrinth && participant) {
             useLabyrinthState.getState().setCurrentLabyrinth(labyrinth);
@@ -112,6 +127,7 @@ export default function LabyrinthPanel() {
       clearTimeout(timeoutId);
       clearInterval(interval);
       client.disconnect();
+      useLabyrinthState.getState().setLabyrinthClient(null);
     };
   }, [character]);
 

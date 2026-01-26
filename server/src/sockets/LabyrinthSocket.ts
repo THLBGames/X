@@ -544,6 +544,38 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
         throw new Error('Floor not found');
       }
 
+      // Check if combat is already active for this participant
+      const existingCombat = POIWaveCombatService.getCombatInstanceForParticipant(participant_id);
+      
+      if (existingCombat) {
+        // Combat already active - resume it by sending current state
+        console.log(`[LabyrinthSocket] Combat already active for participant ${participant_id}, resuming...`);
+        
+        // Emit combat started event (to reinitialize client state)
+        socket.emit(SERVER_EVENTS.POI_COMBAT_STARTED, {
+          combat_instance_id: existingCombat.combatInstanceId,
+          wave_number: existingCombat.currentWave,
+          total_waves: existingCombat.totalWaves,
+          monsters: existingCombat.waveMonsters,
+        });
+
+        // Emit current combat state
+        const participants = existingCombat.combatEngine.getParticipants();
+        const currentActor = existingCombat.combatEngine.getCurrentActor();
+        const recentActions = existingCombat.combatEngine.getRecentActions(10);
+
+        socket.emit(SERVER_EVENTS.POI_COMBAT_STATE, {
+          combat_instance_id: existingCombat.combatInstanceId,
+          participants,
+          current_actor: currentActor,
+          recent_actions: recentActions,
+          wave_number: existingCombat.currentWave,
+          total_waves: existingCombat.totalWaves,
+        });
+        
+        return; // Don't start a new combat
+      }
+
       // Start POI combat
       const combatInstance = await POIWaveCombatService.startPOICombat(
         node_id,
@@ -607,6 +639,37 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
     try {
       const { participant_id, combat_instance_id, action_type, skill_id, item_id } = data;
 
+      // Validate required fields
+      if (!participant_id || !combat_instance_id || !action_type) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'Missing required fields: participant_id, combat_instance_id, and action_type are required',
+        });
+        return;
+      }
+
+      // Validate action type and required parameters
+      if (action_type === 'skill' && !skill_id) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'skill_id is required for skill actions',
+        });
+        return;
+      }
+
+      if (action_type === 'item' && !item_id) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'item_id is required for item actions',
+        });
+        return;
+      }
+
+      if (action_type === 'attack' && (skill_id || item_id)) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'attack actions should not include skill_id or item_id',
+        });
+        return;
+      }
+
+      // Get combat instance and validate
       const instance = POIWaveCombatService.getCombatInstance(combat_instance_id);
       if (!instance || !instance.isActive) {
         socket.emit(SERVER_EVENTS.ERROR, {
@@ -615,49 +678,58 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
         return;
       }
 
+      // Validate participant matches combat instance
       if (instance.participantId !== participant_id) {
         socket.emit(SERVER_EVENTS.ERROR, {
-          message: 'Participant mismatch',
+          message: 'Participant mismatch: participant_id does not match combat instance',
+        });
+        return;
+      }
+
+      // Validate it's the player's turn
+      let currentActor = instance.combatEngine.getCurrentActor();
+      if (!currentActor || !currentActor.isPlayer) {
+        socket.emit(SERVER_EVENTS.ERROR, {
+          message: 'Not player turn: cannot perform action when it is not the player\'s turn',
         });
         return;
       }
 
       // Process player turn
-      const previousWave = instance.currentWave;
+      const currentWave = instance.currentWave;
+      const totalWaves = instance.totalWaves;
       const combatLog = await POIWaveCombatService.processCombatTurn(
         combat_instance_id,
         action_type === 'skill' ? skill_id : null,
         action_type === 'item' ? item_id : null
       );
 
-      // If combat ended (all waves complete or player died)
+      // If combat ended (wave completed or player died)
       if (combatLog) {
+        // Emit wave complete event if wave was won
+        if (combatLog.result === 'victory') {
+          socket.emit(SERVER_EVENTS.POI_COMBAT_WAVE_COMPLETE, {
+            combat_instance_id,
+            completed_wave: currentWave,
+            total_waves: totalWaves,
+            has_more_waves: currentWave < totalWaves,
+          });
+        }
+
+        // Emit combat ended event
         socket.emit(SERVER_EVENTS.POI_COMBAT_ENDED, {
           combat_instance_id,
           result: combatLog.result,
           rewards: combatLog.rewards,
           duration: combatLog.duration,
+          wave_number: currentWave,
+          total_waves: totalWaves,
+          has_more_waves: currentWave < totalWaves,
         });
 
-        // Clean up
+        // Clean up combat instance
         POIWaveCombatService.endPOICombat(combat_instance_id);
         return;
-      }
-
-      // Check if wave completed and next wave started
-      const updatedInstance = POIWaveCombatService.getCombatInstance(combat_instance_id);
-      if (updatedInstance && updatedInstance.currentWave > previousWave) {
-        // Wave completed, next wave started
-        socket.emit(SERVER_EVENTS.POI_COMBAT_WAVE_COMPLETE, {
-          combat_instance_id,
-          completed_wave: previousWave,
-        });
-        socket.emit(SERVER_EVENTS.POI_COMBAT_WAVE_STARTED, {
-          combat_instance_id,
-          wave_number: updatedInstance.currentWave,
-          total_waves: updatedInstance.totalWaves,
-          monsters: updatedInstance.waveMonsters,
-        });
       }
 
       // Process automatic turns until player turn or combat ends
@@ -666,13 +738,30 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
       // Get updated state
       const finalInstance = POIWaveCombatService.getCombatInstance(combat_instance_id);
       if (!finalInstance || !finalInstance.isActive) {
-        // Combat ended during automatic processing
+        // Combat ended during automatic processing (wave completed or player died)
         if (autoResult.combatLog) {
+          const waveNum = finalInstance?.currentWave || currentWave;
+          const totalWavesCount = finalInstance?.totalWaves || totalWaves;
+          
+          // Emit wave complete event if wave was won
+          if (autoResult.combatLog.result === 'victory') {
+            socket.emit(SERVER_EVENTS.POI_COMBAT_WAVE_COMPLETE, {
+              combat_instance_id,
+              completed_wave: waveNum,
+              total_waves: totalWavesCount,
+              has_more_waves: waveNum < totalWavesCount,
+            });
+          }
+
+          // Emit combat ended event
           socket.emit(SERVER_EVENTS.POI_COMBAT_ENDED, {
             combat_instance_id,
             result: autoResult.combatLog.result,
             rewards: autoResult.combatLog.rewards,
             duration: autoResult.combatLog.duration,
+            wave_number: waveNum,
+            total_waves: totalWavesCount,
+            has_more_waves: waveNum < totalWavesCount,
           });
           POIWaveCombatService.endPOICombat(combat_instance_id);
         }
@@ -680,7 +769,8 @@ export function setupLabyrinthSocket(io: Server, socket: Socket) {
       }
 
       const participants = finalInstance.combatEngine.getParticipants();
-      const currentActor = finalInstance.combatEngine.getCurrentActor();
+      // Reuse currentActor variable (already declared earlier for validation)
+      currentActor = finalInstance.combatEngine.getCurrentActor();
       const recentActions = finalInstance.combatEngine.getRecentActions(10);
 
       // Emit combat state update

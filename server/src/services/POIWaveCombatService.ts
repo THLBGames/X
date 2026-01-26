@@ -170,6 +170,76 @@ export class POIWaveCombatService {
   }
 
   /**
+   * Validate player state before processing turn
+   */
+  private static validatePlayerState(
+    instance: POIWaveCombatInstance,
+    queuedSkillId?: string | null,
+    queuedConsumableId?: string | null
+  ): void {
+    // Validate player participant exists and is alive
+    const player = instance.combatEngine.getPlayer();
+    if (!player) {
+      throw new Error('Player participant not found in combat');
+    }
+    if (!player.isAlive) {
+      throw new Error('Player is dead and cannot perform actions');
+    }
+
+    // Validate skill usage if skill is queued
+    if (queuedSkillId) {
+      const skill = instance.dataProvider.getSkill(queuedSkillId);
+      if (!skill) {
+        throw new Error(`Skill ${queuedSkillId} not found`);
+      }
+      
+      // Check if player has learned this skill
+      const hasSkill = instance.character.learnedSkills?.some(
+        (ls) => ls.skillId === queuedSkillId
+      );
+      if (!hasSkill) {
+        throw new Error(`Player has not learned skill ${queuedSkillId}`);
+      }
+
+      // Validate player has enough mana
+      if (skill.manaCost && player.currentMana < skill.manaCost) {
+        throw new Error(`Insufficient mana: need ${skill.manaCost}, have ${player.currentMana}`);
+      }
+    }
+
+    // Validate consumable usage if consumable is queued
+    if (queuedConsumableId) {
+      const item = instance.dataProvider.getItem(queuedConsumableId);
+      if (!item) {
+        throw new Error(`Item ${queuedConsumableId} not found`);
+      }
+
+      // Check if item is a consumable
+      if (item.type !== 'consumable') {
+        throw new Error(`Item ${queuedConsumableId} is not a consumable`);
+      }
+
+      // Validate player has item in inventory
+      // Note: We need to get inventory from character or participant
+      // For now, we'll rely on the combat engine to validate this
+      // TODO: Add proper inventory validation when inventory is available in instance
+    }
+
+    // Validate enemy participants exist
+    const participants = instance.combatEngine.getParticipants();
+    const enemies = participants.filter((p) => !p.isPlayer);
+    if (enemies.length === 0) {
+      throw new Error('No enemy participants found in combat');
+    }
+
+    // Validate at least one enemy is alive
+    const aliveEnemies = enemies.filter((e) => e.isAlive);
+    if (aliveEnemies.length === 0) {
+      throw new Error('All enemies are dead - combat should have ended');
+    }
+  }
+
+  /**
    * Process combat turn
    */
   static async processCombatTurn(
@@ -182,22 +252,19 @@ export class POIWaveCombatService {
       throw new Error('Combat instance not found or not active');
     }
 
+    // Validate player and combat state before processing turn
+    this.validatePlayerState(instance, queuedSkillId, queuedConsumableId);
+
     // Execute turn
     const combatLog = instance.combatEngine.executeTurn(queuedSkillId, queuedConsumableId);
 
-    // If combat ended, check if we need to start next wave
+    // If combat ended, end combat (each wave is a separate combat encounter)
     if (combatLog) {
       if (combatLog.result === 'victory') {
-        // Wave completed - check if more waves remain
-        if (instance.currentWave < instance.totalWaves) {
-          // Start next wave
-          await this.startNextWave(instance);
-          return null; // Combat continues
-        } else {
-          // All waves complete
-          instance.isActive = false;
-          return combatLog;
-        }
+        // Wave completed - end combat for this wave
+        // The next wave will be started separately if there are more waves
+        instance.isActive = false;
+        return combatLog;
       } else if (combatLog.result === 'defeat') {
         // Player died - end combat
         instance.isActive = false;
@@ -249,6 +316,7 @@ export class POIWaveCombatService {
 
   /**
    * Start next wave
+   * Preserves player state (health, mana) and initializes new wave monsters
    */
   private static async startNextWave(instance: POIWaveCombatInstance): Promise<void> {
     const nextWaveNumber = instance.currentWave + 1;
@@ -256,6 +324,11 @@ export class POIWaveCombatService {
 
     if (!nextWave) {
       throw new Error(`Wave ${nextWaveNumber} not found`);
+    }
+
+    // Validate we're not exceeding total waves
+    if (nextWaveNumber > instance.totalWaves) {
+      throw new Error(`Wave ${nextWaveNumber} exceeds total waves ${instance.totalWaves}`);
     }
 
     // Spawn next wave monsters
@@ -275,27 +348,39 @@ export class POIWaveCombatService {
       );
     }
 
-    // Preload monster data
+    // Preload monster data for next wave
     for (const monster of nextWaveMonsters) {
       await instance.dataProvider.preloadMonster(monster.id);
     }
 
-    // Get current player health/mana from combat engine
+    // Get current player state from combat engine to preserve between waves
     const player = instance.combatEngine.getPlayer();
-    const currentHealth = player?.currentHealth || instance.character.combatStats.health;
-    const currentMana = player?.currentMana || instance.character.combatStats.mana;
+    if (!player) {
+      throw new Error('Player participant not found when starting next wave');
+    }
+
+    // Preserve player health and mana between waves
+    // Note: Status effects are reset between waves (standard game design)
+    const currentHealth = player.currentHealth;
+    const currentMana = player.currentMana;
+
+    // Validate player is still alive before starting next wave
+    if (!player.isAlive || currentHealth <= 0) {
+      throw new Error('Player is dead and cannot proceed to next wave');
+    }
 
     // Initialize combat with next wave (preserve player health/mana)
     instance.combatEngine.initialize(
       instance.character,
       nextWaveMonsters,
-      undefined,
+      undefined, // dungeonId
       currentHealth,
       currentMana,
-      undefined,
-      []
+      undefined, // inventory - TODO: get from participant
+      [] // mercenaries - TODO: support party members
     );
 
+    // Update instance with new wave information
     instance.currentWave = nextWaveNumber;
     instance.waveMonsters = nextWaveMonsters;
   }

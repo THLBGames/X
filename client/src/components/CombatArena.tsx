@@ -189,12 +189,25 @@ export default function CombatArena({
             return null; // Don't render dead monsters
           }
 
+          // Safety check: ensure monster data exists
+          if (!monsterState.monster) {
+            console.error('Monster state missing monster data:', monsterState);
+            return (
+              <div key={`monster-error-${index}`} className="combat-participant empty-slot">
+                <div className="participant-name" style={{ color: '#ff4444', fontStyle: 'italic' }}>
+                  {t('combat.monsterError', { defaultValue: 'Monster data missing' })}
+                </div>
+              </div>
+            );
+          }
+
           const isCurrentMonster = !isPlayerPartyTurn && index === combatState.currentMonsterIndex;
+          const isBoss = monsterState.monster.isBoss || false;
 
           return (
             <div
               key={`monster-${monsterState.participantId}`}
-              className={`combat-participant monster-area ${isCurrentMonster ? 'active-turn' : ''} ${monsterState.monster.isBoss ? 'boss-monster' : ''}`}
+              className={`combat-participant monster-area ${isCurrentMonster ? 'active-turn' : ''} ${isBoss ? 'boss-monster' : ''}`}
               ref={index === 0 ? monsterRef : undefined}
             >
               <div className="participant-header">
@@ -204,16 +217,16 @@ export default function CombatArena({
                 <div className="participant-info">
                   <div className="participant-name">
                     {dataLoader.getTranslatedName(monsterState.monster)}
-                    {monsterState.monster.isBoss && ' [BOSS]'}
+                    {isBoss && ' [BOSS]'}
                   </div>
-                  <div className="participant-level">Lv. {monsterState.monster.level}</div>
+                  <div className="participant-level">Lv. {monsterState.monster.level || 1}</div>
                 </div>
               </div>
               <HealthBar
                 current={monsterState.currentHealth}
                 max={monsterState.maxHealth}
                 label="HP"
-                barColor={monsterState.monster.isBoss ? '#ff4444' : '#ff6b6b'}
+                barColor={isBoss ? '#ff4444' : '#ff6b6b'}
                 height={16}
               />
             </div>

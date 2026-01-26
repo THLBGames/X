@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { Labyrinth, LabyrinthParticipant, LabyrinthParty, LabyrinthReward } from '@idle-rpg/shared';
-
+import type { LabyrinthClient } from './LabyrinthClient';
 import type { FloorNode, FloorConnection, ParticipantPosition } from '@idle-rpg/shared';
 
 interface LabyrinthState {
@@ -24,6 +24,7 @@ interface LabyrinthState {
   visibleNodes: string[];
   currentPosition: ParticipantPosition | null;
   movementPoints: number;
+  labyrinthClient: LabyrinthClient | null;
 
   setCurrentLabyrinth: (labyrinth: Labyrinth | null) => void;
   setCurrentParticipant: (participant: LabyrinthParticipant | null) => void;
@@ -40,6 +41,7 @@ interface LabyrinthState {
   setVisibleNodes: (nodes: string[]) => void;
   setCurrentPosition: (position: ParticipantPosition | null) => void;
   setMovementPoints: (points: number) => void;
+  setLabyrinthClient: (client: LabyrinthClient | null) => void;
   reset: () => void;
 }
 
@@ -64,6 +66,7 @@ export const useLabyrinthState = create<LabyrinthState>((set) => ({
   visibleNodes: [],
   currentPosition: null,
   movementPoints: 0,
+  labyrinthClient: null,
 
   setCurrentLabyrinth: (labyrinth) => set({ currentLabyrinth: labyrinth }),
   setCurrentParticipant: (participant) => set({ currentParticipant: participant }),
@@ -80,6 +83,7 @@ export const useLabyrinthState = create<LabyrinthState>((set) => ({
   setVisibleNodes: (nodes) => set({ visibleNodes: nodes }),
   setCurrentPosition: (position) => set({ currentPosition: position }),
   setMovementPoints: (points) => set({ movementPoints: points }),
+  setLabyrinthClient: (client) => set({ labyrinthClient: client }),
   reset: () =>
     set({
       currentLabyrinth: null,
@@ -102,5 +106,6 @@ export const useLabyrinthState = create<LabyrinthState>((set) => ({
       visibleNodes: [],
       currentPosition: null,
       movementPoints: 0,
+      labyrinthClient: null,
     }),
 }));

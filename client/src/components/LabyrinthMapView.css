@@ -129,6 +129,16 @@
   z-index: 30;
 }
 
+.map-node.traversable-combat-poi {
+  border: 2px dashed #ffa500;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.map-node.traversable-combat-poi:hover {
+  border-color: #ff9500;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
 .node-icon {
   font-size: 1.5rem;
   line-height: 1;
@@ -244,6 +254,37 @@
 
 .btn-cancel-poi-combat:active {
   background: #444;
+}
+
+.traversable-poi-panel {
+  /* Similar to poi-combat-panel but with different positioning */
+  position: absolute;
+  z-index: 30;
+  background: rgba(30, 30, 46, 0.95);
+  border: 2px solid #ffa500;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.btn-traverse-only {
+  background: #4a9eff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-traverse-only:hover {
+  background: #3a8eef;
+}
+
+.btn-traverse-only:active {
+  background: #2a7edf;
 }
 
 .movement-confirmation {

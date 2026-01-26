@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGameState } from '../systems';
+import { useLabyrinthState } from '../systems/labyrinth/LabyrinthState';
 import { getDataLoader } from '../data';
 import { audioManager } from '../systems/audio/AudioManager';
 import { gameEventEmitter, type GameEvent } from '../systems/events/GameEventEmitter';
@@ -123,13 +124,44 @@ export default function CombatDisplay() {
   }, [isCombatActive, character?.level]);
 
   const dataLoader = getDataLoader();
+  
+  // Check if we're in POI combat
+  const poiCombatActive = useLabyrinthState((state) => state.poiCombatActive);
+  const poiCombatInstanceId = useLabyrinthState((state) => state.poiCombatInstanceId);
+  const currentParticipant = useLabyrinthState((state) => state.currentParticipant);
+  const labyrinthClient = useLabyrinthState((state) => state.labyrinthClient);
 
   const handleSkillUse = (skillId: string) => {
-    queueSkill(skillId);
+    // If in POI combat, send action directly to server (server has authority)
+    if (poiCombatActive && poiCombatInstanceId && currentParticipant && labyrinthClient) {
+      labyrinthClient.sendPOICombatAction(
+        currentParticipant.id,
+        poiCombatInstanceId,
+        'skill',
+        skillId
+      );
+      // Don't call queueSkill - server will process the action
+    } else {
+      // Regular dungeon combat - use local queue system
+      queueSkill(skillId);
+    }
   };
 
   const handleConsumableUse = (itemId: string) => {
-    queueConsumable(itemId);
+    // If in POI combat, send action directly to server (server has authority)
+    if (poiCombatActive && poiCombatInstanceId && currentParticipant && labyrinthClient) {
+      labyrinthClient.sendPOICombatAction(
+        currentParticipant.id,
+        poiCombatInstanceId,
+        'item',
+        undefined,
+        itemId
+      );
+      // Don't call queueConsumable - server will process the action
+    } else {
+      // Regular dungeon combat - use local queue system
+      queueConsumable(itemId);
+    }
   };
 
   return (

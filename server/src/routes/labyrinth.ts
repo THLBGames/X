@@ -49,9 +49,14 @@ export function setupLabyrinthRoutes(app: Express, io?: Server) {
       // Filter out any null labyrinths
       const validLabyrinths = labyrinthsWithParticipants.filter((item) => item.labyrinth !== null);
 
+      // Deduplicate by labyrinth.id (in case there are duplicate participant records)
+      const uniqueLabyrinths = validLabyrinths.filter(
+        (item, index, self) => index === self.findIndex((t) => t.labyrinth.id === item.labyrinth.id)
+      );
+
       res.json({
         success: true,
-        labyrinths: validLabyrinths.map((item) => ({
+        labyrinths: uniqueLabyrinths.map((item) => ({
           labyrinth: item.labyrinth,
           participant: item.participant,
         })),

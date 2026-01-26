@@ -107,6 +107,7 @@ export class LabyrinthManager {
     const existing = await LabyrinthParticipantModel.findByLabyrinthAndCharacter(labyrinth_id, character_id);
     if (existing) {
       console.log('Character is already participating in this labyrinth');
+      return existing; // Return existing participant instead of creating a duplicate
     }
 
     // Check current capacity on floor 1
@@ -141,9 +142,21 @@ export class LabyrinthManager {
 
   /**
    * Get active players on a floor
+   * Deduplicates by character_id to prevent showing the same character multiple times
    */
   static async getFloorPlayers(labyrinth_id: string, floor_number: number): Promise<LabyrinthParticipant[]> {
-    return await LabyrinthParticipantModel.findByLabyrinthAndFloor(labyrinth_id, floor_number);
+    const participants = await LabyrinthParticipantModel.findByLabyrinthAndFloor(labyrinth_id, floor_number);
+    
+    // Deduplicate by character_id, keeping the most recent participant for each character
+    const uniqueParticipants = new Map<string, LabyrinthParticipant>();
+    for (const participant of participants) {
+      const existing = uniqueParticipants.get(participant.character_id);
+      if (!existing || new Date(participant.joined_at) > new Date(existing.joined_at)) {
+        uniqueParticipants.set(participant.character_id, participant);
+      }
+    }
+    
+    return Array.from(uniqueParticipants.values());
   }
 
   /**
